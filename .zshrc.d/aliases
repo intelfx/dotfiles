@@ -192,6 +192,7 @@ alias ssht="ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 alias scpt="scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 alias sftpt="sftp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 alias mosht="mosh --ssh='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'"
+alias ssht-copy-id="ssh-copy-id -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 
 # compression
 for level in "" 1 11 19 22; do
