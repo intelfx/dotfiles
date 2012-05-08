@@ -66,12 +66,20 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "a", "r", "c", "h", "l", "i", "n", "u", "x" }, s, layouts[1])
+    tags[s] = awful.tag({ " Main", " Web", " Term", " Media", " Misc"}, s, layouts[1])
 end
 -- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
+
+games = {
+   { "ZSNES", "zsnes" },
+   { "Diablo 2", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Diablo2/Diablo\ II.exe" },
+   { "WIII:ROC", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Warcraft\ III/Warcraft\ III.exe"},
+   { "WIII:FT", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Warcraft\ III/Frozen\ Throne.exe"}
+}
+
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
@@ -80,6 +88,7 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "games", games },
                                     { "nautilus", "nautilus" },
                                     { "chromium", "chromium" },
                                     { "gvim", "gvim" },
@@ -105,13 +114,15 @@ batwidget:set_color("#d0d0ff")
 batwidtext = wibox.widget.textbox()
 vicious.register(batwidget,vicious.widgets.bat, "$2", 120, "BAT0")
 
-vicious.register(batwidtext,vicious.widgets.bat, "BAT:$2%", 120, "BAT0")
+vicious.register(batwidtext,vicious.widgets.bat, "Ã $2%", 120, "BAT0")
 
 -- {{{ Misc Texts
 separator = wibox.widget.textbox()
 separator.set_markup(separator, ' ')
 percent = wibox.widget.textbox()
 percent.set_markup(percent, '%')
+myclockicon = wibox.widget.textbox()
+myclockicon.set_text(myclockicon, 'Õ')
 -- {{{ CPU Usage
 cpuwidget = awful.widget.progressbar()
 cpuwidget:set_width(8)
@@ -121,8 +132,13 @@ cpuwidget:set_background_color("#151515")
 cpuwidget:set_border_color(nil)
 cpuwidget:set_color("#6d9cbe")
 cpuwidtext = wibox.widget.textbox()
-vicious.register(cpuwidtext, vicious.widgets.cpu, "CPU", 0.9)
+vicious.register(cpuwidtext, vicious.widgets.cpu, "Ï ", 0.9)
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 0.9)
+
+-- {{{ Volume 
+volwidtext = wibox.widget.textbox()
+vicious.register(volwidtext, vicious.widgets.volume,"  Ô $1% ", 0.3, "Master")
+
 -- {{{ Memory Usage
 
 memwidget  = awful.widget.progressbar()
@@ -133,22 +149,22 @@ memwidget:set_background_color("#151515")
 memwidget:set_border_color(nil)
 memwidget:set_color("#6d9cbe")
 memwidtext = wibox.widget.textbox()
-vicious.register(memwidtext, vicious.widgets.mem, "RAM")
+vicious.register(memwidtext, vicious.widgets.mem, "Þ  ")
 vicious.register(memwidget, vicious.widgets.mem, "$1",12)
 
 -- {{{ Uptime and OS info 
 
 uptime = wibox.widget.textbox()
-vicious.register(uptime, vicious.widgets.uptime, ":: UPTIME:$1D $2H $3M ::")
+vicious.register(uptime, vicious.widgets.uptime, "Ç $1D:$2H:$3M ")
 
 osinfo = wibox.widget.textbox()
 vicious.register(osinfo, vicious.widgets.os, " $1 $2 ")
 
 network = wibox.widget.textbox()
-vicious.register(network, vicious.widgets.net, "NET | DOWN:${wlan0 down_kb} UP:${wlan0 up_kb} ")
+vicious.register(network, vicious.widgets.net, " Ð ${wlan0 down_kb} Ñ ${wlan0 up_kb}  ")
 
 hdspace = wibox.widget.textbox()
-vicious.register(hdspace, vicious.widgets.fs, ":: HD | ${/ avail_gb} / ${/ size_gb} GB")
+vicious.register(hdspace, vicious.widgets.fs, "Ê ${/ avail_gb}/${/ size_gb}GB")
 
 -- {{{ Wibox
 -- Create a textclock widget
@@ -160,8 +176,6 @@ mywibox2 = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
-mytextbox = wibox.widget.textbox({type = "textbox"}) 
-mytextbox.set_markup(mytextbox,'This Is a Test, get over it')
 mytaglist.buttons = awful.util.table.join(
                     awful.button({ }, 1, awful.tag.viewonly),
                     awful.button({ modkey }, 1, awful.client.movetotag),
@@ -221,8 +235,8 @@ for s = 1, screen.count() do
 
     -- Create the wibox
 
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
-    mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height= "16", screen = s })
+    mywibox2[s] = awful.wibox({ position = "bottom", height= "17", screen = s })
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(mylauncher)
@@ -232,6 +246,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(myclockicon)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -259,6 +274,8 @@ for s = 1, screen.count() do
     layoutbat:add(network)
     layoutbat:add(separator)
     layoutbat:add(hdspace)
+    layoutbat:add(separator)
+    layoutbat:add(volwidtext)
 
     local layoutsys = wibox.layout.fixed.horizontal()
     layoutsys:add(osinfo)
