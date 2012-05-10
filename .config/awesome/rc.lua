@@ -74,25 +74,31 @@ end
 -- Create a laucher widget and a main menu
 
 games = {
-   { "ZSNES", "zsnes" },
-   { "Diablo 2", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Diablo2/Diablo\ II.exe" },
-   { "WIII:ROC", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Warcraft\ III/Warcraft\ III.exe"},
-   { "WIII:FT", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Warcraft\ III/Frozen\ Throne.exe"}
+   { "zsnes", "zsnes" },
+   { "diablo 2", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Diablo2/Diablo\ II.exe" },
+   { "w3:ROC", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Warcraft\ III/Warcraft\ III.exe"},
+   { "w3:FT", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Warcraft\ III/Frozen\ Throne.exe"}
 }
 
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
+   { "restart", awesome.restart }
 }
 
+mypowermenu = {
+   { "shutdown", "sudo halt -p" },
+   { "reboot", "sudo reboot"},
+   { "suspend", "sudo pm-suspend" },
+   { "quit", awesome.quit }
+}
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "games", games },
                                     { "nautilus", "nautilus" },
                                     { "chromium", "chromium" },
                                     { "gvim", "gvim" },
-                                    { "open terminal", terminal }
+                                    { "open terminal", terminal },
+                                    { "power", mypowermenu}
                                   }
                         })
 
@@ -112,17 +118,22 @@ batwidget:set_background_color("#151515")
 batwidget:set_border_color(nil)
 batwidget:set_color("#d0d0ff")
 batwidtext = wibox.widget.textbox()
-vicious.register(batwidget,vicious.widgets.bat, "$2", 120, "BAT0")
+batwidtoolt = awful.tooltip({ objects = { batwidtext,batwidget },})
+vicious.register(batwidget,vicious.widgets.bat, 
+                function (widget,args)
+                    batwidtoolt:set_text("Battery: "..args[2].."%")
+                    return args[2]
+                end, 120, "BAT0")
 
-vicious.register(batwidtext,vicious.widgets.bat, "Ã $2%", 120, "BAT0")
 
+vicious.register(batwidtext,vicious.widgets.bat, "Ã", 120, "BAT0")
 -- {{{ Misc Texts
 separator = wibox.widget.textbox()
 separator.set_markup(separator, ' ')
 percent = wibox.widget.textbox()
 percent.set_markup(percent, '%')
 myclockicon = wibox.widget.textbox()
-myclockicon.set_text(myclockicon, 'Õ')
+myclockicon.set_text(myclockicon, ' Õ')
 -- {{{ CPU Usage
 cpuwidget = awful.widget.progressbar()
 cpuwidget:set_width(8)
@@ -132,8 +143,13 @@ cpuwidget:set_background_color("#151515")
 cpuwidget:set_border_color(nil)
 cpuwidget:set_color("#6d9cbe")
 cpuwidtext = wibox.widget.textbox()
+cpuwidtoolt = awful.tooltip({ objects = { cpuwidget,cpuwidtext },})
 vicious.register(cpuwidtext, vicious.widgets.cpu, "Ï ", 0.9)
-vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 0.9)
+vicious.register(cpuwidget, vicious.widgets.cpu,  
+                function (widget,args)
+                    cpuwidtoolt:set_text("CPU: "..args[1].."%")
+                    return args[1]
+                end,0.9)
 
 -- {{{ Volume 
 volwidtext = wibox.widget.textbox()
@@ -149,16 +165,33 @@ memwidget:set_background_color("#151515")
 memwidget:set_border_color(nil)
 memwidget:set_color("#6d9cbe")
 memwidtext = wibox.widget.textbox()
+memwidtoolt = awful.tooltip({ objects = { memwidget,memwidtext },})
 vicious.register(memwidtext, vicious.widgets.mem, "Þ  ")
-vicious.register(memwidget, vicious.widgets.mem, "$1",12)
+vicious.register(memwidget, vicious.widgets.mem, 
+                function (widget,args)
+                    memwidtoolt:set_text("Memory: "..args[1].."%")
+                    return args[1]
+                end,12)
+
+-- {{{ Pacman Widget 
+
+pacwidget = wibox.widget.textbox()
+pacwidget.set_text(pacwidget, "Æ")
+pacwidgettex = wibox.widget.textbox()
+pacwidtoolt = awful.tooltip({objects = { pacwidget, pacwidgettex},})
+vicious.register(pacwidgettex, vicious.widgets.pkg,
+                function(widget,args)
+                    pacwidtoolt:set_text("Pacman updates: "..args[1])
+                    return args[1]
+                end,30,"Arch")
 
 -- {{{ Uptime and OS info 
 
 uptime = wibox.widget.textbox()
-vicious.register(uptime, vicious.widgets.uptime, "Ç $1D:$2H:$3M ")
+vicious.register(uptime, vicious.widgets.uptime, "Ç $2H:$3M ")
 
 osinfo = wibox.widget.textbox()
-vicious.register(osinfo, vicious.widgets.os, " $1 $2 ")
+vicious.register(osinfo, vicious.widgets.os, " $2 ")
 
 network = wibox.widget.textbox()
 vicious.register(network, vicious.widgets.net, " Ð ${wlan0 down_kb} Ñ ${wlan0 up_kb}  ")
@@ -276,8 +309,11 @@ for s = 1, screen.count() do
     layoutbat:add(hdspace)
     layoutbat:add(separator)
     layoutbat:add(volwidtext)
+    layoutbat:add(separator)
 
     local layoutsys = wibox.layout.fixed.horizontal()
+    layoutsys:add(pacwidget)
+    layoutsys:add(separator)
     layoutsys:add(osinfo)
     layoutsys:add(separator)
 
@@ -445,13 +481,15 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "Vlc" },
-      properties = { floating = true , tag = tags[1][3]} },
+      properties = { floating = true , tag = tags[1][4]} },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true, tag = tags[1][4] } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
+    -- Set Chromium to always map on tags number 2 of screen 1.
     { rule = { class = "Chromium"}, properties = {tag = tags[1][2] }},
+    { rule = { class = "Gvim"}, properties = {size_hints_honor = false}},
+    { rule = { class = "URxvt"}, properties = {size_hints_honor = false}},
     --   properties = { tag = tags[1][2] } ,
 }
 -- }}}
@@ -494,5 +532,5 @@ awful.util.spawn_with_shell("setxkbmap es")
 awful.util.spawn_with_shell("nm-applet")
 awful.util.spawn_with_shell("gnome-sound-applet")
 awful.util.spawn_with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-
+awful.util.spawn_with_shell("compton -cCGfF -o 0.38 -O 200 -I 200 -t 0.02 -l 0.02 -r 3.2 -D2 -m 0.88")
 

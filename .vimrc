@@ -122,6 +122,7 @@ if (!has('gui_running'))
 else
     colorscheme molokai
 endif
+
 " ---- {{{{ Optional
 set visualbell "Disable both visualbell and errorbells
 set noerrorbells

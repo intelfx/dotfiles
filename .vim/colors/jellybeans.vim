@@ -465,17 +465,19 @@ call s:X("PreciseJumpTarget","B9ED67","405026","","White","Green")
 " Manual overrides for 256-color terminals. Dark colors auto-map badly.
 if !s:low_color
   hi StatusLineNC ctermbg=235
-  hi Folded ctermbg=236
-  hi FoldColumn ctermbg=234
+  hi Folded ctermbg=NONE
+  hi FoldColumn ctermbg=NONE
   hi SignColumn ctermbg=236
   hi CursorColumn ctermbg=234
   hi CursorLine ctermbg=234
+  hi CursorLineNr ctermbg=234
   hi SpecialKey ctermbg=234
-  hi NonText ctermbg=233
-  hi LineNr ctermbg=233
+  hi NonText ctermbg=NONE
+  hi LineNr ctermbg=NONE
   hi DiffText ctermfg=81
-  hi Normal ctermbg=233
+  hi Normal ctermbg=NONE
   hi DbgBreakPt ctermbg=53
+  hi VertSplit ctermbg=NONE
 endif
 
 " delete functions {{{

@@ -49,6 +49,7 @@ URxvt*cursorColor2: #151515
 
 
 
+!URxvt.letterSpace: -1
 URxvt*font: xft:Menlo for Powerline:regular:size=7
 URxvt*imFont: xft:Menlo for Powerline:regular:size=7
 URxvt*boldFont: xft:Menlo for Powerline:regular:size=7
@@ -63,7 +64,6 @@ URxvt*cursorBlink: true
 URxvt*cursorUnderline: false
 
 URxvt*geometry: 75x15
-URxvt*internalBorder: 3
 
 !URxvt*reverseVideo: true
 
@@ -72,7 +72,7 @@ URxvt*depth: 24
 URxvt*scrollBar: false
 URxvt*scrollBar_right: true
 URxvt*scrollstyle: plain
-URxvt*scrollColor: #2873a2
+URxvt*scrollColor: #000000
 URxvt*scrollWithBuffer: false
 URxvt*scrollTtyOutput: true
 
@@ -81,12 +81,14 @@ URxvt*urgentOnBell: true
 
 URxvt*pointerBlank: true
 /* vim: set ts=2 sw=2 tw=0 :*/
-URxvt.perl-ext-common: default,matcher,tabbed
+URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher:chromium
 URxvt.matcher.button: 1
 
-URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-fg: 0
 URxvt.tabbed.tabbar-bg: 0 
 URxvt.tabbed.tab-bg: 0 
-URxvt.tabbed.tab-fg: 3 
+URxvt.tabbed.tab-fg: 0 
 
+URxvt.transparent: true
+URxvt.shading: 10
