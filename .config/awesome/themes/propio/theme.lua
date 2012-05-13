@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "Terminus2  6"
+theme.font          = "Terminus2  9"
 
 theme.bg_normal     = "#000000"
 theme.bg_focus      = "#000000"
@@ -17,7 +17,7 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#b6c7f0"
 
-theme.border_width  = 3
+theme.border_width  = 1
 theme.border_normal = "#000000"
 theme.border_focus  = "#1e1e1e"
 theme.border_marked = "#91231c"
@@ -39,9 +39,10 @@ theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
+theme.menu_submenu_icon = "/home/alex/.config/awesome/themes/propio/submenuicon.png"
 theme.menu_height = 15
 theme.menu_width  = 100
+theme.menu_border_width = 0
 
 -- You can add as many variables as
 -- you wish and access them by using
