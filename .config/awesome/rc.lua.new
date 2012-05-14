@@ -189,68 +189,53 @@ volwidtext = wibox.widget.textbox()
 vicious.register(volwidtext, vicious.widgets.volume,"  Ô $1% ", 0.3, "Master")
 
 volwidtext:buttons(awful.util.table.join(
-    awful.button({ }, 4, function () awful.util.spawn("amixer -q sset Master 2000+", false) end),
-    awful.button({ }, 5, function () awful.util.spawn("amixer -q sset Master 2000-", false) end)
+    awful.button({ }, 4, function () awful.util.spawn("amixer -q sset Master 1dB+", false) end),
+    awful.button({ }, 5, function () awful.util.spawn("amixer -q sset Master 1dB-", false) end)
 ))
 
 -- {{{ MPD 
 -- Initialize MPD Widget
-music_play = wibox.widget.imagebox()
-music_play:set_image(beautiful.widget_play)
-music_play:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn("ncmpcpp toggle", false) end)
-))
+music_play = awful.widget.launcher({
+    image = beautiful.widget_play,
+    command = "ncmpcpp toggle"
+  })
+
   music_pause = awful.widget.launcher({
     image = beautiful.widget_pause,
     command = "ncmpcpp toggle"
   })
   music_pause.visible = false
-music_stop = wibox.widget.imagebox()
-music_stop:set_image(beautiful.widget_stop)
-music_stop:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn("ncmpcpp stop", false) end)
-))
 
-music_prev = wibox.widget.imagebox()
-music_prev:set_image(beautiful.widget_prev)
-music_prev:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn("ncmpcpp prev", false) end)
-))
+  music_stop = awful.widget.launcher({
+    image = beautiful.widget_stop,
+    command = "ncmpcpp stop"
+  })
 
+  music_prev = awful.widget.launcher({
+    image = beautiful.widget_prev,
+    command = "ncmpcpp prev"
+  })
 
-music_next = wibox.widget.imagebox()
-music_next:set_image(beautiful.widget_next)
-music_next:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn("ncmpcpp next", false) end)
-))
-
+  music_next = awful.widget.launcher({
+    image = beautiful.widget_next,
+    command = "ncmpcpp next"
+  })
 mpdwidget = wibox.widget.textbox()
+mpdcontrols = {music_play,music_pause}
 vicious.register(mpdwidget, vicious.widgets.mpd,
     function (widget, args)
         if args["{state}"] == "Stop" then 
-            music_play:set_image(beautiful.widget_play)
-            music_prev:set_image(nil)
-            music_next:set_image(nil)
-            music_stop:set_image(nil)
-            return " Î "
+            return " "
         elseif args["{state}"] == "Pause" then
-            music_play:set_image(beautiful.widget_play)
-            music_prev:set_image(beautiful.widget_prev)
-            music_next:set_image(beautiful.widget_next)
-            music_stop:set_image(beautiful.widget_stop)
-            return "Î [ Paused ]"
+            music_pause.visible = false
+            return "Paused"
         else 
-            music_stop:set_image(beautiful.widget_stop)
-            music_prev:set_image(beautiful.widget_prev)
-            music_next:set_image(beautiful.widget_next)
-            music_play:set_image(beautiful.widget_pause)
+            mpdplay = music_play 
+            mpdpause = music_pause 
             return " Î [ " .. args["{Title}"]..' - '.. args["{Artist}"] .. " ]"
         end
     end, 0.5)
 
-mpdwidget:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn(terminal .. " -e ncmpcpp", false) end)
-))
 
 -- {{{ Memory Usage
 
@@ -418,11 +403,11 @@ for s = 1, screen.count() do
     layoutbat:add(separator)
 
     local layoutsys = wibox.layout.fixed.horizontal()
-    layoutsys:add(mpdwidget)
     layoutsys:add(music_play)
     layoutsys:add(music_prev)
     layoutsys:add(music_next)
     layoutsys:add(music_stop)
+    layoutsys:add(mpdwidget)
     layoutsys:add(separator)
     layoutsys:add(pacwidget)
     layoutsys:add(separator)

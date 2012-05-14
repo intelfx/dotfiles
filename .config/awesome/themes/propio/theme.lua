@@ -95,6 +95,12 @@ theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 -- Define the icon theme for application icons. If not set then the icons 
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
+theme.widget_play = "/home/alex/.config/awesome/themes/propio/widgets/white/play.png"
+theme.widget_pause = "/home/alex/.config/awesome/themes/propio/widgets/white/pause.png"
+theme.widget_stop =  "/home/alex/.config/awesome/themes/propio/widgets/white/stop.png"
+theme.widget_prev =  "/home/alex/.config/awesome/themes/propio/widgets/white/prev.png"
+theme.widget_next =  "/home/alex/.config/awesome/themes/propio/widgets/white/next.png"
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
+

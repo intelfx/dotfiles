@@ -50,6 +50,11 @@ URxvt*cursorColor2: #151515
 
 
 !URxvt.letterSpace: -1
+!URxvt*font: xft:Envy Code R for Powerline:regular:size=9.4
+!URxvt*imFont: xft:Envy Code R for Powerline:regular:size=9.4
+!URxvt*boldFont: xft:Envy Code R for Powerline:regular:size=9.4
+!URxvt*italicFont: xft:Envy Code R for Powerline:regular:size=9.4
+!URxvt*boldItalicFont: xft:Envy Code R for Powerline:regular:size=9.4
 URxvt*font: xft:Menlo for Powerline:regular:size=7
 URxvt*imFont: xft:Menlo for Powerline:regular:size=7
 URxvt*boldFont: xft:Menlo for Powerline:regular:size=7
