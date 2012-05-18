@@ -67,7 +67,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ " Main", " Web", " Term", " Media", " Misc"}, s, layouts[1])
+    tags[s] = awful.tag({ "  main ", " web ", " term ", " media ", " misc "}, s, layouts[1])
 end
 -- }}}
 
@@ -93,21 +93,28 @@ mypowermenu = {
    { "reboot", "sudo reboot"},
    { "suspend", "sudo pm-suspend" }
 }
+myaudiomenu = {
+    {"qjackctl","qjackctl"},
+    {"rakarrack","rakarrack"},
+    {"kill p.a.",terminal .. " -e killall pulseaudio"}
+}
 
 myappsmenu = {
    { "ranger", terminal .. " -e ranger" },
    { "gvim", "gvim" },
    { "ncmpcpp", terminal .. " -e ncmpcpp" },
    { "mutt", terminal .. " -e mutt" },
+   { "weechat", terminal .. " -e weechat-curses" },
    { "gimp", "gimp" },
-   { "nautilus", "nautilus" }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
+                                    { "audio", myaudiomenu},
                                     { "games", games },
                                     { "apps", myappsmenu },
                                     { "chromium", "chromium" },
                                     { "open terminal", terminal },
+                                    { "nautilus", "nautilus" },
                                     { "power", mypowermenu}
                                   }
                         })
@@ -163,6 +170,8 @@ batwidtext:buttons(awful.util.table.join(
 -- {{{ Misc Texts
 separator = wibox.widget.textbox()
 separator.set_markup(separator, ' ')
+separator2 = wibox.widget.textbox()
+separator2.set_markup(separator2, '<span color="#1b2736">  </span>')
 percent = wibox.widget.textbox()
 percent.set_markup(percent, '%')
 myclockicon = wibox.widget.textbox()
@@ -189,6 +198,8 @@ volwidtext = wibox.widget.textbox()
 vicious.register(volwidtext, vicious.widgets.volume,"  Ô $1% ", 0.3, "Master")
 
 volwidtext:buttons(awful.util.table.join(
+    awful.button({ }, 1, function () awful.util.spawn("amixer -q sset Master toggle", false) end),
+    awful.button({ }, 3, function () awful.util.spawn(terminal .. " -e alsamixer", false) end),
     awful.button({ }, 4, function () awful.util.spawn("amixer -q sset Master 2000+", false) end),
     awful.button({ }, 5, function () awful.util.spawn("amixer -q sset Master 2000-", false) end)
 ))
@@ -386,6 +397,7 @@ for s = 1, screen.count() do
     left_layout:add(mylauncher)
     left_layout:add(mytaglist[s])
     left_layout:add(mypromptbox[s])
+    left_layout:add(separator2)
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()

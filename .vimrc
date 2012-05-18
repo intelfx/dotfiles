@@ -11,8 +11,8 @@ syntax on
 filetype plugin indent on
 set backspace=indent,eol,start
 set ruler
-set number
-" set relativenumber
+""set number
+set relativenumber
 set scrolloff=4
 
 set autoindent
@@ -79,7 +79,8 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 " Remap Keys for opening a splitscreen and to move with hjkl
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>h :split<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -92,6 +93,7 @@ inoremap jj <Esc>
 " Folding
 nnoremap <Space> za
 vnoremap <Space> za
+nnoremap ; :
 
 " Quicksave, quickload, treeexplorer to <F5><F6><F4>
 nnoremap <F5> :YRShow<CR>
@@ -116,6 +118,8 @@ nmap <silent> <leader>s :set spell!<CR>
 set background=dark
 set guifont=Menlo\ for\ Powerline\ 8 
 set guioptions-=T
+""set guioptions-=m
+set guioptions-=r
 if (!has('gui_running'))
     set t_Co=256
     colorscheme jellybeans
