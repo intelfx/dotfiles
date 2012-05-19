@@ -1,0 +1,32 @@
+2012-05 00:44	-->	kniren (~kniren@229.Red-88-25-206.staticIP.rima-tde.net) se ha unido a #gnome
+2012-05 00:44	--	El tema para #gnome es "GNOME 3.4 Released! http://library.gnome.org/misc/release-notes/3.4/ | How to get GNOME 3.4: http://is.gd/HEDBp1 |Look at GNOME 3 at http://is.gd/3a6XOW and join Facebook http://is.gd/XojS4A and Twitter http://is.gd/n7uIyj and Google+ http://is.gd/pKYSyN"
+2012-05 00:44	--	Tema establecido por borschty (~sebastian@wh178.stw.stud.uni-saarland.de) el mié, 28 mar 2012 18:12:48
+2012-05 00:44	--	Apodos #gnome: [@ChanServ [deXter] a7x aber abramart alvesadrian badshah400 baedert Bertl biertie blast_hardcheese BlastHardcheese blathijs bluebomber Bry8Star Bry8Star{EB burntoto camerin chasmo Chris_G csgeek cuppsy cvanes DaDaDOSPrompt danmackay DarkCircle Deathzor_ dijonyummy dimmortal dlesage__ dmarkey eigma emmanuelux erle- esdf EyesIsMine Fitzz foobArrr FunkyELF glebihan Guest87974 Hamms Hyperbyte io__ ivaldi janosch JC_SoCal JoeSomebody jt_ Juhaz Justice jvolkman KarlHungus kayve kniren kuzary larsemil lnxslck m0spf m8 Maccer MarcWeber mck182|afk mgedmin Miles__ Nibato no_maam_ poutine qnm rdz ruli satellit_ satellit_Tris55R satul_ Saviq ser sideffect sri_ sw0rdfish sysRPL tensorpudding_ Theoden Thorne tightwork tobi TomLM tssvt tstclair tuxkalle Tycale_ up365 uw Verge Vinylourson vooze w0rst wavded wolfbyte xSmurf xxtjaxx Ycarene zu_ |Gobo|]
+2012-05 00:44	--	Canal #gnome: 103 apodos (1 op, 0 semi-ops, 0 voces, 102 normales)
+2012-05 00:44	--	Modo #gnome [+cnt]
+2012-05 00:44	--	Canal creado el vie, 15 ene 2010 12:47:10
+2012-05 00:45	Hyperbyte	Just for future reference... the problems I was having earlier, with shortcuts not working, was solved by nuking all config from users' home dirs (there was some gconf from Gnome 2 left there)
+2012-05 00:46	-->	osolus (~user@unaffiliated/osolus) se ha unido a #gnome
+2012-05 00:46	<--	baedert (~baedert@dslb-088-067-089-157.pools.arcor-ip.net) ha salido (Remote host closed the connection)
+2012-05-19 00:48:27	osolus	hello, all, i have had some issues where I cannot prevent gnome from powing off my display during extended inactivity, the internet gave me two ways to impart the same setting but the method using dconf-editor didnt have the option, the one liner executed with quiet success. Any advice?
+2012-05-19 00:50:29	<--	cuppsy (~matthew@74-92-203-105-Miami.hfc.comcastbusiness.net) ha salido (Ping timeout: 246 seconds)
+2012-05-19 00:51:48	Hyperbyte	osolus, are you sure it's Gnome blanking your screen, and not X?
+2012-05-19 00:52:23	Hyperbyte	I.e, DPMS?
+2012-05-19 00:55:26	osolus	maybe it is X.
+2012-05-19 00:56:07	osolus	i appreciate the lead, thanks hyperbyte.
+2012-05-19 01:01:11	<--	osolus (~user@unaffiliated/osolus) ha salido (Remote host closed the connection)
+2012-05-19 01:01:11	Juhaz	osolus, uh, system settings->screen?
+2012-05-19 01:01:15	Juhaz	...
+2012-05-19 01:05:06	-->	cuppsy (~matthew@74-92-203-105-Miami.hfc.comcastbusiness.net) se ha unido a #gnome
+2012-05-19 01:06:20	<--	Theoden (~quassel@c-98-234-161-226.hsd1.ca.comcast.net) ha salido (Remote host closed the connection)
+2012-05-19 01:07:40	<--	jt_ (cb73c964@gateway/web/freenode/ip.203.115.201.100) ha salido (Quit: Page closed)
+2012-05-19 01:12:39	<--	erle- (~m@f052132003.adsl.alicedsl.de) ha salido (Quit: erle-)
+2012-05-19 01:18:37	<--	m8 (~mor@unaffiliated/m8) ha salido (Remote host closed the connection)
+2012-05-19 01:26:31	-->	chandoo (~chandoo@ool-ad032250.dyn.optonline.net) se ha unido a #gnome
+2012-05-19 01:29:27	-->	l1mpm4rk (~\@unaffiliated/l1mpm4rk) se ha unido a #gnome
+2012-05-19 01:30:04	-->	nimbiotics (~chatzilla@c-76-18-20-235.hsd1.fl.comcast.net) se ha unido a #gnome
+2012-05-19 01:30:23	nimbiotics	hello all, noob here with a situation: Using mint 12 with gnome classic; I add workspaces (I need 4), but it always goes back to 1 after login. What do I have to do to keep the 4 workspaces I need/ TIA!
+2012-05-19 01:44:46	-->	Mike9863 (~Mike9863@pool-173-54-66-57.nwrknj.east.verizon.net) se ha unido a #gnome
+2012-05-19 01:49:32	<--	nimbiotics (~chatzilla@c-76-18-20-235.hsd1.fl.comcast.net) ha salido (Quit: ChatZilla 0.9.88.2 [Firefox 12.0/20120423123513])
+2012-05-19 01:49:50	-->	nimbiotics (~chatzilla@c-76-18-20-235.hsd1.fl.comcast.net) se ha unido a #gnome
+2012-05-19 01:50:23	<--	Mike9863 (~Mike9863@pool-173-54-66-57.nwrknj.east.verizon.net) ha salido (Remote host closed the connection)

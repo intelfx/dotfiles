@@ -1,0 +1,1796 @@
+2012-05-18 14:42:39		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 14:42:39		irc: conectado a chat.freenode.net/6667 (193.219.128.49)
+2012-05-18 14:42:40	--	sendak.freenode.net (sendak.freenode.net): *** Looking up your hostname...
+2012-05-18 14:42:40	--	sendak.freenode.net (sendak.freenode.net): *** Checking Ident
+2012-05-18 14:42:40	--	sendak.freenode.net (sendak.freenode.net): *** No Ident response
+2012-05-18 14:42:40	--	sendak.freenode.net (sendak.freenode.net): *** Found your hostname
+2012-05-18 14:42:40		irc: el apodo "alex" ya está en uso, probando con apodo #2 ("alex1")
+2012-05-18 14:42:40		irc: el apodo "alex1" ya está en uso, probando con apodo #3 ("alex2")
+2012-05-18 14:42:40	--	Welcome to the freenode Internet Relay Chat Network alex2
+2012-05-18 14:42:40	--	Your host is sendak.freenode.net[193.219.128.49/6667], running version ircd-seven-1.1.3
+2012-05-18 14:42:40	--	This server was created Mon Nov 28 2011 at 00:37:27 EET
+2012-05-18 14:42:40	--	sendak.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 14:42:40	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 14:42:40	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 14:42:40	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 14:42:40	--	There are 279 users and 72793 invisible on 28 servers
+2012-05-18 14:42:40	--	40 :IRC Operators online
+2012-05-18 14:42:40	--	3 :unknown connection(s)
+2012-05-18 14:42:40	--	44359 :channels formed
+2012-05-18 14:42:40	--	I have 2422 clients and 1 servers
+2012-05-18 14:42:40	--	2422 4517 :Current local users 2422, max 4517
+2012-05-18 14:42:40	--	73072 81621 :Current global users 73072, max 81621
+2012-05-18 14:42:40	--	Highest connection count: 4518 (4517 clients) (536280 connections received)
+2012-05-18 14:42:40	--	- sendak.freenode.net Message of the Day -
+2012-05-18 14:42:40	--	- Welcome to sendak.freenode.net in Vilnius, Lithuania, EU.
+2012-05-18 14:42:40	--	- Thanks to Microlink Lietuva (http://www.microlink.lt) for providing this
+2012-05-18 14:42:40	--	- server!
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- SENDAK, MAURICE [1928-2012].  The author of Seven Little
+2012-05-18 14:42:40	--	- Monsters and Where the Wild Things Are, Maurice Sendak was
+2012-05-18 14:42:40	--	- born in Brooklyn, NY, US, to a family of poor Polish
+2012-05-18 14:42:40	--	- immigrants who moved to the US before World War II.  He
+2012-05-18 14:42:40	--	- became an illustrator while in high school.
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 14:42:40	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- By connecting to freenode you indicate that you have read
+2012-05-18 14:42:40	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 14:42:40	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 14:42:40	--	- you that unauthorized public logging of channels on the
+2012-05-18 14:42:40	--	- network is prohibited. Public channel logging should only
+2012-05-18 14:42:40	--	- take place where the channel owner(s) has requested this
+2012-05-18 14:42:40	--	- and users of the channel are all made aware (if you are
+2012-05-18 14:42:40	--	- publically logging your channel, you may wish to keep a
+2012-05-18 14:42:40	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 14:42:40	--	- indicates your acceptance of this policy. For details on
+2012-05-18 14:42:40	--	- freenode network policy, please take a look at our policy
+2012-05-18 14:42:40	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 14:42:40	--	- the network!
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 14:42:40	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 14:42:40	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 14:42:40	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 14:42:40	--	- [http://geeknic.org]
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 14:42:40	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 14:42:40	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- Thank you for using freenode!
+2012-05-18 14:42:40	--	-
+2012-05-18 14:42:40	--	- ***************************************************************
+2012-05-18 14:42:40	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 14:42:40	--	- ***************************************************************
+2012-05-18 14:42:40	--	End of /MOTD command.
+2012-05-18 14:42:40	--	Modo de usuario [+i] por alex2
+2012-05-18 14:42:41	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 14:42:58	=!=	irc: muy pocos argumentos para el comando "msg"
+2012-05-18 14:43:13	--	MSG(NickServ): identify
+2012-05-18 14:43:13	--	NickServ (NickServ@services.): Insufficient parameters for IDENTIFY.
+2012-05-18 14:43:13	--	NickServ (NickServ@services.): Syntax: IDENTIFY [nick] <password>
+2012-05-18 14:43:25		irc: desconectado del servidor
+2012-05-18 15:27:08		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 15:27:09		irc: conectado a chat.freenode.net/6667 (140.211.167.98)
+2012-05-18 15:27:09	--	niven.freenode.net (niven.freenode.net): *** Looking up your hostname...
+2012-05-18 15:27:09	--	niven.freenode.net (niven.freenode.net): *** Checking Ident
+2012-05-18 15:27:09	--	niven.freenode.net (niven.freenode.net): *** No Ident response
+2012-05-18 15:27:11	--	niven.freenode.net (niven.freenode.net): *** Found your hostname
+2012-05-18 15:27:11		irc: el apodo "alex" ya está en uso, probando con apodo #2 ("alex1")
+2012-05-18 15:27:11		irc: el apodo "alex1" ya está en uso, probando con apodo #3 ("alex2")
+2012-05-18 15:27:11	--	Welcome to the freenode Internet Relay Chat Network alex2
+2012-05-18 15:27:11	--	Your host is niven.freenode.net[140.211.167.98/6667], running version ircd-seven-1.1.3
+2012-05-18 15:27:11	--	This server was created Sun Dec 4 2011 at 13:42:48 UTC
+2012-05-18 15:27:11	--	niven.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 15:27:11	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 15:27:11	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 15:27:11	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 15:27:11	--	There are 278 users and 74180 invisible on 28 servers
+2012-05-18 15:27:11	--	40 :IRC Operators online
+2012-05-18 15:27:11	--	11 :unknown connection(s)
+2012-05-18 15:27:11	--	44489 :channels formed
+2012-05-18 15:27:11	--	I have 3607 clients and 2 servers
+2012-05-18 15:27:11	--	3607 4394 :Current local users 3607, max 4394
+2012-05-18 15:27:11	--	74458 81621 :Current global users 74458, max 81621
+2012-05-18 15:27:11	--	Highest connection count: 4396 (4394 clients) (1574063 connections received)
+2012-05-18 15:27:11	--	- niven.freenode.net Message of the Day -
+2012-05-18 15:27:11	--	- Welcome to niven.freenode.net in Corvallis, Oregon, US.  Our
+2012-05-18 15:27:11	--	- thanks to Oregon State University for sponsoring this server!
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- NIVEN, LAWRENCE VAN COTT [1938-].  Architect of Known Space,
+2012-05-18 15:27:11	--	- the setting of Protector, World of Ptaavs and the
+2012-05-18 15:27:11	--	- Ringworld series.  Author of "Flash Crowd", a canonical
+2012-05-18 15:27:11	--	- sociological hard science fiction short story dealing with
+2012-05-18 15:27:11	--	- effects of near instantaneous transportation on a modern
+2012-05-18 15:27:11	--	- technological society.  In addition, he is well known for his
+2012-05-18 15:27:11	--	- collaborations with Jerry Pournelle, including The Mote in
+2012-05-18 15:27:11	--	- God's Eye and Lucifer's Hammer.
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 15:27:11	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- By connecting to freenode you indicate that you have read
+2012-05-18 15:27:11	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 15:27:11	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 15:27:11	--	- you that unauthorized public logging of channels on the
+2012-05-18 15:27:11	--	- network is prohibited. Public channel logging should only
+2012-05-18 15:27:11	--	- take place where the channel owner(s) has requested this
+2012-05-18 15:27:11	--	- and users of the channel are all made aware (if you are
+2012-05-18 15:27:11	--	- publically logging your channel, you may wish to keep a
+2012-05-18 15:27:11	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 15:27:11	--	- indicates your acceptance of this policy. For details on
+2012-05-18 15:27:11	--	- freenode network policy, please take a look at our policy
+2012-05-18 15:27:11	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 15:27:11	--	- the network!
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 15:27:11	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 15:27:11	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 15:27:11	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 15:27:11	--	- [http://geeknic.org]
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 15:27:11	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 15:27:11	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- Thank you for using freenode!
+2012-05-18 15:27:11	--	-
+2012-05-18 15:27:11	--	- ***************************************************************
+2012-05-18 15:27:11	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 15:27:11	--	- ***************************************************************
+2012-05-18 15:27:11	--	End of /MOTD command.
+2012-05-18 15:27:11	--	Modo de usuario [+i] por alex2
+2012-05-18 15:27:11	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 15:27:17	=!=	irc: muy pocos argumentos para el comando "nick"
+2012-05-18 15:27:31	=!=	irc: ¡este buffer no es un canal!
+2012-05-18 15:32:52	=!=	irc: muy pocos argumentos para el comando "squit"
+2012-05-18 15:41:36		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 15:41:37		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 15:41:37	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 15:41:37	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 15:41:37	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 15:41:37	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 15:41:37		irc: el apodo "alex" ya está en uso, probando con apodo #2 ("alex1")
+2012-05-18 15:41:37		irc: el apodo "alex1" ya está en uso, probando con apodo #3 ("alex2")
+2012-05-18 15:41:37	--	Welcome to the freenode Internet Relay Chat Network alex2
+2012-05-18 15:41:37	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 15:41:37	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 15:41:37	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 15:41:37	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 15:41:37	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 15:41:37	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 15:41:37	--	There are 275 users and 74663 invisible on 28 servers
+2012-05-18 15:41:37	--	40 :IRC Operators online
+2012-05-18 15:41:37	--	5 :unknown connection(s)
+2012-05-18 15:41:37	--	44490 :channels formed
+2012-05-18 15:41:37	--	I have 10134 clients and 1 servers
+2012-05-18 15:41:37	--	10134 10768 :Current local users 10134, max 10768
+2012-05-18 15:41:37	--	74938 81621 :Current global users 74938, max 81621
+2012-05-18 15:41:37	--	Highest connection count: 10769 (10768 clients) (1373807 connections received)
+2012-05-18 15:41:37	--	- calvino.freenode.net Message of the Day -
+2012-05-18 15:41:37	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 15:41:37	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 15:41:37	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 15:41:37	--	- partisans during the German occupation and, after writing a
+2012-05-18 15:41:37	--	- series of stories which drew on his experiences, he became a
+2012-05-18 15:41:37	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 15:41:37	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 15:41:37	--	- important contributions to Italian literature in the middle
+2012-05-18 15:41:37	--	- of the last century.
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 15:41:37	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- By connecting to freenode you indicate that you have read
+2012-05-18 15:41:37	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 15:41:37	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 15:41:37	--	- you that unauthorized public logging of channels on the
+2012-05-18 15:41:37	--	- network is prohibited. Public channel logging should only
+2012-05-18 15:41:37	--	- take place where the channel owner(s) has requested this
+2012-05-18 15:41:37	--	- and users of the channel are all made aware (if you are
+2012-05-18 15:41:37	--	- publically logging your channel, you may wish to keep a
+2012-05-18 15:41:37	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 15:41:37	--	- indicates your acceptance of this policy. For details on
+2012-05-18 15:41:37	--	- freenode network policy, please take a look at our policy
+2012-05-18 15:41:37	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 15:41:37	--	- the network!
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 15:41:37	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 15:41:37	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 15:41:37	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 15:41:37	--	- [http://geeknic.org]
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 15:41:37	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 15:41:37	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- Thank you for using freenode!
+2012-05-18 15:41:37	--	-
+2012-05-18 15:41:37	--	- ***************************************************************
+2012-05-18 15:41:37	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 15:41:37	--	- ***************************************************************
+2012-05-18 15:41:37	--	End of /MOTD command.
+2012-05-18 15:41:37	--	Modo de usuario [+i] por alex2
+2012-05-18 15:41:37	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 15:48:06	--	ChanServ (ChanServ@services.): [#weechat] Welcome to WeeChat english support channel. IMPORTANT: you *MUST* have read docs and FAQ before asking something on this channel! Read them at: http://weechat.org/doc/
+2012-05-18 15:52:08		irc: desconectado del servidor
+2012-05-18 15:53:39		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 15:53:39		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 15:53:40	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 15:53:40	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 15:53:40	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 15:53:40	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 15:53:40		irc: el apodo "alex" ya está en uso, probando con apodo #2 ("alex1")
+2012-05-18 15:53:40		irc: el apodo "alex1" ya está en uso, probando con apodo #3 ("alex2")
+2012-05-18 15:53:40	--	Welcome to the freenode Internet Relay Chat Network alex2
+2012-05-18 15:53:40	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 15:53:40	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 15:53:40	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 15:53:40	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 15:53:40	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 15:53:40	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 15:53:40	--	There are 272 users and 74848 invisible on 28 servers
+2012-05-18 15:53:40	--	39 :IRC Operators online
+2012-05-18 15:53:40	--	15 :unknown connection(s)
+2012-05-18 15:53:40	--	44525 :channels formed
+2012-05-18 15:53:40	--	I have 10250 clients and 1 servers
+2012-05-18 15:53:40	--	10250 10768 :Current local users 10250, max 10768
+2012-05-18 15:53:40	--	75120 81621 :Current global users 75120, max 81621
+2012-05-18 15:53:40	--	Highest connection count: 10769 (10768 clients) (1374187 connections received)
+2012-05-18 15:53:40	--	- calvino.freenode.net Message of the Day -
+2012-05-18 15:53:40	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 15:53:40	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 15:53:40	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 15:53:40	--	- partisans during the German occupation and, after writing a
+2012-05-18 15:53:40	--	- series of stories which drew on his experiences, he became a
+2012-05-18 15:53:40	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 15:53:40	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 15:53:40	--	- important contributions to Italian literature in the middle
+2012-05-18 15:53:40	--	- of the last century.
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 15:53:40	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- By connecting to freenode you indicate that you have read
+2012-05-18 15:53:40	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 15:53:40	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 15:53:40	--	- you that unauthorized public logging of channels on the
+2012-05-18 15:53:40	--	- network is prohibited. Public channel logging should only
+2012-05-18 15:53:40	--	- take place where the channel owner(s) has requested this
+2012-05-18 15:53:40	--	- and users of the channel are all made aware (if you are
+2012-05-18 15:53:40	--	- publically logging your channel, you may wish to keep a
+2012-05-18 15:53:40	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 15:53:40	--	- indicates your acceptance of this policy. For details on
+2012-05-18 15:53:40	--	- freenode network policy, please take a look at our policy
+2012-05-18 15:53:40	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 15:53:40	--	- the network!
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 15:53:40	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 15:53:40	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 15:53:40	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 15:53:40	--	- [http://geeknic.org]
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 15:53:40	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 15:53:40	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- Thank you for using freenode!
+2012-05-18 15:53:40	--	-
+2012-05-18 15:53:40	--	- ***************************************************************
+2012-05-18 15:53:40	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 15:53:40	--	- ***************************************************************
+2012-05-18 15:53:40	--	End of /MOTD command.
+2012-05-18 15:53:40	--	Modo de usuario [+i] por alex2
+2012-05-18 15:53:40	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 15:53:58	--	MSG(nickserv): identify ******
+2012-05-18 15:53:59	--	NickServ (NickServ@services.): Invalid password for alexg.
+2012-05-18 15:54:16	--	MSG(kniren): identify ******
+2012-05-18 15:54:16	--	kniren: No such nick/channel
+2012-05-18 15:54:45		irc: desconectado del servidor
+2012-05-18 15:54:47		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 15:54:47		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 15:54:48	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 15:54:48	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 15:54:48	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 15:54:48	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 15:54:48		irc: el apodo "alex" ya está en uso, probando con apodo #2 ("alex1")
+2012-05-18 15:54:48		irc: el apodo "alex1" ya está en uso, probando con apodo #3 ("alex2")
+2012-05-18 15:54:48	--	Welcome to the freenode Internet Relay Chat Network alex2
+2012-05-18 15:54:48	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 15:54:48	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 15:54:48	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 15:54:48	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 15:54:48	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 15:54:48	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 15:54:48	--	There are 272 users and 74869 invisible on 28 servers
+2012-05-18 15:54:48	--	39 :IRC Operators online
+2012-05-18 15:54:48	--	8 :unknown connection(s)
+2012-05-18 15:54:48	--	44527 :channels formed
+2012-05-18 15:54:48	--	I have 10260 clients and 1 servers
+2012-05-18 15:54:48	--	10260 10768 :Current local users 10260, max 10768
+2012-05-18 15:54:48	--	75141 81621 :Current global users 75141, max 81621
+2012-05-18 15:54:48	--	Highest connection count: 10769 (10768 clients) (1374215 connections received)
+2012-05-18 15:54:48	--	- calvino.freenode.net Message of the Day -
+2012-05-18 15:54:48	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 15:54:48	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 15:54:48	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 15:54:48	--	- partisans during the German occupation and, after writing a
+2012-05-18 15:54:48	--	- series of stories which drew on his experiences, he became a
+2012-05-18 15:54:48	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 15:54:48	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 15:54:48	--	- important contributions to Italian literature in the middle
+2012-05-18 15:54:48	--	- of the last century.
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 15:54:48	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- By connecting to freenode you indicate that you have read
+2012-05-18 15:54:48	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 15:54:48	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 15:54:48	--	- you that unauthorized public logging of channels on the
+2012-05-18 15:54:48	--	- network is prohibited. Public channel logging should only
+2012-05-18 15:54:48	--	- take place where the channel owner(s) has requested this
+2012-05-18 15:54:48	--	- and users of the channel are all made aware (if you are
+2012-05-18 15:54:48	--	- publically logging your channel, you may wish to keep a
+2012-05-18 15:54:48	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 15:54:48	--	- indicates your acceptance of this policy. For details on
+2012-05-18 15:54:48	--	- freenode network policy, please take a look at our policy
+2012-05-18 15:54:48	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 15:54:48	--	- the network!
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 15:54:48	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 15:54:48	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 15:54:48	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 15:54:48	--	- [http://geeknic.org]
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 15:54:48	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 15:54:48	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- Thank you for using freenode!
+2012-05-18 15:54:48	--	-
+2012-05-18 15:54:48	--	- ***************************************************************
+2012-05-18 15:54:48	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 15:54:48	--	- ***************************************************************
+2012-05-18 15:54:48	--	End of /MOTD command.
+2012-05-18 15:54:48	--	Modo de usuario [+i] por alex2
+2012-05-18 15:54:48	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 15:54:51		irc: desconectado del servidor
+2012-05-18 15:58:09		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 15:58:09		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 15:58:09	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 15:58:09	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 15:58:09	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 15:58:09	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 15:58:09		irc: el apodo "alex" ya está en uso, probando con apodo #2 ("alex1")
+2012-05-18 15:58:09		irc: el apodo "alex1" ya está en uso, probando con apodo #3 ("alex2")
+2012-05-18 15:58:09	--	Welcome to the freenode Internet Relay Chat Network alex2
+2012-05-18 15:58:09	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 15:58:09	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 15:58:09	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 15:58:09	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 15:58:09	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 15:58:09	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 15:58:09	--	There are 273 users and 75012 invisible on 28 servers
+2012-05-18 15:58:09	--	40 :IRC Operators online
+2012-05-18 15:58:09	--	11 :unknown connection(s)
+2012-05-18 15:58:09	--	44550 :channels formed
+2012-05-18 15:58:09	--	I have 10272 clients and 1 servers
+2012-05-18 15:58:09	--	10272 10768 :Current local users 10272, max 10768
+2012-05-18 15:58:09	--	75285 81621 :Current global users 75285, max 81621
+2012-05-18 15:58:09	--	Highest connection count: 10769 (10768 clients) (1374307 connections received)
+2012-05-18 15:58:09	--	- calvino.freenode.net Message of the Day -
+2012-05-18 15:58:09	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 15:58:09	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 15:58:09	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 15:58:09	--	- partisans during the German occupation and, after writing a
+2012-05-18 15:58:09	--	- series of stories which drew on his experiences, he became a
+2012-05-18 15:58:09	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 15:58:09	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 15:58:09	--	- important contributions to Italian literature in the middle
+2012-05-18 15:58:09	--	- of the last century.
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 15:58:09	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- By connecting to freenode you indicate that you have read
+2012-05-18 15:58:09	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 15:58:09	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 15:58:09	--	- you that unauthorized public logging of channels on the
+2012-05-18 15:58:09	--	- network is prohibited. Public channel logging should only
+2012-05-18 15:58:09	--	- take place where the channel owner(s) has requested this
+2012-05-18 15:58:09	--	- and users of the channel are all made aware (if you are
+2012-05-18 15:58:09	--	- publically logging your channel, you may wish to keep a
+2012-05-18 15:58:09	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 15:58:09	--	- indicates your acceptance of this policy. For details on
+2012-05-18 15:58:09	--	- freenode network policy, please take a look at our policy
+2012-05-18 15:58:09	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 15:58:09	--	- the network!
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 15:58:09	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 15:58:09	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 15:58:09	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 15:58:09	--	- [http://geeknic.org]
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 15:58:09	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 15:58:09	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- Thank you for using freenode!
+2012-05-18 15:58:09	--	-
+2012-05-18 15:58:09	--	- ***************************************************************
+2012-05-18 15:58:09	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 15:58:09	--	- ***************************************************************
+2012-05-18 15:58:09	--	End of /MOTD command.
+2012-05-18 15:58:09	--	Modo de usuario [+i] por alex2
+2012-05-18 15:58:10	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 15:59:51	--	MSG(NickServ): identify
+2012-05-18 15:59:51	--	NickServ (NickServ@services.): Insufficient parameters for IDENTIFY.
+2012-05-18 15:59:51	--	NickServ (NickServ@services.): Syntax: IDENTIFY [nick] <password>
+2012-05-18 15:59:58	--	MSG(NickServ): identify ********
+2012-05-18 15:59:58	--	NickServ (NickServ@services.): kniren is not a registered nickname.
+2012-05-18 16:00:53	--	MSG(nickserv): register ******** kniren
+2012-05-18 16:00:54	--	NickServ (NickServ@services.): kniren is not a valid email address.
+2012-05-18 16:00:59	--	MSG(nickserv): register ******** kniren@gmail.com
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): An email containing nickname activation instructions has been sent to kniren@gmail.com.
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): If you do not complete registration within one day, your nickname will expire.
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): kniren is now registered to kniren@gmail.com, with the password 19894471.
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): 
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): freenode is a service of Peer-Directed Projects Center, a
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): not-for-profit organisation registered in England and Wales.
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): For frequently-asked questions about the network, please see the
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): FAQ page (http://freenode.net/faq.shtml). Should you wish to
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): support the PDPC you can contribute to our current fundraiser at
+2012-05-18 16:00:59	--	NickServ (NickServ@services.): http://freenode.net/pdpc_donations.shtml.
+2012-05-18 16:01:56	--	MSG(nickserv): set hidemail on
+2012-05-18 16:01:57	--	NickServ (NickServ@services.): The HIDEMAIL flag is already set for account kniren.
+2012-05-18 16:02:15		irc: desconectado del servidor
+2012-05-18 16:02:17		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 16:02:17		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 16:02:17	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 16:02:17	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 16:02:17	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 16:02:17	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 16:02:17		irc: el apodo "alex" ya está en uso, probando con apodo #2 ("alex1")
+2012-05-18 16:02:17		irc: el apodo "alex1" ya está en uso, probando con apodo #3 ("alex2")
+2012-05-18 16:02:17	--	Welcome to the freenode Internet Relay Chat Network alex2
+2012-05-18 16:02:17	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 16:02:17	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 16:02:17	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 16:02:17	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 16:02:17	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 16:02:17	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 16:02:17	--	There are 273 users and 75128 invisible on 28 servers
+2012-05-18 16:02:17	--	40 :IRC Operators online
+2012-05-18 16:02:17	--	11 :unknown connection(s)
+2012-05-18 16:02:17	--	44558 :channels formed
+2012-05-18 16:02:17	--	I have 10285 clients and 1 servers
+2012-05-18 16:02:17	--	10285 10768 :Current local users 10285, max 10768
+2012-05-18 16:02:17	--	75401 81621 :Current global users 75401, max 81621
+2012-05-18 16:02:17	--	Highest connection count: 10769 (10768 clients) (1374439 connections received)
+2012-05-18 16:02:17	--	- calvino.freenode.net Message of the Day -
+2012-05-18 16:02:17	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 16:02:17	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 16:02:17	--	-
+2012-05-18 16:02:17	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 16:02:17	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 16:02:17	--	- partisans during the German occupation and, after writing a
+2012-05-18 16:02:17	--	- series of stories which drew on his experiences, he became a
+2012-05-18 16:02:17	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 16:02:17	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 16:02:17	--	- important contributions to Italian literature in the middle
+2012-05-18 16:02:17	--	- of the last century.
+2012-05-18 16:02:17	--	-
+2012-05-18 16:02:17	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 16:02:17	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 16:02:17	--	-
+2012-05-18 16:02:17	--	- By connecting to freenode you indicate that you have read
+2012-05-18 16:02:17	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 16:02:17	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 16:02:17	--	- you that unauthorized public logging of channels on the
+2012-05-18 16:02:17	--	- network is prohibited. Public channel logging should only
+2012-05-18 16:02:17	--	- take place where the channel owner(s) has requested this
+2012-05-18 16:02:17	--	- and users of the channel are all made aware (if you are
+2012-05-18 16:02:17	--	- publically logging your channel, you may wish to keep a
+2012-05-18 16:02:17	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 16:02:17	--	-
+2012-05-18 16:02:17	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 16:02:17	--	- indicates your acceptance of this policy. For details on
+2012-05-18 16:02:17	--	- freenode network policy, please take a look at our policy
+2012-05-18 16:02:17	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 16:02:17	--	- the network!
+2012-05-18 16:02:17	--	-
+2012-05-18 16:02:17	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 16:02:18	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 16:02:18	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 16:02:18	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 16:02:18	--	- [http://geeknic.org]
+2012-05-18 16:02:18	--	-
+2012-05-18 16:02:18	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 16:02:18	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 16:02:18	--	-
+2012-05-18 16:02:18	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 16:02:18	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 16:02:18	--	-
+2012-05-18 16:02:18	--	- Thank you for using freenode!
+2012-05-18 16:02:18	--	-
+2012-05-18 16:02:18	--	- ***************************************************************
+2012-05-18 16:02:18	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 16:02:18	--	- ***************************************************************
+2012-05-18 16:02:18	--	End of /MOTD command.
+2012-05-18 16:02:18	--	Modo de usuario [+i] por alex2
+2012-05-18 16:02:18	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 16:02:43	--	MSG(nickserv): identify ********
+2012-05-18 16:02:43	--	NickServ (NickServ@services.): Invalid password for alexg.
+2012-05-18 16:03:03	--	MSG(nickserv): identify ********
+2012-05-18 16:03:04	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 16:03:04	--	NickServ (NickServ@services.): Invalid password for kniren.
+2012-05-18 16:03:09	--	MSG(nickserv): identify ********
+2012-05-18 16:03:10	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-18 16:03:10	--	NickServ (NickServ@services.): 1 failed login since last login.
+2012-05-18 16:03:10	--	NickServ (NickServ@services.): Last failed attempt from: kniren!~kniren@178.25.23.95.dynamic.jazztel.es on May 18 14:03:27 2012.
+2012-05-18 16:04:44		irc: desconectado del servidor
+2012-05-18 16:04:46		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 16:04:46		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 16:04:46	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 16:04:46	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 16:04:46	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 16:04:46	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 16:04:46		irc: el apodo "alex" ya está en uso, probando con apodo #2 ("alex1")
+2012-05-18 16:04:46		irc: el apodo "alex1" ya está en uso, probando con apodo #3 ("alex2")
+2012-05-18 16:04:46	--	Welcome to the freenode Internet Relay Chat Network alex2
+2012-05-18 16:04:46	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 16:04:46	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 16:04:46	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 16:04:46	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 16:04:46	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 16:04:46	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 16:04:46	--	There are 272 users and 75169 invisible on 28 servers
+2012-05-18 16:04:46	--	40 :IRC Operators online
+2012-05-18 16:04:46	--	15 :unknown connection(s)
+2012-05-18 16:04:46	--	44558 :channels formed
+2012-05-18 16:04:46	--	I have 10305 clients and 1 servers
+2012-05-18 16:04:46	--	10305 10768 :Current local users 10305, max 10768
+2012-05-18 16:04:46	--	75441 81621 :Current global users 75441, max 81621
+2012-05-18 16:04:46	--	Highest connection count: 10769 (10768 clients) (1374510 connections received)
+2012-05-18 16:04:46	--	- calvino.freenode.net Message of the Day -
+2012-05-18 16:04:46	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 16:04:46	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 16:04:46	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 16:04:46	--	- partisans during the German occupation and, after writing a
+2012-05-18 16:04:46	--	- series of stories which drew on his experiences, he became a
+2012-05-18 16:04:46	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 16:04:46	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 16:04:46	--	- important contributions to Italian literature in the middle
+2012-05-18 16:04:46	--	- of the last century.
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 16:04:46	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- By connecting to freenode you indicate that you have read
+2012-05-18 16:04:46	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 16:04:46	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 16:04:46	--	- you that unauthorized public logging of channels on the
+2012-05-18 16:04:46	--	- network is prohibited. Public channel logging should only
+2012-05-18 16:04:46	--	- take place where the channel owner(s) has requested this
+2012-05-18 16:04:46	--	- and users of the channel are all made aware (if you are
+2012-05-18 16:04:46	--	- publically logging your channel, you may wish to keep a
+2012-05-18 16:04:46	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 16:04:46	--	- indicates your acceptance of this policy. For details on
+2012-05-18 16:04:46	--	- freenode network policy, please take a look at our policy
+2012-05-18 16:04:46	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 16:04:46	--	- the network!
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 16:04:46	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 16:04:46	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 16:04:46	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 16:04:46	--	- [http://geeknic.org]
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 16:04:46	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 16:04:46	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- Thank you for using freenode!
+2012-05-18 16:04:46	--	-
+2012-05-18 16:04:46	--	- ***************************************************************
+2012-05-18 16:04:46	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 16:04:46	--	- ***************************************************************
+2012-05-18 16:04:46	--	End of /MOTD command.
+2012-05-18 16:04:46	--	Modo de usuario [+i] por alex2
+2012-05-18 16:04:46	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 16:06:43		irc: desconectado del servidor
+2012-05-18 16:06:44		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 16:06:50		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 16:06:50	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 16:06:50	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 16:06:50	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 16:06:50	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 16:06:50	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-18 16:06:50	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 16:06:50	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 16:06:50	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 16:06:50	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 16:06:50	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 16:06:50	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 16:06:50	--	There are 274 users and 75254 invisible on 28 servers
+2012-05-18 16:06:50	--	40 :IRC Operators online
+2012-05-18 16:06:50	--	16 :unknown connection(s)
+2012-05-18 16:06:50	--	44557 :channels formed
+2012-05-18 16:06:50	--	I have 10331 clients and 1 servers
+2012-05-18 16:06:50	--	10331 10768 :Current local users 10331, max 10768
+2012-05-18 16:06:50	--	75528 81621 :Current global users 75528, max 81621
+2012-05-18 16:06:50	--	Highest connection count: 10769 (10768 clients) (1374582 connections received)
+2012-05-18 16:06:50	--	- calvino.freenode.net Message of the Day -
+2012-05-18 16:06:50	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 16:06:50	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 16:06:50	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 16:06:50	--	- partisans during the German occupation and, after writing a
+2012-05-18 16:06:50	--	- series of stories which drew on his experiences, he became a
+2012-05-18 16:06:50	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 16:06:50	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 16:06:50	--	- important contributions to Italian literature in the middle
+2012-05-18 16:06:50	--	- of the last century.
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 16:06:50	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- By connecting to freenode you indicate that you have read
+2012-05-18 16:06:50	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 16:06:50	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 16:06:50	--	- you that unauthorized public logging of channels on the
+2012-05-18 16:06:50	--	- network is prohibited. Public channel logging should only
+2012-05-18 16:06:50	--	- take place where the channel owner(s) has requested this
+2012-05-18 16:06:50	--	- and users of the channel are all made aware (if you are
+2012-05-18 16:06:50	--	- publically logging your channel, you may wish to keep a
+2012-05-18 16:06:50	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 16:06:50	--	- indicates your acceptance of this policy. For details on
+2012-05-18 16:06:50	--	- freenode network policy, please take a look at our policy
+2012-05-18 16:06:50	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 16:06:50	--	- the network!
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 16:06:50	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 16:06:50	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 16:06:50	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 16:06:50	--	- [http://geeknic.org]
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 16:06:50	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 16:06:50	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- Thank you for using freenode!
+2012-05-18 16:06:50	--	-
+2012-05-18 16:06:50	--	- ***************************************************************
+2012-05-18 16:06:50	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 16:06:50	--	- ***************************************************************
+2012-05-18 16:06:50	--	End of /MOTD command.
+2012-05-18 16:06:50	--	Modo de usuario [+i] por kniren
+2012-05-18 16:06:51	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 16:07:40		irc: desconectado del servidor
+2012-05-18 16:07:41		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 16:07:41		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 16:07:41	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 16:07:41	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 16:07:41	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 16:07:41	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 16:07:41	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-18 16:07:41	--	MSG(nickserv): identify ********
+2012-05-18 16:07:41	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 16:07:41	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 16:07:41	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 16:07:41	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 16:07:41	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 16:07:41	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 16:07:41	--	There are 274 users and 75281 invisible on 28 servers
+2012-05-18 16:07:41	--	40 :IRC Operators online
+2012-05-18 16:07:41	--	22 :unknown connection(s)
+2012-05-18 16:07:41	--	44566 :channels formed
+2012-05-18 16:07:41	--	I have 10337 clients and 1 servers
+2012-05-18 16:07:41	--	10337 10768 :Current local users 10337, max 10768
+2012-05-18 16:07:41	--	75555 81621 :Current global users 75555, max 81621
+2012-05-18 16:07:41	--	Highest connection count: 10769 (10768 clients) (1374606 connections received)
+2012-05-18 16:07:41	--	- calvino.freenode.net Message of the Day -
+2012-05-18 16:07:41	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 16:07:41	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 16:07:41	--	-
+2012-05-18 16:07:41	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 16:07:41	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 16:07:41	--	- partisans during the German occupation and, after writing a
+2012-05-18 16:07:41	--	- series of stories which drew on his experiences, he became a
+2012-05-18 16:07:41	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 16:07:41	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 16:07:41	--	- important contributions to Italian literature in the middle
+2012-05-18 16:07:41	--	- of the last century.
+2012-05-18 16:07:41	--	-
+2012-05-18 16:07:41	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 16:07:42	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 16:07:42	--	-
+2012-05-18 16:07:42	--	- By connecting to freenode you indicate that you have read
+2012-05-18 16:07:42	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 16:07:42	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 16:07:42	--	- you that unauthorized public logging of channels on the
+2012-05-18 16:07:42	--	- network is prohibited. Public channel logging should only
+2012-05-18 16:07:42	--	- take place where the channel owner(s) has requested this
+2012-05-18 16:07:42	--	- and users of the channel are all made aware (if you are
+2012-05-18 16:07:42	--	- publically logging your channel, you may wish to keep a
+2012-05-18 16:07:42	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 16:07:42	--	-
+2012-05-18 16:07:42	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 16:07:42	--	- indicates your acceptance of this policy. For details on
+2012-05-18 16:07:42	--	- freenode network policy, please take a look at our policy
+2012-05-18 16:07:42	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 16:07:42	--	- the network!
+2012-05-18 16:07:42	--	-
+2012-05-18 16:07:42	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 16:07:42	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 16:07:42	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 16:07:42	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 16:07:42	--	- [http://geeknic.org]
+2012-05-18 16:07:42	--	-
+2012-05-18 16:07:42	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 16:07:42	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 16:07:42	--	-
+2012-05-18 16:07:42	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 16:07:42	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 16:07:42	--	-
+2012-05-18 16:07:42	--	- Thank you for using freenode!
+2012-05-18 16:07:42	--	-
+2012-05-18 16:07:42	--	- ***************************************************************
+2012-05-18 16:07:42	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 16:07:42	--	- ***************************************************************
+2012-05-18 16:07:42	--	End of /MOTD command.
+2012-05-18 16:07:42	--	Modo de usuario [+i] por kniren
+2012-05-18 16:07:42	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 16:08:06	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-18 16:08:11		irc: desconectado del servidor
+2012-05-18 16:08:12		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 16:08:12		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 16:08:12	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 16:08:12	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 16:08:12	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 16:08:12	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 16:08:12	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-18 16:08:12	--	MSG(nickserv): identify ********
+2012-05-18 16:08:12	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 16:08:12	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 16:08:12	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 16:08:12	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 16:08:12	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 16:08:12	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 16:08:12	--	There are 274 users and 75300 invisible on 28 servers
+2012-05-18 16:08:12	--	40 :IRC Operators online
+2012-05-18 16:08:12	--	19 :unknown connection(s)
+2012-05-18 16:08:12	--	44565 :channels formed
+2012-05-18 16:08:12	--	I have 10345 clients and 1 servers
+2012-05-18 16:08:12	--	10345 10768 :Current local users 10345, max 10768
+2012-05-18 16:08:12	--	75574 81621 :Current global users 75574, max 81621
+2012-05-18 16:08:12	--	Highest connection count: 10769 (10768 clients) (1374622 connections received)
+2012-05-18 16:08:12	--	- calvino.freenode.net Message of the Day -
+2012-05-18 16:08:12	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 16:08:12	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 16:08:12	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 16:08:12	--	- partisans during the German occupation and, after writing a
+2012-05-18 16:08:12	--	- series of stories which drew on his experiences, he became a
+2012-05-18 16:08:12	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 16:08:12	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 16:08:12	--	- important contributions to Italian literature in the middle
+2012-05-18 16:08:12	--	- of the last century.
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 16:08:12	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- By connecting to freenode you indicate that you have read
+2012-05-18 16:08:12	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 16:08:12	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 16:08:12	--	- you that unauthorized public logging of channels on the
+2012-05-18 16:08:12	--	- network is prohibited. Public channel logging should only
+2012-05-18 16:08:12	--	- take place where the channel owner(s) has requested this
+2012-05-18 16:08:12	--	- and users of the channel are all made aware (if you are
+2012-05-18 16:08:12	--	- publically logging your channel, you may wish to keep a
+2012-05-18 16:08:12	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 16:08:12	--	- indicates your acceptance of this policy. For details on
+2012-05-18 16:08:12	--	- freenode network policy, please take a look at our policy
+2012-05-18 16:08:12	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 16:08:12	--	- the network!
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 16:08:12	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 16:08:12	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 16:08:12	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 16:08:12	--	- [http://geeknic.org]
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 16:08:12	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 16:08:12	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- Thank you for using freenode!
+2012-05-18 16:08:12	--	-
+2012-05-18 16:08:12	--	- ***************************************************************
+2012-05-18 16:08:12	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 16:08:12	--	- ***************************************************************
+2012-05-18 16:08:12	--	End of /MOTD command.
+2012-05-18 16:08:12	--	Modo de usuario [+i] por kniren
+2012-05-18 16:08:12	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 16:08:17	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-18 16:13:03	--	ChanServ (ChanServ@services.): [#weechat] Welcome to WeeChat english support channel. IMPORTANT: you *MUST* have read docs and FAQ before asking something on this channel! Read them at: http://weechat.org/doc/
+2012-05-18 16:21:39		irc: desconectado del servidor
+2012-05-18 16:21:40		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 16:21:40		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 16:21:40	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 16:21:40	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 16:21:40	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 16:21:40	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 16:21:40	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-18 16:21:40	--	MSG(nickserv): identify ********
+2012-05-18 16:21:40	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 16:21:40	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 16:21:40	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 16:21:40	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 16:21:40	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 16:21:40	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 16:21:40	--	There are 276 users and 75661 invisible on 28 servers
+2012-05-18 16:21:40	--	40 :IRC Operators online
+2012-05-18 16:21:40	--	20 :unknown connection(s)
+2012-05-18 16:21:40	--	44604 :channels formed
+2012-05-18 16:21:40	--	I have 10393 clients and 1 servers
+2012-05-18 16:21:40	--	10393 10768 :Current local users 10393, max 10768
+2012-05-18 16:21:40	--	75937 81621 :Current global users 75937, max 81621
+2012-05-18 16:21:40	--	Highest connection count: 10769 (10768 clients) (1374969 connections received)
+2012-05-18 16:21:40	--	- calvino.freenode.net Message of the Day -
+2012-05-18 16:21:40	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 16:21:40	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 16:21:40	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 16:21:40	--	- partisans during the German occupation and, after writing a
+2012-05-18 16:21:40	--	- series of stories which drew on his experiences, he became a
+2012-05-18 16:21:40	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 16:21:40	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 16:21:40	--	- important contributions to Italian literature in the middle
+2012-05-18 16:21:40	--	- of the last century.
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 16:21:40	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- By connecting to freenode you indicate that you have read
+2012-05-18 16:21:40	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 16:21:40	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 16:21:40	--	- you that unauthorized public logging of channels on the
+2012-05-18 16:21:40	--	- network is prohibited. Public channel logging should only
+2012-05-18 16:21:40	--	- take place where the channel owner(s) has requested this
+2012-05-18 16:21:40	--	- and users of the channel are all made aware (if you are
+2012-05-18 16:21:40	--	- publically logging your channel, you may wish to keep a
+2012-05-18 16:21:40	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 16:21:40	--	- indicates your acceptance of this policy. For details on
+2012-05-18 16:21:40	--	- freenode network policy, please take a look at our policy
+2012-05-18 16:21:40	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 16:21:40	--	- the network!
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 16:21:40	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 16:21:40	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 16:21:40	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 16:21:40	--	- [http://geeknic.org]
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 16:21:40	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 16:21:40	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- Thank you for using freenode!
+2012-05-18 16:21:40	--	-
+2012-05-18 16:21:40	--	- ***************************************************************
+2012-05-18 16:21:40	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 16:21:40	--	- ***************************************************************
+2012-05-18 16:21:40	--	End of /MOTD command.
+2012-05-18 16:21:40	--	Modo de usuario [+i] por kniren
+2012-05-18 16:21:41	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 16:21:45	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-18 16:22:43	--	ChanServ (ChanServ@services.): [#weechat] Welcome to WeeChat english support channel. IMPORTANT: you *MUST* have read docs and FAQ before asking something on this channel! Read them at: http://weechat.org/doc/
+2012-05-18 16:33:05		irc: desconectado del servidor
+2012-05-18 16:33:07		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 16:33:07		irc: conectado a chat.freenode.net/6667 (213.92.8.4)
+2012-05-18 16:33:07	--	calvino.freenode.net (calvino.freenode.net): *** Looking up your hostname...
+2012-05-18 16:33:07	--	calvino.freenode.net (calvino.freenode.net): *** Checking Ident
+2012-05-18 16:33:07	--	calvino.freenode.net (calvino.freenode.net): *** Found your hostname
+2012-05-18 16:33:07	--	calvino.freenode.net (calvino.freenode.net): *** No Ident response
+2012-05-18 16:33:07	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-18 16:33:07	--	MSG(nickserv): identify ********
+2012-05-18 16:33:07	--	Your host is calvino.freenode.net[213.92.8.4/6667], running version ircd-seven-1.1.3
+2012-05-18 16:33:07	--	This server was created Sun Dec 4 2011 at 14:42:47 CET
+2012-05-18 16:33:07	--	calvino.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 16:33:07	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 16:33:07	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 16:33:07	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 16:33:07	--	There are 275 users and 75916 invisible on 28 servers
+2012-05-18 16:33:07	--	40 :IRC Operators online
+2012-05-18 16:33:07	--	8 :unknown connection(s)
+2012-05-18 16:33:07	--	44662 :channels formed
+2012-05-18 16:33:07	--	I have 10431 clients and 1 servers
+2012-05-18 16:33:07	--	10431 10768 :Current local users 10431, max 10768
+2012-05-18 16:33:07	--	76191 81621 :Current global users 76191, max 81621
+2012-05-18 16:33:07	--	Highest connection count: 10769 (10768 clients) (1375256 connections received)
+2012-05-18 16:33:07	--	- calvino.freenode.net Message of the Day -
+2012-05-18 16:33:07	--	- Welcome to calvino.freenode.net in Milan, Italy! Thanks to
+2012-05-18 16:33:07	--	- I.Net S.p.A. (www.inet.it) for sponsoring this server!
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- CALVINO, ITALO [1923-1985].  Born in Cuba, Italo Calvino grew
+2012-05-18 16:33:07	--	- up in San Remo, Italy.  During World War II, he joined the
+2012-05-18 16:33:07	--	- partisans during the German occupation and, after writing a
+2012-05-18 16:33:07	--	- series of stories which drew on his experiences, he became a
+2012-05-18 16:33:07	--	- journalist. His work included Mr. Palomar, Under the
+2012-05-18 16:33:07	--	- Jaguar Sun, Cosmicomics and t zero.  Calvino made
+2012-05-18 16:33:07	--	- important contributions to Italian literature in the middle
+2012-05-18 16:33:07	--	- of the last century.
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 16:33:07	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- By connecting to freenode you indicate that you have read
+2012-05-18 16:33:07	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 16:33:07	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 16:33:07	--	- you that unauthorized public logging of channels on the
+2012-05-18 16:33:07	--	- network is prohibited. Public channel logging should only
+2012-05-18 16:33:07	--	- take place where the channel owner(s) has requested this
+2012-05-18 16:33:07	--	- and users of the channel are all made aware (if you are
+2012-05-18 16:33:07	--	- publically logging your channel, you may wish to keep a
+2012-05-18 16:33:07	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 16:33:07	--	- indicates your acceptance of this policy. For details on
+2012-05-18 16:33:07	--	- freenode network policy, please take a look at our policy
+2012-05-18 16:33:07	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 16:33:07	--	- the network!
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 16:33:07	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 16:33:07	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 16:33:07	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 16:33:07	--	- [http://geeknic.org]
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 16:33:07	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 16:33:07	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- Thank you for using freenode!
+2012-05-18 16:33:07	--	-
+2012-05-18 16:33:07	--	- ***************************************************************
+2012-05-18 16:33:07	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 16:33:07	--	- ***************************************************************
+2012-05-18 16:33:07	--	End of /MOTD command.
+2012-05-18 16:33:07	--	Modo de usuario [+i] por kniren
+2012-05-18 16:33:08	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 16:33:12	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-18 16:36:23	--	ChanServ (ChanServ@services.): [#weechat] Welcome to WeeChat english support channel. IMPORTANT: you *MUST* have read docs and FAQ before asking something on this channel! Read them at: http://weechat.org/doc/
+2012-05-18 17:09:44		irc: desconectado del servidor
+2012-05-18 19:39:36		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 19:39:36	=!=	irc: dirección "chat.freenode.net" no encontrada
+2012-05-18 19:39:36		irc: reconectando al servidor en 10 segundos
+2012-05-18 19:39:46		irc: reconectando al servidor...
+2012-05-18 19:39:46		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 19:39:46	=!=	irc: dirección "chat.freenode.net" no encontrada
+2012-05-18 19:39:46		irc: reconectando al servidor en 20 segundos
+2012-05-18 19:39:59		irc: desconectado del servidor
+2012-05-18 19:57:58		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 19:57:58	=!=	irc: dirección "chat.freenode.net" no encontrada
+2012-05-18 19:57:58		irc: reconectando al servidor en 10 segundos
+2012-05-18 19:58:08		irc: reconectando al servidor...
+2012-05-18 19:58:08		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 19:58:08	=!=	irc: dirección "chat.freenode.net" no encontrada
+2012-05-18 19:58:08		irc: reconectando al servidor en 20 segundos
+2012-05-18 19:58:28		irc: reconectando al servidor...
+2012-05-18 19:58:28		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 19:58:28	=!=	irc: dirección "chat.freenode.net" no encontrada
+2012-05-18 19:58:28		irc: reconectando al servidor en 40 segundos
+2012-05-18 19:59:08		irc: reconectando al servidor...
+2012-05-18 19:59:08		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 19:59:08	=!=	irc: dirección "chat.freenode.net" no encontrada
+2012-05-18 19:59:08		irc: reconectando al servidor en 1 minuto, 20 segundos
+2012-05-18 20:00:06		irc: desconectado del servidor
+2012-05-18 20:17:58		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 20:17:58	=!=	irc: dirección "chat.freenode.net" no encontrada
+2012-05-18 20:17:58		irc: reconectando al servidor en 10 segundos
+2012-05-18 20:18:07	=!=	irc: ¡este buffer no es un canal!
+2012-05-18 20:18:08		irc: reconectando al servidor...
+2012-05-18 20:18:08		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 20:18:08	=!=	irc: dirección "chat.freenode.net" no encontrada
+2012-05-18 20:18:08		irc: reconectando al servidor en 20 segundos
+2012-05-18 20:18:15		irc: desconectado del servidor
+2012-05-18 23:26:50		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-18 23:26:50		irc: conectado a chat.freenode.net/6667 (94.125.182.252)
+2012-05-18 23:26:50	--	adams.freenode.net (adams.freenode.net): *** Looking up your hostname...
+2012-05-18 23:26:50	--	adams.freenode.net (adams.freenode.net): *** Checking Ident
+2012-05-18 23:26:50	--	adams.freenode.net (adams.freenode.net): *** No Ident response
+2012-05-18 23:26:51	--	adams.freenode.net (adams.freenode.net): *** Found your hostname
+2012-05-18 23:26:51	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-18 23:26:51	--	MSG(nickserv): identify ********
+2012-05-18 23:26:51	--	Your host is adams.freenode.net[94.125.182.252/6667], running version ircd-seven-1.1.3
+2012-05-18 23:26:51	--	This server was created Sat Mar 10 2012 at 14:55:48 CET
+2012-05-18 23:26:51	--	adams.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-18 23:26:51	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-18 23:26:51	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-18 23:26:51	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-18 23:26:51	--	There are 267 users and 74440 invisible on 28 servers
+2012-05-18 23:26:51	--	39 :IRC Operators online
+2012-05-18 23:26:51	--	10 :unknown connection(s)
+2012-05-18 23:26:51	--	44499 :channels formed
+2012-05-18 23:26:51	--	I have 3143 clients and 1 servers
+2012-05-18 23:26:51	--	3143 9235 :Current local users 3143, max 9235
+2012-05-18 23:26:51	--	74707 81621 :Current global users 74707, max 81621
+2012-05-18 23:26:51	--	Highest connection count: 9236 (9235 clients) (1139377 connections received)
+2012-05-18 23:26:51	--	- adams.freenode.net Message of the Day -
+2012-05-18 23:26:51	--	- Welcome to adams.freenode.net. Thanks to ATW Internet Kft
+2012-05-18 23:26:51	--	- (http://www.atw.hu) for sponsoring this server!
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- ADAMS, DOUGLAS (1952-2001).  Author of The Hitch Hikers Guide
+2012-05-18 23:26:51	--	- to the Galaxy and many other witty and humourous books,
+2012-05-18 23:26:51	--	- portrayed in his uniquely British irony. He is sorely missed
+2012-05-18 23:26:51	--	- by many millions of devoted fans. "So long and thanks for all
+2012-05-18 23:26:51	--	- the books!"
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-18 23:26:51	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- By connecting to freenode you indicate that you have read
+2012-05-18 23:26:51	--	- and agree to adhere to our policies and procedures as per
+2012-05-18 23:26:51	--	- the website (http://freenode.net). We would like to remind
+2012-05-18 23:26:51	--	- you that unauthorized public logging of channels on the
+2012-05-18 23:26:51	--	- network is prohibited. Public channel logging should only
+2012-05-18 23:26:51	--	- take place where the channel owner(s) has requested this
+2012-05-18 23:26:51	--	- and users of the channel are all made aware (if you are
+2012-05-18 23:26:51	--	- publically logging your channel, you may wish to keep a
+2012-05-18 23:26:51	--	- notice in topic and perhaps as a on-join message).
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-18 23:26:51	--	- indicates your acceptance of this policy. For details on
+2012-05-18 23:26:51	--	- freenode network policy, please take a look at our policy
+2012-05-18 23:26:51	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-18 23:26:51	--	- the network!
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-18 23:26:51	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-18 23:26:51	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-18 23:26:51	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-18 23:26:51	--	- [http://geeknic.org]
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-18 23:26:51	--	- a not for profit organisation registered in England and Wales.
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-18 23:26:51	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- Thank you for using freenode!
+2012-05-18 23:26:51	--	-
+2012-05-18 23:26:51	--	- ***************************************************************
+2012-05-18 23:26:51	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-18 23:26:51	--	- ***************************************************************
+2012-05-18 23:26:51	--	End of /MOTD command.
+2012-05-18 23:26:51	--	Modo de usuario [+i] por kniren
+2012-05-18 23:26:51	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-18 23:26:56	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05 00:44	--	#openbox: Cannot join channel (+i) - you must be invited
+2012-05-19 01:50:34	=!=	irc: ¡este buffer no es un canal!
+2012-05-19 01:51:22	--	ChanServ (ChanServ@services.): [#vim] vim discussion .. www.vim.org, vim.sf.net, :help
+2012-05-19 01:54:58		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 01:54:58		irc: conectado a chat.freenode.net/6667 (128.237.157.136)
+2012-05-19 01:54:59	--	hubbard.freenode.net (hubbard.freenode.net): *** Looking up your hostname...
+2012-05-19 01:54:59	--	hubbard.freenode.net (hubbard.freenode.net): *** Checking Ident
+2012-05-19 01:54:59	--	hubbard.freenode.net (hubbard.freenode.net): *** No Ident response
+2012-05-19 01:54:59	--	hubbard.freenode.net (hubbard.freenode.net): *** Found your hostname
+2012-05-19 01:54:59	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 01:54:59	--	MSG(nickserv): identify ********
+2012-05-19 01:54:59	--	Your host is hubbard.freenode.net[128.237.157.136/6667], running version ircd-seven-1.1.3
+2012-05-19 01:54:59	--	This server was created Sun Feb 19 2012 at 06:53:11 EST
+2012-05-19 01:54:59	--	hubbard.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 01:54:59	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 01:54:59	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 01:54:59	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 01:54:59	--	There are 258 users and 68496 invisible on 28 servers
+2012-05-19 01:54:59	--	39 :IRC Operators online
+2012-05-19 01:54:59	--	5 :unknown connection(s)
+2012-05-19 01:54:59	--	44062 :channels formed
+2012-05-19 01:54:59	--	I have 2740 clients and 1 servers
+2012-05-19 01:54:59	--	2740 3548 :Current local users 2740, max 3548
+2012-05-19 01:54:59	--	68754 81621 :Current global users 68754, max 81621
+2012-05-19 01:54:59	--	Highest connection count: 3549 (3548 clients) (461809 connections received)
+2012-05-19 01:54:59	--	- hubbard.freenode.net Message of the Day -
+2012-05-19 01:54:59	--	- Massive thanks to Carnegie Mellon University (http://www.cmu.edu) and
+2012-05-19 01:54:59	--	- the CMU Computer Club for sponsoring this server!
+2012-05-19 01:54:59	--	-
+2012-05-19 01:54:59	--	- Hubbard, Lafayette Ronald [1911 - 1986]. Was an american Sci-Fi writer,
+2012-05-19 01:54:59	--	- perhaps more famed for devising Dianetics and Scientology.
+2012-05-19 01:54:59	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 01:54:59	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 01:54:59	--	-
+2012-05-19 01:54:59	--	- By connecting to freenode you indicate that you have read
+2012-05-19 01:54:59	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 01:54:59	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 01:54:59	--	- you that unauthorized public logging of channels on the
+2012-05-19 01:54:59	--	- network is prohibited. Public channel logging should only
+2012-05-19 01:54:59	--	- take place where the channel owner(s) has requested this
+2012-05-19 01:54:59	--	- and users of the channel are all made aware (if you are
+2012-05-19 01:54:59	--	- publically logging your channel, you may wish to keep a
+2012-05-19 01:54:59	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 01:54:59	--	-
+2012-05-19 01:54:59	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 01:54:59	--	- indicates your acceptance of this policy. For details on
+2012-05-19 01:54:59	--	- freenode network policy, please take a look at our policy
+2012-05-19 01:54:59	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 01:54:59	--	- the network!
+2012-05-19 01:54:59	--	-
+2012-05-19 01:54:59	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 01:54:59	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 01:54:59	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 01:54:59	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 01:54:59	--	- [http://geeknic.org]
+2012-05-19 01:54:59	--	-
+2012-05-19 01:54:59	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 01:54:59	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 01:54:59	--	-
+2012-05-19 01:54:59	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 01:54:59	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 01:54:59	--	-
+2012-05-19 01:54:59	--	- Thank you for using freenode!
+2012-05-19 01:54:59	--	-
+2012-05-19 01:54:59	--	- ***************************************************************
+2012-05-19 01:54:59	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 01:54:59	--	- ***************************************************************
+2012-05-19 01:54:59	--	End of /MOTD command.
+2012-05-19 01:54:59	--	Modo de usuario [+i] por kniren
+2012-05-19 01:54:59	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 01:55:03	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-19 01:57:52		irc: desconectado del servidor
+2012-05-19 01:59:05		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 01:59:05		irc: conectado a chat.freenode.net/6667 (82.96.64.4)
+2012-05-19 01:59:05	--	kornbluth.freenode.net (kornbluth.freenode.net): *** Looking up your hostname...
+2012-05-19 01:59:05	--	kornbluth.freenode.net (kornbluth.freenode.net): *** Checking Ident
+2012-05-19 01:59:05	--	kornbluth.freenode.net (kornbluth.freenode.net): *** No Ident response
+2012-05-19 01:59:05	--	kornbluth.freenode.net (kornbluth.freenode.net): *** Found your hostname
+2012-05-19 01:59:05	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 01:59:05	--	MSG(nickserv): identify ********
+2012-05-19 01:59:05	--	Your host is kornbluth.freenode.net[82.96.64.4/6667], running version ircd-seven-1.1.3
+2012-05-19 01:59:05	--	This server was created Sun Nov 13 2011 at 14:43:26 CET
+2012-05-19 01:59:05	--	kornbluth.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 01:59:05	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 01:59:05	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 01:59:05	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 01:59:05	--	There are 258 users and 68339 invisible on 28 servers
+2012-05-19 01:59:05	--	39 :IRC Operators online
+2012-05-19 01:59:05	--	5 :unknown connection(s)
+2012-05-19 01:59:05	--	44047 :channels formed
+2012-05-19 01:59:05	--	I have 6076 clients and 1 servers
+2012-05-19 01:59:05	--	6076 7009 :Current local users 6076, max 7009
+2012-05-19 01:59:05	--	68597 81621 :Current global users 68597, max 81621
+2012-05-19 01:59:05	--	Highest connection count: 7010 (7009 clients) (1056597 connections received)
+2012-05-19 01:59:05	--	- kornbluth.freenode.net Message of the Day -
+2012-05-19 01:59:05	--	- Welcome to kornbluth.freenode.net in Frankfurt, DE, EU.
+2012-05-19 01:59:05	--	- Thanks to Probe Networks (www.probe-networks.de) for
+2012-05-19 01:59:05	--	- sponsoring this server!
+2012-05-19 01:59:05	--	-
+2012-05-19 01:59:05	--	- KORNBLUTH, CYRIL M. [1923-1958].  Born in New York City and
+2012-05-19 01:59:05	--	- an active member of the Futurians, Cyril Kornbluth sold his
+2012-05-19 01:59:05	--	- first story professionally at age 15.  By the 1940's his
+2012-05-19 01:59:05	--	- stories appeared widely under several pennames, including
+2012-05-19 01:59:05	--	- S.D. Gottesman and Cecil Corman.  He left his university
+2012-05-19 01:59:05	--	- studies in Chicago to serve in the Army in Europe during
+2012-05-19 01:59:05	--	- WWII, then returned to school and work in Chicago until he
+2012-05-19 01:59:05	--	- began writing full-time in 1951.  The author of The Marching
+2012-05-19 01:59:05	--	- Morons and the novels The Space Merchants (with Frederik
+2012-05-19 01:59:05	--	- Pohl) and The Syndic, he's best known for his biting social
+2012-05-19 01:59:05	--	- satire and his collaborations with Pohl and with Judith
+2012-05-19 01:59:05	--	- Merril.
+2012-05-19 01:59:05	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 01:59:05	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 01:59:05	--	-
+2012-05-19 01:59:05	--	- By connecting to freenode you indicate that you have read
+2012-05-19 01:59:05	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 01:59:05	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 01:59:05	--	- you that unauthorized public logging of channels on the
+2012-05-19 01:59:05	--	- network is prohibited. Public channel logging should only
+2012-05-19 01:59:05	--	- take place where the channel owner(s) has requested this
+2012-05-19 01:59:05	--	- and users of the channel are all made aware (if you are
+2012-05-19 01:59:05	--	- publically logging your channel, you may wish to keep a
+2012-05-19 01:59:05	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 01:59:05	--	-
+2012-05-19 01:59:05	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 01:59:05	--	- indicates your acceptance of this policy. For details on
+2012-05-19 01:59:05	--	- freenode network policy, please take a look at our policy
+2012-05-19 01:59:05	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 01:59:05	--	- the network!
+2012-05-19 01:59:05	--	-
+2012-05-19 01:59:05	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 01:59:05	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 01:59:05	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 01:59:05	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 01:59:05	--	- [http://geeknic.org]
+2012-05-19 01:59:05	--	-
+2012-05-19 01:59:05	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 01:59:05	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 01:59:05	--	-
+2012-05-19 01:59:05	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 01:59:05	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 01:59:05	--	-
+2012-05-19 01:59:05	--	- Thank you for using freenode!
+2012-05-19 01:59:05	--	-
+2012-05-19 01:59:05	--	- ***************************************************************
+2012-05-19 01:59:05	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 01:59:05	--	- ***************************************************************
+2012-05-19 01:59:05	--	End of /MOTD command.
+2012-05-19 01:59:05	--	Modo de usuario [+i] por kniren
+2012-05-19 01:59:05	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 01:59:10	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-19 01:59:16		irc: desconectado del servidor
+2012-05-19 01:59:27		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 01:59:28		irc: conectado a chat.freenode.net/6667 (38.229.70.20)
+2012-05-19 01:59:28	--	card.freenode.net (card.freenode.net): *** Looking up your hostname...
+2012-05-19 01:59:31	--	card.freenode.net (card.freenode.net): *** Checking Ident
+2012-05-19 01:59:31	--	card.freenode.net (card.freenode.net): *** No Ident response
+2012-05-19 01:59:32	--	card.freenode.net (card.freenode.net): *** Found your hostname
+2012-05-19 01:59:32	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 01:59:32	--	MSG(nickserv): identify ********
+2012-05-19 01:59:32	--	Your host is card.freenode.net[38.229.70.20/6667], running version ircd-seven-1.1.3
+2012-05-19 01:59:32	--	This server was created Sun Dec 11 2011 at 22:16:10 UTC
+2012-05-19 01:59:32	--	card.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 01:59:32	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 01:59:32	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 01:59:32	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 01:59:32	--	There are 258 users and 68314 invisible on 28 servers
+2012-05-19 01:59:32	--	39 :IRC Operators online
+2012-05-19 01:59:32	--	2 :unknown connection(s)
+2012-05-19 01:59:32	--	44044 :channels formed
+2012-05-19 01:59:32	--	I have 3686 clients and 1 servers
+2012-05-19 01:59:32	--	3686 6375 :Current local users 3686, max 6375
+2012-05-19 01:59:32	--	68572 81647 :Current global users 68572, max 81647
+2012-05-19 01:59:32	--	Highest connection count: 6376 (6375 clients) (1493809 connections received)
+2012-05-19 01:59:32	--	- card.freenode.net Message of the Day -
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- Welcome to card.freenode.net in Washington, DC, US, kindly sponsored by
+2012-05-19 01:59:32	--	- Team Cymru (http://www.team-cymru.org).
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- CARD, ORSON SCOTT [1951-].  Born in Richland, Washington, Card grew up in
+2012-05-19 01:59:32	--	- California, Arizona, and Utah.  He lived in Brazil for two years as an
+2012-05-19 01:59:32	--	- unpaid missionary for the Mormon Church.  Author of the Ender and Alvin
+2012-05-19 01:59:32	--	- Maker books, Card's science fiction and fantasy work is strongly influenced
+2012-05-19 01:59:32	--	- by his Mormon cultural background.  The first author to win the Hugo and
+2012-05-19 01:59:32	--	- Nebula novel awards two years in a row, Card currently lives in Greensboro,
+2012-05-19 01:59:32	--	- North Carolina, US.
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 01:59:32	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- By connecting to freenode you indicate that you have read
+2012-05-19 01:59:32	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 01:59:32	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 01:59:32	--	- you that unauthorized public logging of channels on the
+2012-05-19 01:59:32	--	- network is prohibited. Public channel logging should only
+2012-05-19 01:59:32	--	- take place where the channel owner(s) has requested this
+2012-05-19 01:59:32	--	- and users of the channel are all made aware (if you are
+2012-05-19 01:59:32	--	- publically logging your channel, you may wish to keep a
+2012-05-19 01:59:32	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 01:59:32	--	- indicates your acceptance of this policy. For details on
+2012-05-19 01:59:32	--	- freenode network policy, please take a look at our policy
+2012-05-19 01:59:32	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 01:59:32	--	- the network!
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 01:59:32	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 01:59:32	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 01:59:32	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 01:59:32	--	- [http://geeknic.org]
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 01:59:32	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 01:59:32	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- Thank you for using freenode!
+2012-05-19 01:59:32	--	-
+2012-05-19 01:59:32	--	- ***************************************************************
+2012-05-19 01:59:32	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 01:59:32	--	- ***************************************************************
+2012-05-19 01:59:32	--	End of /MOTD command.
+2012-05-19 01:59:32	--	Modo de usuario [+i] por kniren
+2012-05-19 01:59:32	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 01:59:32	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-19 02:01:20		irc: desconectado del servidor
+2012-05-19 02:01:43		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 02:01:43		irc: conectado a chat.freenode.net/6667 (213.232.93.3)
+2012-05-19 02:01:43	--	holmes.freenode.net (holmes.freenode.net): *** Looking up your hostname...
+2012-05-19 02:01:43	--	holmes.freenode.net (holmes.freenode.net): *** Checking Ident
+2012-05-19 02:01:43	--	holmes.freenode.net (holmes.freenode.net): *** Found your hostname
+2012-05-19 02:01:43	--	holmes.freenode.net (holmes.freenode.net): *** No Ident response
+2012-05-19 02:01:43	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 02:01:43	--	MSG(nickserv): identify ********
+2012-05-19 02:01:43	--	Your host is holmes.freenode.net[213.232.93.3/6667], running version ircd-seven-1.1.3
+2012-05-19 02:01:43	--	This server was created Mon Jan 23 2012 at 22:17:59 GMT
+2012-05-19 02:01:43	--	holmes.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 02:01:43	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 02:01:43	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 02:01:43	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 02:01:43	--	There are 258 users and 68217 invisible on 28 servers
+2012-05-19 02:01:43	--	39 :IRC Operators online
+2012-05-19 02:01:43	--	2 :unknown connection(s)
+2012-05-19 02:01:43	--	44036 :channels formed
+2012-05-19 02:01:43	--	I have 3847 clients and 1 servers
+2012-05-19 02:01:43	--	3847 5328 :Current local users 3847, max 5328
+2012-05-19 02:01:43	--	68475 81621 :Current global users 68475, max 81621
+2012-05-19 02:01:43	--	Highest connection count: 5329 (5328 clients) (1196333 connections received)
+2012-05-19 02:01:43	--	- holmes.freenode.net Message of the Day -
+2012-05-19 02:01:43	--	- Welcome to holmes.freenode.net in London, UK! Massive thanks to
+2012-05-19 02:01:43	--	- UK2 (http://www.uk2.net) for sponsoring this server.
+2012-05-19 02:01:43	--	-
+2012-05-19 02:01:43	--	- HOLMES, ROBERT (1928-1986). An English television scriptwriter,
+2012-05-19 02:01:43	--	- most notably remembered for his work on the sci-fi series;
+2012-05-19 02:01:43	--	- Doctor Who.
+2012-05-19 02:01:43	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 02:01:43	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 02:01:43	--	-
+2012-05-19 02:01:43	--	- By connecting to freenode you indicate that you have read
+2012-05-19 02:01:43	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 02:01:43	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 02:01:43	--	- you that unauthorized public logging of channels on the
+2012-05-19 02:01:43	--	- network is prohibited. Public channel logging should only
+2012-05-19 02:01:43	--	- take place where the channel owner(s) has requested this
+2012-05-19 02:01:43	--	- and users of the channel are all made aware (if you are
+2012-05-19 02:01:43	--	- publically logging your channel, you may wish to keep a
+2012-05-19 02:01:43	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 02:01:43	--	-
+2012-05-19 02:01:43	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 02:01:43	--	- indicates your acceptance of this policy. For details on
+2012-05-19 02:01:43	--	- freenode network policy, please take a look at our policy
+2012-05-19 02:01:43	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 02:01:43	--	- the network!
+2012-05-19 02:01:43	--	-
+2012-05-19 02:01:43	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 02:01:43	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 02:01:43	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 02:01:44	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 02:01:44	--	- [http://geeknic.org]
+2012-05-19 02:01:44	--	-
+2012-05-19 02:01:44	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 02:01:44	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 02:01:44	--	-
+2012-05-19 02:01:44	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 02:01:44	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 02:01:44	--	-
+2012-05-19 02:01:44	--	- Thank you for using freenode!
+2012-05-19 02:01:44	--	-
+2012-05-19 02:01:44	--	- ***************************************************************
+2012-05-19 02:01:44	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 02:01:44	--	- ***************************************************************
+2012-05-19 02:01:44	--	End of /MOTD command.
+2012-05-19 02:01:44	--	Modo de usuario [+i] por kniren
+2012-05-19 02:01:44	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 02:01:48	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-19 02:01:52		irc: desconectado del servidor
+2012-05-19 02:02:18		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 02:02:18		irc: conectado a chat.freenode.net/6667 (86.65.39.15)
+2012-05-19 02:02:18	--	pratchett.freenode.net (pratchett.freenode.net): *** Looking up your hostname...
+2012-05-19 02:02:19	--	pratchett.freenode.net (pratchett.freenode.net): *** Checking Ident
+2012-05-19 02:02:19	--	pratchett.freenode.net (pratchett.freenode.net): *** No Ident response
+2012-05-19 02:02:19	--	pratchett.freenode.net (pratchett.freenode.net): *** Found your hostname
+2012-05-19 02:02:19	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 02:02:19	--	MSG(nickserv): identify ********
+2012-05-19 02:02:19	--	Your host is pratchett.freenode.net[192.168.25.107/6667], running version ircd-seven-1.1.3
+2012-05-19 02:02:19	--	This server was created Sun Dec 4 2011 at 06:24:07 PST
+2012-05-19 02:02:19	--	pratchett.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 02:02:19	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 02:02:19	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 02:02:19	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 02:02:19	--	There are 257 users and 68178 invisible on 28 servers
+2012-05-19 02:02:19	--	39 :IRC Operators online
+2012-05-19 02:02:19	--	44028 :channels formed
+2012-05-19 02:02:19	--	I have 4182 clients and 1 servers
+2012-05-19 02:02:19	--	4182 5988 :Current local users 4182, max 5988
+2012-05-19 02:02:19	--	68435 81621 :Current global users 68435, max 81621
+2012-05-19 02:02:19	--	Highest connection count: 5989 (5988 clients) (1723506 connections received)
+2012-05-19 02:02:19	--	- pratchett.freenode.net Message of the Day -
+2012-05-19 02:02:19	--	- Welcome to pratchett.freenode.net in Rennes, FR, EU.
+2012-05-19 02:02:19	--	- Thanks to: FSF-France (http://www.fsffrance.org) for sponsoring this server!
+2012-05-19 02:02:19	--	-
+2012-05-19 02:02:19	--	- PRATCHETT, TERRY (1948-).  Born in Buckinghamshire, England,
+2012-05-19 02:02:19	--	- Pratchett is the famous author of the Discworld series of
+2012-05-19 02:02:19	--	- novels and, more recently, an active Alzheimer's Disease awareness
+2012-05-19 02:02:19	--	- campaigner.
+2012-05-19 02:02:19	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 02:02:19	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 02:02:19	--	-
+2012-05-19 02:02:19	--	- By connecting to freenode you indicate that you have read
+2012-05-19 02:02:19	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 02:02:19	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 02:02:19	--	- you that unauthorized public logging of channels on the
+2012-05-19 02:02:19	--	- network is prohibited. Public channel logging should only
+2012-05-19 02:02:19	--	- take place where the channel owner(s) has requested this
+2012-05-19 02:02:19	--	- and users of the channel are all made aware (if you are
+2012-05-19 02:02:19	--	- publically logging your channel, you may wish to keep a
+2012-05-19 02:02:19	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 02:02:19	--	-
+2012-05-19 02:02:19	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 02:02:19	--	- indicates your acceptance of this policy. For details on
+2012-05-19 02:02:19	--	- freenode network policy, please take a look at our policy
+2012-05-19 02:02:19	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 02:02:19	--	- the network!
+2012-05-19 02:02:19	--	-
+2012-05-19 02:02:19	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 02:02:19	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 02:02:19	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 02:02:19	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 02:02:19	--	- [http://geeknic.org]
+2012-05-19 02:02:19	--	-
+2012-05-19 02:02:19	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 02:02:19	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 02:02:19	--	-
+2012-05-19 02:02:19	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 02:02:19	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 02:02:19	--	-
+2012-05-19 02:02:19	--	- Thank you for using freenode!
+2012-05-19 02:02:19	--	-
+2012-05-19 02:02:19	--	- ***************************************************************
+2012-05-19 02:02:19	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 02:02:19	--	- ***************************************************************
+2012-05-19 02:02:19	--	End of /MOTD command.
+2012-05-19 02:02:19	--	Modo de usuario [+i] por kniren
+2012-05-19 02:02:19	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 02:02:23	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-19 02:02:24		irc: desconectado del servidor
+2012-05-19 02:02:38		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 02:02:38		irc: conectado a chat.freenode.net/6667 (82.96.64.4)
+2012-05-19 02:02:38	--	kornbluth.freenode.net (kornbluth.freenode.net): *** Looking up your hostname...
+2012-05-19 02:02:38	--	kornbluth.freenode.net (kornbluth.freenode.net): *** Checking Ident
+2012-05-19 02:02:38	--	kornbluth.freenode.net (kornbluth.freenode.net): *** Found your hostname
+2012-05-19 02:02:38	--	kornbluth.freenode.net (kornbluth.freenode.net): *** No Ident response
+2012-05-19 02:02:38	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 02:02:38	--	MSG(nickserv): identify ********
+2012-05-19 02:02:38	--	Your host is kornbluth.freenode.net[82.96.64.4/6667], running version ircd-seven-1.1.3
+2012-05-19 02:02:38	--	This server was created Sun Nov 13 2011 at 14:43:26 CET
+2012-05-19 02:02:38	--	kornbluth.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 02:02:38	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 02:02:38	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 02:02:38	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 02:02:38	--	There are 257 users and 68166 invisible on 28 servers
+2012-05-19 02:02:38	--	39 :IRC Operators online
+2012-05-19 02:02:38	--	5 :unknown connection(s)
+2012-05-19 02:02:38	--	44027 :channels formed
+2012-05-19 02:02:38	--	I have 6065 clients and 1 servers
+2012-05-19 02:02:38	--	6065 7009 :Current local users 6065, max 7009
+2012-05-19 02:02:38	--	68423 81621 :Current global users 68423, max 81621
+2012-05-19 02:02:38	--	Highest connection count: 7010 (7009 clients) (1056625 connections received)
+2012-05-19 02:02:38	--	- kornbluth.freenode.net Message of the Day -
+2012-05-19 02:02:38	--	- Welcome to kornbluth.freenode.net in Frankfurt, DE, EU.
+2012-05-19 02:02:38	--	- Thanks to Probe Networks (www.probe-networks.de) for
+2012-05-19 02:02:38	--	- sponsoring this server!
+2012-05-19 02:02:38	--	-
+2012-05-19 02:02:38	--	- KORNBLUTH, CYRIL M. [1923-1958].  Born in New York City and
+2012-05-19 02:02:38	--	- an active member of the Futurians, Cyril Kornbluth sold his
+2012-05-19 02:02:38	--	- first story professionally at age 15.  By the 1940's his
+2012-05-19 02:02:38	--	- stories appeared widely under several pennames, including
+2012-05-19 02:02:38	--	- S.D. Gottesman and Cecil Corman.  He left his university
+2012-05-19 02:02:38	--	- studies in Chicago to serve in the Army in Europe during
+2012-05-19 02:02:38	--	- WWII, then returned to school and work in Chicago until he
+2012-05-19 02:02:38	--	- began writing full-time in 1951.  The author of The Marching
+2012-05-19 02:02:38	--	- Morons and the novels The Space Merchants (with Frederik
+2012-05-19 02:02:38	--	- Pohl) and The Syndic, he's best known for his biting social
+2012-05-19 02:02:38	--	- satire and his collaborations with Pohl and with Judith
+2012-05-19 02:02:38	--	- Merril.
+2012-05-19 02:02:38	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 02:02:38	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 02:02:38	--	-
+2012-05-19 02:02:38	--	- By connecting to freenode you indicate that you have read
+2012-05-19 02:02:38	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 02:02:38	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 02:02:38	--	- you that unauthorized public logging of channels on the
+2012-05-19 02:02:38	--	- network is prohibited. Public channel logging should only
+2012-05-19 02:02:38	--	- take place where the channel owner(s) has requested this
+2012-05-19 02:02:38	--	- and users of the channel are all made aware (if you are
+2012-05-19 02:02:38	--	- publically logging your channel, you may wish to keep a
+2012-05-19 02:02:38	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 02:02:38	--	-
+2012-05-19 02:02:38	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 02:02:38	--	- indicates your acceptance of this policy. For details on
+2012-05-19 02:02:38	--	- freenode network policy, please take a look at our policy
+2012-05-19 02:02:38	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 02:02:38	--	- the network!
+2012-05-19 02:02:38	--	-
+2012-05-19 02:02:38	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 02:02:38	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 02:02:38	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 02:02:38	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 02:02:38	--	- [http://geeknic.org]
+2012-05-19 02:02:38	--	-
+2012-05-19 02:02:38	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 02:02:38	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 02:02:38	--	-
+2012-05-19 02:02:38	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 02:02:38	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 02:02:38	--	-
+2012-05-19 02:02:38	--	- Thank you for using freenode!
+2012-05-19 02:02:38	--	-
+2012-05-19 02:02:38	--	- ***************************************************************
+2012-05-19 02:02:38	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 02:02:38	--	- ***************************************************************
+2012-05-19 02:02:38	--	End of /MOTD command.
+2012-05-19 02:02:38	--	Modo de usuario [+i] por kniren
+2012-05-19 02:02:39	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 02:02:43	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-19 02:12:03		irc: desconectado del servidor
+2012-05-19 02:12:20		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 02:12:20		irc: conectado a chat.freenode.net/6667 (89.16.176.16)
+2012-05-19 02:12:20	--	wolfe.freenode.net (wolfe.freenode.net): *** Looking up your hostname...
+2012-05-19 02:12:20	--	wolfe.freenode.net (wolfe.freenode.net): *** Checking Ident
+2012-05-19 02:12:20	--	wolfe.freenode.net (wolfe.freenode.net): *** No Ident response
+2012-05-19 02:12:20	--	wolfe.freenode.net (wolfe.freenode.net): *** Found your hostname
+2012-05-19 02:12:20	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 02:12:20	--	MSG(nickserv): identify ********
+2012-05-19 02:12:20	--	Your host is wolfe.freenode.net[89.16.176.16/6667], running version ircd-seven-1.1.3
+2012-05-19 02:12:20	--	This server was created Sun Nov 20 2011 at 13:26:13 GMT
+2012-05-19 02:12:20	--	wolfe.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 02:12:20	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 02:12:20	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 02:12:20	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 02:12:20	--	There are 258 users and 67829 invisible on 28 servers
+2012-05-19 02:12:20	--	39 :IRC Operators online
+2012-05-19 02:12:20	--	4 :unknown connection(s)
+2012-05-19 02:12:20	--	44005 :channels formed
+2012-05-19 02:12:20	--	I have 2866 clients and 1 servers
+2012-05-19 02:12:20	--	2866 7408 :Current local users 2866, max 7408
+2012-05-19 02:12:20	--	68087 81621 :Current global users 68087, max 81621
+2012-05-19 02:12:20	--	Highest connection count: 7409 (7408 clients) (1796392 connections received)
+2012-05-19 02:12:20	--	- wolfe.freenode.net Message of the Day -
+2012-05-19 02:12:20	--	- Welcome to wolfe.freenode.net in Manchester, England, Uk!  Thanks to
+2012-05-19 02:12:20	--	- Bytemark Computer Consulting Ltd.  (www.bytemark.co.uk) for sponsoring
+2012-05-19 02:12:20	--	- this server!
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- WOLFE, GENE [1931-].  Prolific writer of short stories and
+2012-05-19 02:12:20	--	- novels. His best-known work is the multi-volume novel The
+2012-05-19 02:12:20	--	- Book of the New Sun. He has won multiple awards including
+2012-05-19 02:12:20	--	- the Nebula Award, the World Fantasy Award, The Campell
+2012-05-19 02:12:20	--	- Memorial Award and the Locus Award. He was awarded the World
+2012-05-19 02:12:20	--	- Fantasy Award for lifetime achievement in 1996.
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 02:12:20	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- By connecting to freenode you indicate that you have read
+2012-05-19 02:12:20	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 02:12:20	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 02:12:20	--	- you that unauthorized public logging of channels on the
+2012-05-19 02:12:20	--	- network is prohibited. Public channel logging should only
+2012-05-19 02:12:20	--	- take place where the channel owner(s) has requested this
+2012-05-19 02:12:20	--	- and users of the channel are all made aware (if you are
+2012-05-19 02:12:20	--	- publically logging your channel, you may wish to keep a
+2012-05-19 02:12:20	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 02:12:20	--	- indicates your acceptance of this policy. For details on
+2012-05-19 02:12:20	--	- freenode network policy, please take a look at our policy
+2012-05-19 02:12:20	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 02:12:20	--	- the network!
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 02:12:20	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 02:12:20	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 02:12:20	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 02:12:20	--	- [http://geeknic.org]
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 02:12:20	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 02:12:20	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- Thank you for using freenode!
+2012-05-19 02:12:20	--	-
+2012-05-19 02:12:20	--	- ***************************************************************
+2012-05-19 02:12:20	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 02:12:20	--	- ***************************************************************
+2012-05-19 02:12:20	--	End of /MOTD command.
+2012-05-19 02:12:20	--	Modo de usuario [+i] por kniren
+2012-05-19 02:12:21	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 02:12:24	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-19 02:12:24		irc: desconectado del servidor
+2012-05-19 02:12:41		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 02:12:41		irc: conectado a chat.freenode.net/6667 (86.65.39.15)
+2012-05-19 02:12:41	--	pratchett.freenode.net (pratchett.freenode.net): *** Looking up your hostname...
+2012-05-19 02:12:41	--	pratchett.freenode.net (pratchett.freenode.net): *** Checking Ident
+2012-05-19 02:12:41	--	pratchett.freenode.net (pratchett.freenode.net): *** Found your hostname
+2012-05-19 02:12:41	--	pratchett.freenode.net (pratchett.freenode.net): *** No Ident response
+2012-05-19 02:12:41	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 02:12:41	--	MSG(nickserv): identify ********
+2012-05-19 02:12:41	--	Your host is pratchett.freenode.net[192.168.25.107/6667], running version ircd-seven-1.1.3
+2012-05-19 02:12:41	--	This server was created Sun Dec 4 2011 at 06:24:07 PST
+2012-05-19 02:12:41	--	pratchett.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 02:12:41	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 02:12:41	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 02:12:41	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 02:12:41	--	There are 258 users and 67836 invisible on 28 servers
+2012-05-19 02:12:41	--	39 :IRC Operators online
+2012-05-19 02:12:41	--	2 :unknown connection(s)
+2012-05-19 02:12:41	--	44007 :channels formed
+2012-05-19 02:12:41	--	I have 4164 clients and 1 servers
+2012-05-19 02:12:41	--	4164 5988 :Current local users 4164, max 5988
+2012-05-19 02:12:41	--	68094 81621 :Current global users 68094, max 81621
+2012-05-19 02:12:41	--	Highest connection count: 5989 (5988 clients) (1723562 connections received)
+2012-05-19 02:12:41	--	- pratchett.freenode.net Message of the Day -
+2012-05-19 02:12:41	--	- Welcome to pratchett.freenode.net in Rennes, FR, EU.
+2012-05-19 02:12:41	--	- Thanks to: FSF-France (http://www.fsffrance.org) for sponsoring this server!
+2012-05-19 02:12:41	--	-
+2012-05-19 02:12:41	--	- PRATCHETT, TERRY (1948-).  Born in Buckinghamshire, England,
+2012-05-19 02:12:41	--	- Pratchett is the famous author of the Discworld series of
+2012-05-19 02:12:41	--	- novels and, more recently, an active Alzheimer's Disease awareness
+2012-05-19 02:12:41	--	- campaigner.
+2012-05-19 02:12:41	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 02:12:41	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 02:12:41	--	-
+2012-05-19 02:12:41	--	- By connecting to freenode you indicate that you have read
+2012-05-19 02:12:41	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 02:12:41	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 02:12:41	--	- you that unauthorized public logging of channels on the
+2012-05-19 02:12:41	--	- network is prohibited. Public channel logging should only
+2012-05-19 02:12:41	--	- take place where the channel owner(s) has requested this
+2012-05-19 02:12:41	--	- and users of the channel are all made aware (if you are
+2012-05-19 02:12:41	--	- publically logging your channel, you may wish to keep a
+2012-05-19 02:12:41	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 02:12:41	--	-
+2012-05-19 02:12:41	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 02:12:41	--	- indicates your acceptance of this policy. For details on
+2012-05-19 02:12:41	--	- freenode network policy, please take a look at our policy
+2012-05-19 02:12:41	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 02:12:41	--	- the network!
+2012-05-19 02:12:41	--	-
+2012-05-19 02:12:41	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 02:12:41	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 02:12:41	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 02:12:41	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 02:12:41	--	- [http://geeknic.org]
+2012-05-19 02:12:41	--	-
+2012-05-19 02:12:41	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 02:12:41	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 02:12:41	--	-
+2012-05-19 02:12:41	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 02:12:41	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 02:12:41	--	-
+2012-05-19 02:12:41	--	- Thank you for using freenode!
+2012-05-19 02:12:41	--	-
+2012-05-19 02:12:41	--	- ***************************************************************
+2012-05-19 02:12:41	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 02:12:41	--	- ***************************************************************
+2012-05-19 02:12:41	--	End of /MOTD command.
+2012-05-19 02:12:41	--	Modo de usuario [+i] por kniren
+2012-05-19 02:12:42	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 02:13:05	--	NickServ (NickServ@services.): You are now identified for kniren.
+2012-05-19 02:25:30	--	ChanServ (ChanServ@services.): [#vim] vim discussion .. www.vim.org, vim.sf.net, :help
+2012-05-19 02:49:43		irc: conectando al servidor chat.freenode.net/6667...
+2012-05-19 02:49:43		irc: conectado a chat.freenode.net/6667 (213.232.93.3)
+2012-05-19 02:49:43	--	holmes.freenode.net (holmes.freenode.net): *** Looking up your hostname...
+2012-05-19 02:49:43	--	holmes.freenode.net (holmes.freenode.net): *** Checking Ident
+2012-05-19 02:49:43	--	holmes.freenode.net (holmes.freenode.net): *** Found your hostname
+2012-05-19 02:49:43	--	holmes.freenode.net (holmes.freenode.net): *** No Ident response
+2012-05-19 02:49:43	--	Welcome to the freenode Internet Relay Chat Network kniren
+2012-05-19 02:49:43	--	MSG(nickserv): identify ********
+2012-05-19 02:49:43	--	Your host is holmes.freenode.net[213.232.93.3/6667], running version ircd-seven-1.1.3
+2012-05-19 02:49:43	--	This server was created Mon Jan 23 2012 at 22:17:59 GMT
+2012-05-19 02:49:43	--	holmes.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2012-05-19 02:49:43	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2012-05-19 02:49:43	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2012-05-19 02:49:43	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2012-05-19 02:49:43	--	There are 256 users and 67039 invisible on 28 servers
+2012-05-19 02:49:43	--	39 :IRC Operators online
+2012-05-19 02:49:43	--	7 :unknown connection(s)
+2012-05-19 02:49:43	--	43951 :channels formed
+2012-05-19 02:49:43	--	I have 3806 clients and 1 servers
+2012-05-19 02:49:43	--	3806 5328 :Current local users 3806, max 5328
+2012-05-19 02:49:43	--	67295 81621 :Current global users 67295, max 81621
+2012-05-19 02:49:43	--	Highest connection count: 5329 (5328 clients) (1196595 connections received)
+2012-05-19 02:49:43	--	- holmes.freenode.net Message of the Day -
+2012-05-19 02:49:43	--	- Welcome to holmes.freenode.net in London, UK! Massive thanks to
+2012-05-19 02:49:43	--	- UK2 (http://www.uk2.net) for sponsoring this server.
+2012-05-19 02:49:43	--	-
+2012-05-19 02:49:43	--	- HOLMES, ROBERT (1928-1986). An English television scriptwriter,
+2012-05-19 02:49:43	--	- most notably remembered for his work on the sci-fi series;
+2012-05-19 02:49:43	--	- Doctor Who.
+2012-05-19 02:49:43	--	- You're using freenode, a service of Peer-Directed Projects
+2012-05-19 02:49:43	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2012-05-19 02:49:43	--	-
+2012-05-19 02:49:43	--	- By connecting to freenode you indicate that you have read
+2012-05-19 02:49:43	--	- and agree to adhere to our policies and procedures as per
+2012-05-19 02:49:43	--	- the website (http://freenode.net). We would like to remind
+2012-05-19 02:49:43	--	- you that unauthorized public logging of channels on the
+2012-05-19 02:49:43	--	- network is prohibited. Public channel logging should only
+2012-05-19 02:49:43	--	- take place where the channel owner(s) has requested this
+2012-05-19 02:49:43	--	- and users of the channel are all made aware (if you are
+2012-05-19 02:49:43	--	- publically logging your channel, you may wish to keep a
+2012-05-19 02:49:43	--	- notice in topic and perhaps as a on-join message).
+2012-05-19 02:49:43	--	-
+2012-05-19 02:49:43	--	- freenode runs an open proxy scanner. Your use of the network
+2012-05-19 02:49:43	--	- indicates your acceptance of this policy. For details on
+2012-05-19 02:49:43	--	- freenode network policy, please take a look at our policy
+2012-05-19 02:49:43	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2012-05-19 02:49:43	--	- the network!
+2012-05-19 02:49:43	--	-
+2012-05-19 02:49:43	--	- Don't forget to check out these other Peer-Directed Projects:
+2012-05-19 02:49:43	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2012-05-19 02:49:43	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2012-05-19 02:49:43	--	- success with Picnics for Geeks across the globe, more info at
+2012-05-19 02:49:43	--	- [http://geeknic.org]
+2012-05-19 02:49:43	--	-
+2012-05-19 02:49:43	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2012-05-19 02:49:43	--	- a not for profit organisation registered in England and Wales.
+2012-05-19 02:49:43	--	-
+2012-05-19 02:49:43	--	- If you support the work we do and wish to donate to the PDPC,
+2012-05-19 02:49:43	--	- you may do so over at http://freenode.net/pdpc_donations.shtml
+2012-05-19 02:49:43	--	-
+2012-05-19 02:49:43	--	- Thank you for using freenode!
+2012-05-19 02:49:43	--	-
+2012-05-19 02:49:43	--	- ***************************************************************
+2012-05-19 02:49:43	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2012-05-19 02:49:43	--	- ***************************************************************
+2012-05-19 02:49:43	--	End of /MOTD command.
+2012-05-19 02:49:43	--	Modo de usuario [+i] por kniren
+2012-05-19 02:49:44	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2012-05-19 02:49:47		irc: desconectado del servidor

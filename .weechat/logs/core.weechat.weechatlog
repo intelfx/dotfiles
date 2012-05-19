@@ -1,0 +1,1346 @@
+2012-05-14 23:58:25		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-14 23:58:37	=!=	No es posible escribir texto en este buffer
+2012-05-14 23:58:39	=!=	No es posible escribir texto en este buffer
+2012-05-14 23:58:40	=!=	No es posible escribir texto en este buffer
+2012-05-14 23:58:56		fifo: tubería cerrada
+2012-05-15 02:15:12		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-15 02:15:16	=!=	No es posible escribir texto en este buffer
+2012-05-15 02:15:19	=!=	No es posible escribir texto en este buffer
+2012-05-15 02:15:26	=!=	No es posible escribir texto en este buffer
+2012-05-15 02:15:31	=!=	No es posible escribir texto en este buffer
+2012-05-15 02:15:38		fifo: tubería cerrada
+2012-05-18 12:43:52		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 12:43:56		fifo: tubería cerrada
+2012-05-18 14:41:16		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 14:41:22		[core]
+2012-05-18 14:41:22		  away    buffer  command debug   help    input   layout  mute    proxy   reload  save    unset   uptime  wait   
+2012-05-18 14:41:22		  bar     color   cursor  filter  history key     mouse   plugin  quit    repeat  set     upgrade version window 
+2012-05-18 14:41:22		[lua]
+2012-05-18 14:41:22		  lua
+2012-05-18 14:41:22		[xfer]
+2012-05-18 14:41:22		  me   xfer
+2012-05-18 14:41:22		[logger]
+2012-05-18 14:41:22		  logger
+2012-05-18 14:41:22		[rmodifier]
+2012-05-18 14:41:22		  rmodifier
+2012-05-18 14:41:22		[perl]
+2012-05-18 14:41:22		  perl
+2012-05-18 14:41:22		[ruby]
+2012-05-18 14:41:22		  ruby
+2012-05-18 14:41:22		[charset]
+2012-05-18 14:41:22		  charset
+2012-05-18 14:41:22		[aspell]
+2012-05-18 14:41:22		  aspell
+2012-05-18 14:41:22		[python]
+2012-05-18 14:41:22		  python
+2012-05-18 14:41:22		[irc]
+2012-05-18 14:41:22		  admin      ctcp       devoice    info       kickban    map        names      oper       quote      samode     service    summon     userhost   wallops   
+2012-05-18 14:41:22		  allchan    cycle      die        invite     kill       me         nick       part       reconnect  sanick     servlist   time       users      who       
+2012-05-18 14:41:22		  allserv    dcc        disconnect ison       links      mode       notice     ping       rehash     sapart     squery     topic      version    whois     
+2012-05-18 14:41:22		  ban        dehalfop   halfop     join       list       motd       notify     pong       restart    saquit     squit      trace      voice      whowas    
+2012-05-18 14:41:22		  connect    deop       ignore     kick       lusers     msg        op         query      sajoin     server     stats      unban      wallchops 
+2012-05-18 14:41:22		[relay]
+2012-05-18 14:41:22		  relay
+2012-05-18 14:41:22		[tcl]
+2012-05-18 14:41:22		  tcl
+2012-05-18 14:41:22		[alias]
+2012-05-18 14:41:22		  AAWAY   AME     ANICK   C       CL      EXIT    J       KB      M       N       REDRAW  SIGNOFF UB      unalias W       WI      WW     
+2012-05-18 14:41:22		  alias   AMSG    BYE     CHAT    CLOSE   IG      K       LEAVE   MUB     Q       SAY     T       UMODE   V       WC      WII    
+2012-05-18 14:41:41	=!=	No es posible escribir texto en este buffer
+2012-05-18 14:41:44	=!=	Error: comando "irc" desconocido (use /help para ver la ayuda)
+2012-05-18 14:41:48		[core]
+2012-05-18 14:41:48		  away    buffer  command debug   help    input   layout  mute    proxy   reload  save    unset   uptime  wait   
+2012-05-18 14:41:48		  bar     color   cursor  filter  history key     mouse   plugin  quit    repeat  set     upgrade version window 
+2012-05-18 14:41:48		[lua]
+2012-05-18 14:41:48		  lua
+2012-05-18 14:41:48		[xfer]
+2012-05-18 14:41:48		  me   xfer
+2012-05-18 14:41:48		[logger]
+2012-05-18 14:41:48		  logger
+2012-05-18 14:41:48		[rmodifier]
+2012-05-18 14:41:48		  rmodifier
+2012-05-18 14:41:48		[perl]
+2012-05-18 14:41:48		  perl
+2012-05-18 14:41:48		[ruby]
+2012-05-18 14:41:48		  ruby
+2012-05-18 14:41:48		[charset]
+2012-05-18 14:41:48		  charset
+2012-05-18 14:41:48		[aspell]
+2012-05-18 14:41:48		  aspell
+2012-05-18 14:41:48		[python]
+2012-05-18 14:41:48		  python
+2012-05-18 14:41:48		[irc]
+2012-05-18 14:41:48		  admin      ctcp       devoice    info       kickban    map        names      oper       quote      samode     service    summon     userhost   wallops   
+2012-05-18 14:41:48		  allchan    cycle      die        invite     kill       me         nick       part       reconnect  sanick     servlist   time       users      who       
+2012-05-18 14:41:48		  allserv    dcc        disconnect ison       links      mode       notice     ping       rehash     sapart     squery     topic      version    whois     
+2012-05-18 14:41:48		  ban        dehalfop   halfop     join       list       motd       notify     pong       restart    saquit     squit      trace      voice      whowas    
+2012-05-18 14:41:48		  connect    deop       ignore     kick       lusers     msg        op         query      sajoin     server     stats      unban      wallchops 
+2012-05-18 14:41:48		[relay]
+2012-05-18 14:41:48		  relay
+2012-05-18 14:41:48		[tcl]
+2012-05-18 14:41:48		  tcl
+2012-05-18 14:41:48		[alias]
+2012-05-18 14:41:48		  AAWAY   AME     ANICK   C       CL      EXIT    J       KB      M       N       REDRAW  SIGNOFF UB      unalias W       WI      WW     
+2012-05-18 14:41:48		  alias   AMSG    BYE     CHAT    CLOSE   IG      K       LEAVE   MUB     Q       SAY     T       UMODE   V       WC      WII    
+2012-05-18 14:41:58	=!=	No es posible escribir texto en este buffer
+2012-05-18 14:42:00	=!=	No es posible escribir texto en este buffer
+2012-05-18 14:42:03	=!=	irc: el comando "join" debe ser ejecutado en un buffer irc (canal o servidor)
+2012-05-18 14:42:12	=!=	Error con el comando "connect" (trata con /help connect)
+2012-05-18 14:42:17		[irc]  /connect  [<servidor> [<servidor>...] [-<opción>[=<valor>]] [-no<opción>] [-nojoin] [-switch]
+2012-05-18 14:42:17		                 -all|-open [-nojoin] [-switch]
+2012-05-18 14:42:17		conectar a un servidor IRC
+2012-05-18 14:42:17		servidor: nombre del servido, el que puede ser:
+2012-05-18 14:42:17		          - nombre interno del servidor (creado por /server add, recomendado)
+2012-05-18 14:42:17		          - hostname/puerto o IP/puerto (esto creará un servidor TEMPORAL), el puerto es 6667 por defecto
+2012-05-18 14:42:17		          - URL con el formato irc[6][s]://[apodo[:clave]@]irc.ejemplo.org[:puerto][/#canal1][,#canal2[...]]
+2012-05-18 14:42:17		  opción: configura opción para el servidor (para opciones booleanas, el valor puede omitirse)
+2012-05-18 14:42:17		noopción: pone la opción booleana en 'off' (desactivado) (por ejemplo: -nossl)
+2012-05-18 14:42:17		    -all: conectar a todos los servidores configurados
+2012-05-18 14:42:17		   -open: conectar a todos los servidores abiertos que no están conectados actualmente
+2012-05-18 14:42:17		 -nojoin: no unirse a ningún canal (incluso si autojoin está activado en el servidor)
+2012-05-18 14:42:17		 -switch: cambia la siguiente dirección de servidor
+2012-05-18 14:42:17		Ejemplos:
+2012-05-18 14:42:17		  /connect freenode
+2012-05-18 14:42:17		  /connect irc.oftc.net/6667
+2012-05-18 14:42:17		  /connect irc6.oftc.net/6667 -ipv6
+2012-05-18 14:42:17		  /connect irc6.oftc.net/6697 -ipv6 -ssl
+2012-05-18 14:42:17		  /connect mi.server.org/6697 -ssl -password=prueba
+2012-05-18 14:42:17		  /connect irc://apodo@irc.oftc.net/#canal
+2012-05-18 14:42:17		  /connect -switch
+2012-05-18 14:43:25		fifo: tubería cerrada
+2012-05-18 14:44:03		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 14:44:12		[irc]  /connect  [<servidor> [<servidor>...] [-<opción>[=<valor>]] [-no<opción>] [-nojoin] [-switch]
+2012-05-18 14:44:12		                 -all|-open [-nojoin] [-switch]
+2012-05-18 14:44:12		conectar a un servidor IRC
+2012-05-18 14:44:12		servidor: nombre del servido, el que puede ser:
+2012-05-18 14:44:12		          - nombre interno del servidor (creado por /server add, recomendado)
+2012-05-18 14:44:12		          - hostname/puerto o IP/puerto (esto creará un servidor TEMPORAL), el puerto es 6667 por defecto
+2012-05-18 14:44:12		          - URL con el formato irc[6][s]://[apodo[:clave]@]irc.ejemplo.org[:puerto][/#canal1][,#canal2[...]]
+2012-05-18 14:44:12		  opción: configura opción para el servidor (para opciones booleanas, el valor puede omitirse)
+2012-05-18 14:44:12		noopción: pone la opción booleana en 'off' (desactivado) (por ejemplo: -nossl)
+2012-05-18 14:44:12		    -all: conectar a todos los servidores configurados
+2012-05-18 14:44:12		   -open: conectar a todos los servidores abiertos que no están conectados actualmente
+2012-05-18 14:44:12		 -nojoin: no unirse a ningún canal (incluso si autojoin está activado en el servidor)
+2012-05-18 14:44:12		 -switch: cambia la siguiente dirección de servidor
+2012-05-18 14:44:12		Ejemplos:
+2012-05-18 14:44:12		  /connect freenode
+2012-05-18 14:44:12		  /connect irc.oftc.net/6667
+2012-05-18 14:44:12		  /connect irc6.oftc.net/6667 -ipv6
+2012-05-18 14:44:12		  /connect irc6.oftc.net/6697 -ipv6 -ssl
+2012-05-18 14:44:12		  /connect mi.server.org/6697 -ssl -password=prueba
+2012-05-18 14:44:12		  /connect irc://apodo@irc.oftc.net/#canal
+2012-05-18 14:44:12		  /connect -switch
+2012-05-18 14:44:56		irc: servidor irc.freenode.net creado (temporalmente, ¡SIN GUARDAR!)
+2012-05-18 14:46:12	=!=	Error: comando "Nickserv" desconocido (use /help para ver la ayuda)
+2012-05-18 14:46:16		[core]
+2012-05-18 14:46:16		  away    color   debug   history layout  plugin  reload  set     uptime  window 
+2012-05-18 14:46:16		  bar     command filter  input   mouse   proxy   repeat  unset   version
+2012-05-18 14:46:16		  buffer  cursor  help    key     mute    quit    save    upgrade wait   
+2012-05-18 14:46:16		[lua]
+2012-05-18 14:46:16		  lua
+2012-05-18 14:46:16		[xfer]
+2012-05-18 14:46:16		  me   xfer
+2012-05-18 14:46:16		[logger]
+2012-05-18 14:46:16		  logger
+2012-05-18 14:46:16		[rmodifier]
+2012-05-18 14:46:16		  rmodifier
+2012-05-18 14:46:16		[perl]
+2012-05-18 14:46:16		  perl
+2012-05-18 14:46:16		[ruby]
+2012-05-18 14:46:16		  ruby
+2012-05-18 14:46:16		[charset]
+2012-05-18 14:46:16		  charset
+2012-05-18 14:46:16		[aspell]
+2012-05-18 14:46:16		  aspell
+2012-05-18 14:46:16		[python]
+2012-05-18 14:46:16		  python
+2012-05-18 14:46:16		[irc]
+2012-05-18 14:46:16		  admin      devoice    kickban    names      quote      service    userhost  
+2012-05-18 14:46:16		  allchan    die        kill       nick       reconnect  servlist   users     
+2012-05-18 14:46:16		  allserv    disconnect links      notice     rehash     squery     version   
+2012-05-18 14:46:16		  ban        halfop     list       notify     restart    squit      voice     
+2012-05-18 14:46:16		  connect    ignore     lusers     op         sajoin     stats      wallchops 
+2012-05-18 14:46:16		  ctcp       info       map        oper       samode     summon     wallops   
+2012-05-18 14:46:16		  cycle      invite     me         part       sanick     time       who       
+2012-05-18 14:46:16		  dcc        ison       mode       ping       sapart     topic      whois     
+2012-05-18 14:46:16		  dehalfop   join       motd       pong       saquit     trace      whowas    
+2012-05-18 14:46:16		  deop       kick       msg        query      server     unban     
+2012-05-18 14:46:16		[relay]
+2012-05-18 14:46:16		  relay
+2012-05-18 14:46:16		[tcl]
+2012-05-18 14:46:16		  tcl
+2012-05-18 14:46:16		[alias]
+2012-05-18 14:46:16		  AAWAY   ANICK   CL      J       M       REDRAW  UB      W       WW     
+2012-05-18 14:46:16		  alias   BYE     CLOSE   K       MUB     SAY     UMODE   WC     
+2012-05-18 14:46:16		  AME     C       EXIT    KB      N       SIGNOFF unalias WI     
+2012-05-18 14:46:16		  AMSG    CHAT    IG      LEAVE   Q       T       V       WII    
+2012-05-18 14:51:49		Ratón activado
+2012-05-18 14:52:49		fifo: tubería cerrada
+2012-05-18 14:52:55		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 14:53:01		[core]
+2012-05-18 14:53:01		  away    color   debug   history layout  plugin  reload  set     uptime  window 
+2012-05-18 14:53:01		  bar     command filter  input   mouse   proxy   repeat  unset   version
+2012-05-18 14:53:01		  buffer  cursor  help    key     mute    quit    save    upgrade wait   
+2012-05-18 14:53:01		[lua]
+2012-05-18 14:53:01		  lua
+2012-05-18 14:53:01		[xfer]
+2012-05-18 14:53:01		  me   xfer
+2012-05-18 14:53:01		[logger]
+2012-05-18 14:53:01		  logger
+2012-05-18 14:53:01		[rmodifier]
+2012-05-18 14:53:01		  rmodifier
+2012-05-18 14:53:01		[perl]
+2012-05-18 14:53:01		  perl
+2012-05-18 14:53:01		[ruby]
+2012-05-18 14:53:01		  ruby
+2012-05-18 14:53:01		[charset]
+2012-05-18 14:53:01		  charset
+2012-05-18 14:53:01		[aspell]
+2012-05-18 14:53:01		  aspell
+2012-05-18 14:53:01		[python]
+2012-05-18 14:53:01		  python
+2012-05-18 14:53:01		[irc]
+2012-05-18 14:53:01		  admin      devoice    kickban    names      quote      service    userhost  
+2012-05-18 14:53:01		  allchan    die        kill       nick       reconnect  servlist   users     
+2012-05-18 14:53:01		  allserv    disconnect links      notice     rehash     squery     version   
+2012-05-18 14:53:01		  ban        halfop     list       notify     restart    squit      voice     
+2012-05-18 14:53:01		  connect    ignore     lusers     op         sajoin     stats      wallchops 
+2012-05-18 14:53:01		  ctcp       info       map        oper       samode     summon     wallops   
+2012-05-18 14:53:01		  cycle      invite     me         part       sanick     time       who       
+2012-05-18 14:53:01		  dcc        ison       mode       ping       sapart     topic      whois     
+2012-05-18 14:53:01		  dehalfop   join       motd       pong       saquit     trace      whowas    
+2012-05-18 14:53:01		  deop       kick       msg        query      server     unban     
+2012-05-18 14:53:01		[relay]
+2012-05-18 14:53:01		  relay
+2012-05-18 14:53:01		[tcl]
+2012-05-18 14:53:01		  tcl
+2012-05-18 14:53:01		[alias]
+2012-05-18 14:53:01		  AAWAY   ANICK   CL      J       M       REDRAW  UB      W       WW     
+2012-05-18 14:53:01		  alias   BYE     CLOSE   K       MUB     SAY     UMODE   WC     
+2012-05-18 14:53:01		  AME     C       EXIT    KB      N       SIGNOFF unalias WI     
+2012-05-18 14:53:01		  AMSG    CHAT    IG      LEAVE   Q       T       V       WII    
+2012-05-18 14:53:49		[startup] (weechat.conf)
+2012-05-18 14:53:49		  weechat.startup.command_after_plugins = ""
+2012-05-18 14:53:49		  weechat.startup.command_before_plugins = ""
+2012-05-18 14:53:49		  weechat.startup.display_logo = on
+2012-05-18 14:53:49		  weechat.startup.display_version = on
+2012-05-18 14:53:49		[look] (weechat.conf)
+2012-05-18 14:53:49		  weechat.look.align_end_of_lines = message
+2012-05-18 14:53:49		  weechat.look.bar_more_down = "++"
+2012-05-18 14:53:49		  weechat.look.bar_more_left = "<<"
+2012-05-18 14:53:49		  weechat.look.bar_more_right = ">>"
+2012-05-18 14:53:49		  weechat.look.bar_more_up = "--"
+2012-05-18 14:53:49		  weechat.look.buffer_notify_default = all
+2012-05-18 14:53:49		  weechat.look.buffer_time_format = "%H:%M:%S"
+2012-05-18 14:53:49		  weechat.look.color_basic_force_bold = off
+2012-05-18 14:53:49		  weechat.look.color_inactive_buffer = off
+2012-05-18 14:53:49		  weechat.look.color_inactive_message = on
+2012-05-18 14:53:49		  weechat.look.color_inactive_prefix = on
+2012-05-18 14:53:49		  weechat.look.color_inactive_prefix_buffer = on
+2012-05-18 14:53:49		  weechat.look.color_inactive_time = off
+2012-05-18 14:53:49		  weechat.look.color_inactive_window = off
+2012-05-18 14:53:49		  weechat.look.color_pairs_auto_reset = 5
+2012-05-18 14:53:49		  weechat.look.color_real_white = off
+2012-05-18 14:53:49		  weechat.look.command_chars = ""
+2012-05-18 14:53:49		  weechat.look.confirm_quit = off
+2012-05-18 14:53:49		  weechat.look.day_change = on
+2012-05-18 14:53:49		  weechat.look.day_change_time_format = "%a, %d %b %Y"
+2012-05-18 14:53:49		  weechat.look.eat_newline_glitch = off
+2012-05-18 14:53:49		  weechat.look.highlight = ""
+2012-05-18 14:53:49		  weechat.look.highlight_regex = ""
+2012-05-18 14:53:49		  weechat.look.highlight_tags = ""
+2012-05-18 14:53:49		  weechat.look.hotlist_add_buffer_if_away = on
+2012-05-18 14:53:49		  weechat.look.hotlist_buffer_separator = ", "
+2012-05-18 14:53:49		  weechat.look.hotlist_count_max = 2
+2012-05-18 14:53:49		  weechat.look.hotlist_count_min_msg = 2
+2012-05-18 14:53:49		  weechat.look.hotlist_names_count = 3
+2012-05-18 14:53:49		  weechat.look.hotlist_names_length = 0
+2012-05-18 14:53:49		  weechat.look.hotlist_names_level = 12
+2012-05-18 14:53:49		  weechat.look.hotlist_names_merged_buffers = off
+2012-05-18 14:53:49		  weechat.look.hotlist_short_names = on
+2012-05-18 14:53:49		  weechat.look.hotlist_sort = group_time_asc
+2012-05-18 14:53:49		  weechat.look.hotlist_unique_numbers = on
+2012-05-18 14:53:49		  weechat.look.input_cursor_scroll = 20
+2012-05-18 14:53:49		  weechat.look.input_share = none
+2012-05-18 14:53:49		  weechat.look.input_share_overwrite = off
+2012-05-18 14:53:49		  weechat.look.input_undo_max = 32
+2012-05-18 14:53:49		  weechat.look.item_buffer_filter = "*"
+2012-05-18 14:53:49		  weechat.look.item_time_format = "%H:%M"
+2012-05-18 14:53:49		  weechat.look.jump_current_to_previous_buffer = on
+2012-05-18 14:53:49		  weechat.look.jump_previous_buffer_when_closing = on
+2012-05-18 14:53:49		  weechat.look.mouse = on
+2012-05-18 14:53:49		  weechat.look.mouse_timer_delay = 100
+2012-05-18 14:53:49		  weechat.look.nickmode = on
+2012-05-18 14:53:49		  weechat.look.nickmode_empty = off
+2012-05-18 14:53:49		  weechat.look.paste_max_lines = 3
+2012-05-18 14:53:49		  weechat.look.prefix_action = " *"
+2012-05-18 14:53:49		  weechat.look.prefix_align = right
+2012-05-18 14:53:49		  weechat.look.prefix_align_max = 0
+2012-05-18 14:53:49		  weechat.look.prefix_align_min = 0
+2012-05-18 14:53:49		  weechat.look.prefix_align_more = on
+2012-05-18 14:53:49		  weechat.look.prefix_buffer_align = right
+2012-05-18 14:53:49		  weechat.look.prefix_buffer_align_max = 0
+2012-05-18 14:53:49		  weechat.look.prefix_buffer_align_more = on
+2012-05-18 14:53:49		  weechat.look.prefix_error = "=!="
+2012-05-18 14:53:49		  weechat.look.prefix_join = "-->"
+2012-05-18 14:53:49		  weechat.look.prefix_network = "--"
+2012-05-18 14:53:49		  weechat.look.prefix_quit = "<--"
+2012-05-18 14:53:49		  weechat.look.prefix_suffix = "|"
+2012-05-18 14:53:49		  weechat.look.read_marker = line
+2012-05-18 14:53:49		  weechat.look.read_marker_always_show = off
+2012-05-18 14:53:49		  weechat.look.read_marker_string = "- "
+2012-05-18 14:53:49		  weechat.look.save_config_on_exit = on
+2012-05-18 14:53:49		  weechat.look.save_layout_on_exit = none
+2012-05-18 14:53:49		  weechat.look.scroll_amount = 3
+2012-05-18 14:53:49		  weechat.look.scroll_bottom_after_switch = off
+2012-05-18 14:53:49		  weechat.look.scroll_page_percent = 100
+2012-05-18 14:53:49		  weechat.look.search_text_not_found_alert = on
+2012-05-18 14:53:49		  weechat.look.separator_horizontal = "-"
+2012-05-18 14:53:49		  weechat.look.separator_vertical = ""
+2012-05-18 14:53:49		  weechat.look.set_title = on
+2012-05-18 14:53:49		  weechat.look.time_format = "%a, %d %b %Y %T"
+2012-05-18 14:53:49		[color] (weechat.conf)
+2012-05-18 14:53:49		  weechat.color.bar_more = lightmagenta
+2012-05-18 14:53:49		  weechat.color.chat = default
+2012-05-18 14:53:49		  weechat.color.chat_bg = default
+2012-05-18 14:53:49		  weechat.color.chat_buffer = white
+2012-05-18 14:53:49		  weechat.color.chat_channel = white
+2012-05-18 14:53:49		  weechat.color.chat_delimiters = green
+2012-05-18 14:53:49		  weechat.color.chat_highlight = yellow
+2012-05-18 14:53:49		  weechat.color.chat_highlight_bg = magenta
+2012-05-18 14:53:49		  weechat.color.chat_host = cyan
+2012-05-18 14:53:49		  weechat.color.chat_inactive_buffer = darkgray
+2012-05-18 14:53:49		  weechat.color.chat_inactive_window = darkgray
+2012-05-18 14:53:49		  weechat.color.chat_nick = lightcyan
+2012-05-18 14:53:49		  weechat.color.chat_nick_colors = "cyan,magenta,green,brown,lightblue,default,lightcyan,lightmagenta,lightgreen,blue"
+2012-05-18 14:53:49		  weechat.color.chat_nick_other = cyan
+2012-05-18 14:53:49		  weechat.color.chat_nick_self = white
+2012-05-18 14:53:49		  weechat.color.chat_prefix_action = white
+2012-05-18 14:53:49		  weechat.color.chat_prefix_buffer = brown
+2012-05-18 14:53:49		  weechat.color.chat_prefix_buffer_inactive_buffer = darkgray
+2012-05-18 14:53:49		  weechat.color.chat_prefix_error = yellow
+2012-05-18 14:53:49		  weechat.color.chat_prefix_join = lightgreen
+2012-05-18 14:53:49		  weechat.color.chat_prefix_more = lightmagenta
+2012-05-18 14:53:49		  weechat.color.chat_prefix_network = magenta
+2012-05-18 14:53:49		  weechat.color.chat_prefix_quit = lightred
+2012-05-18 14:53:49		  weechat.color.chat_prefix_suffix = green
+2012-05-18 14:53:49		  weechat.color.chat_read_marker = magenta
+2012-05-18 14:53:49		  weechat.color.chat_read_marker_bg = default
+2012-05-18 14:53:49		  weechat.color.chat_server = brown
+2012-05-18 14:53:49		  weechat.color.chat_tags = red
+2012-05-18 14:53:49		  weechat.color.chat_text_found = yellow
+2012-05-18 14:53:49		  weechat.color.chat_text_found_bg = lightmagenta
+2012-05-18 14:53:49		  weechat.color.chat_time = default
+2012-05-18 14:53:49		  weechat.color.chat_time_delimiters = brown
+2012-05-18 14:53:49		  weechat.color.chat_value = cyan
+2012-05-18 14:53:49		  weechat.color.input_actions = lightgreen
+2012-05-18 14:53:49		  weechat.color.input_text_not_found = red
+2012-05-18 14:53:49		  weechat.color.nicklist_away = cyan
+2012-05-18 14:53:49		  weechat.color.nicklist_group = green
+2012-05-18 14:53:49		  weechat.color.nicklist_offline = blue
+2012-05-18 14:53:49		  weechat.color.separator = blue
+2012-05-18 14:53:49		  weechat.color.status_count_highlight = magenta
+2012-05-18 14:53:49		  weechat.color.status_count_msg = brown
+2012-05-18 14:53:49		  weechat.color.status_count_other = default
+2012-05-18 14:53:49		  weechat.color.status_count_private = green
+2012-05-18 14:53:49		  weechat.color.status_data_highlight = lightmagenta
+2012-05-18 14:53:49		  weechat.color.status_data_msg = yellow
+2012-05-18 14:53:49		  weechat.color.status_data_other = default
+2012-05-18 14:53:49		  weechat.color.status_data_private = lightgreen
+2012-05-18 14:53:49		  weechat.color.status_filter = green
+2012-05-18 14:53:49		  weechat.color.status_more = yellow
+2012-05-18 14:53:49		  weechat.color.status_name = white
+2012-05-18 14:53:49		  weechat.color.status_name_ssl = lightgreen
+2012-05-18 14:53:49		  weechat.color.status_number = yellow
+2012-05-18 14:53:49		  weechat.color.status_time = default
+2012-05-18 14:53:49		[completion] (weechat.conf)
+2012-05-18 14:53:49		  weechat.completion.base_word_until_cursor = on
+2012-05-18 14:53:49		  weechat.completion.default_template = "%(nicks)|%(irc_channels)"
+2012-05-18 14:53:49		  weechat.completion.nick_add_space = on
+2012-05-18 14:53:49		  weechat.completion.nick_completer = ":"
+2012-05-18 14:53:49		  weechat.completion.nick_first_only = off
+2012-05-18 14:53:49		  weechat.completion.nick_ignore_chars = "[]`_-^"
+2012-05-18 14:53:49		  weechat.completion.partial_completion_alert = on
+2012-05-18 14:53:49		  weechat.completion.partial_completion_command = off
+2012-05-18 14:53:49		  weechat.completion.partial_completion_command_arg = off
+2012-05-18 14:53:49		  weechat.completion.partial_completion_count = on
+2012-05-18 14:53:49		  weechat.completion.partial_completion_other = off
+2012-05-18 14:53:49		[history] (weechat.conf)
+2012-05-18 14:53:49		  weechat.history.display_default = 5
+2012-05-18 14:53:49		  weechat.history.max_buffer_lines_minutes = 0
+2012-05-18 14:53:49		  weechat.history.max_buffer_lines_number = 4096
+2012-05-18 14:53:49		  weechat.history.max_commands = 100
+2012-05-18 14:53:49		  weechat.history.max_visited_buffers = 50
+2012-05-18 14:53:49		[network] (weechat.conf)
+2012-05-18 14:53:49		  weechat.network.gnutls_ca_file = "/etc/ssl/certs/ca-certificates.crt"
+2012-05-18 14:53:49		  weechat.network.gnutls_handshake_timeout = 30
+2012-05-18 14:53:49		[plugin] (weechat.conf)
+2012-05-18 14:53:49		  weechat.plugin.autoload = "*"
+2012-05-18 14:53:49		  weechat.plugin.debug = off
+2012-05-18 14:53:49		  weechat.plugin.extension = ".so,.dll"
+2012-05-18 14:53:49		  weechat.plugin.path = "%h/plugins"
+2012-05-18 14:53:49		  weechat.plugin.save_config_on_unload = on
+2012-05-18 14:53:49		[bar] (weechat.conf)
+2012-05-18 14:53:49		  weechat.bar.input.color_bg = default
+2012-05-18 14:53:49		  weechat.bar.input.color_delim = cyan
+2012-05-18 14:53:49		  weechat.bar.input.color_fg = default
+2012-05-18 14:53:49		  weechat.bar.input.conditions = ""
+2012-05-18 14:53:49		  weechat.bar.input.filling_left_right = vertical
+2012-05-18 14:53:49		  weechat.bar.input.filling_top_bottom = horizontal
+2012-05-18 14:53:49		  weechat.bar.input.hidden = off
+2012-05-18 14:53:49		  weechat.bar.input.items = "[input_prompt]+(away),[input_search],[input_paste],input_text"
+2012-05-18 14:53:49		  weechat.bar.input.position = bottom
+2012-05-18 14:53:49		  weechat.bar.input.priority = 1000
+2012-05-18 14:53:49		  weechat.bar.input.separator = off
+2012-05-18 14:53:49		  weechat.bar.input.size = 1
+2012-05-18 14:53:49		  weechat.bar.input.size_max = 0
+2012-05-18 14:53:49		  weechat.bar.input.type = window
+2012-05-18 14:53:49		  weechat.bar.nicklist.color_bg = default
+2012-05-18 14:53:49		  weechat.bar.nicklist.color_delim = cyan
+2012-05-18 14:53:49		  weechat.bar.nicklist.color_fg = default
+2012-05-18 14:53:49		  weechat.bar.nicklist.conditions = "nicklist"
+2012-05-18 14:53:49		  weechat.bar.nicklist.filling_left_right = vertical
+2012-05-18 14:53:49		  weechat.bar.nicklist.filling_top_bottom = columns_vertical
+2012-05-18 14:53:49		  weechat.bar.nicklist.hidden = off
+2012-05-18 14:53:49		  weechat.bar.nicklist.items = "buffer_nicklist"
+2012-05-18 14:53:49		  weechat.bar.nicklist.position = right
+2012-05-18 14:53:49		  weechat.bar.nicklist.priority = 200
+2012-05-18 14:53:49		  weechat.bar.nicklist.separator = on
+2012-05-18 14:53:49		  weechat.bar.nicklist.size = 0
+2012-05-18 14:53:49		  weechat.bar.nicklist.size_max = 0
+2012-05-18 14:53:49		  weechat.bar.nicklist.type = window
+2012-05-18 14:53:49		  weechat.bar.status.color_bg = blue
+2012-05-18 14:53:49		  weechat.bar.status.color_delim = cyan
+2012-05-18 14:53:49		  weechat.bar.status.color_fg = default
+2012-05-18 14:53:49		  weechat.bar.status.conditions = ""
+2012-05-18 14:53:49		  weechat.bar.status.filling_left_right = vertical
+2012-05-18 14:53:49		  weechat.bar.status.filling_top_bottom = horizontal
+2012-05-18 14:53:49		  weechat.bar.status.hidden = off
+2012-05-18 14:53:49		  weechat.bar.status.items = "[time],[buffer_count],[buffer_plugin],buffer_number+:+buffer_name+{buffer_nicklist_count}+buffer_filter,[lag],[hotlist],completion,scroll"
+2012-05-18 14:53:49		  weechat.bar.status.position = bottom
+2012-05-18 14:53:49		  weechat.bar.status.priority = 500
+2012-05-18 14:53:49		  weechat.bar.status.separator = off
+2012-05-18 14:53:49		  weechat.bar.status.size = 1
+2012-05-18 14:53:49		  weechat.bar.status.size_max = 0
+2012-05-18 14:53:49		  weechat.bar.status.type = window
+2012-05-18 14:53:49		  weechat.bar.title.color_bg = blue
+2012-05-18 14:53:49		  weechat.bar.title.color_delim = cyan
+2012-05-18 14:53:49		  weechat.bar.title.color_fg = default
+2012-05-18 14:53:49		  weechat.bar.title.conditions = ""
+2012-05-18 14:53:49		  weechat.bar.title.filling_left_right = vertical
+2012-05-18 14:53:49		  weechat.bar.title.filling_top_bottom = horizontal
+2012-05-18 14:53:49		  weechat.bar.title.hidden = off
+2012-05-18 14:53:49		  weechat.bar.title.items = "buffer_title"
+2012-05-18 14:53:49		  weechat.bar.title.position = top
+2012-05-18 14:53:49		  weechat.bar.title.priority = 500
+2012-05-18 14:53:49		  weechat.bar.title.separator = off
+2012-05-18 14:53:49		  weechat.bar.title.size = 1
+2012-05-18 14:53:49		  weechat.bar.title.size_max = 0
+2012-05-18 14:53:49		  weechat.bar.title.type = window
+2012-05-18 14:53:49		210 opciones de configuración encontradas con "weechat.*"
+2012-05-18 14:54:19		Lista de buffers:
+2012-05-18 14:54:19		  [1] (core) weechat (aviso: all)
+2012-05-18 14:54:23		Lista de ventanas:
+2012-05-18 14:54:23		[1] (0:0;96x60) 
+2012-05-18 15:25:47	=!=	No es posible escribir texto en este buffer
+2012-05-18 15:25:51		fifo: tubería cerrada
+2012-05-18 15:25:53		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 15:32:37		[core]
+2012-05-18 15:32:37		  away    color   debug   history layout  plugin  reload  set     uptime  window 
+2012-05-18 15:32:37		  bar     command filter  input   mouse   proxy   repeat  unset   version
+2012-05-18 15:32:37		  buffer  cursor  help    key     mute    quit    save    upgrade wait   
+2012-05-18 15:32:37		[lua]
+2012-05-18 15:32:37		  lua
+2012-05-18 15:32:37		[xfer]
+2012-05-18 15:32:37		  me   xfer
+2012-05-18 15:32:37		[logger]
+2012-05-18 15:32:37		  logger
+2012-05-18 15:32:37		[rmodifier]
+2012-05-18 15:32:37		  rmodifier
+2012-05-18 15:32:37		[perl]
+2012-05-18 15:32:37		  perl
+2012-05-18 15:32:37		[ruby]
+2012-05-18 15:32:37		  ruby
+2012-05-18 15:32:37		[charset]
+2012-05-18 15:32:37		  charset
+2012-05-18 15:32:37		[aspell]
+2012-05-18 15:32:37		  aspell
+2012-05-18 15:32:37		[python]
+2012-05-18 15:32:37		  python
+2012-05-18 15:32:37		[irc]
+2012-05-18 15:32:37		  admin      devoice    kickban    names      quote      service    userhost  
+2012-05-18 15:32:37		  allchan    die        kill       nick       reconnect  servlist   users     
+2012-05-18 15:32:37		  allserv    disconnect links      notice     rehash     squery     version   
+2012-05-18 15:32:37		  ban        halfop     list       notify     restart    squit      voice     
+2012-05-18 15:32:37		  connect    ignore     lusers     op         sajoin     stats      wallchops 
+2012-05-18 15:32:37		  ctcp       info       map        oper       samode     summon     wallops   
+2012-05-18 15:32:37		  cycle      invite     me         part       sanick     time       who       
+2012-05-18 15:32:37		  dcc        ison       mode       ping       sapart     topic      whois     
+2012-05-18 15:32:37		  dehalfop   join       motd       pong       saquit     trace      whowas    
+2012-05-18 15:32:37		  deop       kick       msg        query      server     unban     
+2012-05-18 15:32:37		[relay]
+2012-05-18 15:32:37		  relay
+2012-05-18 15:32:37		[tcl]
+2012-05-18 15:32:37		  tcl
+2012-05-18 15:32:37		[alias]
+2012-05-18 15:32:37		  AAWAY   ANICK   CL      J       M       REDRAW  UB      W       WW     
+2012-05-18 15:32:37		  alias   BYE     CLOSE   K       MUB     SAY     UMODE   WC     
+2012-05-18 15:32:37		  AME     C       EXIT    KB      N       SIGNOFF unalias WI     
+2012-05-18 15:32:37		  AMSG    CHAT    IG      LEAVE   Q       T       V       WII    
+2012-05-18 15:32:57		[irc]  /squit  <servidor> <comentario>
+2012-05-18 15:32:57		desconectar los enlaces de servidor
+2012-05-18 15:32:57		  servidor: nombre del servidor
+2012-05-18 15:32:57		comentario: comentario para salir
+2012-05-18 15:33:36		[core]  /layout  save [buffers|windows]
+2012-05-18 15:33:36		                 apply [buffers|windows]
+2012-05-18 15:33:36		                 reset [buffers|windows]
+2012-05-18 15:33:36		guardar/aplicar/reiniciar el esquema de las ventanas y buffers
+2012-05-18 15:33:36		   save: guarda el esquema actual
+2012-05-18 15:33:36		  apply: aplica el esquema guardado
+2012-05-18 15:33:36		  reset: borra el esquema guardado
+2012-05-18 15:33:36		buffers: guarda/aplica el esquema solamente para los buffers (orden de los buffers)
+2012-05-18 15:33:36		windows: guarda/aplica el esquema solamente para las ventanas (buffer mostrado por cada ventana)
+2012-05-18 15:33:36		Sin ningún argumento, este comando muestra el esquema guardado.
+2012-05-18 15:39:15		fifo: tubería cerrada
+2012-05-18 15:41:04		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 15:41:16	=!=	irc: el comando "join" debe ser ejecutado en un buffer irc (canal o servidor)
+2012-05-18 15:41:32	=!=	irc: el comando "join" debe ser ejecutado en un buffer irc (canal o servidor)
+2012-05-18 15:42:14		Notificación cambiada para "irc.freenode.#archlinux": "all" a "message"
+2012-05-18 15:44:12		Ningún esquema guardado
+2012-05-18 15:44:53		Notificación cambiada para "irc.server.freenode": "all" a "none"
+2012-05-18 15:45:08		Notificación cambiada para "irc.freenode.#archlinux": "message" a "none"
+2012-05-18 15:51:19		Filtro "irc_smart" añadido:
+2012-05-18 15:51:19		  [irc_smart] buffer: * / etiquetas: irc_smart_filter / expresión: * 
+2012-05-18 15:52:08		fifo: tubería cerrada
+2012-05-18 15:52:15		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 15:52:50		Opción cambiada: irc.server.freenode.username = "kniren"
+2012-05-18 15:53:12		Opción cambiada: irc.server.freenode.autoconnect = on
+2012-05-18 15:53:38		fifo: tubería cerrada
+2012-05-18 15:53:39		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 15:54:33	=!=	Error: opción de configuración "nick" no encontrada
+2012-05-18 15:54:45		fifo: tubería cerrada
+2012-05-18 15:54:47		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 15:54:51		fifo: tubería cerrada
+2012-05-18 15:58:09		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 16:02:15		fifo: tubería cerrada
+2012-05-18 16:02:17		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 16:04:33		Opción cambiada: irc.server.freenode.username = "kniren"
+2012-05-18 16:04:38		Opción cambiada: irc.server.freenode.username = "kniren"
+2012-05-18 16:04:44		fifo: tubería cerrada
+2012-05-18 16:04:46		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 16:06:39		Opción cambiada: irc.server_default.nicks = "kniren"
+2012-05-18 16:06:43		fifo: tubería cerrada
+2012-05-18 16:06:44		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 16:07:37		Opción cambiada: irc.server.freenode.command = "/msg nickserv identify 19894471"
+2012-05-18 16:07:40		fifo: tubería cerrada
+2012-05-18 16:07:41		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 16:08:06		Opción cambiada: irc.server.freenode.command = "/msg nickserv identify 19894471"
+2012-05-18 16:08:11		fifo: tubería cerrada
+2012-05-18 16:08:12		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 16:10:15		Lista de barras:
+2012-05-18 16:10:15		  input: window, bottom, altura: 1
+2012-05-18 16:10:15		  title: window, top, altura: 1
+2012-05-18 16:10:15		  status: window, bottom, altura: 1
+2012-05-18 16:10:15		  nicklist: window, right, ancho: auto
+2012-05-18 16:19:00		python: cargando el script "/home/alex/.weechat/python/autoload/weeget.py"
+2012-05-18 16:19:00		python: script "weeget" registrado, versión 1.8 (WeeChat scripts manager)
+2012-05-18 16:20:00		weeget: downloading list of scripts...
+2012-05-18 16:20:06		weeget: scripts downloaded
+2012-05-18 16:20:06		Scripts for WeeChat 0.3.7:
+2012-05-18 16:20:06		    allquery              py  Execute command on all irc query buffers.
+2012-05-18 16:20:06		    alternatetz           py  Add an alternate timezone item.
+2012-05-18 16:20:06		    amarok2               pl  Amarok 2 control and now playing script.
+2012-05-18 16:20:06		    amqp_notify           rb  Send private messages and highlights to an AMQP exchange.
+2012-05-18 16:20:06		    announce_url_title    py  Announce URL title to user or to channel.
+2012-05-18 16:20:06		    arespond              py  Simple autoresponder.
+2012-05-18 16:20:06		    audacious             pl  Display which song Audacious is currently playing.
+2012-05-18 16:20:06		    auto_away             py  A simple auto-away script.
+2012-05-18 16:20:06		    autoauth              py  Permits to auto-authenticate when changing nick.
+2012-05-18 16:20:06		    autoconnect           py  Reopen servers and channels opened last time WeeChat closed.
+2012-05-18 16:20:06		    autojoin              py  Configure autojoin for all servers according to currently joined channels.
+2012-05-18 16:20:06		    autojoin_on_invite    py  Auto joins channels when invited.
+2012-05-18 16:20:06		    automode              py  Auto op/voice users when they join IRC channel.
+2012-05-18 16:20:06		    away_action           py  Run command on highlight and privmsg when away.
+2012-05-18 16:20:06		    awaylog               pl  Log highlights/private msg when you are away.
+2012-05-18 16:20:06		    bandwidth             py  Displays network interface bandwidth on a bar.
+2012-05-18 16:20:06		    bashorg               pl  Retrieve quotes from bash.org.
+2012-05-18 16:20:06		    beat                  pl  Add a bar item with the Beat-Internet-Time.
+2012-05-18 16:20:06		    beep                  pl  Beep (terminal bell) or run command on highlight/private message.
+2012-05-18 16:20:06		    bitlbee_typing_notice py  Send notice when typing message on bitlbee, display if user is writing in a bar item.
+2012-05-18 16:20:06		    buddylist             pl  A simple buddylist to show if your buddies are online/away/offline.
+2012-05-18 16:20:06		    buffer_autoclose      py  Automatically close inactive private message buffers.
+2012-05-18 16:20:06		    buffer_autoset        py  Auto-set buffer properties when a buffer is opened.
+2012-05-18 16:20:06		    buffer_swap           py  Swap two buffers.
+2012-05-18 16:20:06		i   buffers               pl  Sidebar with list of buffers.
+2012-05-18 16:20:06		    bufsave               py  Save current buffer content to a file.
+2012-05-18 16:20:06		    bufsize               py  Bar item with scroll indicator and info about number of lines in buffer.
+2012-05-18 16:20:06		    chan_hl               tcl Highlight some channels on each message.
+2012-05-18 16:20:06		    chanact               py  New hotlist, use names and keybindings instead of numbers.
+2012-05-18 16:20:06		    chanmon               pl  Adds a channel monitor buffer.
+2012-05-18 16:20:06		    chanop                py  Helper script for IRC channel operators.
+2012-05-18 16:20:06		    chanpriority          py  Set channel priority.
+2012-05-18 16:20:06		    chanstat              py  Displays channel's peak, low and average users.
+2012-05-18 16:20:06		    chatters              pl  Bar item with chatters (non idle people).
+2012-05-18 16:20:06		    clemenshow            py  Display which song clementine is currently playing.
+2012-05-18 16:20:06		    clone_scanner         py  Detect multiple nicknames from the same host on irc channels.
+2012-05-18 16:20:06		    cmd_help              py  Contextual command line help.
+2012-05-18 16:20:06		    colorize_lines        pl  Color the channel text with nick color.
+2012-05-18 16:20:06		    colorize_nicks        py  Use the weechat nick colors in the chat area and command line.
+2012-05-18 16:20:06		    completion            py  Custom word completions.
+2012-05-18 16:20:06		    confversion           py  Save config files in a version control system.
+2012-05-18 16:20:06		    correction_completion py  Provides a completion for "s/typo/correct".
+2012-05-18 16:20:06		    country               py  Print user's country and local time in whois/whowas replies.
+2012-05-18 16:20:06		    cron                  py  Time-based scheduler, like cron and at.
+2012-05-18 16:20:06		    crypt                 py  Encrypt/decrypt messages using openssl.
+2012-05-18 16:20:06		    curiousignore         pl  Remove messages from a nick and only print nick.
+2012-05-18 16:20:06		    customize_bar         py  Customize bars by buffer.
+2012-05-18 16:20:06		    dcc_antispam          py  Antispam for DCC file/chat requests.
+2012-05-18 16:20:06		    dcc_send_relay        rb  Forward DCC SEND requests to a different client.
+2012-05-18 16:20:06		    dellog                pl  Delete log file of current buffer.
+2012-05-18 16:20:06		    echo                  pl  Print a line and additionally set activity level.
+2012-05-18 16:20:06		    expand_url            pl  Expand short URLs.
+2012-05-18 16:20:06		    facebook_rename       py  Rename Facebook usernames when using Bitlbee or Minbif.
+2012-05-18 16:20:06		    fileaway              py  Set away status based on presence of a file.
+2012-05-18 16:20:06		    filter_ext            pl  Extends /filter, help against spam.
+2012-05-18 16:20:06		    fish                  py  FiSH encryption/decryption.
+2012-05-18 16:20:06		    floodit               py  Flood'it game.
+2012-05-18 16:20:06		    foo_spam              pl  Show info about current song in foobar2000.
+2012-05-18 16:20:06		    fortune               pl  Sends a random fortune cookie.
+2012-05-18 16:20:06		    gnotify               py  Notifications through Growl.
+2012-05-18 16:20:06		    gntp_notify           rb  Growl notifications using ruby-gntp.
+2012-05-18 16:20:06		    gntpnotify            py  Growl notifications using python-gntp.
+2012-05-18 16:20:06		    go                    py  Quick jump to buffers.
+2012-05-18 16:20:06		    grep                  py  Search regular expression in buffers or log files.
+2012-05-18 16:20:06		    growl                 py  Send Growl notifications upon events.
+2012-05-18 16:20:06		    growl_net_notify      pl  Notifications through Net::Growl.
+2012-05-18 16:20:06		    gweather              py  Add a bar item with Google weather.
+2012-05-18 16:20:06		    highlightxmpp         py  Relay highlighted and private messages over XMPP (Jabber).
+2012-05-18 16:20:06		    highmon               pl  Adds a highlight monitor buffer.
+2012-05-18 16:20:06		    hilites               rb  Display Weechat highlights in dzen (and beep).
+2012-05-18 16:20:06		    histsearch            py  Quick search in command history.
+2012-05-18 16:20:06		    hl2file               py  Generate a file with highlights for external programs as conky.
+2012-05-18 16:20:06		    hl_nicks              py  Generate a list of nicks in input by selecting nicks using flags and patterns.
+2012-05-18 16:20:06		    hlpvitem              py  Add bar item with highlight/private messages.
+2012-05-18 16:20:06		    hotlist2extern        pl  Give hotlist to an external file/program.
+2012-05-18 16:20:06		    ichatts               py  iChat-style timestamps.
+2012-05-18 16:20:06		    identica              py  Format identi.ca bot messages.
+2012-05-18 16:20:06		    im_kayac_com_notify   py  Push notification to im.kayac.com.
+2012-05-18 16:20:06		    imap_status           py  Bar item with unread imap messages count.
+2012-05-18 16:20:06		    infolist              py  Display infolist in a buffer, useful for script developers.
+2012-05-18 16:20:06		    infos                 py  Display WeeChats infos, useful for script developers.
+2012-05-18 16:20:06		    inotify               py  Notification script using libnotify or dbus with screen support.
+2012-05-18 16:20:06		    input_lock            rb  Lock input (authorize only commands).
+2012-05-18 16:20:06		    iset                  pl  Set WeeChat and plugins options interactively.
+2012-05-18 16:20:06		    isgd                  pl  Shorten URLs with is.gd on command.
+2012-05-18 16:20:06		    jabber                py  Jabber/XMPP protocol.
+2012-05-18 16:20:06		    jnotify               pl  Start internal comand or external program if a user or one of your buddies joins a channel you are in.
+2012-05-18 16:20:06		    kbtimeout             py  Kickban nick and unban after some seconds.
+2012-05-18 16:20:06		    keepnick              py  Keep your nick and recover it in case it's stolen.
+2012-05-18 16:20:06		    kernel                pl  Display latest available kernel on kernel.org.
+2012-05-18 16:20:06		    kickban               pl  Customizable kickban command with unban timer and mask resolver.
+2012-05-18 16:20:06		    kikoo                 pl  Send a colored "kikoo" on current channel.
+2012-05-18 16:20:06		    kiloseconds           py  Adds a command and bar item for displaying the current time in kiloseconds.
+2012-05-18 16:20:06		    lastfm                py  Send your latest Last.fm track to the current buffer.
+2012-05-18 16:20:06		    launcher              pl  Launch external commands for signals.
+2012-05-18 16:20:06		    leet                  py  Convert text to leet.
+2012-05-18 16:20:06		    listbuffer            py  Show /list results in a common buffer and interact with them.
+2012-05-18 16:20:06		    listsort              pl  Sort the output of /list command by user count.
+2012-05-18 16:20:06		    lnotify               py  A libnotify script.
+2012-05-18 16:20:06		    logsize               py  Display size of current log file in a bar item.
+2012-05-18 16:20:06		    mastermind            pl  Mastermind game.
+2012-05-18 16:20:06		    memon                 py  Freenode memo notifications.
+2012-05-18 16:20:06		    menu                  pl  Bar with popup menu.
+2012-05-18 16:20:06		    minbif_typing_notice  rb  Send notice when typing message on minbif, display if user is writing in a bar item.
+2012-05-18 16:20:06		    minesweeper           py  Minesweeper game.
+2012-05-18 16:20:06		    moc                   pl  Show info about current song in moc.
+2012-05-18 16:20:06		    moc_control           py  Control and now-playing script for moc.
+2012-05-18 16:20:06		    mpc                   py  A now playing and control script for mpd.
+2012-05-18 16:20:06		    mpdnp                 py  Display which song mpd is currently playing.
+2012-05-18 16:20:06		    mpdspam               rb  Display which song mpd is currently playing.
+2012-05-18 16:20:06		    mplex                 pl  Simple remote control of multiplexer (screen or tmux), optionally set away status.
+2012-05-18 16:20:06		    mpris_np              py  A now playing script for players supporting the mpris dbus interface.
+2012-05-18 16:20:06		    msg_command           py  Run chat received in a buffer as commands.
+2012-05-18 16:20:06		    myuptime              rb  Sends machine uptime to current channel.
+2012-05-18 16:20:06		    nameday               py  Display name days in bar item and buffer (only french calendar).
+2012-05-18 16:20:06		    ncmpcpp               pl  Control and now playing script for ncmpcpp.
+2012-05-18 16:20:06		    newsbar               pl  Print highlights or text given by commands into a bar (auto popup if needed).
+2012-05-18 16:20:06		    nickregain            pl  Automatically attempts to regain IRC primary nick.
+2012-05-18 16:20:06		    nma                   py  Receive notifications in Notify My Android (android phone app).
+2012-05-18 16:20:06		    notifo                py  Send private messages and highlights as push notifications to your iPhone/Android.
+2012-05-18 16:20:06		    notifo_notify         py  Push notification to iPod touch/iPhone with notifo.
+2012-05-18 16:20:06		    notify                py  Notification on screen for highlights and private messages.
+2012-05-18 16:20:06		    pagetitle             py  Adds HTML page titles to http:// urls in your message.
+2012-05-18 16:20:06		    perlexec              pl  Execute perl code with a command or in a buffer.
+2012-05-18 16:20:06		    pop3_mail             pl  Check POP3 server for mails and display mail headers.
+2012-05-18 16:20:06		    postpone              py  Postpone written messages for later dispatching if target nick is not on channel.
+2012-05-18 16:20:06		    prism                 py  Send text using rainbow colors.
+2012-05-18 16:20:06		    purgelogs             py  Delete log files by age or size.
+2012-05-18 16:20:06		    pybuffer              py  Debugging tool for python scripts or test WeeChat's API functions.
+2012-05-18 16:20:06		    query_blocker         pl  Simple blocker for private message (i.e. spam).
+2012-05-18 16:20:06		    queue                 py  Command queuing.
+2012-05-18 16:20:06		    quick_force_color     py  Quickly add/del/change entry in option irc.look.nick_color_force.
+2012-05-18 16:20:06		    quodnp                py  A now playing and control script for Quodlibet.
+2012-05-18 16:20:06		    ragefaces             pl  Send ragefac.es URLs.
+2012-05-18 16:20:06		    rhythmbox             pl  Display which song rhythmbox is currently playing.
+2012-05-18 16:20:06		    rhythmbus             pl  Control Rhythmbox through qdbus.
+2012-05-18 16:20:06		    rnotify               tcl Sends highlights to (remote) client using libnotify.
+2012-05-18 16:20:06		    rslap                 pl  Slaps with random messages.
+2012-05-18 16:20:06		    samegame              py  SameGame.
+2012-05-18 16:20:06		    screen_away           py  Set away status when detaching and attaching from screen or tmux.
+2012-05-18 16:20:06		    script                pl  Load/reload/unload scripts for any language.
+2012-05-18 16:20:06		    seeks                 pl  Search terms on seeks node and display results.
+2012-05-18 16:20:06		    sensors               py  Displays sensor data.
+2012-05-18 16:20:06		    server_autoswitch     py  Cycle to currently used server (for merged buffers).
+2012-05-18 16:20:06		    shell                 py  Run shell commands inside WeeChat.
+2012-05-18 16:20:06		    shortenurl            py  Shorten long urls using isgd or tinyurl.
+2012-05-18 16:20:06		    shuffle               pl  Simple text shuffler.
+2012-05-18 16:20:06		    slock_away            py  Set away status if slock (X display locker) is running.
+2012-05-18 16:20:06		    snake                 pl  Snake game.
+2012-05-18 16:20:06		    snarl_net_notify      pl  Snarl notifications for highlights.
+2012-05-18 16:20:06		    snotify               py  Play sound when messages are printed in buffers.
+2012-05-18 16:20:06		    sort_buffers          pl  Sort irc buffers alphabetically.
+2012-05-18 16:20:06		    sound                 pl  Play a sound for IRC "CTCP SOUND" message.
+2012-05-18 16:20:06		    spotify               py  Looks up meta information about spotify-URIs and posts back to channel.
+2012-05-18 16:20:06		    spotify_nowplaying    py  Current song script for Spotify on OS X.
+2012-05-18 16:20:06		    sshnotify             py  A notify script which uses ssh.
+2012-05-18 16:20:06		    stats_bar             pl  Bar items with stats about network interface, load, and free memory.
+2012-05-18 16:20:06		    strmon                pl  Monitoring of highlights, tags, buffers, nicks with optional sound and osd notifications.
+2012-05-18 16:20:06		    sysinfo               pl  System info command.
+2012-05-18 16:20:06		    tailer                py  Tail any number of files and run any command with line appended.
+2012-05-18 16:20:06		    text_effects          lua Adds effects to words surrounded by certain characters.
+2012-05-18 16:20:06		    text_replace          py  Replaces text you write with replacement text.
+2012-05-18 16:20:06		    thinklight_blink      pl  Thinklight blink on highlight/private message.
+2012-05-18 16:20:06		    tinyurl               py  Get "tinyurl.com" equivalent for URLs.
+2012-05-18 16:20:06		    title                 py  Set terminal title to active buffer name and hotlist items.
+2012-05-18 16:20:06		    toggle_nicklist       py  Auto show and hide nicklist depending on buffer name.
+2012-05-18 16:20:06		    topicdiff             py  Show differences between old and new topics.
+2012-05-18 16:20:06		    topicsed              pl  Edit channel topics by perl regular expressions or in input-line.
+2012-05-18 16:20:06		    translate             py  Translate string using Google translate API.
+2012-05-18 16:20:06		    twmn_notify           py  Notifications for twmn.
+2012-05-18 16:20:06		    typing_counter        py  Bar item showing typing count and cursor position.
+2012-05-18 16:20:06		    ubus                  pl  Ubus notification.
+2012-05-18 16:20:06		    uname                 py  Sends "uname -a" output to current channel.
+2012-05-18 16:20:06		    unset_unused          pl  Unset script option(s) fom scripts that are no longer installed.
+2012-05-18 16:20:06		    unwanted_msg          py  Avoid sending misformatted commands as messages.
+2012-05-18 16:20:06		    update_notifier       py  Notify user about WeeChat updates.
+2012-05-18 16:20:06		    uppercase             py  Transform all your input to uppercase (useful for INTERNATIONAL CAPSLOCK DAY).
+2012-05-18 16:20:06		    upside_down           py  Replaces text you write with upside down text.
+2012-05-18 16:20:06		    url_shorten           rb  Shorten long urls in channels.
+2012-05-18 16:20:06		    urlbar                py  Display a url bar for easy clicking or selecting.
+2012-05-18 16:20:06		    urlbuf                py  A common buffer for URLs.
+2012-05-18 16:20:06		    urlgrab               py  Logs url and open them in browser.
+2012-05-18 16:20:06		    urlserver             py  Shorten URLs with own HTTP server.
+2012-05-18 16:20:06		    vdm                   py  Display content of viedemerde.fr/fmylife.com website.
+2012-05-18 16:20:06		    volumeter             pl  Show volume of data on network interface in a bar.
+2012-05-18 16:20:06		    weather               py  Display weather from Google.
+2012-05-18 16:20:06		    weefish               rb  FiSH encryption/decryption.
+2012-05-18 16:20:06		ir  weeget                py  Scripts manager.
+2012-05-18 16:20:06		    weempd                py  Display which song mpd is currently playing.
+2012-05-18 16:20:06		    weenetsoul            py  Netsoul protocol.
+2012-05-18 16:20:06		    weerock               pl  A "now playing" script for several music players.
+2012-05-18 16:20:06		    weestats              py  Insert some statistics about buffers/windows on command line.
+2012-05-18 16:20:06		    weetris               pl  Tetris-like game.
+2012-05-18 16:20:06		    whatismyip            py  Display external ip address.
+2012-05-18 16:20:06		    whois_on_query        py  Send "whois" on nick when receiving new IRC query.
+2012-05-18 16:20:06		    windicate             py  Add alerts to the message menu in Ubuntu.
+2012-05-18 16:20:06		    wmiibar               pl  Wmii statusbar notification for highlights.
+2012-05-18 16:20:06		    xclip                 pl  Paste content from X11 clipboard.
+2012-05-18 16:20:06		    xfer_setip            py  Set xfer own ip with external ip.
+2012-05-18 16:20:06		    xmms2                 rb  Display which song xmms2 is currently playing.
+2012-05-18 16:20:06		    xosdnotify            tcl Show highlights and private messages with OSD.
+2012-05-18 16:20:06		    yaaa                  pl  Auto-away script.
+2012-05-18 16:20:06		    yaurls                pl  Shorten URLs with tinyURL, ls-n, or is.gd.
+2012-05-18 16:20:06		    zerotab               py  Complete empty input line with latest speaker nick in channel.
+2012-05-18 16:20:06		    zmq_notify            rb  Send notifications to a ZMQ socket.
+2012-05-18 16:20:21		[python]  /weeget  list|listinstalled [<text>|<tag>]
+2012-05-18 16:20:21		                   show <script>
+2012-05-18 16:20:21		                   install|remove <script> [<script>...]
+2012-05-18 16:20:21		                   check|update|upgrade
+2012-05-18 16:20:21		WeeChat scripts manager
+2012-05-18 16:20:21		         list: list scripts (search text if given)
+2012-05-18 16:20:21		listinstalled: list installed scripts (search text if given)
+2012-05-18 16:20:21		         show: show detailed information about a script (in repository)
+2012-05-18 16:20:21		      install: install/upgrade script(s)
+2012-05-18 16:20:21		        check: check if local scripts needs upgrade
+2012-05-18 16:20:21		       update: update local scripts cache
+2012-05-18 16:20:21		      upgrade: upgrade all local scripts if they are obsolete
+2012-05-18 16:20:21		       remove: remove script(s)
+2012-05-18 16:20:21		Indicators in lists (first column):
+2012-05-18 16:20:21		  i  script is installed
+2012-05-18 16:20:21		  ?  unknown script
+2012-05-18 16:20:21		  r  script is running (loaded)
+2012-05-18 16:20:21		  N  script is obsolete (new version available)
+2012-05-18 16:20:21		Examples:
+2012-05-18 16:20:21		  /weeget list             => list all scripts
+2012-05-18 16:20:21		  /weeget list game        => list all scripts with text/tag "game"
+2012-05-18 16:20:21		  /weeget install beep.pl  => install script beep.pl
+2012-05-18 16:20:21		  /weeget remove beep.pl   => remove script beep.pl
+2012-05-18 16:20:46		weeget: script "buffers.pl" is already installed and up to date
+2012-05-18 16:21:39		fifo: tubería cerrada
+2012-05-18 16:21:39		python: scripts descargados
+2012-05-18 16:21:40		scripts en python cargados: weeget
+2012-05-18 16:21:40		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 16:22:11	=!=	Error: faltan argumentos para el comando "bar add"
+2012-05-18 16:22:11	=!=	Error con el comando "bar" (trata con /help bar)
+2012-05-18 16:24:01		Scripts for WeeChat 0.3.7:
+2012-05-18 16:24:01		    allquery              py  Execute command on all irc query buffers.
+2012-05-18 16:24:01		    alternatetz           py  Add an alternate timezone item.
+2012-05-18 16:24:01		    amarok2               pl  Amarok 2 control and now playing script.
+2012-05-18 16:24:01		    amqp_notify           rb  Send private messages and highlights to an AMQP exchange.
+2012-05-18 16:24:01		    announce_url_title    py  Announce URL title to user or to channel.
+2012-05-18 16:24:01		    arespond              py  Simple autoresponder.
+2012-05-18 16:24:01		    audacious             pl  Display which song Audacious is currently playing.
+2012-05-18 16:24:01		    auto_away             py  A simple auto-away script.
+2012-05-18 16:24:01		    autoauth              py  Permits to auto-authenticate when changing nick.
+2012-05-18 16:24:01		    autoconnect           py  Reopen servers and channels opened last time WeeChat closed.
+2012-05-18 16:24:01		    autojoin              py  Configure autojoin for all servers according to currently joined channels.
+2012-05-18 16:24:01		    autojoin_on_invite    py  Auto joins channels when invited.
+2012-05-18 16:24:01		    automode              py  Auto op/voice users when they join IRC channel.
+2012-05-18 16:24:01		    away_action           py  Run command on highlight and privmsg when away.
+2012-05-18 16:24:01		    awaylog               pl  Log highlights/private msg when you are away.
+2012-05-18 16:24:01		    bandwidth             py  Displays network interface bandwidth on a bar.
+2012-05-18 16:24:01		    bashorg               pl  Retrieve quotes from bash.org.
+2012-05-18 16:24:01		    beat                  pl  Add a bar item with the Beat-Internet-Time.
+2012-05-18 16:24:01		    beep                  pl  Beep (terminal bell) or run command on highlight/private message.
+2012-05-18 16:24:01		    bitlbee_typing_notice py  Send notice when typing message on bitlbee, display if user is writing in a bar item.
+2012-05-18 16:24:01		    buddylist             pl  A simple buddylist to show if your buddies are online/away/offline.
+2012-05-18 16:24:01		    buffer_autoclose      py  Automatically close inactive private message buffers.
+2012-05-18 16:24:01		    buffer_autoset        py  Auto-set buffer properties when a buffer is opened.
+2012-05-18 16:24:01		    buffer_swap           py  Swap two buffers.
+2012-05-18 16:24:01		i   buffers               pl  Sidebar with list of buffers.
+2012-05-18 16:24:01		    bufsave               py  Save current buffer content to a file.
+2012-05-18 16:24:01		    bufsize               py  Bar item with scroll indicator and info about number of lines in buffer.
+2012-05-18 16:24:01		    chan_hl               tcl Highlight some channels on each message.
+2012-05-18 16:24:01		    chanact               py  New hotlist, use names and keybindings instead of numbers.
+2012-05-18 16:24:01		    chanmon               pl  Adds a channel monitor buffer.
+2012-05-18 16:24:01		    chanop                py  Helper script for IRC channel operators.
+2012-05-18 16:24:01		    chanpriority          py  Set channel priority.
+2012-05-18 16:24:01		    chanstat              py  Displays channel's peak, low and average users.
+2012-05-18 16:24:01		    chatters              pl  Bar item with chatters (non idle people).
+2012-05-18 16:24:01		    clemenshow            py  Display which song clementine is currently playing.
+2012-05-18 16:24:01		    clone_scanner         py  Detect multiple nicknames from the same host on irc channels.
+2012-05-18 16:24:01		    cmd_help              py  Contextual command line help.
+2012-05-18 16:24:01		    colorize_lines        pl  Color the channel text with nick color.
+2012-05-18 16:24:01		    colorize_nicks        py  Use the weechat nick colors in the chat area and command line.
+2012-05-18 16:24:01		    completion            py  Custom word completions.
+2012-05-18 16:24:01		    confversion           py  Save config files in a version control system.
+2012-05-18 16:24:01		    correction_completion py  Provides a completion for "s/typo/correct".
+2012-05-18 16:24:01		    country               py  Print user's country and local time in whois/whowas replies.
+2012-05-18 16:24:01		    cron                  py  Time-based scheduler, like cron and at.
+2012-05-18 16:24:01		    crypt                 py  Encrypt/decrypt messages using openssl.
+2012-05-18 16:24:01		    curiousignore         pl  Remove messages from a nick and only print nick.
+2012-05-18 16:24:01		    customize_bar         py  Customize bars by buffer.
+2012-05-18 16:24:01		    dcc_antispam          py  Antispam for DCC file/chat requests.
+2012-05-18 16:24:01		    dcc_send_relay        rb  Forward DCC SEND requests to a different client.
+2012-05-18 16:24:01		    dellog                pl  Delete log file of current buffer.
+2012-05-18 16:24:01		    echo                  pl  Print a line and additionally set activity level.
+2012-05-18 16:24:01		    expand_url            pl  Expand short URLs.
+2012-05-18 16:24:01		    facebook_rename       py  Rename Facebook usernames when using Bitlbee or Minbif.
+2012-05-18 16:24:01		    fileaway              py  Set away status based on presence of a file.
+2012-05-18 16:24:01		    filter_ext            pl  Extends /filter, help against spam.
+2012-05-18 16:24:01		    fish                  py  FiSH encryption/decryption.
+2012-05-18 16:24:01		    floodit               py  Flood'it game.
+2012-05-18 16:24:01		    foo_spam              pl  Show info about current song in foobar2000.
+2012-05-18 16:24:01		    fortune               pl  Sends a random fortune cookie.
+2012-05-18 16:24:01		    gnotify               py  Notifications through Growl.
+2012-05-18 16:24:01		    gntp_notify           rb  Growl notifications using ruby-gntp.
+2012-05-18 16:24:01		    gntpnotify            py  Growl notifications using python-gntp.
+2012-05-18 16:24:01		    go                    py  Quick jump to buffers.
+2012-05-18 16:24:01		    grep                  py  Search regular expression in buffers or log files.
+2012-05-18 16:24:01		    growl                 py  Send Growl notifications upon events.
+2012-05-18 16:24:01		    growl_net_notify      pl  Notifications through Net::Growl.
+2012-05-18 16:24:01		    gweather              py  Add a bar item with Google weather.
+2012-05-18 16:24:01		    highlightxmpp         py  Relay highlighted and private messages over XMPP (Jabber).
+2012-05-18 16:24:01		    highmon               pl  Adds a highlight monitor buffer.
+2012-05-18 16:24:01		    hilites               rb  Display Weechat highlights in dzen (and beep).
+2012-05-18 16:24:01		    histsearch            py  Quick search in command history.
+2012-05-18 16:24:01		    hl2file               py  Generate a file with highlights for external programs as conky.
+2012-05-18 16:24:01		    hl_nicks              py  Generate a list of nicks in input by selecting nicks using flags and patterns.
+2012-05-18 16:24:01		    hlpvitem              py  Add bar item with highlight/private messages.
+2012-05-18 16:24:01		    hotlist2extern        pl  Give hotlist to an external file/program.
+2012-05-18 16:24:01		    ichatts               py  iChat-style timestamps.
+2012-05-18 16:24:01		    identica              py  Format identi.ca bot messages.
+2012-05-18 16:24:01		    im_kayac_com_notify   py  Push notification to im.kayac.com.
+2012-05-18 16:24:01		    imap_status           py  Bar item with unread imap messages count.
+2012-05-18 16:24:01		    infolist              py  Display infolist in a buffer, useful for script developers.
+2012-05-18 16:24:01		    infos                 py  Display WeeChats infos, useful for script developers.
+2012-05-18 16:24:01		    inotify               py  Notification script using libnotify or dbus with screen support.
+2012-05-18 16:24:01		    input_lock            rb  Lock input (authorize only commands).
+2012-05-18 16:24:01		    iset                  pl  Set WeeChat and plugins options interactively.
+2012-05-18 16:24:01		    isgd                  pl  Shorten URLs with is.gd on command.
+2012-05-18 16:24:01		    jabber                py  Jabber/XMPP protocol.
+2012-05-18 16:24:01		    jnotify               pl  Start internal comand or external program if a user or one of your buddies joins a channel you are in.
+2012-05-18 16:24:01		    kbtimeout             py  Kickban nick and unban after some seconds.
+2012-05-18 16:24:01		    keepnick              py  Keep your nick and recover it in case it's stolen.
+2012-05-18 16:24:01		    kernel                pl  Display latest available kernel on kernel.org.
+2012-05-18 16:24:01		    kickban               pl  Customizable kickban command with unban timer and mask resolver.
+2012-05-18 16:24:01		    kikoo                 pl  Send a colored "kikoo" on current channel.
+2012-05-18 16:24:01		    kiloseconds           py  Adds a command and bar item for displaying the current time in kiloseconds.
+2012-05-18 16:24:01		    lastfm                py  Send your latest Last.fm track to the current buffer.
+2012-05-18 16:24:01		    launcher              pl  Launch external commands for signals.
+2012-05-18 16:24:01		    leet                  py  Convert text to leet.
+2012-05-18 16:24:01		    listbuffer            py  Show /list results in a common buffer and interact with them.
+2012-05-18 16:24:01		    listsort              pl  Sort the output of /list command by user count.
+2012-05-18 16:24:01		    lnotify               py  A libnotify script.
+2012-05-18 16:24:01		    logsize               py  Display size of current log file in a bar item.
+2012-05-18 16:24:01		    mastermind            pl  Mastermind game.
+2012-05-18 16:24:01		    memon                 py  Freenode memo notifications.
+2012-05-18 16:24:01		    menu                  pl  Bar with popup menu.
+2012-05-18 16:24:01		    minbif_typing_notice  rb  Send notice when typing message on minbif, display if user is writing in a bar item.
+2012-05-18 16:24:01		    minesweeper           py  Minesweeper game.
+2012-05-18 16:24:01		    moc                   pl  Show info about current song in moc.
+2012-05-18 16:24:01		    moc_control           py  Control and now-playing script for moc.
+2012-05-18 16:24:01		    mpc                   py  A now playing and control script for mpd.
+2012-05-18 16:24:01		    mpdnp                 py  Display which song mpd is currently playing.
+2012-05-18 16:24:01		    mpdspam               rb  Display which song mpd is currently playing.
+2012-05-18 16:24:01		    mplex                 pl  Simple remote control of multiplexer (screen or tmux), optionally set away status.
+2012-05-18 16:24:01		    mpris_np              py  A now playing script for players supporting the mpris dbus interface.
+2012-05-18 16:24:01		    msg_command           py  Run chat received in a buffer as commands.
+2012-05-18 16:24:01		    myuptime              rb  Sends machine uptime to current channel.
+2012-05-18 16:24:01		    nameday               py  Display name days in bar item and buffer (only french calendar).
+2012-05-18 16:24:01		    ncmpcpp               pl  Control and now playing script for ncmpcpp.
+2012-05-18 16:24:01		    newsbar               pl  Print highlights or text given by commands into a bar (auto popup if needed).
+2012-05-18 16:24:01		    nickregain            pl  Automatically attempts to regain IRC primary nick.
+2012-05-18 16:24:01		    nma                   py  Receive notifications in Notify My Android (android phone app).
+2012-05-18 16:24:01		    notifo                py  Send private messages and highlights as push notifications to your iPhone/Android.
+2012-05-18 16:24:01		    notifo_notify         py  Push notification to iPod touch/iPhone with notifo.
+2012-05-18 16:24:01		    notify                py  Notification on screen for highlights and private messages.
+2012-05-18 16:24:01		    pagetitle             py  Adds HTML page titles to http:// urls in your message.
+2012-05-18 16:24:01		    perlexec              pl  Execute perl code with a command or in a buffer.
+2012-05-18 16:24:01		    pop3_mail             pl  Check POP3 server for mails and display mail headers.
+2012-05-18 16:24:01		    postpone              py  Postpone written messages for later dispatching if target nick is not on channel.
+2012-05-18 16:24:01		    prism                 py  Send text using rainbow colors.
+2012-05-18 16:24:01		    purgelogs             py  Delete log files by age or size.
+2012-05-18 16:24:01		    pybuffer              py  Debugging tool for python scripts or test WeeChat's API functions.
+2012-05-18 16:24:01		    query_blocker         pl  Simple blocker for private message (i.e. spam).
+2012-05-18 16:24:01		    queue                 py  Command queuing.
+2012-05-18 16:24:01		    quick_force_color     py  Quickly add/del/change entry in option irc.look.nick_color_force.
+2012-05-18 16:24:01		    quodnp                py  A now playing and control script for Quodlibet.
+2012-05-18 16:24:01		    ragefaces             pl  Send ragefac.es URLs.
+2012-05-18 16:24:01		    rhythmbox             pl  Display which song rhythmbox is currently playing.
+2012-05-18 16:24:01		    rhythmbus             pl  Control Rhythmbox through qdbus.
+2012-05-18 16:24:01		    rnotify               tcl Sends highlights to (remote) client using libnotify.
+2012-05-18 16:24:01		    rslap                 pl  Slaps with random messages.
+2012-05-18 16:24:01		    samegame              py  SameGame.
+2012-05-18 16:24:01		    screen_away           py  Set away status when detaching and attaching from screen or tmux.
+2012-05-18 16:24:01		    script                pl  Load/reload/unload scripts for any language.
+2012-05-18 16:24:01		    seeks                 pl  Search terms on seeks node and display results.
+2012-05-18 16:24:01		    sensors               py  Displays sensor data.
+2012-05-18 16:24:01		    server_autoswitch     py  Cycle to currently used server (for merged buffers).
+2012-05-18 16:24:01		    shell                 py  Run shell commands inside WeeChat.
+2012-05-18 16:24:01		    shortenurl            py  Shorten long urls using isgd or tinyurl.
+2012-05-18 16:24:01		    shuffle               pl  Simple text shuffler.
+2012-05-18 16:24:01		    slock_away            py  Set away status if slock (X display locker) is running.
+2012-05-18 16:24:01		    snake                 pl  Snake game.
+2012-05-18 16:24:01		    snarl_net_notify      pl  Snarl notifications for highlights.
+2012-05-18 16:24:01		    snotify               py  Play sound when messages are printed in buffers.
+2012-05-18 16:24:01		    sort_buffers          pl  Sort irc buffers alphabetically.
+2012-05-18 16:24:01		    sound                 pl  Play a sound for IRC "CTCP SOUND" message.
+2012-05-18 16:24:01		    spotify               py  Looks up meta information about spotify-URIs and posts back to channel.
+2012-05-18 16:24:01		    spotify_nowplaying    py  Current song script for Spotify on OS X.
+2012-05-18 16:24:01		    sshnotify             py  A notify script which uses ssh.
+2012-05-18 16:24:01		    stats_bar             pl  Bar items with stats about network interface, load, and free memory.
+2012-05-18 16:24:01		    strmon                pl  Monitoring of highlights, tags, buffers, nicks with optional sound and osd notifications.
+2012-05-18 16:24:01		    sysinfo               pl  System info command.
+2012-05-18 16:24:01		    tailer                py  Tail any number of files and run any command with line appended.
+2012-05-18 16:24:01		    text_effects          lua Adds effects to words surrounded by certain characters.
+2012-05-18 16:24:01		    text_replace          py  Replaces text you write with replacement text.
+2012-05-18 16:24:01		    thinklight_blink      pl  Thinklight blink on highlight/private message.
+2012-05-18 16:24:01		    tinyurl               py  Get "tinyurl.com" equivalent for URLs.
+2012-05-18 16:24:01		    title                 py  Set terminal title to active buffer name and hotlist items.
+2012-05-18 16:24:01		    toggle_nicklist       py  Auto show and hide nicklist depending on buffer name.
+2012-05-18 16:24:01		    topicdiff             py  Show differences between old and new topics.
+2012-05-18 16:24:01		    topicsed              pl  Edit channel topics by perl regular expressions or in input-line.
+2012-05-18 16:24:01		    translate             py  Translate string using Google translate API.
+2012-05-18 16:24:01		    twmn_notify           py  Notifications for twmn.
+2012-05-18 16:24:01		    typing_counter        py  Bar item showing typing count and cursor position.
+2012-05-18 16:24:01		    ubus                  pl  Ubus notification.
+2012-05-18 16:24:01		    uname                 py  Sends "uname -a" output to current channel.
+2012-05-18 16:24:01		    unset_unused          pl  Unset script option(s) fom scripts that are no longer installed.
+2012-05-18 16:24:01		    unwanted_msg          py  Avoid sending misformatted commands as messages.
+2012-05-18 16:24:01		    update_notifier       py  Notify user about WeeChat updates.
+2012-05-18 16:24:01		    uppercase             py  Transform all your input to uppercase (useful for INTERNATIONAL CAPSLOCK DAY).
+2012-05-18 16:24:01		    upside_down           py  Replaces text you write with upside down text.
+2012-05-18 16:24:01		    url_shorten           rb  Shorten long urls in channels.
+2012-05-18 16:24:01		    urlbar                py  Display a url bar for easy clicking or selecting.
+2012-05-18 16:24:01		    urlbuf                py  A common buffer for URLs.
+2012-05-18 16:24:01		    urlgrab               py  Logs url and open them in browser.
+2012-05-18 16:24:01		    urlserver             py  Shorten URLs with own HTTP server.
+2012-05-18 16:24:01		    vdm                   py  Display content of viedemerde.fr/fmylife.com website.
+2012-05-18 16:24:01		    volumeter             pl  Show volume of data on network interface in a bar.
+2012-05-18 16:24:01		    weather               py  Display weather from Google.
+2012-05-18 16:24:01		    weefish               rb  FiSH encryption/decryption.
+2012-05-18 16:24:01		ir  weeget                py  Scripts manager.
+2012-05-18 16:24:01		    weempd                py  Display which song mpd is currently playing.
+2012-05-18 16:24:01		    weenetsoul            py  Netsoul protocol.
+2012-05-18 16:24:01		    weerock               pl  A "now playing" script for several music players.
+2012-05-18 16:24:01		    weestats              py  Insert some statistics about buffers/windows on command line.
+2012-05-18 16:24:01		    weetris               pl  Tetris-like game.
+2012-05-18 16:24:01		    whatismyip            py  Display external ip address.
+2012-05-18 16:24:01		    whois_on_query        py  Send "whois" on nick when receiving new IRC query.
+2012-05-18 16:24:01		    windicate             py  Add alerts to the message menu in Ubuntu.
+2012-05-18 16:24:01		    wmiibar               pl  Wmii statusbar notification for highlights.
+2012-05-18 16:24:01		    xclip                 pl  Paste content from X11 clipboard.
+2012-05-18 16:24:01		    xfer_setip            py  Set xfer own ip with external ip.
+2012-05-18 16:24:01		    xmms2                 rb  Display which song xmms2 is currently playing.
+2012-05-18 16:24:01		    xosdnotify            tcl Show highlights and private messages with OSD.
+2012-05-18 16:24:01		    yaaa                  pl  Auto-away script.
+2012-05-18 16:24:01		    yaurls                pl  Shorten URLs with tinyURL, ls-n, or is.gd.
+2012-05-18 16:24:01		    zerotab               py  Complete empty input line with latest speaker nick in channel.
+2012-05-18 16:24:01		    zmq_notify            rb  Send notifications to a ZMQ socket.
+2012-05-18 16:24:09		[python]  /weeget  list|listinstalled [<text>|<tag>]
+2012-05-18 16:24:09		                   show <script>
+2012-05-18 16:24:09		                   install|remove <script> [<script>...]
+2012-05-18 16:24:09		                   check|update|upgrade
+2012-05-18 16:24:09		WeeChat scripts manager
+2012-05-18 16:24:09		         list: list scripts (search text if given)
+2012-05-18 16:24:09		listinstalled: list installed scripts (search text if given)
+2012-05-18 16:24:09		         show: show detailed information about a script (in repository)
+2012-05-18 16:24:09		      install: install/upgrade script(s)
+2012-05-18 16:24:09		        check: check if local scripts needs upgrade
+2012-05-18 16:24:09		       update: update local scripts cache
+2012-05-18 16:24:09		      upgrade: upgrade all local scripts if they are obsolete
+2012-05-18 16:24:09		       remove: remove script(s)
+2012-05-18 16:24:09		Indicators in lists (first column):
+2012-05-18 16:24:09		  i  script is installed
+2012-05-18 16:24:09		  ?  unknown script
+2012-05-18 16:24:09		  r  script is running (loaded)
+2012-05-18 16:24:09		  N  script is obsolete (new version available)
+2012-05-18 16:24:09		Examples:
+2012-05-18 16:24:09		  /weeget list             => list all scripts
+2012-05-18 16:24:09		  /weeget list game        => list all scripts with text/tag "game"
+2012-05-18 16:24:09		  /weeget install beep.pl  => install script beep.pl
+2012-05-18 16:24:09		  /weeget remove beep.pl   => remove script beep.pl
+2012-05-18 16:25:34	=!=	perl: script "buffers.ple" no encontrado
+2012-05-18 16:25:37		perl: cargando el script "/home/alex/.weechat/perl/buffers.pl"
+2012-05-18 16:25:37		perl: script "buffers" registrado, versión 3.3 (Sidebar with list of buffers)
+2012-05-18 16:25:37		Nuevo atajo (contexto "mouse"):  @item(buffers):button1* => hsignal:buffers_mouse
+2012-05-18 16:25:37		Nuevo atajo (contexto "mouse"):  @item(buffers):button2 => hsignal:buffers_mouse
+2012-05-18 16:27:57		[bar] (weechat.conf)
+2012-05-18 16:27:57		  weechat.bar.buffers.color_bg = default
+2012-05-18 16:27:57		  weechat.bar.buffers.color_delim = default
+2012-05-18 16:27:57		  weechat.bar.buffers.color_fg = default
+2012-05-18 16:27:57		  weechat.bar.buffers.conditions = ""
+2012-05-18 16:27:57		  weechat.bar.buffers.filling_left_right = vertical
+2012-05-18 16:27:57		  weechat.bar.buffers.filling_top_bottom = horizontal
+2012-05-18 16:27:57		  weechat.bar.buffers.hidden = off
+2012-05-18 16:27:57		  weechat.bar.buffers.items = "buffers"
+2012-05-18 16:27:57		  weechat.bar.buffers.position = left
+2012-05-18 16:27:57		  weechat.bar.buffers.priority = 0
+2012-05-18 16:27:57		  weechat.bar.buffers.separator = on
+2012-05-18 16:27:57		  weechat.bar.buffers.size = 0
+2012-05-18 16:27:57		  weechat.bar.buffers.size_max = 0
+2012-05-18 16:27:57		  weechat.bar.buffers.type = root
+2012-05-18 16:27:57		14 opciones de configuración encontradas con "weechat.bar.buffers.*"
+2012-05-18 16:28:35		Opción cambiada: weechat.bar.buffers.position = bottom
+2012-05-18 16:30:01	=!=	Error: no se pudo configurar la opción "weechat.bar.buffers.color_bg"
+2012-05-18 16:30:10	=!=	Error: no se pudo configurar la opción "weechat.bar.buffers.color_bg"
+2012-05-18 16:30:14	=!=	Error: no se pudo configurar la opción "weechat.bar.buffers.color_bg"
+2012-05-18 16:30:28	=!=	Error: no se pudo configurar la opción "weechat.bar.buffers.color_delim"
+2012-05-18 16:31:05		weeget: downloading "iset.pl"...
+2012-05-18 16:31:06		perl: cargando el script "/home/alex/.weechat/perl/iset.pl"
+2012-05-18 16:31:06		perl: script "iset" registrado, versión 2.5 (Interactive Set for configuration options)
+2012-05-18 16:31:06		Nuevo atajo (contexto "mouse"):  @chat(perl.iset):wheeldown => /repeat 5 /iset **down
+2012-05-18 16:31:06		Nuevo atajo (contexto "mouse"):  @chat(perl.iset):button1 => hsignal:iset_mouse
+2012-05-18 16:31:06		Nuevo atajo (contexto "mouse"):  @chat(perl.iset):wheelup => /repeat 5 /iset **up
+2012-05-18 16:31:06		Nuevo atajo (contexto "mouse"):  @chat(perl.iset):button2* => hsignal:iset_mouse
+2012-05-18 16:31:30		perl: cargando el script "/home/alex/.weechat/iset.conf"
+2012-05-18 16:31:30		perl error: Unquoted string "color" may clash with future reserved word at (eval 2) line 5.
+2012-05-18 16:31:30		perl error: Bareword found where operator expected at (eval 2) line 6, near "]
+2012-05-18 16:31:30		bg_selected"
+2012-05-18 16:31:30		perl error: 	(Missing operator before bg_selected?)
+2012-05-18 16:31:30		perl error: Unquoted string "lightgreen" may clash with future reserved word at (eval 2) line 19.
+2012-05-18 16:31:30		perl error: Unquoted string "help" may clash with future reserved word at (eval 2) line 19.
+2012-05-18 16:31:30		perl error: Bareword found where operator expected at (eval 2) line 20, near "]
+2012-05-18 16:31:30		show_help_bar"
+2012-05-18 16:31:30		perl error: 	(Missing operator before show_help_bar?)
+2012-05-18 16:31:30		perl error: Unquoted string "on" may clash with future reserved word at (eval 2) line 24.
+2012-05-18 16:31:30		perl error: Unquoted string "look" may clash with future reserved word at (eval 2) line 24.
+2012-05-18 16:31:30		perl error: Bareword found where operator expected at (eval 2) line 25, near "]
+2012-05-18 16:31:30		scroll_horiz"
+2012-05-18 16:31:30		perl error: 	(Missing operator before scroll_horiz?)
+2012-05-18 16:31:30		perl error: Bareword found where operator expected at (eval 2) line 26, near "10
+2012-05-18 16:31:30		show_current_line"
+2012-05-18 16:31:30		perl error: 	(Missing operator before show_current_line?)
+2012-05-18 16:31:30	=!=	perl: no es posible analizar el archivo "/home/alex/.weechat/iset.conf"
+2012-05-18 16:31:30	=!=	perl: error: syntax error at (eval 2) line 6, near "]
+2012-05-18 16:31:30		bg_selected "
+2012-05-18 16:31:36		perl: cargando el script "/home/alex/.weechat/perl/autoload/iset.pl"
+2012-05-18 16:31:36	=!=	perl: no es posible registrar el script "iset" (otro script ya existe con ese nombre)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "info_get", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "config_new", script sin inicializar (script: -)
+2012-05-18 16:31:36		perl error: Use of uninitialized value $iset_config_file in string eq at (eval 2) line 995.
+2012-05-18 16:31:36		perl error: Use of uninitialized value $iset_config_file in string ne at (eval 2) line 1102.
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "config_string", script sin inicializar (script: -)
+2012-05-18 16:31:36		perl error: Use of uninitialized value in concatenation (.) or string at (eval 2) line 1140.
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "config_string", script sin inicializar (script: -)
+2012-05-18 16:31:36		perl error: Use of uninitialized value in concatenation (.) or string at (eval 2) line 1140.
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "config_string", script sin inicializar (script: -)
+2012-05-18 16:31:36		perl error: Use of uninitialized value in concatenation (.) or string at (eval 2) line 1140.
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "hook_command", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "hook_signal", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "hook_signal", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "hook_signal", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "bar_item_new", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "bar_new", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "hook_modifier", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "hook_config", script sin inicializar (script: -)
+2012-05-18 16:31:36	=!=	perl: no es posible llamar la función "buffer_search", script sin inicializar (script: -)
+2012-05-18 16:31:36		perl error: Use of uninitialized value $iset_buffer in string ne at (eval 2) line 1189.
+2012-05-18 16:31:36	=!=	perl: función "register" no encontrada (o falló) en el archivo "/home/alex/.weechat/perl/autoload/iset.pl"
+2012-05-18 16:33:05		fifo: tubería cerrada
+2012-05-18 16:33:05		python: scripts descargados
+2012-05-18 16:33:05		perl: scripts descargados
+2012-05-18 16:33:07		scripts en perl cargados: buffers, iset
+2012-05-18 16:33:07		scripts en python cargados: weeget
+2012-05-18 16:33:07		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 16:33:59		Opción cambiada: buffers.color.current_bg = blue
+2012-05-18 16:34:24		Opción cambiada: buffers.color.current_bg = yellow
+2012-05-18 16:34:40		Opción cambiada: buffers.color.current_bg = black
+2012-05-18 16:34:49		Opción cambiada: buffers.color.current_bg = white
+2012-05-18 16:34:59	=!=	Error: no se pudo configurar la opción "buffers.color.current_bg"
+2012-05-18 16:35:24		Opción cambiada: buffers.color.current_bg = gray
+2012-05-18 16:35:32		Opción cambiada: buffers.color.current_bg = darkgray
+2012-05-18 16:35:58		Opción cambiada: buffers.color.current_bg = default
+2012-05-18 16:36:10	=!=	irc: el comando "join" debe ser ejecutado en un buffer irc (canal o servidor)
+2012-05-18 16:38:45		Opción cambiada: weechat.bar.buffers.color_bg = black
+2012-05-18 16:38:54		Opción cambiada: weechat.bar.buffers.color_bg = default
+2012-05-18 16:39:35		Opción cambiada: weechat.bar.buffers.color_delim = default
+2012-05-18 16:39:39		Opción cambiada: weechat.bar.buffers.color_delim = red
+2012-05-18 16:39:44		Opción cambiada: weechat.bar.buffers.color_delim = default
+2012-05-18 16:40:27		Opción cambiada: weechat.bar.buffers.separator = off
+2012-05-18 16:40:31		Opción cambiada: weechat.bar.buffers.separator = on
+2012-05-18 16:41:26		Opción cambiada: weechat.bar.input.color_delim = darkgray
+2012-05-18 16:41:59		Opción cambiada: weechat.bar.input.color_delim = cyan
+2012-05-18 16:42:26		Opción cambiada: weechat.bar.nicklist.color_delim = red
+2012-05-18 16:42:55		Opción cambiada: weechat.bar.nicklist.color_delim = default
+2012-05-18 16:43:58		Opción cambiada: weechat.bar.nicklist.hidden = on
+2012-05-18 16:44:04		Opción cambiada: weechat.bar.nicklist.hidden = off
+2012-05-18 16:44:14		Opción cambiada: weechat.bar.nicklist.color_bg = black
+2012-05-18 16:44:20		Opción cambiada: weechat.bar.nicklist.color_bg = default
+2012-05-18 16:44:28		Opción cambiada: weechat.bar.nicklist.color_delim = white
+2012-05-18 16:44:32		Opción cambiada: weechat.bar.nicklist.color_delim = red
+2012-05-18 16:44:36		Opción cambiada: weechat.bar.nicklist.color_delim = default
+2012-05-18 16:45:05		Opción cambiada: weechat.bar.status.color_bg = default
+2012-05-18 16:45:11		Opción cambiada: weechat.bar.status.color_bg = darkgray
+2012-05-18 16:45:20		Opción cambiada: weechat.bar.status.color_bg = brown
+2012-05-18 16:45:25		Opción cambiada: weechat.bar.status.color_bg = blue
+2012-05-18 16:45:32		Opción cambiada: weechat.bar.status.color_bg = lightblue
+2012-05-18 16:45:45		Opción cambiada: weechat.bar.status.color_bg = lightgreen
+2012-05-18 16:45:51		Opción cambiada: weechat.bar.status.color_bg = gray
+2012-05-18 16:45:54		Opción cambiada: weechat.bar.status.color_bg = green
+2012-05-18 16:46:11		Opción cambiada: weechat.bar.status.color_delim = default
+2012-05-18 16:46:14		Opción cambiada: weechat.bar.status.color_delim = red
+2012-05-18 16:46:20		Opción cambiada: weechat.bar.status.color_delim = default
+2012-05-18 16:46:25		Opción cambiada: weechat.bar.status.color_delim = red
+2012-05-18 16:46:30		Opción cambiada: weechat.bar.status.color_delim = default
+2012-05-18 16:46:51		Opción cambiada: weechat.bar.status.color_bg = magenta
+2012-05-18 16:47:05		Opción cambiada: weechat.bar.status.hidden = on
+2012-05-18 16:47:19		Opción cambiada: weechat.bar.status.hidden = off
+2012-05-18 16:47:28	=!=	Error: no se pudo configurar la opción "weechat.bar.status.color_bg"
+2012-05-18 16:47:32		Opción cambiada: weechat.bar.status.color_bg = lightmagenta
+2012-05-18 16:47:36		Opción cambiada: weechat.bar.status.color_bg = magenta
+2012-05-18 16:47:52		Opción cambiada: weechat.bar.status.color_bg = 63
+2012-05-18 16:47:57		Opción cambiada: weechat.bar.status.color_bg = magenta
+2012-05-18 16:48:03		Opción cambiada: weechat.bar.status.color_bg = default
+2012-05-18 16:48:09		Opción cambiada: weechat.bar.status.color_bg = default
+2012-05-18 16:48:12		Opción cambiada: weechat.bar.status.hidden = off
+2012-05-18 16:48:16		Opción cambiada: weechat.bar.status.hidden = on
+2012-05-18 16:49:10		Opción cambiada: weechat.bar.input.color_bg = darkgray
+2012-05-18 16:49:14		Opción cambiada: weechat.bar.input.color_bg = black
+2012-05-18 16:49:23		Opción cambiada: weechat.bar.input.color_bg = 0
+2012-05-18 16:49:24		Opción cambiada: weechat.bar.input.color_bg = 1
+2012-05-18 16:49:25		Opción cambiada: weechat.bar.input.color_bg = 2
+2012-05-18 16:49:26		Opción cambiada: weechat.bar.input.color_bg = 3
+2012-05-18 16:49:27		Opción cambiada: weechat.bar.input.color_bg = 3
+2012-05-18 16:49:28		Opción cambiada: weechat.bar.input.color_bg = 4
+2012-05-18 16:49:29		Opción cambiada: weechat.bar.input.color_bg = 5
+2012-05-18 16:49:30		Opción cambiada: weechat.bar.input.color_bg = 6
+2012-05-18 16:49:32		Opción cambiada: weechat.bar.input.color_bg = 7
+2012-05-18 16:49:33		Opción cambiada: weechat.bar.input.color_bg = 8
+2012-05-18 16:49:36		Opción cambiada: weechat.bar.input.color_bg = 9
+2012-05-18 16:49:38		Opción cambiada: weechat.bar.input.color_bg = 10
+2012-05-18 16:49:40		Opción cambiada: weechat.bar.input.color_bg = 11
+2012-05-18 16:49:43		Opción cambiada: weechat.bar.input.color_bg = 12
+2012-05-18 16:49:44		Opción cambiada: weechat.bar.input.color_bg = 13
+2012-05-18 16:49:45		Opción cambiada: weechat.bar.input.color_bg = 14
+2012-05-18 16:49:46		Opción cambiada: weechat.bar.input.color_bg = 15
+2012-05-18 16:49:47		Opción cambiada: weechat.bar.input.color_bg = 16
+2012-05-18 16:49:51		Opción cambiada: weechat.bar.input.color_bg = 17
+2012-05-18 16:49:55		Opción cambiada: weechat.bar.input.color_bg = default
+2012-05-18 16:50:22		Opción cambiada: weechat.bar.input.separator = on
+2012-05-18 16:50:44	=!=	Error: no se pudo configurar la opción "weechat.bar.input.color_delim"
+2012-05-18 16:50:48		Opción cambiada: weechat.bar.input.color_delim = darkgray
+2012-05-18 16:50:54		Opción cambiada: weechat.bar.input.color_delim = default
+2012-05-18 16:51:35		Opción cambiada: weechat.bar.title.color_bg = black
+2012-05-18 16:51:41		Opción cambiada: weechat.bar.title.color_bg = 0
+2012-05-18 16:51:44		Opción cambiada: weechat.bar.title.color_bg = 1
+2012-05-18 16:51:45		Opción cambiada: weechat.bar.title.color_bg = 2
+2012-05-18 16:51:46		Opción cambiada: weechat.bar.title.color_bg = 3
+2012-05-18 16:51:47		Opción cambiada: weechat.bar.title.color_bg = 4
+2012-05-18 16:51:48		Opción cambiada: weechat.bar.title.color_bg = 5
+2012-05-18 16:51:50		Opción cambiada: weechat.bar.title.color_bg = 6
+2012-05-18 16:54:14		Opción cambiada: weechat.look.bar_more_up = "**"
+2012-05-18 16:54:50		Opción cambiada: weechat.look.bar_more_up = "--"
+2012-05-18 16:55:21		Opción cambiada: weechat.look.separator_horizontal = "_"
+2012-05-18 16:56:35		Opción cambiada: weechat.look.separator_horizontal = "E"
+2012-05-18 16:56:49		Opción cambiada: weechat.look.separator_horizontal = "-"
+2012-05-18 17:01:27		Opción cambiada: weechat.look.separator_horizontal = "~"
+2012-05-18 17:01:30		Opción cambiada: weechat.look.separator_horizontal = "~"
+2012-05-18 17:03:29		Opción cambiada: weechat.look.separator_horizontal = "¬"
+2012-05-18 17:08:18		Opción cambiada: weechat.color.separator = black
+2012-05-18 17:08:24		Opción cambiada: weechat.color.separator = 0
+2012-05-18 17:08:26		Opción cambiada: weechat.color.separator = 1
+2012-05-18 17:08:27		Opción cambiada: weechat.color.separator = 2
+2012-05-18 17:08:28		Opción cambiada: weechat.color.separator = 3
+2012-05-18 17:08:29		Opción cambiada: weechat.color.separator = 4
+2012-05-18 17:08:32		Opción cambiada: weechat.color.separator = black
+2012-05-18 17:09:44		fifo: tubería cerrada
+2012-05-18 17:09:44		python: scripts descargados
+2012-05-18 17:09:44		perl: scripts descargados
+2012-05-18 19:39:34		scripts en perl cargados: buffers, iset
+2012-05-18 19:39:36		scripts en python cargados: weeget
+2012-05-18 19:39:36		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 19:39:59		fifo: tubería cerrada
+2012-05-18 19:39:59		python: scripts descargados
+2012-05-18 19:39:59		perl: scripts descargados
+2012-05-18 19:57:58		scripts en perl cargados: buffers, iset
+2012-05-18 19:57:58		scripts en python cargados: weeget
+2012-05-18 19:57:58		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 20:00:06		fifo: tubería cerrada
+2012-05-18 20:00:06		python: scripts descargados
+2012-05-18 20:00:06		perl: scripts descargados
+2012-05-18 20:17:58		scripts en perl cargados: buffers, iset
+2012-05-18 20:17:58		scripts en python cargados: weeget
+2012-05-18 20:17:58		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-18 20:18:15		fifo: tubería cerrada
+2012-05-18 20:18:15		python: scripts descargados
+2012-05-18 20:18:15		perl: scripts descargados
+2012-05-18 23:26:49		scripts en perl cargados: buffers, iset
+2012-05-18 23:26:50		scripts en python cargados: weeget
+2012-05-18 23:26:50		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 00:00:43		Opción cambiada: weechat.bar.title.separator = on
+2012-05-19 00:01:13		Opción cambiada: weechat.bar.title.color_bg = default
+2012-05-19 00:01:20	=!=	Error: opción desconocida para el comando "buffer"
+2012-05-19 00:35:59	=!=	Error: opción desconocida para el comando "buffer"
+2012-05 00:42		Opción cambiada: logger.file.time_format = "%Y-%m %H:%M"
+2012-05-19 00:43		Opción cambiada: logger.file.time_format = "%Y-%m-%d %H:%M"
+2012-05 00:43		Opción cambiada: logger.file.time_format = "%Y-%m %H:%M"
+2012-05 00:44		[logger]  /logger  list
+2012-05 00:44		                   set <nivel>
+2012-05 00:44		                   disable
+2012-05 00:44		configuración del plugin de registro
+2012-05 00:44		   list: muestra el estado del registro para los buffers abiertos
+2012-05 00:44		    set: configura el nivel de registro en el buffer actual
+2012-05 00:44		  nivel: nivel de mensajes a registrar (0 = registro desactivado, 1 = solo unos pocos mensajes (los más importantes) .. 9 = todos los mensajes)
+2012-05 00:44		disable: desactiva el registro para el buffer actual (configura el nivel a 0)
+2012-05 00:44		Opciones "logger.level.*" y "logger.mask.*" pueden ser usados para configurar el nivel o la máscara para un buffer, o para buffers que empiecen con ese nombre.
+2012-05 00:44		Niveles de registro usados por el plugin IRC:
+2012-05 00:44		  1: mensajes, noticias y privados
+2012-05 00:44		  2: cambios de apodo
+2012-05 00:44		  3: mensajes del servidor
+2012-05 00:44		  4: unión/abandono/salida
+2012-05 00:44		  9: todo el resto de mensajes
+2012-05 00:44		Ejemplos:
+2012-05 00:44		  configura el registro a nivel 5 para el buffer actual:
+2012-05 00:44		    /logger set 5
+2012-05 00:44		  desactiva el registro para el buffer actual:
+2012-05 00:44		    /logger disable
+2012-05 00:44		  configura el registro a nivel 3 para todos los buffers IRC:
+2012-05 00:44		    /set logger.level.irc 3
+2012-05 00:44		  desactiva el registro para el buffer principal de WeeChat:
+2012-05 00:44		    /set logger.level.core.weechat 0
+2012-05 00:44		  usa un directorio para cada servidor IRC y en él un archivo para cada canal:
+2012-05 00:44		    /set logger.mask.irc "$server/$channel.weechatlog"
+2012-05-19 00:47:24		Opción cambiada: logger.file.time_format = "%Y-%m-%d %H:%M:%S"
+2012-05-19 00:48:57		Opción cambiada: weechat.look.buffer_time_format = "%H:%M"
+2012-05-19 00:52:48		Opción cambiada: weechat.color.chat_time = darkgray
+2012-05-19 00:53:32		Opción cambiada: weechat.color.chat_time_delimiters = black
+2012-05-19 01:10:46		Opción cambiada: weechat.color.chat_delimiters = default
+2012-05-19 01:11:21		Opción cambiada: weechat.color.chat_delimiters = green
+2012-05-19 01:12:55	=!=	Error: comando "" desconocido (use /help para ver la ayuda)
+2012-05-19 01:13:39		Opción cambiada: weechat.look.separator_vertical = " "
+2012-05-19 01:13:48		Opción cambiada: weechat.look.separator_vertical = ""
+2012-05-19 01:14:20		Opción cambiada: weechat.look.prefix_suffix = " "
+2012-05-19 01:14:31		Opción cambiada: weechat.look.prefix_suffix = ""
+2012-05-19 01:14:42		Opción cambiada: weechat.look.prefix_suffix = " "
+2012-05-19 01:15:05		Opción cambiada: weechat.look.prefix_suffix = ""
+2012-05-19 01:20:45	=!=	Error: opción de configuración "weechat.ook.read_marker_string" no encontrada
+2012-05-19 01:26:35		Opción cambiada: weechat.color.chat_highlight_bg = red
+2012-05-19 01:27:35		Opción cambiada: weechat.color.chat_highlight_bg = black
+2012-05-19 01:27:43	=!=	Error: no se pudo configurar la opción "weechat.color.chat_highlight_bg"
+2012-05-19 01:27:50		Opción cambiada: weechat.color.chat_highlight_bg = red
+2012-05-19 01:28:32		Opción cambiada: weechat.color.chat_highlight = black
+2012-05-19 01:28:38		Opción cambiada: weechat.color.chat_highlight = white
+2012-05-19 01:29:15		Opción cambiada: weechat.color.chat_highlight_bg = green
+2012-05-19 01:29:28		Opción cambiada: weechat.color.chat_highlight_bg = blue
+2012-05-19 01:29:38	=!=	Error: no se pudo configurar la opción "weechat.color.chat_highlight_bg"
+2012-05-19 01:29:43	=!=	Error: no se pudo configurar la opción "weechat.color.chat_highlight_bg"
+2012-05-19 01:30:02		Opción cambiada: weechat.color.chat_highlight = black
+2012-05-19 01:30:13		Opción cambiada: weechat.color.chat_highlight = cyan
+2012-05-19 01:30:24		Opción cambiada: weechat.color.chat_highlight = white
+2012-05-19 01:30:27		Opción cambiada: weechat.color.chat_highlight_bg = cyan
+2012-05-19 01:38:34		Opción cambiada: weechat.bar.title.hidden = on
+2012-05-19 01:41:56		Opción cambiada: weechat.look.prefix_suffix = "|"
+2012-05-19 01:42:09		Opción cambiada: weechat.look.prefix_suffix = ""
+2012-05-19 01:53:45		fifo: tubería cerrada
+2012-05-19 01:53:45		python: scripts descargados
+2012-05-19 01:53:45		perl: scripts descargados
+2012-05-19 01:54:58		scripts en perl cargados: buffers, iset
+2012-05-19 01:54:58		scripts en python cargados: weeget
+2012-05-19 01:54:58		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 01:57:51		fifo: tubería cerrada
+2012-05-19 01:57:52		python: scripts descargados
+2012-05-19 01:57:52		perl: scripts descargados
+2012-05-19 01:59:04		scripts en perl cargados: buffers, iset
+2012-05-19 01:59:05		scripts en python cargados: weeget
+2012-05-19 01:59:05		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 01:59:16		fifo: tubería cerrada
+2012-05-19 01:59:16		python: scripts descargados
+2012-05-19 01:59:16		perl: scripts descargados
+2012-05-19 01:59:27		scripts en perl cargados: buffers, iset
+2012-05-19 01:59:27		scripts en python cargados: weeget
+2012-05-19 01:59:27		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 02:01:20		fifo: tubería cerrada
+2012-05-19 02:01:20		python: scripts descargados
+2012-05-19 02:01:20		perl: scripts descargados
+2012-05-19 02:01:43		scripts en perl cargados: buffers, iset
+2012-05-19 02:01:43		scripts en python cargados: weeget
+2012-05-19 02:01:43		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 02:01:52		fifo: tubería cerrada
+2012-05-19 02:01:52		python: scripts descargados
+2012-05-19 02:01:52		perl: scripts descargados
+2012-05-19 02:02:18		scripts en perl cargados: buffers, iset
+2012-05-19 02:02:18		scripts en python cargados: weeget
+2012-05-19 02:02:18		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 02:02:24		fifo: tubería cerrada
+2012-05-19 02:02:24		python: scripts descargados
+2012-05-19 02:02:24		perl: scripts descargados
+2012-05-19 02:02:38		scripts en perl cargados: buffers, iset
+2012-05-19 02:02:38		scripts en python cargados: weeget
+2012-05-19 02:02:38		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 02:12:03		fifo: tubería cerrada
+2012-05-19 02:12:03		python: scripts descargados
+2012-05-19 02:12:03		perl: scripts descargados
+2012-05-19 02:12:20		scripts en perl cargados: buffers, iset
+2012-05-19 02:12:20		scripts en python cargados: weeget
+2012-05-19 02:12:20		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 02:12:24		fifo: tubería cerrada
+2012-05-19 02:12:24		python: scripts descargados
+2012-05-19 02:12:24		perl: scripts descargados
+2012-05-19 02:12:41		scripts en perl cargados: buffers, iset
+2012-05-19 02:12:41		scripts en python cargados: weeget
+2012-05-19 02:12:41		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 02:38:21		Opción cambiada: weechat.bar.nicklist.color_fg = black
+2012-05-19 02:41:39		Opción cambiada: weechat.bar.status.hidden = off
+2012-05-19 02:41:54		Opción cambiada: weechat.bar.status.hidden = on
+2012-05-19 02:43:16		Opción cambiada: weechat.bar.nicklist.separator = off
+2012-05-19 02:44:02		fifo: tubería cerrada
+2012-05-19 02:44:02		python: scripts descargados
+2012-05-19 02:44:02		perl: scripts descargados
+2012-05-19 02:49:43		scripts en perl cargados: buffers, iset
+2012-05-19 02:49:43		scripts en python cargados: weeget
+2012-05-19 02:49:43		Plugins cargados: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, tcl, xfer
+2012-05-19 02:49:47		fifo: tubería cerrada
+2012-05-19 02:49:47		python: scripts descargados
+2012-05-19 02:49:47		perl: scripts descargados
