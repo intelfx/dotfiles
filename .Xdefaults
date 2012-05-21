@@ -89,7 +89,8 @@ URxvt*urgentOnBell: true
 URxvt*pointerBlank: true
 /* vim: set ts=2 sw=2 tw=0 :*/
 URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher:chromium
+URxvt.urlLauncher:jumanji
+#URxvt.urlLauncher:chromium
 URxvt.matcher.button: 1
 
 URxvt.tabbed.tabbar-fg: 0

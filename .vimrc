@@ -11,8 +11,8 @@ syntax on
 filetype plugin indent on
 set backspace=indent,eol,start
 set ruler
-""set number
-set relativenumber
+set number
+""set relativenumber
 set scrolloff=4
 
 set autoindent
@@ -118,7 +118,7 @@ nmap <silent> <leader>s :set spell!<CR>
 set background=dark
 set guifont=Menlo\ for\ Powerline\ 8 
 set guioptions-=T
-""set guioptions-=m
+set guioptions-=m
 set guioptions-=r
 if (!has('gui_running'))
     set t_Co=256
