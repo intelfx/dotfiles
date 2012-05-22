@@ -100,12 +100,13 @@ myaudiomenu = {
 }
 
 myappsmenu = {
+   { "gimp", "gimp" },
+   { "v.box", "virtualbox" },
    { "ranger", terminal .. " -e ranger" },
    { "gvim", "gvim" },
    { "ncmpcpp", terminal .. " -e ncmpcpp" },
    { "mutt", terminal .. " -e mutt" },
-   { "weechat", terminal .. " -e weechat-curses" },
-   { "gimp", "gimp" },
+   { "weechat", terminal .. " -e weechat-curses" }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
@@ -206,8 +207,8 @@ volwidtext:buttons(awful.util.table.join(
 
 -- {{{ MPD 
 -- Initialize MPD Widget
-music_play = wibox.widget.imagebox()
-music_play:set_image(beautiful.widget_play)
+music_play = wibox.widget.textbox()
+music_play.set_text(music_play, ' à ')
 music_play:buttons(awful.util.table.join(
     awful.button({ }, 1, function () awful.util.spawn("ncmpcpp toggle", false) end)
 ))
@@ -216,21 +217,21 @@ music_play:buttons(awful.util.table.join(
     command = "ncmpcpp toggle"
   })
   music_pause.visible = false
-music_stop = wibox.widget.imagebox()
-music_stop:set_image(beautiful.widget_stop)
+music_stop = wibox.widget.textbox()
+music_stop.set_text(music_stop, ' ä ')
 music_stop:buttons(awful.util.table.join(
     awful.button({ }, 1, function () awful.util.spawn("ncmpcpp stop", false) end)
 ))
 
-music_prev = wibox.widget.imagebox()
-music_prev:set_image(beautiful.widget_prev)
+music_prev = wibox.widget.textbox()
+music_prev.set_text(music_prev, ' â ')
 music_prev:buttons(awful.util.table.join(
     awful.button({ }, 1, function () awful.util.spawn("ncmpcpp prev", false) end)
 ))
 
 
-music_next = wibox.widget.imagebox()
-music_next:set_image(beautiful.widget_next)
+music_next = wibox.widget.textbox()
+music_next.set_text(music_next, ' ã ')
 music_next:buttons(awful.util.table.join(
     awful.button({ }, 1, function () awful.util.spawn("ncmpcpp next", false) end)
 ))
@@ -239,22 +240,23 @@ mpdwidget = wibox.widget.textbox()
 vicious.register(mpdwidget, vicious.widgets.mpd,
     function (widget, args)
         if args["{state}"] == "Stop" then 
-            music_play:set_image(beautiful.widget_play)
-            music_prev:set_image(nil)
-            music_next:set_image(nil)
-            music_stop:set_image(nil)
+            music_play.set_text(music_play, ' à ')
+            music_prev.set_text(music_prev, '')
+            music_next.set_text(music_next, '')
+            music_stop.set_text(music_stop, '')
             return " Î "
         elseif args["{state}"] == "Pause" then
-            music_play:set_image(beautiful.widget_play)
-            music_prev:set_image(beautiful.widget_prev)
-            music_next:set_image(beautiful.widget_next)
-            music_stop:set_image(beautiful.widget_stop)
+            music_play.set_text(music_play, ' à ')
+            music_prev.set_text(music_prev, ' â ')
+            music_next.set_text(music_next, ' ã ')
+            --music_stop.set_markup(music_stop, '<span color="white"> ä </span>')
+            music_stop.set_text(music_stop, ' ä ')
             return "Î [ Paused ]"
         else 
-            music_stop:set_image(beautiful.widget_stop)
-            music_prev:set_image(beautiful.widget_prev)
-            music_next:set_image(beautiful.widget_next)
-            music_play:set_image(beautiful.widget_pause)
+            music_stop.set_text(music_stop, ' ä ')
+            music_prev.set_text(music_prev, ' â ')
+            music_next.set_text(music_next, ' ã ')
+            music_play.set_text(music_play, ' á ')
             return " Î [ " .. args["{Title}"]..' - '.. args["{Artist}"] .. " ]"
         end
     end, 0.5)
@@ -310,7 +312,7 @@ pacwidget:buttons(awful.util.table.join(
 -- {{{ Uptime and OS info 
 
 uptime = wibox.widget.textbox()
-vicious.register(uptime, vicious.widgets.uptime, "Ç $2H:$3M ")
+vicious.register(uptime, vicious.widgets.uptime, "Up: $2H:$3M ")
 
 osinfo = wibox.widget.textbox()
 vicious.register(osinfo, vicious.widgets.os, " $2 ")
@@ -652,9 +654,13 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --awful.util.spawn_with_shell("killall wicd-client")
 --awful.util.spawn_with_shell("wicd-client --tray")
 
-awful.util.spawn_with_shell("killall nm-applet")
+--awful.util.spawn_with_shell("killall nm-applet")
+awful.util.spawn_with_shell("sleep 3")
 awful.util.spawn_with_shell("setxkbmap es")
-awful.util.spawn_with_shell("nm-applet")
+--awful.util.spawn_with_shell("nm-applet")
+awful.util.spawn_with_shell("sleep 3")
+awful.util.spawn_with_shell("xmodmap ~/.speedswapper")
+awful.util.spawn_with_shell("sleep 3")
 awful.util.spawn_with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.util.spawn_with_shell("compton -cG -o 0.38 -O 200 -I 200 -t 0.02 -l 0.02 -r 3.2 -D2 -m 0.88")
 

@@ -10,9 +10,11 @@
 *color9: #ff6c5c
 
 !green
-*color2: #519f50
+!*color2: #519f50
 *color10: #a5c261
 
+*color2: #505050
+!*color10: #ffffff
 !yellow
 *color3: #cc7833
 *color11: #bc9458
@@ -50,18 +52,18 @@ URxvt*cursorColor2: #151515
 
 
 URxvt.letterSpace: -1
-!URxvt*font: xft:Envy Code R for Powerline:regular:size=9.4
-!URxvt*imFont: xft:Envy Code R for Powerline:regular:size=9.4
-!URxvt*boldFont: xft:Envy Code R for Powerline:regular:size=9.4
-!URxvt*italicFont: xft:Envy Code R for Powerline:regular:size=9.4
-!URxvt*boldItalicFont: xft:Envy Code R for Powerline:regular:size=9.4
+URxvt*font: xft:Envy Code R for Powerline:regular:size=9
+URxvt*imFont: xft:Envy Code R for Powerline:regular:size=9
+URxvt*boldFont: xft:Envy Code R for Powerline:regular:size=9
+URxvt*italicFont: xft:Envy Code R for Powerline:regular:size=9
+URxvt*boldItalicFont: xft:Envy Code R for Powerline:regular:size=9
 !
-URxvt*font: xft:Menlo for Powerline:regular:size=8
+!URxvt*font: xft:Menlo for Powerline:regular:size=8
 !URxvt*font: xft:Pragmata TT:regular:size=9
-URxvt*imFont: xft:Menlo for Powerline:regular:size=8
-URxvt*boldFont: xft:Menlo for Powerline:regular:size=8
-URxvt*italicFont: xft:Menlo for Powerline:regular:size=8
-URxvt*boldItalicFont: xft:Menlo for Powerline:regular:size=8
+!URxvt*imFont: xft:Menlo for Powerline:regular:size=8
+!URxvt*boldFont: xft:Menlo for Powerline:regular:size=8
+!URxvt*italicFont: xft:Menlo for Powerline:regular:size=8
+!URxvt*boldItalicFont: xft:Menlo for Powerline:regular:size=8
 !URxvt*font: xft:Fixed:pixelsize=9
 !URxvt*boldFont: xft:Fixed:pixelsize=9
 

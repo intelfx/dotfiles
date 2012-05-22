@@ -4,7 +4,8 @@
 
 theme = {}
 
-theme.font          = "Terminus2  7"
+--theme.font          = "terminus2 7"
+theme.font          = "Envy Code R2  7"
 theme.bg_normal     = "#000000"
 theme.bg_focus      = "#000000"
 theme.bg_urgent     = "#ff0000"
@@ -17,8 +18,8 @@ theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#b6c7f0"
 
 theme.border_width  = 1
-theme.border_normal = "#000000"
-theme.border_focus  = "#1e1e1e"
+theme.border_focus = "#000000"
+theme.border_normal  = "#1e1e1e"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
