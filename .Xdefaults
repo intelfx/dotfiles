@@ -10,11 +10,9 @@
 *color9: #ff6c5c
 
 !green
-!*color2: #519f50
-*color10: #a5c261
+*color2: #509F7E
+*color10: #61C29A
 
-*color2: #505050
-!*color10: #ffffff
 !yellow
 *color3: #cc7833
 *color11: #bc9458
@@ -24,8 +22,8 @@
 *color12: #d0d0ff
 
 !magenta
-*color5: #9f5079
-*color13: #a761c2
+*color5: #9966D9
+*color13: #9954DE
 
 !cyan
 *color6: #435d75
@@ -90,8 +88,10 @@ URxvt*urgentOnBell: true
 
 URxvt*pointerBlank: true
 /* vim: set ts=2 sw=2 tw=0 :*/
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,matcher,url-select
+URxvt.keysym.C-u: perl:url-select:select_next
 URxvt.urlLauncher:jumanji
+URxvt.underlineURLs: true
 #URxvt.urlLauncher:chromium
 URxvt.matcher.button: 1
 

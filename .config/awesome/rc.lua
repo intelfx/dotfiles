@@ -103,9 +103,10 @@ myappsmenu = {
    { "gimp", "gimp" },
    { "v.box", "virtualbox" },
    { "ranger", terminal .. " -e ranger" },
-   { "gvim", "gvim" },
+   { "tmux", terminal .. " -e tmux" },
    { "ncmpcpp", terminal .. " -e ncmpcpp" },
    { "mutt", terminal .. " -e mutt" },
+   { "gvim", "gvim" },
    { "weechat", terminal .. " -e weechat-curses" }
 }
 
@@ -663,4 +664,5 @@ awful.util.spawn_with_shell("xmodmap ~/.speedswapper")
 awful.util.spawn_with_shell("sleep 3")
 awful.util.spawn_with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.util.spawn_with_shell("compton -cG -o 0.38 -O 200 -I 200 -t 0.02 -l 0.02 -r 3.2 -D2 -m 0.88")
-
+awful.util.spawn_with_shell("sleep 3")
+--awful.util.spawn_with_shell("killall ncmpcpp")
