@@ -1,9 +1,9 @@
 *foreground: #DDDDDD
-*background: #151515
+*background: #050505
 
 !black
 *color0: #393939
-*color8: #474747
+*color8: #121212
 
 !red
 *color1: #da4939
@@ -30,8 +30,8 @@
 *color14: #6e98a4
 
 !white
-*color7: #dddddd
-*color15: #dddddd
+*color7: #dedede
+*color15: #ededed
 
 ! URxvt-specific stuff
 URxvt*borderColor: #151515
@@ -100,5 +100,5 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-bg: 0 
 URxvt.tabbed.tab-fg: 0 
 
-URxvt.transparent: true
+!URxvt.transparent: true
 URxvt.shading: 10

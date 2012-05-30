@@ -74,14 +74,18 @@ set cursorline
 "
 " Enable/Disable paste mode, where data won't be autoindented
 set pastetoggle=<F2>
+
 " Remap leader key to ',' instead of '\'
 let mapleader=","
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 " Scroll the viewport faster with <C-e> and <C-y> 
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
+
 " Remap Keys for opening a splitscreen and to move with hjkl
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h :split<CR>
@@ -89,11 +93,14 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 " Makes posible the use of python/perl regex in vim
 nnoremap / /\v
 vnoremap / /\v
+
 " Easy insert mode exit
 inoremap jj <Esc>
+
 " Folding
 nnoremap <Space> za
 vnoremap <Space> za
@@ -104,19 +111,24 @@ nnoremap <F5> :YRShow<CR>
 nnoremap <F4> :NERDTreeToggle<CR>
 
 map! <C-v> <Esc>:u<CR>
+
 " Save/Load a working session
 map <F8> :SessionSave<CR>
 map <F9> :SessionList<CR>
+
 " Tabs
 map <leader>t :tabedit<CR>
 map <leader>n :tabn<CR>
+
 " Bubbling text
 nmap <C-Up> [e
 nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
+
 " Spell checkikg
 nmap <silent> <leader>s :set spell!<CR>
+
 " Opens/Close Gundo window
 nnoremap <F3> :GundoToggle <cr>
 
@@ -131,7 +143,8 @@ set guioptions-=m
 set guioptions-=r
 if (!has('gui_running'))
     set t_Co=256
-    colorscheme jellybeans
+    "colorscheme jellybeans
+    colorscheme darkmirror
 else
     colorscheme molokai
 endif
@@ -147,7 +160,7 @@ let NERDTreeShowHidden=1
 " =========
 "
 "  Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
+nmap <leader>hi :call <SID>SynStack()<CR>
 function! <SID>SynStack()
     if !exists("*synstack")
         return

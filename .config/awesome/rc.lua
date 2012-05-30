@@ -322,8 +322,10 @@ network = wibox.widget.textbox()
 vicious.register(network, vicious.widgets.net, " Ð ${wlan0 down_kb} Ñ ${wlan0 up_kb}  ")
 
 hdspace = wibox.widget.textbox()
-vicious.register(hdspace, vicious.widgets.fs, "Ê ${/ avail_gb}/${/ size_gb}GB")
+vicious.register(hdspace, vicious.widgets.fs, "Ê / ${/ avail_gb}/${/ size_gb}GB")
 
+hdspace2 = wibox.widget.textbox()
+vicious.register(hdspace2, vicious.widgets.fs, "Ê /home ${/home avail_gb}/${/home size_gb}GB")
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
@@ -428,6 +430,8 @@ for s = 1, screen.count() do
     layoutbat:add(network)
     layoutbat:add(separator)
     layoutbat:add(hdspace)
+    layoutbat:add(separator)
+    layoutbat:add(hdspace2)
     layoutbat:add(separator)
     layoutbat:add(volwidtext)
     layoutbat:add(separator)
