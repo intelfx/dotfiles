@@ -94,7 +94,11 @@ mypowermenu = {
    { "suspend", "sudo pm-suspend" }
 }
 myaudiomenu = {
+    {"ardour","ardour2"},
     {"qjackctl","qjackctl"},
+    {"seq24","seq24"},
+    {"calf","calfjackhost"},
+    {"jsampler","jsampler"},
     {"rakarrack","rakarrack"},
     {"kill p.a.",terminal .. " -e killall pulseaudio"}
 }
@@ -250,7 +254,6 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
             music_play.set_text(music_play, ' à ')
             music_prev.set_text(music_prev, ' â ')
             music_next.set_text(music_next, ' ã ')
-            --music_stop.set_markup(music_stop, '<span color="white"> ä </span>')
             music_stop.set_text(music_stop, ' ä ')
             return "Î [ Paused ]"
         else 
@@ -659,14 +662,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --awful.util.spawn_with_shell("killall wicd-client")
 --awful.util.spawn_with_shell("wicd-client --tray")
 
---awful.util.spawn_with_shell("killall nm-applet")
-awful.util.spawn_with_shell("sleep 3")
-awful.util.spawn_with_shell("setxkbmap es")
---awful.util.spawn_with_shell("nm-applet")
-awful.util.spawn_with_shell("sleep 3")
-awful.util.spawn_with_shell("xmodmap ~/.speedswapper")
 awful.util.spawn_with_shell("sleep 3")
 awful.util.spawn_with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.util.spawn_with_shell("compton -cG -o 0.38 -O 200 -I 200 -t 0.02 -l 0.02 -r 3.2 -D2 -m 0.88")
-awful.util.spawn_with_shell("sleep 3")
---awful.util.spawn_with_shell("killall ncmpcpp")

@@ -10,8 +10,8 @@
 *color9: #ff6c5c
 
 !green
-*color2: #509F7E
-*color10: #61C29A
+*color10: #509F7E
+*color2: #61C29A
 
 !yellow
 *color3: #cc7833
@@ -19,11 +19,11 @@
 
 !blue
 *color4: #6d9cbe
-*color12: #d0d0ff
+*color12: #91C1E3
 
 !magenta
-*color5: #9966D9
-*color13: #9954DE
+*color5: #5e468c
+*color13: #7f62b3
 
 !cyan
 *color6: #435d75
@@ -101,4 +101,6 @@ URxvt.tabbed.tab-bg: 0
 URxvt.tabbed.tab-fg: 0 
 
 !URxvt.transparent: true
-URxvt.shading: 10
+URxvt.shading: 5
+
+!URxvt*meta8:True
