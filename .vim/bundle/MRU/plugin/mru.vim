@@ -225,7 +225,7 @@ endif
 
 " Files to exclude from the MRU list
 if !exists('MRU_Exclude_Files')
-    let MRU_Exclude_Files = ''
+    let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*' 
 endif
 
 " Files to include in the MRU list
