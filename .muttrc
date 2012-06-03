@@ -42,10 +42,10 @@ color tree      red             default         # the "tree" display of threads 
 color search    white           blue            # search matches found with search within the internal pager
 color markers   red             default         # The markers indicate a wrapped line hen showing messages with looong lines
 
-color index     brightblue default  '~O'
+color index     blue default  '~O'
 color index     cyan default  '~P'
 color index     blue default  '~Q'
-color index     brightcyan default  '~R'
+color index     cyan default  '~R'
 color index     green default  '~N'
 color index     magenta       default '~F'    # Flagged Messages are important!
 color index     black default    '~D'            # Deleted Mails - use dark color as these are already "dealt with"
@@ -68,9 +68,6 @@ set spoolfile = "+INBOX"
 set mbox = "+archive"
 set postponed = "+drafts"
 unset record
-
-macro index D "<save-message>+trash<enter>"
-macro index S "<save-message>+spam<enter>"
 
 set mail_check = 0
 unset move
