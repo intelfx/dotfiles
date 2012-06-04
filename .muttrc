@@ -1,97 +1,109 @@
+# ////////////////// Basic ////////////////// #  
+
 set realname='Alex Sánchez'
 set from = "kniren@gmail.com"
 
-set header_cache = ~/.mutt/cache/headers
-set message_cachedir = ~/.mutt/cache/bodies
-set certificate_file = ~/.mutt/certificates
-
 set sendmail = "/usr/bin/msmtp"
-
-bind editor <space> noop
-macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index gs "<change-folder>=[Gmail].Enviados<enter>" "Go to Sent Mail"
-macro index gt "<change-folder>=[Gmail].Papelera<enter>" "Go to Trash"
-macro index gd "<change-folder>=[Gmail].Borradores<enter>" "Go to drafts"
-
-set copy=no
-set move=no
-
-set imap_keepalive = 900
-mailboxes =INBOX
-
-set sort=reverse-date
-
-color hdrdefault cyan default
-color attachment black default
-
-color header green default "From: "
-color header magenta default "Subject: "
-color header cyan default "Date: "
-color header cyan default "To: "
-
-color quoted green default
-color quoted1 cyan default
-color quoted2 green default
-color quoted3 cyan default
-
-color error     red             default         # error messages
-color message   white           default         # message  informational messages
-color indicator white           cyan             # indicator for the "current message"
-color status    black           default            # status lines in the folder index sed for the mini-help line
-color tree      red             default         # the "tree" display of threads within the folder index
-color search    white           blue            # search matches found with search within the internal pager
-color markers   red             default         # The markers indicate a wrapped line hen showing messages with looong lines
-
-color index     blue default  '~O'
-color index     cyan default  '~P'
-color index     blue default  '~Q'
-color index     cyan default  '~R'
-color index     green default  '~N'
-color index     magenta       default '~F'    # Flagged Messages are important!
-color index     black default    '~D'            # Deleted Mails - use dark color as these are already "dealt with"
-
-set editor="vim"
-set menu_scroll
-set pager_index_lines=6
-set smart_wrap
-set wrap=80
-unset markers
-set edit_headers = yes
-set ascii_chars
-
-auto_view text/html                                      # view html automatically
-alternative_order text/plain text/enriched text/html     # save html for last
 
 set mbox_type = Maildir
 set folder = ~/Mail
 set spoolfile = "+INBOX"
 set mbox = "+archive"
 set postponed = "+drafts"
-unset record
 
-set mail_check = 0
-unset move
-set delete
-unset confirmappend
-set quit
-unset mark_old
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
 
-set sort = threads
-set sort_aux = reverse-last-date-received
-set sort_re
+unset record    # We don't want a copy 
+set copy=no     # We don't want a copy 
+unset move      # We don't want mutt to move read messages
+set move=no     # We don't want mutt to move read messages
 
-set pager_context = 5
-set pager_stop
-set tilde
+set editor="vim"        # The motherf***ing best!
+set menu_scroll         # Lazy redraw
+set pager_index_lines=6 # View the pager and index at the same time
+set smart_wrap
+set wrap=80             # Standard wrapping length
+unset markers           # We don't want markers for wrapped lines
+set edit_headers = yes  # Include headers in the editor's message
+set ascii_chars         # I like the tree style `-> more 
 
-set fcc_attach
-unset mime_forward
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
+
+set mail_check = 0      # How often mutt checks for mail
+set delete              # Destroy those bastards without a chance!
+unset confirmappend     # We don't want confirmation request for appending messages
+set quit                # Quit without confirmation, we are adults here
+unset mark_old          # Read/Unread is good enough for me
+
+set sort = threads      # Sort my messages using threads...
+set sort_aux = reverse-last-date-received # ... and from new to old
+set sort_re             # Sorts threads right
+
+set pager_context = 5   # Number of lines when displaying next/prev page in pager
+set pager_stop          # Don't move to the next message when reaching the end
+set tilde               # Display '~' when reaching the end of the screen
+
+set fcc_attach          # Save attachments along the body on outgoing messages
+unset mime_forward      # I don't want your mime in my beautiful messages
 set forward_format = "Fwd: %s"
 
-set include
-set forward_quote
+set include             # I like to include a copy of the last message
+set forward_quote       # Forwarded messages are quoted using '>' 
+set nohelp              # If I need your help I will ask for it
 
+folder-hook . "exec collapse-all" # Start with all threads collapsed
+unset collapse_unread   # Don't collapse threads if there is unread messages
+
+### Formatting ###
 set index_format="%?M?+& ?%2M %2e %.11d %Z %-20.20F (%4c) %s"
-set nohelp
+set status_format="[Mailbox: %f ] >>>> Messages:%?M?%M/?%m%?n? >> New:%n?%?d? Deleted:%d?%?F? >> Flagged:%F? %>╌[%P]"
+set pager_format="[%C/%m] %s %>╌[%P]"
 
-folder-hook . "exec collapse-all"
+# ////////////////// Colors ////////////////// #  
+color hdrdefault cyan   default
+color attachment black  default
+
+color header    green           default "From: "
+color header    magenta         default "Subject: "
+color header    cyan            default "Date: "
+color header    cyan            default "To: "
+
+color quoted    green           default
+color quoted1   cyan            default
+color quoted2   brightgreen     default
+color quoted3   brightcyan      default
+
+color error     red             default         # error messages
+color message   white           default         # message  informational messages
+color indicator brightblack     brightwhite     # indicator for the "current message"
+color status    brightwhite     default         # status lines in the folder index 
+color tree      magenta         default         # the "tree" display of threads within the folder index
+color search    white           blue            # search matches found with search within the internal pager
+color markers   red             default         # The markers indicate a wrapped line 
+
+color index     blue            default  '~O'    # Old messages
+color index     cyan            default  '~P'    # From myself
+color index     blue            default  '~Q'    # Replied
+color index     brightwhite     default  '~R'    # Readed messages
+color index     green           default  '~N'    # New messages
+color index     brightmagenta   default  '~F'    # Flagged Messages are important!
+color index     black           default  '~D'    # Deleted Mails 
+
+
+# ////////////////// Key bindings ////////////////// #  
+
+bind editor <space> noop
+
+# Vi like navigation in pager
+macro pager \Ck ":exec previous-line<Enter>:exec previous-line<Enter>"
+macro pager \Cj ":exec next-line<Enter>:exec next-line<Enter>"
+
+# Fast access to different folders
+macro index gi "<change-folder>=INBOX<enter>"                          "Go to inbox"
+macro index gs "<change-folder>=[Gmail].Enviados<enter>"               "Go to Sent Mail"
+macro index gt "<change-folder>=[Gmail].Papelera<enter>"               "Go to Trash"
+macro index gd "<change-folder>=[Gmail].Borradores<enter>"             "Go to drafts"
+
