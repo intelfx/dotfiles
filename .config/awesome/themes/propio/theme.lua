@@ -6,14 +6,14 @@ theme = {}
 
 --theme.font          = "terminus2 7"
 theme.font          = "Envy Code R2  7"
-theme.bg_normal     = "#000000"
-theme.bg_focus      = "#000000"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#000000"
+theme.bg_normal     = "#050505"
+theme.bg_focus      = "#050505"
+theme.bg_urgent     = "#050505"
+theme.bg_minimize   = "#050505"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
+theme.fg_normal     = "#e8e8e8"
+theme.fg_focus      = "#6e98a4"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#b6c7f0"
 

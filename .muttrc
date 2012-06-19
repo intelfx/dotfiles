@@ -58,7 +58,7 @@ folder-hook . "exec collapse-all" # Start with all threads collapsed
 unset collapse_unread   # Don't collapse threads if there is unread messages
 
 ### Formatting ###
-set index_format="%?M?+& ?%2M %2e %.11d %Z %-20.20F (%4c) %s"
+set index_format="%?M?>& ?%2M %.11d %Z %-20.20F %s "
 set status_format="[Mailbox: %f ] >>>> Messages:%?M?%M/?%m%?n? >> New:%n?%?d? Deleted:%d?%?F? >> Flagged:%F? %>╌[%P]"
 set pager_format="[%C/%m] %s %>╌[%P]"
 
@@ -78,7 +78,7 @@ color quoted3   brightcyan      default
 
 color error     red             default         # error messages
 color message   white           default         # message  informational messages
-color indicator brightblack     brightwhite     # indicator for the "current message"
+color indicator brightblack     white           # indicator for the "current message"
 color status    brightwhite     default         # status lines in the folder index 
 color tree      magenta         default         # the "tree" display of threads within the folder index
 color search    white           blue            # search matches found with search within the internal pager
@@ -98,8 +98,12 @@ color index     black           default  '~D'    # Deleted Mails
 bind editor <space> noop
 
 # Vi like navigation in pager
-macro pager \Ck ":exec previous-line<Enter>:exec previous-line<Enter>"
-macro pager \Cj ":exec next-line<Enter>:exec next-line<Enter>"
+macro pager k ":exec previous-line<Enter>:exec previous-line<Enter>"
+macro pager j ":exec next-line<Enter>:exec next-line<Enter>"
+macro pager K ":exec previous-page<Enter>"
+macro pager J ":exec next-page<Enter>"
+macro pager \Cj ":exec next-entry<Enter>"
+macro pager \Ck ":exec previous-entry<Enter>"
 
 # Fast access to different folders
 macro index gi "<change-folder>=INBOX<enter>"                          "Go to inbox"

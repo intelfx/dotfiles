@@ -1,5 +1,5 @@
-*foreground: #e8e8e8
-*background: #050505
+URxvt*foreground: #e8e8e8
+URxvt*background: #050505
 
 !black
 *color0: #393939
@@ -49,28 +49,27 @@ URxvt*cursorColor2: #151515
 
 
 
-URxvt.letterSpace: -1
-URxvt*font: xft:Envy Code R for Powerline:regular:size=9
-URxvt*imFont: xft:Envy Code R for Powerline:regular:size=9
-URxvt*boldFont: xft:Envy Code R for Powerline:regular:size=9
-URxvt*italicFont: xft:Envy Code R for Powerline:regular:size=9
-URxvt*boldItalicFont: xft:Envy Code R for Powerline:regular:size=9
-!
-!URxvt*font: xft:Menlo for Powerline:regular:size=8
-!URxvt*font: xft:Pragmata TT:regular:size=9
-!URxvt*imFont: xft:Menlo for Powerline:regular:size=8
-!URxvt*boldFont: xft:Menlo for Powerline:regular:size=8
-!URxvt*italicFont: xft:Menlo for Powerline:regular:size=8
-!URxvt*boldItalicFont: xft:Menlo for Powerline:regular:size=8
-!URxvt*font: xft:Fixed:pixelsize=9
-!URxvt*boldFont: xft:Fixed:pixelsize=9
+!URxvt.letterSpace: -1
+*font: *-*-*-*-*-*-10-*-*-*-*-*-*-*
+URxvt*font: xft:Envy Code R for Powerline:regular:size=8
+URxvt*imFont: xft:Envy Code R for Powerline:regular:size=8
+URxvt*boldFont: xft:Envy Code R for Powerline:regular:size=8
+URxvt*italicFont: xft:Envy Code R for Powerline:regular:size=8
+URxvt*boldItalicFont: xft:Envy Code R for Powerline:regular:size=8
+
+dzen2*font: *-*-*-*-*-*-4-*-*-*-*-*-*-*
+!URxvt*font: xft:Pragmata TT:regular:size=8
+!URxvt*imFont: xft:Pragmata TT:regular:size=8
+!URxvt*boldFont: xft:Pragmata TT:regular:size=8
+!URxvt*italicFont: xft:Pragmata TT:regular:size=8
+!URxvt*boldItalicFont: xft:Pragmata TT:regular:size=8
 
 URxvt*buffered: true
 
 URxvt*cursorBlink: true
 URxvt*cursorUnderline: false
 
-URxvt*geometry: 75x15
+!URxvt*geometry: 75x15
 
 !URxvt*reverseVideo: true
 
@@ -90,7 +89,7 @@ URxvt*pointerBlank: true
 /* vim: set ts=2 sw=2 tw=0 :*/
 URxvt.perl-ext-common: default,matcher,url-select
 URxvt.keysym.C-u: perl:url-select:select_next
-URxvt.urlLauncher:jumanji
+URxvt.urlLauncher:dwb
 URxvt.underlineURLs: true
 #URxvt.urlLauncher:chromium
 URxvt.matcher.button: 1
@@ -104,3 +103,9 @@ URxvt.tabbed.tab-fg: 0
 URxvt.shading: 5
 
 !URxvt*meta8:True
+!
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hitstyle:   hintslight

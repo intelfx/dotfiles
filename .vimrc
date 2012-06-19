@@ -155,6 +155,8 @@ nnoremap <F3> :GundoToggle <cr>
 " Markdown to HTML (Requires Markdown.pl)
 nnoremap <leader>markdown :%!/usr/local/bin/Markdown.pl --html4tags<CR>
 
+" DmenuVimSearch
+nnoremap <c-f> :call DmenuOpen("e")<cr>
 " Appearance
 " ==========
 "
@@ -191,3 +193,17 @@ function! <SID>SynStack()
     endif
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" Strip the newline from the end of a string 
+function! Chomp(str)
+    return substitute(a:str, '\n$', '', '')
+endfunction
+
+" Find a file and pass it to cmd
+function! DmenuOpen(cmd)
+    let fname = Chomp(system("find /home/alex | dmenu -i -l 20 -p " . a:cmd))
+    if empty(fname)
+        return
+    endif
+    execute a:cmd . " " . fname
+endfunction

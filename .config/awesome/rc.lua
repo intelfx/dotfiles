@@ -76,6 +76,8 @@ end
 
 games = {
    { "zsnes", "zsnes" },
+   { "Sword and Sorcery", "/home/alex/Misc/Games/SwordAndSworceryEP/run.sh" },
+   { "SuperMeatBoy", "/home/alex/Misc/Games/supermeatboy/SuperMeatBoy" },
    { "diablo 2", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Diablo2/Diablo\ II.exe" },
    { "w3:ROC", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Warcraft\ III/Warcraft\ III.exe"},
    { "w3:FT", "wine explorer /desktop=0,1366x786 /home/alex/Misc/Games/Warcraft\ III/Frozen\ Throne.exe"}
@@ -95,10 +97,18 @@ mypowermenu = {
 }
 myaudiomenu = {
     {"ardour","ardour2"},
+    {"puredata","pd"},
+    {"processing","/home/alex/Soundology/Processing/processing"},
     {"qjackctl","qjackctl"},
-    {"seq24","seq24"},
+    {"tuner","fmit"},
+    {"xsynth","xsynth-dssi"},
+    {"hydrogen","hydrogen"},
     {"calf","calfjackhost"},
+    {"seq24","seq24"},
+    {"samplv1","samplv1_jack"},
+    {"synthv1","synthv1_jack"},
     {"jsampler","jsampler"},
+    {"vmpk","vmpk"},
     {"rakarrack","rakarrack"},
     {"kill p.a.",terminal .. " -e killall pulseaudio"}
 }
@@ -106,6 +116,7 @@ myaudiomenu = {
 myappsmenu = {
    { "gimp", "gimp" },
    { "v.box", "virtualbox" },
+   { "puddletag", "puddletag" },
    { "ranger", terminal .. " -e ranger" },
    { "tmux", terminal .. " -e tmux" },
    { "ncmpcpp", terminal .. " -e ncmpcpp" },
@@ -448,7 +459,6 @@ for s = 1, screen.count() do
     layoutsys:add(separator)
     layoutsys:add(pacwidget)
     layoutsys:add(separator)
-    layoutsys:add(osinfo)
     layoutsys:add(separator)
 
 
@@ -611,6 +621,7 @@ awful.rules.rules = {
     { rule = { },
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
+                     size_hints_honor = false,
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
