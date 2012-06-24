@@ -1,0 +1,8 @@
+background no
+out_to_console yes
+update_interval 1
+total_run_times 0
+mpd_host localhost
+
+TEXT
+^fg(\#393939) [ ^fg()^ca(1, mpc toggle)${mpd_status}^ca()${if_mpd_playing} ^fg(\#393939)][ ^fg(\#909090)^ca(1, mpc next)${mpd_title}^ca()^fg() by ^fg(\#909090)${mpd_artist}^fg()$endif ^fg(\#393939)] [^fg()${fs_free /home}/${fs_size /home}^fg(\#393939)] [^fg(\#61C29A) Net: ^fg()${downspeedf wlan0} / ${upspeedf wlan0} ^fg(\#393939)] [ ^fg(\#61C29A)Bat:^fg() ${battery_percent} ^fg(\#393939)] [^fg(\#61C29A) Mail: ^fg()${exec /home/alex/Scripts/mailcheck}^fg(\#393939) ] [^fg() ${time %a %b %d %H:%M}^fg(\#393939) ]

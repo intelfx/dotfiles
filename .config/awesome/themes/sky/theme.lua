@@ -12,14 +12,13 @@ theme.bg_focus      = "#e2eeea"
 theme.bg_normal     = "#729fcf"
 theme.bg_urgent     = "#fce94f"
 theme.bg_minimize   = "#0067ce"
-theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#2e3436"
 theme.fg_focus      = "#2e3436"
 theme.fg_urgent     = "#2e3436"
 theme.fg_minimize   = "#2e3436"
 
-theme.border_width  = 2
+theme.border_width  = "2"
 theme.border_normal = "#dae3e0"
 theme.border_focus  = "#729fcf"
 theme.border_marked = "#eeeeec"
@@ -39,6 +38,7 @@ theme.layout_spiral          = "/usr/share/awesome/themes/sky/layouts/spiral.png
 theme.layout_dwindle         = "/usr/share/awesome/themes/sky/layouts/dwindle.png"
 
 theme.awesome_icon           = "/usr/share/awesome/themes/sky/awesome-icon.png"
+theme.tasklist_floating_icon = "/usr/share/awesome/themes/sky/layouts/floating.png"
 
 -- from default for now...
 theme.menu_submenu_icon     = "/usr/share/awesome/themes/default/submenu.png"
@@ -49,8 +49,8 @@ theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew
 theme.wallpaper_cmd         = { "awsetbg /usr/share/awesome/themes/sky/sky-background.png" }
 theme.taglist_squares       = "true"
 theme.titlebar_close_button = "true"
-theme.menu_height           = 15
-theme.menu_width            = 100
+theme.menu_height           = "15"
+theme.menu_width            = "100"
 
 -- Define the image to load
 theme.titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png"
