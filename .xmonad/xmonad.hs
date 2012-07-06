@@ -55,7 +55,7 @@ myModMask       = mod4Mask
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
 {-myWorkspaces = ["main","web","media","code","foo()","bar()"]-}
-myWorkspaces    = clickable . (map dzenEscape) $ ["main","web","media","code","foo()","bar()"]
+myWorkspaces    = clickable . (map dzenEscape) $ ["main","web","media","misc","foo()","bar()"]
     where clickable l = ["^ca(1,xdotool key super+" ++ show (n) ++ ")" ++ ws ++ "^ca()" | 
                         (i,ws) <- zip ['1','2','3','q','w','e'] l,
                         let n = i ]
@@ -73,7 +73,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
     -- launch dmenu
-    , ((modm,               xK_r     ), spawn "dmenu_run")
+    , ((modm,               xK_r     ), spawn "dmenu_run -i -fn 'profont-8' -sb '#435d75' -nb '#121212'")
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
      -- Rotate through the available layout algorithms
@@ -119,6 +119,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Restart xmonad
     , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
+
+    , ((modm .|. shiftMask, xK_i     ), spawn "dwb")
+    , ((modm .|. shiftMask, xK_n     ), spawn "nautilus")
+    , ((modm .|. shiftMask, xK_m     ), spawn "urxvt -e ncmpcpp")
     ]
     ++
 
@@ -202,9 +206,13 @@ myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $  avoidStruts $ tiled ||| Mirror
 --
 myManageHook = manageDocks <+> composeAll
     [ className =? "MPlayer"             --> doFloat
+    , className =? "MPlayer"             --> doShift (myWorkspaces !! 2)
     , className =? "Gimp"                --> doFloat
+    , className =? "Gimp"                --> doShift (myWorkspaces !! 2)
+    , className =? "Nautilus"            --> doShift (myWorkspaces !! 3)
+    , className =? "Zathura"             --> doShift (myWorkspaces !! 2)
     , className =? "Dwb"                 --> doShift (myWorkspaces !! 1)
-    , className =? "Eclipse"             --> doShift (myWorkspaces !! 3)
+    , className =? "Eclipse"             --> doShift (myWorkspaces !! 5)
     , className =? "processing-app-Base" --> doShift (myWorkspaces !! 4)
     , className =? "processing-app-Base" --> doFloat
     , resource  =? "desktop_window"      --> doIgnore
@@ -230,9 +238,9 @@ myEventHook = fullscreenEventHook
 --
 myLogHook h = dynamicLogWithPP $ defaultPP
     {
-        ppCurrent           =   dzenColor "#509f7e" "#121212" . pad
-      , ppVisible           =   dzenColor "white"   "#121212" . pad
-      , ppHidden            =   dzenColor "white"   "#121212" . pad
+        ppCurrent           =   dzenColor "white" "#121212" . pad
+      , ppVisible           =   dzenColor "#509f7e" "#121212" . pad
+      , ppHidden            =   dzenColor "#509f7e" "#121212" . pad
       , ppHiddenNoWindows   =   dzenColor "#444444" "#121212" . pad
       , ppUrgent            =   dzenColor "red"     "#121212" . pad
       , ppWsSep             =   ""

@@ -51,6 +51,18 @@ URxvt*cursorColor2: #151515
 
 !URxvt.letterSpace: -1
 *font: *-*-*-*-*-*-10-*-*-*-*-*-*-*
+!URxvt*font: xft:Montecarlo:regular:size=9
+!URxvt*imFont: xft:Montecarlo:regular:size=9
+!URxvt*boldFont: xft:Montecarlo:regular:size=9
+!URxvt*italicFont: xft:Montecarlo:regular:size=9
+!URxvt*boldItalicFont: xft:Montecarlo:regular:size=9
+
+URxvt*font: xft:ProFont:regular:size=8
+URxvt*imFont: xft:ProFont:regular:size=8
+URxvt*boldFont: xft:ProFont:regular:size=8
+URxvt*italicFont: xft:ProFont:regular:size=8
+URxvt*boldItalicFont: xft:ProFont:regular:size=8
+!
 !URxvt*font: xft:Envy Code R for Powerline:regular:size=8
 !URxvt*imFont: xft:Envy Code R for Powerline:regular:size=8
 !URxvt*boldFont: xft:Envy Code R for Powerline:regular:size=8
@@ -58,11 +70,11 @@ URxvt*cursorColor2: #151515
 !URxvt*boldItalicFont: xft:Envy Code R for Powerline:regular:size=8
 
 dzen2*font: *-*-*-*-*-*-4-*-*-*-*-*-*-*
-URxvt*font: xft:Pragmata TT:regular:size=8
-URxvt*imFont: xft:Pragmata TT:regular:size=8
-URxvt*boldFont: xft:Pragmata TT:regular:size=8
-URxvt*italicFont: xft:Pragmata TT:regular:size=8
-URxvt*boldItalicFont: xft:Pragmata TT:regular:size=8
+!URxvt*font: xft:Pragmata TT:regular:size=8
+!URxvt*imFont: xft:Pragmata TT:regular:size=8
+!URxvt*boldFont: xft:Pragmata TT:regular:size=8
+!URxvt*italicFont: xft:Pragmata TT:regular:size=8
+!URxvt*boldItalicFont: xft:Pragmata TT:regular:size=8
 
 URxvt*buffered: true
 
@@ -99,7 +111,7 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-bg: 0 
 URxvt.tabbed.tab-fg: 0 
 
-!URxvt.transparent: true
+URxvt.transparent: true
 URxvt.shading: 5
 
 !URxvt*meta8:True
