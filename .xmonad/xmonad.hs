@@ -212,6 +212,7 @@ myManageHook = manageDocks <+> composeAll
     , className =? "Nautilus"            --> doShift (myWorkspaces !! 3)
     , className =? "Zathura"             --> doShift (myWorkspaces !! 2)
     , className =? "Dwb"                 --> doShift (myWorkspaces !! 1)
+    , className =? "Chromium"            --> doShift (myWorkspaces !! 1)
     , className =? "Eclipse"             --> doShift (myWorkspaces !! 5)
     , className =? "processing-app-Base" --> doShift (myWorkspaces !! 4)
     , className =? "processing-app-Base" --> doFloat
@@ -239,13 +240,13 @@ myEventHook = fullscreenEventHook
 myLogHook h = dynamicLogWithPP $ defaultPP
     {
         ppCurrent           =   dzenColor "white" "#121212" . pad
-      , ppVisible           =   dzenColor "#509f7e" "#121212" . pad
-      , ppHidden            =   dzenColor "#509f7e" "#121212" . pad
+      , ppVisible           =   dzenColor "#6d9cbe" "#121212" . pad
+      , ppHidden            =   dzenColor "#6d9cbe" "#121212" . pad
       , ppHiddenNoWindows   =   dzenColor "#444444" "#121212" . pad
       , ppUrgent            =   dzenColor "red"     "#121212" . pad
       , ppWsSep             =   ""
       , ppSep               =   " | "
-      , ppLayout            =   dzenColor "#509f7e" "#121212" .
+      , ppLayout            =   dzenColor "#5e468c" "#121212" .
                                 (\x -> case x of
                                     "Tall"        -> "^ca(1,xdotool key super+space)[T]^ca()"
                                     "Mirror Tall" -> "^ca(1,xdotool key super+space)[W]^ca()"
