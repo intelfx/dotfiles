@@ -71,7 +71,7 @@ if exists("+undofile")
   set undofile
 endif
 set cursorline
-"}}}
+
 " Key mappings 
 " ============
 "
@@ -105,7 +105,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>< <C-w><
 nnoremap <leader>> <C-w>>
 nnoremap <leader>+ <C-w>+
-nnoremap <leader>- <C-w>-
+nn # Number of lines when displaying next/prev page in pageroremap <leader>- <C-w>-
 
 " Makes posible the use of python/perl regex in vim
 nnoremap / /\v
@@ -123,22 +123,28 @@ nnoremap L ]'
 " Folding
 nnoremap <Space> za
 vnoremap <Space> za
+
+" I don't want to miss my command key!
 nnoremap ; :
 
 " Show the YankRing & NERDTree
 nnoremap <F5> :YRShow<CR>
 nnoremap <F4> :NERDTreeToggle<CR>
 
-" Copy & paste to the clipboard
+" Easy Copy & Paste to the clipboard
 vnoremap <C-c> "+y
 nnoremap <C-v> "+p
 
 " Save/Load a working session
 nnoremap <F8> :SessionSave<CR>
-nnoremap <F9> :SessionList<CR>
+nnoremap <F9> :SessionList<# Sorts threads right
 
 " Show Hidden Chars (Eol, Tab)
 nnoremap <leader>l :set list!<CR>
+
+" Tab navigation
+nnoremap <leader>n :tabnext<CR>
+nnoremap <leader>p :tabprev<CR>
 
 " Bubbling text
 nmap <C-Up> [e
@@ -156,12 +162,15 @@ nnoremap <F3> :GundoToggle <cr>
 nnoremap <leader>markdown :%!/usr/local/bin/Markdown.pl --html4tags<CR>
 
 " DmenuVimSearch
-nnoremap <c-f> :call DmenuOpen("e")<cr>
+nnoremap <leader>find :CtrlP<cr>
+nnoremap <leader>findin :CtrlP 
+
 " Appearance
 " ==========
 "
 set background=dark
-set guifont=Menlo\ for\ Powerline\ 8 
+set guifont=Monaco\ 8
+
 " Remove menu bars, toolbox and scrollbars in GVIM
 set guioptions-=T
 set guioptions-=m
@@ -169,7 +178,6 @@ set guioptions-=r
 set guioptions-=L
 if (!has('gui_running'))
     set t_Co=256
-    "colorscheme jellybeans
     colorscheme darkmirror
 else
     colorscheme darkmirror
@@ -179,6 +187,7 @@ endif
 set visualbell 
 set noerrorbells
 set t_vb=
+
 " Plugins specific options
 let NERDTreeShowHidden=1
 
@@ -197,13 +206,4 @@ endfunc
 " Strip the newline from the end of a string 
 function! Chomp(str)
     return substitute(a:str, '\n$', '', '')
-endfunction
-
-" Find a file and pass it to cmd
-function! DmenuOpen(cmd)
-    let fname = Chomp(system("find /home/alex | dmenu -i -l 20 -p " . a:cmd))
-    if empty(fname)
-        return
-    endif
-    execute a:cmd . " " . fname
 endfunction

@@ -49,7 +49,6 @@ URxvt*cursorColor2: #151515
 
 
 
-!URxvt.letterSpace: -1
 *font: *-*-*-*-*-*-10-*-*-*-*-*-*-*
 !URxvt*font: xft:Montecarlo:regular:size=9
 !URxvt*imFont: xft:Montecarlo:regular:size=9
@@ -57,11 +56,11 @@ URxvt*cursorColor2: #151515
 !URxvt*italicFont: xft:Montecarlo:regular:size=9
 !URxvt*boldItalicFont: xft:Montecarlo:regular:size=9
 
-URxvt*font: xft:ProFont:regular:size=8
-URxvt*imFont: xft:ProFont:regular:size=8
-URxvt*boldFont: xft:ProFont:regular:size=8
-URxvt*italicFont: xft:ProFont:regular:size=8
-URxvt*boldItalicFont: xft:ProFont:regular:size=8
+!URxvt*font: xft:ProFont:regular:size=8
+!URxvt*imFont: xft:ProFont:regular:size=8
+!URxvt*boldFont: xft:ProFont:regular:size=8
+!URxvt*italicFont: xft:ProFont:regular:size=8
+!URxvt*boldItalicFont: xft:ProFont:regular:size=8
 !
 !URxvt*font: xft:Envy Code R for Powerline:regular:size=8
 !URxvt*imFont: xft:Envy Code R for Powerline:regular:size=8
@@ -70,11 +69,11 @@ URxvt*boldItalicFont: xft:ProFont:regular:size=8
 !URxvt*boldItalicFont: xft:Envy Code R for Powerline:regular:size=8
 
 dzen2*font: *-*-*-*-*-*-4-*-*-*-*-*-*-*
-!URxvt*font: xft:Pragmata TT:regular:size=8
-!URxvt*imFont: xft:Pragmata TT:regular:size=8
-!URxvt*boldFont: xft:Pragmata TT:regular:size=8
-!URxvt*italicFont: xft:Pragmata TT:regular:size=8
-!URxvt*boldItalicFont: xft:Pragmata TT:regular:size=8
+URxvt*font: xft:Pragmata TT:regular:size=8
+URxvt*imFont: xft:Pragmata TT:regular:size=8
+URxvt*boldFont: xft:Pragmata TT:regular:size=8
+URxvt*italicFont: xft:Pragmata TT:regular:size=8
+URxvt*boldItalicFont: xft:Pragmata TT:regular:size=8
 
 URxvt*buffered: true
 
@@ -100,7 +99,7 @@ URxvt*urgentOnBell: true
 URxvt*pointerBlank: true
 /* vim: set ts=2 sw=2 tw=0 :*/
 URxvt.perl-ext-common: default,matcher,url-select
-URxvt.keysym.C-u: perl:url-select:select_next
+!URxvt.keysym.C-y: perl:url-select:select_next
 URxvt.urlLauncher:dwb
 URxvt.underlineURLs: true
 #URxvt.urlLauncher:chromium

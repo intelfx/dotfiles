@@ -10,6 +10,7 @@
 import XMonad
 import XMonad.Util.Run (spawnPipe, hPutStrLn)
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.SetWMName
 import XMonad.Hooks.ManageHelpers
 {-import XMonad.Hooks.EwmhDesktops-}
 import XMonad.Hooks.ManageDocks (manageDocks, avoidStruts)
@@ -140,7 +141,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_4, xK_5, xK_6] [0..]
+        | (key, sc) <- zip [xK_a, xK_s, xK_d] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
@@ -213,6 +214,7 @@ myManageHook = manageDocks <+> composeAll
     , className =? "Zathura"             --> doShift (myWorkspaces !! 2)
     , className =? "Dwb"                 --> doShift (myWorkspaces !! 1)
     , className =? "Chromium"            --> doShift (myWorkspaces !! 1)
+    , className =? "Google-chrome"       --> doShift (myWorkspaces !! 1)
     , className =? "Eclipse"             --> doShift (myWorkspaces !! 5)
     , className =? "processing-app-Base" --> doShift (myWorkspaces !! 4)
     , className =? "processing-app-Base" --> doFloat
@@ -239,21 +241,21 @@ myEventHook = fullscreenEventHook
 --
 myLogHook h = dynamicLogWithPP $ defaultPP
     {
-        ppCurrent           =   dzenColor "white" "#121212" . pad
-      , ppVisible           =   dzenColor "#6d9cbe" "#121212" . pad
-      , ppHidden            =   dzenColor "#6d9cbe" "#121212" . pad
-      , ppHiddenNoWindows   =   dzenColor "#444444" "#121212" . pad
-      , ppUrgent            =   dzenColor "red"     "#121212" . pad
+        ppCurrent           =   dzenColor "white" "#000000" . pad
+      , ppVisible           =   dzenColor "#6d9cbe" "#000000" . pad
+      , ppHidden            =   dzenColor "#6d9cbe" "#000000" . pad
+      , ppHiddenNoWindows   =   dzenColor "#444444" "#000000" . pad
+      , ppUrgent            =   dzenColor "red"     "#000000" . pad
       , ppWsSep             =   ""
       , ppSep               =   " | "
-      , ppLayout            =   dzenColor "#5e468c" "#121212" .
+      , ppLayout            =   dzenColor "#5e468c" "#000000" .
                                 (\x -> case x of
                                     "Tall"        -> "^ca(1,xdotool key super+space)[T]^ca()"
                                     "Mirror Tall" -> "^ca(1,xdotool key super+space)[W]^ca()"
                                     "Full"        -> "^ca(1,xdotool key super+space)[M]^ca()"
                                     _             -> x
                                 )
-      , ppTitle             =   (" " ++) . dzenColor "white" "#121212" . dzenEscape
+      , ppTitle             =   (" " ++) . dzenColor "white" "#000000" . dzenEscape
       , ppOutput            =   hPutStrLn h
     }
 ------------------------------------------------------------------------
@@ -264,7 +266,7 @@ myLogHook h = dynamicLogWithPP $ defaultPP
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = setWMName "LG3D"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -272,8 +274,8 @@ myStartupHook = return ()
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do 
-    d <- spawnPipe "dzen2 -ta l -fn 'profont-8' -bg '#121212' -w 500 -e 'button3='"
-    spawn "conky | dzen2 -x 500 -ta r -fn 'profont-8' -bg '#121212' -e 'button3='"
+    d <- spawnPipe "dzen2 -ta l -fn 'profont-8' -bg '#000000' -w 500 -e 'button3='"
+    spawn "conky | dzen2 -x 500 -ta r -fn 'profont-8' -bg '#000000' -e 'button3='"
     xmonad $ defaults {
     logHook = myLogHook d
 }  
