@@ -1,8 +1,16 @@
 background no
 out_to_console yes
+out_to_x no 
 update_interval 1
 total_run_times 0
 mpd_host localhost
 
+
 TEXT
-^fg(\#393939) [ ^fg()^ca(1, mpc toggle)^ca(2,mpc stop)${mpd_status}^ca()${if_mpd_playing} ^fg(\#393939)][ ^fg(\#909090)^ca(1, mpc next)^ca(2, mpc prev)${scroll 40 4 ${mpd_title} by ${mpd_artist}}^fg()$endif ^fg(\#393939)] [ ^fg()${fs_free /home}/${fs_size /home}^fg(\#393939) ] [^fg(\#435d75) Net: ^fg()${downspeedf wlan0} / ${upspeedf wlan0} ^fg(\#393939)] [ ^fg(\#435d75)Bat:^fg() ${battery_percent} ^fg(\#393939)] [^fg(\#435d75) Mail: ^fg()${exec /home/alex/Scripts/mailcheck}^fg(\#393939) ] [^fg() ${time %a %b %d %H:%M}^fg(\#393939) ]
+^fg(\#393939)\
+[^fg(\#435d75) Home: ^fg()${fs_free /home}/${fs_size /home}^fg(\#393939) ]\
+[^fg(\#435d75) Net: ^fg()\
+${downspeedf wlp2s0} / ${upspeedf wlp2s0} ^fg(\#393939)]\
+#[ ^fg(\#435d75)Bat:^fg()\${battery_percent} ^fg(\#393939)]\ 
+^fg(\#393939) [ ^fg()${time %a %b %d %H:%M}^fg(\#393939) ]\
+^fg(\#393939) [ ^fg()${battery_percent}^fg(\#393939) ]

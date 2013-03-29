@@ -1,0 +1,121 @@
+!-----------------------------------------------------------------
+! Terminal colors -----------------------------------------------¬
+!-----------------------------------------------------------------
+
+!black
+*color0:    #393939
+*color8:    #121212
+
+!red
+*color1:    #da4939
+*color9:    #ff6c5c
+
+!green
+*color2:    #61C29A
+*color10:   #509F7E
+
+!yellow
+*color3:    #DB8D4D
+*color11:   #bc9458
+
+!blue
+*color4:    #6d9cbe
+*color12:   #91C1E3
+
+!magenta
+*color5:    #5e468c
+*color13:   #7f62b3
+
+!cyan
+*color6:    #435d75
+*color14:   #6e98a4
+
+!white
+*color7:    #dedede
+*color15:   #b0b0b0
+
+!-¬
+!-----------------------------------------------------------------
+
+!-----------------------------------------------------------------
+! URXVT-Specific stuff ------------------------------------------¬
+!-----------------------------------------------------------------
+
+! Appearance
+!URxvt.font:                 xft:profont:regular:size=8
+!URxvt.imFont:               xft:profont:regular:size=8
+!URxvt.boldFont:             xft:profont:regular:size=8
+!URxvt.italicFont:           xft:profont:regular:size=8
+!URxvt.boldItalicFont:       xft:profont:regular:size=8
+
+URxvt.font:                 xft:Droid Sans Mono:regular:size=8
+URxvt.imFont:               xft:Droid Sans Mono:regular:size=8
+URxvt.boldFont:             xft:Droid Sans Mono:regular:size=8
+URxvt.italicFont:           xft:Droid Sans Mono:regular:size=8
+URxvt.boldItalicFont:       xft:Droid Sans Mono:regular:size=8
+
+URxvt.foreground:           #e8e8e8
+URxvt.background:           [95]#050505
+URxvt.borderColor:          #050505
+URxvt.borderless:           true
+URxvt.highlightColor:       #a761c2
+URxvt.highlightTextColor:   #151515
+
+URxvt.cursorColor:          #ff8939
+URxvt.cursorColor2:         #151515
+URxvt.cursorBlink:          true
+URxvt.cursorUnderline:      false
+
+URxvt.depth: 32
+
+! Bold/Italic/Underline Styles
+URxvt.colorBD:              #ffffff
+URxvt.colorIT:              #a761c2
+URxvt.colorUL:              #6d9cbe
+URxvt.underlineColor:       #333333
+
+! ScrollBar
+URxvt.scrollBar:            false
+URxvt.scrollBar_right:      true
+URxvt.scrollstyle:          plain
+URxvt.scrollColor:          #ffffff
+
+URxvt.scrollWithBuffer:     true
+URxvt.scrollTtyKeypress:    true
+URxvt.scrollTtyOutput:      false
+
+URxvt.buffered:             true
+URxvt.pointerBlank:         true
+URxvt.underlineURLs:        true
+URxvt.matcher.button:       1
+
+! Transparency
+URxvt.transparent:          true
+URxvt.shading:              5
+
+!-¬
+!-----------------------------------------------------------------
+
+!-----------------------------------------------------------------
+! XFT -----------------------------------------------------------¬
+!-----------------------------------------------------------------
+
+Xft.dpi:        96
+Xft.autohint:   0
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hitstyle:   hintfull
+Xft.lcdfilter:  lcddefault
+
+!-¬
+!-----------------------------------------------------------------
+
+!-----------------------------------------------------------------
+! Misc ----------------------------------------------------------¬
+!-----------------------------------------------------------------
+
+dzen2*font: *-*-*-*-*-*-4-*-*-*-*-*-*-*
+
+!-¬
+!-----------------------------------------------------------------
