@@ -54,19 +54,26 @@ URxvt.boldFont:             xft:Droid Sans Mono:regular:size=8
 URxvt.italicFont:           xft:Droid Sans Mono:regular:size=8
 URxvt.boldItalicFont:       xft:Droid Sans Mono:regular:size=8
 
+!URxvt.font:                 xft:Ubuntu Mono:regular:size=10
+!URxvt.imFont:               xft:Ubuntu Mono:regular:size=10
+!URxvt.boldFont:             xft:Ubuntu Mono:regular:size=10
+!URxvt.italicFont:           xft:Ubuntu Mono:regular:size=10
+!URxvt.boldItalicFont:       xft:Ubuntu Mono:regular:size=10
+
 URxvt.foreground:           #e8e8e8
-URxvt.background:           [95]#050505
+URxvt.background:           #050505
 URxvt.borderColor:          #050505
 URxvt.borderless:           true
 URxvt.highlightColor:       #a761c2
 URxvt.highlightTextColor:   #151515
 
-URxvt.cursorColor:          #ff8939
+URxvt.cursorColor:          #dedede
 URxvt.cursorColor2:         #151515
 URxvt.cursorBlink:          true
 URxvt.cursorUnderline:      false
 
 URxvt.depth: 32
+URxvt.internalBorder: 5
 
 ! Bold/Italic/Underline Styles
 URxvt.colorBD:              #ffffff
@@ -90,7 +97,7 @@ URxvt.underlineURLs:        true
 URxvt.matcher.button:       1
 
 ! Transparency
-URxvt.transparent:          true
+URxvt.transparent:          false
 URxvt.shading:              5
 
 !-¬
@@ -100,13 +107,13 @@ URxvt.shading:              5
 ! XFT -----------------------------------------------------------¬
 !-----------------------------------------------------------------
 
-Xft.dpi:        96
-Xft.autohint:   0
 Xft.antialias:  true
-Xft.rgba:       rgb
+Xft.autohint:   0
+Xft.dpi:        96
 Xft.hinting:    true
 Xft.hitstyle:   hintfull
 Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
 
 !-¬
 !-----------------------------------------------------------------

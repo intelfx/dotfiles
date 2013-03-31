@@ -82,7 +82,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     [ 
     -- launch dmenu
-    ((modm,               xK_r     ), spawn "dmenu_run -i -fn 'profont-8' -sb '#435d75' -nb '#121212'")
+    ((modm,               xK_r     ), spawn "dmenu_run -i -h 20 -fn '*-profont-*-*-*-*-12-*-*-*-*-*-*-*' -sb '#435d75' -nb '#000000'")
     -- Close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
      -- Rotate through the available layout algorithms
@@ -118,6 +118,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_i     ), spawn "dwb")
     , ((modm .|. shiftMask, xK_n     ), spawn "nautilus")
     , ((modm .|. shiftMask, xK_m     ), spawn "urxvt -e ncmpcpp")
+    -- Alsa Multimedia Control
+    , ((0, 0x1008ff11), spawn "amixer -q set Master 5%- unmute")
+    , ((0, 0x1008ff13), spawn "amixer -q set Master 5%+ unmute")
+    , ((0, 0x1008ff12), spawn "amixer -q set Master toggle")
+    -- Brightness Control
+    , ((0, 0x1008ff03), spawn "xbacklight -dec 20")
+    , ((0, 0x1008ff02), spawn "xbacklight -inc 20")
     ]
     ++
 
@@ -167,8 +174,8 @@ myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $
            webLayout $
            standardLayout
     where
-     standardLayout = tiled     ||| mirrorTiled ||| fullTiled   ||| noBor
-     var1Layout     = fullTiled ||| tiled ||| noBor
+     standardLayout = tiled     ||| mirrorTiled ||| fullTiled ||| noBor
+     var1Layout     = fullTiled ||| tiled       ||| noBor
      webLayout      = onWorkspace (myWorkspaces !! 1) var1Layout
      fullTiled      = Tall nmaster delta (1/4)
      mirrorTiled    = Mirror . spacing 20 $ Tall nmaster delta ratio
@@ -228,14 +235,14 @@ myEventHook = fullscreenEventHook
 
 myLogHook h = dynamicLogWithPP $ defaultPP
     {
-        ppCurrent           =   dzenColor "white" "#000000" . pad
+        ppCurrent           =   dzenColor "white"   "#121212" . pad
       , ppVisible           =   dzenColor "#6d9cbe" "#000000" . pad
-      , ppHidden            =   dzenColor "#6d9cbe" "#000000" . pad
+      , ppHidden            =   dzenColor "#435d75" "#000000" . pad
       , ppHiddenNoWindows   =   dzenColor "#444444" "#000000" . pad
       , ppUrgent            =   dzenColor "red"     "#000000" . pad
       , ppWsSep             =   ""
       , ppSep               =   " | "
-      , ppLayout            =   dzenColor "#5e468c" "#000000" .
+      , ppLayout            =   dzenColor "#435d75" "#000000" .
             (\x -> case x of
                 "Spacing 20 Tall"        -> clickInLayout ++ "[T]^ca()"
                 "Tall"                   -> clickInLayout ++ "[FT]^ca()"
@@ -263,8 +270,8 @@ myStartupHook = setWMName "LG3D"
 ------------------------------------------------------------------------
 
 main = do 
-    d <- spawnPipe "dzen2 -ta l -fn 'profont-8' -bg '#000000' -w 500 -e 'button3='"
-    spawn "conky | dzen2 -x 500 -ta r -fn 'profont-8' -bg '#000000' -e 'button3='"
+    d <- spawnPipe "dzen2 -ta l -fn 'profont-8' -bg '#000000' -w 500 -h 20 -e 'button3='"
+    spawn "conky | dzen2 -x 500 -ta r -fn 'profont-8' -bg '#000000' -h 20 -e 'button3='"
     xmonad $ defaults {
     logHook = myLogHook d
     }  

@@ -38,8 +38,11 @@ wiki() { dig +short txt $1.wp.dg.cx; }
 # Customize to your needs...
 export JAVA_FONTS=/usr/share/fonts/TTF
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
+export PATH=~/Scripts:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
+export LANGUAGE="es_ES:es_ES:es"
 
 # Alias
 alias :q="exit"
+alias :Q="exit"
 alias matlab="matlab >/dev/null 2>/dev/null &"
+alias chrome="google-chrome --audio-buffer-size=4096"
