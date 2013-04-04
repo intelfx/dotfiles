@@ -29,20 +29,105 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git archlinux pip supervisor)
+# Install specific package(s) from the repositories
+
+# ---------------------------------------------------------------------
+# Archlinux Plugin Documentation
+# ---------------------------------------------------------------------
+    #pacin='sudo pacman -S'
+    #Install specific package not from the repositories but from a file
+
+    #pacins='sudo pacman -U'          
+    #Remove the specified package(s), retaining its configuration(s) and required dependencies
+
+    #pacre='sudo pacman -R'           
+    #Remove the specified package(s), its configuration(s) and unneeded dependencies
+
+    #pacrem='sudo pacman -Rns'        
+    #Display information about a given package in the repositories
+
+    #pacrep='pacman -Si'              
+    #Search for package(s) in the repositories
+
+    #pacreps='pacman -Ss'             
+    #Display information about a given package in the local database
+
+    #pacloc='pacman -Qi'              
+    #Search for package(s) in the local database
+
+    #paclocs='pacman -Qs'
+    #Update and refresh the local package and ABS databases against repositories
+
+    #pacupd='sudo pacman -Sy && sudo abs'     
+    #Install given package(s) as dependencies of another package
+
+    #pacinsd='sudo pacman -S --asdeps'        
+    #Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
+
+    #pacmir='sudo pacman -Syy'
+    #Extra functions for package management in Archlinux
+
+    #List all installed packages with a short description - Source
+
+    #paclist
+    #List all orphaned packages
+
+    #paclsorphans
+    #Delete all orphaned packages
+
+    #pacrmorphans
+    #List all disowned files in your system
+
+    #pacdisowned | less +F
+
+
+# ---------------------------------------------------------------------
+# Github Plugin Documentation
+# ---------------------------------------------------------------------
+    #g   git                                   | gst git status
+    #gl  git pull                              | gup git fetch && git rebase
+    #gp  git push                              | gc  git commit -v
+    #gca git commit -v -a                      | gco git checkout
+    #gcm git checkout master                   | gb  git branch
+    #gba git branch -a                         | gcount  git shortlog -sn
+    #gcp git cherry-pick                       | glg git log --stat --max-count=5
+    #glgg    git log --graph --max-count=5     | gss git status -s
+    #ga  git add                               | gm  git merge
+    #grh git reset HEAD                        | grhh    git reset HEAD --hard
+    #gsr git svn rebase                        | gsd git svn dcommit
+    #ggpull  git pull origin $(current_branch) | ggpush  git push origin $(current_branch)
+    #gdv git diff -w "$@"                      | view -
+    #ggpnp   git pull origin $(current_branch) && git push origin $(current_branch)
+    #git-svn-dcommit-push    git svn dcommit && git push github master:svntrunk
+    #gpa git add .; git commit -m "$1"; git push; # only in the ocodo fork.
+
+plugins=(git archlinux pip supervisor systemd)
 
 source $ZSH/oh-my-zsh.sh
 
+# ---------------------------------------------------------------------
+# Functions
+# ---------------------------------------------------------------------
 wiki() { dig +short txt $1.wp.dg.cx; }
 
-# Customize to your needs...
+# ---------------------------------------------------------------------
+# Exports
+# ---------------------------------------------------------------------
 export JAVA_FONTS=/usr/share/fonts/TTF
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export PATH=~/Scripts:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
-export LANGUAGE="es_ES:es_ES:es"
+#export LANGUAGE="es_ES:es_ES:es"
+#export LANG=es_ES.utf8
 
-# Alias
+# ---------------------------------------------------------------------
+# Aliases
+# ---------------------------------------------------------------------
 alias :q="exit"
 alias :Q="exit"
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias fp="~/Scripts/pass/findpass"
+alias ep="~/Scripts/pass/editpass"
 alias matlab="matlab >/dev/null 2>/dev/null &"
-alias chrome="google-chrome --audio-buffer-size=4096"
+alias google-chrome chrome="google-chrome --audio-buffer-size=4096"

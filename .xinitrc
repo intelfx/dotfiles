@@ -6,4 +6,7 @@ nitrogen --restore &
 xset b off &
 bind C-m previous-window &
 pulseaudio --start &
-exec xmonad
+compton -cCfb -D 3.5 &
+dropboxd &
+sysndaemon -t -k -i 2 -d &
+exec dbus-launch xmonad

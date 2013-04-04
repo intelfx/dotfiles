@@ -1,0 +1,22 @@
+#!/bin/bash
+# ------------------------------------------------------------------
+#
+#     Scripts/alsaperc
+#     Description: Script for piping the battery status into dzen
+#     Author: Alex Sánchez <kniren@gmail.com>
+#
+# ------------------------------------------------------------------
+
+BAT=`acpi -i | head -n 1 | rev | cut -b 1-4 | rev | sed -e 's/\%//g'`
+if [[ $BAT -lt 20  ]]; then
+    ICON="bat_empty_02.xbm"
+    BATBAR=`echo -e "$BAT"\
+        | gdbar -bg darkgrey -fg red -h 5 -w 50`
+else
+    ICON="bat_full_02.xbm"
+    BATBAR=`echo -e "$BAT"\
+        | gdbar -bg darkgrey -fg white -h 5 -w 50`
+fi
+
+ICON='^i(/home/alex/.xmonad/dzen/icons/xbm8x8/'"$ICON)"
+echo "$ICON $BATBAR"

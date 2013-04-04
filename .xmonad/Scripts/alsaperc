@@ -1,0 +1,30 @@
+#!/bin/bash
+# ------------------------------------------------------------------
+#
+#     Scripts/alsaperc
+#     Description: Script for piping the alsa status into dzen
+#     Author: Alex Sánchez <kniren@gmail.com>
+#
+# ------------------------------------------------------------------
+
+AMASTER=`amixer get Master | tail -n 1`
+ASTAT=`echo "$AMASTER" | rev | cut -b 1-4 | rev\
+    | sed -e 's/\[//g' -e 's/\]//g'`
+ICON=""
+
+if [[ $ASTAT = "on" ]]; then
+    ICON="spkr_01.xbm"
+    PERCBAR=`echo -e "$AMASTER"\
+        | rev \
+        | cut -b 6-10 \
+        | rev \
+        | sed -e 's/\%//g' -e 's/\[//g' -e 's/\]//g' \
+        | gdbar -bg darkgrey -fg white -h 5 -w 50`
+else
+    ICON="spkr_02.xbm"
+    PERCBAR=`echo 0 \
+        | gdbar -bg darkgrey -fg white -h 5 -w 50`
+fi
+
+ICON='^i(/home/alex/.xmonad/dzen/icons/xbm8x8/'"$ICON)"
+echo "$ICON $PERCBAR"
