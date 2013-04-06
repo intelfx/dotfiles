@@ -1,13 +1,13 @@
 #!/bin/bash
 # ------------------------------------------------------------------
 #
-#     Scripts/alsaperc
+#     Scripts/spaceperc
 #     Description: Script for piping the free space status into dzen
 #     Author: Alex Sánchez <kniren@gmail.com>
 #
 # ------------------------------------------------------------------
 
-FREE=`df /home -h | awk '{print $5}' | tail -n 1 | sed -e 's/\%//g'`
+FREE=`df /home -h | awk 'END{gsub(/%/,""); print $5}'`
 
 ICON="diskette.xbm"
 if [[ $FREE -gt 90 ]]; then
