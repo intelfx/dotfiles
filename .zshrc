@@ -1,3 +1,27 @@
+# Linux terminal colors
+if [[ "$TERM" = "linux" ]]; then
+
+    echo -en "\e]P0050505"
+    echo -en "\e]P8121212"
+    echo -en "\e]P1DA4939"
+    echo -en "\e]P9FF6C5C"
+    echo -en "\e]P261C29A"
+    echo -en "\e]PA509F7E"
+    echo -en "\e]P3DB8D4D"
+    echo -en "\e]PBBC9458"
+    echo -en "\e]P46D9CBE"
+    echo -en "\e]PC91C1E3"
+    echo -en "\e]P55E468C"
+    echo -en "\e]PD7F62B3"
+    echo -en "\e]P6435D75"
+    echo -en "\e]PE6E98A4"
+    echo -en "\e]P7DEDEDE"
+    echo -en "\e]PFB0B0B0"
+    clear 
+
+fi
+eval $( dircolors -b $HOME/.dircolors )
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 

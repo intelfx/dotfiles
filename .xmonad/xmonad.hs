@@ -82,7 +82,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     [ 
     -- launch dmenu
-    ((modm,               xK_r     ), spawn "dmenu_run -i -h 18 -fn '*-profont-*-*-*-*-12-*-*-*-*-*-*-*' -sb '#61c29a' -nb '#000000'")
+    ((modm,               xK_r     ), spawn "dmenu_run -i -h 18 -fn '*-profont-*-*-*-*-12-*-*-*-*-*-*-*' -sb '#435d75' -nb '#000000'")
     -- Close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
      -- Rotate through the available layout algorithms
