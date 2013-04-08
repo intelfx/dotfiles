@@ -1,3 +1,10 @@
+# ---------------------------------------------------------------------
+# Basic options
+# ---------------------------------------------------------------------
+
+EDITOR=vim
+NOTEDIR=~/.notes/
+
 # Linux terminal colors
 if [[ "$TERM" = "linux" ]]; then
 
@@ -133,6 +140,12 @@ source $ZSH/oh-my-zsh.sh
 # Functions
 # ---------------------------------------------------------------------
 wiki() { dig +short txt $1.wp.dg.cx; }
+
+# Note taking
+n() { $EDITOR $NOTEDIR/"$*".md }
+nls () { tree -CR --noreport ~/.notes \
+        | awk '{ if ((NR > 1) gsub(/.md/,"")); \
+        if (NF==1) print $1; else if (NF==2) print $2; else if (NF==3) printf "  %s\n", $3 }' ;}
 
 # ---------------------------------------------------------------------
 # Exports
