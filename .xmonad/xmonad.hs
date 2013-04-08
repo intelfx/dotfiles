@@ -244,10 +244,14 @@ myLogHook h = dynamicLogWithPP $ defaultPP
       , ppSep               =   " | "
       , ppLayout            =   dzenColor "#435d75" "#000000" .
             (\x -> case x of
-                "Spacing 20 Tall"        -> clickInLayout ++ "[T]^ca()"
-                "Tall"                   -> clickInLayout ++ "[FT]^ca()"
-                "Mirror Spacing 20 Tall" -> clickInLayout ++ "[W]^ca()"
-                "Full"                   -> clickInLayout ++ "[M]^ca()"
+                "Spacing 20 Tall"        -> clickInLayout ++
+                    "^i(/home/alex/.xmonad/dzen/icons/stlarch/tile.xbm)^ca()"
+                "Tall"                   -> clickInLayout ++
+                    "^i(/home/alex/.xmonad/dzen/icons/stlarch/monocle.xbm)^ca()"
+                "Mirror Spacing 20 Tall" -> clickInLayout ++
+                    "^i(/home/alex/.xmonad/dzen/icons/stlarch/bstack.xbm)^ca()"
+                "Full"                   -> clickInLayout ++
+                    "^i(/home/alex/.xmonad/dzen/icons/stlarch/monocle2.xbm)^ca()"
                 _                        -> x
             )
       , ppTitle             =   (" " ++) . dzenColor "white" "#000000" . dzenEscape
