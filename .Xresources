@@ -42,23 +42,6 @@
 !-----------------------------------------------------------------
 
 ! Appearance
-!URxvt.font:                 xft:profont:regular:size=8
-!URxvt.imFont:               xft:profont:regular:size=8
-!URxvt.boldFont:             xft:profont:regular:size=8
-!URxvt.italicFont:           xft:profont:regular:size=8
-!URxvt.boldItalicFont:       xft:profont:regular:size=8
-
-!URxvt.font:                 xft:Droid Sans Mono:regular:size=8
-!URxvt.imFont:               xft:Droid Sans Mono:regular:size=8
-!URxvt.boldFont:             xft:Droid Sans Mono:regular:size=8
-!URxvt.italicFont:           xft:Droid Sans Mono:regular:size=8
-!URxvt.boldItalicFont:       xft:Droid Sans Mono:regular:size=8
-!
-!URxvt.font:                 xft:Ubuntu Mono:regular:size=9
-!URxvt.imFont:               xft:Ubuntu Mono:regular:size=9
-!URxvt.boldFont:             xft:Ubuntu Mono:regular:size=9
-!URxvt.italicFont:           xft:Ubuntu Mono:regular:size=9
-!URxvt.boldItalicFont:       xft:Ubuntu Mono:regular:size=9
 
 URxvt.font:                 xft:Inconsolata:regular:size=10
 URxvt.imFont:               xft:Inconsolata:regular:size=10
@@ -100,11 +83,19 @@ URxvt.scrollTtyOutput:      false
 URxvt.buffered:             true
 URxvt.pointerBlank:         true
 URxvt.underlineURLs:        true
-URxvt.matcher.button:       1
 
 ! Transparency
 URxvt.transparent:          false
 URxvt.shading:              5
+
+! Clickable URLs
+
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:     /usr/bin/google-chrome
+URxvt.matcher.button:   1
+
+URxvt.keysym.C-o:  perl:matcher:last
+URxvt.keysym.M-o:  perl:matcher:list
 
 !-¬
 !-----------------------------------------------------------------

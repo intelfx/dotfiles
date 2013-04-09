@@ -2,8 +2,8 @@
 # Basic options
 # ---------------------------------------------------------------------
 
-EDITOR=vim
-NOTEDIR=~/.notes/
+export EDITOR=vim
+export NOTEDIR=~/.notes/
 
 # Linux terminal colors
 if [[ "$TERM" = "linux" ]]; then
@@ -132,7 +132,7 @@ DISABLE_AUTO_UPDATE="true"
     #git-svn-dcommit-push    git svn dcommit && git push github master:svntrunk
     #gpa git add .; git commit -m "$1"; git push; # only in the ocodo fork.
 
-plugins=(git archlinux pip supervisor systemd)
+plugins=(git archlinux pip supervisor systemd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -153,6 +153,7 @@ nls () { tree -CR --noreport ~/.notes \
 export JAVA_FONTS=/usr/share/fonts/TTF
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export PATH=~/Scripts:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
+export PATH=$PATH:~/.gem/ruby/2.0.0/bin
 #export LANGUAGE="es_ES:es_ES:es"
 #export LANG=es_ES.utf8
 
