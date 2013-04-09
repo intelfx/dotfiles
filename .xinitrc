@@ -10,6 +10,6 @@ compton -cCfb -D 3.5 &
 sleep 10 && dropboxd &
 dunst &
 ssh-agent &
-sysndaemon -t -k -i 2 -d &
+syndaemon -k -i 1 -d &
 sleep 3 && stalonetray --geometry 1x1-1-1 --transparent true &
 exec dbus-launch xmonad
