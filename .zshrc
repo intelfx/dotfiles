@@ -154,6 +154,7 @@ export JAVA_FONTS=/usr/share/fonts/TTF
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export PATH=~/Scripts:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
 export PATH=$PATH:~/.gem/ruby/2.0.0/bin
+export PATH=$PATH:~/.cabal/bin
 export PATH=$PATH:~/Scripts/peat
 #export LANGUAGE="es_ES:es_ES:es"
 #export LANG=es_ES.utf8
