@@ -142,7 +142,9 @@ source $ZSH/oh-my-zsh.sh
 wiki() { dig +short txt $1.wp.dg.cx; }
 
 # Note taking
-n() { $EDITOR $NOTEDIR/"$*".md }
+n() { 
+    $EDITOR $NOTEDIR/"$*".md
+}
 nls () { tree -CR --noreport ~/.notes \
         | awk '{ if ((NR > 1) gsub(/.md/,"")); \
         if (NF==1) print $1; else if (NF==2) print $2; else if (NF==3) printf "  %s\n", $3 }' ;}
@@ -156,8 +158,7 @@ export PATH=~/Scripts:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sb
 export PATH=$PATH:~/.gem/ruby/2.0.0/bin
 export PATH=$PATH:~/.cabal/bin
 export PATH=$PATH:~/Scripts/peat
-#export LANGUAGE="es_ES:es_ES:es"
-#export LANG=es_ES.utf8
+export PATH=$PATH:~/Scripts/mail
 
 # ---------------------------------------------------------------------
 # Aliases
@@ -171,3 +172,5 @@ alias fp="~/Scripts/pass/findpass"
 alias ep="~/Scripts/pass/editpass"
 alias matlab="matlab >/dev/null 2>/dev/null &"
 alias google-chrome chrome="google-chrome --audio-buffer-size=4096"
+
+#fortune | cowsay
