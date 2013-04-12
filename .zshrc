@@ -1,11 +1,27 @@
+# ------------------------------------------------------------------
+#
+#     .zshrc 
+#     Author: Alex Sánchez <kniren@gmail.com>
+#     Source: https://github.com/kniren/dotfiles/blob/master/.zshrc
+#
+# ------------------------------------------------------------------
 # ---------------------------------------------------------------------
-# Basic options
+# Basic options --¬
 # ---------------------------------------------------------------------
+
+DISABLE_AUTO_UPDATE="true"
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="prompto"
 
 export EDITOR=vim
 export NOTEDIR=~/.notes/
+fpath=( ~/.zsh "${fpath[@]}" )
+autoload -Uz hello
 
-# Linux terminal colors
+# -¬
+# ---------------------------------------------------------------------
+# Linux terminal colors --¬
+# ---------------------------------------------------------------------
 if [[ "$TERM" = "linux" ]]; then
 
     echo -en "\e]P0050505"
@@ -28,42 +44,9 @@ if [[ "$TERM" = "linux" ]]; then
 
 fi
 eval $( dircolors -b $HOME/.dircolors )
-
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="prompto"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Install specific package(s) from the repositories
-
+# -¬
 # ---------------------------------------------------------------------
-# Archlinux Plugin Documentation
+# Archlinux Plugin Documentation --¬
 # ---------------------------------------------------------------------
     #pacin='sudo pacman -S'
     #Install specific package not from the repositories but from a file
@@ -111,9 +94,9 @@ DISABLE_AUTO_UPDATE="true"
 
     #pacdisowned | less +F
 
-
+# -¬
 # ---------------------------------------------------------------------
-# Github Plugin Documentation
+# Github Plugin Documentation --¬
 # ---------------------------------------------------------------------
     #g   git                                   | gst git status
     #gl  git pull                              | gup git fetch && git rebase
@@ -135,22 +118,34 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git archlinux pip supervisor systemd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-
+# -¬
 # ---------------------------------------------------------------------
-# Functions
+# Functions --¬
 # ---------------------------------------------------------------------
 wiki() { dig +short txt $1.wp.dg.cx; }
 
 # Note taking
-n() { 
-    $EDITOR $NOTEDIR/"$*".md
-}
-nls () { tree -CR --noreport ~/.notes \
-        | awk '{ if ((NR > 1) gsub(/.md/,"")); \
-        if (NF==1) print $1; else if (NF==2) print $2; else if (NF==3) printf "  %s\n", $3 }' ;}
+n() { $EDITOR $NOTEDIR/$@; }
+compctl -/ -W $NOTEDIR -f n
 
+nls () { 
+    tree .notes -CR --noreport |
+    sed -e 's/└── /-/' \
+        -e 's/    /-/' \
+        -e 's/├── /-/' \
+        -e 's/│   /-/' |
+    awk 'FS="-" {
+        if (NF==1) print "\033[35mNotes";
+        if (NF>1) {
+            gsub(/-/,"  ");
+            gsub(/.md/,"");
+            print;
+        }
+    }'
+;}
+# -¬
 # ---------------------------------------------------------------------
-# Exports
+# Exports --¬
 # ---------------------------------------------------------------------
 export JAVA_FONTS=/usr/share/fonts/TTF
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
@@ -159,9 +154,9 @@ export PATH=$PATH:~/.gem/ruby/2.0.0/bin
 export PATH=$PATH:~/.cabal/bin
 export PATH=$PATH:~/Scripts/peat
 export PATH=$PATH:~/Scripts/mail
-
+# -¬
 # ---------------------------------------------------------------------
-# Aliases
+# Aliases --¬
 # ---------------------------------------------------------------------
 alias :q="exit"
 alias :Q="exit"
@@ -174,3 +169,5 @@ alias matlab="matlab >/dev/null 2>/dev/null &"
 alias google-chrome chrome="google-chrome --audio-buffer-size=4096"
 
 #fortune | cowsay
+# -¬
+# ---------------------------------------------------------------------
