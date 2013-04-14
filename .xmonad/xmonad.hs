@@ -1,23 +1,16 @@
 ------------------------------------------------------------------------
-------------------------------- xmonad.hs ------------------------------
+-- .xmonad.hs 
 ------------------------------------------------------------------------
-----
--------------------------------- Author --------------------------------
+-- Author: 
+--  Alex Sánchez <kniren@gmail.com>
 ------------------------------------------------------------------------
-------------------- Alex Sánchez <kniren@gmail.com> --------------------
-------------------------------------------------------------------------
-----
--------------------------------- Source --------------------------------
-------------------------------------------------------------------------
---- https://github.com/kniren/dotfiles/blob/master/.xmonad/xmonad.hs ---
+-- Source: 
+--  https://github.com/kniren/dotfiles/blob/master/.xmonad/xmonad.hs
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 -- Imports --¬
 ------------------------------------------------------------------------
-
-import Data.List
-import Data.Monoid
 import System.Exit
 import XMonad
 import XMonad.Hooks.DynamicLog
@@ -33,24 +26,25 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Util.Run (spawnPipe, hPutStrLn)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- General Options --¬
 ------------------------------------------------------------------------
+myTerminal :: [Char]
+myTerminal = "urxvt"
 
-myTerminal          = "urxvt"
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
-myModMask           = mod4Mask
 
+myModMask :: KeyMask
+myModMask = mod4Mask
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- Layout names and quick access keys --¬
 ------------------------------------------------------------------------
-
+myWorkspaces :: [[Char]]
 myWorkspaces = clickable . (map dzenEscape) $ ["main",
                                                "web",
                                                "media",
@@ -61,28 +55,25 @@ myWorkspaces = clickable . (map dzenEscape) $ ["main",
                         (i,ws) <- zip ['1','2','3','q','w','e'] l,
                         let n = i 
                             x = "^ca(1,xdotool key super+" ++ show (n) ++ ")"]
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- Border Options --¬
 ------------------------------------------------------------------------
-
+myNormalBorderColor :: String
 myNormalBorderColor  = "#121212"
+myFocusedBorderColor :: String
 myFocusedBorderColor = "#435d75"
 myBorderWidth   = 3
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- Key bindings --¬
 ------------------------------------------------------------------------
-
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
-
     [ 
     -- launch dmenu
-    ((modm,               xK_r     ), spawn "dmenu_run -i -h 18 -fn '*-profont-*-*-*-*-12-*-*-*-*-*-*-*' -sb '#435d75' -nb '#000000'")
+    ((modm,               xK_r     ), spawn "dmenu_run -i -h 18 -fn '*-profont-*-*-*-*-12-*-*-*-*-*-*-*' -sb '#308888' -nb '#000000'")
     -- Close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
      -- Rotate through the available layout algorithms
@@ -107,11 +98,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
-
     , ((modm,               xK_f     ), sendMessage $ Toggle FULL)
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
-
     -- Application Spawning
     , ((modm,               xK_Return), spawn $ XMonad.terminal conf)
     , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
@@ -127,20 +116,17 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, 0x1008ff02), spawn "xbacklight -inc 20")
     ]
     ++
-
     -- mod-[1..9], Switch to workspace N
     -- mod-shift-[1..9], Move client to workspace N
     [((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1,xK_2,xK_3,xK_q,xK_w,xK_e]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
     ++
-
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
         | (key, sc) <- zip [xK_a, xK_s, xK_d] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
@@ -152,23 +138,18 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-button1, Set the window to floating mode and move by dragging
     [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
                                        >> windows W.shiftMaster))
-
     -- mod-button2, Raise the window to the top of the stack
     , ((modm, button2), (\w -> focus w >> windows W.shiftMaster))
-
     -- mod-button3, Set the window to floating mode and resize by dragging
     , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
                                        >> windows W.shiftMaster))
-
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- Layouts --¬
 ------------------------------------------------------------------------
-
 myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $
            avoidStruts $
            webLayout $
@@ -187,7 +168,6 @@ myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $
      delta   = 5/100
      -- Default proportion of screen occupied by master pane
      ratio   = 1/2
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
@@ -200,7 +180,6 @@ myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 ------------------------------------------------------------------------
-
 myManageHook = manageDocks <+> composeAll
     [ className =? "MPlayer"             --> doFloat
     , className =? "MPlayer"             --> doShift (myWorkspaces !! 2)
@@ -218,31 +197,27 @@ myManageHook = manageDocks <+> composeAll
     , resource  =? "desktop_window"      --> doIgnore
     , resource  =? "kdesktop"            --> doIgnore  
     , isFullscreen --> doFullFloat ]
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- Event handling --¬
 ------------------------------------------------------------------------
-
 myEventHook = fullscreenEventHook
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- Status bars and logging --¬
 ------------------------------------------------------------------------
-
 myLogHook h = dynamicLogWithPP $ defaultPP
     {
-        ppCurrent           =   dzenColor "white"   "#121212" . pad
-      , ppVisible           =   dzenColor "#6d9cbe" "#000000" . pad
-      , ppHidden            =   dzenColor "#435d75" "#000000" . pad
+        ppCurrent           =   dzenColor "white"   "#308888" . pad
+      , ppVisible           =   dzenColor "#6D9CBE" "#000000" . pad
+      , ppHidden            =   dzenColor "#308888" "#000000" . pad
       , ppHiddenNoWindows   =   dzenColor "#444444" "#000000" . pad
       , ppUrgent            =   dzenColor "red"     "#000000" . pad
       , ppWsSep             =   ""
       , ppSep               =   " | "
-      , ppLayout            =   dzenColor "#435d75" "#000000" .
+      , ppLayout            =   dzenColor "#308888" "#000000" .
             (\x -> case x of
                 "Spacing 20 Tall"        -> clickInLayout ++
                     "^i(/home/alex/.xmonad/dzen/icons/stlarch/tile.xbm)^ca()"
@@ -258,24 +233,20 @@ myLogHook h = dynamicLogWithPP $ defaultPP
       , ppOutput            =   hPutStrLn h
     }
 clickInLayout = "^ca(1,xdotool key super+space)"
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- Startup hook --¬
 ------------------------------------------------------------------------
-
 myStartupHook = setWMName "LG3D"
-
 -- -¬
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 -- Run xmonad --¬
 ------------------------------------------------------------------------
-
 main = do 
-    d <- spawnPipe "dzen2 -ta l -fn 'profont-8' -bg '#000000' -w 500 -h 20 -e 'button3='"
-    spawn "conky | dzen2 -x 500 -ta r -fn 'profont-8' -bg '#000000' -h 20 -e 'button3='"
+    d <- spawnPipe "dzen2 -ta l -fn 'profont-8' -bg '#000000' -w 500 -h 18 -e 'button3='"
+    spawn "conky | dzen2 -x 500 -ta r -fn 'profont-8' -bg '#000000' -h 18 -e 'button3='"
     xmonad $ defaults {
     logHook = myLogHook d
     }  
@@ -300,6 +271,5 @@ defaults = defaultConfig {
         handleEventHook    = myEventHook,
         startupHook        = myStartupHook
 }
-
 -- -¬
 ------------------------------------------------------------------------

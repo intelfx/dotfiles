@@ -24,7 +24,7 @@ set editor="vim"        # The motherf***ing best!
 set menu_scroll         # Lazy redraw
 set pager_index_lines=6 # View the pager and index at the same time
 set smart_wrap
-set wrap=80             # Standard wrapping length
+set wrap=85             # Standard wrapping length
 unset markers           # We don't want markers for wrapped lines
 
 set delete              # Destroy those bastards without a chance!
@@ -53,6 +53,7 @@ folder-hook . "exec collapse-all" # Start with all threads collapsed
 unset collapse_unread   # Don't collapse threads if there is unread messages
 
 set query_command="goobook query '%s'"
+set ascii_chars
 
 #  -----------------------------------------------------------------
 #  -¬
@@ -131,7 +132,7 @@ color error     red             default         # error messages
 color message   white           default         # message  informational messages
 color indicator brightblack     white           # indicator for the "current message"
 color status    brightwhite     default         # status lines in the folder index 
-color tree      magenta         default         # the "tree" display of threads within the folder index
+color tree      red         default         # the "tree" display of threads within the folder index
 color search    white           blue            # search matches found with search within the internal pager
 color markers   red             default         # The markers indicate a wrapped line 
 # -¬
@@ -160,6 +161,8 @@ bind index p recall-message
 bind editor <space> noop
 bind index <space> collapse-thread
 bind index,pager R group-reply
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 #    Mark all threads as read --¬
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 # -¬

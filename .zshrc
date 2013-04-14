@@ -15,6 +15,7 @@ ZSH_THEME="prompto"
 
 export EDITOR=vim
 export NOTEDIR=~/.notes/
+export NETHACKOPTIONS="autoquiver,!autopickup,name:Alex,DECgraphics,color,race:human,showexp,hilite_pet"
 fpath=( ~/.zsh "${fpath[@]}" )
 autoload -Uz hello
 
@@ -129,7 +130,7 @@ n() { $EDITOR $NOTEDIR/$@; }
 compctl -/ -W $NOTEDIR -f n
 
 nls () { 
-    tree .notes -CR --noreport |
+    tree ~/.notes -CR --noreport |
     sed -e 's/└── /-/' \
         -e 's/    /-/' \
         -e 's/├── /-/' \

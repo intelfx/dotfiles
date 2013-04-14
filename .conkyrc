@@ -58,6 +58,9 @@ ${time %a %b %d %H:%M}^fg(\#393939) ]\
 ^ca(5, amixer -q set Master 5%- unmute)\
 [^fg() ${exec  ~/.xmonad/Scripts/alsaperc}^fg(\#393939) ]\
 ^ca()^ca()^ca()\
+# -------------------------------------------------------------------------- 
+#  Close focused window
+# -------------------------------------------------------------------------- 
 ^ca(1, xdotool key super+shift+c)\
 [^fg() · ^fg(\#393939)]\
 ^ca()
