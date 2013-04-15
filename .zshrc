@@ -25,6 +25,7 @@ export PATH=$PATH:~/.gem/ruby/2.0.0/bin
 export PATH=$PATH:~/.cabal/bin
 export PATH=$PATH:~/Scripts/peat
 export PATH=$PATH:~/Scripts/mail
+export PATH=$PATH:~/Scripts/tmux
 # -¬
 # ---------------------------------------------------------------------
 # Linux terminal colors --¬
@@ -163,8 +164,6 @@ alias fp="~/Scripts/pass/findpass"
 alias ep="~/Scripts/pass/editpass"
 alias matlab="matlab >/dev/null 2>/dev/null &"
 alias google-chrome chrome="google-chrome --audio-buffer-size=4096"
-alias tmuxinit="~/Scripts/tmux/initial"
-
 #fortune | cowsay
 # -¬
 # ---------------------------------------------------------------------
