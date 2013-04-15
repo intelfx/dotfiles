@@ -13,4 +13,6 @@ eval $(keychain --eval --agents ssh -Q --quiet id_ecdsa) &
 syndaemon -k -i 1 -d &
 sleep 3 && stalonetray --geometry 1x1-1-1 --transparent true &
 mpd &
+xset +dpms
+xset dpms 0 0 300
 exec dbus-launch xmonad

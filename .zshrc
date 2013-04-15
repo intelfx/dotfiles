@@ -8,17 +8,23 @@
 # ---------------------------------------------------------------------
 # Basic options --¬
 # ---------------------------------------------------------------------
-
 DISABLE_AUTO_UPDATE="true"
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="prompto"
-
+# -¬
+# ---------------------------------------------------------------------
+# Exports --¬
+# ---------------------------------------------------------------------
 export EDITOR=vim
 export NOTEDIR=~/.notes/
 export NETHACKOPTIONS="autoquiver,!autopickup,name:Alex,DECgraphics,color,race:human,showexp,hilite_pet"
-fpath=( ~/.zsh "${fpath[@]}" )
-autoload -Uz hello
-
+export JAVA_FONTS=/usr/share/fonts/TTF
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
+export PATH=~/Scripts:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
+export PATH=$PATH:~/.gem/ruby/2.0.0/bin
+export PATH=$PATH:~/.cabal/bin
+export PATH=$PATH:~/Scripts/peat
+export PATH=$PATH:~/Scripts/mail
 # -¬
 # ---------------------------------------------------------------------
 # Linux terminal colors --¬
@@ -146,17 +152,6 @@ nls () {
 ;}
 # -¬
 # ---------------------------------------------------------------------
-# Exports --¬
-# ---------------------------------------------------------------------
-export JAVA_FONTS=/usr/share/fonts/TTF
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
-export PATH=~/Scripts:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
-export PATH=$PATH:~/.gem/ruby/2.0.0/bin
-export PATH=$PATH:~/.cabal/bin
-export PATH=$PATH:~/Scripts/peat
-export PATH=$PATH:~/Scripts/mail
-# -¬
-# ---------------------------------------------------------------------
 # Aliases --¬
 # ---------------------------------------------------------------------
 alias :q="exit"
@@ -168,6 +163,7 @@ alias fp="~/Scripts/pass/findpass"
 alias ep="~/Scripts/pass/editpass"
 alias matlab="matlab >/dev/null 2>/dev/null &"
 alias google-chrome chrome="google-chrome --audio-buffer-size=4096"
+alias tmuxinit="~/Scripts/tmux/initial"
 
 #fortune | cowsay
 # -¬

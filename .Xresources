@@ -51,11 +51,11 @@
 
 ! Appearance
 
-URxvt.font:                 xft:Inconsolata:regular:size=10
-URxvt.imFont:               xft:Inconsolata:regular:size=10
-URxvt.boldFont:             xft:Inconsolata:regular:size=10
-URxvt.italicFont:           xft:Inconsolata:regular:size=10
-URxvt.boldItalicFont:       xft:Inconsolata:regular:size=10
+URxvt.font:                 xft:Inconsolata for Powerline:regular:size=10
+URxvt.imFont:               xft:Inconsolata for Powerline:regular:size=10
+URxvt.boldFont:             xft:Inconsolata for Powerline:regular:size=10
+URxvt.italicFont:           xft:Inconsolata for Powerline:regular:size=10
+URxvt.boldItalicFont:       xft:Inconsolata for Powerline:regular:size=10
 
 URxvt.foreground:           #D6D6D6
 URxvt.background:           #050505
