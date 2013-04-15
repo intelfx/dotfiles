@@ -9,7 +9,7 @@ pulseaudio --start &
 compton -cCfb -D 3.5 &
 sleep 10 && dropboxd &
 dunst &
-eval $(keychain --eval --agents ssh -Q --quiet id_ecdsa) &
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa) &
 syndaemon -k -i 1 -d &
 sleep 3 && stalonetray --geometry 1x1-1-1 --transparent true &
 mpd &
