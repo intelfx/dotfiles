@@ -164,6 +164,7 @@ alias fp="~/Scripts/pass/findpass"
 alias ep="~/Scripts/pass/editpass"
 alias matlab="matlab >/dev/null 2>/dev/null &"
 alias google-chrome chrome="google-chrome --audio-buffer-size=4096"
+alias ls="ls --group-directories-first --color=always"
 #fortune | cowsay
 # -¬
 # ---------------------------------------------------------------------
