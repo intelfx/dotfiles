@@ -11,6 +11,7 @@
 DISABLE_AUTO_UPDATE="true"
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="prompto"
+setterm -bfreq 0
 # -¬
 # ---------------------------------------------------------------------
 # Exports --¬
