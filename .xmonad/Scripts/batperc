@@ -14,7 +14,9 @@ if [[ $BAT -lt 10  ]]; then
     ICON="bat_empty_02.xbm"
     BATBAR=`echo -e "$BAT"\
         | gdbar -bg darkgrey -fg red -h 5 -w 50`
-    notify-send "Warning, battery level below 10 percent" -u critical -t 30000
+    if [[ $STATUS != "Charging" ]]; then
+        notify-send "Warning, battery level below 10 percent" -u critical -t 30000
+    fi
 else
     ICON="bat_full_02.xbm"
     BATBAR=`echo -e "$BAT"\

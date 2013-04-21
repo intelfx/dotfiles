@@ -156,16 +156,19 @@ nls () {
 # ---------------------------------------------------------------------
 # Aliases --¬
 # ---------------------------------------------------------------------
+alias clc="clear"
 alias :q="exit"
 alias :Q="exit"
+alias :e="vim"
+alias :E="vim"
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 alias fp="~/Scripts/pass/findpass"
 alias ep="~/Scripts/pass/editpass"
-alias matlab="matlab >/dev/null 2>/dev/null &"
-alias google-chrome chrome="google-chrome --audio-buffer-size=4096"
 alias ls="ls --group-directories-first --color=always"
+alias zsnes="optirun zsnes"
+alias ftl="cd ~/.local/share/Steam/SteamApps/common/FTL\ Faster\ Than\ Light/ && ./FTL"
 #fortune | cowsay
 # -¬
 # ---------------------------------------------------------------------
