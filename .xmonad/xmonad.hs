@@ -94,15 +94,17 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+    -- Toggle fullscreen mode
     , ((modm,               xK_f     ), sendMessage $ Toggle FULL)
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     -- Application Spawning
     , ((modm,               xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
-    , ((modm .|. shiftMask, xK_i     ), spawn "dwb")
+    , ((modm .|. shiftMask, xK_r     ), spawn "killall dzen2; xmonad --recompile; xmonad --restart")
+    , ((modm .|. shiftMask, xK_i     ), spawn "google-chrome")
     , ((modm .|. shiftMask, xK_n     ), spawn "nautilus")
     , ((modm .|. shiftMask, xK_m     ), spawn "urxvt -e ncmpcpp")
+    , ((modm,               xK_m     ), spawn "urxvt -e mutt")
     -- Alsa Multimedia Control
     , ((0, 0x1008ff11), spawn "amixer -q set Master 5%- unmute")
     , ((0, 0x1008ff13), spawn "amixer -q set Master 5%+ unmute")
