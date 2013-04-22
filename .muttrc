@@ -23,7 +23,8 @@ set edit_headers = yes  # Include headers in the editor's message
 set editor="vim"        # The motherf***ing best!
 set menu_scroll         # Lazy redraw
 set pager_index_lines=6 # View the pager and index at the same time
-set nosmart_wrap
+set smart_wrap
+set wrap=90            # Standard wrapping length
 unset markers           # We don't want markers for wrapped lines
 
 set delete              # Destroy those bastards without a chance!

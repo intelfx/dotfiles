@@ -31,7 +31,7 @@ import qualified Data.Map        as M
 -- General Options --¬
 ------------------------------------------------------------------------
 myTerminal :: [Char]
-myTerminal = "urxvt"
+myTerminal = "termite"
 
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
