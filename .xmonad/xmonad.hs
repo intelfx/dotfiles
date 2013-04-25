@@ -237,8 +237,8 @@ myStartupHook = setWMName "LG3D"
 -- Run xmonad --¬
 ------------------------------------------------------------------------
 main = do 
-    d <- spawnPipe "dzen2 -ta l -fn 'profont-8' -bg '#000000' -w 500 -h 18 -e 'button3='"
-    spawn "conky | dzen2 -x 500 -ta r -fn 'profont-8' -bg '#000000' -h 18 -e 'onnewinput=;button3='"
+    d <- spawnPipe "dzen2 -ta l -fn 'inconsolata for powerline-8' -bg '#000000' -w 500 -h 18 -e 'button3='"
+    spawn "conky | dzen2 -x 500 -ta r -fn 'inconsolata for powerline-8' -bg '#000000' -h 18 -e 'onnewinput=;button3='"
     xmonad $ defaults {
     logHook = myLogHook d
     }  

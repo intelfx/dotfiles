@@ -89,7 +89,7 @@ set sidebar_visible   = yes
 set sidebar_sort      = no
 set sidebar_width     = 25
 set sidebar_shortpath = yes
-set sidebar_delim     = ' │'
+set sidebar_delim     = '  │'
 mailboxes =Inbox =Amigos =Capoeira =Familia =Games =Github =Linux =Musica =Personal =Propios =Recibos =Trabajo =Universidad +Search
 
 #  -----------------------------------------------------------------
@@ -134,11 +134,11 @@ color markers   red             default         # The markers indicate a wrapped
 #    Index --¬
 color index     blue            default  '~O'    # Old messages
 color index     cyan            default  '~P'    # From myself
-color index     blue            default  '~Q'    # Replied
 color index     brightwhite     default  '~R'    # Readed messages
 color index     green           default  '~N'    # New messages
 color index     brightmagenta   default  '~F'    # Flagged Messages are important!
-color index     black           default  '~D'    # Deleted Mails 
+color index     white            default  '~Q'    # Replied
+color index     red           default  '~D'    # Deleted Mails 
 # -¬
 #
 #  -----------------------------------------------------------------
@@ -183,6 +183,8 @@ bind pager gg top
 bind pager G bottom
 bind index gg first-entry
 bind index G last-entry
+bind index j next-entry
+bind index k previous-entry
 # -¬
 #    Fast access to different folders --¬
 macro index gi "<change-folder>=Inbox<enter>"                          "Go to inbox"
