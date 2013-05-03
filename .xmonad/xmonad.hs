@@ -40,6 +40,33 @@ myModMask :: KeyMask
 myModMask = mod4Mask
 -- -¬
 ------------------------------------------------------------------------
+-- Data types and helper functions --¬
+------------------------------------------------------------------------
+
+type Hex = String
+data Colors = Colors { black   :: (Hex, Hex)
+                     , red     :: (Hex, Hex)
+                     , green   :: (Hex, Hex)
+                     , yellow  :: (Hex, Hex)
+                     , blue    :: (Hex, Hex)
+                     , magenta :: (Hex, Hex)
+                     , cyan    :: (Hex, Hex)
+                     , white   :: (Hex, Hex)
+                     }
+
+colors :: Colors
+colors = Colors { black   = ("#393939","#121212")
+                , red     = ("#DA3955","#FF4775")
+                , green   = ("#308888","#53A6A6")
+                , yellow  = ("#54777D","#348D9D")
+                , blue    = ("#6D9CBE","#91C1E3")
+                , magenta = ("#6F4484","#915EAA")
+                , cyan    = ("#2B7694","#47959E")
+                , white   = ("#D6D6D6","#A3A3A3")
+                }
+
+-- -¬
+------------------------------------------------------------------------
 -- Layout names and quick access keys --¬
 ------------------------------------------------------------------------
 myWorkspaces :: [[Char]]
@@ -47,8 +74,8 @@ myWorkspaces = clickable . (map dzenEscape) $ ["main",
                                                "web",
                                                "media",
                                                "misc",
-                                               "foo()",
-                                               "bar()"]
+                                               "docs",
+                                               "foo()"]
     where clickable l = [ x ++ ws ++ "^ca()" | 
                         (i,ws) <- zip ['1','2','3','q','w','e'] l,
                         let n = i 
@@ -58,9 +85,9 @@ myWorkspaces = clickable . (map dzenEscape) $ ["main",
 -- Border Options --¬
 ------------------------------------------------------------------------
 myNormalBorderColor :: String
-myNormalBorderColor  = "#121212"
+myNormalBorderColor  = snd $ black colors
 myFocusedBorderColor :: String
-myFocusedBorderColor = "#435d75"
+myFocusedBorderColor = fst $ cyan colors
 myBorderWidth   = 3
 -- -¬
 ------------------------------------------------------------------------
@@ -133,14 +160,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- mod-button1, Set the window to floating mode and move by dragging
+    -- mod-button2, Raise the window to the top of the stack
+    -- mod-button3, Set the window to floating mode and resize by dragging
     [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
                                        >> windows W.shiftMaster))
-    -- mod-button2, Raise the window to the top of the stack
     , ((modm, button2), (\w -> focus w >> windows W.shiftMaster))
-    -- mod-button3, Set the window to floating mode and resize by dragging
     , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
                                        >> windows W.shiftMaster))
-    -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 -- -¬
 ------------------------------------------------------------------------
@@ -178,18 +204,19 @@ myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $
 myManageHook = manageDocks <+> composeAll
     [ className =? "MPlayer"             --> doFloat
     , className =? "MPlayer"             --> doShift (myWorkspaces !! 2)
+    , className =? "Steam"               --> doFloat
+    , className =? "Steam"               --> doShift (myWorkspaces !! 2)
     , className =? "Gimp"                --> doFloat
-    , className =? "Gimp"                --> doShift (myWorkspaces !! 2)
+    , className =? "Gimp"                --> doShift (myWorkspaces !! 5)
+    , title     =? "MATLAB R2013a"       --> doShift (myWorkspaces !! 5)
     , className =? "Nautilus"            --> doShift (myWorkspaces !! 3)
     , className =? "File-roller"         --> doShift (myWorkspaces !! 3)
-    , className =? "Zathura"             --> doShift (myWorkspaces !! 2)
+    , className =? "Zathura"             --> doShift (myWorkspaces !! 4)
     , className =? "Dwb"                 --> doShift (myWorkspaces !! 1)
     , className =? "Chromium"            --> doShift (myWorkspaces !! 1)
     , className =? "Firefox"             --> doShift (myWorkspaces !! 1)
     , className =? "Google-chrome"       --> doShift (myWorkspaces !! 1)
     , className =? "Eclipse"             --> doShift (myWorkspaces !! 5)
-    , className =? "processing-app-Base" --> doShift (myWorkspaces !! 4)
-    , className =? "processing-app-Base" --> doFloat
     , resource  =? "desktop_window"      --> doIgnore
     , resource  =? "kdesktop"            --> doIgnore  
     , isFullscreen --> doFullFloat ]
@@ -204,14 +231,17 @@ myEventHook = fullscreenEventHook
 ------------------------------------------------------------------------
 myLogHook h = dynamicLogWithPP $ defaultPP
     {
-        ppCurrent           =   dzenColor "white"   "#308888" . pad
-      , ppVisible           =   dzenColor "#6D9CBE" "#000000" . pad
-      , ppHidden            =   dzenColor "#308888" "#000000" . pad
+        ppCurrent           =   dzenColor (fst $ white colors)
+                                          (fst $ green colors) . pad
+      , ppVisible           =   dzenColor (fst $ blue colors)
+                                          "#000000" . pad
+      , ppHidden            =   dzenColor (fst $ green colors)
+                                          "#000000" . pad
       , ppHiddenNoWindows   =   dzenColor "#444444" "#000000" . pad
-      , ppUrgent            =   dzenColor "red"     "#000000" . pad
+      , ppUrgent            =   dzenColor (fst $ red colors) "#000000" . pad
       , ppWsSep             =   ""
       , ppSep               =   " | "
-      , ppLayout            =   dzenColor "#308888" "#000000" .
+      , ppLayout            =   dzenColor (fst $ green colors) "#000000" .
             (\x -> case x of
                 "Spacing 20 Tall"        -> clickInLayout ++
                     "^i(/home/alex/.xmonad/dzen/icons/stlarch/tile.xbm)^ca()"

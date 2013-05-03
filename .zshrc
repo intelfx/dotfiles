@@ -20,7 +20,6 @@ export EDITOR=vim
 export NOTEDIR=~/.notes/
 export NETHACKOPTIONS="autoquiver,!autopickup,name:Alex,DECgraphics,color,race:human,showexp,hilite_pet"
 export JAVA_FONTS=/usr/share/fonts/TTF
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export PATH=$PATH:~/Scripts
 export PATH=$PATH:~/Scripts/peat
 export PATH=$PATH:~/Scripts/mail
@@ -157,6 +156,7 @@ nls () {
 # Aliases --¬
 # ---------------------------------------------------------------------
 alias clc="clear"
+alias copy="rsync -aP"
 alias :q="exit"
 alias :Q="exit"
 alias :e="vim"
@@ -168,6 +168,7 @@ alias fp="~/Scripts/pass/findpass"
 alias ep="~/Scripts/pass/editpass"
 alias ls="ls --group-directories-first --color=always"
 alias zsnes="optirun zsnes"
+alias steam="optirun steam"
 alias ftl="cd ~/.local/share/Steam/SteamApps/common/FTL\ Faster\ Than\ Light/ && ./FTL"
 #fortune | cowsay | lolcat
 # -¬
