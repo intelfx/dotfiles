@@ -12,6 +12,7 @@
 .weechat/plugins.conf
 .weechat/relay.conf
 .weechat/rmodifier.conf
+.weechat/script
 .weechat/script.conf
 .weechat/weechat.conf
 .weechat/weechat.log

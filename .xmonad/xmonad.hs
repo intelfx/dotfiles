@@ -1,4 +1,4 @@
-------------------------------------------------------------------------
+------------------------------------------------------------------------ 
 -- .xmonad.hs 
 ------------------------------------------------------------------------
 -- Author: 
@@ -14,128 +14,82 @@
 import System.Exit
 import XMonad
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks (manageDocks, avoidStruts)
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
-import XMonad.Layout.Fullscreen
-import XMonad.Layout.Spacing
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.Spacing
 import XMonad.Util.Run (spawnPipe, hPutStrLn)
-import qualified XMonad.StackSet as W
-import qualified Data.Map        as M
--- -¬
-------------------------------------------------------------------------
--- General Options --¬
-------------------------------------------------------------------------
-myTerminal :: [Char]
-myTerminal = "termite"
-
-myFocusFollowsMouse :: Bool
-myFocusFollowsMouse = True
-
-myModMask :: KeyMask
-myModMask = mod4Mask
--- -¬
-------------------------------------------------------------------------
--- Data types and helper functions --¬
-------------------------------------------------------------------------
-
-type Hex = String
-data Colors = Colors { black   :: (Hex, Hex)
-                     , red     :: (Hex, Hex)
-                     , green   :: (Hex, Hex)
-                     , yellow  :: (Hex, Hex)
-                     , blue    :: (Hex, Hex)
-                     , magenta :: (Hex, Hex)
-                     , cyan    :: (Hex, Hex)
-                     , white   :: (Hex, Hex)
-                     }
-
-colors :: Colors
-colors = Colors { black   = ("#393939","#121212")
-                , red     = ("#DA3955","#FF4775")
-                , green   = ("#308888","#53A6A6")
-                , yellow  = ("#54777D","#348D9D")
-                , blue    = ("#6D9CBE","#91C1E3")
-                , magenta = ("#6F4484","#915EAA")
-                , cyan    = ("#2B7694","#47959E")
-                , white   = ("#D6D6D6","#A3A3A3")
-                }
-
+import qualified Data.Map                 as M
+import qualified GHC.IO.Handle.Types      as H
+import qualified XMonad.Layout.Fullscreen as FS
+import qualified XMonad.StackSet          as W
 -- -¬
 ------------------------------------------------------------------------
 -- Layout names and quick access keys --¬
 ------------------------------------------------------------------------
 myWorkspaces :: [[Char]]
-myWorkspaces = clickable . (map dzenEscape) $ ["main",
-                                               "web",
-                                               "media",
-                                               "misc",
-                                               "docs",
-                                               "foo()"]
+myWorkspaces = clickable . (map dzenEscape) $ [ "main"
+                                              , "web"
+                                              , "media"
+                                              , "misc"
+                                              , "docs"
+                                              , "foo()"
+                                              ]
     where clickable l = [ x ++ ws ++ "^ca()" | 
                         (i,ws) <- zip ['1','2','3','q','w','e'] l,
                         let n = i 
                             x = "^ca(1,xdotool key super+" ++ show (n) ++ ")"]
 -- -¬
 ------------------------------------------------------------------------
--- Border Options --¬
-------------------------------------------------------------------------
-myNormalBorderColor :: String
-myNormalBorderColor  = snd $ black colors
-myFocusedBorderColor :: String
-myFocusedBorderColor = fst $ cyan colors
-myBorderWidth   = 3
--- -¬
-------------------------------------------------------------------------
 -- Key bindings --¬
 ------------------------------------------------------------------------
+myKeys ::  XConfig l -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ 
     -- launch dmenu
-    ((modm,               xK_r     ), spawn "dmenu_run -i -h 18 -fn '*-profont-*-*-*-*-12-*-*-*-*-*-*-*' -sb '#308888' -nb '#000000'")
+      ((modm,xK_r), spawn dmenuCall)
     -- Close focused window
-    , ((modm .|. shiftMask, xK_c     ), kill)
+    , ((modShift,xK_c), kill)
      -- Rotate through the available layout algorithms
-    , ((modm,               xK_space ), sendMessage NextLayout)
+    , ((modm,xK_space), sendMessage NextLayout)
     -- Change Focused Windows
-    , ((modm,               xK_Tab   ), windows W.focusDown)
-    , ((modm,               xK_j     ), windows W.focusDown)
-    , ((modm,               xK_k     ), windows W.focusUp  )
-    , ((modm,               xK_m     ), windows W.focusMaster  )
+    , ((modm,xK_Tab), windows W.focusDown  )
+    , ((modm,xK_j)  , windows W.focusDown  )
+    , ((modm,xK_k)  , windows W.focusUp    )
+    , ((modm,xK_m)  , windows W.focusMaster)
     -- Swap Focused Windows
-    , ((modm,               xK_Tab   ), windows W.focusDown)
-    , ((modm .|. shiftMask, xK_Return), windows W.swapMaster)
-    , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
-    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
-    -- Shrink the master area
-    , ((modm,               xK_h     ), sendMessage Shrink)
-    -- Expand the master area
-    , ((modm,               xK_l     ), sendMessage Expand)
+    , ((modm,xK_Tab)       , windows W.focusDown )
+    , ((modShift,xK_Return), windows W.swapMaster)
+    , ((modShift,xK_j)     , windows W.swapDown  )
+    , ((modShift,xK_k)     , windows W.swapUp    )
+    -- Shrink and expand the master area
+    , ((modm,xK_h), sendMessage Shrink)
+    , ((modm,xK_l), sendMessage Expand)
     -- Push window back into tiling
-    , ((modm,               xK_t     ), withFocused $ windows . W.sink)
-    -- Increment the number of windows in the master area
-    , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
-    -- Deincrement the number of windows in the master area
-    , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+    , ((modm,xK_t), withFocused $ windows . W.sink)
+    -- Increment and decrement the number of windows in the master area
+    , ((modm,xK_comma) , sendMessage (IncMasterN 1)   )
+    , ((modm,xK_period), sendMessage (IncMasterN (-1)))
     -- Toggle fullscreen mode
-    , ((modm,               xK_f     ), sendMessage $ Toggle FULL)
+    , ((modm,xK_f), sendMessage $ Toggle FULL)
     -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
-    -- Application Spawning
-    , ((modm,               xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm .|. shiftMask, xK_r     ), spawn "killall dzen2; xmonad --recompile; xmonad --restart")
-    , ((modm .|. shiftMask, xK_i     ), spawn "google-chrome")
-    , ((modm .|. shiftMask, xK_n     ), spawn "nautilus")
-    , ((modm .|. shiftMask, xK_m     ), spawn "urxvt -e ncmpcpp")
-    , ((modm,               xK_m     ), spawn "urxvt -e mutt")
+    , ((modShift,xK_q), io (exitWith ExitSuccess))
+    -- Application spawning
+    , ((modm,xK_Return), spawn $ XMonad.terminal conf)
+    , ((modShift,xK_i) , spawn "google-chrome"       )
+    , ((modShift,xK_n) , spawn "nautilus"            )
+    , ((modShift,xK_m) , spawn "urxvt -e ncmpcpp"    )
+    , ((modm,xK_m)     , spawn "urxvt -e mutt"       )
+    , ((modShift,xK_r) , spawn "killall dzen2; xmonad --recompile; xmonad --restart")
     -- Alsa Multimedia Control
     , ((0, 0x1008ff11), spawn "amixer -q set Master 5%- unmute")
     , ((0, 0x1008ff13), spawn "amixer -q set Master 5%+ unmute")
-    , ((0, 0x1008ff12), spawn "amixer -q set Master toggle")
+    , ((0, 0x1008ff12), spawn "amixer -q set Master toggle"    )
     -- Brightness Control
     , ((0, 0x1008ff03), spawn "xbacklight -dec 20")
     , ((0, 0x1008ff02), spawn "xbacklight -inc 20")
@@ -152,44 +106,24 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
         | (key, sc) <- zip [xK_a, xK_s, xK_d] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+    where modShift  = modm .|. shiftMask
+          dmenuCall = "dmenu_run -i -h 18"
+                      ++ " -fn '*-profont-*-*-*-*-12-*-*-*-*-*-*-*' "
+                      ++ " -sb '" ++ colLook Green 0 ++ "'"
+                      ++ " -nb '#000000'"
+
 -- -¬
 ------------------------------------------------------------------------
 -- Mouse bindings --¬
 ------------------------------------------------------------------------
---
+myMouseBindings :: XConfig t -> M.Map (KeyMask, Button) (Window -> X ())
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
-
-    -- mod-button1, Set the window to floating mode and move by dragging
-    -- mod-button2, Raise the window to the top of the stack
-    -- mod-button3, Set the window to floating mode and resize by dragging
     [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
                                        >> windows W.shiftMaster))
     , ((modm, button2), (\w -> focus w >> windows W.shiftMaster))
     , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
                                        >> windows W.shiftMaster))
     ]
--- -¬
-------------------------------------------------------------------------
--- Layouts --¬
-------------------------------------------------------------------------
-myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $
-           avoidStruts $
-           webLayout $
-           standardLayout
-    where
-     standardLayout = tiled     ||| mirrorTiled ||| fullTiled ||| noBor
-     var1Layout     = fullTiled ||| tiled       ||| noBor
-     webLayout      = onWorkspace (myWorkspaces !! 1) var1Layout
-     fullTiled      = Tall nmaster delta (1/4)
-     mirrorTiled    = Mirror . spacing 20 $ Tall nmaster delta ratio
-     noBor          = noBorders (fullscreenFull Full)
-     tiled          = spacing 20 $ Tall nmaster delta ratio
-     -- The default number of windows in the master pane
-     nmaster = 1
-     -- Percent of screen to increment by when resizing panes
-     delta   = 5/100
-     -- Default proportion of screen occupied by master pane
-     ratio   = 1/2
 -- -¬
 ------------------------------------------------------------------------
 -- Window rules --¬
@@ -201,6 +135,7 @@ myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 ------------------------------------------------------------------------
+myManageHook ::  ManageHook
 myManageHook = manageDocks <+> composeAll
     [ className =? "MPlayer"             --> doFloat
     , className =? "MPlayer"             --> doShift (myWorkspaces !! 2)
@@ -222,76 +157,129 @@ myManageHook = manageDocks <+> composeAll
     , isFullscreen --> doFullFloat ]
 -- -¬
 ------------------------------------------------------------------------
--- Event handling --¬
-------------------------------------------------------------------------
-myEventHook = fullscreenEventHook
--- -¬
-------------------------------------------------------------------------
 -- Status bars and logging --¬
 ------------------------------------------------------------------------
+myLogHook ::  H.Handle -> X ()
 myLogHook h = dynamicLogWithPP $ defaultPP
     {
-        ppCurrent           =   dzenColor (fst $ white colors)
-                                          (fst $ green colors) . pad
-      , ppVisible           =   dzenColor (fst $ blue colors)
-                                          "#000000" . pad
-      , ppHidden            =   dzenColor (fst $ green colors)
-                                          "#000000" . pad
-      , ppHiddenNoWindows   =   dzenColor "#444444" "#000000" . pad
-      , ppUrgent            =   dzenColor (fst $ red colors) "#000000" . pad
+        ppCurrent           =   dzenColor (colLook White 0)
+                                          (colLook Green 0) . pad
+      , ppVisible           =   dzenColor (colLook Blue  0)
+                                          (colLook Black 0) . pad
+      , ppHidden            =   dzenColor (colLook Green 0)
+                                          (colLook BG    0) . pad
+      , ppHiddenNoWindows   =   dzenColor (colLook BG    1)
+                                          (colLook BG    0) . pad
+      , ppUrgent            =   dzenColor (colLook Red   0)
+                                          (colLook BG    0) . pad
       , ppWsSep             =   ""
       , ppSep               =   " | "
-      , ppLayout            =   dzenColor (fst $ green colors) "#000000" .
+      , ppLayout            =   dzenColor (colLook Green 0) "#000000" .
             (\x -> case x of
-                "Spacing 20 Tall"        -> clickInLayout ++
-                    "^i(/home/alex/.xmonad/dzen/icons/stlarch/tile.xbm)^ca()"
-                "Tall"                   -> clickInLayout ++
-                    "^i(/home/alex/.xmonad/dzen/icons/stlarch/monocle.xbm)^ca()"
-                "Mirror Spacing 20 Tall" -> clickInLayout ++
-                    "^i(/home/alex/.xmonad/dzen/icons/stlarch/bstack.xbm)^ca()"
-                "Full"                   -> clickInLayout ++
-                    "^i(/home/alex/.xmonad/dzen/icons/stlarch/monocle2.xbm)^ca()"
+                "Spacing 20 Tall"        -> clickInLayout ++ icon1
+                "Tall"                   -> clickInLayout ++ icon2
+                "Mirror Spacing 20 Tall" -> clickInLayout ++ icon3
+                "Full"                   -> clickInLayout ++ icon4
                 _                        -> x
             )
       , ppTitle             =   (" " ++) . dzenColor "white" "#000000" . dzenEscape
       , ppOutput            =   hPutStrLn h
     }
+    where icon1 = "^i(/home/alex/.xmonad/dzen/icons/stlarch/tile.xbm)^ca()"
+          icon2 = "^i(/home/alex/.xmonad/dzen/icons/stlarch/monocle.xbm)^ca()"
+          icon3 = "^i(/home/alex/.xmonad/dzen/icons/stlarch/bstack.xbm)^ca()"
+          icon4 = "^i(/home/alex/.xmonad/dzen/icons/stlarch/monocle2.xbm)^ca()"
+
+clickInLayout :: String
 clickInLayout = "^ca(1,xdotool key super+space)"
 -- -¬
 ------------------------------------------------------------------------
--- Startup hook --¬
+-- Color definitions --¬
 ------------------------------------------------------------------------
-myStartupHook = setWMName "LG3D"
+type Hex = String
+type ColorCode = (Hex,Hex)
+type ColorMap = M.Map Colors ColorCode
+
+data Colors = Black 
+        |     Red
+        |     Green
+        |     Yellow
+        |     Blue
+        |     Magenta
+        |     Cyan
+        |     White
+        |     BG        deriving (Ord,Show,Eq)
+
+colLook :: Colors -> Int -> Hex
+colLook color n =
+    case M.lookup color colors of
+        Nothing -> "#000000"
+        Just (c1,c2) -> if n == 0 
+                        then c1
+                        else c2
+
+colors :: ColorMap
+colors = M.fromList
+    [ (Black   , ("#393939","#121212"))
+    , (Red     , ("#DA3955","#FF4775"))
+    , (Green   , ("#308888","#53A6A6"))
+    , (Yellow  , ("#54777D","#348D9D"))
+    , (Blue    , ("#6D9CBE","#91C1E3"))
+    , (Magenta , ("#6F4484","#915EAA"))
+    , (Cyan    , ("#2B7694","#47959E"))
+    , (White   , ("#D6D6D6","#A3A3A3"))
+    , (BG      , ("#000000","#444444"))
+    ]
 -- -¬
 ------------------------------------------------------------------------
 -- Run xmonad --¬
 ------------------------------------------------------------------------
+main :: IO ()
 main = do 
-    d <- spawnPipe "dzen2 -ta l -fn 'inconsolata for powerline-8' -bg '#000000' -w 500 -h 18 -e 'button3='"
-    spawn "conky | dzen2 -x 500 -ta r -fn 'inconsolata for powerline-8' -bg '#000000' -h 18 -e 'onnewinput=;button3='"
-    xmonad $ defaults {
-    logHook = myLogHook d
-    }  
-
-defaults = defaultConfig {
-        -- simple stuff
-        terminal           = myTerminal,
-        focusFollowsMouse  = myFocusFollowsMouse,
-        borderWidth        = myBorderWidth,
-        modMask            = myModMask,
-        workspaces         = myWorkspaces,
-        normalBorderColor  = myNormalBorderColor,
-        focusedBorderColor = myFocusedBorderColor,
-
-        -- key bindings
-        keys               = myKeys,
-        mouseBindings      = myMouseBindings,
-
-        -- hooks, layouts
-        layoutHook         = smartBorders(myLayout),
-        manageHook         = myManageHook,
-        handleEventHook    = myEventHook,
-        startupHook        = myStartupHook
-}
+    d <- spawnPipe callDzen1
+    spawn callDzen2
+    xmonad $ ewmh defaultConfig {
+        terminal                  = "termite",
+        focusFollowsMouse         = True,
+        borderWidth               = 3,
+        modMask                   = mod4Mask,
+        normalBorderColor         = colLook Black 1,
+        focusedBorderColor        = colLook Cyan 0,
+        workspaces                = myWorkspaces,
+        keys                      = myKeys,
+        mouseBindings             = myMouseBindings,
+        logHook                   = myLogHook d,
+        layoutHook                = smartBorders(myLayout),
+        manageHook                = myManageHook,
+        handleEventHook           = FS.fullscreenEventHook,
+        startupHook               = setWMName "LG3D"
+    }
+    where callDzen1 = "dzen2 -ta l -fn '"
+                      ++ dzenFont
+                      ++ "' -bg '#000000' -w 500 -h 18 -e 'button3='"
+          callDzen2 = "conky | dzen2 -x 500 -ta r -fn '"
+                      ++ dzenFont 
+                      ++ "' -bg '#000000' -h 18 -e 'onnewinput=;button3='"
+          dzenFont  = "inconsolata for powerline-8"
+          -- | Layouts --¬
+          myLayout = mkToggle (NOBORDERS ?? FULL ?? EOT) $
+              avoidStruts $
+              webLayout $
+              standardLayout
+              where
+                  standardLayout = tiled     ||| mirrorTiled ||| fullTiled ||| noBor
+                  var1Layout     = fullTiled ||| tiled       ||| noBor
+                  webLayout      = onWorkspace (myWorkspaces !! 1) var1Layout
+                  fullTiled      = Tall nmaster delta (1/4)
+                  mirrorTiled    = Mirror . spacing 20 $ Tall nmaster delta ratio
+                  noBor          = noBorders (FS.fullscreenFull Full)
+                  tiled          = spacing 20 $ Tall nmaster delta ratio
+                  -- The default number of windows in the master pane
+                  nmaster = 1
+                  -- Percent of screen to increment by when resizing panes
+                  delta   = 5/100
+                  -- Default proportion of screen occupied by master pane
+                  ratio   = 1/2
+          -- -¬
 -- -¬
 ------------------------------------------------------------------------
