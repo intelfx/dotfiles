@@ -1,10 +1,10 @@
------------------------------------------------------------------------- 
--- .xmonad.hs 
 ------------------------------------------------------------------------
--- Author: 
+-- .xmonad.hs
+------------------------------------------------------------------------
+-- Author:
 --  Alex Sánchez <kniren@gmail.com>
 ------------------------------------------------------------------------
--- Source: 
+-- Source:
 --  https://github.com/kniren/dotfiles/blob/master/.xmonad/xmonad.hs
 ------------------------------------------------------------------------
 
@@ -40,9 +40,9 @@ myWorkspaces = clickable . (map dzenEscape) $ [ "main"
                                               , "docs"
                                               , "foo()"
                                               ]
-    where clickable l = [ x ++ ws ++ "^ca()" | 
+    where clickable l = [ x ++ ws ++ "^ca()" |
                         (i,ws) <- zip ['1','2','3','q','w','e'] l,
-                        let n = i 
+                        let n = i
                             x = "^ca(1,xdotool key super+" ++ show (n) ++ ")"]
 -- -¬
 ------------------------------------------------------------------------
@@ -50,7 +50,7 @@ myWorkspaces = clickable . (map dzenEscape) $ [ "main"
 ------------------------------------------------------------------------
 myKeys ::  XConfig l -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
-    [ 
+    [
     -- launch dmenu
       ((modm,xK_r), spawn dmenuCall)
     -- Close focused window
@@ -153,7 +153,7 @@ myManageHook = manageDocks <+> composeAll
     , className =? "Google-chrome"       --> doShift (myWorkspaces !! 1)
     , className =? "Eclipse"             --> doShift (myWorkspaces !! 5)
     , resource  =? "desktop_window"      --> doIgnore
-    , resource  =? "kdesktop"            --> doIgnore  
+    , resource  =? "kdesktop"            --> doIgnore
     , isFullscreen --> doFullFloat ]
 -- -¬
 ------------------------------------------------------------------------
@@ -200,21 +200,14 @@ type Hex = String
 type ColorCode = (Hex,Hex)
 type ColorMap = M.Map Colors ColorCode
 
-data Colors = Black 
-        |     Red
-        |     Green
-        |     Yellow
-        |     Blue
-        |     Magenta
-        |     Cyan
-        |     White
-        |     BG        deriving (Ord,Show,Eq)
+data Colors = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | BG
+    deriving (Ord,Show,Eq)
 
 colLook :: Colors -> Int -> Hex
 colLook color n =
     case M.lookup color colors of
         Nothing -> "#000000"
-        Just (c1,c2) -> if n == 0 
+        Just (c1,c2) -> if n == 0
                         then c1
                         else c2
 
@@ -235,7 +228,7 @@ colors = M.fromList
 -- Run xmonad --¬
 ------------------------------------------------------------------------
 main :: IO ()
-main = do 
+main = do
     d <- spawnPipe callDzen1
     spawn callDzen2
     xmonad $ ewmh defaultConfig {
@@ -258,7 +251,7 @@ main = do
                       ++ dzenFont
                       ++ "' -bg '#000000' -w 500 -h 18 -e 'button3='"
           callDzen2 = "conky | dzen2 -x 500 -ta r -fn '"
-                      ++ dzenFont 
+                      ++ dzenFont
                       ++ "' -bg '#000000' -h 18 -e 'onnewinput=;button3='"
           dzenFont  = "inconsolata for powerline-8"
           -- | Layouts --¬
