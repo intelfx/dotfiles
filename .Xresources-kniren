@@ -1,0 +1,68 @@
+!-----------------------------------------------------------------
+! .Xresources 
+!-----------------------------------------------------------------
+! Author: 
+!   Alex Sánchez <kniren@gmail.com>
+!-----------------------------------------------------------------
+! Source: 
+!   https://github.com/kniren/dotfiles/blob/master/.Xresources
+!-----------------------------------------------------------------
+!-----------------------------------------------------------------
+! Terminal colors -----------------------------------------------¬
+!-----------------------------------------------------------------
+
+!black
+*color0:    #393939
+*color8:    #121212
+
+!red
+*color1:    #DA3955
+*color9:    #ff4775
+
+!green
+*color2:    #308888
+*color10:   #53A6A6
+
+!yellow
+*color3:    #54777d
+*color11:   #a94f63
+
+!blue
+*color4:    #6d9cbe
+*color12:   #91C1E3
+
+!magenta
+*color5:    #6f4484
+*color13:   #915eaa
+
+!cyan
+*color6:    #2B7694
+*color14:   #47959E
+
+!white
+*color7:    #D6D6D6
+*color15:   #A3A3A3
+
+!-¬
+!-----------------------------------------------------------------
+!-----------------------------------------------------------------
+! URXVT-Specific stuff ------------------------------------------¬
+!-----------------------------------------------------------------
+
+! Appearance
+
+*foreground:           #D6D6D6
+*background:           #050505
+*borderColor:          #050505
+*highlightColor:       #a761c2
+*highlightTextColor:   #151515
+
+*cursorColor:          #dedede
+*cursorColor2:         #151515
+
+! Bold/Italic/Underline Styles
+URxvt.colorBD:              #ffffff
+URxvt.colorIT:              #a761c2
+URxvt.colorUL:              #6d9cbe
+URxvt.underlineColor:       #333333
+
