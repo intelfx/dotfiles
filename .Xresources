@@ -4,15 +4,6 @@ Xcursor.theme:               Obsidian
 !#include ".Xresources-solarized"
 #include ".Xresources-kniren"
 
-Xft.dpi:                     96
-Xft.antialias:               true
-Xft.rgba:                    rgb
-Xft.autohint:                true
-Xft.hinting:                 true
-Xft.hintstyle:               hintslight
-Xft.lcdfilter:               lcddefault
-
-
 URxvt.font:                  xft:terminus:pixelsize=12
 URxvt.imFont:                xft:terminus:pixelsize=12
 URxvt.boldFont:              xft:terminus:pixelsize=12
