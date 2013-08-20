@@ -1066,7 +1066,7 @@ awful.rules.rules = {
       properties = { floating = true } },
 
     { rule = { class = "Okular" },
-      properties = { tag = tags[1][3] } },
+      properties = { tag = tags[1][6] } },
 
     { rule = { class = "Digikam" },
       properties = { tag = tags[1][5] } },
@@ -1076,6 +1076,9 @@ awful.rules.rules = {
 
     { rule = { class = "Cantata" },
       properties = { tag = tags[1][5] } },
+
+    { rule = { class = "Puddletag" },
+      properties = { tag = tags[1][3] } },
 
     { rule = { class = "K3b" },
       properties = { tag = tags[1][5] } },
