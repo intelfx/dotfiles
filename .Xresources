@@ -1,8 +1,8 @@
 *Font:                       Terminus
 Xcursor.theme:               Obsidian
 
-!#include ".Xresources-solarized"
-#include ".Xresources-kniren"
+#include ".Xresources-solarized"
+!#include ".Xresources-kniren"
 
 URxvt.font:                  xft:terminus:pixelsize=12
 URxvt.imFont:                xft:terminus:pixelsize=12
