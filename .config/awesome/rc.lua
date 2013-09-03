@@ -937,6 +937,9 @@ awful.rules.rules = {
     { rule = { class = "Kcolorchooser" },
       properties = { sticky = true, ontop = true, floating = true, tag = nil, switchtotag = false } },
 
+    { rule = { class = "Kmix" },
+      properties = { sticky = true, ontop = true, floating = true, tag = nil, switchtotag = false } },
+
     { rule = { class = "Vncviewer" },
       properties = { tag = tags[1][7] } },
 
