@@ -888,7 +888,7 @@ awful.rules.rules = {
       properties = { tag = tags[1][2] } },
 
     { rule = { class = "Google-chrome" },
-      properties = { tag = tags[1][2], maximized_vertical = true, maximized_horizontal = true, floating = false } },
+      properties = { tag = tags[1][2], floating = false } },
 
     { rule = { class = "Firefox", instance = "Download" },
       properties = { tag = tags[1][2], floating = true } },
