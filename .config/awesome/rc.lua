@@ -25,7 +25,7 @@ menubar = require ("menubar")
 -- "Scratch" drop-down library
 scratch = require ("scratch")
 -- Generated XDG menu
-xdgmenu = require ("xdgmenu")
+require ("xdgmenu")
 
 -- Own functions and overrides
 require ("custom.util")
@@ -151,68 +151,6 @@ menubar.utils.terminal = terminal
 
 -- {{{ Main menu
 
-myaccessories = {
-	{ "Editor [GUI]", c_editor_gui },
-	{ "Editor [CLI]", c_editor_cli }
-}
-
-myinternet = {
-	{ "Browser" , c_browser_gui },
-	{ "IM", c_im },
-	{ "Mail" , c_mail },
-	{ "Skype" , "skype" }
-}
-
-mymedia = {
-	{ "Amarok" , "amarok" },
-	{ "Avidemux" , "avidemux2_qt" },
-	{ "K3B" , "k3b" },
-	{ "SMPlayer" , "smplayer" },
-	{ "VLC" , "vlc" }
-}
-
-mygraphics = {
-	{ "Blender" , "blender" },
-	{ "Colors" , "kcolorchooser" },
-	{ "GIMP" , "gimp" },
-	{ "Inkscape" , "inkscape" },
-	{ "DigiKam" , "digikam" }
-}
-
-myoffice = {
-	{ "Formula" , "lomath" },
-	{ "Impress" , "loimpress" },
-	{ "Okular" , "okular" },
-	{ "Spreadsheet" , "localc" },
-	{ "Writer" , "lowriter" }
-}
-
-mysystem = {
-	{ "KDE configuration" , "systemsetings" },
-	{ "Filelight" , "filelight" },
-	{ "Powertop" , c_powertop },
-	{ "QtConfig" , "qtconfig" },
-	{ "Task Manager" , c_task_manager }
-}
-
-mysystemroot = {
-	{ "Filelight" , "sudo filelight" },
-	{ "Partition Manager" , "sudo partitionmanager" },
-	{ "GPartEd", "sudo gparted" },
-	{ "Qtconfig" , "sudo qtconfig" }
-}
-
-mystudy = {
-	{ "Calculator" , "qalculate-gtk" },
-	{ "Cantor" , "cantor" },
-	{ "KAlgebra" , "kalgebra" },
-	{ "Geogebra" , "geogebra" },
-	{ "Chemistry" , "kalzium" },
-	{ "Circuits" , "ktechlab" },
-	{ "KDevelop" , "kdevelop -ps" },
-	{ "Graphs" , "kmplot" },
-}
-
 myfolders = {
 	{ "Home" , c_file_manager_gui .. " " .. os.getenv ("HOME") },
 	{ "Temp" , c_file_manager_gui .. " /tmp" },
@@ -237,15 +175,6 @@ mymainmenu = awful.menu ({ items = {
 	{ " ", nil, nil}, -- separator
 	{ "Folders" , myfolders },
 	{ "Freedesktop" , xdgmenu },
-	{ " ", nil, nil}, -- separator
-	{ "Accessories" , myaccessories },
-	{ "Graphics" , mygraphics },
-	{ "Internet" , myinternet },
-	{ "Multimedia" , mymedia },
-	{ "Office" , myoffice },
-	{ "System" , mysystem },
-	{ "System Root" , mysystemroot },
-	{ "University" , mystudy },
 	{ " ", nil, nil}, -- separator
 	{ "Exit", myexit },
 	{ "Edit config" , c_editor_cli .. " " .. awful.util.getdir ("config") .. "/rc.lua"  }
