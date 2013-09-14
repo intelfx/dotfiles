@@ -31,6 +31,7 @@ require ("xdgmenu")
 require ("custom.util")
 battery = require ("custom.battery")
 textlayoutbox = require ("custom.textlayoutbox")
+taglist = require ("custom.taglist")
 --}}}
 
 
@@ -567,7 +568,7 @@ for s = 1, screen.count () do
 	))
 
 	-- Create a taglist widget
-	tag_selector[s] = awful.widget.taglist (s, awful.widget.taglist.filter.all, tag_selector.buttons)
+	tag_selector[s] = taglist (s, awful.widget.taglist.filter.all, tag_selector.buttons)
 
 	-- Create a tasklist widget
 	task_list[s] = awful.widget.tasklist (s, awful.widget.tasklist.filter.currenttags, task_list.buttons)
