@@ -219,7 +219,7 @@ uptimewidget:buttons (awful.util.table.join (
 
 
 -- Temperature widget
-tempwidget = vicious_box (vicious.widgets.thermal, widget (beautiful.widget_temp, colorize (theme.fg_importance_0) ("Core ") .. "$1°C"), 31, { "coretemp.0", "core", "temp1_input" })
+tempwidget = vicious_box (vicious.widgets.thermal, widget (beautiful.widget_temp, colorize (theme.fg_importance_0) ("Core ") .. "$1°C"), 31, { "thermal_zone0", "sys" })
 hddtempwidget = awful.tooltip ({ objects = { tempwidget } })
 
 vicious.register (hddtempwidget, vicious.widgets.hddtemp,
