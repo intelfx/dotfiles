@@ -123,7 +123,7 @@ c_mail = "kmail"
 c_mail_create = "kmail --composer"
 
 c_editor_gui = "kate"
-c_browser_gui = "google-chrome"
+c_browser_gui = "firefox"
 c_file_manager_gui = "dolphin"
 
 c_editor_cli = terminal_run .. editor
