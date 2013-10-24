@@ -66,7 +66,7 @@ function to_utf8(unicode_list)
 	local function modulo(a, b)
 		return a - math.floor(a/b) * b
 	end
-	
+
 	for i,v in ipairs(unicode_list) do
 		if v ~= 0 and v ~= nil then
 			if v <= 0x7F then -- same as ASCII

@@ -291,7 +291,7 @@ vicious.register (netinfo, vicious.widgets.wifi,
 			else
 				icon = theme.widget_wifi_1
 			end
-			
+
 			return widget (icon, args["{linp}"] .. "% " ..
 			                     colorize (theme.fg_importance_2) (args["{ssid}"]) ..
 			                     colorize (theme.fg_importance_0) (" (" .. args["{rate}"] .. " Mbps)"))
@@ -377,7 +377,7 @@ batwidget = vicious_box (battery,
 		local aux = ""
 
 		batbar:set_value (value / 100)
-		
+
 		if state == "F" then -- full
 			icon = beautiful.widget_bat_ac
 		elseif state == "+" then -- charging
@@ -393,7 +393,7 @@ batwidget = vicious_box (battery,
 				icon = beautiful.widget_bat_0
 			end
 		end
-		
+
 		if power and power > 0 then
 			if state == "-" then -- discharging (emphasize with colors)
 				if power > 20 then color = beautiful.fg_importance_4
@@ -434,7 +434,7 @@ volwidget = vicious_box (vicious.widgets.volume,
 		local icon
 
 		volbar:set_value (value / 100)
-		
+
 		if data[2] == "♫" then -- unmute
 			if value > 66 then
 				icon = beautiful.widget_vol_2
@@ -446,7 +446,7 @@ volwidget = vicious_box (vicious.widgets.volume,
 		else -- mute
 			icon = beautiful.widget_vol_m
 		end
-		
+
 		return widget (icon, value .. "%")
 	end, 13, sound_mixer)
 
