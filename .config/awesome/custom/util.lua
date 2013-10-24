@@ -200,3 +200,15 @@ function cpu_list (path)
 
 	return result
 end
+
+-- Awesome interaction functions
+
+function on_next_window (callback)
+	local sig_handler
+	sig_handler = function (c)
+		callback (c)
+		client.disconnect_signal ("manage", sig_handler)
+	end
+
+	client.connect_signal ("manage", sig_handler)
+end

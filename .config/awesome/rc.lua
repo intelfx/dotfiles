@@ -698,19 +698,17 @@ globalkeys = awful.util.table.join (
     awful.key ({ modkey, "Shift"   }, "space", function () awful.layout.inc (layouts, -1) end),
 
     -- Standard programs
-	awful.key ({                           }, "F12",     function () scratch.drop ("urxvt -name urxvt.drop", "top", "center", 0.8, 0.4, true) end),
-    awful.key ({ modkey,                   }, "Return", function () awful.util.spawn (terminal)                                               end),
+	awful.key ({                           }, "F12",     function () scratch.drop ("urxvtc -name urxvt.drop", "top", "center", 0.8, 0.4, true) end),
+    awful.key ({ modkey,                   }, "Return", function () awful.util.spawn (terminal)                                                end),
     awful.key ({ modkey, "Control"         }, "Return",
 		function ()
-			local alter_func
-			alter_func = function (c)
-				awful.client.floating.set (c, true)
-				c.sticky = true
-				c.ontop = true
-				client.disconnect_signal ("manage", alter_func)
-			end
+			on_next_window (
+				function (c)
+					awful.client.floating.set (c, true)
+					c.sticky = true
+					c.ontop = true
+				end)
 
-			client.connect_signal ("manage", alter_func)
 			awful.util.spawn (terminal)
 		end),
     awful.key ({ modkey,            altkey }, "Return", function () awful.util.spawn ("sudo " .. terminal)                         end),
@@ -1058,16 +1056,28 @@ awful.rules.rules = {
 -- {{{ Signals
 
 function client_configure_border_width (c)
-	if awful.client.floating.get (c) == true then
+	if awful.client.floating.get (c) == true
+	or awful.layout.get (c.screen) == awful.layout.suit.floating then
 		c.border_width = 2
 	else
 		c.border_width = 0
 	end
 end
 
+function client_sloppy_focus (c)
+	c:connect_signal ("mouse::enter",
+		function (c)
+			if awful.layout.get (c.screen) ~= awful.layout.suit.magnifier
+			and awful.client.focus.filter (c) then
+				client.focus = c
+			end
+		end)
+end
+
 
 client.connect_signal ("property::floating", client_configure_border_width)
 client.connect_signal ("manage", client_configure_border_width)
+client.connect_signal ("manage", client_sloppy_focus)
 
 -- Signal function to execute when a new client appears.
 client.connect_signal ("manage",
@@ -1075,15 +1085,6 @@ client.connect_signal ("manage",
 
 		-- Add a titlebar
 		-- awful.titlebar.add (c, { modkey = modkey })
-
-		-- Enable sloppy focus
-		c:connect_signal ("mouse::enter",
-			function (c)
-				if awful.layout.get (c.screen) ~= awful.layout.suit.magnifier
-				and awful.client.focus.filter (c) then
-					client.focus = c
-				end
-			end)
 
 		if not startup then
 			-- Set the windows at the slave,
@@ -1093,8 +1094,8 @@ client.connect_signal ("manage",
 			-- Put windows in a smart way, only if they does not set an initial position.
 			if not c.size_hints.user_position
 			and not c.size_hints.program_position then
-				-- awful.placement.no_overlap (c)
-				-- awful.placement.no_offscreen (c)
+				awful.placement.no_overlap (c)
+				awful.placement.no_offscreen (c)
 			end
 		end
 	end)
