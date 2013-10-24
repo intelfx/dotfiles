@@ -28,9 +28,9 @@ local function worker(format, warg)
 
     local battery = helpers.pathtotable("/sys/class/power_supply/"..warg)
     local battery_state = {
-        ["Full\n"]        = "↯",
-        ["Unknown\n"]     = "⌁",
-        ["Charged\n"]     = "↯",
+        ["Full\n"]        = "F",
+        ["Unknown\n"]     = "-",
+        ["Charged\n"]     = "F",
         ["Charging\n"]    = "+",
         ["Discharging\n"] = "-"
     }
@@ -45,6 +45,8 @@ local function worker(format, warg)
     local state = battery_state[battery.status] or battery_state["Unknown\n"]
 
     -- Get capacity information
+	local remaining, capacity -- microwatthours
+
     if battery.charge_now then
         remaining, capacity = battery.charge_now, battery.charge_full
     elseif battery.energy_now then
@@ -56,43 +58,41 @@ local function worker(format, warg)
     -- Calculate percentage (but work around broken BAT/ACPI implementations)
     local percent = math.min(math.floor(remaining / capacity * 100), 100)
 
-
     -- Get charge information
-	local rate
+	local power -- microwatts
 
     if battery.current_now then
-        rate = tonumber(battery.current_now)
+		if battery.voltage_now then
+        	power = tonumber(battery.current_now) * tonumber(battery.voltage_now) / 1000000;
+		end
     elseif battery.power_now then
-        rate = tonumber(battery.power_now)
-    else
-        return {state, percent, "N/A", 0}
+        power = tonumber(battery.power_now)
     end
 
     -- Calculate remaining (charging or discharging) time
     local time = "N/A"
 
-    if rate ~= nil and rate ~= 0 then
-        if state == "+" then
-            timeleft = (tonumber(capacity) - tonumber(remaining)) / tonumber(rate)
-        elseif state == "-" then
-            timeleft = tonumber(remaining) / tonumber(rate)
-        else
-            return {state, percent, time, 0}
-        end
+	if power == nil or power == 0 then
+        return {state, percent, time, 0}
+	end
 
-        -- Calculate time
-        local hoursleft   = math.floor(timeleft)
-        local minutesleft = math.floor((timeleft - hoursleft) * 60 )
+	if state == "+" then
+		timeleft = (tonumber(capacity) - tonumber(remaining)) / tonumber(power)
+	elseif state == "-" then
+		timeleft = tonumber(remaining) / tonumber(power)
+	else
+		return {state, percent, time, 0}
+	end
 
-        time = string.format("%02d:%02d", hoursleft, minutesleft)
-    end
+	-- Calculate time
+	local hoursleft   = math.floor(timeleft)
+	local minutesleft = math.floor((timeleft - hoursleft) * 60)
+
+	time = string.format("%02d:%02d", hoursleft, minutesleft)
 
 	-- Get power information
-	if battery.voltage_now then
-		-- rate and voltage are in microamperes/microvolts.
-		-- "power" is actually power*100.
-		local power = rate * tonumber(battery.voltage_now) / 100000^2;
-		return {state, percent, time, math.floor(power) / 100}
+	if power then
+		return {state, percent, time, math.floor(power / 10000) / 100}
 	else
 		return {state, percent, time, 0}
 	end

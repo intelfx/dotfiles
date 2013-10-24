@@ -370,6 +370,7 @@ batwidget = vicious_box (battery,
 	function (w, data)
 		local state = data[1]
 		local value = data[2]
+		local time  = data[3]
 		local power = data[4]
 		local icon
 		local color
@@ -377,7 +378,7 @@ batwidget = vicious_box (battery,
 
 		batbar:set_value (value / 100)
 		
-		if state == "↯" then -- full
+		if state == "F" then -- full
 			icon = beautiful.widget_bat_ac
 		elseif state == "+" then -- charging
 			icon = beautiful.widget_bat_chg
@@ -394,13 +395,19 @@ batwidget = vicious_box (battery,
 		end
 		
 		if power and power > 0 then
-			if power > 20 then color = beautiful.fg_importance_4
-			elseif power > 15 then color = beautiful.fg_importance_3
-			elseif power > 11 then color = beautiful.fg_importance_2
+			if state == "-" then -- discharging (emphasize with colors)
+				if power > 20 then color = beautiful.fg_importance_4
+				elseif power > 15 then color = beautiful.fg_importance_3
+				elseif power > 11 then color = beautiful.fg_importance_2
+				end
 			end
 
 			aux = aux .. " " .. colorize (color) (power .. "W")
 		end
+
+		--if time then
+		--	aux = aux .. " " .. time
+		--end
 
 		return widget (icon, value .. "%") .. aux
 	end, 7, "BAT0")
