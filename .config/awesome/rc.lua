@@ -88,22 +88,22 @@ end
 
 layouts =
 {
-    awful.layout.suit.floating,             -- 1
-    awful.layout.suit.tile,                 -- 2
-    awful.layout.suit.tile.bottom,          -- 3
-    awful.layout.suit.fair,                 -- 4
-    awful.layout.suit.fair.horizontal,      -- 5
-    awful.layout.suit.spiral,               -- 6
-    awful.layout.suit.spiral.dwindle,       -- 7
-    awful.layout.suit.max,                  -- 8
-    --awful.layout.suit.max.fullscreen,     -- 9
-    --awful.layout.suit.magnifier           -- 10
+	awful.layout.suit.floating,             -- 1
+	awful.layout.suit.tile,                 -- 2
+	awful.layout.suit.tile.bottom,          -- 3
+	awful.layout.suit.fair,                 -- 4
+	awful.layout.suit.fair.horizontal,      -- 5
+	awful.layout.suit.spiral,               -- 6
+	awful.layout.suit.spiral.dwindle,       -- 7
+	awful.layout.suit.max,                  -- 8
+	--awful.layout.suit.max.fullscreen,     -- 9
+	--awful.layout.suit.magnifier           -- 10
 }
 
 tags = { }
 for s = 1, screen.count () do
-    -- Each screen has its own tag table.
-    tags[s] = awful.tag ({ "term",     "web",      "files",    "msg",      "media",    "work",       "virt",       "wine",     "other" }, s,
+	-- Each screen has its own tag table.
+	tags[s] = awful.tag ({ "term",     "web",      "files",    "msg",      "media",    "work",       "virt",       "wine",     "other" }, s,
   		                 { layouts[3], layouts[4], layouts[5], layouts[3], layouts[4], layouts[8],   layouts[8],   layouts[6], layouts[6]})
 end
 
@@ -489,7 +489,7 @@ memwidget = vicious_box (vicious.widgets.mem,
 	end, 11)
 
 membuttons = awful.util.table.join (
-    awful.button ({ }, 1, function () awful.util.spawn (c_task_manager) end)
+	awful.button ({ }, 1, function () awful.util.spawn (c_task_manager) end)
 )
 memwidget:buttons (membuttons)
 membar:buttons (membuttons)
@@ -648,9 +648,9 @@ root.buttons (awful.util.table.join (
 -- {{{ Per-client mouse bindings
 
 clientbuttons = awful.util.table.join (
-    awful.button ({                 }, 1, function (c) client.focus = c; c:raise () end),
-    awful.button ({ modkey          }, 1, awful.mouse.client.move),
-    awful.button ({ modkey          }, 3, awful.mouse.client.resize),
+	awful.button ({                 }, 1, function (c) client.focus = c; c:raise () end),
+	awful.button ({ modkey          }, 1, awful.mouse.client.move),
+	awful.button ({ modkey          }, 3, awful.mouse.client.resize),
 	awful.button ({ modkey          }, 2, function (c) c.minimized = not c.minimized end))
 
 -- }}}}
@@ -661,54 +661,54 @@ clientbuttons = awful.util.table.join (
 
 globalkeys = awful.util.table.join (
 	-- Layout and focus manipulations
-    awful.key ({ modkey, "Control" }, "Left",   awful.tag.viewprev),
-    awful.key ({ modkey, "Control" }, "Right",  awful.tag.viewnext),
-    awful.key ({ modkey, "Control" }, "Escape", function () mymainmenu:show ({ keygrabber = true }) end),
+	awful.key ({ modkey, "Control" }, "Left",   awful.tag.viewprev),
+	awful.key ({ modkey, "Control" }, "Right",  awful.tag.viewnext),
+	awful.key ({ modkey, "Control" }, "Escape", function () mymainmenu:show ({ keygrabber = true }) end),
 
-    awful.key ({ modkey,           }, "Escape", awful.tag.history.restore),
-    awful.key ({ modkey,           }, "u",      awful.client.urgent.jumpto),
+	awful.key ({ modkey,           }, "Escape", awful.tag.history.restore),
+	awful.key ({ modkey,           }, "u",      awful.client.urgent.jumpto),
 
-    awful.key ({ modkey,           }, "Left",
+	awful.key ({ modkey,           }, "Left",
 		function ()
 			awful.client.focus.byidx (1)
 			if client.focus then client.focus:raise () end
 		end),
 
-    awful.key ({ modkey,           }, "Right",
+	awful.key ({ modkey,           }, "Right",
 		function ()
 			awful.client.focus.byidx (-1)
 			if client.focus then client.focus:raise () end
 		end),
 
-    awful.key ({ modkey            }, "b", -- Show/Hide Wibox
+	awful.key ({ modkey            }, "b", -- Show/Hide Wibox
 		function ()
 			top_wibox[mouse.screen].visible = not top_wibox[mouse.screen].visible
 			bottom_wibox[mouse.screen].visible = not bottom_wibox[mouse.screen].visible
 		end),
 
-    awful.key ({ modkey, "Shift"   }, "Left",
+	awful.key ({ modkey, "Shift"   }, "Left",
 		function ()
 			awful.client.swap.byidx (1)
 		end),
 
-    awful.key ({ modkey, "Shift"   }, "Right",
+	awful.key ({ modkey, "Shift"   }, "Right",
 		function ()
 			awful.client.swap.byidx (-1)
 		end),
 
-    awful.key ({ modkey,           }, "l",     function () awful.tag.incmwfact (0.05)     end),
-    awful.key ({ modkey,           }, "h",     function () awful.tag.incmwfact (-0.05)    end),
-    awful.key ({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster (1)       end),
-    awful.key ({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster (-1)      end),
-    awful.key ({ modkey, "Control" }, "h",     function () awful.client.incwfact (1)      end),
-    awful.key ({ modkey, "Control" }, "l",     function () awful.client.incwfact (-1)     end),
-    awful.key ({ modkey,           }, "space", function () awful.layout.inc (layouts,  1) end),
-    awful.key ({ modkey, "Shift"   }, "space", function () awful.layout.inc (layouts, -1) end),
+	awful.key ({ modkey,           }, "l",     function () awful.tag.incmwfact (0.05)     end),
+	awful.key ({ modkey,           }, "h",     function () awful.tag.incmwfact (-0.05)    end),
+	awful.key ({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster (1)       end),
+	awful.key ({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster (-1)      end),
+	awful.key ({ modkey, "Control" }, "h",     function () awful.client.incwfact (1)      end),
+	awful.key ({ modkey, "Control" }, "l",     function () awful.client.incwfact (-1)     end),
+	awful.key ({ modkey,           }, "space", function () awful.layout.inc (layouts,  1) end),
+	awful.key ({ modkey, "Shift"   }, "space", function () awful.layout.inc (layouts, -1) end),
 
-    -- Standard programs
-	awful.key ({                           }, "F12",     function () scratch.drop ("urxvtc -name urxvt.drop", "top", "center", 0.8, 0.4, true) end),
-    awful.key ({ modkey,                   }, "Return", function () awful.util.spawn (terminal)                                                end),
-    awful.key ({ modkey, "Control"         }, "Return",
+	-- Standard programs
+	awful.key ({                           }, "F12",     function () scratch.drop (terminal, "top", "center", 0.8, 0.4, true) end),
+	awful.key ({ modkey,                   }, "Return", function () awful.util.spawn (terminal)                               end),
+	awful.key ({ modkey, "Control"         }, "Return",
 		function ()
 			on_next_window (
 				function (c)
@@ -719,27 +719,27 @@ globalkeys = awful.util.table.join (
 
 			awful.util.spawn (terminal)
 		end),
-    awful.key ({ modkey,            altkey }, "Return", function () awful.util.spawn ("sudo " .. terminal)                         end),
-    awful.key ({ modkey, "Control", altkey }, "q",      function () awful.util.spawn (c_file_manager_gui)                          end),
-    awful.key ({ modkey, "Control", altkey }, "w",      function () awful.util.spawn (c_browser_gui)                               end),
-    awful.key ({ modkey, "Control", altkey }, "e",      function () awful.util.spawn (c_editor_gui)                                end),
-    awful.key ({ modkey, "Control", altkey }, "r",      function () awful.util.spawn (c_mail)                                      end),
-    awful.key ({ modkey, "Control", altkey }, "t",      function () awful.util.spawn (c_im)                                        end),
-    awful.key ({ modkey, "Control", altkey }, "y",      function () awful.util.spawn (c_mail_create)                               end),
-    awful.key ({ modkey, "Control", altkey }, "a",      function () awful.util.spawn (c_music_player)                              end),
-    awful.key ({ modkey, "Control", altkey }, "s",      function () awful.util.spawn (c_task_manager)                              end),
-    awful.key ({ modkey, "Control", altkey }, "d",      function () awful.util.spawn ("kdevelop")                                  end),
-    awful.key ({ modkey, "Control", altkey }, "f",      function () awful.util.spawn (terminal_run .. "sudo wifi-menu")            end),
+	awful.key ({ modkey,            altkey }, "Return", function () awful.util.spawn ("sudo " .. terminal)                         end),
+	awful.key ({ modkey, "Control", altkey }, "q",      function () awful.util.spawn (c_file_manager_gui)                          end),
+	awful.key ({ modkey, "Control", altkey }, "w",      function () awful.util.spawn (c_browser_gui)                               end),
+	awful.key ({ modkey, "Control", altkey }, "e",      function () awful.util.spawn (c_editor_gui)                                end),
+	awful.key ({ modkey, "Control", altkey }, "r",      function () awful.util.spawn (c_mail)                                      end),
+	awful.key ({ modkey, "Control", altkey }, "t",      function () awful.util.spawn (c_im)                                        end),
+	awful.key ({ modkey, "Control", altkey }, "y",      function () awful.util.spawn (c_mail_create)                               end),
+	awful.key ({ modkey, "Control", altkey }, "a",      function () awful.util.spawn (c_music_player)                              end),
+	awful.key ({ modkey, "Control", altkey }, "s",      function () awful.util.spawn (c_task_manager)                              end),
+	awful.key ({ modkey, "Control", altkey }, "d",      function () awful.util.spawn ("kdevelop")                                  end),
+	awful.key ({ modkey, "Control", altkey }, "f",      function () awful.util.spawn (terminal_run .. "sudo wifi-menu")            end),
 
-    -- Window manager
-    awful.key ({ modkey,                   }, "l",      function () awful.util.spawn ("/usr/lib/kde4/libexec/kscreenlocker_greet") end),
-    awful.key ({ modkey,                   }, "x",      function () awful.util.spawn ("xkill")                                     end),
+	-- Window manager
+	awful.key ({ modkey,                   }, "l",      function () awful.util.spawn ("/usr/lib/kde4/libexec/kscreenlocker_greet") end),
+	awful.key ({ modkey,                   }, "x",      function () awful.util.spawn ("xkill")                                     end),
 	awful.key ({ modkey, "Control"         }, "r",      awesome.restart                                                               ),
-    awful.key ({                           }, "Print",  function () awful.util.spawn ("ksnapshot")                                 end),
+	awful.key ({                           }, "Print",  function () awful.util.spawn ("ksnapshot")                                 end),
 
-    -- Prompt
-    awful.key ({ modkey                    }, "r",      function () promptbox[mouse.screen]:run ()                                 end),
-    awful.key ({ modkey, "Control"         }, "r",
+	-- Prompt
+	awful.key ({ modkey                    }, "r",      function () promptbox[mouse.screen]:run ()                                 end),
+	awful.key ({ modkey, "Control"         }, "r",
 		function ()
 			awful.prompt.run (
 				{ prompt = "Run in terminal: " },
@@ -750,11 +750,11 @@ globalkeys = awful.util.table.join (
 		end),
 
 	-- Functional keys
-    awful.key ({                           }, "XF86AudioRaiseVolume", volume_up                                                       ),
-    awful.key ({                           }, "XF86AudioLowerVolume", volume_down                                                     ),
-    awful.key ({                           }, "XF86AudioMute",        volume_toggle                                                   ),
-    awful.key ({                           }, "XF86Sleep",            function () awful.util.spawn ("systemctl suspend")           end),
-    awful.key ({         "Shift"           }, "XF86Sleep",            function () awful.util.spawn ("systemctl hibernate")         end)
+	awful.key ({                           }, "XF86AudioRaiseVolume", volume_up                                                       ),
+	awful.key ({                           }, "XF86AudioLowerVolume", volume_down                                                     ),
+	awful.key ({                           }, "XF86AudioMute",        volume_toggle                                                   ),
+	awful.key ({                           }, "XF86Sleep",            function () awful.util.spawn ("systemctl suspend")           end),
+	awful.key ({         "Shift"           }, "XF86Sleep",            function () awful.util.spawn ("systemctl hibernate")         end)
 )
 
 -- }}}
@@ -764,17 +764,17 @@ globalkeys = awful.util.table.join (
 -- {{{ Per-client key bindings
 
 clientkeys = awful.util.table.join (
-    awful.key ({ modkey,                   }, "s",      function (c) c.fullscreen = not c.fullscreen    end),
-    awful.key ({ modkey,                   }, "c",      function (c) c:kill ()                          end),
-    awful.key ({ modkey,                   }, "f",      awful.client.floating.toggle                       ),
-    awful.key ({ modkey,                   }, "d",      awful.placement.centered                           ),
-    awful.key ({ modkey, "Shift"           }, "Return", function (c) c:swap (awful.client.getmaster ()) end),
-    awful.key ({ modkey,                   }, "o",      awful.client.movetoscreen                          ),
-    awful.key ({ modkey, "Shift"           }, "r",      function (c) c:redraw ()                        end),
-    awful.key ({ modkey,                   }, "t",      function (c) c.ontop = not c.ontop              end),
-    awful.key ({ modkey,                   }, "k",      function (c) c.sticky = not c.sticky            end),
-    awful.key ({ modkey,                   }, "n",      function (c) c.minimized = not c.minimized      end),
-    awful.key ({ modkey,                   }, "m",
+	awful.key ({ modkey,                   }, "s",      function (c) c.fullscreen = not c.fullscreen    end),
+	awful.key ({ modkey,                   }, "c",      function (c) c:kill ()                          end),
+	awful.key ({ modkey,                   }, "f",      awful.client.floating.toggle                       ),
+	awful.key ({ modkey,                   }, "d",      awful.placement.centered                           ),
+	awful.key ({ modkey, "Shift"           }, "Return", function (c) c:swap (awful.client.getmaster ()) end),
+	awful.key ({ modkey,                   }, "o",      awful.client.movetoscreen                          ),
+	awful.key ({ modkey, "Shift"           }, "r",      function (c) c:redraw ()                        end),
+	awful.key ({ modkey,                   }, "t",      function (c) c.ontop = not c.ontop              end),
+	awful.key ({ modkey,                   }, "k",      function (c) c.sticky = not c.sticky            end),
+	awful.key ({ modkey,                   }, "n",      function (c) c.minimized = not c.minimized      end),
+	awful.key ({ modkey,                   }, "m",
 		function (c)
 			c.maximized_horizontal = not c.maximized_horizontal
 			c.maximized_vertical   = not c.maximized_vertical
@@ -854,207 +854,207 @@ root.keys (globalkeys)
 -- {{{ Rules
 
 awful.rules.rules = {
-    -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = true,
-                     keys = clientkeys,
-                     buttons = clientbuttons,
-                     maximized_vertical = false,
-                     maximized_horizontal = false,
-                     size_hints_honor = false,
-                     tag = tags[1][9],
-                     switchtotag = function () return rules_do_switchtotag end
-                    } },
+	-- All clients will match this rule.
+	{ rule = { },
+	  properties = { border_width = beautiful.border_width,
+	                 border_color = beautiful.border_normal,
+	                 focus = true,
+	                 keys = clientkeys,
+	                 buttons = clientbuttons,
+	                 maximized_vertical = false,
+	                 maximized_horizontal = false,
+	                 size_hints_honor = false,
+	                 tag = tags[1][9],
+	                 switchtotag = function () return rules_do_switchtotag end
+	                } },
 
-    { rule_any = { class = { "Qt4-ssh-askpass", "krunner" } },
-      properties = { sticky = true, ontop = true, border_width = 0, above = true, modal = true, floating = true, size_hints_honor = true, tag = nil, switchtotag = false } },
+	{ rule_any = { class = { "Qt4-ssh-askpass", "krunner", "Ksnapshot" } },
+	  properties = { sticky = true, ontop = true, border_width = 0, above = true, modal = true, floating = true, size_hints_honor = true, tag = nil, switchtotag = false } },
 
-    { rule = { class = "Kcolorchooser" },
-      properties = { sticky = true, ontop = true, floating = true, tag = nil, switchtotag = false } },
+	{ rule = { class = "Kcolorchooser" },
+	  properties = { sticky = true, ontop = true, floating = true, tag = nil, switchtotag = false } },
 
-    { rule = { class = "Kmix" },
-      properties = { sticky = true, ontop = true, floating = true, tag = nil, switchtotag = false } },
+	{ rule = { class = "Kmix" },
+	  properties = { sticky = true, ontop = true, floating = true, tag = nil, switchtotag = false } },
 
-    { rule = { class = "Vncviewer" },
-      properties = { tag = tags[1][7] } },
+	{ rule = { class = "Vncviewer" },
+	  properties = { tag = tags[1][7] } },
 
-    { rule = { class = "Wine" },
-      properties = { tag = tags[1][8] } },
+	{ rule = { class = "Wine" },
+	  properties = { tag = tags[1][8] } },
 
-    { rule = { instance = "plugin-container" },
-      properties = { floating = true, ontop = true, switchtotag = true } },
+	{ rule = { instance = "plugin-container" },
+	  properties = { floating = true, ontop = true, switchtotag = true } },
 
-    { rule = { class = "Firefox" },
-      properties = { tag = tags[1][2] } },
+	{ rule = { class = "Firefox" },
+	  properties = { tag = tags[1][2] } },
 
-    { rule = { class = "Konqueror" },
-      properties = { tag = tags[1][2] } },
+	{ rule = { class = "Konqueror" },
+	  properties = { tag = tags[1][2] } },
 
-    { rule = { class = "Rekonq" },
-      properties = { tag = tags[1][2] } },
+	{ rule = { class = "Rekonq" },
+	  properties = { tag = tags[1][2] } },
 
-    { rule = { class = "Google-chrome" },
-      properties = { tag = tags[1][2], floating = false } },
+	{ rule = { class = "Google-chrome" },
+	  properties = { tag = tags[1][2], floating = false } },
 
-    { rule = { class = "Firefox", instance = "Download" },
-      properties = { tag = tags[1][2], floating = true } },
+	{ rule = { class = "Firefox", instance = "Download" },
+	  properties = { tag = tags[1][2], floating = true } },
 
-    { rule_any = { class = { "URxvt", "Konsole" } },
-      properties = { tag = tags[1][1] } },
+	{ rule_any = { class = { "URxvt", "Konsole" } },
+	  properties = { tag = tags[1][1] } },
 
-    { rule = { instance = "urxvt.drop" },
-      properties = { tag = tags[1][1], switchtotag = false } },
+	{ rule = { instance = "urxvt.drop" },
+	  properties = { tag = tags[1][1], switchtotag = false } },
 
-    { rule = { class = "Qjackctl" },
-      properties = { tag = tags[1][1] } },
+	{ rule = { class = "Qjackctl" },
+	  properties = { tag = tags[1][1] } },
 
-    { rule = { class = "Thunderbird" },
-      properties = { tag = tags[1][4] } },
+	{ rule = { class = "Thunderbird" },
+	  properties = { tag = tags[1][4] } },
 
-    { rule = { class = "Kmail", role = "kmail-composer#1" },
-      properties = { tag = tags[1][4], floating = true } },
+	{ rule = { class = "Kmail", role = "kmail-composer#1" },
+	  properties = { tag = tags[1][4], floating = true } },
 
-    { rule_any = { class = { "Skype", "Kopete", "Kmail", "Konversation" } },
-      properties = { tag = tags[1][4] } },
+	{ rule_any = { class = { "Skype", "Kopete", "Kmail", "Konversation" } },
+	  properties = { tag = tags[1][4] } },
 
-    { rule = { class = "Gpicview" },
-      properties = { tag = tags[1][3] } },
+	{ rule = { class = "Gpicview" },
+	  properties = { tag = tags[1][3] } },
 
-    { rule = { class = "Qalculate-gtk" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Qalculate-gtk" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Convertall.py" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Convertall.py" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "QtConverter.pyw" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "QtConverter.pyw" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Kmplot" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Kmplot" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Kdenlive" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Kdenlive" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Gelemental" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Gelemental" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule_any = { class = { "Ktechlab", "Kate", "Kdevelop" } },
-      properties = { tag = tags[1][6] } },
+	{ rule_any = { class = { "Ktechlab", "Kate", "Kdevelop" } },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Gimp" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Gimp" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { instance = "Blender" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { instance = "Blender" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Gitk" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Gitk" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Git-cola" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Git-cola" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Qtcreator" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Qtcreator" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Eclipse" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Eclipse" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "libreoffice-*" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "libreoffice-*" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "FBReader" },
-      properties = { tag = tags[1][6] } },
+	{ rule_any = { class = { "FBReader", "Calibre-gui" } },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Gucharmap" },
-      properties = { tag = tags[1][3] } },
+	{ rule = { class = "Gucharmap" },
+	  properties = { tag = tags[1][3] } },
 
-    { rule = { class = "Thunar" },
-      properties = { tag = tags[1][3] } },
+	{ rule = { class = "Thunar" },
+	  properties = { tag = tags[1][3] } },
 
-    { rule_any = { class = { "Dolphin", "7zG", "Ark" } },
-      properties = { tag = tags[1][3] } },
+	{ rule_any = { class = { "Dolphin", "7zG", "Ark" } },
+	  properties = { tag = tags[1][3] } },
 
-    { rule = { class = "Hardinfo" },
-      properties = { tag = tags[1][3] } },
+	{ rule = { class = "Hardinfo" },
+	  properties = { tag = tags[1][3] } },
 
-    { rule = { class = "Gpartedbin" },
-      properties = { tag = tags[1][3] } },
+	{ rule = { class = "Gpartedbin" },
+	  properties = { tag = tags[1][3] } },
 
-    { rule = { class = "Partitionmanager-bin" },
-      properties = { tag = tags[1][3] } },
+	{ rule = { class = "Partitionmanager-bin" },
+	  properties = { tag = tags[1][3] } },
 
-    -- these KDE windows are of type "normal"
-    { rule_any = { name = { "Перемещение*",
-                            "Перемещение",
-                            "Копирование*",
-                            "Копирование",
-                            "Передача*",
-                            "Передача",
-                            "Удаление*",
-                            "Удаление",
-                            "Moving*",
-                            "Moving",
-                            "Copying*",
-                            "Copying",
-                            "Deleting*",
-                            "Deleting" } },
-      properties = { floating = true } },
+	-- these KDE windows are of type "normal"
+	{ rule_any = { name = { "Перемещение*",
+	                        "Перемещение",
+	                        "Копирование*",
+	                        "Копирование",
+	                        "Передача*",
+	                        "Передача",
+	                        "Удаление*",
+	                        "Удаление",
+	                        "Moving*",
+	                        "Moving",
+	                        "Copying*",
+	                        "Copying",
+	                        "Deleting*",
+	                        "Deleting" } },
+	  properties = { floating = true } },
 
-    { rule = { name = "Процесс выполнения" },
-      properties = { floating = true } },
+	{ rule = { name = "Процесс выполнения" },
+	  properties = { floating = true } },
 
-    { rule = { class = "Okular" },
-      properties = { tag = tags[1][6] } },
+	{ rule = { class = "Okular" },
+	  properties = { tag = tags[1][6] } },
 
-    { rule = { class = "Digikam" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Digikam" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Amarok" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Amarok" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Cantata" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Cantata" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Puddletag" },
-      properties = { tag = tags[1][3] } },
+	{ rule = { class = "Puddletag" },
+	  properties = { tag = tags[1][3] } },
 
-    { rule = { class = "K3b" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "K3b" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Avidemux2_gtk" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Avidemux2_gtk" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Avidemux2_qt" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Avidemux2_qt" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "SMPlayer" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "SMPlayer" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "MPlayer" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "MPlayer" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Vlc" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Vlc" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Gwenview" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Gwenview" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Showfoto" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Showfoto" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "Wxcam" },
-      properties = { tag = tags[1][5] } },
+	{ rule = { class = "Wxcam" },
+	  properties = { tag = tags[1][5] } },
 
-    { rule = { class = "VirtualBox" },
-      properties = { tag = tags[1][7] } },
+	{ rule = { class = "VirtualBox" },
+	  properties = { tag = tags[1][7] } },
 
-    { rule = { class = "emulator*" },
-      properties = { tag = tags[1][7] } },
+	{ rule = { class = "emulator*" },
+	  properties = { tag = tags[1][7] } },
 
-    { rule = { type = "dialog" },
-      properties = { floating = true } }
+	{ rule = { type = "dialog" },
+	  properties = { floating = true } }
 }
 
 -- }}}
