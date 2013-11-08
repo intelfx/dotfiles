@@ -299,13 +299,13 @@ vicious.register (netinfo, vicious.widgets.wifi,
 	end, 37, "wlan0")
 
 netmenu = awful.menu ({ items = {
-	{ "Launch wifi-menu",              function () awful.util.spawn (exec_and_update_term_hold ("sudo wifi-menu", "netinfo")) end },
-	{ "Set mode [running]",            function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng bootup", "netinfo")) end },
-	{ "Set mode [resume]",             function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng resume", "netinfo")) end },
-	{ "Set mode [suspended]",          function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng suspend", "netinfo")) end },
-	{ "Set mode [halted]",             function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng halt", "netinfo")) end },
-	{ "Set mode [running:continuous]", function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng continuous", "netinfo")) end },
-	{ "Set mode [running:once]",       function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng once", "netinfo")) end }
+	{ "Launch wifi-menu",                 function () awful.util.spawn (exec_and_update_term_hold ("sudo wifi-menu", "netinfo")) end },
+	{ "netctl-auto-ng: start",            function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng bootup", "netinfo")) end },
+	{ "netctl-auto-ng: stop",             function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng halt", "netinfo")) end },
+	{ "netctl-auto-ng: resume",           function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng resume", "netinfo")) end },
+	{ "netctl-auto-ng: suspend",          function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng suspend", "netinfo")) end },
+	{ "netctl-auto-ng: start continuous", function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng continuous", "netinfo")) end },
+	{ "netctl-auto-ng: start once",       function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng once", "netinfo")) end }
 }})
 
 netinfo:buttons (awful.util.table.join (
