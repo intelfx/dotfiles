@@ -113,8 +113,9 @@ end
 
 -- {{{ Basic command definitions
 
-terminal = "urxvtc"
-terminal_run = terminal .. " -e "
+terminal_app = "urxvtc"
+terminal_run = terminal_app .. " -e "
+terminal = terminal_run .. os.getenv ("HOME") .. "/bin/tmx"
 editor = os.getenv ("EDITOR") or "vim"
 
 c_music_player = "amarok"
@@ -123,7 +124,7 @@ c_mail = "kmail"
 c_mail_create = "kmail --composer"
 
 c_editor_gui = "kate"
-c_browser_gui = "firefox"
+c_browser_gui = "firefox-ux"
 c_file_manager_gui = "dolphin"
 
 c_editor_cli = terminal_run .. editor
@@ -165,7 +166,7 @@ myexit = {
 	{ "Hybrid suspend" , "systemctl hybrid-sleep" },
 	{ "Shutdown" , "systemctl poweroff" },
 	{ "Reboot" , "systemctl reboot" },
-	{ "Quit" ,  "systemctl --user exit" },
+	{ "Quit" ,  awesome.quit },
 	{ "Restart" , awesome.restart }
 }
 
