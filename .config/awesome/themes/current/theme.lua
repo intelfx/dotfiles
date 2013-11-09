@@ -131,7 +131,7 @@ theme.tasklist_bg_focus = theme.bg_normal
 
 
 -- {{{ Tooltip
-theme.tooltip_fg_color = theme.fg_normal
+theme.tooltip_fg_color = theme.fg_importance_1
 theme.tooltip_bg_color = theme.bg_normal
 -- }}}
 
