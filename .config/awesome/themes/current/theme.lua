@@ -130,6 +130,12 @@ theme.tasklist_bg_focus = theme.bg_normal
 -- }}}
 
 
+-- {{{ Tooltip
+theme.tooltip_fg_color = theme.fg_normal
+theme.tooltip_bg_color = theme.bg_normal
+-- }}}
+
+
 -- {{{ Taglist
 theme.taglist_fg_urgent = theme.colors_kniren.red[1]
 theme.taglist_bg_urgent = theme.bg_normal
