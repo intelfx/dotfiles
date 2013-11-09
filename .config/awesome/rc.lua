@@ -16,7 +16,6 @@ awful.rules = require ("awful.rules")
 wibox = require ("wibox")
 -- Theme handling library
 beautiful = require ("beautiful")
-revelation = require ("revelation")
 -- Notification library
 naughty = require ("naughty")
 gears = require ("gears")
