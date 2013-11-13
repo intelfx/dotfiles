@@ -114,6 +114,7 @@ end
 
 terminal_app = "urxvtc"
 terminal_run = terminal_app .. " -e "
+terminal_run_hold = terminal_app .. " -hold -e "
 terminal = terminal_run .. os.getenv ("HOME") .. "/bin/tmx"
 editor = os.getenv ("EDITOR") or "vim"
 
@@ -743,7 +744,7 @@ globalkeys = awful.util.table.join (
 			awful.prompt.run (
 				{ prompt = "Run in terminal: " },
 				promptbox[mouse.screen].widget,
-				function (...) awful.util.spawn (terminal .. " -hold -e " .. ...) end,
+				function (...) awful.util.spawn (terminal_run_hold .. ...) end,
 				awful.completion.shell,
 				awful.util.getdir ("cache") .. "/history")
 		end),
@@ -1127,7 +1128,7 @@ client.connect_signal ("unfocus",
 
 function check_for_terminal (command)
 	if command:sub (1,1) == ":" then
-		command = terminal .. ' -e "' .. command:sub (2) .. '"'
+		command = terminal_run .. command:sub (2)
 	end
 	awful.util.spawn (command)
 end

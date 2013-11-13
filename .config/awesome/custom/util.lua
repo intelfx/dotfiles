@@ -33,11 +33,11 @@ function exec_and_update (cmd, widgets)
 end
 
 function exec_and_update_term (cmd, widgets)
-	return terminal .. " -e " .. exec_and_update (cmd, widgets)
+	return terminal_run .. exec_and_update (cmd, widgets)
 end
 
 function exec_and_update_term_hold (cmd, widgets)
-	return terminal .. " -hold -e " .. exec_and_update (cmd, widgets)
+	return terminal_run_hold .. exec_and_update (cmd, widgets)
 end
 
 
