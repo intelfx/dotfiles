@@ -244,10 +244,18 @@ gmail_t = awful.tooltip ({ objects = { mygmail } })
 
 vicious.register (mygmail, vicious.widgets.gmail,
 	function (w, args)
-		gmail_t:set_text (args["{subject}"])
-		return widget (args["{count}"] > 0 and beautiful.widget_mail
-		                                    or beautiful.widget_mail_empty,
-		               args["{count}"])
+		local count = args["{count}"],
+		      icon
+
+		if (count > 0) then
+			gmail_t:set_text (args["{subject}"])
+			icon = beautiful.widget_mail
+		else
+			gmail_t:set_text ("")
+			icon = beautiful.widget_mail_empty
+		end
+
+		return widget (icon, count)
 	end, 600)
 
 mygmail:buttons (awful.util.table.join (
