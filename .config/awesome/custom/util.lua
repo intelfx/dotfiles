@@ -175,7 +175,14 @@ end
 
 function read_file (path)
 	local file = io.open (path, "rb")
-	return file and file:read ("*all") or nil
+	local data
+
+	if file then
+		data = file:read ("*all")
+		file:close()
+	end
+
+	return data
 end
 
 function cpu_list (path)
