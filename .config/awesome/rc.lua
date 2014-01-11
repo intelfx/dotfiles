@@ -112,11 +112,16 @@ end
 
 -- {{{ Basic command definitions
 
-terminal_app = "urxvtc"
-terminal_run = terminal_app .. " -e "
-terminal_run_hold = terminal_app .. " -hold -e "
-terminal = terminal_run .. os.getenv ("HOME") .. "/bin/tmx"
+shell = os.getenv ("HOME") .. "/bin/tmx"
 editor = os.getenv ("EDITOR") or "vim"
+
+function term (run, parms)
+	if not parms then parms = {} end
+
+	return "urxvtc" .. (parms.hold     and "-hold"                     or "")
+	                .. (parms.instance and " -name " .. parms.instance or "")
+	                .. " -e " .. (run or shell)
+end
 
 c_music_player = "amarok"
 c_im = "konversation"
@@ -124,14 +129,13 @@ c_mail = "kmail"
 c_mail_create = "kmail --composer"
 
 c_editor_gui = "kate"
-c_browser_gui = "firefox-ux"
+c_browser_gui = "firefox-nightly"
 c_file_manager_gui = "dolphin"
 
-c_editor_cli = terminal_run .. editor
-c_browser_cli = terminal_run .. "elinks"
-c_file_manager_cli = terminal_run .. "mc"
-
-c_powertop = terminal_run .. "sudo powertop"
+c_editor_cli = term (editor)
+c_browser_cli = term ("elinks")
+c_file_manager_cli = term ("mc")
+c_powertop = term ("sudo powertop")
 
 modkey = "Mod4"
 altkey = "Mod1"
@@ -145,7 +149,7 @@ last_spawned = nil
 
 -- {{{ Menubar configuration
 
-menubar.utils.terminal = terminal
+menubar.utils.terminal = term()
 
 -- }}}
 
@@ -172,7 +176,7 @@ myexit = {
 
 mymainmenu = awful.menu ({ items = {
 	{ "File Manager", c_file_manager_gui },
-	{ "Terminal", terminal },
+	{ "Terminal", term() },
 	{ "Browser" , c_browser_gui },
 	{ " ", nil, nil}, -- separator
 	{ "Folders" , myfolders },
@@ -714,20 +718,11 @@ globalkeys = awful.util.table.join (
 	awful.key ({ modkey, "Shift"   }, "space", function () awful.layout.inc (layouts, -1) end),
 
 	-- Standard programs
-	awful.key ({                           }, "F12",     function () scratch.drop (terminal, "top", "center", 0.8, 0.4, true) end),
-	awful.key ({ modkey,                   }, "Return", function () awful.util.spawn (terminal)                               end),
-	awful.key ({ modkey, "Control"         }, "Return",
-		function ()
-			on_next_window (
-				function (c)
-					awful.client.floating.set (c, true)
-					c.sticky = true
-					c.ontop = true
-				end)
+	awful.key ({                           }, "F12",    function () scratch.drop (term (nil, { instance = "dropdown" }), "top", "center", 0.8, 0.4, true)  end),
+	awful.key ({ modkey,                   }, "Return", function () awful.util.spawn (term())                                                              end),
+	awful.key ({ modkey, "Control"         }, "Return", function () awful.util.spawn (term (nil, { instance = "service-ontop" }))                          end),
+	awful.key ({ modkey,            altkey }, "Return", function () awful.util.spawn ("sudo " .. term())                                                   end),
 
-			awful.util.spawn (terminal)
-		end),
-	awful.key ({ modkey,            altkey }, "Return", function () awful.util.spawn ("sudo " .. terminal)                         end),
 	awful.key ({ modkey, "Control", altkey }, "q",      function () awful.util.spawn (c_file_manager_gui)                          end),
 	awful.key ({ modkey, "Control", altkey }, "w",      function () awful.util.spawn (c_browser_gui)                               end),
 	awful.key ({ modkey, "Control", altkey }, "e",      function () awful.util.spawn (c_editor_gui)                                end),
@@ -737,7 +732,7 @@ globalkeys = awful.util.table.join (
 	awful.key ({ modkey, "Control", altkey }, "a",      function () awful.util.spawn (c_music_player)                              end),
 	awful.key ({ modkey, "Control", altkey }, "s",      function () awful.util.spawn (c_task_manager)                              end),
 	awful.key ({ modkey, "Control", altkey }, "d",      function () awful.util.spawn ("kdevelop")                                  end),
-	awful.key ({ modkey, "Control", altkey }, "f",      function () awful.util.spawn (terminal_run .. "sudo wifi-menu")            end),
+	awful.key ({ modkey, "Control", altkey }, "f",      function () awful.util.spawn (term ("sudo wifi-menu"))                     end),
 
 	-- Window manager
 	awful.key ({ modkey,                   }, "l",      function () awful.util.spawn ("/usr/lib/kde4/libexec/kscreenlocker_greet") end),
@@ -752,7 +747,7 @@ globalkeys = awful.util.table.join (
 			awful.prompt.run (
 				{ prompt = "Run in terminal: " },
 				promptbox[mouse.screen].widget,
-				function (...) awful.util.spawn (terminal_run_hold .. ...) end,
+				function (...) awful.util.spawn (term (..., nil, true)) end,
 				awful.completion.shell,
 				awful.util.getdir ("cache") .. "/history")
 		end),
@@ -912,8 +907,11 @@ awful.rules.rules = {
 	{ rule_any = { class = { "URxvt", "Konsole" } },
 	  properties = { tag = tags[1][1] } },
 
-	{ rule = { instance = "urxvt.drop" },
+	{ rule = { instance = "dropdown" },
 	  properties = { tag = tags[1][1], switchtotag = false } },
+
+	{ rule = { instance = "service-ontop" },
+      properties = { tag = tags[1][1], switchtotag = false, floating = true, ontop = true, sticky = true } },
 
 	{ rule = { class = "Qjackctl" },
 	  properties = { tag = tags[1][1] } },
@@ -1138,7 +1136,7 @@ client.connect_signal ("unfocus",
 
 function check_for_terminal (command)
 	if command:sub (1,1) == ":" then
-		command = terminal_run .. command:sub (2)
+		command = term (command:sub (2))
 	end
 	awful.util.spawn (command)
 end
