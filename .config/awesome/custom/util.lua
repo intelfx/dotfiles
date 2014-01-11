@@ -4,6 +4,15 @@
 --   intelfx100 at gmail dot com
 ------------------------------------------------
 
+
+function term (run, parms)
+	if not parms then parms = {} end
+
+	return "urxvtc" .. (parms.hold     and " -hold"                    or "")
+	                .. (parms.instance and " -name " .. parms.instance or "")
+	                .. " -e " .. (run or shell)
+end
+
 -- Theme functions
 
 function colorize (fg, bg, font)

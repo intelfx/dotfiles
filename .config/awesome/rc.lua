@@ -115,14 +115,6 @@ end
 shell = os.getenv ("HOME") .. "/bin/tmx"
 editor = os.getenv ("EDITOR") or "vim"
 
-function term (run, parms)
-	if not parms then parms = {} end
-
-	return "urxvtc" .. (parms.hold     and "-hold"                     or "")
-	                .. (parms.instance and " -name " .. parms.instance or "")
-	                .. " -e " .. (run or shell)
-end
-
 c_music_player = "amarok"
 c_im = "konversation"
 c_mail = "kmail"
