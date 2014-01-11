@@ -1090,31 +1090,45 @@ function client_sloppy_focus (c)
 		end)
 end
 
+function client_configure_placement (c)
+	-- Add a titlebar
+	-- awful.titlebar.add (c, { modkey = modkey })
 
-client.connect_signal ("property::floating", client_configure_border_width)
-client.connect_signal ("manage", client_configure_border_width)
-client.connect_signal ("manage", client_sloppy_focus)
+	if not startup then
+		-- Set the windows at the slave,
+		-- i.e. put it at the end of others instead of setting it master.
+		awful.client.setslave (c)
 
--- Signal function to execute when a new client appears.
-client.connect_signal ("manage",
-	function (c)
-
-		-- Add a titlebar
-		-- awful.titlebar.add (c, { modkey = modkey })
-
-		if not startup then
-			-- Set the windows at the slave,
-			-- i.e. put it at the end of others instead of setting it master.
-			awful.client.setslave (c)
-
-			-- Put windows in a smart way, only if they does not set an initial position.
-			if not c.size_hints.user_position
-			and not c.size_hints.program_position then
+		-- Put windows in a smart way, only if they does not set an initial position.
+		if not c.size_hints.user_position
+		and not c.size_hints.program_position then
+			if awful.client.floating.get (c) == true then
+				awful.placement.centered (c)
+			else
 				awful.placement.no_overlap (c)
 				awful.placement.no_offscreen (c)
 			end
 		end
-	end)
+	end
+end
+
+function client_notify (c)
+	local text = {}
+	if c.class then    table.insert (text, "class: "    .. c.class)    end
+	if c.instance then table.insert (text, "instance: " .. c.instance) end
+
+	naughty.notify ({ preset = naughty.config.presets.info,
+	                  title = "New client",
+	                  text = table.concat (text, "\n") })
+end
+
+
+client.connect_signal ("property::floating", client_configure_border_width)
+client.connect_signal ("manage", client_configure_border_width)
+client.connect_signal ("manage", client_sloppy_focus)
+client.connect_signal ("manage", client_configure_placement)
+-- client.connect_signal ("manage", client_notify)
+
 
 client.connect_signal ("focus",
 	function (c)
