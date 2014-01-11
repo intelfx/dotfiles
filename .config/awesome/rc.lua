@@ -826,18 +826,23 @@ for i = 1, keynumber do
 
 		awful.key ({ modkey, "Control" }, "#" .. i + 9,
 			function ()
-				local screen = client.focus.screen
-				if client.focus and tags[screen][i] then
-					awful.client.movetotag (tags[screen][i])
-					awful.tag.viewonly (tags[screen][i])
-					rules_do_switchtotag = true
+				if client.focus then
+					local screen = client.focus.screen
+					if tags[screen][i] then
+						awful.client.movetotag (tags[screen][i])
+						awful.tag.viewonly (tags[screen][i])
+						rules_do_switchtotag = true
+					end
 				end
 			end),
 
 		awful.key ({ modkey, altkey, "Shift" }, "#" .. i + 9,
 			function ()
-				if client.focus and tags[client.focus.screen][i] then
-					awful.client.toggletag (tags[client.focus.screen][i])
+				if client.focus then
+					local screen = client.focus.screen
+					if tags[screen][i] then
+						awful.client.toggletag (tags[screen][i])
+					end
 				end
 			end))
 end
