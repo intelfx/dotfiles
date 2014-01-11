@@ -606,7 +606,7 @@ for s = 1, screen.count () do
 	local top_right_layout = wibox.layout.fixed.horizontal ()
 	top_right_layout:add (build_bracketed (clockwidget))
 	top_right_layout:add (build_bracketed (syswidget))
-	top_right_layout:add (build_bracketed (wibox.widget.systray()))
+	if s == 1 then top_right_layout:add (build_bracketed (wibox.widget.systray())) end
 
 	-- Build the top wibox
 	local top_wibox_layout = wibox.layout.align.horizontal ()
