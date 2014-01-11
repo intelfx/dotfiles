@@ -960,6 +960,9 @@ awful.rules.rules = {
 	{ rule = { instance = "Blender" },
 	  properties = { tag = tags[1][6] } },
 
+	{ rule = { instance = "inkscape" },
+	  properties = { tag = tags[1][6], floating = false, maximized_vertical = false, maximized_horizontal = false } },
+
 	{ rule = { class = "Gitk" },
 	  properties = { tag = tags[1][6] } },
 
@@ -972,7 +975,8 @@ awful.rules.rules = {
 	{ rule = { class = "Eclipse" },
 	  properties = { tag = tags[1][6] } },
 
-	{ rule = { class = "libreoffice-*" },
+    -- libreoffice
+	{ rule_any = { instance = { "VCLSalFrame*" } },
 	  properties = { tag = tags[1][6] } },
 
 	{ rule_any = { class = { "FBReader", "Calibre-gui" } },
