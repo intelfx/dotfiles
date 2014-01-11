@@ -42,11 +42,11 @@ function exec_and_update (cmd, widgets)
 end
 
 function exec_and_update_term (cmd, widgets)
-	return terminal_run .. exec_and_update (cmd, widgets)
+	return term (exec_and_update (cmd, widgets))
 end
 
 function exec_and_update_term_hold (cmd, widgets)
-	return terminal_run_hold .. exec_and_update (cmd, widgets)
+	return term (exec_and_update (cmd, widgets), { hold = true })
 end
 
 
