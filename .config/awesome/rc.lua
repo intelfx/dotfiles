@@ -237,92 +237,6 @@ tempwidget:buttons (awful.util.table.join (
 ))
 
 
--- Gmail widget
-
-mygmail = textbox()
-gmail_t = awful.tooltip ({ objects = { mygmail } })
-
-vicious.register (mygmail, vicious.widgets.gmail,
-	function (w, args)
-		local count = args["{count}"],
-		      icon
-
-		if (count > 0) then
-			gmail_t:set_text (args["{subject}"])
-			icon = beautiful.widget_mail
-		else
-			gmail_t:set_text ("")
-			icon = beautiful.widget_mail_empty
-		end
-
-		return widget (icon, count)
-	end, 600)
-
-mygmail:buttons (awful.util.table.join (
-	awful.button ({ }, 1, function () awful.util.spawn ("kmail") end)
-))
-
-
--- Pacman widget
-pacwidget = textbox()
-pacwidget_t = awful.tooltip ({ objects = { pacwidget } })
-
-vicious.register (pacwidget, vicious.widgets.pkg,
-	function (w, args)
-		pacwidget_t:set_text (awful.util.pread ("yaourt -Qu"))
-		return widget (beautiful.widget_pac, args[1])
-	end, 1800, "Arch")
-
-pacwidget:buttons (awful.util.table.join (
-	awful.button ({ }, 1, function () awful.util.spawn (exec_and_update_term("yaourt -Syu && yaourt -Sc --noconfirm", "pacwidget")) end),
-	awful.button ({ }, 3, function () awful.util.spawn (exec_and_update_term("yaourt -Sy && yaourt -Sc --noconfirm", "pacwidget")) end)
-))
-
-
--- Network widget
-netinfo = wibox.widget.textbox ()
-netwidget_t = awful.tooltip ({ objects = { netinfo } })
-
-vicious.register (netinfo, vicious.widgets.wifi,
-	function (w, args)
-		netwidget_t:set_text (awful.util.pread ("netctl-auto-ng status --wpa=address,bssid,key_mgmt,ip_address,ssid"))
-
-		if args["{ssid}"] == "N/A" then
-			return widget (theme.widget_wifi_0, "Not connected")
-		else
-			local percent = args["{linp}"]
-			local icon
-
-			if percent >= 70 then
-				icon = theme.widget_wifi_3
-			elseif percent >= 35 then
-				icon = theme.widget_wifi_2
-			else
-				icon = theme.widget_wifi_1
-			end
-
-			return widget (icon, args["{linp}"] .. "% " ..
-			                     colorize (theme.fg_importance_2) (args["{ssid}"]) ..
-			                     colorize (theme.fg_importance_0) (" (" .. args["{rate}"] .. " Mbps)"))
-		end
-	end, 37, "wlan0")
-
-netmenu = awful.menu ({ items = {
-	{ "Launch wifi-menu",                 function () awful.util.spawn (exec_and_update_term_hold ("sudo wifi-menu", "netinfo")) end },
-	{ "netctl-auto-ng: start",            function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng bootup", "netinfo")) end },
-	{ "netctl-auto-ng: stop",             function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng halt", "netinfo")) end },
-	{ "netctl-auto-ng: resume",           function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng resume", "netinfo")) end },
-	{ "netctl-auto-ng: suspend",          function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng suspend", "netinfo")) end },
-	{ "netctl-auto-ng: start continuous", function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng continuous", "netinfo")) end },
-	{ "netctl-auto-ng: start once",       function () awful.util.spawn (exec_and_update_term_hold ("sudo netctl-auto-ng once", "netinfo")) end }
-}})
-
-netinfo:buttons (awful.util.table.join (
-	awful.button ({ }, 1, function () netmenu:toggle () end),
-	awful.button ({ }, 3, function () vicious.force ({ netinfo }) end)
-))
-
-
 -- CPU widget
 cpufreqs = vicious_box (vicious.widgets.cpuinf,
 	function (w, data)
@@ -337,9 +251,9 @@ cpufreqs = vicious_box (vicious.widgets.cpuinf,
 				local color
 
 				if freq then
-					if     freq > 2700 then color = beautiful.fg_importance_4 -- single-core turbo
-					elseif freq > 2300 then color = beautiful.fg_importance_3 -- multi-core turbo
-					elseif freq > 1700 then color = beautiful.fg_importance_2 -- above average
+					if     freq > 2100 then color = beautiful.fg_importance_4 -- max
+					elseif freq > 1900 then color = beautiful.fg_importance_3 -- one less than max
+					elseif freq > 1400 then color = beautiful.fg_importance_2 -- above average
 					elseif freq > 1000 then color = beautiful.fg_importance_1 -- core active
 					else                    color = beautiful.fg_importance_0 -- core idle
 					end
@@ -419,7 +333,7 @@ batwidget = vicious_box (battery,
 		--end
 
 		return widget (icon, value .. "%") .. aux
-	end, 7, "BAT0")
+	end, 7, "BAT1")
 
 batbuttons = awful.util.table.join (
 	awful.button ({ }, 1, function () awful.util.spawn (c_powertop) end)
@@ -615,9 +529,6 @@ for s = 1, screen.count () do
 
 	-- Right-aligned bottom panel widgets
 	local down_right_layout = wibox.layout.fixed.horizontal ()
-	down_right_layout:add (build_bracketed (mygmail))
-	down_right_layout:add (build_bracketed (pacwidget))
-	down_right_layout:add (build_bracketed (netinfo))
 	down_right_layout:add (build_bracketed (tempwidget))
 	down_right_layout:add (build_bracketed (uptimewidget))
 
