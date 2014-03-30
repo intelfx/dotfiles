@@ -121,7 +121,7 @@ c_mail = "kmail"
 c_mail_create = "kmail --composer"
 
 c_editor_gui = "kate"
-c_browser_gui = "firefox-nightly"
+c_browser_gui = "firefox-beta-bin"
 c_file_manager_gui = "dolphin"
 
 c_editor_cli = term (editor)
@@ -771,8 +771,7 @@ clientkeys = awful.util.table.join (
 	awful.key ({ modkey,                   }, "n",      function (c) c.minimized = not c.minimized      end),
 	awful.key ({ modkey,                   }, "m",
 		function (c)
-			c.maximized_horizontal = not c.maximized_horizontal
-			c.maximized_vertical   = not c.maximized_vertical
+			c.maximized = not c.maximized
 		end)
 )
 
@@ -861,8 +860,7 @@ awful.rules.rules = {
 	                 focus = true,
 	                 keys = clientkeys,
 	                 buttons = clientbuttons,
-	                 maximized_vertical = false,
-	                 maximized_horizontal = false,
+					 maximized = false,
 	                 size_hints_honor = false,
 	                 tag = tags[1][9],
 	                 switchtotag = function () return rules_do_switchtotag end
@@ -917,7 +915,7 @@ awful.rules.rules = {
 	  properties = { tag = tags[1][4] } },
 
 	{ rule = { class = "Kmail", role = "kmail-composer#1" },
-	  properties = { tag = tags[1][4], floating = false, maximized_vertical = true, maximized_horizontal = true } },
+	  properties = { tag = tags[1][4], floating = false, maximized = true } },
 
 	{ rule_any = { class = { "Skype", "Kopete", "Kmail", "Konversation", "Ktp*" } },
 	  properties = { tag = tags[1][4] } },
@@ -953,7 +951,7 @@ awful.rules.rules = {
 	  properties = { tag = tags[1][6] } },
 
 	{ rule = { instance = "inkscape" },
-	  properties = { tag = tags[1][6], floating = false, maximized_vertical = false, maximized_horizontal = false } },
+	  properties = { tag = tags[1][6], floating = false, maximized = false } },
 
 	{ rule = { class = "Gitk" },
 	  properties = { tag = tags[1][6] } },
@@ -1003,10 +1001,12 @@ awful.rules.rules = {
 	                        "Удаление",
 	                        "Распаковка*",
 	                        "Распаковка",
+	                        "Загрузк*",
 	                        "Moving*",
 	                        "Moving",
 	                        "Copying*",
 	                        "Copying",
+	                        "Download*",
 	                        "Deleting*",
 	                        "Deleting" } },
 	  properties = { floating = true } },
