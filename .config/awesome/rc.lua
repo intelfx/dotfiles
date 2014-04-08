@@ -225,7 +225,7 @@ vicious.register (hddtempwidget, vicious.widgets.hddtemp,
 		for disk, temp in pairs (args) do
 			table.insert (output, colorize (theme.fg_importance_0) (string.sub (disk, 2, -2)) .. " " .. temp .. "°C")
 		end
-		hddtempwidget:set_text (table.concat (output, "\n"))
+		return table.concat (output, "\n")
 	end, 31)
 
 tempwidget:buttons (awful.util.table.join (
