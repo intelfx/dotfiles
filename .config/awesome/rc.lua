@@ -115,6 +115,8 @@ end
 shell = os.getenv ("HOME") .. "/bin/tmx"
 editor = os.getenv ("EDITOR") or "vim"
 
+screenlocker = os.getenv ("HOME") .. "/bin/lock.sh"
+
 c_music_player = "amarok"
 c_im = "konversation"
 c_mail = "kmail"
@@ -700,8 +702,8 @@ globalkeys = awful.util.table.join (
 			awful.client.swap.byidx (-1)
 		end),
 
-	awful.key ({ modkey,           }, "l",     function () awful.tag.incmwfact (0.05)     end),
-	awful.key ({ modkey,           }, "h",     function () awful.tag.incmwfact (-0.05)    end),
+--	awful.key ({ modkey,           }, "l",     function () awful.tag.incmwfact (0.05)     end),
+--	awful.key ({ modkey,           }, "h",     function () awful.tag.incmwfact (-0.05)    end),
 	awful.key ({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster (1)       end),
 	awful.key ({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster (-1)      end),
 	awful.key ({ modkey, "Control" }, "h",     function () awful.client.incwfact (1)      end),
@@ -727,7 +729,7 @@ globalkeys = awful.util.table.join (
 	awful.key ({ modkey, "Control", altkey }, "f",      function () awful.util.spawn (term ("sudo wifi-menu"))                     end),
 
 	-- Window manager
-	awful.key ({ modkey,                   }, "l",      function () awful.util.spawn ("/usr/lib/kde4/libexec/kscreenlocker_greet") end),
+	awful.key ({ modkey,                   }, "l",      function () awful.util.spawn (screenlocker)                                end),
 	awful.key ({ modkey,                   }, "x",      function () awful.util.spawn ("xkill")                                     end),
 	awful.key ({ modkey, "Control"         }, "r",      awesome.restart                                                               ),
 	awful.key ({                           }, "Print",  function () awful.util.spawn ("ksnapshot")                                 end),
