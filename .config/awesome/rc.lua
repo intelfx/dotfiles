@@ -121,7 +121,7 @@ c_mail = "kmail"
 c_mail_create = "kmail --composer"
 
 c_editor_gui = "kate"
-c_browser_gui = "firefox-beta-bin"
+c_browser_gui = "firefox"
 c_file_manager_gui = "dolphin"
 
 c_editor_cli = term (editor)
