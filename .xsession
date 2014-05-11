@@ -1,3 +1,1 @@
-#!/bin/bash
-
-exec awesome
+.config/systemd/xsession/Xsession
