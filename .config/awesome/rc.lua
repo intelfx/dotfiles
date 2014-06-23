@@ -719,14 +719,14 @@ globalkeys = awful.util.table.join (
 
 	awful.key ({ modkey, "Control", altkey }, "q",      function () awful.util.spawn (c_file_manager_gui)                          end),
 	awful.key ({ modkey, "Control", altkey }, "w",      function () awful.util.spawn (c_browser_gui)                               end),
-	awful.key ({ modkey, "Control", altkey }, "e",      function () awful.util.spawn (c_editor_gui)                                end),
-	awful.key ({ modkey, "Control", altkey }, "r",      function () awful.util.spawn (c_mail)                                      end),
-	awful.key ({ modkey, "Control", altkey }, "t",      function () awful.util.spawn (c_im)                                        end),
-	awful.key ({ modkey, "Control", altkey }, "y",      function () awful.util.spawn (c_mail_create)                               end),
-	awful.key ({ modkey, "Control", altkey }, "a",      function () awful.util.spawn (c_music_player)                              end),
-	awful.key ({ modkey, "Control", altkey }, "s",      function () awful.util.spawn (c_task_manager)                              end),
-	awful.key ({ modkey, "Control", altkey }, "d",      function () awful.util.spawn ("kdevelop")                                  end),
-	awful.key ({ modkey, "Control", altkey }, "f",      function () awful.util.spawn (term ("sudo wifi-menu"))                     end),
+	awful.key ({ modkey, "Control", altkey }, "e",      function () awful.util.spawn (c_mail)                                      end),
+	awful.key ({ modkey, "Control", altkey }, "r",      function () awful.util.spawn (c_music_player)                              end),
+	awful.key ({ modkey, "Control", altkey }, "t",      function () awful.util.spawn ("kdevelop")                                  end),
+	awful.key ({ modkey, "Control", altkey }, "y",      function () awful.util.spawn (c_im)                                        end),
+
+	awful.key ({ modkey, "Control", altkey }, "a",      function () awful.util.spawn (term ("sudo wifi-menu"))                     end),
+	awful.key ({ modkey, "Control", altkey }, "s",      function () awful.util.spawn (c_mail_create)                               end),
+	awful.key ({ modkey, "Control", altkey }, "d",      function () awful.util.spawn (c_editor_gui)                                end),
 
 	-- Window manager
 	awful.key ({ modkey,                   }, "l",      function () awful.util.spawn (screenlocker)                                end),
