@@ -884,7 +884,7 @@ awful.rules.rules = {
 	  properties = { tag = tags[1][8] } },
 
 	{ rule = { instance = "plugin-container" },
-	  properties = { floating = true, ontop = true, switchtotag = true } },
+	  properties = { tag = tags[1][2], floating = true, ontop = true, switchtotag = true } },
 
 	{ rule = { class = "Firefox" },
 	  properties = { tag = tags[1][2] } },
@@ -919,7 +919,7 @@ awful.rules.rules = {
 	{ rule = { class = "Kmail", role = "kmail-composer#1" },
 	  properties = { tag = tags[1][4], floating = false, maximized = true } },
 
-	{ rule_any = { class = { "Skype", "Kopete", "Kmail", "Konversation", "Ktp*" } },
+	{ rule_any = { class = { "Skype", "Kopete", "Kontact", "Kmail", "Konversation", "Ktp*" } },
 	  properties = { tag = tags[1][4] } },
 
 	{ rule = { class = "Gpicview" },
