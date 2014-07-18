@@ -272,8 +272,8 @@ vicious.register (pacwidget, vicious.widgets.pkg,
 	end, 1800, "Arch")
 
 pacwidget:buttons (awful.util.table.join (
-	awful.button ({ }, 1, function () awful.util.spawn (exec_and_update_term("yaourt -Syu", "pacwidget")) end),
-	awful.button ({ }, 3, function () awful.util.spawn (exec_and_update_term("yaourt -Sy", "pacwidget")) end)
+	awful.button ({ }, 1, function () awful.util.spawn (exec_and_update_term("yaourt -Syu && yaourt -Sc --noconfirm", "pacwidget")) end),
+	awful.button ({ }, 3, function () awful.util.spawn (exec_and_update_term("yaourt -Sy && yaourt -Sc --noconfirm", "pacwidget")) end)
 ))
 
 
