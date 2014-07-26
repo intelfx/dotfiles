@@ -1042,6 +1042,9 @@ awful.rules.rules = {
 	{ rule = { class = "Vlc" },
 	  properties = { tag = tags[1][5] } },
 
+	{ rule = { class = "mpv" },
+	  properties = { tag = tags[1][5] } },
+
 	{ rule = { class = "Gwenview" },
 	  properties = { tag = tags[1][5] } },
 
