@@ -419,15 +419,8 @@ batwidget = vicious_box (battery,
 		return widget (icon, value .. "%") .. aux
 	end, 7, "BAT0")
 
-powermenu = awful.menu ({ items = {
-	{ "performance", function () awful.util.spawn ("sudo pm-powersave false") end },
-	{ "powersave",   function () awful.util.spawn ("sudo pm-powersave true") end },
-	{ "automatic",   function () awful.util.spawn ("sudo pm-powersave") end },
-}})
-
 batbuttons = awful.util.table.join (
-	awful.button ({ }, 1, function () powermenu:toggle () end),
-	awful.button ({ }, 3, function () awful.util.spawn (powertop) end)
+	awful.button ({ }, 1, function () awful.util.spawn (c_powertop) end)
 )
 batbar:buttons (batbuttons)
 batwidget:buttons (batbuttons)
