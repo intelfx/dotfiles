@@ -936,8 +936,11 @@ awful.rules.rules = {
 	{ rule = { class = "Gelemental" },
 	  properties = { tag = tags[1][6] } },
 
-	{ rule_any = { class = { "Ktechlab", "Kate", "Kdevelop" } },
+	{ rule_any = { class = { "Ktechlab", "Kdevelop" } },
 	  properties = { tag = tags[1][6] } },
+
+	{ rule = { class = "Kate" },
+	  properties = { tag = tags[1][6], floating = false, maximized = false } },
 
 	{ rule = { class = "Gimp" },
 	  properties = { tag = tags[1][6] } },
