@@ -912,8 +912,11 @@ awful.rules.rules = {
 	{ rule = { class = "Kmail", role = "kmail-composer#1" },
 	  properties = { tag = tags[1][4], floating = false, maximized = true } },
 
-	{ rule_any = { class = { "Skype", "Kopete", "Kontact", "Kmail", "Konversation", "Ktp*" } },
+	{ rule_any = { class = { "Skype", "Kopete", "Kontact", "Kmail", "Konversation", "Ktp*", "utox" } },
 	  properties = { tag = tags[1][4] } },
+
+	{ rule = { class = "utoxvideo" },
+	  properties = { tag = tags[1][4], floating = true } },
 
 	{ rule = { class = "Gpicview" },
 	  properties = { tag = tags[1][3] } },
