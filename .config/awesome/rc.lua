@@ -861,7 +861,7 @@ awful.rules.rules = {
 	                 switchtotag = function () return rules_do_switchtotag end
 	                } },
 
-	{ rule_any = { class = { "Qt4-ssh-askpass", "Pinentry", "krunner", "Ksnapshot" } },
+	{ rule_any = { class = { "Qt4-ssh-askpass", "Pinentry", "krunner", "Ksnapshot", "Gcr-prompter" } },
 	  properties = { sticky = true, ontop = true, border_width = 0, above = true, modal = true, floating = true, size_hints_honor = true, tag = nil, switchtotag = false } },
 
 	{ rule = { class = "Kcolorchooser" },
