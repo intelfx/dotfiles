@@ -972,6 +972,9 @@ awful.rules.rules = {
 
 	{ rule_any = { class = { "FBReader", "Calibre-gui" } },
 	  properties = { tag = tags[1][6] } },
+	
+	{ rule = { class = "Hydrogen" },
+	  properties = { tag = tags[1][6] } },
 
 	{ rule = { class = "Gucharmap" },
 	  properties = { tag = tags[1][3] } },
