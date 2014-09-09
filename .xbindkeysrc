@@ -45,6 +45,9 @@
 "xte 'key XF86Back'"
 	b:8
 
+"amixer set Capture toggle"
+	XF86AudioMicMute
+
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
 #
