@@ -1,0 +1,3 @@
+[submodule ".config/awesome/net_widgets"]
+	path = .config/awesome/net_widgets
+	url = gh:plotnikovanton/net_widgets.git
