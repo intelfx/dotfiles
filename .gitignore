@@ -1,0 +1,20 @@
+# Ignore everything
+/*
+
+# Do not ignore dot-files (but still ignore dot-dirs)
+!/.*
+/.*/
+
+# Do not ignore .gitignore (this shall remain special)
+!/.gitignore
+
+# Do not ignore .fonts/*.bdf
+!/.fonts
+/.fonts/*
+!/.fonts/*.bdf
+
+# Do not ignore .config/{awesome,Bespin}
+!/.config
+/.config/*
+!/.config/awesome
+!/.config/Bespin
