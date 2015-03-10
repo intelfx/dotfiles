@@ -59,6 +59,10 @@ function string:split (sep)
 	return fields
 end
 
+function string:rtrim()
+	return self:gsub("%s*$", "")
+end
+
 function hashtable (array)
 	local ht = {}
 
