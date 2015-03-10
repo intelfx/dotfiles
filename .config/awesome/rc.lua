@@ -31,6 +31,7 @@ require ("custom.util")
 battery = require ("custom.battery")
 textlayoutbox = require ("custom.textlayoutbox")
 taglist = require ("custom.taglist")
+thermal = require ("custom.thermal")
 --}}}
 
 
@@ -196,7 +197,7 @@ widget = widget_text (beautiful.widget_text_fg, beautiful.widget_icon_fg, nil, b
 vicious.cache (battery)
 vicious.cache (vicious.widgets.volume)
 vicious.cache (vicious.widgets.os)
-vicious.cache (vicious.widgets.thermal)
+vicious.cache (thermal)
 vicious.cache (vicious.widgets.hddtemp)
 
 
@@ -219,7 +220,7 @@ uptimewidget:buttons (awful.util.table.join (
 
 
 -- Temperature widget
-tempwidget = vicious_box (vicious.widgets.thermal, widget (beautiful.widget_temp, colorize (theme.fg_importance_0) ("Core ") .. "$1°C"), 31, { "thermal_zone0", "sys" })
+tempwidget = vicious_box (thermal, widget (beautiful.widget_temp, colorize (theme.fg_importance_0) ("Core ") .. "$1°C"), 31, { "thermal_zone0" })
 hddtempwidget = awful.tooltip ({ objects = { tempwidget } })
 
 vicious.register (hddtempwidget, vicious.widgets.hddtemp,
