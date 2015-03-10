@@ -193,7 +193,7 @@ separator_pipe = textbox (colorize (beautiful.separator_fg) (" | "))
 widget = widget_text (beautiful.widget_text_fg, beautiful.widget_icon_fg, nil, beautiful.font_symbols)
 
 -- Setup caches
-vicious.cache (vicious.widgets.bat)
+vicious.cache (battery)
 vicious.cache (vicious.widgets.volume)
 vicious.cache (vicious.widgets.os)
 vicious.cache (vicious.widgets.thermal)
