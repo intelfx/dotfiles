@@ -130,6 +130,7 @@ c_editor_cli = term (editor)
 c_browser_cli = term ("elinks")
 c_file_manager_cli = term ("mc")
 c_powertop = term ("sudo powertop")
+c_task_manager = term ("htop")
 
 modkey = "Mod4"
 altkey = "Mod1"
@@ -364,8 +365,8 @@ cpumenu = awful.menu ({ items = {
 }})
 
 cpubuttons = awful.util.table.join (
-	awful.button ({ }, 1, function () cpumenu:toggle () end),
-	awful.button ({ }, 3, function () awful.util.spawn (c_task_manager) end)
+	awful.button ({ }, 1, function () awful.util.spawn (c_task_manager) end),
+	awful.button ({ }, 3, function () cpumenu:toggle () end)
 )
 cpufreqs:buttons (cpubuttons)
 cpuusage:buttons (cpubuttons)
