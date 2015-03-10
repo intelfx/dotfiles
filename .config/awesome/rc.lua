@@ -464,7 +464,7 @@ function volume_down ()
 end
 
 function volume_mixer ()
-	awful.util.spawn (exec_and_update_term("alsamixer", "volwidget"))
+	awful.util.spawn (exec_and_update("pavucontrol", "volwidget"))
 end
 
 volbuttons = awful.util.table.join (
