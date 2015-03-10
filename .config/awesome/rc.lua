@@ -730,10 +730,10 @@ globalkeys = awful.util.table.join (
 
 	-- Prompt
 	awful.key ({ modkey                    }, "r",      function () promptbox[mouse.screen]:run ()                                 end),
-	awful.key ({ modkey, "Control"         }, "r",
+	awful.key ({ modkey, "Shift"           }, "r",
 		function ()
 			awful.prompt.run (
-				{ prompt = "Run in terminal: " },
+				{ prompt = colorize (beautiful.taglist_fg_occupied) (" Run in terminal: ") },
 				promptbox[mouse.screen].widget,
 				function (...) awful.util.spawn (term (..., nil, true)) end,
 				awful.completion.shell,
