@@ -235,10 +235,6 @@ vicious.register (hddtempwidget, vicious.widgets.hddtemp,
 		return table.concat (output, "\n")
 	end, 31)
 
-tempwidget:buttons (awful.util.table.join (
-	awful.button ({ }, 3, function () awful.util.spawn ("ksysguard") end)
-))
-
 
 -- CPU widget
 cpufreqs = vicious_box (vicious.widgets.cpuinf,
