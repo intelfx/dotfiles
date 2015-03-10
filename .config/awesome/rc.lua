@@ -32,6 +32,7 @@ battery = require ("custom.battery")
 textlayoutbox = require ("custom.textlayoutbox")
 taglist = require ("custom.taglist")
 thermal = require ("custom.thermal")
+hwmon = require ("custom.hwmon")
 --}}}
 
 
@@ -198,6 +199,7 @@ vicious.cache (battery)
 vicious.cache (vicious.widgets.volume)
 vicious.cache (vicious.widgets.os)
 vicious.cache (thermal)
+vicious.cache (hwmon)
 vicious.cache (vicious.widgets.hddtemp)
 
 
@@ -221,7 +223,8 @@ uptimewidget:buttons (awful.util.table.join (
 
 -- Temperature widget
 tempwidget = vicious_box (thermal, widget (beautiful.widget_temp, colorize (theme.fg_importance_0) ("Core ") .. "$1°C"), 31, { "thermal_zone0" })
-hddtempwidget = awful.tooltip ({ objects = { tempwidget } })
+gputempwidget = vicious_box (hwmon, widget (beautiful.widget_temp, colorize (theme.fg_importance_0) ("GPU ($2) ") .. "$1°C"), 31, { "hwmon0" })
+hddtempwidget = awful.tooltip ({ objects = { tempwidget, gputempwidget } })
 
 vicious.register (hddtempwidget, vicious.widgets.hddtemp,
 	function (widget,args)
@@ -530,6 +533,7 @@ for s = 1, screen.count () do
 	-- Right-aligned bottom panel widgets
 	local down_right_layout = wibox.layout.fixed.horizontal ()
 	down_right_layout:add (build_bracketed (tempwidget))
+	down_right_layout:add (build_bracketed (gputempwidget))
 	down_right_layout:add (build_bracketed (uptimewidget))
 
 	-- Build the bottom wibox
