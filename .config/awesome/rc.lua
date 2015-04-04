@@ -104,8 +104,8 @@ layouts =
 tags = { }
 for s = 1, screen.count () do
 	-- Each screen has its own tag table.
-	tags[s] = awful.tag ({ "term",     "web",      "files",    "msg",      "media",    "work",       "virt",       "wine",     "other" }, s,
-  		                 { layouts[3], layouts[5], layouts[5], layouts[6], layouts[6], layouts[8],   layouts[8],   layouts[6], layouts[6]})
+	tags[s] = awful.tag ({ "term",     "files",    "torrents", "other"   }, s,
+	                     { layouts[3], layouts[5], layouts[8], layouts[6]})
 end
 
 -- }}}
@@ -777,36 +777,6 @@ awful.rules.rules = {
 	{ rule_any = { class = { "Qt4-ssh-askpass", "Pinentry", "krunner", "Ksnapshot", "Gcr-prompter" } },
 	  properties = { sticky = true, ontop = true, border_width = 0, above = true, modal = true, floating = true, size_hints_honor = true, tag = nil, switchtotag = false } },
 
-	{ rule = { class = "Kcolorchooser" },
-	  properties = { sticky = true, ontop = true, floating = true, tag = nil, switchtotag = false } },
-
-	{ rule = { class = "Kmix" },
-	  properties = { sticky = true, ontop = true, floating = true, tag = nil, switchtotag = false } },
-
-	{ rule = { class = "Vncviewer" },
-	  properties = { tag = tags[1][7] } },
-
-	{ rule = { class = "Wine" },
-	  properties = { tag = tags[1][8] } },
-
-	{ rule = { instance = "plugin-container" },
-	  properties = { tag = tags[1][2], floating = true, ontop = true, switchtotag = true } },
-
-	{ rule = { class = "Firefox" },
-	  properties = { tag = tags[1][2] } },
-
-	{ rule = { class = "Konqueror" },
-	  properties = { tag = tags[1][2] } },
-
-	{ rule = { class = "Rekonq" },
-	  properties = { tag = tags[1][2] } },
-
-	{ rule = { class = "Google-chrome" },
-	  properties = { tag = tags[1][2], floating = false } },
-
-	{ rule = { class = "Firefox", instance = "Download" },
-	  properties = { tag = tags[1][2], floating = true } },
-
 	{ rule_any = { class = { "URxvt", "Konsole" } },
 	  properties = { tag = tags[1][1] } },
 
@@ -819,93 +789,8 @@ awful.rules.rules = {
 	{ rule = { class = "Qjackctl" },
 	  properties = { tag = tags[1][1] } },
 
-	{ rule = { class = "Thunderbird" },
-	  properties = { tag = tags[1][4] } },
-
-	{ rule = { class = "Kmail", role = "kmail-composer#1" },
-	  properties = { tag = tags[1][4], floating = false, maximized = true } },
-
-	{ rule_any = { class = { "Skype", "Kopete", "Kontact", "Kmail", "Konversation", "Ktp*", "utox" } },
-	  properties = { tag = tags[1][4] } },
-
-	{ rule = { class = "utoxvideo" },
-	  properties = { tag = tags[1][4], floating = true } },
-
-	{ rule = { class = "Gpicview" },
-	  properties = { tag = tags[1][3] } },
-
-	{ rule = { class = "Qalculate-gtk" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Convertall.py" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "QtConverter.pyw" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Kmplot" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Kdenlive" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Gelemental" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule_any = { class = { "Ktechlab", "Kdevelop" } },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Kate" },
-	  properties = { tag = tags[1][6], floating = false, maximized = false } },
-
-	{ rule = { class = "Gimp" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { instance = "Blender" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { instance = "inkscape" },
-	  properties = { tag = tags[1][6], floating = false, maximized = false } },
-
-	{ rule = { class = "Gitk" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Git-cola" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Qtcreator" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Eclipse" },
-	  properties = { tag = tags[1][6] } },
-
-    -- libreoffice
-	{ rule_any = { instance = { "VCLSalFrame*" } },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule_any = { class = { "FBReader", "Calibre-gui" } },
-	  properties = { tag = tags[1][6] } },
-	
-	{ rule = { class = "Hydrogen" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Gucharmap" },
-	  properties = { tag = tags[1][3] } },
-
-	{ rule = { class = "Thunar" },
-	  properties = { tag = tags[1][3] } },
-
 	{ rule_any = { class = { "Dolphin", "7zG", "Ark" } },
-	  properties = { tag = tags[1][3] } },
-
-	{ rule = { class = "Hardinfo" },
-	  properties = { tag = tags[1][3] } },
-
-	{ rule = { class = "Gpartedbin" },
-	  properties = { tag = tags[1][3] } },
-
-	{ rule = { class = "Partitionmanager-bin" },
-	  properties = { tag = tags[1][3] } },
+	  properties = { tag = tags[1][2] } },
 
 	-- these KDE windows are of type "normal"
 	{ rule_any = { name = { "Перемещение*",
@@ -929,56 +814,8 @@ awful.rules.rules = {
 	                        "Deleting" } },
 	  properties = { floating = true } },
 
-	{ rule = { class = "Okular" },
-	  properties = { tag = tags[1][6] } },
-
-	{ rule = { class = "Digikam" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Amarok" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Cantata" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Puddletag" },
+	{ rule = { class = "Ktorrent" },
 	  properties = { tag = tags[1][3] } },
-
-	{ rule = { class = "K3b" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Avidemux2_gtk" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Avidemux2_qt" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "SMPlayer" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "MPlayer" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Vlc" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "mpv" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Gwenview" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Showfoto" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "Wxcam" },
-	  properties = { tag = tags[1][5] } },
-
-	{ rule = { class = "VirtualBox" },
-	  properties = { tag = tags[1][7] } },
-
-	{ rule = { class = "emulator*" },
-	  properties = { tag = tags[1][7] } },
 
 	{ rule = { type = "dialog" },
 	  properties = { floating = true } }
