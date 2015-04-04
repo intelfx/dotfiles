@@ -1007,6 +1007,7 @@ awful.rules.rules = {
 	                        "Удаление",
 	                        "Распаковка*",
 	                        "Распаковка",
+	                        "Процесс выполнения",
 	                        "Загрузк*",
 	                        "Moving*",
 	                        "Moving",
@@ -1015,9 +1016,6 @@ awful.rules.rules = {
 	                        "Download*",
 	                        "Deleting*",
 	                        "Deleting" } },
-	  properties = { floating = true } },
-
-	{ rule = { name = "Процесс выполнения" },
 	  properties = { floating = true } },
 
 	{ rule = { class = "Okular" },
