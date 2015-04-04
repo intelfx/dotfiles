@@ -136,7 +136,6 @@ c_task_manager = term ("htop")
 
 modkey = "Mod4"
 altkey = "Mod1"
-sound_mixer = "Master"
 
 last_spawned = nil
 
@@ -341,56 +340,6 @@ batbar:buttons (batbuttons)
 batwidget:buttons (batbuttons)
 
 
--- Sound volume widget
-volbar = progressbar()
-volwidget = vicious_box (vicious.widgets.volume,
-	function (w, data)
-		local value = data[1]
-		local icon
-
-		volbar:set_value (value / 100)
-
-		if data[2] == "♫" then -- unmute
-			if value > 66 then
-				icon = beautiful.widget_vol_2
-			elseif value > 33 then
-				icon = beautiful.widget_vol_1
-			else
-				icon = beautiful.widget_vol_0
-			end
-		else -- mute
-			icon = beautiful.widget_vol_m
-		end
-
-		return widget (icon, value .. "%")
-	end, 13, sound_mixer)
-
-function volume_toggle ()
-	awful.util.spawn (exec_and_update("amixer -q sset " .. sound_mixer .. " toggle", "volwidget"))
-end
-
-function volume_up ()
-	awful.util.spawn (exec_and_update("amixer -q sset " .. sound_mixer .. " 5%+", "volwidget"))
-end
-
-function volume_down ()
-	awful.util.spawn (exec_and_update("amixer -q sset " .. sound_mixer .. " 5%-", "volwidget"))
-end
-
-function volume_mixer ()
-	awful.util.spawn (exec_and_update("pavucontrol", "volwidget"))
-end
-
-volbuttons = awful.util.table.join (
-	awful.button ({ }, 1, volume_toggle),
-	awful.button ({ }, 3, volume_mixer),
-	awful.button ({ }, 4, volume_up),
-	awful.button ({ }, 5, volume_down)
-)
-volbar:buttons (volbuttons)
-volwidget:buttons (volbuttons)
-
-
 -- Memory widget
 membar = progressbar()
 vicious.register (membar, vicious.widgets.mem, "$1", 11)
@@ -521,7 +470,6 @@ for s = 1, screen.count () do
 
 	-- Left-aligned bottom panel widgets
 	local down_left_layout = wibox.layout.fixed.horizontal ()
-	down_left_layout:add (build_bracketed (volwidget, build_bar (volbar)))
 	down_left_layout:add (build_bracketed (batwidget, build_bar (batbar)))
 	down_left_layout:add (build_bracketed (memwidget, build_bar (membar)))
 	down_left_layout:add (build_bracketed (cpuusage, cpufreqs))
