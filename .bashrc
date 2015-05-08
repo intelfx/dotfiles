@@ -83,6 +83,11 @@ function clang-cmake-release() {
 alias nethack="nethack-save-scum.sh"
 
 if (( "$IS_SOLARIZED" )); then
+	case "$TERM" in
+	xterm-256color|screen-256color)
+		export TERM="${TERM%-256color}"
+		;;
+	esac
 	eval $(dircolors -b "$HOME/.dircolors-solarized")
 	alias mc="mc -S solarized"
 fi
