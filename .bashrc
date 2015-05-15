@@ -82,6 +82,8 @@ function clang-cmake-release() {
 
 alias nethack="nethack-save-scum.sh"
 
+alias reburp='rm -vrf *.src.tar* && makepkg --force --source && burp *.src.tar*'
+
 if (( "$IS_SOLARIZED" )); then
 	case "$TERM" in
 	xterm-256color|screen-256color)
