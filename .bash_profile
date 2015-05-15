@@ -19,7 +19,7 @@ function arch_specific_symlink() {
 mkdir -p "$(realpath -q "$HOME/.local/share/Trash")"
 
 ### Configure various PATHes
-PATH="$HOME/bin${PATH:+:$PATH}"
+PATH="$HOME/bin:$PATH"
 #PATH="$HOME/kde/bin${PATH:+:$PATH}"
 #LD_LIBRARY_PATH="$HOME/kde/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 #LD_RUN_PATH="$HOME/kde/lib${LD_RUN_PATH:+:$LD_RUN_PATH}"
