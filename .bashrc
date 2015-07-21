@@ -96,4 +96,6 @@ if (( "$IS_SOLARIZED" )); then
 	alias mc="mc -S solarized"
 fi
 
+alias git='LC_MESSAGES=C git'
+
 [[ -r "$HOME/.bashrc-common" ]] && source "$HOME/.bashrc-common"
