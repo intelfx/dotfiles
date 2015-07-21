@@ -4,25 +4,27 @@
 [[ $- != *i* ]] && return
 
 if [[ -t 2 ]]; then
-	cat <<-"EOF"
-		]P8073642
-		]P1dc322f
-		]P2859900
-		]P3b58900
-		]P4268bd2
-		]P5d33682
-		]P62aa198
-		]P7eee8d5
-		]P0002b36
-		]P9cb4b16
-		]PA586e75
-		]PB657b83
-		]PC839496
-		]PD6c71c4
-		]PE93a1a1
-		]PFfdf6e3
-		[H[J
-	EOF
+	if [[ "$TERM" == linux ]]; then
+		cat <<-"EOF"
+			]P8073642
+			]P1dc322f
+			]P2859900
+			]P3b58900
+			]P4268bd2
+			]P5d33682
+			]P62aa198
+			]P7eee8d5
+			]P0002b36
+			]P9cb4b16
+			]PA586e75
+			]PB657b83
+			]PC839496
+			]PD6c71c4
+			]PE93a1a1
+			]PFfdf6e3
+			[H[J
+		EOF
+	fi
 	export IS_SOLARIZED=1
 fi
 
