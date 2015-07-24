@@ -2,6 +2,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+#[[ -z "$TMUX" && "$UID" == "$(stat -c "%u" ${BASH_SOURCE[0]})" ]] && exec tmx
 
 if [[ -t 2 ]]; then
 	if [[ "$TERM" == linux ]]; then
@@ -27,11 +28,6 @@ if [[ -t 2 ]]; then
 	fi
 	export IS_SOLARIZED=1
 fi
-
-# tmux
-#if which tmux &>/dev/null && [[ -z "$TMUX" ]]; then
-#	exec tmx
-#fi
 
 function fs_umount_recursive() {
 	if [[ -z "$1" ]]; then
