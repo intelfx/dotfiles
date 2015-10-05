@@ -98,3 +98,5 @@ fi
 alias git='LC_MESSAGES=C git'
 
 [[ -r "$HOME/.bashrc-common" ]] && source "$HOME/.bashrc-common"
+
+HISTSIZE=-1 # do not truncate history
