@@ -36,7 +36,6 @@ export PATH
 #export DE=kde
 
 # Wine
-WINEDLLOVERRIDES="winemenubuilder.exe=d"
-export WINEDLLOVERRIDES
+export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 [[ -r "$HOME/.bash_profile-common" ]] && source "$HOME/.bash_profile-common"
