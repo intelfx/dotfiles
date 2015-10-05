@@ -11,7 +11,7 @@ set cinoptions=(0,u0,U0
 " ------------------------------------------------------------------
 syntax enable
 
-if $IS_SOLARIZED == "1"
+if $IS_SOLARIZED == "1" && &t_Co == 16
 	set background=dark
 	colorscheme solarized
 else
