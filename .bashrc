@@ -84,8 +84,9 @@ alias reburp='rm -vrf *.src.tar* && makepkg --force --source && burp *.src.tar*'
 
 if (( "$IS_SOLARIZED" )); then
 	case "$TERM" in
-	xterm-256color|screen-256color)
-		export TERM="${TERM%-256color}"
+	xterm*|screen*)
+		# we don't want 256 colors, we have fine-tuned default colors (Solarized)
+		export TERM="${TERM%-*}-16color"
 		;;
 	esac
 	eval $(dircolors -b "$HOME/.dircolors-solarized")
