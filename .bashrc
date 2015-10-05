@@ -82,6 +82,8 @@ alias nethack="nethack-save-scum.sh"
 
 alias reburp='rm -vrf *.src.tar* && makepkg --force --source && burp *.src.tar*'
 
+alias rsync-tree='rsync -aHAX --info=progress2 --human-readable --delete'
+
 if (( "$IS_SOLARIZED" )); then
 	case "$TERM" in
 	xterm*|screen*)
