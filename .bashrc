@@ -4,31 +4,6 @@
 [[ $- != *i* ]] && return
 #[[ -z "$TMUX" && "$UID" == "$(stat -c "%u" ${BASH_SOURCE[0]})" ]] && exec tmx
 
-if [[ -t 2 ]]; then
-	if [[ "$TERM" == linux ]]; then
-		cat <<-"EOF"
-			]P8073642
-			]P1dc322f
-			]P2859900
-			]P3b58900
-			]P4268bd2
-			]P5d33682
-			]P62aa198
-			]P7eee8d5
-			]P0002b36
-			]P9cb4b16
-			]PA586e75
-			]PB657b83
-			]PC839496
-			]PD6c71c4
-			]PE93a1a1
-			]PFfdf6e3
-			[H[J
-		EOF
-	fi
-	export IS_SOLARIZED=1
-fi
-
 function fs_umount_recursive() {
 	if [[ -z "$1" ]]; then
 		echo "No argument passed" >&2
@@ -84,19 +59,10 @@ alias reburp='rm -vrf *.src.tar* && makepkg --force --source && burp *.src.tar*'
 
 alias rsync-tree='rsync -aHAX --info=progress2 --human-readable --delete'
 
-if (( "$IS_SOLARIZED" )); then
-	case "$TERM" in
-	xterm*|screen*)
-		# we don't want 256 colors, we have fine-tuned default colors (Solarized)
-		export TERM="${TERM%-*}-16color"
-		;;
-	esac
-	eval $(dircolors -b "$HOME/.dircolors-solarized")
-	alias mc="mc -S solarized"
-fi
-
 alias git='LC_MESSAGES=C git'
 
 [[ -r "$HOME/.bashrc-common" ]] && source "$HOME/.bashrc-common"
 
 HISTSIZE=-1 # do not truncate history
+
+[[ -r "$HOME/.bashrc-solarized" ]] && source "$HOME/.bashrc-solarized"
