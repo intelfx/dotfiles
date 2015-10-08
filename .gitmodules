@@ -4,3 +4,6 @@
 [submodule ".vim/pathogen"]
 	path = .vim/pathogen
 	url = gh:tpope/vim-pathogen
+[submodule ".vim/bundle/vim-grep-operator"]
+	path = .vim/bundle/vim-grep-operator
+	url = gh:inside/vim-grep-operator

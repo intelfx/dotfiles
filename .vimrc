@@ -48,4 +48,12 @@ set noet sts=0 ts=8 sw=8
 set cindent
 set cinoptions=(0,u0,U0
 
+" ------------------------------------------------------------------
+" grep operator
+" ------------------------------------------------------------------
+set grepprg=git\ grep\ -n\ $*
+let g:grep_operator_set_search_register = 1
+nmap <leader>g <Plug>GrepOperatorCurrentDirectory
+vmap <leader>g <Plug>GrepOperatorCurrentDirectory
+
 source $HOME/.vimrc-solarized
