@@ -18,3 +18,9 @@
 /.config/*
 !/.config/awesome
 !/.config/Bespin
+
+# Do not ignore .vim/pathogen and .vim/bundle
+!/.vim
+/.vim/*
+!/.vim/pathogen
+!/.vim/bundle
