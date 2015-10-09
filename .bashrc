@@ -61,8 +61,9 @@ alias rsync-tree='rsync -aHAX --info=progress2 --human-readable --delete'
 
 alias git='LC_MESSAGES=C git'
 
+[[ -r "$HOME/.bashrc-solarized" ]] && source "$HOME/.bashrc-solarized"
+
 [[ -r "$HOME/.bashrc-common" ]] && source "$HOME/.bashrc-common"
 
 HISTSIZE=-1 # do not truncate history
 
-[[ -r "$HOME/.bashrc-solarized" ]] && source "$HOME/.bashrc-solarized"
