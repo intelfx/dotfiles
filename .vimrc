@@ -52,7 +52,7 @@ set cinoptions=(0,u0,U0
 " ------------------------------------------------------------------
 set grepprg=git\ grep\ -n\ $*
 let g:grep_operator_set_search_register = 1
-nmap <leader>g <Plug>GrepOperatorCurrentDirectory
-vmap <leader>g <Plug>GrepOperatorCurrentDirectory
+nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 
 source $HOME/.vimrc-solarized
