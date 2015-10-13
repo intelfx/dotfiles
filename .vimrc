@@ -7,7 +7,7 @@ execute pathogen#infect()
 " ------------------------------------------------------------------
 " Building
 " ------------------------------------------------------------------
-set makeprg=make\ -f\ ~/bin/Makefile.dbg\ %<
+set makeprg=make\ -f\ ~/bin/Makefile\ %<
 nnoremap <F7> :silent make! <bar> cwindow<CR><C-L>
 nnoremap <F5> :!./%<<CR>
 
