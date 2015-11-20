@@ -17,6 +17,7 @@ nnoremap <F5> :!./%<<CR>
 set exrc
 
 nnoremap <leader>r :%s/\s\+$//e<CR>
+vnoremap <C-h> y:%s/<C-r>"//g<left><left>
 
 " ------------------------------------------------------------------
 " Buffer management
