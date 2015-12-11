@@ -1,1 +1,2 @@
-keysym Menu = Super_L
+! block Alt+F5 (broken keyboard)
+keycode 71 = NoSymbol NoSymbol NoSymbol NoSymbol VoidSymbol NoSymbol NoSymbol NoSymbol
