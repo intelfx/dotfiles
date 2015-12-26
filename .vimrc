@@ -19,6 +19,9 @@ set exrc
 nnoremap <leader>r :%s/\s\+$//e<CR>
 vnoremap <C-h> y:%s/<C-r>"//g<left><left>
 
+nnoremap <F2> :set invpaste<CR>
+inoremap <F2> <C-\><C-O>:set invpaste<CR>
+
 " ------------------------------------------------------------------
 " Buffer management
 " ------------------------------------------------------------------
