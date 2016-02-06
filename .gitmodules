@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/vim-grep-operator"]
 	path = .vim/bundle/vim-grep-operator
 	url = gh:inside/vim-grep-operator
+[submodule ".vim/bundle/Smart-Tabs"]
+	path = .vim/bundle/Smart-Tabs
+	url = gh:vim-scripts/Smart-Tabs
