@@ -57,7 +57,8 @@ alias nethack="nethack-save-scum.sh"
 
 alias reburp='rm -vrf *.src.tar* && makepkg --force --source && burp *.src.tar*'
 
-alias r-cp='rsync -a --info=progress2 --human-readable --no-i-r'
+alias r-cp-n='rsync -r --info=progress2 --human-readable --no-i-r'
+alias r-cp='r-cp-n -a'
 alias r-sync='r-cp --delete'
 
 alias git='LC_MESSAGES=C git'
