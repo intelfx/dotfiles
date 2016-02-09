@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/tlib_vim"]
 	path = .vim/bundle/tlib_vim
 	url = gh:tomtom/tlib_vim
+[submodule ".vim/bundle/snake"]
+	path = .vim/bundle/snake
+	url = gh:amoffat/snake
