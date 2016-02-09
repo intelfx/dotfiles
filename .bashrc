@@ -53,6 +53,35 @@ function clang-cmake-release() {
 		cmake -DCMAKE_BUILD_TYPE=Release "$@"
 }
 
+function beet-modify() {
+	local queries=()
+	local pathes=()
+	local assignments=()
+	local flags=()
+	local arg
+	for arg; do
+		if [[ "$arg" == -* ]]; then
+			flags+=( "$arg" )
+		elif [[ "$arg" == /* ]]; then
+			pathes+=( "path:$arg" , )
+		elif [[ "$arg" == */* ]]; then
+			pathes+=( "path:$(pwd)/$arg" , )
+		elif [[ "$arg" == ^* ]] || [[ "$arg" == -* ]] || [[ "$arg" == *:* ]]; then
+			queries+=( "$arg" , )
+		elif [[ "$arg" == *=* ]] || [[ "$arg" == *! ]]; then
+			assignments+=( "$arg" )
+		else
+			pathes+=( "path:$(pwd)/$arg" , )
+		fi
+	done
+
+	if (( "${#pathes[@]}" )); then
+		unset pathes[-1] # remove last comma
+	fi
+
+	beet modify "${queries[@]}" "${pathes[@]}" "${assignments[@]}"
+}
+
 alias nethack="nethack-save-scum.sh"
 
 alias reburp='rm -vrf *.src.tar* && makepkg --force --source && burp *.src.tar*'
