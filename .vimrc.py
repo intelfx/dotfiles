@@ -27,10 +27,10 @@ def trim_whitespace_remember_line(context):
 		lines = sorted(set(int(x) for x in lines.split(None)))
 		if line_count > line_count_old:
 			# lines inserted: (line - diff; line]
-			lines = [r + line_count - line_count_old for r in lines if r > line - diff]
+			lines = [(r + line_count - line_count_old if r > line - diff else r) for r in lines]
 		else:
 			# lines removed: (line; line - diff]
-			lines = [r + line_count - line_count_old for r in lines if r > line]
+			lines = [(r + line_count - line_count_old if r > line else r) for r in lines]
 		lines.append(line)
 		my_let(context, "modified_lines", " ".join(str(x) for x in lines) + " ")
 	else:
