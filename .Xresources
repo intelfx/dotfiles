@@ -1,7 +1,13 @@
-*Font:                       Terminus
-Xcursor.theme:               Adwaita
+*Font:                       monospace 10
 
 Xft.lcdfilter:               lcddefault
+Xft.autohint:                0
+Xft.hintstyle:               hintfull
+Xft.hinting:                 1
+Xft.antialias:               1
+Xft.rgba:                    rgb
+
+Xcursor.theme:               Adwaita
 
 
 ! ---- solarized xresources ----
