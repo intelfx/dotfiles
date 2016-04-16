@@ -3,10 +3,6 @@
 # ~/.bash_profile
 #
 
-QT_QPA_PLATFORMTHEME=KDE
-QT_STYLE_OVERRIDE=breeze
-export QT_QPA_PLATFORMTHEME QT_STYLE_OVERRIDE
-
 #
 # Configure various PATHes
 #
