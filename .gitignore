@@ -25,3 +25,7 @@
 !/.vim/pathogen
 !/.vim/bundle
 !/.vim/snippets
+
+# Do not ignore .zshrc.d and .zsh
+!/.zshrc.d
+!/.zsh

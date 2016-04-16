@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+PURE_PROMPT_SYMBOL='%(!.#.\$)'
+PURE_GIT_UNTRACKED_DIRTY=0
