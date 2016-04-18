@@ -3,5 +3,7 @@
 bindkey -v
 
 zmodload zsh/terminfo
-bindkey ${terminfo[khome]} beginning-of-line
-bindkey ${terminfo[kend]} end-of-line
+for keymap in viins vicmd; do
+	bindkey -M $keymap ${terminfo[khome]} beginning-of-line
+	bindkey -M $keymap ${terminfo[kend]} end-of-line
+done
