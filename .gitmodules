@@ -25,3 +25,6 @@
 [submodule ".zsh/plugins/zsh-autosuggestions"]
 	path = .zsh/plugins/zsh-autosuggestions
 	url = gh:zsh-users/zsh-autosuggestions
+[submodule ".zsh/plugins-noauto/pure"]
+	path = .zsh/plugins-noauto/pure
+	url = gh:intelfx/pure
