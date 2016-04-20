@@ -19,15 +19,3 @@ for dir in "$HOME/bin/toolchains/"*"/bin"; do
 done
 
 export PATH #LD_LIBRARY_PATH LD_RUN_PATH KDEDIRS
-
-#
-# Wine
-#
-
-export WINEDLLOVERRIDES="winemenubuilder.exe=d"
-
-#
-# Common
-#
-
-[[ -r "$HOME/.bash_profile-common" ]] && source "$HOME/.bash_profile-common"
