@@ -54,7 +54,7 @@ set cinoptions=(0,u0,U0
 " ------------------------------------------------------------------
 " grep operator
 " ------------------------------------------------------------------
-set grepprg=git\ grep\ -n\ $*
+set grepprg=git\ grep\ -nHw\ $*
 let g:grep_operator_set_search_register = 1
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
