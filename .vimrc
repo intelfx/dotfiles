@@ -66,4 +66,9 @@ vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
 smap <leader><Tab> <Plug>snipMateNextOrTrigger
 
+" ------------------------------------------------------------------
+" Smart-Tabs
+" ------------------------------------------------------------------
+let g:ctab_disable_checkalign = 1
+
 source $HOME/.vimrc-solarized
