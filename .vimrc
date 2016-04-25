@@ -22,6 +22,9 @@ vnoremap <C-h> y:%s/<C-r>"//g<left><left>
 nnoremap <F2> :set invpaste<CR>
 inoremap <F2> <C-\><C-O>:set invpaste<CR>
 
+let &colorcolumn=join(range(81,999), ",")
+set number
+
 " ------------------------------------------------------------------
 " Buffer management
 " ------------------------------------------------------------------
