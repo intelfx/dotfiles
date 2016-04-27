@@ -40,8 +40,8 @@ if (( IS_SOLARIZED )); then
 		export TERM=${TERM}-16color
 		;;
 	esac
-	eval $(dircolors -b "$HOME/.dircolors-solarized")
-	alias mc="mc -S solarized"
+	eval $(dircolors -b "$HOME/.solarized/dircolors/dircolors.ansi-universal")
+	export MC_SKIN="$HOME/.solarized/mc/solarized.ini"
 
 	ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
 fi

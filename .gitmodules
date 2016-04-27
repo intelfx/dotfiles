@@ -28,3 +28,12 @@
 [submodule ".zsh/plugins-noauto/pure"]
 	path = .zsh/plugins-noauto/pure
 	url = gh:intelfx/pure
+[submodule ".solarized/dircolors"]
+	path = .solarized/dircolors
+	url = gh:seebi/dircolors-solarized
+[submodule ".solarized/main"]
+	path = .solarized/main
+	url = gh:altercation/solarized
+[submodule ".solarized/mc"]
+	path = .solarized/mc
+	url = gh:intelfx/mc-solarized-skin
