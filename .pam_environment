@@ -5,4 +5,3 @@ QT_AUTO_SCREEN_SCALE_FACTOR=1
 WINEDLLOVERRIDES=winemenubuilder.exe=d
 EDITOR=/usr/bin/vim
 PAGER=/usr/bin/less
-PATH=/home/intelfx/bin:/home/intelfx/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
