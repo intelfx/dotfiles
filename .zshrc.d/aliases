@@ -27,3 +27,6 @@ alias diff='colordiff'
 alias r-cp-n='rsync -r --info=progress2 --human-readable --no-i-r'
 alias r-cp='r-cp-n -a'
 alias r-sync='r-cp --delete'
+
+alias tar-i='tar --checkpoint=1000 --checkpoint-action=ttyout=%c'
+alias tar-v='tar --checkpoint=1000 --checkpoint-action=ttyout=%c'
