@@ -33,8 +33,9 @@
 !/.vim/bundle
 !/.vim/snippets
 
-# Do not ignore .zshrc.d and .zsh
+# Do not ignore .zshrc{.early,}.d and .zsh
 !/.zshrc.d
+!/.zshrc.early.d
 !/.zsh
 
 # Do not ignore .solarized

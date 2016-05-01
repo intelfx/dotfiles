@@ -1,4 +1,13 @@
 #
+# early snippets, before switching to tmux
+#
+for file in $HOME/.zshrc.early.d/*; do
+	if [[ -r $file ]]; then
+		source $file
+	fi
+done
+
+#
 # tmux shortcut
 #
 [[ -z "$NOTMUX" && -z "$TMUX" && "$UID" == "$(stat -c "%u" "${(%):-%x}")" ]] && type -f tmx 2>/dev/null && exec tmx
