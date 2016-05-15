@@ -9,8 +9,8 @@ alias mkdir='mkdir -pv'
 alias ..='cd ..'
 alias cd..='cd ..'
 
-alias du='du -kh'    # Makes a more readable output.
-alias df='df -kTh'
+alias du='du -h'    # Makes a more readable output.
+alias df='df -Th'
 
 # Pretty-print of some PATH variables:
 alias path='echo -e ${PATH//:/\\n}'
