@@ -3,5 +3,6 @@
 #
 # bindings
 #
-bindkey  "[A" history-beginning-search-backward
-bindkey  "[B" history-beginning-search-forward
+zmodload zsh/terminfo
+bindkey  ${terminfo[kcuu1]} history-beginning-search-backward
+bindkey  ${terminfo[kcud1]} history-beginning-search-forward

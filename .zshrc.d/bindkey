@@ -6,4 +6,5 @@ zmodload zsh/terminfo
 for keymap in viins vicmd; do
 	bindkey -M $keymap ${terminfo[khome]} beginning-of-line
 	bindkey -M $keymap ${terminfo[kend]} end-of-line
+	bindkey -M $keymap ${terminfo[kdch1]} vi-delete-char
 done

@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+#
+# Put terminal in the "application mode"
+# so that binding kcuu1/kcud1 etc. will work
+# (these terminfo entries are written for application mode).
+#
+
+function put_application_mode() {
+	echoti smkx
+}
+
+function put_raw_mode() {
+	echoti rmkx
+}
+
+zle -N zle-line-init put_application_mode
+zle -N zle-line-finish put_raw_mode
