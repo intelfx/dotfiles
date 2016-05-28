@@ -17,11 +17,34 @@ function put_raw_mode() {
 zle -N zle-line-init put_application_mode
 zle -N zle-line-finish put_raw_mode
 
+#
+# 2. Make aliases for keys from terminfo.
+#
+
+typeset -A key
+key[Home]=${terminfo[khome]}
+key[End]=${terminfo[kend]}
+key[Insert]=${terminfo[kich1]}
+key[Delete]=${terminfo[kdch1]}
+key[Up]=${terminfo[kcuu1]}
+key[Down]=${terminfo[kcud1]}
+key[Left]=${terminfo[kcub1]}
+key[Right]=${terminfo[kcuf1]}
+key[PageUp]=${terminfo[kpp]}
+key[PageDown]=${terminfo[knp]}
+
+#
+# 3. Setup vi keybindings and tune it to handle Home/End/Delete/Insert keys.
+#
+
 bindkey -v
 
 zmodload zsh/terminfo
 for keymap in viins vicmd; do
-	bindkey -M $keymap ${terminfo[khome]} beginning-of-line
-	bindkey -M $keymap ${terminfo[kend]} end-of-line
-	bindkey -M $keymap ${terminfo[kdch1]} vi-delete-char
+	bindkey -M $keymap ${key[Home]} beginning-of-line
+	bindkey -M $keymap ${key[End]} end-of-line
+	bindkey -M $keymap ${key[Delete]} vi-delete-char
 done
+
+bindkey -M vicmd ${key[Insert]} vi-add-next
+bindkey -M viins ${key[Insert]} vi-cmd-mode
