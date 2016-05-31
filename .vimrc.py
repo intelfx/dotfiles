@@ -25,7 +25,7 @@ def trim_whitespace_setup(context):
 def trim_whitespace_lines_inserted(context, first, last):
 	log("trim_whitespace_lines_inserted: [%d; %d]" % (first, last))
 
-	lines = sorted(set(int(x) for x in my_get("modified_lines").split(None)))
+	lines = [int(x) for x in my_get("modified_lines").split(None)]
 
 	diff = last - first
 	lines = [r        for r in lines if r < first] + \
@@ -37,7 +37,7 @@ def trim_whitespace_lines_inserted(context, first, last):
 def trim_whitespace_lines_removed(context, first, last):
 	log("trim_whitespace_lines_removed: [%d; %d]" % (first, last))
 
-	lines = sorted(set(int(x) for x in my_get("modified_lines").split(None)))
+	lines = [int(x) for x in my_get("modified_lines").split(None)]
 
 	diff = last - first
 	lines = [r        for r in lines if r < first] + \
