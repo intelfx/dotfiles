@@ -21,7 +21,7 @@
 	url = gh:tomtom/tlib_vim
 [submodule ".vim/bundle/snake"]
 	path = .vim/bundle/snake
-	url = gh:amoffat/snake
+	url = gh:intelfx/snake
 [submodule ".zsh/plugins/zsh-autosuggestions"]
 	path = .zsh/plugins/zsh-autosuggestions
 	url = gh:zsh-users/zsh-autosuggestions
