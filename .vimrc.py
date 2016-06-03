@@ -27,10 +27,10 @@ def trim_whitespace_lines_inserted(context, first, last):
 
 	lines = [int(x) for x in my_get("modified_lines").split(None)]
 
-	diff = last - first
+	diff = last - first + 1
 	lines = [r        for r in lines if r < first] + \
 		[r        for r in range(first, last + 1)] + \
-	        [r + diff for r in lines if r > last]
+	        [r + diff for r in lines if r >= first]
 
 	my_let(context, "modified_lines", " " + " ".join(str(x) for x in lines) + " ")
 
@@ -39,7 +39,7 @@ def trim_whitespace_lines_removed(context, first, last):
 
 	lines = [int(x) for x in my_get("modified_lines").split(None)]
 
-	diff = last - first
+	diff = last - first + 1
 	lines = [r        for r in lines if r < first] + \
 	        [r - diff for r in lines if r > last]
 
@@ -56,13 +56,20 @@ def trim_whitespace_remember_line(context):
 		change_start = int(vim.eval("line(\"'[\")"))
 		change_end = int(vim.eval("line(\"']\")"))
 
-		log("trim_whitespace_remember_line: last change range [%s; %s]" % (change_start, change_end))
+		log("trim_whitespace_remember_line: last change range [%d; %d]" % (change_start, change_end))
 		if line_count > line_count_old:
 			log("trim_whitespace_remember_line: lines inserted, using change range")
 			trim_whitespace_lines_inserted(context, change_start, change_end)
 		else:
 			diff = line_count_old - line_count
-			assert change_start == change_end
+
+			if change_start != change_end:
+				# HACK: backspace deletes line
+				assert diff == 1, "trim_whitespace_remember_line: last change range not collapsing: [%d; %d] (assuming a line was deleted with backspace), but %d != 1 lines removed" % (change_start, change_end, diff)
+				line = int(vim.eval("line(\".\")"))
+				change_start = line + 1
+				change_end = change_start
+
 			log("trim_whitespace_remember_line: %d lines removed, first deleted = %d" % (diff, change_start))
 			trim_whitespace_lines_removed(context, change_start, change_start + diff - 1)
 	else:
