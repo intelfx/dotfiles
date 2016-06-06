@@ -50,28 +50,39 @@ def trim_whitespace_remember_line(context):
 	line_count_old = int(my_get("line_count"))
 	line_count = int(vim.eval("line(\"$\")"))
 
-
 	if line_count_old != line_count:
-		log("trim_whitespace_remember_line: line_count %d -> %d" % (line_count_old, line_count))
 		change_start = int(vim.eval("line(\"'[\")"))
 		change_end = int(vim.eval("line(\"']\")"))
+		line = int(vim.eval("line(\".\")"))
 
+		log("trim_whitespace_remember_line: line_count %d -> %d" % (line_count_old, line_count))
 		log("trim_whitespace_remember_line: last change range [%d; %d]" % (change_start, change_end))
+
 		if line_count > line_count_old:
-			log("trim_whitespace_remember_line: lines inserted, using change range")
+			diff = line_count - line_count_old
+			if change_end - change_start + 1 != diff:
+				# HACK: line insertion by Enter produces ranges spanning two lines
+				assert diff == 1, \
+				       "trim_whitespace_remember_line: last change range does not match line count diff: " + \
+				       "[%d; %d] (assuming line inserted by Enter), but %d != 1 lines added" % (change_start, change_end, diff)
+				change_start = line
+				change_end = change_start
+
+			log("trim_whitespace_remember_line: %d lines inserted, first inserted = %d" % (diff, change_start))
 			trim_whitespace_lines_inserted(context, change_start, change_end)
 		else:
 			diff = line_count_old - line_count
-
 			if change_start != change_end:
-				# HACK: backspace deletes line
-				assert diff == 1, "trim_whitespace_remember_line: last change range not collapsing: [%d; %d] (assuming a line was deleted with backspace), but %d != 1 lines removed" % (change_start, change_end, diff)
-				line = int(vim.eval("line(\".\")"))
+				# HACK: line removal by Backspace produces arbitrary ranges
+				assert diff == 1, \
+				       "trim_whitespace_remember_line: last change range does not collapse: " + \
+				       "[%d; %d] (assuming line removed by Backspace), but %d != 1 lines removed" % (change_start, change_end, diff)
 				change_start = line + 1
-				change_end = change_start
+
+			change_end = change_start + diff - 1
 
 			log("trim_whitespace_remember_line: %d lines removed, first deleted = %d" % (diff, change_start))
-			trim_whitespace_lines_removed(context, change_start, change_start + diff - 1)
+			trim_whitespace_lines_removed(context, change_start, change_end)
 	else:
 		line = vim.eval("line(\".\")")
 		log("trim_whitespace_remember_line: line changed, current line %s" % line)
