@@ -6,16 +6,20 @@
 # (these terminfo entries are written for application mode).
 #
 
-function put_application_mode() {
-	echoti smkx
-}
+if [[ ${terminfo[smkx]} && ${terminfo[rmkx]} ]]; then
 
-function put_raw_mode() {
-	echoti rmkx
-}
+	function put_application_mode() {
+		echoti smkx
+	}
 
-zle -N zle-line-init put_application_mode
-zle -N zle-line-finish put_raw_mode
+	function put_raw_mode() {
+		echoti rmkx
+	}
+
+	zle -N zle-line-init put_application_mode
+	zle -N zle-line-finish put_raw_mode
+
+fi
 
 #
 # 2. Make aliases for keys from terminfo.
