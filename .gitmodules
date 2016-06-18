@@ -37,3 +37,6 @@
 [submodule ".solarized/mc"]
 	path = .solarized/mc
 	url = gh:intelfx/mc-solarized-skin
+[submodule ".zsh/plugins-late/zsh-syntax-highlighting"]
+	path = .zsh/plugins-late/zsh-syntax-highlighting
+	url = gh:zsh-users/zsh-syntax-highlighting
