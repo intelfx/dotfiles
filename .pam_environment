@@ -1,3 +1,4 @@
+PATH=/home/intelfx/bin:/home/intelfx/.local/bin:/usr/local/bin:/usr/bin
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 QT_QPA_PLATFORMTHEME=KDE
 QT_STYLE_OVERRIDE=breeze
