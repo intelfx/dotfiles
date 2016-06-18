@@ -64,19 +64,22 @@ fpath=( "$HOME/.zsh/fpath" $fpath )
 #
 # plugins
 #
-for dir in /usr/share/zsh/plugins/* ~/.zsh/plugins/*; do
-	dirname=${dir:t}
+function plugin_load() {
+	local dir=$1 dirname=${dir:t}
 
 	for pluginfile in $dir/$dirname.{plugin.zsh,zsh}; do
 		if [[ -r $pluginfile ]]; then
 			source $pluginfile
-			continue 2
+			return 0
 		fi
 	done
 
 	print "Cannot load plugin from '$dir'" >&2
+	return 1
+}
+for dir in /usr/share/zsh/plugins/*(N) ~/.zsh/plugins/*(N); do
+	plugin_load $dir
 done
-
 
 #
 # snippets (aliases, colors etc.)
@@ -87,6 +90,12 @@ for file in $HOME/.zshrc.d/*; do
 	fi
 done
 
+#
+# late plugins
+#
+for dir in ~/.zsh/plugins-late/*(N); do
+	plugin_load $dir
+done
 
 #
 # prompt eye-candy
