@@ -22,6 +22,12 @@ vnoremap <C-h> y:%s/<C-r>"//g<left><left>
 nnoremap <F2> :set invpaste<CR>
 inoremap <F2> <C-\><C-O>:set invpaste<CR>
 
+nnoremap <F3> :set invrnu<CR>
+inoremap <F3> <C-\><C-O>:set invrnu<CR>
+
+nnoremap <F4> :nohl<CR>
+inoremap <F4> <C-\><C-O>:nohl<CR>
+
 let &colorcolumn=join(range(81,999), ",")
 set number
 
