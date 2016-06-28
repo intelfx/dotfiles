@@ -4,5 +4,8 @@
 # bindings
 #
 zmodload zsh/terminfo
-bindkey  ${terminfo[kcuu1]} history-beginning-search-backward
-bindkey  ${terminfo[kcud1]} history-beginning-search-forward
+for keymap in viins vicmd; do
+	bindkey  ${terminfo_keys[Up]} history-beginning-search-backward
+	bindkey  ${terminfo_keys[Down]} history-beginning-search-forward
+done
+unset keymap

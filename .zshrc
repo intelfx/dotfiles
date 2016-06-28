@@ -65,7 +65,7 @@ fpath=( "$HOME/.zsh/fpath" $fpath )
 # plugins
 #
 function plugin_load() {
-	local dir=$1 dirname=${dir:t}
+	local dir=$1 dirname=${dir:t} pluginfile
 
 	for pluginfile in $dir/$dirname.{plugin.zsh,zsh}; do
 		if [[ -r $pluginfile ]]; then
@@ -103,3 +103,8 @@ done
 autoload -Uz promptinit
 promptinit
 prompt pure
+
+#
+# cleanup
+#
+unset dir file

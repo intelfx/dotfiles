@@ -25,17 +25,17 @@ fi
 # 2. Make aliases for keys from terminfo.
 #
 
-typeset -A key
-key[Home]=${terminfo[khome]}
-key[End]=${terminfo[kend]}
-key[Insert]=${terminfo[kich1]}
-key[Delete]=${terminfo[kdch1]}
-key[Up]=${terminfo[kcuu1]}
-key[Down]=${terminfo[kcud1]}
-key[Left]=${terminfo[kcub1]}
-key[Right]=${terminfo[kcuf1]}
-key[PageUp]=${terminfo[kpp]}
-key[PageDown]=${terminfo[knp]}
+typeset -A terminfo_keys
+terminfo_keys[Home]=${terminfo[khome]}
+terminfo_keys[End]=${terminfo[kend]}
+terminfo_keys[Insert]=${terminfo[kich1]}
+terminfo_keys[Delete]=${terminfo[kdch1]}
+terminfo_keys[Up]=${terminfo[kcuu1]}
+terminfo_keys[Down]=${terminfo[kcud1]}
+terminfo_keys[Left]=${terminfo[kcub1]}
+terminfo_keys[Right]=${terminfo[kcuf1]}
+terminfo_keys[PageUp]=${terminfo[kpp]}
+terminfo_keys[PageDown]=${terminfo[knp]}
 
 #
 # 3. Setup vi keybindings and tune it to handle Home/End/Delete/Insert keys.
@@ -45,10 +45,11 @@ bindkey -v
 
 zmodload zsh/terminfo
 for keymap in viins vicmd; do
-	bindkey -M $keymap ${key[Home]} beginning-of-line
-	bindkey -M $keymap ${key[End]} end-of-line
-	bindkey -M $keymap ${key[Delete]} vi-delete-char
+	bindkey -M $keymap ${terminfo_keys[Home]} beginning-of-line
+	bindkey -M $keymap ${terminfo_keys[End]} end-of-line
+	bindkey -M $keymap ${terminfo_keys[Delete]} vi-delete-char
 done
+unset keymap
 
-bindkey -M vicmd ${key[Insert]} vi-add-next
-bindkey -M viins ${key[Insert]} vi-cmd-mode
+bindkey -M vicmd ${terminfo_keys[Insert]} vi-add-next
+bindkey -M viins ${terminfo_keys[Insert]} vi-cmd-mode
