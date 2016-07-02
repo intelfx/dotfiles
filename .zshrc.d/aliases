@@ -30,3 +30,11 @@ alias r-sync='r-cp --delete'
 
 alias tar-i='tar --checkpoint=1000 --checkpoint-action=ttyout=%c'
 alias tar-v='tar --checkpoint=1000 --checkpoint-action=ttyout=%c'
+
+function cmake() {
+	command cmake -G Ninja "$@"
+}
+
+function cmake-c() {
+	cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ "$@"
+}
