@@ -40,3 +40,6 @@
 [submodule ".zsh/plugins-late/zsh-syntax-highlighting"]
 	path = .zsh/plugins-late/zsh-syntax-highlighting
 	url = gh:zsh-users/zsh-syntax-highlighting
+[submodule ".zsh/plugins-noauto/zsh-async"]
+	path = .zsh/plugins-noauto/zsh-async
+	url = gh:intelfx/zsh-async
