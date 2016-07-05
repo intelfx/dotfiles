@@ -42,4 +42,4 @@
 	url = gh:zsh-users/zsh-syntax-highlighting
 [submodule ".zsh/plugins-noauto/zsh-async"]
 	path = .zsh/plugins-noauto/zsh-async
-	url = gh:intelfx/zsh-async
+	url = gh:mafredri/zsh-async
