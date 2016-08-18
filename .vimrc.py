@@ -1,6 +1,6 @@
 from snake import *
 from snake.plugins.common import *
-from snake.plugins import trim_whitespace
+from snake.plugins import trim_whitespace, goto_file
 
 import vim
 
