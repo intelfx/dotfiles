@@ -26,6 +26,7 @@ alias diff='colordiff'
 
 alias r-cp-n='rsync -r --info=progress2 --human-readable --partial --append-verify --no-i-r'
 alias r-cp='r-cp-n -a'
+alias r-mv='r-cp --remove-source-files'
 alias r-sync='r-cp --delete'
 
 alias tar-i='tar --checkpoint=1000 --checkpoint-action=ttyout=%c'
@@ -37,4 +38,16 @@ function cmake() {
 
 function cmake-c() {
 	cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ "$@"
+}
+
+function ccmake() {
+	command ccmake -G Ninja "$@"
+}
+
+function ccmake-c() {
+	ccmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ "$@"
+}
+
+function mkcd() {
+	mkdir -pv "$1" && cd "$1"
 }
