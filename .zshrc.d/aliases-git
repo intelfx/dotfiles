@@ -1,5 +1,6 @@
 #!/bin/bash
 alias grm='git rebase -i master'
+alias gru='git rebase -i @{u}'
 function grh { local _commits="${1:-0}"; shift; git rebase -i HEAD~$_commits "$@"; }
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
@@ -13,6 +14,7 @@ alias gcpc='git cherry-pick --continue'
 alias gcpa='git cherry-pick --abort'
 alias gr='git reset'
 alias grr='git reset HEAD~'
+alias gruh='git reset --hard @{u}'
 alias grrh='git reset --hard HEAD~'
 alias gs='git status'
 alias gd='git diff'
