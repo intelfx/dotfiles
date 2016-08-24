@@ -67,6 +67,14 @@ fpath=( "$HOME/.zsh/fpath" $fpath )
 function plugin_load() {
 	local dir=$1 dirname=${dir:t} pluginfile
 
+	# a bit of blacklisting for shells inside mc
+	if (( ${+MC_SID} )); then
+		case $dirname in
+		zsh-autosuggestions) return 0 ;;
+		*) ;;
+		esac
+	fi
+
 	for pluginfile in $dir/$dirname.{plugin.zsh,zsh}; do
 		if [[ -r $pluginfile ]]; then
 			source $pluginfile
