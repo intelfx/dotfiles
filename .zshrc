@@ -23,7 +23,7 @@ done
 # The following lines were added by compinstall
 
 zstyle ':completion:*' auto-description 'argument: %d'
-zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' completer _complete _correct
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' file-sort name
 zstyle ':completion:*' format 'completing %d:'
@@ -33,7 +33,7 @@ zstyle ':completion:*' insert-unambiguous false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt '%SAt $l (%p): Hit TAB for more, or the character to insert%s'
 zstyle ':completion:*' list-suffixes true
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[.-_/]=** r:|=**' 'l:|=* r:|=*'
+#zstyle ':completion:*' matcher-list '' 'l:|[._/-]=* r:|[._/-]=* l:|=* r:|=*'
 zstyle ':completion:*' max-errors 1 numeric
 zstyle ':completion:*' menu select
 zstyle ':completion:*' original true
@@ -59,7 +59,6 @@ setopt appendhistory autocd extendedglob dotglob nomatch histignoredups nocomple
 unsetopt beep notify bashautolist listambiguous
 fpath=( "$HOME/.zsh/fpath" $fpath )
 # End of lines configured by zsh-newuser-install
-
 
 #
 # plugins
