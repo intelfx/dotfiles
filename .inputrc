@@ -1,0 +1,11 @@
+# do not bell on tab-completion
+set bell-style none
+
+set colored-stats on
+set skip-completed-text on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set horizontal-scroll-mode on
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
