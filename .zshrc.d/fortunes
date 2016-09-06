@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+fortune -sa
+echo ''
