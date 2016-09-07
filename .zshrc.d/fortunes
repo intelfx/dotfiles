@@ -1,4 +1,6 @@
 #!/bin/zsh
 
-fortune -sa
-echo ''
+if which fortune &>/dev/null; then
+	fortune -sa
+	echo ''
+fi
