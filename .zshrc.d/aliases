@@ -51,3 +51,11 @@ function ccmake-c() {
 function mkcd() {
 	mkdir -pv "$1" && cd "$1"
 }
+
+function make() {
+	if ! [[ -e GNUmakefile || -e Makefile || -e makefile ]]; then
+		command make -f ~/bin/Makefile "$@" # any -f given later in the command line will override this one
+	else
+		command make "$@"
+	fi
+}
