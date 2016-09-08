@@ -7,3 +7,4 @@ QT_AUTO_SCREEN_SCALE_FACTOR=1
 WINEDLLOVERRIDES=winemenubuilder.exe=d
 EDITOR=/usr/bin/vim
 PAGER=/usr/bin/less
+SAL_USE_VCLPLUGIN=gtk
