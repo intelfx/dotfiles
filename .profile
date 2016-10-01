@@ -1,5 +1,5 @@
 #!/bin/sh
 
-# /etc/profile overwrites $PATH set from pam_env.so
-eval "$(grep '^PATH=' ~/.pam_environment)"
+# we cannot set $PATH from .pam_environment because /etc/profile overrides it
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export PATH

@@ -1,5 +1,3 @@
-PATH=/home/intelfx/bin:/home/intelfx/.local/bin:/home/intelfx/bin/android-ndk:/usr/local/sbin:/usr/local/bin:/usr/bin
-ANDROID_NDK=/home/intelfx/bin/android-ndk
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 QT_QPA_PLATFORMTHEME=KDE
 QT_STYLE_OVERRIDE=breeze
@@ -7,4 +5,3 @@ QT_AUTO_SCREEN_SCALE_FACTOR=1
 WINEDLLOVERRIDES=winemenubuilder.exe=d
 EDITOR=/usr/bin/vim
 PAGER=/usr/bin/less
-SAL_USE_VCLPLUGIN=gtk
