@@ -48,6 +48,9 @@ for keymap in viins vicmd; do
 	bindkey -M $keymap ${terminfo_keys[Home]} beginning-of-line
 	bindkey -M $keymap ${terminfo_keys[End]} end-of-line
 	bindkey -M $keymap ${terminfo_keys[Delete]} vi-delete-char
+
+	bindkey -M $keymap ${terminfo_keys[PageUp]} vi-backward-word-end
+	bindkey -M $keymap ${terminfo_keys[PageDown]} vi-forward-word-end
 done
 unset keymap
 
