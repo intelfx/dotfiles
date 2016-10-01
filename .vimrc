@@ -31,6 +31,9 @@ inoremap <F4> <C-\><C-O>:nohl<CR>
 let &colorcolumn=join(range(81,999), ",")
 set number
 
+set nofsync
+set swapsync=
+
 " ------------------------------------------------------------------
 " Buffer management
 " ------------------------------------------------------------------
