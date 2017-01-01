@@ -1,6 +1,5 @@
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-QT_QPA_PLATFORMTHEME=KDE
-QT_STYLE_OVERRIDE=breeze
+QT_QPA_PLATFORMTHEME=qt5ct
 WINEDLLOVERRIDES=winemenubuilder.exe=d
 EDITOR=/usr/bin/vim
 PAGER=/usr/bin/less
