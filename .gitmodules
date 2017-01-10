@@ -43,3 +43,6 @@
 [submodule ".zsh/plugins-noauto/zsh-async"]
 	path = .zsh/plugins-noauto/zsh-async
 	url = gh:mafredri/zsh-async
+[submodule ".vim/bundle/vim-mikrotik"]
+	path = .vim/bundle/vim-mikrotik
+	url = https://github.com/zainin/vim-mikrotik
