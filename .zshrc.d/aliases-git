@@ -1,6 +1,7 @@
 #!/bin/bash
 alias grm='git rebase -i master'
 alias gru='git rebase -i @{u}'
+alias gro='git rebase -i' # "git rebase on ..."
 function grh { local _commits="${1:-0}"; shift; git rebase -i HEAD~$_commits "$@"; }
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
