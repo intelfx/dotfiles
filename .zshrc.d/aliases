@@ -59,3 +59,7 @@ function make() {
 		command make "$@"
 	fi
 }
+
+function setfacl-d() {
+	setfacl -d "$@" && setfacl "$@"
+}
