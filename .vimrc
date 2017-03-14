@@ -60,6 +60,7 @@ vnoremap <leader><leader> "_
 " Indentation (smart tab plugin installed)
 " ------------------------------------------------------------------
 set noet sts=0 sw=0 ts=8
+autocmd filetype python setlocal noet sts=0 sw=0 ts=8 " why the fuck does python indent plugin change indentation settings?
 set cindent
 set cinoptions=(0,u0,U0
 
