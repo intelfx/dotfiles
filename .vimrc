@@ -63,6 +63,11 @@ set noet sts=0 sw=0 ts=8
 set cindent
 set cinoptions=(0,u0,U0
 
+filetype plugin indent on
+
+let g:ctab_disable_checkalign = 1
+let g:ctab_filetype_maps = 1
+
 " ------------------------------------------------------------------
 " grep operator
 " ------------------------------------------------------------------

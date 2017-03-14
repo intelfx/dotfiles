@@ -31,7 +31,9 @@
 /.vim/*
 !/.vim/pathogen
 !/.vim/bundle
+!/.vim/bundle-misc
 !/.vim/snippets
+!/.vim/ftplugin
 
 # Do not ignore .zshrc{.early,}.d and .zsh
 !/.zshrc.d
