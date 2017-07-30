@@ -1,4 +1,4 @@
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
 QT_QPA_PLATFORMTHEME=qt5ct
 WINEDLLOVERRIDES=winemenubuilder.exe=d
 EDITOR=/usr/bin/vim
