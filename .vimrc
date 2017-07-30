@@ -1,4 +1,20 @@
 " ------------------------------------------------------------------
+" Defaults
+" ------------------------------------------------------------------
+
+" Get the defaults that most users want.
+source $VIMRUNTIME/defaults.vim
+
+set nobackup
+set noundofile
+
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+
+" ------------------------------------------------------------------
 " Pathogen
 " ------------------------------------------------------------------
 
@@ -14,10 +30,12 @@ nnoremap <F5> :!./%<<CR>
 " ------------------------------------------------------------------
 " Miscellanea
 " ------------------------------------------------------------------
-set exrc
+set hlsearch
+set number
+"set nofsync
+set swapsync=
 
-nnoremap <leader>r :%s/\s\+$//e<CR>
-vnoremap <C-h> y:%s/<C-r>"//g<left><left>
+let &colorcolumn=join(range(81,999), ",")
 
 nnoremap <F2> :set invpaste<CR>
 inoremap <F2> <C-\><C-O>:set invpaste<CR>
@@ -28,11 +46,6 @@ inoremap <F3> <C-\><C-O>:set invrnu<CR>
 nnoremap <F4> :nohl<CR>
 inoremap <F4> <C-\><C-O>:nohl<CR>
 
-let &colorcolumn=join(range(81,999), ",")
-set number
-
-set nofsync
-set swapsync=
 
 " ------------------------------------------------------------------
 " Buffer management
@@ -59,15 +72,14 @@ vnoremap <leader><leader> "_
 " ------------------------------------------------------------------
 " Indentation (smart tab plugin installed)
 " ------------------------------------------------------------------
-set noet sts=0 sw=0 ts=8
-autocmd filetype python setlocal noet sts=0 sw=0 ts=8 " why the fuck does python indent plugin change indentation settings?
-set cindent
-set cinoptions=(0,u0,U0
+let g:ctab_filetype_maps = 1
+let g:python_recommended_style = 0 " fuck you, I know better
 
 filetype plugin indent on
 
-let g:ctab_disable_checkalign = 1
-let g:ctab_filetype_maps = 1
+setlocal noet sts=0 sw=0 ts=8
+setlocal cinoptions=(0,u0,U0
+
 
 " ------------------------------------------------------------------
 " grep operator
@@ -93,12 +105,8 @@ smap <leader><Tab> <Plug>snipMateNextOrTrigger
 " ------------------------------------------------------------------
 syntax enable
 
-if $IS_SOLARIZED == "1"
-	set background=dark
-	colorscheme solarized
-else
-	colorscheme elflord
-endif
+set background=dark
+colorscheme solarized
 " ------------------------------------------------------------------
 
 " The following items are available options, but do not need to be
