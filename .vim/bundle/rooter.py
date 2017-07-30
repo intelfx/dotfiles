@@ -1,5 +1,6 @@
 from os import path as p
 from functools import partial
+import importlib
 
 import vim
 import snake
@@ -50,13 +51,13 @@ class Rooter:
 
 	def update_process_vimrc(self, vimrc_path):
 		if p.isfile(vimrc_path):
-			cmd = f"source '{snake.escape_string_sq(vimrc_path)}'"
+			cmd = f"source {escape_filename(vimrc_path)}"
 			return [ partial(vim.command, cmd) ]
 		return []
 
 	def update_process_vimrc_py(self, vimrc_py_path):
 		if p.isfile(vimrc_py_path):
-			spec = importlib.util.spec_from_file("", vimrc_path)
+			spec = importlib.util.spec_from_file_location("", vimrc_py_path)
 			module = importlib.util.module_from_spec(spec)
 			return [ partial(spec.loader.exec_module, module) ]
 		return []
@@ -100,7 +101,6 @@ def rooter(ctx):
 		obj = Rooter(path)
 		rooter_objs[b] = obj
 
-	#print(f"Log {incctr()}: applying rooter with {obj.path} -> {obj.root} for buffer {b} (cd: {cd})")
 	obj.apply(cd = cd)
 
 @snake.on_autocmd("BufDelete", "*")
@@ -108,13 +108,6 @@ def rooter_delete(ctx):
 	b = snake.expand("<abuf>")
 
 	try:
-		#obj = rooter_objs[b]
-		#print(f"Log {incctr()}: dropping rooter with {obj.path} -> {obj.root} for buffer {b}")
 		del rooter_objs[b]
 	except KeyError:
 		pass
-
-
-#  vim: set ft=python ts=8 sw=8 tw=0 noet :
-
-
