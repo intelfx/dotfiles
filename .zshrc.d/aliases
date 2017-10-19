@@ -95,7 +95,7 @@ function mkcd() {
 
 function make() {
 	if ! [[ -e GNUmakefile || -e Makefile || -e makefile ]]; then
-		command make -f ~/bin/Makefile "$@" # any -f given later in the command line will override this one
+		command make -f ~/bin/devel/Makefile "$@" # any -f given later in the command line will override this one
 	else
 		command make "$@"
 	fi
