@@ -9,7 +9,7 @@
 	url = gh:inside/vim-grep-operator
 [submodule ".vim/bundle-misc/Smart-Tabs"]
 	path = .vim/bundle-misc/Smart-Tabs
-	url = gh:vim-scripts/Smart-Tabs
+	url = gh:intelfx/Smart-Tabs
 [submodule ".vim/bundle/vim-snipmate"]
 	path = .vim/bundle/vim-snipmate
 	url = gh:garbas/vim-snipmate
@@ -45,4 +45,4 @@
 	url = gh:mafredri/zsh-async
 [submodule ".vim/bundle/vim-mikrotik"]
 	path = .vim/bundle/vim-mikrotik
-	url = https://github.com/zainin/vim-mikrotik
+	url = gh:zainin/vim-mikrotik
