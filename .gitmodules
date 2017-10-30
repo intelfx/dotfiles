@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/vim-mikrotik"]
 	path = .vim/bundle/vim-mikrotik
 	url = gh:zainin/vim-mikrotik
+[submodule ".solarized/intellij"]
+	path = .solarized/intellij
+	url = gh:jkaving/intellij-colors-solarized
