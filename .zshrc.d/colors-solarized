@@ -2,10 +2,6 @@
 
 if (( IS_SOLARIZED )); then
 	case "$TERM" in
-	*-256color)
-		# we don't want 256 colors, we have fine-tuned default colors (Solarized)
-		export TERM="${TERM/256/16}"
-		;;
 	screen|xterm)
 		# same
 		export TERM=${TERM}-16color
