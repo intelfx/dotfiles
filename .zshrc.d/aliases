@@ -1,52 +1,8 @@
 #!/bin/zsh
 
 #
-# Status output if running on terminal
-#
-
-function rsync() {
-	if [[ -t 2 && -t 1 ]]; then
-		command rsync --info=progress2 --human-readable "$@"
-	else
-		command rsync "$@"
-	fi
-}
-
-function tar() {
-	if [[ -t 2 && -t 1 ]]; then
-		command tar --checkpoint=1000 --checkpoint-action=ttyout=%c "$@"
-	else
-		command tar "$@"
-	fi
-}
-
-function diff() {
-	if [[ -t 2 && -t 1 ]]; then
-		command colordiff "$@"
-	else
-		command diff "$@"
-	fi
-}
-
-function dd() {
-	if [[ -t 2 && -t 1 ]]; then
-		command dd status=progress "$@"
-	else
-		command dd "$@"
-	fi
-}
-
-function pv() {
-	if [[ -t 2 && -t 1 ]]; then
-		command pv -ctebar "$@"
-	else
-		command pv "$@"
-	fi
-}
-
-#-------------------
 # Personnal Aliases
-#-------------------
+#
 
 alias mkdir='mkdir -pv'
 
