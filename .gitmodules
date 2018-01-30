@@ -49,3 +49,6 @@
 [submodule ".solarized/intellij"]
 	path = .solarized/intellij
 	url = gh:jkaving/intellij-colors-solarized
+[submodule ".vim/bundle/asl-vim"]
+	path = .vim/bundle/asl-vim
+	url = https://github.com/westeri/asl-vim
