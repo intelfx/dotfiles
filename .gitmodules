@@ -1,54 +1,54 @@
 [submodule ".config/awesome/net_widgets"]
 	path = .config/awesome/net_widgets
-	url = gh:plotnikovanton/net_widgets.git
+	url = https://github.com/plotnikovanton/net_widgets.git
 [submodule ".vim/pathogen"]
 	path = .vim/pathogen
-	url = gh:tpope/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
 [submodule ".vim/bundle/vim-grep-operator"]
 	path = .vim/bundle/vim-grep-operator
-	url = gh:inside/vim-grep-operator
+	url = https://github.com/inside/vim-grep-operator
 [submodule ".vim/bundle-misc/Smart-Tabs"]
 	path = .vim/bundle-misc/Smart-Tabs
-	url = gh:intelfx/Smart-Tabs
+	url = https://github.com/intelfx/Smart-Tabs
 [submodule ".vim/bundle/vim-snipmate"]
 	path = .vim/bundle/vim-snipmate
-	url = gh:garbas/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
 [submodule ".vim/bundle/vim-addon-mw-utils"]
 	path = .vim/bundle/vim-addon-mw-utils
-	url = gh:MarcWeber/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils
 [submodule ".vim/bundle/tlib_vim"]
 	path = .vim/bundle/tlib_vim
-	url = gh:tomtom/tlib_vim
+	url = https://github.com/tomtom/tlib_vim
 [submodule ".vim/bundle/snake"]
 	path = .vim/bundle/snake
-	url = gh:intelfx/snake
+	url = https://github.com/intelfx/snake
 [submodule ".zsh/plugins/zsh-autosuggestions"]
 	path = .zsh/plugins/zsh-autosuggestions
-	url = gh:zsh-users/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule ".zsh/plugins-noauto/pure"]
 	path = .zsh/plugins-noauto/pure
-	url = gh:intelfx/pure
+	url = https://github.com/intelfx/pure
 [submodule ".solarized/dircolors"]
 	path = .solarized/dircolors
-	url = gh:seebi/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized
 [submodule ".solarized/main"]
 	path = .solarized/main
-	url = gh:altercation/solarized
+	url = https://github.com/altercation/solarized
 [submodule ".solarized/mc"]
 	path = .solarized/mc
-	url = gh:intelfx/mc-solarized-skin
+	url = https://github.com/intelfx/mc-solarized-skin
 [submodule ".zsh/plugins-late/zsh-syntax-highlighting"]
 	path = .zsh/plugins-late/zsh-syntax-highlighting
-	url = gh:zsh-users/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".zsh/plugins-noauto/zsh-async"]
 	path = .zsh/plugins-noauto/zsh-async
-	url = gh:mafredri/zsh-async
+	url = https://github.com/mafredri/zsh-async
 [submodule ".vim/bundle/vim-mikrotik"]
 	path = .vim/bundle/vim-mikrotik
-	url = gh:zainin/vim-mikrotik
+	url = https://github.com/zainin/vim-mikrotik
 [submodule ".solarized/intellij"]
 	path = .solarized/intellij
-	url = gh:jkaving/intellij-colors-solarized
+	url = https://github.com/jkaving/intellij-colors-solarized
 [submodule ".vim/bundle/asl-vim"]
 	path = .vim/bundle/asl-vim
 	url = https://github.com/westeri/asl-vim
