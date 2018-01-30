@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/zsh
+
 alias grm='git rebase -i master'
 alias gru='git rebase -i @{u}'
 alias gro='git rebase -i' # "git rebase on ..."
