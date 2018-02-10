@@ -1,0 +1,63 @@
+[include]
+	path = ~/.gitconfig.private
+[core]
+	preloadindex = 1
+	quotepath = off
+	quotedpath = false
+[guitool "Interactive history rewrite"]
+	cmd = git rebase -i $REVISION
+	revprompt = yes
+[url "https://anongit.kde.org/"]
+	insteadOf = kde:
+	insteadOf = git://anongit.kde.org/
+[url "git@git.kde.org:"]
+	pushInsteadOf = kde:
+	pushInsteadOf = git://anongit.kde.org/
+	pushInsteadOf = https://anongit.kde.org/
+[url "https://github.com/"]
+	insteadOf = gh:
+	insteadOf = git://github.com/
+[url "git@github.com:"]
+	pushInsteadOf = gh:
+	pushInsteadOf = git://github.com/
+	pushInsteadOf = https://github.com/
+[url "https://aur.archlinux.org/"]
+	insteadOf = aur:
+[url "ssh://aur@aur.archlinux.org/"]
+	pushinsteadOf = aur:
+	pushinsteadOf = https://aur.archlinux.org/
+[rerere]
+	enabled = 1
+	autoupdate = true
+[push]
+	default = simple
+[sendemail]
+	annotate = true
+[color]
+	diff = auto
+	ui = auto
+	status = never
+[status]
+	showUntrackedFiles = normal
+[gui]
+	editor = xdg-open
+	historybrowser = gitg
+[merge]
+	conflictstyle = diff3
+	tool = vimdiff
+[svn]
+	pushmergeinfo = true
+[cola]
+	tabwidth = 4
+	textwidth = 80
+	savewindowsettings = true
+	linebreak = false
+	fontdiff = Iosevka Light,10,-1,5,50,0,0,0,0,0
+	spellcheck = false
+[diff]
+	tool = vimdiff
+	algorithm = histogram
+[clean]
+	requireForce = false
+[credential]
+	helper = /usr/bin/pass-git-helper -l
