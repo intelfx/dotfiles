@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
 if which fortune &>/dev/null; then
-	fortune -sa
+	fortune -a
 	echo ''
 fi
