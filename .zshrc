@@ -55,7 +55,7 @@ compinit
 HISTFILE=~/.history
 HISTSIZE=2147483647
 SAVEHIST=2147483647
-setopt appendhistory autocd extendedglob dotglob nomatch histignoredups nocompletealiases autolist
+setopt appendhistory autocd extendedglob dotglob nomatch histignoredups nocompletealiases autolist sharehistory
 unsetopt beep notify bashautolist listambiguous
 fpath=( "$HOME/.zsh/fpath" $fpath )
 # End of lines configured by zsh-newuser-install
