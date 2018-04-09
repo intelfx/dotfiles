@@ -5,8 +5,6 @@
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
-set nobackup
-set noundofile
 
 " The matchit plugin makes the % command work better, but it is not backwards
 " compatible.
@@ -34,6 +32,13 @@ set hlsearch
 set number
 "set nofsync
 set swapsync=
+
+set dir=~/.cache/vim/swap//,.
+set backupdir=~/.cache/vim/backup//,.
+set backup
+set undodir=~/.cache/vim/undo//,.
+set undofile
+set viminfofile=~/.cache/vim/info
 
 let &colorcolumn=join(range(81,999), ",")
 
