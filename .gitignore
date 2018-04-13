@@ -22,14 +22,8 @@
 /.config/QtProject/qtcreator/*
 !/.config/QtProject/qtcreator/styles
 
-# Do not ignore .vim/pathogen and .vim/bundle and .vim/snippets
+# Do not ignore .vim
 !/.vim
-/.vim/*
-!/.vim/pathogen
-!/.vim/bundle
-!/.vim/bundle-misc
-!/.vim/snippets
-!/.vim/ftplugin
 
 # Do not ignore .zshrc{.early,}.d and .zsh
 !/.zshrc.d
