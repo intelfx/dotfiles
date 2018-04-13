@@ -1,6 +1,6 @@
-" ------------------------------------------------------------------
+"
 " Defaults
-" ------------------------------------------------------------------
+"
 
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
@@ -12,35 +12,29 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-" ------------------------------------------------------------------
-" Pathogen
-" ------------------------------------------------------------------
-
 execute pathogen#infect()
 
-" ------------------------------------------------------------------
-" Building
-" ------------------------------------------------------------------
-set makeprg=make\ -f\ ~/bin/Makefile\ %<
-nnoremap <F7> :silent make! <bar> cwindow<CR><C-L>
-nnoremap <F5> :!./%<<CR>
 
-" ------------------------------------------------------------------
-" Miscellanea
-" ------------------------------------------------------------------
-set hlsearch
-set number
-"set nofsync
-set swapsync=
+"
+" Keybindings
+"
 
-set dir=~/.cache/vim/swap//,.
-set backupdir=~/.cache/vim/backup//,.
-set backup
-set undodir=~/.cache/vim/undo//,.
-set undofile
-set viminfofile=~/.cache/vim/info
+" use a better leader
+let mapleader = ","
 
-let &colorcolumn=join(range(81,999), ",")
+" <leader>d -- d into black hole
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+" <leader><leader> -- anything into black hole (badum-tss)
+nnoremap <leader><leader> "_
+vnoremap <leader><leader> "_
+
+" don't require Shift to go to Ex mode
+nnoremap ; :
+vnoremap ; :
+
+" convert %% to dirname(%)
+cabbrev %% %:h
 
 nnoremap <F2> :set invpaste<CR>
 inoremap <F2> <C-\><C-O>:set invpaste<CR>
@@ -51,65 +45,68 @@ inoremap <F3> <C-\><C-O>:set invrnu<CR>
 nnoremap <F4> :nohl<CR>
 inoremap <F4> <C-\><C-O>:nohl<CR>
 
+nnoremap <F10> :b <C-Z>
 
-" ------------------------------------------------------------------
-" Buffer management
-" ------------------------------------------------------------------
+set wildmenu wildmode=full wildchar=<Tab>
+set wildcharm=<C-Z> " something well unused
+
+" grep operator
+let g:grep_operator_set_search_register = 1
+nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+
+" snippets
+imap <leader><Tab> <Plug>snipMateNextOrTrigger
+smap <leader><Tab> <Plug>snipMateNextOrTrigger
+
+" rudimentary IDE things
+nnoremap <F5> :!./%<<CR>
+nnoremap <F7> :silent make! <bar> cwindow<CR><C-L>
+
+
+"
+" Miscellanea
+"
+
+set hlsearch
+set number
+"set nofsync
+set swapsync=
 set hidden
 
-set wildchar=<Tab> wildmenu wildmode=full
-set wildcharm=<C-Z> " something well unused
-nnoremap <F10> :b <C-Z>
-nnoremap <C-F10> :bd <C-Z>
+set dir=~/.cache/vim/swap//,.
+set backupdir=~/.cache/vim/backup//,.
+set backup
+set undodir=~/.cache/vim/undo//,.
+set undofile
+set viminfofile=~/.cache/vim/info
 
-" ------------------------------------------------------------------
-" Delete into black hole (Normal, Visual, Select)
-" ------------------------------------------------------------------
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
+let &colorcolumn=join(range(81,999), ",")
 
-nnoremap <leader>x "_x
-vnoremap <leader>x "_x
+" TODO: autodetermine per-project (rooter)
+set grepprg=git\ grep\ -nHw\ $*
+set makeprg=make\ -f\ ~/bin/Makefile\ %<
 
-nnoremap <leader><leader> "_
-vnoremap <leader><leader> "_
 
-" ------------------------------------------------------------------
+"
 " Indentation (smart tab plugin installed)
-" ------------------------------------------------------------------
+" 
+
 let g:ctab_filetype_maps = 1
 let g:python_recommended_style = 0 " fuck you, I know better
 
 filetype plugin indent on
 
+" TODO: autodetermine per-project (rooter + .editorconfig)
 setlocal noet sts=0 sw=0 ts=8
 setlocal cinoptions=(0,u0,U0
 
 
-" ------------------------------------------------------------------
-" grep operator
-" ------------------------------------------------------------------
-set grepprg=git\ grep\ -nHw\ $*
-let g:grep_operator_set_search_register = 1
-nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
-vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+"
+" Colorscheme
+"
 
-
-" ------------------------------------------------------------------
-" snipmate
-" ------------------------------------------------------------------
-imap <leader><Tab> <Plug>snipMateNextOrTrigger
-smap <leader><Tab> <Plug>snipMateNextOrTrigger
-
-" ------------------------------------------------------------------
-" Smart-Tabs
-" ------------------------------------------------------------------
-
-" ------------------------------------------------------------------
-" Solarized Colorscheme Config
-" ------------------------------------------------------------------
 syntax enable
-
 set background=dark
 colorscheme solarized
 " ------------------------------------------------------------------
