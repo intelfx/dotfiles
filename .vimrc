@@ -5,14 +5,13 @@
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
+packloadall
 
 " The matchit plugin makes the % command work better, but it is not backwards
 " compatible.
 if has('syntax') && has('eval')
   packadd matchit
 endif
-
-execute pathogen#infect()
 
 
 "

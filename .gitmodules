@@ -1,9 +1,6 @@
 [submodule ".config/awesome/net_widgets"]
 	path = .config/awesome/net_widgets
 	url = https://github.com/plotnikovanton/net_widgets.git
-[submodule ".vim/pathogen"]
-	path = .vim/pathogen
-	url = https://github.com/tpope/vim-pathogen
 [submodule ".vim/bundle/vim-grep-operator"]
 	path = .vim/bundle/vim-grep-operator
 	url = https://github.com/inside/vim-grep-operator
