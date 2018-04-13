@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/asl-vim"]
 	path = .vim/bundle/asl-vim
 	url = https://github.com/westeri/asl-vim
+[submodule ".vim/bundle/vim-sensible"]
+	path = .vim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
