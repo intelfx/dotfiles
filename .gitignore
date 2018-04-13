@@ -1,10 +1,6 @@
 # Ignore everything
 /*
 
-# Do not ignore dot-files (but still ignore dot-dirs)
-!/.*
-/.*/
-
 # Do not ignore .gitignore (this shall remain special)
 !/.gitignore
 
