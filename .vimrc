@@ -73,6 +73,7 @@ set number
 set swapsync=
 set hidden
 
+silent !mkdir -p ~/.cache/vim/{swap,backup,undo}
 set dir=~/.cache/vim/swap//,.
 set backupdir=~/.cache/vim/backup//,.
 set backup
