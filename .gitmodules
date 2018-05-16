@@ -61,3 +61,6 @@
 [submodule "bin"]
 	path = bin
 	url = https://github.com/intelfx/bin
+[submodule ".vim/bundle/vim-syntax"]
+	path = .vim/bundle/vim-syntax
+	url = https://github.com/intelfx/vim-syntax
