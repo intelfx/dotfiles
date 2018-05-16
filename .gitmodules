@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/vim-nftables"]
 	path = .vim/bundle/vim-nftables
 	url = https://github.com/nfnty/vim-nftables
+[submodule "bin"]
+	path = bin
+	url = https://github.com/intelfx/bin
