@@ -64,3 +64,6 @@
 [submodule ".vim/bundle/vim-syntax"]
 	path = .vim/bundle/vim-syntax
 	url = https://github.com/intelfx/vim-syntax
+[submodule ".vim/bundle/vim-capnp"]
+	path = .vim/bundle/vim-capnp
+	url = https://github.com/peter-edge/vim-capnp
