@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/vim-capnp"]
 	path = .vim/bundle/vim-capnp
 	url = https://github.com/peter-edge/vim-capnp
+[submodule ".vim/bundle/vim-sleuth"]
+	path = .vim/bundle/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth
