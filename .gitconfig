@@ -63,3 +63,5 @@
 	requireForce = false
 [credential]
 	helper = /usr/bin/pass-git-helper -l
+[rebase]
+	autosquash = true
