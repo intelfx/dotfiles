@@ -58,7 +58,7 @@
 	spellcheck = false
 [diff]
 	tool = vimdiff
-	algorithm = histogram
+	algorithm = patience
 [clean]
 	requireForce = false
 [credential]
