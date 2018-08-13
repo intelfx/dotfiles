@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/jq.vim"]
 	path = .vim/bundle/jq.vim
 	url = https://github.com/vito-c/jq.vim
+[submodule ".vim/bundle/vim-jsonnet"]
+	path = .vim/bundle/vim-jsonnet
+	url = https://github.com/google/vim-jsonnet
