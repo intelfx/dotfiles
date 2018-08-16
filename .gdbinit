@@ -1,2 +1,2 @@
 set disassembly-flavor intel
-#set disassemble-next-line on
+source ~/.gdbinit.d/gdb-dashboard/.gdbinit

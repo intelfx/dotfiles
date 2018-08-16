@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/vim-jsonnet"]
 	path = .vim/bundle/vim-jsonnet
 	url = https://github.com/google/vim-jsonnet
+[submodule ".gdbinit.d/gdb-dashboard"]
+	path = .gdbinit.d/gdb-dashboard
+	url = https://github.com/cyrus-and/gdb-dashboard
