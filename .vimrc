@@ -89,6 +89,13 @@ set makeprg=make\ -f\ ~/bin/Makefile\ %<
 
 
 "
+" Filetypes
+"
+
+au BufRead,BufNewFile *.tpl set filetype=gotexttmpl
+
+
+"
 " Indentation (smart tab plugin installed)
 " 
 
