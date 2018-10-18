@@ -69,7 +69,7 @@ function plugin_load() {
 	# a bit of blacklisting for shells inside mc
 	if (( ${+MC_SID} )); then
 		case $dirname in
-		zsh-autosuggestions) return 0 ;;
+		#zsh-autosuggestions) return 0 ;;
 		*) ;;
 		esac
 	fi
