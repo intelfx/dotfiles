@@ -18,6 +18,19 @@ done
 #source $HOME/.zsh/zplugin/zplugin.zsh
 
 #
+# general settings
+#
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.history
+HISTSIZE=2147483647
+SAVEHIST=2147483647
+setopt appendhistory autocd extendedglob dotglob nomatch histignoredups nocompletealiases autolist sharehistory
+unsetopt beep notify bashautolist listambiguous
+fpath=( "$HOME/.zsh/fpath" $fpath )
+# End of lines configured by zsh-newuser-install
+
+
+#
 # completion settings
 #
 # The following lines were added by compinstall
@@ -46,19 +59,6 @@ zstyle :compinstall filename '/home/intelfx/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-
-#
-# general settings
-#
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.history
-HISTSIZE=2147483647
-SAVEHIST=2147483647
-setopt appendhistory autocd extendedglob dotglob nomatch histignoredups nocompletealiases autolist sharehistory
-unsetopt beep notify bashautolist listambiguous
-fpath=( "$HOME/.zsh/fpath" $fpath )
-# End of lines configured by zsh-newuser-install
 
 #
 # plugins
