@@ -72,3 +72,5 @@
 	helper = /usr/bin/pass-git-helper -l
 [rebase]
 	autosquash = true
+[alias]
+	for-each-ref-name = for-each-ref --format '%(refname:short)'
