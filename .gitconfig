@@ -38,7 +38,14 @@
 [color]
 	diff = auto
 	ui = auto
-	status = never
+[color "status"]
+	header = 11 # "bold green", solarized secondary
+	added = yellow
+	changed = green
+	untracked = cyan
+	branch = 14 # "bold cyan", solarized emphasis
+	nobranch = bold black red
+	unmerged = bold red
 [status]
 	showUntrackedFiles = normal
 [gui]
