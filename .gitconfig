@@ -56,15 +56,19 @@
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
+	summary = true
 [svn]
 	pushmergeinfo = true
 [cola]
-	tabwidth = 4
+	tabwidth = 8
 	textwidth = 80
 	savewindowsettings = true
-	linebreak = false
+	linebreak = true
 	fontdiff = Iosevka Light,10,-1,5,50,0,0,0,0,0
 	spellcheck = false
+	safemode = true
+	boldheaders = true
+	showpath = true
 [diff]
 	tool = vimdiff
 	algorithm = patience
