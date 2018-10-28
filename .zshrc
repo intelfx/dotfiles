@@ -57,7 +57,7 @@ zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/intelfx/.zshrc'
 
 autoload -Uz compinit
-compinit
+compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
 # End of lines added by compinstall
 
 #
