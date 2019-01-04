@@ -57,10 +57,6 @@ function make() {
 	fi
 }
 
-function setfacl-d() {
-	setfacl -d "$@" && setfacl "$@"
-}
-
 function strip-color() {
 	sed -r $'s/\x1b\x5b[[0-9;]+m//g'
 }
