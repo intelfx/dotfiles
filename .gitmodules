@@ -45,7 +45,7 @@
 	url = https://github.com/zainin/vim-mikrotik
 [submodule ".solarized/intellij"]
 	path = .solarized/intellij
-	url = https://github.com/jkaving/intellij-colors-solarized
+	url = https://github.com/intelfx/intellij-colors-solarized
 [submodule ".vim/bundle/asl-vim"]
 	path = .vim/bundle/asl-vim
 	url = https://github.com/westeri/asl-vim
