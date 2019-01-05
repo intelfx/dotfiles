@@ -61,6 +61,11 @@ compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
 # End of lines added by compinstall
 
 #
+# plugins' settings
+#
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+#
 # plugins
 #
 function plugin_load() {
