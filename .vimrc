@@ -58,10 +58,6 @@ vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
 smap <leader><Tab> <Plug>snipMateNextOrTrigger
 
-" rudimentary IDE things
-nnoremap <F5> :!./%<<CR>
-nnoremap <F7> :silent make! <bar> cwindow<CR><C-L>
-
 
 "
 " Miscellanea
