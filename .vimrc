@@ -58,6 +58,9 @@ vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
 smap <leader><Tab> <Plug>snipMateNextOrTrigger
 
+" autosudo
+"cmap w!! w !sudo sponge %
+cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit!
 
 "
 " Miscellanea
