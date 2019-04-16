@@ -6,7 +6,7 @@
 # (these terminfo entries are written for application mode).
 #
 
-if [[ ${terminfo[smkx]} && ${terminfo[rmkx]} ]]; then
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 
 	function put_application_mode() {
 		echoti smkx
