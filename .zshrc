@@ -101,6 +101,7 @@ for file in $HOME/.zshrc.d/*; do
 		source $file
 	fi
 done
+unset file
 
 #
 # late plugins
@@ -108,6 +109,7 @@ done
 for dir in ~/.zsh/plugins-late/*(N); do
 	plugin_load $dir
 done
+unset dir
 
 #
 # prompt eye-candy
@@ -115,8 +117,3 @@ done
 autoload -Uz promptinit
 promptinit
 prompt pure
-
-#
-# cleanup
-#
-unset dir file
