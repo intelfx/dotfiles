@@ -5,7 +5,7 @@
 #
 zmodload zsh/terminfo
 for keymap in viins vicmd; do
-	bindkey  ${terminfo_keys[Up]} history-beginning-search-backward
-	bindkey  ${terminfo_keys[Down]} history-beginning-search-forward
+	bindkey  ${key[Up]} history-beginning-search-backward
+	bindkey  ${key[Down]} history-beginning-search-forward
 done
 unset keymap
