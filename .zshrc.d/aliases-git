@@ -67,3 +67,6 @@ alias gcaAn='git commit --amend -a --no-edit'
 alias gcola='git-cola'
 alias gk='gitk --all'
 alias gg='gitg --all'
+
+alias gad='git add'
+alias gadp='git add -p'
