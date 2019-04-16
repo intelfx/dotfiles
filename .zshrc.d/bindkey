@@ -56,3 +56,9 @@ unset keymap
 
 bindkey -M vicmd ${key[Insert]} vi-add-next
 bindkey -M viins ${key[Insert]} vi-cmd-mode
+
+# Fix Backspace (non)behavior after exiting and re-entering Insert mode
+# FIXME: no idea precisely how and why this works
+# cf. https://superuser.com/a/533685/127212
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^H' backward-delete-char
