@@ -7,22 +7,27 @@
 [guitool "Interactive history rewrite"]
 	cmd = git rebase -i $REVISION
 	revprompt = yes
-[url "git@git.kde.org:"]
+[url "https://anongit.kde.org/"]
 	insteadOf = kde:
 	insteadOf = git://anongit.kde.org/
-	insteadOf = https://anongit.kde.org/
-[url "git@github.com:"]
+[url "git@git.kde.org:"]
+	pushInsteadOf = kde:
+	pushInsteadOf = git://anongit.kde.org/
+	pushInsteadOf = https://anongit.kde.org/
+[url "https://github.com/"]
 	insteadOf = gh:
 	insteadOf = git://github.com/
-	insteadOf = https://github.com/
-[url "aur@aur.archlinux.org:"]
+[url "git@github.com:"]
+	pushInsteadOf = gh:
+	pushInsteadOf = git://github.com/
+	pushInsteadOf = https://github.com/
+[url "https://aur.archlinux.org/"]
 	insteadOf = aur:
 	insteadOf = git://aur.archlinux.org/
-	insteadOf = https://aur.archlinux.org/
-[url "git@gitlab.com:"]
-	insteadOf = gl:
-	insteadOf = git://gitlab.com/
-	insteadOf = https://gitlab.com/
+[url "aur@aur.archlinux.org:"]
+	pushinsteadOf = aur:
+	pushInsteadOf = git://aur.archlinux.org/
+	pushinsteadOf = https://aur.archlinux.org/
 [rerere]
 	enabled = 1
 	autoupdate = true
