@@ -85,3 +85,6 @@
 [submodule ".vim/bundle/vim-elixir"]
 	path = .vim/bundle/vim-elixir
 	url = https://github.com/elixir-editors/vim-elixir
+[submodule ".config/mpv/plugins/mpv-youtube-quality"]
+	path = .config/mpv/mpv-youtube-quality
+	url = https://github.com/jgreco/mpv-youtube-quality
