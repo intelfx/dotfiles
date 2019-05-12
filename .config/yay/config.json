@@ -17,7 +17,7 @@
 	"gitbin": "git",
 	"gpgbin": "gpg",
 	"gpgflags": "",
-	"mflags": "",
+	"mflags": "--nocheck",
 	"sortby": "votes",
 	"gitflags": "",
 	"removemake": "ask",
