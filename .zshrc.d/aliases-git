@@ -70,3 +70,9 @@ alias gg='gitg --all'
 
 alias gad='git add'
 alias gadp='git add -p'
+
+alias gpu='git push'
+alias gpuf='git push -f'
+alias gpuu='git push -u'
+alias gpuo='git push origin'
+alias gpuuo='git push -u origin'
