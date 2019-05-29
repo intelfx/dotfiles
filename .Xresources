@@ -1,4 +1,4 @@
-*Font:                       monospace 10
+*Font:                       monospace 9
 
 Xft.lcdfilter:               lcddefault
 Xft.autohint:                0
@@ -82,11 +82,11 @@ URxvt*color15:                 S_base3
 
 ! ---- solarized xresources end ----
 
-URxvt.font:                  xft:terminus:pixelsize=12
-URxvt.imFont:                xft:terminus:pixelsize=12
-URxvt.boldFont:              xft:terminus:pixelsize=12
-URxvt.italicFont:            xft:terminus:pixelsize=12
-URxvt.boldItalicFont:        xft:terminus:pixelsize=12
+URxvt.font:                  xft:monospace:size=9
+URxvt.imFont:                xft:monospace:size=9
+URxvt.boldFont:              xft:monospace:size=9
+URxvt.italicFont:            xft:monospace:size=9
+URxvt.boldItalicFont:        xft:monospace:size=9
 
 URxvt.saveLines:             2048
 URxvt.skipScroll:            true
