@@ -30,6 +30,7 @@
 !/.zshrc.d
 !/.zshrc.early.d
 !/.zsh
+/.zshrc.d/*-private
 
 # Do not ignore .solarized
 !/.solarized
