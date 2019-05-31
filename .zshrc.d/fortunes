@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-if which fortune &>/dev/null; then
+if command -v fortune &>/dev/null; then
 	fortune -a
 	echo ''
 fi
