@@ -111,7 +111,7 @@ load_zshrc_d ~/.zshrc.d
 #
 # late plugins
 #
-load_plugin_d ~/.zsh/plugins-late
+load_plugin_d ~/.zsh/plugins.late
 
 #
 # prompt eye-candy

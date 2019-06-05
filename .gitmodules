@@ -23,7 +23,7 @@
 	path = .zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule ".zsh/plugins-noauto/pure"]
-	path = .zsh/plugins-noauto/pure
+	path = .zsh/misc/pure
 	url = https://github.com/intelfx/pure
 [submodule ".solarized/dircolors"]
 	path = .solarized/dircolors
@@ -35,10 +35,10 @@
 	path = .solarized/mc
 	url = https://github.com/intelfx/mc-solarized-skin
 [submodule ".zsh/plugins-late/zsh-syntax-highlighting"]
-	path = .zsh/plugins-late/zsh-syntax-highlighting
+	path = .zsh/plugins.late/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".zsh/plugins-noauto/zsh-async"]
-	path = .zsh/plugins-noauto/zsh-async
+	path = .zsh/misc/zsh-async
 	url = https://github.com/mafredri/zsh-async
 [submodule ".vim/bundle/vim-mikrotik"]
 	path = .vim/bundle/vim-mikrotik
