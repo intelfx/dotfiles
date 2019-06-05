@@ -1,0 +1,8 @@
+#!/hint/zsh
+
+#
+# prompt eye-candy
+#
+autoload -Uz promptinit
+promptinit
+prompt pure

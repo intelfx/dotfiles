@@ -114,8 +114,6 @@ load_zshrc_d ~/.zshrc.d
 load_plugin_d ~/.zsh/plugins.late
 
 #
-# prompt eye-candy
+# late snippets
 #
-autoload -Uz promptinit
-promptinit
-prompt pure
+load_zshrc_d ~/.zshrc.late.d

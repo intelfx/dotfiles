@@ -26,9 +26,10 @@
 # Do not ignore .vim
 !/.vim
 
-# Do not ignore .zshrc{.early,}.d and .zsh
+# Do not ignore .zshrc{.early,.late,}.d and .zsh
 !/.zshrc.d
 !/.zshrc.early.d
+!/.zshrc.late.d
 !/.zsh
 /.zshrc.d/*-private
 
