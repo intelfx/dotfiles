@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/hint/zsh
 
 PURE_GIT_FETCH=1
 PURE_ALWAYS_SHOW_USER=1

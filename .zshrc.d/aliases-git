@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/hint/zsh
 
 alias gfe='git fetch --all --tags --prune'
 alias grm='git rebase -i master'

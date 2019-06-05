@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/hint/zsh
 
 #-------------------------------------------------------------
 # The 'ls' family (this assumes you use a recent GNU ls).

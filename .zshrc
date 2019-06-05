@@ -1,3 +1,5 @@
+#!/hint/zsh
+
 #
 # early snippets, before switching to tmux
 #

@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/hint/zsh
 
 if command -v fortune &>/dev/null; then
 	fortune -a
