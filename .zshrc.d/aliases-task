@@ -1,0 +1,3 @@
+#!/hint/zsh
+
+alias work='TASKRC=~/.taskrc.work TASKDATA=~/.task.work task'
