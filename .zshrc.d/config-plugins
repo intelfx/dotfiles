@@ -1,4 +1,8 @@
 #!/hint/zsh
 
+#
+# plugins' settings
+#
 PURE_GIT_FETCH=1
 PURE_ALWAYS_SHOW_USER=1
+ZSH_AUTOSUGGEST_USE_ASYNC=1
