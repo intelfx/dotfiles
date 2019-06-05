@@ -3,11 +3,23 @@
 #
 # general settings
 #
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.history
 HISTSIZE=2147483647
 SAVEHIST=2147483647
-setopt appendhistory autocd extendedglob dotglob nomatch histignoredups nocompletealiases autolist sharehistory
-unsetopt beep notify bashautolist listambiguous
+
+# History
+setopt extendedhistory incappendhistory sharehistory histignoredups histverify histnostore histfcntllock
+# Input/Output
+setopt correct interactivecomments
+# Changing Directories
+setopt autocd
+# Completion
+setopt autolist automenu completealiases nobashautolist nolistambiguous # was nocompletealiases
+# Expansion and Globbing
+setopt extendedglob dotglob nomatch
+# Zle
+setopt nobeep
+# Job Control
+setopt nonotify
+
 fpath=( "$HOME/.zsh/fpath" $fpath )
-# End of lines configured by zsh-newuser-install
