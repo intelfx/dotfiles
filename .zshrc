@@ -98,22 +98,22 @@ compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 #
+# snippets (aliases, colors etc.)
+#
+load_zshrc_d ~/.zshrc.d
+
+#
 # plugins
 #
 load_plugin_d /usr/share/zsh/plugins
 load_plugin_d ~/.zsh/plugins
 
 #
-# snippets (aliases, colors etc.)
+# late snippets
 #
-load_zshrc_d ~/.zshrc.d
+load_zshrc_d ~/.zshrc.late.d
 
 #
 # late plugins
 #
 load_plugin_d ~/.zsh/plugins.late
-
-#
-# late snippets
-#
-load_zshrc_d ~/.zshrc.late.d
