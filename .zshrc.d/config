@@ -14,7 +14,7 @@ setopt correct interactivecomments
 # Changing Directories
 setopt autocd
 # Completion
-setopt autolist automenu completealiases nobashautolist nolistambiguous # was nocompletealiases
+setopt autolist automenu nocompletealiases nobashautolist nolistambiguous # was nocompletealiases
 # Expansion and Globbing
 setopt extendedglob dotglob nomatch
 # Zle
