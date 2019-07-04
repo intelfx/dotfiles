@@ -1,0 +1,13 @@
+snippet common
+	log() {
+		echo ":: $*" >&2
+	}
+
+	err() {
+		echo "E: $*" >&2
+	}
+
+	die() {
+		err "$@"
+		exit 1
+	}
