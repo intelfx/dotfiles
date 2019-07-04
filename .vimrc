@@ -62,6 +62,10 @@ smap <leader><Tab> <Plug>snipMateNextOrTrigger
 "cmap w!! w !sudo sponge %
 cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit!
 
+" search selection
+" (z is for register z)
+vnoremap // "zy/\V<C-R>z<CR>
+
 "
 " Miscellanea
 "
