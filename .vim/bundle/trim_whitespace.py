@@ -15,7 +15,7 @@ from snake.plugins.common import *
 @snake.preserve_cursor()
 def trim_whitespace_commit_pipe(ctx):
 	src_path = snake.expand('<afile>:p')
-	vim.command(f"silent '[,']! diff -u {src_path} - | sed -r '/^\+/s| +$||' | patch --force --silent -o- {src_path} -")
+	vim.command(f"silent '[,']! diff -u {src_path} - | sed -r '/^\+/s|[[:blank:]]+$||' | patch --force --silent -o- {src_path} -")
 
 
 @snake.on_autocmd("FileWritePre,FileAppendPre,FilterWritePre", "*")
