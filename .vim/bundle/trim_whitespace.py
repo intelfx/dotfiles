@@ -1,7 +1,3 @@
-#
-# FIXME: unfinished, doesn't work
-#
-
 import tempfile
 import os.path as p
 import subprocess
@@ -10,12 +6,11 @@ import vim
 import snake
 from snake.plugins.common import *
 
-
 @snake.on_autocmd("BufWritePre", "*")
 @snake.preserve_cursor()
 def trim_whitespace_commit_pipe(ctx):
 	src_path = snake.expand('<afile>:p')
-	vim.command(f"silent '[,']! diff -Nu {src_path} - | sed -r '/^\+/s|[[:blank:]]+$||' | patch --force --silent -o- {src_path} -")
+	vim.command(f"silent '[,']! diff -Nu {escape_filename(src_path)} - | sed -r '/^\+/s|[[:blank:]]+$||' | patch --force --silent -o- '{escape_filename(src_path)}' -")
 
 
 @snake.on_autocmd("FileWritePre,FileAppendPre,FilterWritePre", "*")
