@@ -15,6 +15,7 @@
 !/.config/awesome
 !/.config/Bespin
 !/.config/mpv
+!/.config/fontconfig
 
 # Do not ignore .config/QtProject/qtcreator/styles
 !/.config/QtProject
