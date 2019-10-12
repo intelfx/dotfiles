@@ -1,7 +1,0 @@
-SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
-EDITOR=/usr/bin/vim
-PAGER=/usr/bin/less
-RUSTC_WRAPPER=/usr/bin/sccache
-PASSWORD_STORE_ENABLE_EXTENSIONS=true
-PASSWORD_STORE_EXTENSIONS_DIR=/home/intelfx/bin/pass
-MOZ_ENABLE_WAYLAND=1
