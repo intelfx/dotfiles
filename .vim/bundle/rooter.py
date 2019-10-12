@@ -4,7 +4,7 @@ import importlib
 
 import vim
 import snake
-from snake.plugins.common import *
+from snake.plugins import common
 
 class Rooter:
 	def __init__(self, path):
@@ -51,7 +51,7 @@ class Rooter:
 
 	def update_process_vimrc(self, vimrc_path):
 		if p.isfile(vimrc_path):
-			cmd = f"source {escape_filename(vimrc_path)}"
+			cmd = f"source {common.fnameescape(vimrc_path)}"
 			return [ partial(vim.command, cmd) ]
 		return []
 
@@ -65,7 +65,7 @@ class Rooter:
 	def apply(self, cd = True, vimrc = True):
 		# apply project root
 		if cd and self.root is not None:
-			vim.command(f"lcd {escape_filename(self.root)}")
+			vim.command(f"lcd {common.fnameescape(self.root)}")
 
 		# apply lvimrc files
 		if vimrc:

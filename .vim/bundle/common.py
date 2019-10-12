@@ -53,7 +53,7 @@ def get_path():
 		path = snake.get_word()
 	return path
 
-def escape_filename(arg):
+def fnameescape(arg):
 	# TODO: reimplement in pure Python
 	return vim.eval(f"fnameescape('{snake.escape_string_sq(arg)}')")
 
