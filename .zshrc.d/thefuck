@@ -1,0 +1,5 @@
+#!/hint/zsh
+
+if whence thefuck &>/dev/null; then
+	eval "$(thefuck --alias)"
+fi
