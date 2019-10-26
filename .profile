@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/hint/sh
 
 export PATH="$HOME/.local/bin:$PATH"
+
 . $HOME/bin/lib.env
 . $HOME/bin/bin.env
 
