@@ -11,3 +11,6 @@ export RUSTC_WRAPPER="$(which sccache)"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
 export MOZ_ENABLE_WAYLAND=1
+
+# `podman login` stores auth info in $XDG_RUNTIME_DIR by default. totally moronic, if you ask me
+export REGISTRY_AUTH_FILE="$(systemd-path user-shared)/containers/auth.json"
