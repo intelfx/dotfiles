@@ -15,3 +15,7 @@ export MOZ_ENABLE_WAYLAND=1
 
 # `podman login` stores auth info in $XDG_RUNTIME_DIR by default. totally moronic, if you ask me
 export REGISTRY_AUTH_FILE="$(systemd-path user-shared)/containers/auth.json"
+
+if test -r "$HOME/.profile.private"; then
+	. "$HOME/.profile.private"
+fi
