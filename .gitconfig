@@ -35,6 +35,8 @@
 	pushInsteadOf = gl:
 	pushInsteadOf = git://gitlab.com/
 	pushInsteadOf = https://gitlab.com/
+[url "git@gitlab.gnome.org:"]
+	pushInsteadOf = https://gitlab.gnome.org/
 [rerere]
 	enabled = 1
 	autoupdate = true
