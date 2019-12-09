@@ -13,7 +13,7 @@ def trim_whitespace_commit_pipe(ctx):
 	src_path = common.fnameescape('<afile>:p')
 	#src_path = snake.expand('<afile>:p')
 	#src_path = common.fnameescape(src_path)
-	vim.command(f"silent '[,']! diff -Nu '{src_path}' - | sed -r '/^\+/s|[[:blank:]]+$||' | (cd \"${{TMPDIR:-/tmp}}\" && patch --force --silent -o- '{src_path}' -)")
+	vim.command(f"silent '[,']! diff -Nu '{src_path}' - | sed -r '/^\+/s|[[:blank:]]+$||' | (cd /tmp && patch --force --silent -o- '{src_path}' -)")
 
 
 @snake.on_autocmd("FileWritePre,FileAppendPre,FilterWritePre", "*")
