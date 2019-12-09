@@ -100,7 +100,7 @@ au BufRead,BufNewFile *.tpl set filetype=gotexttmpl
 
 "
 " Indentation (smart tab plugin installed)
-" 
+"
 
 let g:ctab_filetype_maps = 1
 let g:python_recommended_style = 0 " fuck you, I know better
@@ -116,9 +116,6 @@ setlocal cinoptions=(0,u0,U0
 " Colorscheme
 "
 
-syntax enable
-set background=dark
-colorscheme solarized
 " ------------------------------------------------------------------
 
 " The following items are available options, but do not need to be
@@ -136,3 +133,6 @@ colorscheme solarized
 " let g:solarized_hitrail=0
 " let g:solarized_menu=1
 
+syntax enable
+set background=dark
+colorscheme solarized
