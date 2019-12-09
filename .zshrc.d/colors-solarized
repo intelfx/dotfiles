@@ -1,14 +1,15 @@
 #!/hint/zsh
 
-if (( IS_SOLARIZED )); then
-	case "$TERM" in
-	screen|xterm)
-		# same
-		export TERM=${TERM}-16color
-		;;
-	esac
-	eval $(dircolors -b "$HOME/.solarized/dircolors/dircolors.ansi-universal")
-	export MC_SKIN="$HOME/.solarized/mc/solarized.ini"
-
-	ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
+if ! (( IS_SOLARIZED )); then
+	return
 fi
+case "$TERM" in
+screen|xterm)
+	# same
+	export TERM=${TERM}-16color
+	;;
+esac
+eval $(dircolors -b "$HOME/.solarized/dircolors/dircolors.ansi-universal")
+export MC_SKIN="$HOME/.solarized/mc/solarized.ini"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
