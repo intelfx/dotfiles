@@ -5,7 +5,9 @@ export PATH="$HOME/.local/bin:$PATH"
 . $HOME/bin/lib.env
 . $HOME/bin/bin.env
 
-export SSH_AUTH_SOCK="$(systemd-path user-runtime)/gnupg/S.gpg-agent.ssh"
+if ! [[ "$SSH_AUTH_SOCK" ]]; then
+	export SSH_AUTH_SOCK="$(systemd-path user-runtime)/gnupg/S.gpg-agent.ssh"
+fi
 export EDITOR="$(which vim)"
 export PAGER="$(which less)"
 export RUSTC_WRAPPER="$(which sccache)"
