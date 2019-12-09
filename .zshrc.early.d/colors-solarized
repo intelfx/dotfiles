@@ -5,23 +5,30 @@
 # Assume that even if not on VT, Solarized has been already configured
 #
 cat <<-"EOF"
-	]P8073642
+	]R
+	]P0073642
 	]P1dc322f
-	]PA586e75
-	]PB657b83
-	]PC839496
-	]PD6c71c4
-	]PE93a1a1
-	]PFfdf6e3
 	]P2859900
 	]P3b58900
 	]P4268bd2
 	]P5d33682
 	]P62aa198
 	]P7eee8d5
-	]P0002b36
+	]P8002b36
 	]P9cb4b16
+	]PA586e75
+	]PB657b83
+	]PC839496
+	]PD6c71c4
+	]PE93a1a1
+	]PFfdf6e3
 	[H[J
 EOF
+#
+#	[0;100;94m
+#	[8]
+#	[1;12]
+#	[2;12]
+#
 export IS_SOLARIZED=1
 
