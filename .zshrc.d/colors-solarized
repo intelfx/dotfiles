@@ -13,3 +13,36 @@ eval $(dircolors -b "$HOME/.solarized/dircolors/dircolors.ansi-universal")
 export MC_SKIN="$HOME/.solarized/mc/solarized.ini"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
+
+#
+# less(1) formatting overrides (colors for man pages)
+#
+
+# less(1) uses termcap, we use terminfo.
+#
+# https://unix.stackexchange.com/a/108840/21885
+# termcap  terminfo  description
+# ks       smkx      make the keypad send commands
+# ke       rmkx      make the keypad send digits
+# vb       flash     emit visual bell
+# mb       blink     start blink
+# md       bold      start bold
+# me       sgr0      turn off bold, blink and underline
+# so       smso      start standout (reverse video)
+# se       rmso      stop standout
+# us       smul      start underline
+# ue       rmul      stop underline
+
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 1) # blink
+export LESS_TERMCAP_md=$(tput bold; tput setaf 1) # bold
+export LESS_TERMCAP_me=$(tput sgr0) # stop bold/blink/underline
+export LESS_TERMCAP_so=$(tput bold; tput setaf 0; tput setab 4) # standout (inverse)
+export LESS_TERMCAP_se=$(tput sgr0) # stop standout (reverse)
+export LESS_TERMCAP_us=$(tput bold; tput smul; tput setaf 6) # underline
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0) # stop underline
+#export LESS_TERMCAP_mr=$(tput rev)
+#export LESS_TERMCAP_mh=$(tput dim)
+#export LESS_TERMCAP_ZN=$(tput ssubm)
+#export LESS_TERMCAP_ZV=$(tput rsubm)
+#export LESS_TERMCAP_ZO=$(tput ssupm)
+#export LESS_TERMCAP_ZW=$(tput rsupm)
