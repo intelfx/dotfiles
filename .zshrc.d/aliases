@@ -27,8 +27,10 @@ alias diff='colordiff'
 alias r-cp-n='rsync -r --partial --no-i-r'
 alias r-cp='r-cp-n -aHAX'
 alias r-mv='r-cp --remove-source-files'
+alias r-mv-n='r-cp-n --remove-source-files'
 alias r-sync='r-cp --delete'
-alias r-install='r-cp-n -rlEDH' # no perms (executability instead), times, group, owner, ACLs, xattrs
+alias r-install='r-cp-n -lEDH' # no perms (executability instead), times, group, owner, ACLs, xattrs
+alias r-put='r-mv-n -lDH' # no perms, group, owner, ACLs, xattrs
 
 function cmake() {
 	command cmake -G Ninja "$@"
