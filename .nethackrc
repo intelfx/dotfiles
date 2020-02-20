@@ -1,0 +1,92 @@
+# --- Character selection ---
+OPTIONS=name:Traveller
+OPTIONS=align:lawful,role:valkyrie,race:human
+OPTIONS=pettype:cat
+#OPTIONS=fruitname:Sandvich
+
+# --- Major UI options ---
+OPTIONS=number_pad:1
+OPTIONS=windowtype:curses
+OPTIONS=msg_window:full,vary_msgcount:5,msghistory:60
+OPTIONS=perm_invent
+#OPTIONS=tile_height:32
+#OPTIONS=extmenu
+
+# --- Minor UI options ---
+OPTIONS=popup_dialog,mouse_support,clicklook,herecmd_menu
+OPTIONS=hitpointbar,hilite_pet,hilite_pile,lit_corridor
+OPTIONS=time,showexp
+
+# --- Gameplay options ---
+OPTIONS=altmeta,rest_on_space
+OPTIONS=autopickup,pickup_types:?!/"=$,pickup_burden:B,pickup_thrown
+OPTIONS=runmode:crawl,safe_pet,autodescribe
+#OPTIONS=sortloot:full,sortpack
+
+# --- Look&feel options ---
+OPTIONS=color,guicolor,menucolors
+OPTIONS=standout,use_inverse,use_darkgray
+#OPTIONS=boulder:0
+
+# --- hilite_status @ Solarized ---
+# Highlight changes for a few turns
+OPTIONS=statushilites:10
+
+# Gold
+OPTIONS=hilite_status:gold/always/brown
+
+# Alignment
+OPTIONS=hilite_status:alignment/lawful/lightcyan&bold
+
+# XL (highlight changed)
+OPTIONS=hilite_status:experience-level/changed/white&inverse
+#OPTIONS=hilite_status:experience-level/changed/white&inverse/always/cyan
+
+# AC (highlight changed)
+OPTIONS=hilite_status:armor-class/changed/white&inverse
+
+# Ability scores (highlight changed, define bands with absolute values)
+OPTIONS=hilite_status:characteristics/<5/red
+OPTIONS=hilite_status:characteristics/>6/orange
+OPTIONS=hilite_status:characteristics/>8/brown
+#OPTIONS=hilite_status:characteristics/>11/yellow
+OPTIONS=hilite_status:characteristics/>13/green
+OPTIONS=hilite_status:characteristics/>16/cyan
+OPTIONS=hilite_status:characteristics/changed/white&inverse
+
+# Encumbrance
+OPTIONS=hilite_status:carrying-capacity/burdened/brown&bold
+OPTIONS=hilite_status:carrying-capacity/stressed/orange&bold
+OPTIONS=hilite_status:carrying-capacity/strained/red&bold
+OPTIONS=hilite_status:carrying-capacity/overtaxed/orange&bold&inverse
+OPTIONS=hilite_status:carrying-capacity/overloaded/red&bold&inverse
+
+# Hunger
+OPTIONS=hilite_status:hunger/satiated/brown&bold
+OPTIONS=hilite_status:hunger/hungry/brown&bold
+OPTIONS=hilite_status:hunger/weak/red&bold
+OPTIONS=hilite_status:hunger/fainting/red&bold&inverse
+
+# Hitpoints (highlight changed max, define bands with percentages)
+OPTIONS=hilite_status:hitpoints/100%/lightblue&bold
+OPTIONS=hilite_status:hitpoints/<100%/green&bold
+OPTIONS=hilite_status:hitpoints/<60%/brown&bold
+OPTIONS=hilite_status:hitpoints/<40%/red&bold
+OPTIONS=hilite_status:hitpoints/<20%/red&bold&inverse
+OPTIONS=hilite_status:hitpoints-max/changed/white&inverse
+
+# Power (highlight changed max, define bands with percentages and absolute values)
+# FIXME: combining <N% (percentage triggers) with <N (absolute triggers) does not work,
+# so use <N and >N% with the last remaining band as the "default"
+OPTIONS=hilite_status:power/100%/lightblue&bold
+OPTIONS=hilite_status:power/>60%/green&bold # <100%
+OPTIONS=hilite_status:power/brown&bold # <60%
+OPTIONS=hilite_status:power/<15/red&bold
+OPTIONS=hilite_status:power/<5/red&bold&inverse
+OPTIONS=hilite_status:power-max/changed/white&inverse
+
+# Highlight conditions and troubles
+OPTIONS=hilite_status:condition/all/lightblue&bold&inverse
+OPTIONS=hilite_status:condition/minor_troubles/brown&bold&inverse
+OPTIONS=hilite_status:condition/major_troubles/red&bold&inverse
+#OPTIONS=hilite_status:condition/slime/green&bold&inverse
