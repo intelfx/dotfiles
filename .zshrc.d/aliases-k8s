@@ -1,0 +1,6 @@
+#!/hint/zsh
+
+alias kg='kubectl get'
+alias kgp='kubectl get pods'
+alias kd='kubectl describe'
+alias kdp='kubectl describe pods'
