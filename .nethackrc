@@ -90,3 +90,27 @@ OPTIONS=hilite_status:condition/all/lightblue&bold&inverse
 OPTIONS=hilite_status:condition/minor_troubles/brown&bold&inverse
 OPTIONS=hilite_status:condition/major_troubles/red&bold&inverse
 #OPTIONS=hilite_status:condition/slime/green&bold&inverse
+
+# --- menucolors @ Solarized ---
+OPTIONS=!implicit_uncursed
+
+# unknown beatitude
+# POSIX BRE/ERE do not support negative lookahead/lookbehind -- sunrise by hand
+MENUCOLOR="^(a|an|[0-9]+) (empty )?([^buc]|b[^l]|bl[^e]|u[^n]|un[^c]|c[^u]|cu[^r])"=lightgreen
+
+# beatitude
+MENUCOLOR=" blessed|holy "=green
+MENUCOLOR=" cursed|unholy "=red
+#MENUCOLOR=" uncursed "=lightcyan&bold
+
+# cursed & worn
+# FIXME: MENUCOLOR= does not support multiple attributes (red&bold&inverse)
+MENUCOLOR=" cursed .* \(being worn\)"=red&inverse
+
+# special objects
+MENUCOLOR="wand (of|called) cancellation|bag of tricks"=lightblue&inverse
+MENUCOLOR="Amulet of Yendor named"=magenta
+MENUCOLOR="gold piece"=brown
+
+# forgotten spells
+MENUCOLOR=" \(gone\)"=lightgreen
