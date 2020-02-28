@@ -4,6 +4,7 @@
 	preloadindex = 1
 	quotepath = off
 	quotedpath = false
+	excludesfile = /home/intelfx/.gitignore.global
 [guitool "Interactive history rewrite"]
 	cmd = git rebase -i $REVISION
 	revprompt = yes
