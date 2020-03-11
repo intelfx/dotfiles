@@ -1,5 +1,3 @@
-[include]
-	path = ~/.gitconfig.private
 [core]
 	preloadindex = 1
 	quotepath = off
@@ -94,3 +92,5 @@
 	coloring = highlightRecent
 	showEmail = true
 	date = short
+[include]
+	path = ~/.gitconfig.private
