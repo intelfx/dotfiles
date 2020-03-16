@@ -22,6 +22,9 @@ export REGISTRY_AUTH_FILE="$(systemd-path user-shared)/containers/auth.json"
 # https://github.com/kubernetes/minikube/issues/3724
 export MINIKUBE_IN_STYLE=0
 
+# Fuck you too!
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
 if test -r "$HOME/.profile.private"; then
 	. "$HOME/.profile.private"
 fi
