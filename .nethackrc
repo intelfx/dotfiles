@@ -150,7 +150,7 @@ MENUCOLOR=" cursed|unholy "=red
 MENUCOLOR=" cursed .* \(being worn\)"=red&inverse
 
 # special objects
-MENUCOLOR="wand (of|called) cancellation|bag of tricks"=lightblue&inverse
+MENUCOLOR="wand (of|called) cancellation|bag of (holding|tricks)"=lightblue&inverse
 MENUCOLOR="Amulet of Yendor named"=magenta
 MENUCOLOR="gold piece"=brown
 
