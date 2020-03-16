@@ -19,9 +19,51 @@ OPTIONS=time,showexp
 
 # --- Gameplay options ---
 OPTIONS=altmeta,rest_on_space
-OPTIONS=autopickup,pickup_types:?!/"=$,pickup_burden:B,pickup_thrown
+OPTIONS=autopickup,pickup_types:?!/"=$%+*,pickup_burden:B,pickup_thrown
 OPTIONS=runmode:crawl,safe_pet,autodescribe
 #OPTIONS=sortloot:full,sortpack
+
+# --- Autopickup configuration ---
+# Individually-name the real Amulet right away and you'll never fall for a fake
+AUTOPICKUP_EXCEPTION=">Amulet of Yendor"
+AUTOPICKUP_EXCEPTION="<Amulet of Yendor named"
+# Avoid turning your scrolls of scare monster to dust
+AUTOPICKUP_EXCEPTION=">scroll .* scare monster"
+# Pick up formally identified artifacts
+AUTOPICKUP_EXCEPTION="<(^| )the "
+
+# Don't pick up corpses...
+AUTOPICKUP_EXCEPTION="> corpse"
+# ...except those
+AUTOPICKUP_EXCEPTION="<lichen corpse"
+AUTOPICKUP_EXCEPTION="<lizard corpse"
+AUTOPICKUP_EXCEPTION="<newt corpse"
+AUTOPICKUP_EXCEPTION="<floating eye corpse"
+AUTOPICKUP_EXCEPTION="<wraith corpse"
+
+# Don't pick up chunks of meat (heavy)...
+AUTOPICKUP_EXCEPTION=">huge chunk of meat"
+# ...and globs (useless and typically harmful)
+AUTOPICKUP_EXCEPTION=">small glob"
+
+# Things too good to miss
+AUTOPICKUP_EXCEPTION="<magic marker"
+AUTOPICKUP_EXCEPTION="<lamp"
+AUTOPICKUP_EXCEPTION="<athame"
+# ...except those
+AUTOPICKUP_EXCEPTION=">wand .* \([0-9]+:0\)"
+AUTOPICKUP_EXCEPTION=">oil lamp"
+AUTOPICKUP_EXCEPTION=">lamp .* oil"
+
+# Gems
+AUTOPICKUP_EXCEPTION="<stone .* luck"
+AUTOPICKUP_EXCEPTION="<luckstone"
+AUTOPICKUP_EXCEPTION="<touchstone"
+# ...except those
+AUTOPICKUP_EXCEPTION=">rock"
+AUTOPICKUP_EXCEPTION=">loadstone"
+AUTOPICKUP_EXCEPTION=">gray stone"
+AUTOPICKUP_EXCEPTION=">worthless piece"
 
 # --- Look&feel options ---
 OPTIONS=color,guicolor,menucolors
