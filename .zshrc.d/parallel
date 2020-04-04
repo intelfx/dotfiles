@@ -1,3 +1,5 @@
 #!/hint/zsh
 
-. env_parallel.zsh
+if whence env_parallel.zsh &>/dev/null; then
+	. env_parallel.zsh
+fi
