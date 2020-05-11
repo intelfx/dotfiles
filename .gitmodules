@@ -80,7 +80,7 @@
 	path = .vim/bundle/vim-jsonnet
 	url = https://github.com/google/vim-jsonnet
 [submodule ".gdbinit.d/gdb-dashboard"]
-	path = .gdbinit.d/gdb-dashboard
+	path = .gdb.d/gdb-dashboard
 	url = https://github.com/cyrus-and/gdb-dashboard
 [submodule ".vim/bundle/vim-elixir"]
 	path = .vim/bundle/vim-elixir
