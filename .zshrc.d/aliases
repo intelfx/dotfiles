@@ -73,3 +73,6 @@ function make_single_module() {
 	xz -f -9 "$mod"
 	sudo install -v -Dm644 "$mod.xz" "/usr/lib/modules/$(uname -r)/kernel/$mod.xz"
 }
+
+# I don't use Boost.Build
+alias b2='backblaze-b2'
