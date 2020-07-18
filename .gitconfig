@@ -98,3 +98,5 @@
 	ff = only
 [include]
 	path = ~/.gitconfig.private
+[include]
+	path = ~/.gitconfig.machine
