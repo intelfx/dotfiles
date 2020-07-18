@@ -94,5 +94,7 @@
 	coloring = highlightRecent
 	showEmail = true
 	date = short
+[pull]
+	ff = only
 [include]
 	path = ~/.gitconfig.private
