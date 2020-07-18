@@ -64,6 +64,7 @@
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
+	guitool = smerge
 	summary = true
 [svn]
 	pushmergeinfo = true
@@ -79,6 +80,7 @@
 	showpath = true
 [diff]
 	tool = vimdiff
+	guitool = smerge
 	algorithm = patience
 [clean]
 	requireForce = false
