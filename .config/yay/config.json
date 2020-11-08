@@ -1,6 +1,6 @@
 {
 	"aururl": "https://aur.archlinux.org",
-	"buildDir": "/var/cache/pacman/aur",
+	"buildDir": "$HOME/aur",
 	"editor": "",
 	"editorflags": "",
 	"makepkgbin": "makepkg",
