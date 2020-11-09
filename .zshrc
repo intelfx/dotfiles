@@ -50,6 +50,11 @@ load_zshrc_d $HOME/.zshrc.early.d
 load_zshrc_d ~/.zshrc.d
 
 #
+# early plugins
+#
+load_plugin_d ~/.zsh/plugins.early
+
+#
 # plugins
 #
 load_plugin_d /usr/share/zsh/plugins
