@@ -94,3 +94,6 @@
 [submodule ".vim/bundle/vis"]
 	path = .vim/bundle/vis
 	url = https://github.com/vim-scripts/vis
+[submodule ".zsh/plugins.early/fzf-tab"]
+	path = .zsh/plugins.early/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
