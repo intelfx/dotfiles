@@ -71,6 +71,22 @@ vnoremap // "zy/\V<C-R>z<CR>
 " Miscellanea
 "
 
+set mouse+=a
+if &term =~ "^tmux"
+  " xterm2      Works like "xterm", but with the xterm reporting the
+  "             mouse position while the mouse is dragged.
+  " <...>
+  " sgr         Mouse handling for the terminal that emits SGR-styled
+  "             mouse reporting. The mouse works even in columns
+  "             beyond 223. This option is backward compatible with
+  "             "xterm2" because it can also decode "xterm2" style
+  "             mouse codes.
+  "
+  " Thus, use "sgr" for drag support and no column count limitation under tmux
+  " and other modern terminals.
+  set ttymouse=sgr
+endif
+
 set hlsearch
 set number
 "set nofsync
