@@ -53,6 +53,8 @@ let g:grep_operator_set_search_register = 1
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 
+command! -nargs=+ Grep execute 'silent grep! <args>' | copen
+
 " snippets
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
 smap <leader><Tab> <Plug>snipMateNextOrTrigger
