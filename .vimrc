@@ -112,6 +112,7 @@ set grepformat=%f:%l:%c:%m
 "
 
 au BufRead,BufNewFile *.tpl set filetype=gotexttmpl
+au BufRead,BufNewFile *.gotmpl set filetype=gotexttmpl
 
 
 "
