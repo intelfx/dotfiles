@@ -13,7 +13,6 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-
 "
 " Keybindings
 "
@@ -86,9 +85,8 @@ set viminfofile=~/.cache/vim/info
 
 let &colorcolumn=join(range(81,999), ",")
 
-" TODO: autodetermine per-project (rooter)
-set grepprg=git\ grep\ -nHw\ $*
-set makeprg=make\ -f\ ~/bin/Makefile\ %<
+set grepprg=rg\ --vimgrep\ --word-regexp\ $*
+set grepformat=%f:%l:%c:%m
 
 
 "

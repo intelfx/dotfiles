@@ -12,11 +12,15 @@ class Rooter:
 
 		# update project root
 		self.root = None
+		self.repo = None
 		path = self.path
 		while True:
 			if not p.exists(p.join(path, ".rooter-ignore")):
 				if p.exists(p.join(path, ".git")):
+					# TODO: do not configure for git if we are in an ignored directory of the innermost git repo
+					#       (and also ignore all parent git repos in this case)
 					self.root = path
+					self.repo = 'git'
 					break
 
 				if p.isfile(p.join(path, ".pvimrc")):
@@ -62,7 +66,7 @@ class Rooter:
 			return [ partial(spec.loader.exec_module, module) ]
 		return []
 
-	def apply(self, cd = True, vimrc = True):
+	def apply(self, cd=True, vimrc=True):
 		# apply project root
 		if cd and self.root is not None:
 			vim.command(f"lcd {common.fnameescape(self.root)}")
@@ -71,6 +75,12 @@ class Rooter:
 		if vimrc:
 			for rc in self.rcfiles:
 				rc()
+
+		# configure for VCS repository used in the project
+		if self.repo == 'git':
+			snake.set_option('grepprg', 'git\ grep\ --line-number\ --column\ --word-regexp\ $*', local=True)
+			snake.set_option('grepformat', '%f:%l:%c:%m', local=True)
+
 
 rooter_objs = {}
 
