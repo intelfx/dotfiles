@@ -100,3 +100,5 @@
 	path = ~/.gitconfig.private
 [include]
 	path = ~/.gitconfig.machine
+[init]
+	defaultBranch = master
