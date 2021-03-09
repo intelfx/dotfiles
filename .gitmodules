@@ -97,3 +97,6 @@
 [submodule ".zsh/plugins.early/fzf-tab"]
 	path = .zsh/plugins.early/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule ".config/vifm/colors"]
+	path = .config/vifm/colors
+	url = https://github.com/vifm/vifm-colors
