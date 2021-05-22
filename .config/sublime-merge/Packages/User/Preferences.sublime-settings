@@ -1,0 +1,8 @@
+{
+	"always_show_command_status": true,
+	"diff_style": "inline",
+	"hardware_acceleration": "opengl",
+	"hide_menu": true,
+	"theme": "auto",
+	"trim_trailing_white_space_on_save": false,
+}
