@@ -100,3 +100,7 @@
 [submodule ".config/vifm/colors"]
 	path = .config/vifm/colors
 	url = https://github.com/vifm/vifm-colors
+[submodule ".config/sublime-text/Packages/NeoVintageous"]
+	path = .config/sublime-text/Packages/NeoVintageous
+	url = https://github.com/NeoVintageous/NeoVintageous.git
+	branch = develop
