@@ -23,6 +23,10 @@ class Rooter:
 					self.repo = 'git'
 					break
 
+				if p.exists(p.join(path, ".hg")):
+					self.root = path
+					break
+
 				if p.isfile(p.join(path, ".pvimrc")):
 					self.root = path
 					break
