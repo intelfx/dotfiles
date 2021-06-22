@@ -6,3 +6,4 @@
 .kdev4
 *.pyc
 *.pyo
+*.sublime-workspace
