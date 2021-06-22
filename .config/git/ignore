@@ -1,0 +1,8 @@
+*.o
+*.kate-swp
+*~
+.*.sw?
+*.kdev4
+.kdev4
+*.pyc
+*.pyo
