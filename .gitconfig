@@ -40,7 +40,7 @@
 	enabled = 1
 	autoupdate = true
 [push]
-	default = simple
+	default = current
 [sendemail]
 	annotate = true
 [color]
