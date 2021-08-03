@@ -5,7 +5,8 @@
   "light_color_scheme": "Packages/Solarized Color Scheme/Solarized (light).sublime-color-scheme",
   "dark_color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).sublime-color-scheme",
 
-  "font_face": "Iosevka",
+  "font_face": "Iosevka Light",
+  //"font_face": "Iosevka",
   "font_size": 9,
   "ignored_packages": [
     "Six",
@@ -16,8 +17,14 @@
   "tab_size": 8,
   "theme": "Adaptive.sublime-theme",
   "vintageous_handle_keys": {
+    "escape": false,
     "<C-c>": false,
     "<C-f>": false,
     "<C-v>": false,
+    "<C-s>": false,
   },
+  "rulers": [
+    72,
+    80,
+  ],
 }
