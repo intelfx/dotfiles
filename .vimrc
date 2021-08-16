@@ -5,6 +5,9 @@
 " Get the defaults that most users want.
 runtime! defaults.vim
 
+let g:snipMate = {}
+let g:snipMate.snippet_version = 1
+
 packloadall
 
 " The matchit plugin makes the % command work better, but it is not backwards
