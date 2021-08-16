@@ -55,12 +55,14 @@
 [submodule ".config/systemd"]
 	path = .config/systemd
 	url = https://github.com/intelfx/user-systemd-units
+	ignore = untracked
 [submodule ".vim/bundle/vim-nftables"]
 	path = .vim/bundle/vim-nftables
 	url = https://github.com/nfnty/vim-nftables
 [submodule "bin"]
 	path = bin
 	url = https://github.com/intelfx/bin
+	ignore = untracked
 [submodule ".vim/bundle/vim-syntax"]
 	path = .vim/bundle/vim-syntax
 	url = https://github.com/intelfx/vim-syntax
