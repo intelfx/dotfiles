@@ -1,6 +1,6 @@
 # Beware! This file is rewritten by htop when settings are changed in the interface.
 # The parser is also very primitive, and not human-friendly.
-fields=0 48 17 18 38 39 40 9 11 109 110 111 2 46 47 49 1
+fields=0 37 48 17 18 38 39 40 119 9 11 109 110 111 2 46 47 49 1
 sort_key=46
 sort_direction=1
 tree_sort_key=46
@@ -32,8 +32,8 @@ account_guest_in_cpu_meter=1
 color_scheme=2
 enable_mouse=1
 delay=15
-left_meters=LeftCPUs Memory Swap
-left_meter_modes=1 1 1
-right_meters=RightCPUs Tasks LoadAverage Uptime
-right_meter_modes=1 2 2 2
+left_meters=LeftCPUs Memory Swap DiskIO NetworkIO
+left_meter_modes=1 1 1 2 2
+right_meters=RightCPUs Tasks LoadAverage Uptime Systemd
+right_meter_modes=1 2 2 2 2
 hide_function_bar=0
