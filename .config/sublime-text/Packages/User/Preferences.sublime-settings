@@ -17,14 +17,34 @@
   "tab_size": 8,
   "theme": "Adaptive.sublime-theme",
   "vintageous_handle_keys": {
-    "escape": false,
-    "<C-c>": false,
+    //"escape": false,
+    // find
     "<C-f>": false,
+
+    // copy/paste
+    "<C-c>": false,
     "<C-v>": false,
+
+    // save file
     "<C-s>": false,
+
+    // close file
+    //"<C-w>": false,
+
+    // open/close window
+    "<C-N>": false,
+    "<C-W>": false,
+
+    // goto symbol
+    "<C-r>": false,
+    "<C-R>": false,
   },
   "rulers": [
     72,
     80,
   ],
+  "hardware_acceleration": "opengl",
+
+  "open_files_in_new_window": "always",
+  "show_project_first": true,
 }
