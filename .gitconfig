@@ -34,8 +34,20 @@
 	pushInsteadOf = gl:
 	pushInsteadOf = git://gitlab.com/
 	pushInsteadOf = https://gitlab.com/
+[url "https://gitlab.gnome.org/"]
+	insteadOf = gnome:
+	insteadOf = git://gitlab.gnome.org/
 [url "git@gitlab.gnome.org:"]
+	pushInsteadOf = gnome:
+	pushInsteadOf = git://gitlab.gnome.org/
 	pushInsteadOf = https://gitlab.gnome.org/
+[url "https://gitlab.freedesktop.org/"]
+	insteadOf = fdo:
+	insteadOf = git://gitlab.freedesktop.org/
+[url "git@gitlab.freedesktop.org:"]
+	pushInsteadOf = fdo:
+	pushInsteadOf = git://gitlab.freedesktop.org/
+	pushInsteadOf = https://gitlab.freedesktop.org/
 [rerere]
 	enabled = 1
 	autoupdate = true
