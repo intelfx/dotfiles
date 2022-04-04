@@ -27,3 +27,10 @@ zstyle :compinstall filename '/home/intelfx/.zshrc'
 
 autoload -Uz compinit
 compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
+
+autoload -U +X bashcompinit
+bashcompinit
+
+if command -v mcli &>/dev/null; then
+	complete -o nospace -C "$(command -v mcli)" mcli
+fi
