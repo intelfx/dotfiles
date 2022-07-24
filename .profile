@@ -6,7 +6,11 @@ export PATH="$HOME/.local/bin:$PATH"
 . $HOME/bin/bin.env
 
 if ! [[ "$SSH_AUTH_SOCK" ]]; then
-	export SSH_AUTH_SOCK="$(systemd-path user-runtime)/gnupg/S.gpg-agent.ssh"
+	if [[ "$WSLENV" ]]; then
+		export SSH_AUTH_SOCK=/mnt/c/util/wsl-ssh-pageant/ssh-agent.sock
+	else
+		export SSH_AUTH_SOCK="$(systemd-path user-runtime)/gnupg/S.gpg-agent.ssh"
+	fi
 fi
 export EDITOR="$(which vim)"
 export PAGER="$(which less)"
