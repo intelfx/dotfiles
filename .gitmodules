@@ -101,4 +101,4 @@
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule ".config/vifm/colors"]
 	path = .config/vifm/colors
-	url = https://github.com/vifm/vifm-colors
+	url = https://github.com/intelfx/vifm-colors
