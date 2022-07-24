@@ -4,6 +4,13 @@
 # Set the exact Solarized palette on VT
 #
 
+# WSL terminals don't play nice with ESC ] P
+# If under WSL, assume Solarized has been configured
+if [[ "$WSLENV" ]]; then
+	export IS_SOLARIZED=1
+	return
+fi
+
 # If not on VT, assume Solarized has been configured
 if [[ "$TERM" != linux && "$TERM" != vt* ]]; then
 	export IS_SOLARIZED=1
