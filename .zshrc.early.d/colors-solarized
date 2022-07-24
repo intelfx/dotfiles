@@ -2,8 +2,14 @@
 
 #
 # Set the exact Solarized palette on VT
-# Assume that even if not on VT, Solarized has been already configured
 #
+
+# If not on VT, assume Solarized has been configured
+if [[ "$TERM" != linux && "$TERM" != vt* ]]; then
+	export IS_SOLARIZED=1
+	return
+fi
+
 cat <<-"EOF"
 	]R
 	]P0073642
@@ -31,4 +37,3 @@ EOF
 #	[2;12]
 #
 export IS_SOLARIZED=1
-
