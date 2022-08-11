@@ -56,6 +56,10 @@ export QT_QPA_PLATFORMTHEME=qgnomeplatform
 export QT_QPA_PLATFORM=wayland-egl
 export TDESKTOP_I_KNOW_ABOUT_GTK_INCOMPATIBILITY=1
 
+# "It sets the number of cached data chunks; additional memory usage can be up to ~8 MiB times this number. The default is the number of CPU cores."
+# Allow `borg mount` to use up to 1 GiB of RAM for aggressive caching
+export BORG_MOUNT_DATA_CACHE_ENTRIES=$(( 1024*1024*1024 / (8*1024*1024) ))
+
 # `podman login` stores auth info in $XDG_RUNTIME_DIR by default. totally moronic, if you ask me
 export REGISTRY_AUTH_FILE="$(systemd-path user-shared)/containers/auth.json"
 
