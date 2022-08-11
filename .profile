@@ -1,6 +1,33 @@
 #!/hint/sh
 
-export PATH="$HOME/.local/bin:$PATH"
+# adapted from Arch' /etc/profile
+# zsh has no nameref; sunrise by hand
+append() {
+	local name="$1" var="$(eval "echo \"\$$1\"")"; shift
+	local arg
+	for arg; do
+		case ":$var:" in
+		*:"$arg":*) ;;
+		*) var="${var:+$var:}$arg" ;;
+		esac
+	done
+	eval "$name=\"$var\""
+}
+prepend() {
+	local name="$1" var="$(eval "echo \"\$$1\"")"; shift
+	local arg
+	for arg; do
+		case ":$var:" in
+		*:"$arg":*) ;;
+		*) var="$arg${var:+:$var}" ;;
+		esac
+	done
+	eval "$name=\"$var\""
+}
+
+if [[ -d "$HOME/local/bin" ]]; then
+	prepend PATH "$HOME/.local/bin"
+fi
 
 . $HOME/bin/lib.env
 . $HOME/bin/bin.env
