@@ -17,6 +17,16 @@ if [[ "$TERM" != linux && "$TERM" != vt* ]]; then
 	return
 fi
 
+if [[ $1 == reset ]]; then
+	cat <<-"EOF" | tr -d ' \t\n'
+		]R
+		[0;37;40m
+		[8]
+		[J
+	EOF
+	return
+fi
+
 cat <<-"EOF" | tr -d ' \t\n'
 	]R
 	]P0073642
