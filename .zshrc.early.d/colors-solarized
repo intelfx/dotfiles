@@ -17,7 +17,7 @@ if [[ "$TERM" != linux && "$TERM" != vt* ]]; then
 	return
 fi
 
-cat <<-"EOF"
+cat <<-"EOF" | tr -d ' \t\n'
 	]R
 	]P0073642
 	]P1dc322f
@@ -35,9 +35,10 @@ cat <<-"EOF"
 	]PD6c71c4
 	]PE93a1a1
 	]PFfdf6e3
-	[H[J
+	[J
 EOF
 #
+#	[H[J
 #	[0;100;94m
 #	[8]
 #	[1;12]
