@@ -58,11 +58,25 @@ function mkcd() {
 }
 
 function make() {
-	if ! [[ -e GNUmakefile || -e Makefile || -e makefile ]]; then
-		command make -f ~/bin/devel/Makefile "$@" # any -f given later in the command line will override this one
-	else
-		command make "$@"
+	local has_jobs= has_makefile=
+	for arg; do
+		case "$arg" in
+		-j*|--jobs*) has_jobs=1 ;;
+		-f*|--file*|--makefile*) has_makefile=1 ;;
+		esac
+	done
+	if [[ -e GNUmakefile || -e Makefile || -e makefile ]]; then
+		has_makefile=1
 	fi
+
+	local extra_args=()
+	if ! [[ $has_jobs ]]; then
+		extra_args+=( -j$(nproc) )
+	fi
+	if ! [[ $has_makefile ]]; then
+		extra_args+=( -f ~/bin/devel/Makefile )
+	fi
+	command make "${extra_args[@]}" "$@"
 }
 
 function strip-color() {
