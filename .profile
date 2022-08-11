@@ -1,5 +1,11 @@
 #!/hint/sh
 
+# guard against double-loading of ~/.profile in login shells spawned by tmux
+if [[ "$_HAVE_DOT_PROFILE" ]]; then
+	return
+fi
+export _HAVE_DOT_PROFILE=1
+
 # adapted from Arch' /etc/profile
 # zsh has no nameref; sunrise by hand
 append() {
