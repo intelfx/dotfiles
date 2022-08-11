@@ -77,7 +77,7 @@ export MINIKUBE_IN_STYLE=0
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 # setting /org/gnome/desktop/interface/gtk-im-module in dconf doesn't work somehow...
-GTK_IM_MODULE="gtk-im-context-simple"
+export GTK_IM_MODULE="gtk-im-context-simple"
 
 if test -r "$HOME/.profile.private"; then
 	. "$HOME/.profile.private"
