@@ -35,6 +35,8 @@ cat <<-"EOF" | tr -d ' \t\n'
 	]PD6c71c4
 	]PE93a1a1
 	]PFfdf6e3
+	[0;100;94m
+	[8]
 	[J
 EOF
 #
