@@ -114,3 +114,5 @@
 	path = ~/.gitconfig.machine
 [init]
 	defaultBranch = master
+[sequence]
+	editor = interactive-rebase-tool
