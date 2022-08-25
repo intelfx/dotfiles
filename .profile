@@ -31,8 +31,8 @@ prepend() {
 	eval "$name=\"$var\""
 }
 
-if whence sccache &>/dev/null; then
-	export RUSTC_WRAPPER="$(whence sccache)"
+if command -v sccache &>/dev/null; then
+	export RUSTC_WRAPPER="$(command -v sccache)"
 fi
 
 if [[ -d /usr/lib/ccache/bin ]]; then

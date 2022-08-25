@@ -42,7 +42,7 @@ load_zshrc_d $HOME/.zshrc.early.d
 #
 # tmux shortcut
 #
-[[ -z "$WSLENV" && -z "$NOTMUX" && -z "$TMUX" && "$UID" == "$(stat -c "%u" "${(%):-%x}")" ]] && whence tmx &>/dev/null && exec tmx
+[[ -z "$WSLENV" && -z "$NOTMUX" && -z "$TMUX" && "$UID" == "$(stat -c "%u" "${(%):-%x}")" ]] && command -v tmx &>/dev/null && exec tmx
 
 #
 # snippets (aliases, colors etc.)
