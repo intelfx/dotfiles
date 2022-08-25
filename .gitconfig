@@ -116,3 +116,5 @@
 	defaultBranch = master
 [sequence]
 	editor = interactive-rebase-tool
+[gc]
+	autoDetach = false
