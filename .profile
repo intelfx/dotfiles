@@ -43,6 +43,18 @@ if [[ -d "$HOME/local/bin" ]]; then
 	prepend PATH "$HOME/.local/bin"
 fi
 
+if [[ -d "$HOME/ct-ng/bin" ]]; then
+	export CT_PREFIX="$HOME/ct-ng/bin"
+	for d in "$CT_PREFIX"/*/bin; do
+		# word splitting and pathname expansion are not performed on the words between [[ and ]]
+		gcc=( "$d"/*-gcc )
+		if [[ -d "$d" && -x "$gcc" ]]; then
+			prepend PATH "$d"
+		fi
+	done
+fi
+unset d gcc
+
 . $HOME/bin/lib.env
 . $HOME/bin/bin.env
 
