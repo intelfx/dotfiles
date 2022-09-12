@@ -7,6 +7,11 @@ HISTFILE=~/.history
 HISTSIZE=2147483647
 SAVEHIST=2147483647
 
+# time reporting
+REPORTTIME=5
+#REPORTMEMORY=$(( 100*1024*1024 ))
+TIMEFMT="%J  %U user %S system %P cpu %*E total"  # %M is broken
+
 # History
 setopt extendedhistory incappendhistory sharehistory histignoredups histverify histnostore histfcntllock
 # Input/Output
