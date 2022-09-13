@@ -2,9 +2,9 @@ function! s:HandleRecover()
   echo system('diff - ' . shellescape(expand('%:p')), join(getline(1, '$'), "\n") . "\n")
   if v:shell_error
     call s:DiffOrig()
-  else
+  elseif !empty(glob(b:swapname))
     echohl WarningMsg
-    echomsg "No differences; deleting the old swap file."
+    echomsg "No differences; deleting the old swap file: '" . b:swapname . "'"
     echohl NONE
     call delete(b:swapname)
   endif
