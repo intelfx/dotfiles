@@ -1,0 +1,1 @@
+../mpv-gnome-inhibit/mpv-gnome-inhibit.lua
