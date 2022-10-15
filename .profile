@@ -71,7 +71,7 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
 export MOZ_ENABLE_WAYLAND=1
 export QT_QPA_PLATFORMTHEME=qgnomeplatform
-#export QT_QPA_PLATFORM=wayland-egl
+export QT_QPA_PLATFORM=wayland-egl
 export TDESKTOP_I_KNOW_ABOUT_GTK_INCOMPATIBILITY=1
 
 # "It sets the number of cached data chunks; additional memory usage can be up to ~8 MiB times this number. The default is the number of CPU cores."
