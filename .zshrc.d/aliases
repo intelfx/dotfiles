@@ -37,16 +37,12 @@ alias r-cput='r-cp-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xatt
 # FIXME: default ACLs vs umask
 alias cp-put='cp -dPR --preserve=timestamps --reflink'
 
-function cmake() {
-	command cmake -G Ninja "$@"
-}
+# this export only makes sense in the interactive sessions
+# replaces {,c}cmake() functions/aliases to set default generator
+export CMAKE_GENERATOR=Ninja
 
 function cmake-c() {
 	cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ "$@"
-}
-
-function ccmake() {
-	command ccmake -G Ninja "$@"
 }
 
 function ccmake-c() {
