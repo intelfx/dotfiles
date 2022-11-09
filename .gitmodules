@@ -105,3 +105,6 @@
 [submodule ".config/mpv/mpv-gnome-inhibit"]
 	path = .config/mpv/mpv-gnome-inhibit
 	url = https://gist.github.com/crazygolem/a7d3a2d3c0cee5d072c0cbbbdee69286
+[submodule ".vim/bundle/vim-toml"]
+	path = .vim/bundle/vim-toml
+	url = https://github.com/cespare/vim-toml
