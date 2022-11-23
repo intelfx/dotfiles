@@ -7,4 +7,3 @@ fi
 
 # Use zsh Normal Mode + / (reverse-i-search) to use fzf instead
 bindkey -M vicmd '/' fzf-history-widget
-bindkey '^[/' fzf-history-widget
