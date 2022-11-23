@@ -7,3 +7,9 @@ fi
 
 # Use zsh Normal Mode + / (reverse-i-search) to use fzf instead
 bindkey -M vicmd '/' fzf-history-widget
+
+# Do not interpret ESC + c as fzf-cd-widget as it conflicts with normal Vi mode usage
+# Instead, use zsh Normal Mode + C (capital)
+bindkey -M vicmd -r '^[c'
+bindkey -M viins -r '^[c'
+bindkey -M vicmd 'C' fzf-cd-widget
