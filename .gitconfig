@@ -1,3 +1,7 @@
+[include]
+	path = ~/.gitconfig.private
+[include]
+	path = ~/.gitconfig.machine
 [core]
 	preloadindex = 1
 	quotepath = off
@@ -108,10 +112,6 @@
 	date = short
 [pull]
 	ff = only
-[include]
-	path = ~/.gitconfig.private
-[include]
-	path = ~/.gitconfig.machine
 [init]
 	defaultBranch = master
 [sequence]
