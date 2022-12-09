@@ -5,11 +5,19 @@ if [[ -d /usr/share/fzf ]]; then
 	source /usr/share/fzf/key-bindings.zsh
 fi
 
-# Use zsh Normal Mode + / (reverse-i-search) to use fzf instead
+# Use zsh Normal Mode + / (reverse-i-search, vi-history-search-backward) to use fzf instead
+# (likewise for Normal Mode + ?)
 bindkey -M vicmd '/' fzf-history-widget
+bindkey -M vicmd '?' fzf-history-widget
+# Do not interpret Insert Mode + ESC + [/,] as _history-complete-* as it conflicts with normal Vi mode usage
+bindkey -M viins -r '^[/'
+bindkey -M viins -r '^[,'
+# FIXME: HOWEVER, using ESC to exit Insert Mode is slightly broken, so
+#        re-bind Insert Mode + ESC + / to the same fzf widget as configured above
+bindkey -M viins '^[/' fzf-history-widget
 
 # Do not interpret ESC + c as fzf-cd-widget as it conflicts with normal Vi mode usage
-# Instead, use zsh Normal Mode + C (capital)
 bindkey -M vicmd -r '^[c'
 bindkey -M viins -r '^[c'
+# Instead, use zsh Normal Mode + C (capital)
 bindkey -M vicmd 'C' fzf-cd-widget
