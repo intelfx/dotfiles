@@ -1,5 +1,27 @@
 #!/hint/zsh
 
+#
+# Reminder to myself how this works.
+#
+# 1. Random commands -> fzf-tab
+#    `$ random-command <Tab>` -> compsys + fzf-tab
+#
+# 2. Select commands -> fzf/completion.zsh (`**` is `$FZF_COMPLETION_TRIGGER`)
+#    `$ vim **<Tab>` -> _fzf_compgen_path()
+#    `$ cd **<Tab>` -> _fzf_compgen_dir()
+#    ...
+#
+# 3. Special Vi mode key combinations -> fzf/key-bindings.zsh
+#    `/` -> `fzf-history-widget` (`$FZF_CTRL_R_OPTS`)
+#           NB: relevance sorting is still `^R` because it is hardcoded in the widget!
+#    `C` -> `fzf-cd-widget` (`$FZF_ALT_C_COMMAND`, `$FZF_ALT_C_OPTS`)
+#    `^T` -> `fzf-file-widget` (`$FZF_CTRL_T_COMMAND`, `$FZF_CTRL_T_OPTS`)
+#
+# 4. Command-line usage: see `$FZF_DEFAULT_COMMAND`
+#
+# 5. All of the above: see `$FZF_DEFAULT_OPTS`
+#
+
 if ! [[ -d /usr/share/fzf ]]; then
 	return
 fi
