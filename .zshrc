@@ -45,14 +45,14 @@ load_zshrc_d $HOME/.zshrc.early.d
 [[ -z "$WSLENV" && -z "$NOTMUX" && -z "$TMUX" && "$UID" == "$(stat -c "%u" "${(%):-%x}")" ]] && command -v tmx &>/dev/null && exec tmx
 
 #
-# snippets (aliases, colors etc.)
-#
-load_zshrc_d ~/.zshrc.d
-
-#
 # early plugins
 #
 load_plugin_d ~/.zsh/plugins.early
+
+#
+# snippets (aliases, colors etc.)
+#
+load_zshrc_d ~/.zshrc.d
 
 #
 # plugins

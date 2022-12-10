@@ -52,7 +52,27 @@ bindkey -M vicmd 'C' fzf-cd-widget
 
 #
 # Clever hack: set up double <Tab> instead of $FZF_COMPLETION_TRIGGER for default fzf completion
+# NOTE: this needs fzf-tab to load before .zshrc.d/fzf, read below
 #
+
+# Another reminder for myself how this all works.
+#
+# Both fzf-tab and fzf/completion.zsh (hereinafter fzf.zsh) bind their widgets
+# to ^I (Tab) and wrap the previously bound widget.
+#
+# fzf-tab manual advises the user to load fzf-tab last (specifically, after
+# fzf.zsh) such that fzf-tab's widget (fzf-tab-complete) is called first and
+# wraps the fzf.zsh's widget (fzf-complete).
+#
+# However, due to my double <Tab> hack I would prefer if the order was reversed,
+# such that fzf.zsh's widget is called first and wraps the fzf-tab's widget
+# (fzf-tab-complete).
+#
+# The reason for this is that if I use a double <Tab> and fzf-complete fails to
+# come up with a completion, it will call the next wrapped widget, which has to
+# be fzf-tab-complete so that I still get some sort of fzf-powered completion
+# instead of expand-or-complete (the default one).
+# (Also see the comment below.)
 
 fzf-completion-notrigger() {
 	# disable trigger just this once
@@ -61,6 +81,7 @@ fzf-completion-notrigger() {
 	# instead of the default completion widget (expand-or-complete).
 	#
 	# FIXME: triggers an infinite recursion on an empty prompt
+	#        if this worked, the above ordering dance would not be needed
 	# _zsh_autosuggest_highlight_reset:3: maximum nested function level reached; increase FUNCNEST?
 	#
 	#local fzf_default_completion='fzf-tab-complete'
