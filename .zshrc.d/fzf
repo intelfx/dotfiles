@@ -29,6 +29,10 @@ fi
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
+#
+# Set up custom keybindings for fzf widgets
+#
+
 # Use zsh Normal Mode + / (reverse-i-search, vi-history-search-backward) to use fzf instead
 # (likewise for Normal Mode + ?)
 bindkey -M vicmd '/' fzf-history-widget
@@ -45,3 +49,29 @@ bindkey -M vicmd -r '^[c'
 bindkey -M viins -r '^[c'
 # Instead, use zsh Normal Mode + C (capital)
 bindkey -M vicmd 'C' fzf-cd-widget
+
+#
+# Clever hack: set up double <Tab> instead of $FZF_COMPLETION_TRIGGER for default fzf completion
+#
+
+fzf-completion-notrigger() {
+	# disable trigger just this once
+	local FZF_COMPLETION_TRIGGER=""
+	# if fzf-completion can't come up with something, call fzf-tab-complete
+	# instead of the default completion widget (expand-or-complete).
+	#
+	# FIXME: triggers an infinite recursion on an empty prompt
+	# _zsh_autosuggest_highlight_reset:3: maximum nested function level reached; increase FUNCNEST?
+	#
+	#local fzf_default_completion='fzf-tab-complete'
+	fzf-completion "$@"
+}
+zle -N fzf-completion-notrigger
+
+# Set an aggressive $KEYTIMEOUT to make usage of single <Tab> less miserable
+KEYTIMEOUT=20
+# Bind double <Tab>
+bindkey '\t\t' fzf-completion-notrigger
+# Bind Ctrl-Space in case I am unable to use double <Tab> due to a combination
+# of the aggressive $KEYTIMEOUT on a slow link.
+bindkey '^ ' fzf-completion-notrigger
