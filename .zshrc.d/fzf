@@ -1,9 +1,11 @@
 #!/hint/zsh
 
-if [[ -d /usr/share/fzf ]]; then
-	source /usr/share/fzf/completion.zsh
-	source /usr/share/fzf/key-bindings.zsh
+if ! [[ -d /usr/share/fzf ]]; then
+	return
 fi
+
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 # Use zsh Normal Mode + / (reverse-i-search, vi-history-search-backward) to use fzf instead
 # (likewise for Normal Mode + ?)
