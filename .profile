@@ -88,6 +88,9 @@ export MINIKUBE_IN_STYLE=0
 # Fuck you too!
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
+# Prevent myself and anyone else from turning the system into a landfill.
+export PIP_REQUIRE_VIRTUALENV=true
+
 # setting /org/gnome/desktop/interface/gtk-im-module in dconf doesn't work somehow...
 #export GTK_IM_MODULE="gtk-im-context-simple"
 
