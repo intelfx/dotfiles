@@ -7,8 +7,8 @@
 #    `$ random-command <Tab>` -> compsys + fzf-tab
 #
 # 2. Select commands -> fzf/completion.zsh (`**` is `$FZF_COMPLETION_TRIGGER`)
-#    `$ vim **<Tab>` -> _fzf_compgen_path()
-#    `$ cd **<Tab>` -> _fzf_compgen_dir()
+#    `$ vim **<Tab>` -> _fzf_compgen_path() (`$FZF_COMPLETION_OPTS`)
+#    `$ cd **<Tab>` -> _fzf_compgen_dir() (`$FZF_COMPLETION_OPTS`)
 #    ...
 #
 # 3. Special Vi mode key combinations -> fzf/key-bindings.zsh
