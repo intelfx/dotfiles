@@ -82,3 +82,14 @@ alias gpuf='git push -f'
 alias gpuu='git push -u'
 alias gpuo='git push origin'
 alias gpuuo='git push -u origin'
+
+# generate --no-pager versions of (some) aliases
+for k v in "${(@kv)aliases}"; do
+	case "$v" in
+	'git diff '*|\
+	'git log '*\
+	)
+		alias "G${k#g}"="git --no-pager ${v#git }"
+		;;
+	esac
+done
