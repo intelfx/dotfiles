@@ -52,6 +52,11 @@
 	pushInsteadOf = fdo:
 	pushInsteadOf = git://gitlab.freedesktop.org/
 	pushInsteadOf = https://gitlab.freedesktop.org/
+[url "https://git.sr.ht/"]
+	insteadOf = sr.ht:
+[url "git@git.sr.ht:"]
+	pushInsteadOf = sr.ht:
+	pushInsteadOf = https://git.sr.ht/
 [rerere]
 	enabled = 1
 	autoupdate = true
