@@ -86,8 +86,9 @@ alias gpuuo='git push -u origin'
 # generate --no-pager versions of (some) aliases
 for k v in "${(@kv)aliases}"; do
 	case "$v" in
-	'git diff '*|\
-	'git log '*\
+	'git diff'*|\
+	'git log'*|\
+	'git branch'*\
 	)
 		alias "G${k#g}"="git --no-pager ${v#git }"
 		;;
