@@ -86,7 +86,7 @@ export REGISTRY_AUTH_FILE="$(systemd-path user-shared)/containers/auth.json"
 export MINIKUBE_IN_STYLE=0
 
 # Fuck you too!
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+#export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 # Prevent myself and anyone else from turning the system into a landfill.
 export PIP_REQUIRE_VIRTUALENV=true
