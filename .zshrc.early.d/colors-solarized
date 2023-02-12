@@ -18,9 +18,14 @@ if [[ "$TERM" != linux && "$TERM" != vt* ]]; then
 fi
 
 if [[ $1 == reset ]]; then
+	# Default: fg=7, bg=0
+	# Underline: fg=15 (bright)
+	# Dim: fg=8 (dim)
 	cat <<-"EOF" | tr -d ' \t\n'
 		]R
 		[0;37;40m
+		[1;15]
+		[2;8]
 		[8]
 		[J
 	EOF
@@ -45,15 +50,34 @@ cat <<-"EOF" | tr -d ' \t\n'
 	]PD6c71c4
 	]PE93a1a1
 	]PFfdf6e3
-	[0;100;94m
+	[0m
+	[0;5;94;100m
 	[8]
+	[1;12]
+	[2;12]
 	[J
 EOF
+$HOME/bin/misc/style-devel/colors
 #
-#	[H[J
-#	[0;100;94m
-#	[8]
+#	]R
+#		resets terminal
+#	]Pnaabbcc
+#		sets ANSI color <0xn> to r=<0xaa>, g=<0xbb>, b=<0xcc>
+#	[0;5;100;94m
+#		sets background and foreground to base03/base00:
+#			0: reset attributes
+#			94: fg=bright,4 (== 12)
+#			100: bg=bright,0 (== 8)
+#			     this is broken in Linux VT (100+n is the same as 40+n), still done this way for symmetry
+#			5: blink <=> bg=bright (sic!)
+#			   XXX: bright background colors only work with 256-glyph fonts
+#			        (notably, ter-vXXn are out!)
 #	[1;12]
 #	[2;12]
+#		sets dim and underline foreground to base00 (same as normal)
+#	[8]
+#		sets current attributes as default
+#	[H[J
+#		resets cursor position
 #
 export IS_SOLARIZED=1
