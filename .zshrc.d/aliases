@@ -29,10 +29,10 @@ alias r-cp='r-cp-n -aHAX'
 alias r-mv='r-cp --remove-source-files'
 alias r-mv-n='r-cp-n --remove-source-files'
 alias r-sync='r-cp --delete'
-alias r-sync-n='r-cp -ltDH --delete'
 alias r-install='r-cp-n -lEDH' # no perms (executability instead), times, group, owner, ACLs, xattrs
 alias r-put='r-mv-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
 alias r-cput='r-cp-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
+alias r-sync-put='r-cp-n -ltDH --chmod=ugo=rwX --delete' # no perms, group, owner, ACLs, xattrs
 
 # FIXME: default ACLs vs umask
 alias cp-put='cp -dPR --preserve=timestamps --reflink'
