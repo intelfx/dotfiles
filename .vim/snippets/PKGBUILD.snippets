@@ -1,17 +1,17 @@
 snippet pkgver-git
-	function pkgver() {
+	pkgver() {
 		cd "\$pkgname"
-		git describe --long | sed 's/-/.r/;s/-/./'
+		git describe --long $0| sed 's/^v//;s/-/.r/;s/-/./'
 	}
 
 snippet pkgver-git-complex
-	function pkgver() {
+	pkgver() {
 		cd "\$pkgname"
 		git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 	}
 
 snippet pkgver-git-notags
-	function pkgver() {
+	pkgver() {
 		cd "\$pkgname"
 		printf "r%s.%s" "\$(git rev-list --count HEAD)" "\$(git rev-parse --short HEAD)"
 	}
