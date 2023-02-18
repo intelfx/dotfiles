@@ -5,8 +5,7 @@
 " Get the defaults that most users want.
 runtime! defaults.vim
 
-let g:snipMate = {}
-let g:snipMate.snippet_version = 1
+let g:snipMate = { 'snippet_version' : 1 }
 
 packloadall
 
