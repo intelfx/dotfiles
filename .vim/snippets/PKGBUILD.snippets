@@ -15,3 +15,10 @@ snippet pkgver-git-notags
 		cd "\$pkgname"
 		printf "r%s.%s" "\$(git rev-list --count HEAD)" "\$(git rev-parse --short HEAD)"
 	}
+
+snippet prepare-patches
+	for p in "\${source[@]}"; do
+		if [[ \${p} == *.patch ]]; then
+			git apply "\${srcdir}/\${p}"
+		fi
+	done
