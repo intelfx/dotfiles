@@ -67,6 +67,7 @@ if ! [[ "$SSH_AUTH_SOCK" ]]; then
 fi
 export EDITOR="$(which vim)"
 export PAGER="$(which less)"
+export BROWSER="$(which xdg-open)"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
 export MOZ_ENABLE_WAYLAND=1
