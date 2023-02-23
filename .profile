@@ -65,9 +65,9 @@ if ! [[ "$SSH_AUTH_SOCK" ]]; then
 		export SSH_AUTH_SOCK="$(systemd-path user-runtime)/gnupg/S.gpg-agent.ssh"
 	fi
 fi
-export EDITOR="$(which vim)"
-export PAGER="$(which less)"
-export BROWSER="$(which xdg-open)"
+export EDITOR="$(command -v vim)"
+export PAGER="$(command -v less)"
+export BROWSER="$(command -v xdg-open)"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
 export MOZ_ENABLE_WAYLAND=1
