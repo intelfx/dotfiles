@@ -36,3 +36,7 @@
 
 # Do not ignore .solarized
 !/.solarized
+
+# GDB configuration and scripts
+!/.gdbinit.d
+!/.gdb.d
