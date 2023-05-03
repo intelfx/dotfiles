@@ -18,7 +18,7 @@
 	url = https://github.com/tomtom/tlib_vim
 [submodule ".vim/bundle/snake"]
 	path = .vim/bundle/snake
-	url = https://github.com/amoffat/snake
+	url = https://github.com/intelfx/snake
 [submodule ".zsh/plugins/zsh-autosuggestions"]
 	path = .zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
