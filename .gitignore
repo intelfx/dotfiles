@@ -4,6 +4,9 @@
 # Do not ignore .gitignore (this shall remain special)
 !/.gitignore
 
+# Do not ignore .dotfiles
+!/.dotfiles
+
 # Do not ignore .fonts/*.bdf
 !/.fonts
 /.fonts/*
@@ -33,9 +36,6 @@
 !/.zshrc.late.d
 !/.zsh
 /.zshrc.d/*-private
-
-# Do not ignore .solarized
-!/.solarized
 
 # GDB configuration and scripts
 !/.gdbinit.d

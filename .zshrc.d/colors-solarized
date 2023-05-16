@@ -9,8 +9,8 @@ screen|xterm)
 	export TERM=${TERM}-16color
 	;;
 esac
-eval $(dircolors -b "$HOME/.solarized/dircolors/dircolors.ansi-universal")
-export MC_SKIN="$HOME/.solarized/mc/solarized.ini"
+eval $(dircolors -b "$HOME/.dotfiles/solarized/dircolors/dircolors.ansi-universal")
+export MC_SKIN="$HOME/.dotfiles/solarized/mc/solarized.ini"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
 

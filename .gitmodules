@@ -26,13 +26,13 @@
 	path = .zsh/misc/pure
 	url = https://github.com/intelfx/pure
 [submodule ".solarized/dircolors"]
-	path = .solarized/dircolors
+	path = .dotfiles/solarized/dircolors
 	url = https://github.com/seebi/dircolors-solarized
 [submodule ".solarized/main"]
-	path = .solarized/main
+	path = .dotfiles/solarized/main
 	url = https://github.com/altercation/solarized
 [submodule ".solarized/mc"]
-	path = .solarized/mc
+	path = .dotfiles/solarized/mc
 	url = https://github.com/intelfx/mc-solarized-skin
 [submodule ".zsh/plugins-late/zsh-syntax-highlighting"]
 	path = .zsh/plugins.late/zsh-syntax-highlighting
@@ -44,7 +44,7 @@
 	path = .vim/bundle/vim-mikrotik
 	url = https://github.com/zainin/vim-mikrotik
 [submodule ".solarized/intellij"]
-	path = .solarized/intellij
+	path = .dotfiles/solarized/intellij
 	url = https://github.com/intelfx/intellij-colors-solarized
 [submodule ".vim/bundle/asl-vim"]
 	path = .vim/bundle/asl-vim
