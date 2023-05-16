@@ -1,4 +1,5 @@
-dashboard -layout assembly breakpoints expressions history memory registers source stack threads variables
+#dashboard -layout assembly breakpoints expressions history memory registers source stack threads variables
+dashboard -layout assembly breakpoints expressions source variables stack threads
 dashboard -style syntax_highlighting 'solarized-dark'
 dashboard -style prompt_running '\\[\\e[1;95m\\]>>>\\[\\e[0m\\]'
 dashboard -style prompt_not_running '\\[\\e[1;92m\\]>>>\\[\\e[0m\\]'
