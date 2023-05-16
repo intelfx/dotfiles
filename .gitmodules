@@ -108,3 +108,6 @@
 [submodule ".vim/bundle/vim-toml"]
 	path = .vim/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml
+[submodule ".dotfiles/stglobalignore"]
+	path = .dotfiles/stglobalignore
+	url = https://gist.github.com/jult/e2eaedad6b9e29d95977fea0ddffae7d
