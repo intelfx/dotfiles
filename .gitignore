@@ -12,7 +12,7 @@
 /.fonts/*
 !/.fonts/*.bdf
 
-# Do not ignore .config/{awesome,Bespin}
+# Do not ignore select dirs under .config
 !/.config
 /.config/*
 !/.config/awesome
@@ -20,12 +20,17 @@
 !/.config/mpv
 !/.config/fontconfig
 
+# Do not ignore .config/gmailctl, except credentials
+/.config/gmailctl/*.json
+!/.config/gmailctl
+
 # Do not ignore .config/QtProject/qtcreator/styles
 !/.config/QtProject
 /.config/QtProject/*
 !/.config/QtProject/qtcreator
 /.config/QtProject/qtcreator/*
 !/.config/QtProject/qtcreator/styles
+
 
 # Do not ignore .vim
 !/.vim
