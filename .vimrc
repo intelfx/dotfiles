@@ -96,6 +96,7 @@ set number
 "set nofsync
 set swapsync=
 set hidden
+set undolevels=1000000
 
 silent !mkdir -p ~/.cache/vim/{swap,backup,undo}
 set dir=~/.cache/vim/swap//,.
