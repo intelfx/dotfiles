@@ -54,7 +54,7 @@ set undolevels=100
 " If you installed the vim.txt help file set vimhelp.
 " If would rather use a plain text help file set novimhelp.
 
-set novimhelp
+set vimhelp
 
 " If you would like to run an executable file when you
 " press return on the file name set this.
@@ -92,7 +92,8 @@ set smartcase
 
 " Don't highlight search results automatically
 
-set nohlsearch
+"set nohlsearch
+set hlsearch
 
 " Use increment searching (search while typing)
 set incsearch
@@ -459,3 +460,10 @@ nnoremap <f8> :delete<cr>
 " Block particular shortcut
 "
 " nnoremap <left> <nop>
+
+" ------------------------------------------------------------------------------
+
+screen!
+set hlsearch
+vnoremap <f5> :copy<cr>
+vnoremap <f6> :move<cr>
