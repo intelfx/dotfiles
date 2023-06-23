@@ -19,6 +19,8 @@
 !/.config/Bespin
 !/.config/mpv
 !/.config/fontconfig
+!/.config/vifm
+/.config/vifm/vifminfo.json
 
 # Do not ignore .config/gmailctl, except credentials
 /.config/gmailctl/*.json
