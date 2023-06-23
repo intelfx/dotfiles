@@ -100,3 +100,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 if test -r "$HOME/.profile.private"; then
 	. "$HOME/.profile.private"
 fi
+
+if test -r "$HOME/.profile.machine"; then
+	. "$HOME/.profile.machine"
+fi
