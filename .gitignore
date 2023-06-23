@@ -19,6 +19,7 @@
 !/.config/Bespin
 !/.config/mpv
 !/.config/fontconfig
+!/.config/git
 !/.config/vifm
 /.config/vifm/vifminfo.json
 
