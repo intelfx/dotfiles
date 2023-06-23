@@ -19,6 +19,7 @@
 !/.config/Bespin
 !/.config/mpv
 !/.config/fontconfig
+!/.config/git
 
 # Do not ignore .config/gmailctl, except credentials
 /.config/gmailctl/*.json
