@@ -30,6 +30,15 @@ prepend() {
 	done
 	eval "$name=\"$var\""
 }
+path_remove() {
+	local arg="$1"
+
+	PATH=":$PATH:"
+	PATH=${PATH//":"/"::"}
+	PATH=${PATH//":$arg:"/}
+	PATH=${PATH//"::"/":"}
+	PATH=${PATH#:}; PATH=${PATH%:}
+}
 
 if command -v sccache &>/dev/null; then
 	export RUSTC_WRAPPER="$(command -v sccache)"
