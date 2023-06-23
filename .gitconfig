@@ -111,6 +111,7 @@
 	autosquash = true
 [alias]
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
+	ls-conflicts = diff --name-only --diff-filter=U --relative
 [blame]
 	coloring = highlightRecent
 	showEmail = true
