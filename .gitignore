@@ -22,6 +22,7 @@
 !/.config/git
 !/.config/vifm
 /.config/vifm/vifminfo.json
+/.config/vifm/vifm-help.txt
 
 # Do not ignore .config/gmailctl, except credentials
 /.config/gmailctl/*.json
