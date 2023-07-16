@@ -35,7 +35,11 @@ source /usr/share/fzf/key-bindings.zsh
 #
 
 # Options to fzf command
-export FZF_COMPLETION_OPTS='--border --info=inline'
+export FZF_COMPLETION_OPTS='
+--border
+--info=inline
+--bind=ctrl-space:toggle
+'
 
 if command -v fd &>/dev/null; then
 	# Use fd (https://github.com/sharkdp/fd) instead of the default find
