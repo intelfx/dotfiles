@@ -111,3 +111,6 @@
 [submodule ".dotfiles/stglobalignore"]
 	path = .dotfiles/stglobalignore
 	url = https://gist.github.com/jult/e2eaedad6b9e29d95977fea0ddffae7d
+[submodule ".vim/bundle/undotree"]
+	path = .vim/bundle/undotree
+	url = https://github.com/mbbill/undotree
