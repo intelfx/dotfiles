@@ -1,4 +1,11 @@
+*.kate-swp
+*~
+.*.sw?
+*.kdev4
+.kdev4
+*.sublime-workspace
 /.idea
 __pycache__/
 *.pyc
 *.pyo
+# vim: ft=gitignore:
