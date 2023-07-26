@@ -41,7 +41,7 @@
 [url "https://gitlab.gnome.org/"]
 	insteadOf = gnome:
 	insteadOf = git://gitlab.gnome.org/
-[url "git@gitlab.gnome.org:"]
+[url "git@ssh.gitlab.gnome.org:"]
 	pushInsteadOf = gnome:
 	pushInsteadOf = git://gitlab.gnome.org/
 	pushInsteadOf = https://gitlab.gnome.org/
