@@ -48,7 +48,7 @@ if [[ -d /usr/lib/ccache/bin ]]; then
 	prepend PATH /usr/lib/ccache/bin
 fi
 
-if [[ -d "$HOME/local/bin" ]]; then
+if [[ -d "$HOME/.local/bin" ]]; then
 	prepend PATH "$HOME/.local/bin"
 fi
 
