@@ -102,9 +102,12 @@ export MINIKUBE_IN_STYLE=0
 
 # Prevent myself and anyone else from turning the system into a landfill,
 # unless PEP 668 is in effect.
-if ! compgen -G '/usr/lib/python*/EXTERNALLY-MANAGED' &>/dev/null; then
+if ! { command -v python3 &>/dev/null \
+    && _python_stdlib="$(python3 -c 'import sysconfig; print(sysconfig.get_path("stdlib", sysconfig.get_default_scheme())' 2>/dev/null)" \
+    && [[ -e "$_python_stdlib/EXTERNALLY-MANAGED" ]]; }; then
 	export PIP_REQUIRE_VIRTUALENV=true
 fi
+unset _python_stdlib
 
 # setting /org/gnome/desktop/interface/gtk-im-module in dconf doesn't work somehow...
 #export GTK_IM_MODULE="gtk-im-context-simple"
