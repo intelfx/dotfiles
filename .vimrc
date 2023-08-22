@@ -106,6 +106,14 @@ set undodir=~/.cache/vim/undo//,.
 set undofile
 set viminfofile=~/.cache/vim/info
 
+if !empty($VIM_LARGE_FILE)
+  set nofsync
+  set undolevels=10
+  set noswapfile
+  set nobackup
+  set noundofile
+endif
+
 let &colorcolumn=join(range(81,999), ",")
 
 set grepprg=rg\ --vimgrep\ --word-regexp\ $*
