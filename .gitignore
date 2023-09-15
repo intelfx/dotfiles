@@ -23,6 +23,14 @@
 !/.config/vifm
 /.config/vifm/vifminfo.json
 !/.config/htop
+!/.config/sublime-merge
+/.config/sublime-merge/*
+!/.config/sublime-merge/Packages
+/.config/sublime-merge/Packages/*
+!/.config/sublime-merge/Packages/User
+/.config/sublime-merge/Packages/User/*
+!/.config/sublime-merge/Packages/User/*.sublime-settings
+!/.config/sublime-merge/Packages/User/*.sublime-keymap
 !/.config/sublime-text
 /.config/sublime-text/*
 !/.config/sublime-text/Packages
