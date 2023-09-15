@@ -7,7 +7,7 @@ zstyle ':completion:*' auto-description 'argument: %d'
 zstyle ':completion:*' completer _complete _correct
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' file-sort name
-zstyle ':completion:*' format 'completing %d:'
+zstyle ':completion:*' format '[%d]'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' ignore-parents parent pwd ..
 zstyle ':completion:*' insert-unambiguous false
@@ -26,6 +26,11 @@ zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/intelfx/.zshrc'
 
 zstyle ':completion:*:git:*' sort false
+
+zstyle ':fzf-tab:*' switch-group 'alt-,' 'alt-.'
+if [[ $TMUX ]]; then
+	zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+fi
 
 autoload -Uz compinit
 compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
