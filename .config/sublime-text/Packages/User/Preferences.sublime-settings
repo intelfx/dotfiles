@@ -13,7 +13,7 @@
     "Vintage",
     "Vintageous",
   ],
-  "neovintageous_build_version": 12700,
+  "neovintageous_build_version": 13200,
   "tab_size": 8,
   "theme": "Adaptive.sublime-theme",
   "vintageous_handle_keys": {
@@ -44,4 +44,6 @@
   "open_files_in_new_window": "never",
   "show_project_first": true,
   "show_encoding": true,
+  "vintageous_use_super_keys": false,
+  "update_check": false,
 }
