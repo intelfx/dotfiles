@@ -67,9 +67,6 @@ bindkey -M vicmd '?' fzf-history-widget
 # Do not interpret Insert Mode + ESC + [/,] as _history-complete-* as it conflicts with normal Vi mode usage
 bindkey -M viins -r '^[/'
 bindkey -M viins -r '^[,'
-# FIXME: HOWEVER, using ESC to exit Insert Mode is slightly broken, so
-#        re-bind Insert Mode + ESC + / to the same fzf widget as configured above
-bindkey -M viins '^[/' fzf-history-widget
 
 # Do not interpret ESC + c as fzf-cd-widget as it conflicts with normal Vi mode usage
 bindkey -M vicmd -r '^[c'
