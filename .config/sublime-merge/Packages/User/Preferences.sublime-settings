@@ -6,4 +6,5 @@
 	"theme": "auto",
 	"trim_trailing_white_space_on_save": false,
 	"side_bar_layout": "tabs",
+	"update_check": false,
 }
