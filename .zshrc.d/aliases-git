@@ -2,10 +2,12 @@
 
 alias gfe='git fetch --all --tags --prune'
 alias grm='git rebase -i master'
+alias grmb='git rebase -i $(git merge-base HEAD master@{u})'
 alias grd='git rebase -i develop'
-alias grud='git rebase -i develop@{u}'
+alias grdb='git rebase -i $(git merge-base HEAD develop@{u})'
 alias gru='git rebase -i @{u}'
 alias gri='git rebase -i'
+alias grib='git rebase -i $(git merge-base HEAD @{u})'
 function grh { local _commits="${1:-0}"; shift; git rebase -i HEAD~$_commits "$@"; }
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
