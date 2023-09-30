@@ -114,3 +114,6 @@
 [submodule ".vim/bundle/undotree"]
 	path = .vim/bundle/undotree
 	url = https://github.com/mbbill/undotree
+[submodule ".vim/bundle/vala.vim"]
+	path = .vim/bundle/vala.vim
+	url = https://github.com/vala-lang/vala.vim
