@@ -28,6 +28,7 @@ zstyle :compinstall filename '/home/intelfx/.zshrc'
 zstyle ':completion:*:git:*' sort false
 
 zstyle ':fzf-tab:*' switch-group 'alt-,' 'alt-.'
+zstyle ':fzf-tab:*' query-string input
 if [[ $TMUX ]]; then
 	zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 fi
