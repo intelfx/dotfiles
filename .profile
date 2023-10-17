@@ -52,6 +52,10 @@ if [[ -d "$HOME/.local/bin" ]]; then
 	prepend PATH "$HOME/.local/bin"
 fi
 
+if [[ -d "$HOME/.local/share/flatpak/exports/bin" ]]; then
+	prepend PATH "$HOME/.local/share/flatpak/exports/bin"
+fi
+
 if [[ -d "$HOME/ct-ng/bin" ]]; then
 	export CT_PREFIX="$HOME/ct-ng/bin"
 	for d in "$CT_PREFIX"/*/bin; do
