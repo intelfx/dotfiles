@@ -56,9 +56,20 @@ export FZF_COMPLETION_OPTS='
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
 if command -v fd &>/dev/null; then
+	__fzf_compgen_nofollow_at() {
+		# do not follow symlinks under /sys
+		if [[ $1/ == /sys/* ]]; then
+			return 0
+		fi
+		return 1
+	}
+
 	__fzf_compgen_fd() {
 		# fd_opts declared in parent scope
-		fd_opts+=( --hidden --follow --exclude ".git" )
+		fd_opts+=( --hidden --exclude ".git" )
+		if ! __fzf_compgen_nofollow_at "$1"; then
+			fd_opts+=( --follow )
+		fi
 		fd "${fd_opts[@]}" . "$1"
 	}
 
