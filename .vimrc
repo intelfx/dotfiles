@@ -124,8 +124,12 @@ set grepformat=%f:%l:%c:%m
 " Filetypes
 "
 
+augroup filetypedetect
+
 au BufRead,BufNewFile *.tpl setlocal filetype=gotexttmpl
 au BufRead,BufNewFile *.gotmpl setlocal filetype=gotexttmpl
+
+augroup END
 
 
 "
