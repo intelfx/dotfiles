@@ -128,6 +128,8 @@ augroup filetypedetect
 
 au BufRead,BufNewFile *.tpl setlocal filetype=gotexttmpl
 au BufRead,BufNewFile *.gotmpl setlocal filetype=gotexttmpl
+au BufRead,BufNewFile /share/polkit-1/rules.d/*.rules setlocal filetype=javascript
+au BufRead,BufNewFile /etc/polkit-1/rules.d/*.rules setlocal filetype=javascript
 
 augroup END
 
