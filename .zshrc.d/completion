@@ -27,12 +27,6 @@ zstyle :compinstall filename '/home/intelfx/.zshrc'
 
 zstyle ':completion:*:git:*' sort false
 
-zstyle ':fzf-tab:*' switch-group 'alt-,' 'alt-.'
-zstyle ':fzf-tab:*' query-string input
-if [[ $TMUX ]]; then
-	zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-fi
-
 autoload -Uz compinit
 compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
 

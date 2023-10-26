@@ -31,6 +31,16 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
 #
+# Configure fzf-tab
+#
+
+zstyle ':fzf-tab:*' switch-group 'alt-1' 'alt-2'
+zstyle ':fzf-tab:*' query-string input
+if [[ $TMUX ]]; then
+	zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+fi
+
+#
 # Set up behavior for fzf.zsh
 #
 
