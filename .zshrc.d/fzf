@@ -56,6 +56,18 @@ export FZF_COMPLETION_OPTS='
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
 if command -v fd &>/dev/null; then
+	# NOTE the double negative here: "ignore git repo" means
+	# "do not use its settings", i. e. "ignore its .gitignore"
+	__fzf_compgen_skip_vcs_at() {
+		local git_toplevel_dir
+		# do not use gitignore from $HOME
+		if git_toplevel_dir="$(git -C "$1" rev-parse --show-toplevel 2>/dev/null)" \
+		   && [[ "$git_toplevel_dir" == "$HOME" ]]; then
+			return 0
+		fi
+		return 1
+	}
+
 	__fzf_compgen_nofollow_at() {
 		# do not follow symlinks under /sys
 		if [[ $1/ == /sys/* ]]; then
@@ -69,6 +81,9 @@ if command -v fd &>/dev/null; then
 		fd_opts+=( --hidden --exclude ".git" )
 		if ! __fzf_compgen_nofollow_at "$1"; then
 			fd_opts+=( --follow )
+		fi
+		if __fzf_compgen_skip_vcs_at "$1"; then
+			fd_opts+=( --no-ignore-vcs --no-ignore-parent )
 		fi
 		fd "${fd_opts[@]}" . "$1"
 	}
