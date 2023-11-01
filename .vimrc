@@ -72,6 +72,16 @@ cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit!
 vnoremap / "zy/\V<C-R>z<CR>
 
 "
+" Splits
+"
+set splitright
+set splitbelow
+
+" Split current buffer: C-W S (normal), C-W V (vertical)
+" Split new buffer:     C-W N (normal), C-W M (vertical) <-- this is the new map
+nnoremap <C-w>m :vnew<CR>
+
+"
 " Miscellanea
 "
 
