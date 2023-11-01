@@ -102,7 +102,7 @@
 [diff]
 	tool = vimdiff
 	guitool = smerge
-	algorithm = patience
+	algorithm = histogram
 [clean]
 	requireForce = false
 [credential]
