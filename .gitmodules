@@ -117,3 +117,6 @@
 [submodule ".vim/bundle/vala.vim"]
 	path = .vim/bundle/vala.vim
 	url = https://github.com/vala-lang/vala.vim
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
