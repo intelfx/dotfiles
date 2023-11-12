@@ -2,7 +2,9 @@
 
 alias gfe='git fetch --all --tags --prune'
 alias grm='git rebase -i master'
+alias grM='git rebase -i main'
 alias grmb='git rebase -i $(git merge-base HEAD master@{u})'
+alias grMb='git rebase -i $(git merge-base HEAD main@{u})'
 alias grd='git rebase -i develop'
 alias grdb='git rebase -i $(git merge-base HEAD develop@{u})'
 alias gru='git rebase -i @{u}'
