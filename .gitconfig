@@ -57,6 +57,13 @@
 [url "git@git.sr.ht:"]
 	pushInsteadOf = sr.ht:
 	pushInsteadOf = https://git.sr.ht/
+[url "https://dev.gajim.org/"]
+	insteadOf = gajim:
+	insteadOf = git://dev.gajim.org/
+[url "git@dev.gajim.org:"]
+	pushInsteadOf = gajim:
+	pushInsteadOf = git://dev.gajim.org/
+	pushInsteadOf = https://dev.gajim.org/
 [rerere]
 	enabled = 1
 	autoupdate = true
