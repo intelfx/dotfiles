@@ -7,7 +7,7 @@
 	quotepath = off
 	quotedpath = false
 	excludesfile = ~/.gitignore.global
-	pager = ${GIT_PAGER-${PAGER-less}} -FRX
+	pager = ${GIT_PAGER-${PAGER-less}} -FR
 [guitool "Interactive history rewrite"]
 	cmd = git rebase -i $REVISION
 	revprompt = yes
