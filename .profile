@@ -116,6 +116,13 @@ unset _python_stdlib
 # setting /org/gnome/desktop/interface/gtk-im-module in dconf doesn't work somehow...
 #export GTK_IM_MODULE="gtk-im-context-simple"
 
+# Point $DOCKER_HOST to the podman system instance (if it is present)
+if ! [[ "$DOCKER_HOST" ]]; then
+	if [[ "$XDG_RUNTIME_DIR" && -e "$XDG_RUNTIME_DIR/podman/podman.sock" ]]; then
+		export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+	fi
+fi
+
 if test -r "$HOME/.profile.private"; then
 	. "$HOME/.profile.private"
 fi
