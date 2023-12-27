@@ -37,6 +37,10 @@ alias r-sync-put='r-cp-n -ltDH --chmod=ugo=rwX --delete' # no perms, group, owne
 # FIXME: default ACLs vs umask
 alias cp-put='cp -dPR --preserve=timestamps --reflink'
 
+if [[ $WAYLAND_DISPLAY || $DISPLAY ]]; then
+	alias xman='xdg-man'
+fi
+
 # this export only makes sense in the interactive sessions
 # replaces {,c}cmake() functions/aliases to set default generator
 export CMAKE_GENERATOR=Ninja
