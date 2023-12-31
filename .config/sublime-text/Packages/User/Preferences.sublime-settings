@@ -9,9 +9,7 @@
   //"font_face": "Iosevka",
   "font_size": 9,
   "ignored_packages": [
-    "Six",
     "Vintage",
-    "Vintageous",
   ],
   "neovintageous_build_version": 13200,
   "tab_size": 8,
