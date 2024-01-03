@@ -1,0 +1,37 @@
+# vim: ft=taskrc:
+# [Created by task 2.5.1 6/13/2017 07:25:27]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+news.version=2.6.0
+
+# Files
+data.location=~/.task
+
+# Color theme (uncomment one to use)
+include /usr/share/doc/task/rc/solarized-dark-256.theme
+
+color.blocked=color10  #color0 on color10
+color.blocking=color14  #color15 on color10
+
+urgency.blocking.coefficient=0.5
+urgency.blocked.coefficient=-0.5
+urgency.tags.coefficient=0
+urgency.annotations.coefficient=0
+urgency.project.coefficient=0.1
+urgency.age.coefficient=-2.0  # lol
+
+urgency.user.tag.sidenote.coefficient=-20
+urgency.user.tag.someday.coefficient=-10
+urgency.user.tag.peeve.coefficient=1
+urgency.user.tag.bug.coefficient=1.5
+urgency.user.tag.personal.coefficient=2
+urgency.user.project.FOSS.coefficient=-5
