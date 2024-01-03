@@ -51,7 +51,6 @@
 /.config/QtProject/qtcreator/*
 !/.config/QtProject/qtcreator/styles
 
-
 # Do not ignore .vim
 !/.vim
 
@@ -65,3 +64,7 @@
 # GDB configuration and scripts
 !/.gdbinit.d
 !/.gdb.d
+
+# taskwarrior
+!/.taskrc
+!/.taskrc.work
