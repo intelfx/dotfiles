@@ -44,4 +44,5 @@
   "show_encoding": true,
   "vintageous_use_super_keys": false,
   "update_check": false,
+  "index_files": true,
 }
