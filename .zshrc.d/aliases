@@ -98,8 +98,7 @@ alias b2='backblaze-b2'
 function loadflags() {
 	eval "$(bash -c '
 . /etc/makepkg.conf
-declare -x CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null
-declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS | sed -nr "s|^declare -x |export |p"
+declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
 ')"
 }
 
@@ -109,7 +108,6 @@ function loadflags_lto() {
 CFLAGS+=" $LTOFLAGS"
 CXXFLAGS+=" $LTOFLAGS"
 LDFLAGS+=" $LTOFLAGS"
-declare -x CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null
-declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS | sed -nr "s|^declare -x |export |p"
+declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
 ')"
 }
