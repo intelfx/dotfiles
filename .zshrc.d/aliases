@@ -111,3 +111,9 @@ LDFLAGS+=" $LTOFLAGS"
 declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
 ')"
 }
+
+function loadflags_best() {
+	export CFLAGS="-march=native -O3 -fno-plt -flto=auto -fuse-linker-plugin -pipe"
+	export CXXFLAGS="$CFLAGS"
+	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
+}
