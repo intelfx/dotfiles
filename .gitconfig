@@ -120,6 +120,7 @@
 [alias]
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
+	cclean = clean -xd -e '/.idea' -e '/.sublime-*'
 [blame]
 	coloring = highlightRecent
 	showEmail = true
