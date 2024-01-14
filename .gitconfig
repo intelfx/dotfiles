@@ -3,7 +3,7 @@
 [include]
 	path = ~/.gitconfig.machine
 [core]
-	preloadindex = 1
+	preloadindex = true
 	quotepath = off
 	quotedpath = false
 	excludesfile = ~/.gitignore.global
