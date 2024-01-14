@@ -74,9 +74,6 @@
 	default = current
 [sendemail]
 	annotate = true
-[color]
-	diff = auto
-	ui = auto
 [color "status"]
 	header = 10 # "bold green", solarized secondary
 	added = yellow
