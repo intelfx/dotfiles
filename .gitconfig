@@ -8,6 +8,8 @@
 	quotedpath = false
 	excludesfile = ~/.gitignore.global
 	pager = ${GIT_PAGER-${PAGER-less}} -FR
+[checkout]
+	workers = 0
 [guitool "Interactive history rewrite"]
 	cmd = git rebase -i $REVISION
 	revprompt = yes
