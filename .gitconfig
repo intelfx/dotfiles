@@ -1,7 +1,5 @@
 [include]
 	path = ~/.gitconfig.private
-[include]
-	path = ~/.gitconfig.machine
 [core]
 	preloadindex = true
 	quotepath = off
@@ -132,3 +130,5 @@
 	editor = interactive-rebase-tool
 [gc]
 	autoDetach = false
+[include]
+	path = ~/.gitconfig.machine
