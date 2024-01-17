@@ -118,3 +118,12 @@ function loadflags_best() {
 	export CXXFLAGS="$CFLAGS"
 	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
 }
+
+function loadflags_dbg() {
+	eval "$(bash -c '
+. /etc/makepkg.conf
+CFLAGS+=" $DEBUG_CFLAGS"
+CXXFLAGS+=" $DEBUG_CXXFLAGS"
+declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+')"
+}
