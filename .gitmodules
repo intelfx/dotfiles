@@ -120,3 +120,7 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule ".config/sublime-text/Packages/Jinja2"]
+	path = .config/sublime-text/Packages/Jinja2
+	url = https://github.com/intelfx/BetterJinja
+	branch = work/variants
