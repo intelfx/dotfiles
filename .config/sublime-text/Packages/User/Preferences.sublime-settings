@@ -15,18 +15,20 @@
   "tab_size": 8,
   "theme": "Adaptive.sublime-theme",
   "vintageous_handle_keys": {
-    //"escape": false,
     // find
     "<C-f>": false,
 
     // copy/paste
-    "<C-c>": false,
-    "<C-v>": false,
+    // (unneeded since we can use clipboard integration,
+    //  and interferes with VISUAL BLOCK mode)
+    //"<C-c>": true,
+    //"<C-v>": true,
 
     // save file
     "<C-s>": false,
 
     // close file
+    // (interferes with window management commands)
     //"<C-w>": false,
 
     // open/close window
@@ -43,6 +45,9 @@
   "show_project_first": true,
   "show_encoding": true,
   "vintageous_use_super_keys": false,
+  "vintageous_use_sys_clipboard": true,
+  "vintageous_exit_when_quitting_last_window": "unless_sidebar_visible",
+  "vintageous_reset_mode_when_switching_tabs": false,
   "update_check": false,
   "index_files": true,
 }
