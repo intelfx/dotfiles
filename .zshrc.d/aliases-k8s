@@ -1,5 +1,7 @@
 #!/hint/zsh
 
+alias kctx='kubectx'
+alias kns='kubens'
 alias k='kubectl'
 alias kg='kubectl get'
 alias kgS='kubectl get -n kube-system'
