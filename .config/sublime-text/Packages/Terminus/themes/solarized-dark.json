@@ -1,0 +1,23 @@
+{
+    "name": "Solarized Dark",
+    "theme_colors": {
+        "foreground": "#839496",
+        "background": "#002b36",
+        "black": "#073642",
+        "red": "#dc322f",
+        "green": "#859900",
+        "brown": "#b58900",
+        "blue": "#268bd2",
+        "magenta": "#d33682",
+        "cyan": "#2aa198",
+        "white": "#eee8d5",
+        "light_black": "#002b36",
+        "light_red": "#cb4b16",
+        "light_green": "#586e75",
+        "light_brown": "#586e75",
+        "light_blue": "#657b83",
+        "light_magenta": "#839496",
+        "light_cyan": "#93a1a1",
+        "light_white": "#fdf6e3",
+    }
+}
