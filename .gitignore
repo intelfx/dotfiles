@@ -26,19 +26,9 @@
 !/.config/sublime-merge
 /.config/sublime-merge/*
 !/.config/sublime-merge/Packages
-/.config/sublime-merge/Packages/*
-!/.config/sublime-merge/Packages/User
-/.config/sublime-merge/Packages/User/*
-!/.config/sublime-merge/Packages/User/*.sublime-settings
-!/.config/sublime-merge/Packages/User/*.sublime-keymap
 !/.config/sublime-text
 /.config/sublime-text/*
 !/.config/sublime-text/Packages
-/.config/sublime-text/Packages/*
-!/.config/sublime-text/Packages/User
-/.config/sublime-text/Packages/User/*
-!/.config/sublime-text/Packages/User/*.sublime-settings
-!/.config/sublime-text/Packages/User/*.sublime-keymap
 
 # Do not ignore .config/gmailctl, except credentials
 /.config/gmailctl/*.json
