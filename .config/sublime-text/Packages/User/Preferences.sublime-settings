@@ -24,6 +24,8 @@
     //"<C-c>": true,
     //"<C-v>": true,
 
+    // open file
+    "<C-o>": false,
     // save file
     "<C-s>": false,
 
