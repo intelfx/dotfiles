@@ -1,0 +1,32 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+	"variables":
+	{
+	},
+	"globals":
+	{
+	},
+	"rules":
+	[
+		{
+			"name": "YAML tags",
+			"scope": "entity.name.tag.yaml",
+			"foreground": "var(cyan)",
+		},
+		{
+			"name": "YAML Values",
+			"scope": "source.yaml string.unquoted",
+			"foreground": "var(base0)",
+		},
+		{
+			"name": "Jinja markers",
+			"scope": "punctuation.definition.statement, punctuation.definition.placeholder",
+			"foreground": "var(base1)",
+		},
+		{
+			"name": "Jinja code",
+			"scope": "meta.statement.jinja, meta.placeholder.jinja",
+			"background": "var(base02)",
+		},
+	]
+}
