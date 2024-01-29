@@ -25,3 +25,7 @@ alias kdi='kubectl describe ingresses'
 alias kdiS='kubectl describe ingresses -n kube-system'
 alias kl='kubectl logs'
 alias klS='kubectl logs -n kube-system'
+
+alias ks='stern'
+alias ksS='stern -n kube-system'
+alias ksA='stern --all-namespaces'
