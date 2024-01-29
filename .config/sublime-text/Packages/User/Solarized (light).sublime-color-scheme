@@ -21,7 +21,7 @@
 		{
 			"name": "Jinja markers",
 			"scope": "punctuation.definition.statement, punctuation.definition.placeholder",
-			"foreground": "var(base01)",
+			"foreground": "var(base1)",
 		},
 		{
 			"name": "Jinja code",
