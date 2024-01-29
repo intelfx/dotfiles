@@ -26,7 +26,7 @@
 		{
 			"name": "Jinja code",
 			"scope": "meta.statement.jinja, meta.placeholder.jinja",
-			"background": "var(base02)",
+			"background": "var(base2)",
 		},
 	]
 }
