@@ -60,3 +60,8 @@
 # taskwarrior
 !/.taskrc
 !/.taskrc.work
+
+# GnuPG
+!/.gnupg
+/.gnupg/*
+!/.gnupg/*.conf
