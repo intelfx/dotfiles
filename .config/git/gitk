@@ -53,7 +53,7 @@ set linkfgcolor blue
 set circleoutlinecolor black
 set diffbgcolors {"#fff3f3" "#f0fff0"}
 set web_browser xdg-open
-set geometry(main) 2560x1256+0+0
+set geometry(main) 2560x1256+0+64
 set geometry(state) normal
 set geometry(topwidth) 2560
 set geometry(topheight) 840
