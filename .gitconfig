@@ -118,6 +118,14 @@
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
 	cclean = clean -xd -e '/.idea' -e '/.sublime-*'
+
+	# this abomination exists for the sole reason of setting a default refspec
+	# while letting the user control the remote name (which is not possible
+	# with normal git-push, hence the -c remote.$remote.push dance).
+	# the loop is needed to fish out the remote name from $@, skipping any
+	# possible leading options.
+	push-work = !git -c remote."$(for arg in "$@"; do if ! [[ $arg == -* ]]; then echo "$arg"; break; fi; done)".push="+refs/heads/work/*" push
+
 [blame]
 	coloring = highlightRecent
 	showEmail = true
