@@ -138,6 +138,8 @@
 	editor = interactive-rebase-tool
 [gc]
 	autoDetach = false
+	reflogExpire = never
+	reflogExpireUnreachable = never
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
