@@ -19,13 +19,13 @@
 			"foreground": "var(base0)",
 		},
 		{
-			"name": "Jinja markers",
-			"scope": "punctuation.definition.statement, punctuation.definition.placeholder",
+			"name": "Template engine markers",
+			"scope": "punctuation.section.interpolation",
 			"foreground": "var(base01)",
 		},
 		{
-			"name": "Jinja code",
-			"scope": "meta.statement.jinja, meta.placeholder.jinja",
+			"name": "Template engine code",
+			"scope": "meta.interpolation",
 			"background": "var(base02)",
 		},
 	]
