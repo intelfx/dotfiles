@@ -1,0 +1,49 @@
+%YAML 1.2
+---
+name: YAML (Go)
+scope: source.yaml.go
+version: 2
+
+extends: Packages/YAML/YAML.sublime-syntax
+
+file_extensions:
+  - go.yaml
+  - go.yml
+  - goyaml
+  - goyml
+
+contexts:
+
+  #flow-pair-key:
+  #  - meta_prepend: true
+  #  - include: go-custom-tags
+
+  #block-key-implicit:
+  #  - meta_prepend: true
+  #  - include: go-custom-tags
+
+  flow-scalar-plain-in-body:
+    - meta_prepend: true
+    - include: go-interpolations
+
+  flow-scalar-plain-out-body:
+    - meta_prepend: true
+    - include: go-interpolations
+
+  flow-scalar-double-quoted-body:
+    - meta_prepend: true
+    - include: go-interpolations
+
+  flow-scalar-single-quoted-body:
+    - meta_prepend: true
+    - include: go-interpolations
+
+  block-scalar-body:
+    - meta_prepend: true
+    - include: go-blocks
+
+  go-interpolations:
+    - include: scope:source.go#match-string-templates
+
+  go-blocks:
+    - include: scope:source.go#match-string-templates
