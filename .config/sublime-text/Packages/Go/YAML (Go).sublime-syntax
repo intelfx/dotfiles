@@ -7,12 +7,12 @@ version: 2
 extends: Packages/YAML/YAML.sublime-syntax
 
 file_extensions:
-  - gotpl.yaml
-  - gotpl.yml
-  - goyaml
   - goyml
-  - yaml.gotpl
+  - goyaml
+  - go.yml
+  - go.yaml
   - yml.gotpl
+  - yaml.gotpl
 
 contexts:
 
