@@ -3,8 +3,6 @@
 	"translate_tabs_to_spaces": true,
 	"extensions":
 	[
-		"yml",
-		"yaml",
 		"yaml.j2",
 	],
 }
