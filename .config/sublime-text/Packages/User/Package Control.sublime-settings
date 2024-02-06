@@ -5,7 +5,9 @@
 	],
 	"installed_packages":
 	[
+		"ApplySyntax",
 		"Compare Side-By-Side",
+		"EditorConfig",
 		"FileDiffs",
 		"INI",
 		"LSP",
