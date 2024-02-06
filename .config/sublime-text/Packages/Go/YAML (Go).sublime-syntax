@@ -21,4 +21,4 @@ contexts:
     - include: go-blocks
 
   go-blocks:
-    - include: scope:source.go#match-text-templates
+    - include: scope:source.go#match-string-templates
