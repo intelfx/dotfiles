@@ -126,6 +126,8 @@
 	# possible leading options.
 	push-work = !git -c remote."$(for arg in "$@"; do if ! [[ $arg == -* ]]; then echo "$arg"; break; fi; done)".push="+refs/heads/work/*" push
 
+	rev = rev-parse --short HEAD
+
 [blame]
 	coloring = highlightRecent
 	showEmail = true
