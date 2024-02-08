@@ -24,6 +24,7 @@ alias bc='bc -l'
 alias sha1='openssl sha1'
 alias diff='colordiff'
 alias jqr='jq -r'
+alias yqf='jqf --jq=yq'
 
 alias r-cp-n='rsync -r --partial --no-i-r'
 alias r-cp='r-cp-n -aHAX'
