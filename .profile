@@ -104,6 +104,9 @@ export MINIKUBE_IN_STYLE=0
 # Fuck you too!
 #export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
+# Et tu, Brute?..
+export SYSTEMD_EMOJI=0
+
 # Prevent myself and anyone else from turning the system into a landfill,
 # unless PEP 668 is in effect.
 if ! { command -v python3 &>/dev/null \
