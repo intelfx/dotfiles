@@ -65,6 +65,14 @@ function mkcd() {
 	mkdir -pv "$1" && cd "$1"
 }
 
+function tmpcd() {
+	local name
+	name="$(date -Iseconds)" || return
+	mkdir -pv "$HOME/tmp/tmp-$name" || return
+	cd "$HOME/tmp/tmp-$name"
+}
+alias tmp='tmpcd'
+
 function make() {
 	local has_jobs= has_makefile=
 	for arg; do
