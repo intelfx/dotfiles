@@ -1,6 +1,8 @@
 {
 	"extensions":
 	[
+		"ini.dist",
 		"ansible.cfg",
+		".npmrc",
 	],
 }
