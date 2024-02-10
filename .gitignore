@@ -65,3 +65,6 @@
 !/.gnupg
 /.gnupg/*
 !/.gnupg/*.conf
+
+# npm, pnpm
+!/.npmrc
