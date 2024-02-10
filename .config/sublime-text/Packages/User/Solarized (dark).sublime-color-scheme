@@ -20,12 +20,12 @@
 		},
 		{
 			"name": "Template engine markers",
-			"scope": "punctuation.section.interpolation",
+			"scope": "!source.shell punctuation.section.interpolation",
 			"foreground": "var(base01)",
 		},
 		{
 			"name": "Template engine code",
-			"scope": "meta.interpolation",
+			"scope": "!source.shell meta.interpolation",
 			"background": "var(base02)",
 		},
 	]
