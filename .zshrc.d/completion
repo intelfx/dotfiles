@@ -25,7 +25,7 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/intelfx/.zshrc'
 
-zstyle ':completion:*:git:*' sort false
+#zstyle ':completion:*:git:*' sort false
 
 autoload -Uz compinit
 compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
