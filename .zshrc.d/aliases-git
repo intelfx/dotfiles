@@ -14,7 +14,7 @@ function grh { local _commits="${1:-0}"; shift; git rebase -i HEAD~$_commits "$@
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
 alias gra='git rebase --abort'
-alias ga='git am'
+alias gam='git am'
 alias gac='git am --continue'
 alias gas='git am --skip'
 alias gaa='git am --abort'
@@ -79,7 +79,9 @@ alias gk='gitk --all'
 alias gg='gitg --all'
 
 alias gad='git add'
+alias ga='git add'
 alias gadp='git add -p'
+alias gap='git add -p'
 
 alias gpu='git push'
 alias gpuf='git push -f'
