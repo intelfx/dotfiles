@@ -68,3 +68,7 @@
 
 # npm, pnpm
 !/.npmrc
+
+# tigrc
+!/.tigrc
+!/.tigrc.*
