@@ -22,6 +22,7 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 alias catconfig='grep -vE "^$|^ *(#|;)"'
 alias fields='cut -d " " -f '
+alias catbs="sed ':x; /\\\\$/ { N;  s/ *\\\\\\n *//; tx }'"
 
 alias wget='wget -c'
 alias bc='bc -l'
