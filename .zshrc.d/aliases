@@ -11,6 +11,10 @@ alias cd..='cd ..'
 
 alias du='du -h'    # Makes a more readable output.
 alias df='df -Th'
+# Attempt(s) at a "df, real filesystems only"
+alias dfr='df -Th -x tmpfs -x devtmpfs -x efivarfs'
+alias dff='findmnt -D -t notmpfs,nodevtmpfs,nofuse.portal'
+alias blks='lsblk -o "NAME,FSTYPE,LABEL,FSSIZE,FSUSED,FSAVAIL,FSUSE%,MOUNTPOINTS"'
 
 # Pretty-print of some PATH variables:
 alias path='echo -e ${PATH//:/\\n}'
