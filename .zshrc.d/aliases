@@ -54,6 +54,11 @@ if [[ $WAYLAND_DISPLAY || $DISPLAY ]]; then
 	alias xman='xdg-man'
 fi
 
+# ssh/scp/sftp to "temporary" hosts
+alias ssht="ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
+alias scpt="scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
+alias sftpt="sftp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
+
 # this export only makes sense in the interactive sessions
 # replaces {,c}cmake() functions/aliases to set default generator
 export CMAKE_GENERATOR=Ninja
