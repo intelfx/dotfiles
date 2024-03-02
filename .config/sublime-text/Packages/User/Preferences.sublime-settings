@@ -43,7 +43,7 @@
   ],
   "hardware_acceleration": "opengl",
 
-  "open_files_in_new_window": "never",
+  "open_files_in_new_window": "always",
   "show_project_first": true,
   "show_encoding": true,
   "vintageous_use_super_keys": false,
