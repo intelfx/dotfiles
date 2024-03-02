@@ -117,7 +117,7 @@
 [alias]
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
-	cclean = clean -xd -e '/.idea' -e '/.sublime-*'
+	cclean = clean -xd -e '/.idea' -e '/.sublime-*' -e '/compile_commands.json'
 
 	# this abomination exists for the sole reason of setting a default refspec
 	# while letting the user control the remote name (which is not possible
