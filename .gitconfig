@@ -114,6 +114,10 @@
 	helper = /usr/bin/pass-git-helper -l
 [rebase]
 	autosquash = true
+[pretty]
+	# Use a better format for `--format=reference` and `git refer` (below)
+	# (aligned with Linux kernel code style)
+	reference = %C(auto)%h (\"%s\")
 [alias]
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
