@@ -139,12 +139,6 @@ declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-
 ')"
 }
 
-function loadflags_best() {
-	export CFLAGS="-march=native -O3 -fno-plt -flto=auto -fuse-linker-plugin -pipe"
-	export CXXFLAGS="$CFLAGS"
-	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
-}
-
 function loadflags_dbg() {
 	eval "$(bash -c '
 . /etc/makepkg.conf
@@ -152,4 +146,10 @@ CFLAGS+=" $DEBUG_CFLAGS"
 CXXFLAGS+=" $DEBUG_CXXFLAGS"
 declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
 ')"
+}
+
+function setflags_opt() {
+	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=auto -fuse-linker-plugin"
+	export CXXFLAGS="$CFLAGS"
+	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"
 }
