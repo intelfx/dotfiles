@@ -118,6 +118,7 @@
 	# Use a better format for `--format=reference` and `git refer` (below)
 	# (aligned with Linux kernel code style)
 	reference = %C(auto)%h (\"%s\")
+	fixes = %C(auto,green)Fixes: %C(auto)%h (\"%s\")
 [alias]
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
@@ -136,6 +137,7 @@
 	# aliases do not like being started with `--no-pager` for some reason,
 	# but `-c` is apparently OK
 	refer = -c pager.show=false show --no-patch --format=reference
+	fixes = -c pager.show=false show --no-patch --format=fixes
 
 [blame]
 	coloring = highlightRecent
