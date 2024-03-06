@@ -72,3 +72,10 @@
 # tigrc
 !/.tigrc
 !/.tigrc.*
+
+# gitconfig and snippets (excluding .private and .machine)
+!/.gitconfig
+!/.gitconfig.*
+/.gitconfig.private
+/.gitconfig.private-*
+/.gitconfig.machine
