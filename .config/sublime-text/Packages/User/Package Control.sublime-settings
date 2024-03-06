@@ -11,6 +11,7 @@
 		"FileDiffs",
 		"INI",
 		"LSP",
+		"LSP-bash",
 		"LSP-json",
 		"NeoVintageous",
 		"Nix",
