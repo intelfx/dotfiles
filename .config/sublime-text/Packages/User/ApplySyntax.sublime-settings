@@ -25,5 +25,11 @@
                 {"globmatch": ["**/templates/*.y{,a}ml"]}
             ]
         },
+        {
+            "syntax": "Git Formats/Git Config",
+            "rules": [
+                {"globmatch": "**/.gitconfig.*"}
+            ]
+        },
     ]
 }
