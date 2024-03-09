@@ -59,6 +59,7 @@ alias gfp='git format-patch'
 alias gfp1='git format-patch -1'
 
 alias gco='git checkout'
+alias gcop='git checkout -p'
 alias gcob='git checkout -b'
 alias gcoB='git checkout -B'
 
