@@ -34,6 +34,9 @@ source /usr/share/fzf/key-bindings.zsh
 # Configure fzf-tab
 #
 
+# disable sort when completing `git checkout` and `git commit`
+zstyle ':completion:*:git-*:*' sort false
+
 zstyle ':fzf-tab:*' switch-group 'alt-1' 'alt-2'
 zstyle ':fzf-tab:*' query-string input
 if [[ $TMUX ]]; then
