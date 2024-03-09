@@ -48,7 +48,7 @@ fi
 # override fzf-tab's hardcoded highlight color with our own
 # (requires that colors-solarized snippet is already loaded)
 _fix_ftb_colors() {
-	local _hlcolors=( "${(@f)$( grep -Eo 'hl\+?:[^,[:space:]]+' <<< "$FZF_DEFAULT_OPTS" )}" )
+	local _hlcolors=( "${(@f)$( grep -Eo '[a-z]+\+?:[^,[:space:]]+' <<< "$FZF_DEFAULT_OPTS" )}" )
 
 	zstyle ':fzf-tab:*' fzf-flags --color "$(IFS=','; echo "${_hlcolors[*]}")"
 }
