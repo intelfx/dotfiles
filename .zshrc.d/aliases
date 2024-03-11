@@ -60,6 +60,19 @@ alias scpt="scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 alias sftpt="sftp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 alias mosht="mosh --ssh='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'"
 
+# compression
+alias zstd="zstd -T0"
+alias zstd1="zstd -1"
+alias zstd11="zstd -11"
+alias zstd19="zstd -19"
+alias zstd22="zstd --ultra -22"
+# skip tar wrapper in ~/bin to supporess tar's own output
+alias tzst="/usr/bin/tar -I 'zstd -v -T0'"
+alias tzst1="/usr/bin/tar -I 'zstd -v -T0 -1'"
+alias tzst11="/usr/bin/tar -I 'zstd -v -T0 -11'"
+alias tzst19="/usr/bin/tar -I 'zstd -v -T0 -19'"
+alias tzst22="/usr/bin/tar -I 'zstd -v -T0 -19'"
+
 # this export only makes sense in the interactive sessions
 # replaces {,c}cmake() functions/aliases to set default generator
 export CMAKE_GENERATOR=Ninja
