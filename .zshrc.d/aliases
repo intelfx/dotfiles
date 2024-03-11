@@ -64,14 +64,6 @@ alias mosht="mosh --ssh='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/de
 # replaces {,c}cmake() functions/aliases to set default generator
 export CMAKE_GENERATOR=Ninja
 
-function cmake-c() {
-	cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ "$@"
-}
-
-function ccmake-c() {
-	ccmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ "$@"
-}
-
 function mkcd() {
 	mkdir -pv "$1" && cd "$1"
 }
@@ -108,15 +100,6 @@ function make() {
 
 function strip-color() {
 	sed -r $'s/\x1b\x5b[[0-9;]+m//g'
-}
-
-function make_single_module() {
-	local mod="$1"
-	local dest="/usr/lib/modules/$(uname -r)/kernel/$mod.xz"
-	make -j8 prepare modules_prepare
-	make -j8 "$mod"
-	xz -f -9 "$mod"
-	sudo install -v -Dm644 "$mod.xz" "/usr/lib/modules/$(uname -r)/kernel/$mod.xz"
 }
 
 # I don't use Boost.Build
