@@ -83,6 +83,11 @@
 [color "blame"]
 	highlightRecent = 10,6 month ago,normal,1 month ago,bold,1 day ago,yellow
 
+[tig]
+	mouse = true
+	mouse-scroll = 1
+	mouse-wheel-cursor = 1
+
 [gui]
 	editor = xdg-open
 	historybrowser = gitg
