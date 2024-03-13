@@ -111,3 +111,7 @@ done
 alias gt='tig'
 alias gtl='TIGRC_USER=~/.tigrc.large tig'
 alias tigl='TIGRC_USER=~/.tigrc.large tig'
+
+alias tg='tig --all'
+alias tg1='tig -1'
+alias tgl='TIGRC_USER=~/.tigrc.large tig --all'
