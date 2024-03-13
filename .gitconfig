@@ -1,9 +1,3 @@
-[include]
-	path = ~/.gitconfig.private
-[include]
-	path = ~/.gitconfig.aliases
-[include]
-	path = ~/.gitconfig.machine
 [core]
 	preloadindex = true
 	quotepath = off
@@ -113,3 +107,10 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+
+[include]
+	path = ~/.gitconfig.private
+[include]
+	path = ~/.gitconfig.machine
+[include]
+	path = ~/.gitconfig.aliases
