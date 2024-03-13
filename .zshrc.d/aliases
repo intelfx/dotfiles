@@ -155,3 +155,7 @@ function setflags_dbg() {
 	export CXXFLAGS="$CFLAGS -Wp,-D_GLIBCXX_ASSERTIONS"
 	export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"
 }
+
+function printflags() {
+	declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null
+}
