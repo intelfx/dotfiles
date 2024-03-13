@@ -1,0 +1,8 @@
+# Rebind tig's default handlers for <Up> and <Down> (which do a weird thing
+# by not following the focus) to <C-Up> and <C-Down>
+bind generic <esc>[1;5A previous
+bind generic <esc>[1;5B next
+
+# Bind "reasonable" handlers that _do_ follow focus to <Up> and <Down>
+bind generic    <Up>    move-up
+bind generic    <Down>  move-down
