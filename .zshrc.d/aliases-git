@@ -108,6 +108,7 @@ for k v in "${(@kv)aliases}"; do
 	esac
 done
 
+alias tig1='tig -1'
 alias tigl='TIGRC_USER=~/.tigrc.large tig'
 
 alias tg='tig --all'
