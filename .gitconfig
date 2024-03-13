@@ -2,67 +2,56 @@
 	path = ~/.gitconfig.private
 [include]
 	path = ~/.gitconfig.aliases
+[include]
+	path = ~/.gitconfig.machine
 [core]
 	preloadindex = true
 	quotepath = off
 	quotedpath = false
 	excludesfile = ~/.gitignore.global
 	pager = ${GIT_PAGER-${PAGER-less}} -FR
+[init]
+	defaultBranch = master
 [checkout]
 	workers = 0
-[guitool "Interactive history rewrite"]
-	cmd = git rebase -i $REVISION
-	revprompt = yes
-[rerere]
-	enabled = 1
-	autoupdate = true
-[push]
-	default = current
-[sendemail]
-	annotate = true
-[color "status"]
-	header = 10 # "bold green", solarized secondary
-	added = yellow
-	changed = green
-	untracked = cyan
-	branch = 14 # "bold cyan", solarized emphasis
-	nobranch = bold black red
-	unmerged = bold red
-[color "blame"]
-	highlightRecent = 10,6 month ago,normal,1 month ago,bold,1 day ago,yellow
 [status]
 	showUntrackedFiles = normal
-[gui]
-	editor = xdg-open
-	historybrowser = gitg
-[merge]
-	conflictstyle = diff3
-	tool = vimdiff
-	guitool = smerge
-	summary = true
-[svn]
-	pushmergeinfo = true
-[cola]
-	tabwidth = 8
-	textwidth = 80
-	savewindowsettings = true
-	linebreak = true
-	fontdiff = Iosevka Light,10,-1,5,50,0,0,0,0,0
-	spellcheck = false
-	safemode = true
-	boldheaders = true
-	showpath = true
+[pull]
+	ff = only
+[push]
+	default = current
 [diff]
 	tool = vimdiff
 	guitool = smerge
 	algorithm = histogram
-[clean]
-	requireForce = false
-[credential]
-	helper = /usr/bin/pass-git-helper -l
+[blame]
+	showEmail = true
+	date = short
+	coloring = highlightRecent
+[merge]
+	summary = true
+	conflictstyle = diff3
+	tool = vimdiff
+	guitool = smerge
 [rebase]
 	autosquash = true
 	updateRefs = true
+[rerere]
+	enabled = 1
+	autoupdate = true
+[clean]
+	requireForce = false
+[gc]
+	autoDetach = false
+	reflogExpire = never
+	reflogExpireUnreachable = never
+[sequence]
+	editor = interactive-rebase-tool
+[credential]
+	helper = pass-git-helper -l
+[sendemail]
+	annotate = true
+
 [pretty]
 	# Use a better format for `--format=reference` and `git refer` (below)
 	# (aligned with Linux kernel code style)
@@ -72,7 +61,7 @@
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
 	for-each-ref-name-full = for-each-ref --format '%(refname)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
-	cclean = clean -xd -e '/.idea' -e '/.sublime-*' -e '/compile_commands.json'
+	cclean = clean -xd -e '/.idea' -e '/*.sublime-*' -e '/compile_commands.json'
 
 	# this abomination exists for the sole reason of setting a default refspec
 	# while letting the user control the remote name (which is not possible
@@ -89,24 +78,38 @@
 	refer = -c pager.show=false show --no-patch --format=reference
 	fixes = -c pager.show=false show --no-patch --format=fixes
 
-[blame]
-	coloring = highlightRecent
-	showEmail = true
-	date = short
-[pull]
-	ff = only
-[init]
-	defaultBranch = master
-[sequence]
-	editor = interactive-rebase-tool
-[gc]
-	autoDetach = false
-	reflogExpire = never
-	reflogExpireUnreachable = never
+[color "status"]
+	header = 10 # "bold green", solarized secondary
+	added = yellow
+	changed = green
+	untracked = cyan
+	branch = 14 # "bold cyan", solarized emphasis
+	nobranch = bold black red
+	unmerged = bold red
+[color "blame"]
+	highlightRecent = 10,6 month ago,normal,1 month ago,bold,1 day ago,yellow
+
+[gui]
+	editor = xdg-open
+	historybrowser = gitg
+[guitool "Interactive history rewrite"]
+	cmd = git rebase -i $REVISION
+	revprompt = yes
+[cola]
+	tabwidth = 8
+	textwidth = 80
+	savewindowsettings = true
+	linebreak = true
+	fontdiff = Iosevka Light,10,-1,5,50,0,0,0,0,0
+	spellcheck = false
+	safemode = true
+	boldheaders = true
+	showpath = true
+
+[svn]
+	pushmergeinfo = true
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[include]
-	path = ~/.gitconfig.machine
