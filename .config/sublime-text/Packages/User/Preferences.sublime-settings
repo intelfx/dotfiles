@@ -52,4 +52,5 @@
   "vintageous_reset_mode_when_switching_tabs": false,
   "update_check": false,
   "index_files": true,
+  "goto_anything_exclude_gitignore": true,
 }
