@@ -1,0 +1,29 @@
+gui:
+  theme:
+    activeBorderColor:
+      - bold
+      - cyan
+    inactiveBorderColor:
+      - bold
+      - green
+    searchingActiveBorderColor:
+      - bold
+      - cyan
+      - reverse
+    optionsTextColor:
+      - bold
+      - green
+    selectedLineBgColor:
+      - black
+    selectedRangeBgColor:
+      - reverse
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      # bright blue, but lazygit does not support "bright" separately from "bold"
+      # (see lazygit#3385)
+      - default 
