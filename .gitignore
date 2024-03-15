@@ -23,6 +23,9 @@
 !/.config/vifm
 /.config/vifm/vifminfo.json
 !/.config/htop
+!/.config/lazygit
+/.config/lazygit/*
+!/.config/lazygit/config.yml
 !/.config/sublime-merge
 /.config/sublime-merge/*
 !/.config/sublime-merge/Packages
