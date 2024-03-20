@@ -116,6 +116,14 @@ if ! { command -v python3 &>/dev/null \
 fi
 unset _python_stdlib
 
+# Screw you.
+# > I find it disappointing that people react to the RUSTC_BOOTSTRAP hack
+# > by thinking "How do we forbid this?" instead of "How has Rust failed to
+# > stabilize useful features in a timely manner to necessitate such a hack,
+# > and how can we do better on getting useful features to stable?"
+# https://github.com/rust-lang/cargo/issues/7088#issuecomment-508373796
+export RUSTC_BOOTSTRAP=1
+
 # setting /org/gnome/desktop/interface/gtk-im-module in dconf doesn't work somehow...
 #export GTK_IM_MODULE="gtk-im-context-simple"
 
