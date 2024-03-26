@@ -42,7 +42,14 @@ load_zshrc_d $HOME/.zshrc.early.d
 #
 # tmux shortcut
 #
-[[ -z "$WSLENV" && -z "$NOTMUX" && -z "$TMUX" && -z "$SUDO_USER" && "$UID" == "$(stat -c "%u" "${(%):-%x}")" ]] && command -v tmx &>/dev/null && exec tmx
+[[ -z "$WSLENV" 
+&& -z "$NOTMUX" 
+&& -z "$TMUX" 
+&& -z "$SUDO_USER" 
+&& "$UID" == "$(stat -c "%u" "${(%):-%x}")"
+]] \
+	&& command -v tmx &>/dev/null \
+	&& exec tmx
 
 #
 # early plugins
