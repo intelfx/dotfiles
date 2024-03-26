@@ -69,7 +69,7 @@ cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit!
 
 " search selection
 " (z is for register z)
-vnoremap / "zy/\V<C-R>z<CR>
+vnoremap // "zy/\V<C-R>z<CR>
 
 "
 " Splits
