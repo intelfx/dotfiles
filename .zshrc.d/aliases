@@ -118,7 +118,7 @@ function strip-color() {
 # I don't use Boost.Build
 alias b2='backblaze-b2'
 
-function loadflags() {
+function loadflags_opt() {
 	eval "$(bash -c '
 . /etc/makepkg.conf
 declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
