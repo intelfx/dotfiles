@@ -8,4 +8,5 @@
 __pycache__/
 *.pyc
 *.pyo
+/.pdm-python
 # vim: ft=gitignore:
