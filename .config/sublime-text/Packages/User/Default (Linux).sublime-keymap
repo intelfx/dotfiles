@@ -1,8 +1,12 @@
+/*
+ * Reminder: last binding wins (after matching contexts)
+ *           this is used to overload goto-symbol between LSP and Sublime's native engine
+ */
 [
 	{ "keys": ["alt+left"], "command": "jump_back" },
 	{ "keys": ["alt+right"], "command": "jump_forward" },
-	{ "keys": ["alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
 	{ "keys": ["alt+shift+r"], "command": "goto_symbol_in_project" },
+	{ "keys": ["alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
 	{ "keys": ["alt+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
 	{ "keys": ["alt+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
 	// Open a terminal tab at current file directory
@@ -10,5 +14,17 @@
 		"keys": ["ctrl+w", "ctrl+t"], "command": "terminus_open", "args": {
 			"cwd": "${file_path:${folder}}"
 		}
+	},
+	// Document Symbols (a replacement for ST's "Goto Symbol")
+	{
+		"keys": ["alt+r"],
+		"command": "lsp_document_symbols",
+		"context": [{"key": "lsp.session_with_capability", "operand": "documentSymbolProvider"}]
+	},
+	// Workspace Symbols (a replacement for ST's "Goto Symbol In Project")
+	{
+		"keys": ["alt+shift+r"],
+		"command": "lsp_workspace_symbols",
+		"context": [{"key": "lsp.session_with_capability", "operand": "workspaceSymbolProvider"}]
 	},
 ]
