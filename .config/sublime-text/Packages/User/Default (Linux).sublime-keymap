@@ -7,7 +7,7 @@
 	{ "keys": ["alt+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
 	// Open a terminal tab at current file directory
 	{
-		"keys": ["ctrl+alt+t"], "command": "terminus_open", "args": {
+		"keys": ["ctrl+w", "ctrl+t"], "command": "terminus_open", "args": {
 			"cwd": "${file_path:${folder}}"
 		}
 	},
