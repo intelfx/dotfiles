@@ -54,3 +54,5 @@
 	pushInsteadOf = https://dev.gajim.org/
 [url "https://git.kernel.org/"]
 	insteadOf = git://git.kernel.org/
+
+# vim: set ft=gitconfig :
