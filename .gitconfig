@@ -29,7 +29,8 @@
 	guitool = smerge
 [rebase]
 	autosquash = true
-	updateRefs = true
+	# TODO: implement rebase.updateRefs=interactive
+	#updateRefs = true
 [rerere]
 	enabled = 1
 	autoupdate = true
