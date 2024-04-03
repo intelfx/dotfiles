@@ -13,6 +13,7 @@
 		"LSP",
 		"LSP-bash",
 		"LSP-json",
+		"LSP-yaml",
 		"NeoVintageous",
 		"Nix",
 		"Origami",
@@ -26,5 +27,6 @@
 		"SublimeManpage",
 		"Terminus",
 		"TOML",
+		"YAML Nav",
 	],
 }
