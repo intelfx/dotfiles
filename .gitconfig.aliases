@@ -54,5 +54,16 @@
 	pushInsteadOf = https://dev.gajim.org/
 [url "https://git.kernel.org/"]
 	insteadOf = git://git.kernel.org/
+[url "https://codeberg.org/"]
+	insteadOf = codeberg:
+	insteadOf = git://codeberg.org/
+[url "git@codeberg.org:"]
+	pushInsteadOf = codeberg:
+	pushInsteadOf = git://codeberg.org/
+	pushInsteadOf = https://codeberg.org/
+[url "git@git.intelfx.name:"]
+	pushInsteadOf = intelfx:
+	pushInsteadOf = git://git.intelfx.name/
+	pushInsteadOf = https://git.intelfx.name/
 
 # vim: set ft=gitconfig :
