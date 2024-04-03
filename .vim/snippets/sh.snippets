@@ -1,3 +1,25 @@
+snippet lib
+	#!/bin/bash
+
+	. lib.sh || exit
+
+	_usage() {
+		cat <<EOF
+	Usage: \$0 [ARGS...]
+	EOF
+	}
+
+	declare -A _args=(
+		[-h|--help]=ARG_USAGE
+		#[--]=ARGS
+	)
+	parse_args _args "$@" || usage
+	[[ ! \$ARG_USAGE ]] || usage
+
+	#
+	# main
+	#
+
 snippet common
 	log() {
 		echo ":: \$*" >&2
