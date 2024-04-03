@@ -47,9 +47,9 @@
 	annotate = true
 
 [pretty]
-	# Use a better format for `--format=reference` and `git refer` (below)
+	# Use a better format for `git refer` (below)
 	# (aligned with Linux kernel code style)
-	reference = %C(auto)%h (\"%s\")
+	reference2 = %C(auto)%h (\"%s\")
 	fixes = %C(auto,green)Fixes: %C(auto)%h (\"%s\")
 [alias]
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
@@ -69,7 +69,7 @@
 
 	# aliases do not like being started with `--no-pager` for some reason,
 	# but `-c` is apparently OK
-	refer = -c pager.show=false show --no-patch --format=reference
+	refer = -c pager.show=false show --no-patch --format=reference2
 	fixes = -c pager.show=false show --no-patch --format=fixes
 
 [color "status"]
