@@ -143,6 +143,20 @@ au BufRead,BufNewFile /etc/polkit-1/rules.d/*.rules setlocal filetype=javascript
 
 augroup END
 
+" automatically give executable permissions if file begins with #! and contains '/bin/' in the path
+" see http://www.debian-administration.org/articles/571
+" modified 23.12.2008 Benedikt Stegmaier
+"
+function ChmodX()
+if getline(1) =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)\(sh\|bash\)$'
+silent !chmod +x %:p
+endif
+endfunction
+
+augroup stuff
+au BufWritePost * call ChmodX()
+augroup END
+
 
 "
 " Indentation (smart tab plugin installed)
