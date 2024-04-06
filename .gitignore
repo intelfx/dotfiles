@@ -72,6 +72,11 @@
 # npm, pnpm
 !/.npmrc
 
+# cargo configuration (+ "-rel" for cargo-rel wrapper)
+!/.cargo
+/.cargo/*
+!/.cargo/config*.toml
+
 # tigrc
 !/.tigrc
 !/.tigrc.*
