@@ -118,6 +118,11 @@ function strip-color() {
 # I don't use Boost.Build
 alias b2='backblaze-b2'
 
+
+#
+# Compile flags
+#
+
 function loadflags_opt() {
 	eval "$(bash -c '
 . /etc/makepkg.conf
