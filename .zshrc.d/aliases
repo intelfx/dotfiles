@@ -121,9 +121,13 @@ alias b2='backblaze-b2'
 # OpenStack things
 # create an image with UEFI boot mode (works for OVH)
 #   * for future me: openstack-image-create-uefi --progress --private --disk-format qcow2
-alias openstack-image-create-uefi \
-	openstack image create --property hw_firmware_type='uefi' --property hw_qemu_guest_agent='yes' --property hw_disk_bus='scsi' --property hw_scsi_model='virtio-scsi' --property hypervisor_type='qemu'
-
+alias openstack-image-create-uefi="openstack image create \
+	--property hw_firmware_type='uefi' \
+	--property hw_qemu_guest_agent='yes' \
+	--property hw_disk_bus='scsi' \
+	--property hw_scsi_model='virtio-scsi' \
+	--property hypervisor_type='qemu' \
+"
 
 #
 # Compile flags
