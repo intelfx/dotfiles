@@ -5,16 +5,26 @@
 [
 	{ "keys": ["alt+left"], "command": "jump_back" },
 	{ "keys": ["alt+right"], "command": "jump_forward" },
+
+	// Re-bind certain keys to NeoVintageous and Sublime
+	// (those are bound by other plugins which we do not want)
+	// NOTE: this must match my "vintageous_handle_keys"
+	{ "keys": ["ctrl+shift+w"], "command": "close_window" },
+	{ "keys": ["ctrl+r"], "command": "nv_feed_key", "args": {"key": "<C-r>"}},
+
+	// replace ctrl+{R,r,g,;} as those are used by Vim
 	{ "keys": ["alt+shift+r"], "command": "goto_symbol_in_project" },
 	{ "keys": ["alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
 	{ "keys": ["alt+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
 	{ "keys": ["alt+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+
 	// Open a terminal tab at current file directory
 	{
 		"keys": ["ctrl+w", "ctrl+t"], "command": "terminus_open", "args": {
 			"cwd": "${file_path:${folder}}"
 		}
 	},
+
 	// Document Symbols (a replacement for ST's "Goto Symbol")
 	{
 		"keys": ["alt+r"],
