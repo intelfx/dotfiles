@@ -12,6 +12,7 @@
 		"INI",
 		"LSP",
 		"LSP-bash",
+		"LSP-clangd",
 		"LSP-json",
 		"LSP-yaml",
 		"NeoVintageous",
