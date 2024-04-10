@@ -51,6 +51,13 @@
   "vintageous_exit_when_quitting_last_window": "unless_sidebar_visible",
   "vintageous_reset_mode_when_switching_tabs": false,
   "update_check": false,
-  "index_files": true,
   "goto_anything_exclude_gitignore": true,
+
+  "index_files": true,
+  "index_workers": 8,
+  "index_exclude_patterns": [
+    "*.log",
+    "*.o",
+    "*.a",
+  ],
 }
