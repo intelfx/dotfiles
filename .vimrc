@@ -71,6 +71,9 @@ cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit!
 " (z is for register z)
 vnoremap // "zy/\V<C-R>z<CR>
 
+" Split line (antonym of J)
+nnoremap <C-J> i<CR><Esc>k$
+
 "
 " Splits
 "
