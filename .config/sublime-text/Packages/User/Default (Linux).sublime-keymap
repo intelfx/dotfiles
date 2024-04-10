@@ -38,6 +38,86 @@
 		"context": [{"key": "lsp.session_with_capability", "operand": "workspaceSymbolProvider"}]
 	},
 
+	// Run Code Lens
+	{
+		"keys": ["alt+d"],
+		"command": "lsp_code_lens",
+		"context": [{"key": "lsp.session_with_capability", "operand": "codeLensProvider"}]
+	},
+	// Trigger Signature Help
+	{
+		"keys": ["alt+q"],
+		"command": "lsp_signature_help_show",
+		/* this becomes false when triggering in a wrong position
+		   (e.g. when trying to insert more parameters than allowed),
+		   so disable to avoid randomly triggering the wrap action */
+		//"context": [{"key": "lsp.signature_help_available"}]
+	},
+	// Find References
+	{
+		"keys": ["alt+x"],
+		"command": "lsp_symbol_references",
+		"args": {"side_by_side": false, "force_group": true, "fallback": false, "group": -1, "include_declaration": false},
+		"context": [{"key": "lsp.session_with_capability", "operand": "referencesProvider"}]
+	},
+	// Find References (side-by-side)
+	{
+		"keys": ["alt+shift+x"],
+		"command": "lsp_symbol_references",
+		"args": {"side_by_side": true, "force_group": true, "fallback": false, "group": -1},
+		"context": [{"key": "lsp.session_with_capability", "operand": "referencesProvider"}]
+	},
+	// Goto Declaration
+	{
+		"keys": ["alt+z"],
+		"command": "lsp_symbol_declaration",
+		"args": {"side_by_side": false, "force_group": true, "group": -1},
+		"context": [
+			{"key": "lsp.session_with_capability", "operand": "declarationProvider"},
+			{"key": "auto_complete_visible", "operand": false}
+		]
+	},
+	// Goto Definition
+	{
+		"keys": ["alt+shift+z"],
+		"command": "lsp_symbol_definition",
+		"args": {"side_by_side": false, "force_group": true, "fallback": false, "group": -1},
+		"context": [
+			{"key": "lsp.session_with_capability", "operand": "definitionProvider"},
+			{"key": "auto_complete_visible", "operand": false}
+		]
+	},
+	// Goto Type Definition
+	{
+		"keys": ["alt+t"],
+		"command": "lsp_symbol_type_definition",
+		"args": {"side_by_side": false, "force_group": true, "group": -1},
+		"context": [
+			{"key": "lsp.session_with_capability", "operand": "typeDefinitionProvider"},
+			{"key": "auto_complete_visible", "operand": false}
+		]
+	},
+	// Goto Type Definition (side-by-side)
+	{
+		"keys": ["alt+shift+t"],
+		"command": "lsp_symbol_type_definition",
+		"args": {"side_by_side": true, "force_group": true, "group": -1},
+		"context": [
+			{"key": "lsp.session_with_capability", "operand": "typeDefinitionProvider"},
+			{"key": "auto_complete_visible", "operand": false}
+		]
+	},
+	// Goto Implementation
+	{
+		"keys": ["alt+i"],
+		"command": "lsp_symbol_implementation",
+		"args": {"side_by_side": false, "force_group": true, "group": -1},
+		"context": [
+			{"key": "lsp.session_with_capability", "operand": "implementationProvider"},
+			{"key": "auto_complete_visible", "operand": false}
+		]
+	},
+
 	// YAML Nav's Goto Symbol (a replacement for ST's -- and LSP's -- "Goto Symbol")
 	{
 		"keys": ["alt+r"],
