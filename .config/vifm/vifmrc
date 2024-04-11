@@ -430,8 +430,8 @@ filextype */
 " Customize view columns a bit (enable ellipsis for truncated file names)
 " set viewcolumns=-{name}..,6{}.
 
-" Show vertical border
-set fillchars=vborder:│
+" Show vertical and horizontal borders
+set fillchars=vborder:│,hborder:─
 
 " Filter-out build and temporary files
 " filter! {*.lo,*.o,*.d,*.class,*.pyc,*.pyo,.*~}
