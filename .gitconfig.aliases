@@ -65,5 +65,12 @@
 	pushInsteadOf = intelfx:
 	pushInsteadOf = git://git.intelfx.name/
 	pushInsteadOf = https://git.intelfx.name/
+[url "https://gitlab.archlinux.org/"]
+	insteadOf = archlinux:
+	insteadOf = git://gitlab.archlinux.org/
+[url "git@gitlab.archlinux.org:"]
+	pushInsteadOf = archlinux:
+	pushInsteadOf = git://gitlab.archlinux.org/
+	pushInsteadOf = https://gitlab.archlinux.org/
 
 # vim: set ft=gitconfig :
