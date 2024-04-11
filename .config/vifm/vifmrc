@@ -530,6 +530,19 @@ vnoremap <f6> :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
+" Alternative copy/move
+" nnoremap <f5> Y<tab>p<tab>
+" nnoremap <f6> Y<tab>P<tab>
+nnoremap <s-f6> cw
+nnoremap <s-f5> Yp
+
+nnoremap <c-s> :sort<CR>
+nnoremap <c-f3> :set sort=+name<CR>
+nnoremap <c-f4> :set sort=+ext,+name<CR>
+nnoremap <c-f5> :set sort=-mtime<CR>
+nnoremap <c-f6> :set sort=-size<CR>
+nnoremap <c-f8> :set sort=-ctime<CR>
+
 " Midnight commander alike mappings
 " Open current directory in the other pane
 nnoremap <a-i> :sync<cr>
