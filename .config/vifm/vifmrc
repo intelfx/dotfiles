@@ -509,12 +509,12 @@ elseif $TERMINAL
 endif
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
-nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
+nnoremap ,e :write | edit $MYVIFMRC | restart full<cr>
 nnoremap ,r :write | restart full<cr>
 
 " Open gvim to edit vifmrc
-if $DISPLAY && executable('gvim')
-    nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
+if ($WAYLAND_DISPLAY != '' || $DISPLAY != '') && executable('gvim')
+    nnoremap ,E :!gvim --remote-tab-silent $MYVIFMRC &<cr>
 endif
 
 " Toggle wrap setting on ,w key
