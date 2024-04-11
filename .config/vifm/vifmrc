@@ -603,6 +603,13 @@ if $TMUX != ''
     screen!
 endif
 
+" Set a better FUSE mount root
+if $XDG_RUNTIME_DIR != ''
+    let &fusehome = $XDG_RUNTIME_DIR . '/vifm/'
+else
+    let &fusehome = $HOME . '/mnt/'
+endif
+
 " ------------------------------------------------------------------------------
 " Icon decorations example
 " ------------------------------------------------------------------------------
