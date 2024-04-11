@@ -544,6 +544,10 @@ nnoremap <c-u> <c-w>x
 " Use ag (the silver searcher) instead of grep
 " set grepprg='ag --line-numbers %i %a %s'
 
+if executable('rg')
+        set grepprg='rg -n -H %i %a %s'
+endif
+
 " Add additional place to look for executables
 " let $PATH = $HOME.'/bin/fuse:'.$PATH
 
