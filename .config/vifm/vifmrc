@@ -538,6 +538,27 @@ nnoremap <a-o> :sync %c<cr>
 " Swap panes
 nnoremap <c-u> <c-w>x
 
+" ---
+" More mappings
+" ---
+
+" Quit
+nnoremap <F10> :q<CR>
+
+" Select file under cursor and go to next
+nnoremap <space> tj
+nnoremap <Insert> tj
+
+" Bookmarks menu
+nnoremap <c-\> :bmarks<cr>
+
+" SelectAll
+nnoremap * ggVG<cr>
+
+" CdUp
+nnoremap <bs> gh
+nnoremap - gh
+
 " ------------------------------------------------------------------------------
 " Various customization examples
 " ------------------------------------------------------------------------------
