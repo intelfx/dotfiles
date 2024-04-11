@@ -55,7 +55,7 @@ set nofollowlinks
 set sortnumbers
 
 " Maximum number of changes that can be undone.
-set undolevels=100
+set undolevels=1000000
 
 " Use Vim's format of help file (has highlighting and "hyperlinks").
 " If you would rather use a plain text help file set novimhelp.
