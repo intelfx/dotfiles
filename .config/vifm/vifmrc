@@ -565,7 +565,9 @@ endif
 let $VIFM_SERVER_NAME = v:servername
 
 " Activate screen/tmux support
-screen!
+if $TMUX != ''
+    screen!
+endif
 
 " ------------------------------------------------------------------------------
 " Icon decorations example
