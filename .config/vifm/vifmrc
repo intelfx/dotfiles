@@ -30,6 +30,7 @@ endif
 " solution, it's also much slower when processing large amounts of files and
 " doesn't support progress measuring.
 set syscalls
+set iooptions=fastfilecloning,datasync
 
 " Trash Directory
 " The default is to move files that are deleted with dd or :d to
