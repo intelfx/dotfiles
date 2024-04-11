@@ -510,6 +510,7 @@ endif
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
+nnoremap ,r :write | restart full<cr>
 
 " Open gvim to edit vifmrc
 if $DISPLAY && executable('gvim')
