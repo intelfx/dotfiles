@@ -431,7 +431,7 @@ filextype */
 " set viewcolumns=-{name}..,6{}.
 
 " Show vertical border
-" set fillchars=vborder:│
+set fillchars=vborder:│
 
 " Filter-out build and temporary files
 " filter! {*.lo,*.o,*.d,*.class,*.pyc,*.pyo,.*~}
