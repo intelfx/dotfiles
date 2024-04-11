@@ -573,6 +573,23 @@ nnoremap <bs> gh
 nnoremap - gh
 
 " ------------------------------------------------------------------------------
+" Navigation mappings (fzf-powered, see below)
+" ------------------------------------------------------------------------------
+
+" cd
+nnoremap ,c :Fzfcd<CR>
+" navigate to
+nnoremap ,/ :Fzfgo<CR>
+nnoremap ,, :Fzfgo<CR>
+" locate directory
+nnoremap ,C :Fzfld<CR>
+" locate file
+nnoremap ,G :Fzflf<CR>
+
+nnoremap ,~ :cd<CR>
+nnoremap ~~ :cd<CR>
+
+" ------------------------------------------------------------------------------
 " Various customization examples
 " ------------------------------------------------------------------------------
 
@@ -608,6 +625,63 @@ if $XDG_RUNTIME_DIR != ''
     let &fusehome = $XDG_RUNTIME_DIR . '/vifm/'
 else
     let &fusehome = $HOME . '/mnt/'
+endif
+
+" ------------------------------------------------------------------------------
+" fzf/tmux integration
+" ------------------------------------------------------------------------------
+
+if $VIFM_FZF == '' && executable('fzf') && $TMUX != '' && executable('fzf-tmux')
+    " TODO: reuse as much of ftb-tmux-popup as possible (position computation)
+    let $VIFM_FZF = 'fzf-tmux -p'
+    let $VIFM_FZF_FN = 'system'
+endif
+
+if $VIFM_FZF == '' && executable('fzf')
+    let $VIFM_FZF = 'fzf'
+    let $VIFM_FZF_FN = 'term'
+endif
+
+if $VIFM_FD == '' && executable('-fd-compgen')
+    " see github.com/intelfx/bin
+    " this is basically a piece of ~/.zshrc.d/fzf, extracted into a bash script
+    let $VIFM_FD = '-fd-compgen'
+endif
+
+let $VIFM_FZF_OPTS = ' --ansi --bind=tab:down,btab:up,change:top,ctrl-space:toggle,bspace:backward-delete-char/eof,ctrl-h:backward-delete-char/eof --cycle --tiebreak=begin --color bg+:0,bg:8,spinner:6,hl:14:bold:reverse,fg:12,header:4,info:3,pointer:6,marker:6,fg+:7,prompt:3,hl+:14:bold:reverse --layout=reverse'
+let $VIFM_FD_OPTS = ' --color=always'
+
+if $VIFM_FZF != '' && $VIFM_FD != ''
+
+    command! Fzf   : set noquickview
+                  \| if $VIFM_FZF_FN == 'system'
+                  \|    let $VIFM_FZF_PICK = system($VIFM_FZF_CMD . ' 2>/dev/null')
+                  \| else
+                  \|    let $VIFM_FZF_PICK = term($VIFM_FZF_CMD . ' 2>/dev/tty')
+                  \| endif
+                  \| if $VIFM_FZF_PICK != ''
+                  \|     execute $VIFM_FZF_ACTION fnameescape($VIFM_FZF_PICK)
+                  \| endif
+
+    command! Fzfcd : 
+                  \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1 -td' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
+                  \| let $VIFM_FZF_ACTION = 'cd'
+                  \| execute 'Fzf'
+
+    command! Fzfgo : 
+                  \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
+                  \| let $VIFM_FZF_ACTION = 'goto'
+                  \| execute 'Fzf'
+
+    command! Fzfld : 
+                  \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -td $HOME' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
+                  \| let $VIFM_FZF_ACTION = 'cd'
+                  \| execute 'Fzf'
+
+    command! Fzflf :
+                  \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -tf $HOME' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
+                  \| let $VIFM_FZF_ACTION = 'goto'
+                  \| execute 'Fzf'
 endif
 
 " ------------------------------------------------------------------------------
