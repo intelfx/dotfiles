@@ -427,6 +427,12 @@ filextype */
 " Panel configuration examples
 " ------------------------------------------------------------------------------
 
+
+"set lsview  " see binding below
+set lsoptions+=transposed
+set lsoptions+=columncount:2
+set viewcolumns=-60%{name},20%{size},{mtime}
+
 " Customize view columns a bit (enable ellipsis for truncated file names)
 " set viewcolumns=-{name}..,6{}.
 
@@ -439,6 +445,9 @@ set fillchars=vborder:│,hborder:─
 " ------------------------------------------------------------------------------
 " Sample keyboard mappings
 " ------------------------------------------------------------------------------
+
+" Activate "ls view"
+nnoremap ,ls set lsview!
 
 " Start shell in current directory
 nnoremap ,s :shell<cr>
