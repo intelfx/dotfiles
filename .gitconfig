@@ -59,6 +59,8 @@
 	ls-refs-full = for-each-ref --format '%(refname)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
 	cclean = clean -xd -e '/.idea' -e '/*.sublime-*' -e '/compile_commands.json' -e '/.clangd' -e '/.cache/clangd'
+	rebase-i = rebase --rebase-merges=no-rebase-cousins --update-refs --interactive
+	rebase-ic = rebase --rebase-merges=rebase-cousins --update-refs --interactive
 
 	# this abomination exists for the sole reason of setting a default refspec
 	# while letting the user control the remote name (which is not possible
