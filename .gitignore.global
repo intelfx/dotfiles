@@ -9,4 +9,5 @@ __pycache__/
 *.pyc
 *.pyo
 /.pdm-python
+/.cache/clangd/
 # vim: ft=gitignore:
