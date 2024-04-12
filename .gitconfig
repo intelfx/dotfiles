@@ -62,13 +62,6 @@
 	rebase-i = rebase --rebase-merges=no-rebase-cousins --update-refs --interactive
 	rebase-ic = rebase --rebase-merges=rebase-cousins --update-refs --interactive
 
-	# this abomination exists for the sole reason of setting a default refspec
-	# while letting the user control the remote name (which is not possible
-	# with normal git-push, hence the -c remote.$remote.push dance).
-	# the loop is needed to fish out the remote name from $@, skipping any
-	# possible leading options.
-	push-work = !git -c remote."$(for arg in "$@"; do if ! [[ $arg == -* ]]; then echo "$arg"; break; fi; done)".push="+refs/heads/work/*" push
-
 	rev = rev-parse --short HEAD
 	br = symbolic-ref --short HEAD
 
@@ -76,6 +69,33 @@
 	# but `-c` is apparently OK
 	refer = -c pager.show=false show --no-patch --format=reference2
 	fixes = -c pager.show=false show --no-patch --format=fixes
+
+	# these abominations exist to fish out a remote name from arguments
+	# while simultaneously assuming a mostly-reasonable default using
+	# heuristics (which are included for `git-hub` and `gh` GitHub CLIs)
+	zz-guess-fork = "!f() { \
+		shopt -s lastpipe; \
+		for u; do \
+			[[ $u != -* ]] && git config \"remote.$u.url\" &>/dev/null && echo \"$u\" && return; \
+		done; \
+		git config hub.forkremote && return; \
+		git remote | while IFS='' read -r u; do \
+			[[ \"$(git config \"remote.$u.gh-resolved\")\" == base ]] && upstream=\"$u\" || forks+=(\"$u\"); \
+		done; \
+		[[ ${upstream+set} ]] && (( ${#forks[@]} == 1 )) && echo \"$forks\" && return; \
+		for u in fork origin; do \
+			git config \"remote.$u.url\" &>/dev/null && echo \"$u\" && return; \
+		done; \
+		return 1; \
+	}; f"
+
+	# this abomination exists for the sole reason of setting a default refspec
+	# while letting the user control the remote name (which is not possible
+	# with normal git-push, hence the -c remote.$remote.push dance).
+	push-work = "!f() { \
+		remote=\"$(git zz-guess-fork \"$@\")\" || return; \
+		git -c \"remote.$remote.push=+refs/heads/work/*\" push \"$@\"; \
+	}; f"
 
 [color "status"]
 	header = 10 # "bold green", solarized secondary
