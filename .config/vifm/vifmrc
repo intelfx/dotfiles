@@ -658,7 +658,7 @@ if $VIFM_FD == '' && executable('-fd-compgen')
     let $VIFM_FD = '-fd-compgen'
 endif
 
-let $VIFM_FZF_OPTS = ' --ansi --bind=tab:down,btab:up,change:top,ctrl-space:toggle,bspace:backward-delete-char/eof,ctrl-h:backward-delete-char/eof --cycle --tiebreak=begin --color bg+:0,bg:8,spinner:6,hl:14:bold:reverse,fg:12,header:4,info:3,pointer:6,marker:6,fg+:7,prompt:3,hl+:14:bold:reverse --layout=reverse'
+let $VIFM_FZF_OPTS = ' --ansi --bind=tab:down,btab:up,change:top,ctrl-space:toggle,bspace:backward-delete-char/eof,ctrl-h:backward-delete-char/eof --cycle --tiebreak=begin --color bg+:0,bg:8,spinner:6,hl:14:bold:reverse,fg:12,header:4,info:3,pointer:6,marker:6,fg+:7,prompt:3,hl+:14:bold:reverse'
 let $VIFM_FD_OPTS = ' --color=always'
 
 if $VIFM_FZF != '' && $VIFM_FD != ''
