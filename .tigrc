@@ -6,3 +6,13 @@ bind generic <esc>[1;5B next
 # Bind "reasonable" handlers that _do_ follow focus to <Up> and <Down>
 bind generic    <Up>    move-up
 bind generic    <Down>  move-down
+
+# Bindings for "interactive rebase onto this commit"
+bind main <Ctrl-R> !git rebase-i --autostash %(commit)^
+bind diff <Ctrl-R> !git rebase-i --autostash %(commit)^
+
+# Bindings for forms of `git reset`
+bind main ;rs @git reset --soft %(commit)
+bind main ;rr ?@git reset %(commit)
+bind main ;rH ?@git reset --hard %(commit)
+bind main ;rM ?@git reset --merge %(commit)
