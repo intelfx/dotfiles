@@ -73,6 +73,19 @@
 	# these abominations exist to fish out a remote name from arguments
 	# while simultaneously assuming a mostly-reasonable default using
 	# heuristics (which are included for `git-hub` and `gh` GitHub CLIs)
+	zz-guess-upstream = "!f() { \
+		for u; do \
+			[[ $u != -* ]] && git config \"remote.$u.url\" &>/dev/null && echo \"$u\" && return; \
+		done; \
+		git config hub.upstreamremote && return; \
+		git remote | while IFS='' read -r u; do \
+			[[ \"$(git config \"remote.$u.gh-resolved\")\" == base ]] && echo \"$u\" && return; \
+		done; \
+		for u in upstream origin; do \
+			git config \"remote.$u.url\" &>/dev/null && echo \"$u\" && return; \
+		done; \
+		return 1; \
+	}; f"
 	zz-guess-fork = "!f() { \
 		shopt -s lastpipe; \
 		for u; do \
@@ -95,6 +108,20 @@
 	push-work = "!f() { \
 		remote=\"$(git zz-guess-fork \"$@\")\" || return; \
 		git -c \"remote.$remote.push=+refs/heads/work/*\" push \"$@\"; \
+	}; f"
+
+	# adapted from https://gist.github.com/gnarf/5406589
+	pr = "!f() { \
+		remote=\"$(git zz-guess-upstream \"${@:2:1}\")\" || return; \
+		prefix=\"pr${2:+\"/$2\"}\"; \
+		git fetch -fu \"$r\" \"refs/pull/$1/head:$prefix/$1\" || return; \
+		git checkout \"$prefix/$1\"; \
+	}; f"
+	pr-clean = "!f() { \
+		[[ ${1+set} ]] && glob=\"$1/*\" || glob=\"**\"; \
+		git for-each-ref --format 'delete %(refname)' \"refs/heads/pr/$glob\" \
+		| tee /dev/stderr \
+		| git update-ref --stdin; \
 	}; f"
 
 [color "status"]
