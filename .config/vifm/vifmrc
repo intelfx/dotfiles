@@ -441,7 +441,7 @@ set fillchars=vborder:│,hborder:─
 " ------------------------------------------------------------------------------
 
 " Start shell in current directory
-nnoremap s :shell<cr>
+nnoremap ,s :shell<cr>
 
 " Display sorting dialog
 nnoremap S :sort<cr>
