@@ -578,13 +578,16 @@ nnoremap - gh
 
 " cd
 nnoremap ,c :Fzfcd<CR>
+nnoremap ,C :Fzfcr<CR>
 " navigate to
 nnoremap ,/ :Fzfgo<CR>
 nnoremap ,, :Fzfgo<CR>
+nnoremap ,g :Fzfgo<CR>
+nnoremap ,G :Fzfgr<CR>
 " locate directory
-nnoremap ,C :Fzfld<CR>
+nnoremap ,ld :Fzfld<CR>
 " locate file
-nnoremap ,G :Fzflf<CR>
+nnoremap ,lf :Fzflf<CR>
 
 nnoremap ,~ :cd<CR>
 nnoremap ~~ :cd<CR>
@@ -674,9 +677,17 @@ if $VIFM_FZF != '' && $VIFM_FD != ''
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1 -td' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'cd'
                   \| execute 'Fzf'
+    command! Fzfcr : 
+                  \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -td' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
+                  \| let $VIFM_FZF_ACTION = 'cd'
+                  \| execute 'Fzf'
 
     command! Fzfgo : 
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
+                  \| let $VIFM_FZF_ACTION = 'goto'
+                  \| execute 'Fzf'
+    command! Fzfgr : 
+                  \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'goto'
                   \| execute 'Fzf'
 
@@ -684,7 +695,6 @@ if $VIFM_FZF != '' && $VIFM_FD != ''
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -td $HOME' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'cd'
                   \| execute 'Fzf'
-
     command! Fzflf :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -tf $HOME' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'goto'
