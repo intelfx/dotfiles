@@ -49,7 +49,8 @@ inoremap <F4> <C-\><C-O>:nohl<CR>
 
 nnoremap <F10> :b <C-Z>
 
-set wildmenu wildmode=full wildchar=<Tab>
+set wildmenu wildmode=full wildoptions=fuzzy,pum
+set wildchar=<Tab>
 set wildcharm=<C-Z> " something well unused
 
 " grep operator
