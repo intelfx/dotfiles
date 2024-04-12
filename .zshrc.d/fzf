@@ -60,6 +60,7 @@ _fix_ftb_colors
 
 # Options to fzf command
 export FZF_COMPLETION_OPTS='
+--ansi
 --border
 --info=inline
 --bind=ctrl-space:toggle
@@ -99,6 +100,8 @@ if command -v fd &>/dev/null; then
 		if __fzf_compgen_skip_vcs_at "$1"; then
 			fd_opts+=( --no-ignore-vcs --no-ignore-parent )
 		fi
+		# fzf uses --ansi 
+		fd_opts+=( --color=always )
 		fd "${fd_opts[@]}" . "$1"
 	}
 
