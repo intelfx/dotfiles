@@ -1,0 +1,7 @@
+[
+	{
+		"caption": "Create \"fixup!\" commit",
+		"command": "git",
+		"args": {"argv": ["commit", "--fixup", "$select_commit"]},
+	},
+]
