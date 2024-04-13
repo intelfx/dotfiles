@@ -163,13 +163,18 @@ augroup END
 " modified 23.12.2008 Benedikt Stegmaier
 "
 function ChmodX()
-if getline(1) =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)\(sh\|bash\)$'
-silent !chmod +x %:p
-endif
+  let l:first = getline(1)
+  if l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)bash\>'
+    silent !chmod +x %:p
+    silent set ft=bash
+  elseif l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)sh\>'
+    silent !chmod +x %:p
+    silent set ft=sh
+  endif
 endfunction
 
-augroup stuff
-au BufWritePost * call ChmodX()
+augroup chmod
+  autocmd BufWritePost * call ChmodX()
 augroup END
 
 
