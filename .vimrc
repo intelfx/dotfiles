@@ -177,6 +177,27 @@ augroup chmod
   autocmd BufWritePost * call ChmodX()
 augroup END
 
+" simple implementation of a block-comment feature
+"
+function CommentSetup()
+  if exists('b:comment_leader')
+    let b:_comment_leader_add = escape(b:comment_leader, '\/')
+    let b:_comment_leader_remove = substitute(b:_comment_leader_add, ' ', ' \\?', 'g')
+    noremap <buffer> <silent> <leader>cc :<C-B>silent <C-E>s/^/<C-R>=b:_comment_leader_add<CR>/<CR>:nohlsearch<CR>
+    noremap <buffer> <silent> <leader>cu :<C-B>silent <C-E>s/^<C-R>=b:_comment_leader_remove<CR>//e<CR>:nohlsearch<CR>
+  endif
+endfunction
+
+augroup comment
+  autocmd!
+  autocmd FileType c,cpp,go,rust                     let b:comment_leader = '// '
+  autocmd FileType sh,bash,python                    let b:comment_leader = '# '
+  autocmd FileType conf,fstab,systemd,udev           let b:comment_leader = '# '
+  autocmd FileType ini,desktop                       let b:comment_leader = '# '
+  autocmd FileType yaml                              let b:comment_leader = '# '
+  autocmd FileType vim                               let b:comment_leader = '" '
+  autocmd FileType *                                 call CommentSetup()
+augroup END
 
 "
 " Indentation (smart tab plugin installed)
