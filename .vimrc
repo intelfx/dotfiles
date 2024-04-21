@@ -167,6 +167,9 @@ function ChmodX()
   if l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)bash\>'
     silent !chmod +x %:p
     silent set ft=bash
+  elseif l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)zsh\>'
+    silent !chmod +x %:p
+    silent set ft=zsh
   elseif l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)sh\>'
     silent !chmod +x %:p
     silent set ft=sh
