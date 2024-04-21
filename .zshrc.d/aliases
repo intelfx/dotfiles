@@ -49,6 +49,13 @@ if command -v rg &>/dev/null; then
 	alias grepc="rg -uuu --colors 'match:none' -or '\$1'"
 fi
 
+if command -v perl rlwrap &>/dev/null; then
+	# Poor man's REPL for perl
+	# https://stackoverflow.com/a/22840242/857932
+	# https://stackoverflow.com/questions/73667/how-can-i-start-an-interactive-console-for-perl#comment100588494_22840242
+	alias iperl="rlwrap -A -pgreen -S'perl> ' perl -MData::Dumper -wnE'say Dumper[eval()]//\$@'"
+fi
+
 if command -v rsync &>/dev/null; then
 	alias r-cp-n='rsync -r --partial --no-i-r'
 	alias r-cp='r-cp-n -aHAX'
