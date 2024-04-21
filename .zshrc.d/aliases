@@ -38,11 +38,13 @@ if command -v jq jqf yq tomlq &>/dev/null; then
 	alias tomlqf='jqf --jq=tomlq'
 fi
 
-# do not highlight matches, because matches are all that we're emitting
-alias rgc="rg --colors 'match:none' -or '\$1'"
-# grep does not have this, sadly
-# emulate with `rg -uuu`
-alias grepc="rg -uuu --colors 'match:none' -or '\$1'"
+if command -v rg &>/dev/null; then
+	# do not highlight matches, because matches are all that we're emitting
+	alias rgc="rg --colors 'match:none' -or '\$1'"
+	# grep does not have this, sadly
+	# emulate with `rg -uuu`
+	alias grepc="rg -uuu --colors 'match:none' -or '\$1'"
+fi
 
 alias r-cp-n='rsync -r --partial --no-i-r'
 alias r-cp='r-cp-n -aHAX'
