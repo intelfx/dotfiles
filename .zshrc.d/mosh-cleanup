@@ -1,0 +1,14 @@
+#!/hint/zsh
+
+#
+# this snippet might not appear to make sense in an rc file
+# however, in practice the creation of a new interactive session is a good time
+# to clean up old interactive sessions as it can be implied that the user
+# probably does not care about any other session than the current one
+#
+
+# only do this if mosh is configured to handle SIGUSR1 as an inactive session
+# cleanup trigger (and, at the same time, only if we are inside a mosh session)
+if (( MOSH_SERVER_SIGNAL_TMOUT > 0 )); then
+	pkill -USR1 -u "$USER" mosh-server
+fi
