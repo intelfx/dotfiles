@@ -28,6 +28,9 @@ alias wget='wget -c'
 alias bc='bc -l'
 alias sha1='openssl sha1'
 
+if command -v bat &>/dev/null; then
+	alias cat='bat'
+fi
 if command -v colordiff &>/dev/null; then
 	alias diff='colordiff'
 fi
