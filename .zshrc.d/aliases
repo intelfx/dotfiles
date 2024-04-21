@@ -32,8 +32,11 @@ if command -v colordiff &>/dev/null; then
 	alias diff='colordiff'
 fi
 
-alias jqr='jq -r'
-alias yqf='jqf --jq=yq'
+if command -v jq jqf yq tomlq &>/dev/null; then
+	alias jqr='jq -r'
+	alias yqf='jqf --jq=yq'
+	alias tomlqf='jqf --jq=tomlq'
+fi
 
 # do not highlight matches, because matches are all that we're emitting
 alias rgc="rg --colors 'match:none' -or '\$1'"
