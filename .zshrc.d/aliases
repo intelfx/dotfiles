@@ -27,7 +27,11 @@ alias catbs="sed ':x; /\\\\$/ { N;  s/ *\\\\\\n *//; tx }'"
 alias wget='wget -c'
 alias bc='bc -l'
 alias sha1='openssl sha1'
-alias diff='colordiff'
+
+if command -v colordiff &>/dev/null; then
+	alias diff='colordiff'
+fi
+
 alias jqr='jq -r'
 alias yqf='jqf --jq=yq'
 
