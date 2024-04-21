@@ -558,7 +558,7 @@ nnoremap <a-i> :sync<cr>
 " Open directory under cursor in the other pane
 nnoremap <a-o> :sync %c<cr>
 " Swap panes
-nnoremap <c-u> <c-w>x
+nnoremap <a-u> <c-w>x
 
 " ---
 " More mappings
