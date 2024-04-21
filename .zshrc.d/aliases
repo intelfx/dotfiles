@@ -46,15 +46,17 @@ if command -v rg &>/dev/null; then
 	alias grepc="rg -uuu --colors 'match:none' -or '\$1'"
 fi
 
-alias r-cp-n='rsync -r --partial --no-i-r'
-alias r-cp='r-cp-n -aHAX'
-alias r-mv='r-cp --remove-source-files'
-alias r-mv-n='r-cp-n --remove-source-files'
-alias r-sync='r-cp --delete'
-alias r-install='r-cp-n -lEDH' # no perms (executability instead), times, group, owner, ACLs, xattrs
-alias r-put='r-mv-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
-alias r-cput='r-cp-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
-alias r-sync-put='r-cp-n -ltDH --chmod=ugo=rwX --delete' # no perms, group, owner, ACLs, xattrs
+if command -v rsync &>/dev/null; then
+	alias r-cp-n='rsync -r --partial --no-i-r'
+	alias r-cp='r-cp-n -aHAX'
+	alias r-mv='r-cp --remove-source-files'
+	alias r-mv-n='r-cp-n --remove-source-files'
+	alias r-sync='r-cp --delete'
+	alias r-install='r-cp-n -lEDH' # no perms (executability instead), times, group, owner, ACLs, xattrs
+	alias r-put='r-mv-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
+	alias r-cput='r-cp-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
+	alias r-sync-put='r-cp-n -ltDH --chmod=ugo=rwX --delete' # no perms, group, owner, ACLs, xattrs
+fi
 
 # FIXME: default ACLs vs umask
 alias cp-put='cp -dPR --preserve=timestamps --reflink'
