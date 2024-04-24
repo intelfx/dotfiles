@@ -7,7 +7,7 @@ function load_zshrc_d() {
 	done
 }
 
-function load_plugin() {
+function do_load_plugin() {
 	local dir=$1 dirname=${1:t} f
 
 	for f in $dir/$dirname.{plugin.zsh,zsh}(-.N); do
@@ -22,8 +22,19 @@ function load_plugin() {
 function load_plugin_d() {
 	local dir=$1 p
 	for p in $dir/*(-/N); do
-		load_plugin $p
+		do_load_plugin $p
 	done
+}
+
+function load_plugin() {
+	local name=$1 p
+	for p in {~/.zsh/plugins,/usr/share/zsh/plugins}/$name(-/N); do
+		do_load_plugin $p
+		return
+	done
+
+	print "Cannot find plugin '$name'" >&2
+	return 1
 }
 
 #
@@ -47,7 +58,7 @@ load_zshrc_d $HOME/.zshrc.early.d
 #
 # early plugins
 #
-load_plugin_d ~/.zsh/plugins.early
+load_plugin fzf-tab
 
 #
 # snippets (aliases, colors etc.)
@@ -57,15 +68,14 @@ load_zshrc_d ~/.zshrc.d
 #
 # plugins
 #
-load_plugin_d /usr/share/zsh/plugins
-load_plugin_d ~/.zsh/plugins
+load_plugin zsh-autosuggestions
 
 #
-# late snippets
+# late snippets (prompt)
 #
 load_zshrc_d ~/.zshrc.late.d
 
 #
 # late plugins
 #
-load_plugin_d ~/.zsh/plugins.late
+load_plugin zsh-syntax-highlighting

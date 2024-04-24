@@ -35,7 +35,7 @@
 	path = .dotfiles/solarized/mc
 	url = https://github.com/intelfx/mc-solarized-skin
 [submodule ".zsh/plugins-late/zsh-syntax-highlighting"]
-	path = .zsh/plugins.late/zsh-syntax-highlighting
+	path = .zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".zsh/plugins-noauto/zsh-async"]
 	path = .zsh/misc/zsh-async
@@ -97,7 +97,7 @@
 	path = .vim/bundle/vis
 	url = https://github.com/vim-scripts/vis
 [submodule ".zsh/plugins.early/fzf-tab"]
-	path = .zsh/plugins.early/fzf-tab
+	path = .zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule ".config/vifm/colors"]
 	path = .config/vifm/colors
