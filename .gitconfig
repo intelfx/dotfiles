@@ -70,6 +70,8 @@
 	refer = -c pager.show=false show --no-patch --format=reference2
 	fixes = -c pager.show=false show --no-patch --format=fixes
 
+	clone--nolfs = -c filter.lfs.smudge= -c filter.lfs.clean= -c filter.lfs.process='git-lfs filter-process --skip' clone
+
 	# these abominations exist to fish out a remote name from arguments
 	# while simultaneously assuming a mostly-reasonable default using
 	# heuristics (which are included for `git-hub` and `gh` GitHub CLIs)
