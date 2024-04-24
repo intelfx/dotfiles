@@ -136,7 +136,6 @@ bindkey -M vicmd 'C' fzf-cd-widget
 
 #
 # Clever hack: set up double <Tab> instead of $FZF_COMPLETION_TRIGGER for fzf.zsh
-# NOTE: this needs fzf-tab to load before this file, read below
 #
 
 # Another reminder for myself how this all works.
@@ -148,30 +147,35 @@ bindkey -M vicmd 'C' fzf-cd-widget
 # fzf.zsh) such that fzf-tab's widget (fzf-tab-complete) is called first and
 # wraps the fzf.zsh's widget (fzf-complete).
 #
-# However, due to my double <Tab> hack I would prefer if the order was reversed,
-# such that fzf.zsh's widget is called first and wraps the fzf-tab's widget
-# (fzf-tab-complete).
+# However, for the double <Tab> hack we inverse the order temporarily
+# by overriding each completion system's "previous/wrapped widget" variable,
+# such that fzf.zsh's widget runs first and potentially falls back to the
+# fzf-tab's widget (fzf-tab-complete), which then calls expand-or-complete
+# to get its results (this widget is wrapped, not fell back to).
 #
 # The reason for this is that if I use a double <Tab> and fzf-complete fails to
 # come up with a completion, it will call the next wrapped widget, which has to
 # be fzf-tab-complete so that I still get some sort of fzf-powered completion
 # instead of expand-or-complete (the default one).
-# (Also see the comment below.)
 
 fzf-completion-notrigger() {
 	# disable trigger just this once
 	local FZF_COMPLETION_TRIGGER=""
 	# if fzf-completion can't come up with something, call fzf-tab-complete
 	# instead of the default completion widget (expand-or-complete).
-	#
-	# FIXME: triggers an infinite recursion on an empty prompt
-	#        if this worked, the above ordering dance would not be needed
-	# _zsh_autosuggest_highlight_reset:3: maximum nested function level reached; increase FUNCNEST?
-	#
-	#local fzf_default_completion='fzf-tab-complete'
+	# At the same time, override fzf-tab-complete's wrapped widget so that
+	# it calls expand-or-complete instead of recursing into fzf-completion.
+	local _ftb_orig_widget='expand-or-complete'
+	local fzf_default_completion='fzf-tab-complete'
 	fzf-completion "$@"
 }
 zle -N fzf-completion-notrigger
+
+# Copy expand-or-complete (for $_ftb_orig_widget override above) under the name
+# fzf-tab-complete expects to find it. When initializing, fzf-tab would do this
+# for the previous defined widget (fzf-completion) only. Original comment:
+# "Copy the widget before it's wrapped by zsh-autosuggestions and zsh-syntax-highlighting."
+zle -A expand-or-complete .fzf-tab-orig-expand-or-complete
 
 # Set an aggressive $KEYTIMEOUT to make usage of single <Tab> less miserable
 KEYTIMEOUT=20

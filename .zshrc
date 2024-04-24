@@ -56,11 +56,6 @@ load_zshrc_d $HOME/.zshrc.early.d
 	&& exec tmx
 
 #
-# early plugins
-#
-load_plugin fzf-tab
-
-#
 # snippets (aliases, colors etc.)
 #
 load_zshrc_d ~/.zshrc.d
@@ -68,6 +63,7 @@ load_zshrc_d ~/.zshrc.d
 #
 # plugins
 #
+load_plugin fzf-tab  # ordering: first thing to load after zshrc.d
 load_plugin zsh-autosuggestions
 
 #
