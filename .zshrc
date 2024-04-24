@@ -10,14 +10,6 @@ function load_zshrc_d() {
 function load_plugin() {
 	local dir=$1 dirname=${1:t} f
 
-	# a bit of blacklisting for shells inside mc
-	if (( ${+MC_SID} )); then
-		case $dirname in
-		#zsh-autosuggestions) return 0 ;;
-		*) ;;
-		esac
-	fi
-
 	for f in $dir/$dirname.{plugin.zsh,zsh}(-.N); do
 		source $f
 		return 0
