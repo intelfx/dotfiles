@@ -124,6 +124,16 @@
 		| git update-ref --stdin; \
 	}; f"
 
+	recurse = "!f() { \
+		eval \"$*\" || return; \
+		git submodule --quiet foreach --recursive \"$*\" || return; \
+	}; f"
+
+	nuke = "!f() { \
+		git recurse \"git reset --hard && git clean -fxd\" || return; \
+		git submodule update --init --recursive --progress; \
+	}; f"
+
 [color "status"]
 	header = 10 # "bold green", solarized secondary
 	added = yellow
