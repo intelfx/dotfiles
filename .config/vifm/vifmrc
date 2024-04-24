@@ -603,9 +603,8 @@ nnoremap ,vd :Vimdiff %f<CR>
 " cd
 nnoremap ,c :Fzfcd<CR>
 nnoremap ,C :Fzfcr<CR>
-" navigate to
+" goto (search)
 nnoremap ,/ :Fzfgo<CR>
-nnoremap ,, :Fzfgo<CR>
 nnoremap ,g :Fzfgo<CR>
 nnoremap ,G :Fzfgr<CR>
 " locate directory
@@ -613,6 +612,11 @@ nnoremap ,ld :Fzfld<CR>
 " locate file
 nnoremap ,lf :Fzflf<CR>
 
+" navigate to (one-stop-shop convenience binding)
+nnoremap ,, :Fzfn<CR>
+nnoremap ,<CR> :Fzfnr<CR>
+
+" back home
 nnoremap ,~ :cd<CR>
 nnoremap ~~ :cd<CR>
 
@@ -694,6 +698,9 @@ if $VIFM_FZF != '' && $VIFM_FD != ''
                   \|    let $VIFM_FZF_PICK = term($VIFM_FZF_CMD . ' 2>/dev/tty')
                   \| endif
                   \| if $VIFM_FZF_PICK != ''
+                  \|     if $VIFM_FZF_ACTION == 'auto'
+                  \|         let $VIFM_FZF_ACTION = system('[[ -d ' . fnameescape($VIFM_FZF_PICK) . ' ]] && echo cd || echo goto')
+                  \|     endif
                   \|     execute $VIFM_FZF_ACTION fnameescape($VIFM_FZF_PICK)
                   \| endif
 
@@ -713,6 +720,15 @@ if $VIFM_FZF != '' && $VIFM_FD != ''
     command! Fzfgr : 
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'goto'
+                  \| execute 'Fzf'
+
+    command! Fzfn  :
+                  \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
+                  \| let $VIFM_FZF_ACTION = 'auto'
+                  \| execute 'Fzf'
+    command! Fzfnr :
+                  \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
+                  \| let $VIFM_FZF_ACTION = 'auto'
                   \| execute 'Fzf'
 
     command! Fzfld : 
