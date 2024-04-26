@@ -70,6 +70,9 @@
 	refer = -c pager.show=false show --no-patch --format=reference2
 	fixes = -c pager.show=false show --no-patch --format=fixes
 
+	copy-refer = "!f() { git refer \"$@\" | clip --copy; }; f"
+	copy-fixes = "!f() { git fixes \"$@\" | clip --copy; }; f"
+
 	clone--nolfs = -c filter.lfs.smudge= -c filter.lfs.clean= -c filter.lfs.process='git-lfs filter-process --skip' clone
 
 	# these abominations exist to fish out a remote name from arguments
