@@ -1,0 +1,18 @@
+[
+    { "id": "end" },
+    {
+        "caption": "Copy commit reference",
+        "command": "git",
+        "args": {"argv": ["copy-refer", "$commit"]},
+    },
+    {
+        "caption": "Copy \"Fixes:\" tag",
+        "command": "git",
+        "args": {"argv": ["copy-fixes", "$commit"]},
+    },
+    {
+        "caption": "Create \"fixup!\" commit",
+        "command": "git",
+        "args": {"argv": ["commit", "--fixup", "$commit"]},
+    },
+]
