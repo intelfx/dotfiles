@@ -1,5 +1,9 @@
 // Settings in here override those in "LSP/LSP.sublime-settings"
 {
+  "semantic_highlighting": true,
+  // FIXME: does not work w/ semantic_highlighting
+  "hover_highlight_style": "background",
+  "document_highlight_style": "background",
   "clients": {
     "serve-d": {
       "enabled": true,
