@@ -118,6 +118,13 @@
 		]
 	},
 
+	// clangd's Switch Header/Source
+	{
+		"keys": ["f12"],
+		"command": "lsp_clangd_switch_source_header",
+		"context": [{"key": "lsp.session_with_name", "operand": "clangd"}]
+	},
+
 	// YAML Nav's Goto Symbol (a replacement for ST's -- and LSP's -- "Goto Symbol")
 	{
 		"keys": ["alt+r"],
