@@ -121,3 +121,6 @@
 	path = .config/sublime-text/Packages/Jinja2
 	url = https://github.com/intelfx/BetterJinja
 	branch = work/variants
+[submodule ".vim/bundle/vim-rooter"]
+	path = .vim/bundle/vim-rooter
+	url = https://github.com/airblade/vim-rooter
