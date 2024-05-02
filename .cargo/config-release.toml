@@ -20,7 +20,7 @@ debug = false
 strip = true
 opt-level = 3
 lto = "thin"
-#linker-plugin-lto = true
+# extends {build,target.*}.rustflags
 rustflags = [
 	"-C", "link-arg=-flto=thin",
 	"-C", "linker-plugin-lto=true",
@@ -31,7 +31,9 @@ rustflags = [
 
 [target.x86_64-unknown-linux-gnu]
 linker = "clang"
+# overrides build.rustflags
 rustflags = [
+	#"-Z", "threads=8",
 	"-C", "target-cpu=native",
 	"-C", "link-arg=-fuse-ld=lld",
 ]
