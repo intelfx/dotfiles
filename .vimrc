@@ -35,9 +35,10 @@ vnoremap <leader>d "_d
 nnoremap <leader><leader> "_
 vnoremap <leader><leader> "_
 
-" don't require Shift to go to Ex mode
-nnoremap ; :
-vnoremap ; :
+" This never really took off, and `;` is already used to repeat f/t/F/T.
+" " don't require Shift to go to Ex mode
+" nnoremap ; :
+" vnoremap ; :
 
 " convert %% to dirname(%)
 cabbrev %% %:h
