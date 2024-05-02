@@ -18,10 +18,6 @@
 	tool = vimdiff
 	guitool = smerge
 	algorithm = histogram
-[blame]
-	showEmail = true
-	date = short
-	coloring = highlightRecent
 [merge]
 	summary = true
 	conflictstyle = diff3
@@ -31,6 +27,10 @@
 	autosquash = true
 	# TODO: implement rebase.updateRefs=interactive
 	#updateRefs = true
+[blame]
+	showEmail = true
+	date = short
+	coloring = highlightRecent
 [rerere]
 	enabled = 1
 	autoupdate = true
