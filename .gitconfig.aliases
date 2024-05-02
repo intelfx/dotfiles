@@ -72,5 +72,9 @@
 	pushInsteadOf = archlinux:
 	pushInsteadOf = git://gitlab.archlinux.org/
 	pushInsteadOf = https://gitlab.archlinux.org/
+[url "https://git.savannah.gnu.org/git/"]
+	insteadOf = gnu:
+	insteadOf = git://git.sv.gnu.org/
+	insteadOf = git://git.savannah.gnu.org/
 
 # vim: set ft=gitconfig :
