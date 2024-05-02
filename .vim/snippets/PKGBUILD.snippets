@@ -63,6 +63,17 @@ snippet python-version
 snippet python-site-packages
 		local site_packages=\$(python -c "import site; print(site.getsitepackages()[0])")
 
+snippet python-drop-fortify
+	# HACK: python/cython apparently captures the gcc flags used when building itself
+	# and prepends them to $CFLAGS when building extensions, creating a conflict
+	# over the definition of _FORTIFY_SOURCE:
+	#  <command-line>: error: "_FORTIFY_SOURCE" redefined [-Werror]
+	# Inject a flag to undefine _FORTIFY_SOURCE prior to redefining it.
+	shopt -s lastpipe
+		for v in CFLAGS CXXFLAGS; do
+		sed <<<"\${!v}" -r 's|-Wp,-D_FORTIFY_SOURCE=|-Wp,-U_FORTIFY_SOURCE &|' | read -r "\$v"
+	done
+
 snippet gitmodules-declare
 	declare -g -A _gitmodules=(
 		[SUBNAME]="git+SUBURL"
