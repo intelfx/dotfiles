@@ -8,6 +8,10 @@ runtime! defaults.vim
 " configure snipMate
 let g:snipMate = { 'snippet_version' : 1 }
 
+" configure rooter
+let g:rooter_change_directory_for_non_project_files = ''
+let g:rooter_cd_cmd = 'lcd'
+
 " load plugins from $HOME/.vim/bundle
 packloadall
 
