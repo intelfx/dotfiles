@@ -15,6 +15,7 @@
 		"LSP-bash",
 		"LSP-clangd",
 		"LSP-json",
+		"LSP-rust-analyzer",
 		"LSP-yaml",
 		"NeoVintageous",
 		"Nix",
