@@ -23,6 +23,8 @@
 	conflictstyle = diff3
 	tool = vimdiff
 	guitool = smerge
+[mergetool "vimdiff"]
+	layout = LOCAL,BASE,REMOTE / MERGED + BASE,LOCAL + BASE,REMOTE + (LOCAL/BASE/REMOTE),MERGED
 [rebase]
 	autosquash = true
 	# TODO: implement rebase.updateRefs=interactive
