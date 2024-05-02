@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"ApplySyntax",
+		"Awk",
 		"CommandsBrowser",
 		"Compare Side-By-Side",
 		"EditorConfig",
