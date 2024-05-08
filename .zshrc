@@ -1,8 +1,17 @@
 #!/hint/zsh
 
+# Very first thing.
+setopt extended_glob
+
 function load_zshrc_d() {
 	local dir=$1 f
-	for f in $dir/*(-.N); do
+
+	# load "completion" first
+	for f in \
+		$dir/completion*(-.N) \
+		$dir/(^completion*)(-.N) \
+		# EOL
+	do
 		source $f
 	done
 }
