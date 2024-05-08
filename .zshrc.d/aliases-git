@@ -113,6 +113,6 @@ alias tigl='TIGRC_USER=~/.tigrc.large tig'
 
 alias tg='tig --all'
 alias tg1='tig show'
-alias tgl='TIGRC_USER=~/.tigrc.large tig --all'
+alias tgl='TIGRC_USER=~/.tigrc.large tg'
 alias tgp='tig-pick'
 alias tgpl='TIGRC_USER=~/.tigrc.large tig-pick'
