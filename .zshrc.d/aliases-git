@@ -111,7 +111,13 @@ done
 alias tig1='tig show'
 alias tigl='TIGRC_USER=~/.tigrc.large tig'
 
-alias tg='tig --all'
+compdef tg=tig
+function tg() {
+	if (( $# ))
+	then command tig "$@"
+	else command tig --all
+	fi
+}
 alias tg1='tig show'
 alias tgl='TIGRC_USER=~/.tigrc.large tg'
 alias tgp='tig-pick'
