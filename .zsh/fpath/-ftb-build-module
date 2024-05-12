@@ -13,18 +13,31 @@ local ret bundle nproc
 }
 
 # clone zsh source code if not exists
-[[ -d ./zsh/$zsh_version ]] || {
-  git clone --depth=1 --branch zsh-$zsh_version https://github.com/zsh-users/zsh ./zsh/$zsh_version
-}
+zsh_url=https://github.com/zsh-users/zsh
+zsh_tag=zsh-$zsh_version
+zsh_src=$PWD/zsh
+[[ ! -d $zsh_src || -d $zsh_src/.git ]] \
+  || rm -rf $zsh_src
+[[ -d $zsh_src ]] \
+  || git clone --depth=1 https://github.com/zsh-users/zsh $zsh_src --branch $zsh_tag
+git -C $zsh_src rev-parse --verify --quiet $zsh_tag &>/dev/null \
+  || git -C $zsh_src fetch --depth 1 $zsh_url tag $zsh_tag --no-tags
+git -C $zsh_src describe --tags --exact-match --match $zsh_tag HEAD &>/dev/null \
+  || git -C $zsh_src checkout -f $zsh_tag
+git -C $zsh_src clean -fxd
 
-ln -sf $PWD/Src/fzftab.c   ./zsh/$zsh_version/Src/Modules/
-ln -sf $PWD/Src/fzftab.mdd ./zsh/$zsh_version/Src/Modules/
+{
+ln -rsf $PWD/Src/fzftab.c   -t $zsh_src/Src/Modules/
+ln -rsf $PWD/Src/fzftab.mdd -t $zsh_src/Src/Modules/
 
 # build zsh
-cd -q ./zsh/$zsh_version
+cd -q $zsh_src
 [[ -f ./configure ]] || ./Util/preconfig
-[[ -f ./Makefile ]] || ./configure --disable-gdbm --disable-pcre --without-tcsetpgrp --prefix=/tmp/zsh-fzf-tab-module ${bundle:+DL_EXT=bundle}
+[[ -f ./Makefile ]] || ./configure --disable-gdbm --disable-pcre --without-tcsetpgrp ${bundle:+DL_EXT=bundle}
 make -j$nproc
 
 # we only need aloxaf/fzftab.so
 mv ./Src/Modules/fzftab.(so|bundle) $FZF_TAB_HOME/modules/Src/aloxaf/
+} always {
+  git -C $zsh_src clean -fxd
+}
