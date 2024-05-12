@@ -16,3 +16,7 @@ bind main ;rs @git reset --soft %(commit)
 bind main ;rr ?@git reset %(commit)
 bind main ;rH ?@git reset --hard %(commit)
 bind main ;rM ?@git reset --merge %(commit)
+
+# Universal binding for `git checkout` of the branch or commit under cursor
+# (see .gitconfig for `git zz-tig-checkout`)
+bind main ;co ?git zz-tig-checkout +%(branch) +%(commit)
