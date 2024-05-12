@@ -1,3 +1,6 @@
+[unstable]
+profile-rustflags = true
+
 [registries.crates-io]
 protocol = 'git'
 
@@ -16,10 +19,19 @@ debug = 2
 debug = false
 strip = true
 opt-level = 3
+# extends {build,target.*}.rustflags
+rustflags = [
+	#"-C", "linker-plugin-lto=true",
+	# this must be set if linker=clang and -fuse-ld=mold and LTO is used _anywhere_
+	# (clang 17 does not use plugin for anything but gold)
+	#"-C", "link-arg=-Wl,-plugin,/usr/lib/LLVMgold.so",
+]
 
 [target.x86_64-unknown-linux-gnu]
 linker = "clang"
+# overrides build.rustflags
 rustflags = [
+	#"-Z", "threads=8",
 	"-C", "target-cpu=native",
 	"-C", "link-arg=-fuse-ld=lld",
 ]
@@ -27,3 +39,6 @@ rustflags = [
 [env]
 CC = "clang"
 CXX = "clang++"
+CFLAGS = "-fuse-ld=lld"
+CXXFLAGS = "-fuse-ld=lld"
+LDFLAGS = "-fuse-ld=lld"
