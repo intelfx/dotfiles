@@ -6,7 +6,7 @@ setopt extended_glob
 function load_zshrc_d() {
 	local dir=$1 f
 
-	# load "completion" first
+	# load "completion" first because other snippets define completions
 	for f in \
 		$dir/completion*(-.N) \
 		$dir/(^completion*)(-.N) \
