@@ -77,6 +77,26 @@
 
 	clone--nolfs = -c filter.lfs.smudge= -c filter.lfs.clean= -c filter.lfs.process='git-lfs filter-process --skip' clone
 
+	# `git checkout`, but using the first valid ref out of multiple
+	# arguments prefixed with "+"
+	zz-tig-checkout = "!f() { \
+		local -a args refs; \
+		while (( $# )); do \
+			if [[ $1 == -- ]]; then \
+				break; \
+			elif [[ $1 == +* ]]; then \
+				if [[ $1 == +?* && ! ${refs+set} ]]; then \
+					refs+=( \"${1#+}\" ); \
+				fi; \
+			else \
+				args+=( \"$1\" ); \
+			fi; \
+			shift; \
+		done; \
+		set -x; \
+		git checkout \"${args[@]}\" \"${refs[@]}\" \"$@\"; \
+	}; f"
+
 	# these abominations exist to fish out a remote name from arguments
 	# while simultaneously assuming a mostly-reasonable default using
 	# heuristics (which are included for `git-hub` and `gh` GitHub CLIs)
