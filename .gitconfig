@@ -77,6 +77,12 @@
 
 	clone--nolfs = -c filter.lfs.smudge= -c filter.lfs.clean= -c filter.lfs.process='git-lfs filter-process --skip' clone
 
+	config-sections = "!f() { \
+		git config --list --name-only \"${@:2}\" \
+		| sed -nr \"s|\\.[^.]+$||${1:+\"; /$1/\"}p\" \
+		| sort -u; \
+	}; f"
+
 	# `git checkout`, but using the first valid ref out of multiple
 	# arguments prefixed with "+"
 	zz-tig-checkout = "!f() { \
