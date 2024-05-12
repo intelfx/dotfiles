@@ -7,9 +7,11 @@ function load_zshrc_d() {
 	local dir=$1 f
 
 	# load "completion" first because other snippets define completions
+	# load "colors" before completion because completion zstyles use $LS_COLORS
 	for f in \
+		$dir/colors*(-.N) \
 		$dir/completion*(-.N) \
-		$dir/(^completion*)(-.N) \
+		$dir/(^completion*|colors*)(-.N) \
 		# EOL
 	do
 		source $f
