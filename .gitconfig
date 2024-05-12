@@ -121,7 +121,7 @@
 	pr = "!f() { \
 		remote=\"$(git zz-guess-upstream \"${@:2:1}\")\" || return; \
 		prefix=\"pr${2:+\"/$2\"}\"; \
-		git fetch -fu \"$r\" \"refs/pull/$1/head:$prefix/$1\" || return; \
+		git fetch -fu \"$remote\" \"refs/pull/$1/head:$prefix/$1\" || return; \
 		git checkout \"$prefix/$1\"; \
 	}; f"
 	pr-clean = "!f() { \
