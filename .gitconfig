@@ -114,6 +114,7 @@
 	# with normal git-push, hence the -c remote.$remote.push dance).
 	push-work = "!f() { \
 		remote=\"$(git zz-guess-fork \"$@\")\" || return; \
+		set -x; \
 		git -c \"remote.$remote.push=+refs/heads/work/*\" push \"$@\"; \
 	}; f"
 
@@ -121,6 +122,7 @@
 	pr = "!f() { \
 		remote=\"$(git zz-guess-upstream \"${@:2:1}\")\" || return; \
 		prefix=\"pr${2:+\"/$2\"}\"; \
+		set -x; \
 		git fetch -fu \"$remote\" \"refs/pull/$1/head:$prefix/$1\" || return; \
 		git checkout \"$prefix/$1\"; \
 	}; f"
