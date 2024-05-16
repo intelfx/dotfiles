@@ -97,6 +97,9 @@ export BORG_MOUNT_DATA_CACHE_ENTRIES=$(( 1024*1024*1024 / (8*1024*1024) ))
 # `podman login` stores auth info in $XDG_RUNTIME_DIR by default. totally moronic, if you ask me
 export REGISTRY_AUTH_FILE="$(systemd-path user-shared)/containers/auth.json"
 
+# It's 2024 and Go(vno) still thinks it owns the entire machine. Wrong.
+export GOMODCACHE="$(systemd-path user-state-cache)/go-mod"
+
 # Fuck you!
 # https://github.com/kubernetes/minikube/issues/3724
 export MINIKUBE_IN_STYLE=0
