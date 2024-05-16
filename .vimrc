@@ -188,12 +188,13 @@ augroup END
 " simple implementation of a block-comment feature
 "
 function CommentSetup()
-  if exists('b:comment_leader')
-    let b:_comment_leader_add = escape(b:comment_leader, '\/')
-    let b:_comment_leader_remove = substitute(b:_comment_leader_add, ' ', ' \\?', 'g')
-    noremap <buffer> <silent> <leader>cc :<C-B>silent <C-E>s/^/<C-R>=b:_comment_leader_add<CR>/<CR>:nohlsearch<CR>
-    noremap <buffer> <silent> <leader>cu :<C-B>silent <C-E>s/^<C-R>=b:_comment_leader_remove<CR>//e<CR>:nohlsearch<CR>
+  if !exists('b:comment_leader')
+    let b:comment_leader = '# '
   endif
+  let b:_comment_leader_add = escape(b:comment_leader, '\/')
+  let b:_comment_leader_remove = substitute(b:_comment_leader_add, ' ', ' \\?', 'g')
+  noremap <buffer> <silent> <leader>cc :<C-B>silent <C-E>s/^/<C-R>=b:_comment_leader_add<CR>/<CR>:nohlsearch<CR>
+  noremap <buffer> <silent> <leader>cu :<C-B>silent <C-E>s/^<C-R>=b:_comment_leader_remove<CR>//e<CR>:nohlsearch<CR>
 endfunction
 
 augroup comment
