@@ -192,6 +192,23 @@ function setflags_dbg() {
 	export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"
 }
 
+function -setgoflags() {
+	export CGO_CPPFLAGS="${CPPFLAGS}"
+	export CGO_CFLAGS="${CFLAGS}"
+	export CGO_CXXFLAGS="${CXXFLAGS}"
+	export CGO_LDFLAGS="${LDFLAGS}"
+	export GOFLAGS="-buildmode=pie -trimpath '-ldflags=-linkmode=external \"-extldflags=${LDFLAGS}\"' -mod=readonly -modcacherw"
+}
+
+for s in dbg opt lto; do
+	eval "function loadgoflags_$s() { loadflags_$s; -setgoflags; }"
+done
+unset s
+
 function printflags() {
 	declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null
+}
+
+function printgoflags() {
+	declare -p CGO_CPPFLAGS CGO_CFLAGS CGO_CXXFLAGS CGO_LDFLAGS GOFLAGS
 }
