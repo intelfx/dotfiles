@@ -124,3 +124,6 @@
 [submodule ".vim/bundle/vim-rooter"]
 	path = .vim/bundle/vim-rooter
 	url = https://github.com/airblade/vim-rooter
+[submodule ".config/mpv/uosc"]
+	path = .config/mpv/uosc
+	url = https://github.com/tomasklaen/uosc
