@@ -20,6 +20,12 @@
     // Put your custom syntax rules here:
     "syntaxes": [
         {
+            "syntax": "VimL/VimL",
+            "rules": [
+                {"globmatch": "**/vifmrc"},
+            ]
+        },
+        {
             "syntax": "Go/YAML (Go)",
             "rules": [
                 {"globmatch": ["**/templates/*.y{,a}ml"]}
