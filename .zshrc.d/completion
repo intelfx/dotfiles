@@ -24,6 +24,10 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/intelfx/.zshrc'
 
+zstyle ':completion:*' use-cache true
+zstyle ':completion:*' cache-path "$(systemd-path user-state-cache)/zsh/zcompcache"
+mkdir -p "$(systemd-path user-state-cache)/zsh/zcompcache"
+
 autoload -Uz compinit
 compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
 
