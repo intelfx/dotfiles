@@ -95,7 +95,7 @@
 	url = https://github.com/vim-scripts/vis
 [submodule ".zsh/plugins.early/fzf-tab"]
 	path = .zsh/plugins/fzf-tab
-	url = https://github.com/Aloxaf/fzf-tab
+	url = https://github.com/intelfx/fzf-tab
 [submodule ".config/vifm/colors"]
 	path = .config/vifm/colors
 	url = https://github.com/intelfx/vifm-colors
