@@ -4,7 +4,7 @@
 # completion settings
 #
 zstyle ':completion:*' auto-description 'argument: %d'
-zstyle ':completion:*' completer _complete _correct
+zstyle ':completion:*' completer _complete _approximate
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' file-sort name
 zstyle ':completion:*' format '[%d]'
