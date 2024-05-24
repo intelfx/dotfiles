@@ -9,18 +9,29 @@ snippet lib
 	EOF
 	}
 
+
+	#
+	# args
+	#
+
 	declare -A _args=(
 		[-h|--help]=ARG_USAGE
 		#[--]=ARGS
 	)
-	parse_args _args "$@" || usage
+	parse_args _args "\$@" || usage
 	[[ ! \$ARG_USAGE ]] || usage
+
 
 	#
 	# main
 	#
 
-snippet common
+snippet common 
+	#!/bin/bash
+
+	set -eo pipefail
+	shopt -s lastpipe
+
 	log() {
 		echo ":: \$*" >&2
 	}
@@ -34,45 +45,49 @@ snippet common
 		exit 1
 	}
 
-snippet getopt 
-	ARGS=\$(getopt -o 'ab:c::' --long 'a-long,b-long:,c-long::' -n "\${0##*/}" -- "\$@")
-	eval set -- "\$ARGS"
-	unset ARGS
+	usage() {
+		if (( \$# )): then
+			echo "\${0##*/}: \$@" >&2
+			echo >&2
+		fi
+		_usage >&2
+		exit 1
+	}
+
+	_usage() {
+		cat <<EOF
+	Usage: \${0##*/}
+	EOF
+	}
+
+
+	#
+	# args
+	#
+
+	if args=\$(getopt -o 'ab:c::' --long 'a-long,b-long:,c-long::' -n "\${0##*/}" -- "\$@"); then
+		eval set -- "\$args"
+	else
+		usage
+	unset args
 
 	while :; do
 		case "\$1" in
-		'-a'|'--a-long')
-			echo 'Option a'
-			shift
-			continue
-			;;
-		'-b'|'--b-long')
-			echo "Option b, argument '\$2'"
-			shift 2
-			continue
-			;;
-		'-c'|'--c-long')
-			case "\$2" in
-				'')
-					echo 'Option c, no argument'
-				;;
-				*)
-					echo "Option c, argument '\$2'"
-				;;
-			esac
-			shift 2
-			continue
-			;;
-		'--')
-			shift
-			break
-			;;
-		*)
-			die "Internal error"
-			;;
+		-a|--a-long) echo 'option a' ;;
+		-b|--b-long) shift; echo "option b, value '\$1'"; shift ;;
+		-c|--c-long) shift; echo "option c, value '\${1:-"(no value)"}'"; shift 
+		--) shift; break ;;
+		*) die "getopt error" ;;
 		esac
+		shift
 	done
 
-	for arg; do
-		echo "--> '\$arg'"
-	done
+	case "\$#" in
+	1) arg1="\$1" ;;
+	*) usage "erong number of positional arguments" ;;
+	esac
+
+
+	#
+	# main
+	#

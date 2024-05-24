@@ -5,4 +5,10 @@
 #
 autoload -Uz promptinit
 promptinit
+if [[ "$TERMINAL_EMULATOR" == *JetBrains*
+   && "$FIG_TERM" == 1 ]]; then
+	# something absolutely default
+	prompt redhat
+	return
+fi
 prompt pure
