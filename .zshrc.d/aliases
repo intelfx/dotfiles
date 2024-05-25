@@ -37,6 +37,7 @@ fi
 
 if command -v jq jqf &>/dev/null; then
 	command -v yq &>/dev/null && alias yqf='jqf --jq=yq'
+	command -v xq &>/dev/null && alias xqf='jqf --jq=xq'
 	command -v tomlq &>/dev/null && alias tomlqf='jqf --jq=tomlq'
 fi
 
