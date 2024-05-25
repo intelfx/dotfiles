@@ -36,7 +36,6 @@ if command -v colordiff &>/dev/null; then
 fi
 
 if command -v jq jqf yq tomlq &>/dev/null; then
-	alias jqr='jq -r'
 	alias yqf='jqf --jq=yq'
 	alias tomlqf='jqf --jq=tomlq'
 fi
