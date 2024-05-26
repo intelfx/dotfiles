@@ -269,7 +269,7 @@ done
 unset s
 
 function printflags() {
-	declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null
+	declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS ${(kM)parameters:#CARGO_PROFILE_*} 2>/dev/null
 }
 
 function printgoflags() {
