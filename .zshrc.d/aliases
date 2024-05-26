@@ -191,10 +191,68 @@ declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-
 ')"
 }
 
+
+function loadflags_clang_opt() {
+	eval "$(bash -c '
+. /etc/makepkg.conf
+CC=clang
+CXX=clang++
+declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+')"
+}
+
+function loadflags_clang_dbg() {
+	eval "$(bash -c '
+. /etc/makepkg.conf
+CC=clang
+CXX=clang++
+CFLAGS+=" $DEBUG_CFLAGS"
+CXXFLAGS+=" $DEBUG_CXXFLAGS"
+RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
+declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+')"
+}
+
+function loadflags_clang_lto() {
+	eval "$(bash -c '
+. /etc/makepkg.conf
+shopt -s extglob
+CC=clang
+CXX=clang++
+CFLAGS="${CFLAGS// -fuse-ld=+([^ ])}"; CFLAGS+=" -flto=full"
+CXXFLAGS="${CXXFLAGS// -fuse-ld=+([^ ])}"; CXXFLAGS+=" -flto=full"
+LDFLAGS="${LDFLAGS// -fuse-ld=+([^ ])}"; LDFLAGS+=" -fuse-ld=lld -flto=full"
+RUSTFLAGS="${RUSTFLAGS// -C*( )link-arg=-fuse-ld=+([^ ])}"; RUSTFLAGS+=" -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"
+CARGO_PROFILE_RELEASE_LTO=fat
+declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+')"
+}
+
+function loadflags_clang_lto_thin() {
+	eval "$(bash -c '
+. /etc/makepkg.conf
+shopt -s extglob
+CC=clang
+CXX=clang++
+CFLAGS="${CFLAGS// -fuse-ld=+([^ ])}"; CFLAGS+=" -flto=thin"
+CXXFLAGS="${CXXFLAGS// -fuse-ld=+([^ ])}"; CXXFLAGS+=" -flto=thin"
+LDFLAGS="${LDFLAGS// -fuse-ld=+([^ ])}"; LDFLAGS+=" -fuse-ld=lld -flto=thin"
+RUSTFLAGS="${RUSTFLAGS// -C*( )link-arg=-fuse-ld=+([^ ])}"; RUSTFLAGS+=" -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"
+CARGO_PROFILE_RELEASE_LTO=thin
+declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+')"
+}
+
 function setflags_opt() {
-	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=auto -fuse-linker-plugin"
+	export CFLAGS="-march=native -O3 -pipe -fno-plt"
 	export CXXFLAGS="$CFLAGS"
 	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"
+}
+
+function setflags_lto() {
+	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=auto -fuse-linker-plugin"
+	export CXXFLAGS="$CFLAGS"
+	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold -flto=auto -fuse-linker-plugin"
 }
 
 function setflags_dbg() {
@@ -217,7 +275,7 @@ done
 unset s
 
 function printflags() {
-	declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null
+	declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS ${(kM)parameters:#CARGO_PROFILE_*} 2>/dev/null
 }
 
 function printgoflags() {
