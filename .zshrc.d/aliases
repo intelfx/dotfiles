@@ -244,9 +244,15 @@ declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@
 }
 
 function setflags_opt() {
-	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=auto -fuse-linker-plugin"
+	export CFLAGS="-march=native -O3 -pipe -fno-plt"
 	export CXXFLAGS="$CFLAGS"
 	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"
+}
+
+function setflags_lto() {
+	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=auto -fuse-linker-plugin"
+	export CXXFLAGS="$CFLAGS"
+	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold -flto=auto -fuse-linker-plugin"
 }
 
 function setflags_dbg() {
