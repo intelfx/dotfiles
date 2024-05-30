@@ -47,6 +47,9 @@
 /.config/QtProject/qtcreator/*
 !/.config/QtProject/qtcreator/styles
 
+# qman(1) config
+!/.config/qman.conf
+
 # Do not ignore .vim
 !/.vim
 
