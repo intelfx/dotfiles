@@ -166,92 +166,114 @@ alias openstack-image-create-uefi="openstack image create \
 	--property hypervisor_type='qemu' \
 "
 
-#
+
+# ------------------------------------------------------------------------------
 # Compile flags
+# "The shell madness expands to meet the needs of the expanding shell madness"
+#                                                         -- O. Wilde, probably
+# ------------------------------------------------------------------------------
+
+function clearflags() {
+	unset CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS ${(kM)parameters:#CARGO_PROFILE_*} 2>/dev/null
+	return 0
+}
+
+function printflags() {
+	declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS ${(kM)parameters:#CARGO_PROFILE_*} 2>/dev/null
+	return 0
+}
+
+
+#
+# loadflags_*() family -- use /etc/makepkg.conf to source flags
 #
 
+function --loadflags() {
+	local mangle='
+shopt -s extglob
+__do_mangle() {
+	declare -n var="$1"; shift
+	for fn; do if [[ "$(type -t "$fn")" == function ]]; then "$fn"; break; fi; done
+}
+__do_mangle CFLAGS    mangle
+__do_mangle CXXFLAGS  mangle
+__do_mangle LDFLAGS   mangle_ld mangle
+__do_mangle RUSTFLAGS mangle_rust mangle
+
+declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null \
+| sed -nr "s|^declare (-[^ ]+ )+|export |p"
+'
+	local -a lines=('. /etc/makepkg.conf' "$@" "$mangle")
+	clearflags
+	eval "$(bash -c "${(F)lines}")"
+	printflags
+}
+
 function loadflags_opt() {
-	eval "$(bash -c '
-. /etc/makepkg.conf
-declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
-')"
+	--loadflags
 }
 
 function loadflags_lto() {
-	eval "$(bash -c '
-. /etc/makepkg.conf
-CFLAGS+=" $LTOFLAGS"
-CXXFLAGS+=" $LTOFLAGS"
-LDFLAGS+=" $LTOFLAGS"
-RUSTFLAGS+=" $LTO_RUSTFLAGS"
+	--loadflags '
+mangle() { var+=" $LTOFLAGS"; }
+mangle_rust() { var+=" $LTO_RUSTFLAGS"; }
 export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=true"}
-declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
-')"
+'
 }
 
 function loadflags_dbg() {
-	eval "$(bash -c '
-. /etc/makepkg.conf
+	--loadflags '
 CFLAGS+=" $DEBUG_CFLAGS"
 CXXFLAGS+=" $DEBUG_CXXFLAGS"
 RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
 export ${DEBUG_CARGOFLAGS:="CARGO_PROFILE_RELEASE_DEBUG=full"}
-declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
-')"
+'
 }
 
-
 function loadflags_clang_opt() {
-	eval "$(bash -c '
-. /etc/makepkg.conf
+	--loadflags '
 CC=clang
 CXX=clang++
-declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
-')"
+'
 }
 
 function loadflags_clang_dbg() {
-	eval "$(bash -c '
-. /etc/makepkg.conf
+	--loadflags '
 CC=clang
 CXX=clang++
 CFLAGS+=" $DEBUG_CFLAGS"
 CXXFLAGS+=" $DEBUG_CXXFLAGS"
 RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
 export ${DEBUG_CARGOFLAGS:="CARGO_PROFILE_RELEASE_DEBUG=full"}
-declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
-')"
+'
 }
 
 function loadflags_clang_lto() {
-	eval "$(bash -c '
-. /etc/makepkg.conf
-shopt -s extglob
+	--loadflags '
 CC=clang
 CXX=clang++
-CFLAGS="${CFLAGS// -fuse-ld=+([^ ])}"; CFLAGS+=" -flto=full"
-CXXFLAGS="${CXXFLAGS// -fuse-ld=+([^ ])}"; CXXFLAGS+=" -flto=full"
-LDFLAGS="${LDFLAGS// -fuse-ld=+([^ ])}"; LDFLAGS+=" -fuse-ld=lld -flto=full"
-RUSTFLAGS="${RUSTFLAGS// -C*( )link-arg=-fuse-ld=+([^ ])}"; RUSTFLAGS+=" -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"
+mangle() { var="${var// -fuse-ld=+([^ ])}"; var+=" -flto=full"; }
+mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=full"; }
+mangle_rust() { var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
 CARGO_PROFILE_RELEASE_LTO=fat
-declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
-')"
+'
 }
 
-function loadflags_clang_lto_thin() {
-	eval "$(bash -c '
-. /etc/makepkg.conf
-shopt -s extglob
+function loadflags_clang_thinlto() {
+	--loadflags '
 CC=clang
 CXX=clang++
-CFLAGS="${CFLAGS// -fuse-ld=+([^ ])}"; CFLAGS+=" -flto=thin"
-CXXFLAGS="${CXXFLAGS// -fuse-ld=+([^ ])}"; CXXFLAGS+=" -flto=thin"
-LDFLAGS="${LDFLAGS// -fuse-ld=+([^ ])}"; LDFLAGS+=" -fuse-ld=lld -flto=thin"
-RUSTFLAGS="${RUSTFLAGS// -C*( )link-arg=-fuse-ld=+([^ ])}"; RUSTFLAGS+=" -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"
+mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -flto=thin"; }
+mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=thin"; }
+mangle_rust() { var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
 CARGO_PROFILE_RELEASE_LTO=thin
-declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
-')"
+'
 }
+
+
+#
+# setflags_*() -- hardcoded sets of -fomg-optimize flags
+#
 
 function setflags_opt() {
 	export CFLAGS="-march=native -O3 -pipe -fno-plt"
@@ -271,23 +293,31 @@ function setflags_dbg() {
 	export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"
 }
 
+
+#
+# Go flags adapters (because of course Go is special)
+#
+
+function cleargoflags() {
+	unset CGO_CPPFLAGS CGO_CFLAGS CGO_CXXFLAGS CGO_LDFLAGS GOFLAGS 2>/dev/null
+	return 0
+}
+
+function printgoflags() {
+	declare -p CGO_CPPFLAGS CGO_CFLAGS CGO_CXXFLAGS CGO_LDFLAGS GOFLAGS 2>/dev/null
+	return 0
+}
+
 function -setgoflags() {
 	export CGO_CPPFLAGS="${CPPFLAGS}"
 	export CGO_CFLAGS="${CFLAGS}"
 	export CGO_CXXFLAGS="${CXXFLAGS}"
 	export CGO_LDFLAGS="${LDFLAGS}"
 	export GOFLAGS="-buildmode=pie -trimpath '-ldflags=-linkmode=external \"-extldflags=${LDFLAGS}\"' -mod=readonly -modcacherw"
+	printgoflags
 }
 
-for s in dbg opt lto; do
+for s in {,clang_}{dbg,opt,lto}; do
 	eval "function loadgoflags_$s() { loadflags_$s; -setgoflags; }"
 done
 unset s
-
-function printflags() {
-	declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS ${(kM)parameters:#CARGO_PROFILE_*} 2>/dev/null
-}
-
-function printgoflags() {
-	declare -p CGO_CPPFLAGS CGO_CFLAGS CGO_CXXFLAGS CGO_LDFLAGS GOFLAGS
-}
