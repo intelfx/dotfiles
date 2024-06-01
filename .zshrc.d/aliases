@@ -173,7 +173,7 @@ alias openstack-image-create-uefi="openstack image create \
 function loadflags_opt() {
 	eval "$(bash -c '
 . /etc/makepkg.conf
-declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
 ')"
 }
 
@@ -183,7 +183,9 @@ function loadflags_lto() {
 CFLAGS+=" $LTOFLAGS"
 CXXFLAGS+=" $LTOFLAGS"
 LDFLAGS+=" $LTOFLAGS"
-declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+RUSTFLAGS+=" $LTO_RUSTFLAGS"
+export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=true"}
+declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
 ')"
 }
 
@@ -192,7 +194,9 @@ function loadflags_dbg() {
 . /etc/makepkg.conf
 CFLAGS+=" $DEBUG_CFLAGS"
 CXXFLAGS+=" $DEBUG_CXXFLAGS"
-declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
+export ${DEBUG_CARGOFLAGS:="CARGO_PROFILE_RELEASE_DEBUG=full"}
+declare -p CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
 ')"
 }
 
@@ -214,7 +218,8 @@ CXX=clang++
 CFLAGS+=" $DEBUG_CFLAGS"
 CXXFLAGS+=" $DEBUG_CXXFLAGS"
 RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
-declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
+export ${DEBUG_CARGOFLAGS:="CARGO_PROFILE_RELEASE_DEBUG=full"}
+declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null | sed -nr "s|^declare (-[^ ]+ )+|export |p"
 ')"
 }
 
