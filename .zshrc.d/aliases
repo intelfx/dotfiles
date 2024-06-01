@@ -213,11 +213,25 @@ function loadflags_opt() {
 	--loadflags
 }
 
+function loadflags_opt3() {
+	--loadflags '
+mangle() { var="${var// -O+([0-9])}"; var+=" -O3"; }
+'
+}
+
 function loadflags_lto() {
 	--loadflags '
 mangle() { var+=" $LTOFLAGS"; }
 mangle_rust() { var+=" $LTO_RUSTFLAGS"; }
 export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=true"}
+'
+}
+
+function loadflags_lto3() {
+	--loadflags '
+mangle() { var="${var// -O+([0-9])}"; var+=" -O3"; var+=" $LTOFLAGS"; }
+mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var+=" -C opt-level=3"; var+=" $LTO_RUSTFLAGS"; }
+for var in ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=on"}; do export "$var"; done
 '
 }
 
@@ -259,6 +273,17 @@ CARGO_PROFILE_RELEASE_LTO=fat
 '
 }
 
+function loadflags_clang_lto3() {
+	--loadflags '
+CC=clang
+CXX=clang++
+mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -O3 -flto=full"; }
+mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=full"; }
+mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C opt-level=3 -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
+CARGO_PROFILE_RELEASE_LTO=fat
+'
+}
+
 function loadflags_clang_thinlto() {
 	--loadflags '
 CC=clang
@@ -266,6 +291,17 @@ CXX=clang++
 mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -flto=thin"; }
 mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=thin"; }
 mangle_rust() { var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
+CARGO_PROFILE_RELEASE_LTO=thin
+'
+}
+
+function loadflags_clang_thinlto3() {
+	--loadflags '
+CC=clang
+CXX=clang++
+mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -O3 -flto=thin"; }
+mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=thin"; }
+mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C opt-level=3 -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
 CARGO_PROFILE_RELEASE_LTO=thin
 '
 }
@@ -317,7 +353,7 @@ function -setgoflags() {
 	printgoflags
 }
 
-for s in {,clang_}{dbg,opt,lto}; do
+for s in {,clang_}{dbg,opt{,3},lto,lto{,3}}; do
 	eval "function loadgoflags_$s() { loadflags_$s; -setgoflags; }"
 done
 unset s
