@@ -171,6 +171,11 @@
 		git submodule update --init --recursive --progress; \
 	}; f"
 
+	nnuke = "!f() { \
+		git recurse \"git reset --hard && git cclean\" || return; \
+		git submodule update --init --recursive --progress; \
+	}; f"
+
 [color "status"]
 	header = 10 # "bold green", solarized secondary
 	added = yellow
