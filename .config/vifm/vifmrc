@@ -602,23 +602,25 @@ nnoremap ,vd :Vimdiff %f<CR>
 
 " cd
 nnoremap ,c :Fzfcd<CR>
-nnoremap ,C :Fzfcr<CR>
+nnoremap ,C :Fzfrcd<CR>
 " goto (search)
-nnoremap ,/ :Fzfgo<CR>
-nnoremap ,g :Fzfgo<CR>
-nnoremap ,G :Fzfgr<CR>
+nnoremap ,/ :Fzfgoto<CR>
+nnoremap ,g :Fzfgoto<CR>
+nnoremap ,G :Fzfrgoto<CR>
 " locate directory
-nnoremap ,ld :Fzfld<CR>
+nnoremap ,ld :Fzfindf<CR>
 " locate file
-nnoremap ,lf :Fzflf<CR>
+nnoremap ,lf :Fzfindd<CR>
 
 " navigate to (one-stop-shop convenience binding)
-nnoremap ,, :Fzfn<CR>
-nnoremap ,<CR> :Fzfnr<CR>
+nnoremap ,, :Fzfnav<CR>
+nnoremap ,<CR> :Fzfrnav<CR>
 
 " back home
 nnoremap ,~ :cd<CR>
 nnoremap ~~ :cd<CR>
+
+nnoremap // /<C-Y>
 
 " ------------------------------------------------------------------------------
 " Quick integration mappings
@@ -708,34 +710,34 @@ if $VIFM_FZF != '' && $VIFM_FD != ''
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1 -td' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'cd'
                   \| execute 'Fzf'
-    command! Fzfcr : 
+    command! Fzfrcd : 
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -td' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'cd'
                   \| execute 'Fzf'
 
-    command! Fzfgo : 
+    command! Fzfgoto : 
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'goto'
                   \| execute 'Fzf'
-    command! Fzfgr : 
+    command! Fzfrgoto : 
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'goto'
                   \| execute 'Fzf'
 
-    command! Fzfn  :
+    command! Fzfnav :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'auto'
                   \| execute 'Fzf'
-    command! Fzfnr :
+    command! Fzfrnav :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'auto'
                   \| execute 'Fzf'
 
-    command! Fzfld : 
+    command! Fzfindd : 
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -td $HOME' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'cd'
                   \| execute 'Fzf'
-    command! Fzflf :
+    command! Fzfindf :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -tf $HOME' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'goto'
                   \| execute 'Fzf'
