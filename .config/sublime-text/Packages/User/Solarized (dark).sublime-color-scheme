@@ -162,12 +162,12 @@
 		},
 		{
 			"name": "Template engine markers",
-			"scope": "punctuation.section.interpolation - source.shell",
+			"scope": "punctuation.section.interpolation - (source.shell - punctuation.section.interpolation.makefile)",
 			"foreground": "var(base01)",
 		},
 		{
 			"name": "Template engine code",
-			"scope": "meta.interpolation - source.shell",
+			"scope": "meta.interpolation - (source.shell - meta.interpolation.makefile)",
 			"background": "var(base02)",
 		},
 	]
