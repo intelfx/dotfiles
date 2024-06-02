@@ -81,27 +81,27 @@
 		// C/C++ - existing rules overrides
 		{
 			"name": "Variable Function",
-			"scope": "variable.function",
+			"scope": "(source.c | source.c++) & variable.function",
 			"foreground": "var(base0)",
 		},
 		{
 			"name": "Function name",
-			"scope": "entity.name.function",
+			"scope": "(source.c | source.c++) & entity.name.function",
 			"foreground": "var(magenta)",
 		},
 		{
 			"name": "Storage",
-			"scope": "storage.modifier.c, storage.modifier.c++",
+			"scope": "(source.c | source.c++) & storage.modifier",
 			"foreground": "var(green)"
 		},
 		{
 			"name": "Storage Type",
-			"scope": "storage.type.c, storage.type.c++",
+			"scope": "(source.c | source.c++) & storage.type",
 			"foreground": "var(yellow)"
 		},
 		{
 			"name": "Class",
-			"scope": "keyword.control.class, entity.name, entity.name.class, entity.name.type.class",
+			"scope": "(source.c | source.c++) & (keyword.control.class, entity.name, entity.name.class, entity.name.type.class)",
 			"foreground": "var(blue)"
 		},
 
@@ -123,12 +123,12 @@
 		},
 		{
 			"name": "Declarations",
-			"scope": "keyword.declaration",
+			"scope": "(source.c | source.c++) &  keyword.declaration",
 			"foreground": "var(green)"
 		},
 		{
 			"name": "Variable Parameter",
-			"scope": "variable.parameter",
+			"scope": "(source.c | source.c++) & variable.parameter",
 			"foreground": "var(violet)"
 		},
 
