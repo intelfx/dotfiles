@@ -620,7 +620,10 @@ nnoremap ,<CR> :Fzfrnav<CR>
 nnoremap ,~ :cd<CR>
 nnoremap ~~ :cd<CR>
 
-nnoremap // /<C-Y>
+" TODO: better binding?
+nnoremap \ /<C-Y>
+" XXX: C-/
+nnoremap  /<C-Y>
 
 " ------------------------------------------------------------------------------
 " Quick integration mappings
