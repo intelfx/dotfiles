@@ -447,7 +447,7 @@ set fillchars=vborder:│,hborder:─
 " ------------------------------------------------------------------------------
 
 " Activate "ls view"
-nnoremap ,ls set lsview!
+nnoremap ,ls :set lsview!<cr>
 
 " Start shell in current directory
 nnoremap ,s :shell<cr>
