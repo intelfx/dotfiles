@@ -23,6 +23,11 @@ bind main ;Rr ?@git reset %(commit)
 bind main ;RH ?@git reset --hard %(commit)
 bind main ;RM ?>git reset --merge %(commit)
 
+# Bindings for `git merge`
+bind main ;M >git merge --ff-only %(commit)
+bind main ;mm ?>git merge --ff %(commit)
+bind main ;mr ?>git merge --rebase %(commit)
+
 # Universal binding for `git checkout` of the branch or commit under cursor
 # (see .gitconfig for `git zz-tig-checkout`)
 bind main ;co !>git zz-tig-checkout +%(branch) +%(commit)
