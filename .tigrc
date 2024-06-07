@@ -10,15 +10,14 @@ bind generic    <Down>  move-down
 # Binding for "reload configuration"
 bind generic ;so :source ~/.tigrc
 
-# Bindings for "interactive rebase onto this commit"
-bind main <Ctrl-R> !git rebase-i --autostash %(commit)^
-bind diff <Ctrl-R> !git rebase-i --autostash %(commit)^
+# "Interactive rebase of everything starting with this commit"
+bind main ;rr ?!>git rebase-i --autostash %(commit)^
 
 # Bindings for forms of `git reset`
-bind main ;rs @git reset --soft %(commit)
-bind main ;rr ?@git reset %(commit)
-bind main ;rH ?@git reset --hard %(commit)
-bind main ;rM ?@git reset --merge %(commit)
+bind main ;Rs @git reset --soft %(commit)
+bind main ;Rr ?@git reset %(commit)
+bind main ;RH ?@git reset --hard %(commit)
+bind main ;RM ?>git reset --merge %(commit)
 
 # Universal binding for `git checkout` of the branch or commit under cursor
 # (see .gitconfig for `git zz-tig-checkout`)
