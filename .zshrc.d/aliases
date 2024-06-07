@@ -166,6 +166,29 @@ function make() {
 	-trace command make "${extra_args[@]}" "$@"
 }
 
+function vimw() {
+	local -a args
+	local arg 
+	while (( $# )); do
+		case "$1" in
+		-*) args+=("$1") ;;
+		--) args+=("$1"); shift; break ;;
+		*/*) args+=("$1") ;;
+		*) args+=("$(command -v "$1" || echo "$1")") ;;
+		esac
+		shift
+	done
+	while (( $# )); do
+		case "$1" in
+		*/*) args+=("$1") ;;
+		*) args+=("$(command -v "$1" || echo "$1")") ;;
+		esac
+		shift
+	done
+	-trace vim "${args[@]}"
+}
+compdef vimw=vim
+
 function strip-color() {
 	sed -r $'s/\x1b\x5b[[0-9;]+m//g'
 }
