@@ -1,5 +1,21 @@
 #!/hint/zsh
 
+function -trace() {
+	local rc
+	# `set -x` is duplicated to preserve clean stderr output
+	if [[ $1 == command ]]; then
+		shift
+		set -x
+		command "$@"
+	else
+		set -x
+		"$@"
+	fi
+	# $? is captured under the redirection to preserve clean stderr output
+	{ rc=$?; set +x; } &>/dev/null
+	return $rc
+}
+
 #
 # Personnal Aliases
 #
@@ -145,7 +161,7 @@ function make() {
 	if ! [[ $has_makefile ]]; then
 		extra_args+=( -f ~/bin/devel/Makefile )
 	fi
-	command make "${extra_args[@]}" "$@"
+	-trace command make "${extra_args[@]}" "$@"
 }
 
 function strip-color() {
