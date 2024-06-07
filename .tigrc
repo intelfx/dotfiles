@@ -10,6 +10,10 @@ bind generic    <Down>  move-down
 # Binding for "reload configuration"
 bind generic ;so :source ~/.tigrc
 
+# Bindings for "interactive rebase onto this commit"
+bind main ;rb ?!>git rebase-i --autostash %(commit)
+# "Interactive rebase onto merge-base from this commit"
+bind main ;rk ?!>git rebase-i --autostash --keep-base %(commit)
 # "Interactive rebase of everything starting with this commit"
 bind main ;rr ?!>git rebase-i --autostash %(commit)^
 
