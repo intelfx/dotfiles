@@ -44,6 +44,8 @@ alias wget='wget -c'
 alias bc='bc -l'
 alias sha1='openssl sha1'
 
+alias W='command -v'
+
 if command -v bat &>/dev/null; then
 	alias cat='bat'
 	# XXX: it is very unfortunate we have to hardcode the flavor.
