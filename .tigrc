@@ -25,4 +25,4 @@ bind main ;RM ?>git reset --merge %(commit)
 
 # Universal binding for `git checkout` of the branch or commit under cursor
 # (see .gitconfig for `git zz-tig-checkout`)
-bind main ;co ?git zz-tig-checkout +%(branch) +%(commit)
+bind main ;co !>git zz-tig-checkout +%(branch) +%(commit)
