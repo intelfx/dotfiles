@@ -47,7 +47,7 @@ snippet common
 
 	usage() {
 		if (( \$# )): then
-			echo "\${0##*/}: \$@" >&2
+			echo "\${0##*/}: \$*" >&2
 			echo >&2
 		fi
 		_usage >&2
@@ -69,13 +69,14 @@ snippet common
 		eval set -- "\$args"
 	else
 		usage
+	fi
 	unset args
 
 	while :; do
 		case "\$1" in
 		-a|--a-long) echo 'option a' ;;
-		-b|--b-long) shift; echo "option b, value '\$1'"; shift ;;
-		-c|--c-long) shift; echo "option c, value '\${1:-"(no value)"}'"; shift 
+		-b|--b-long) shift; echo "option b, value '\$1'" ;;
+		-c|--c-long) shift; echo "option c, value '\${1:-"(no value)"}'" ;;
 		--) shift; break ;;
 		*) die "getopt error" ;;
 		esac
@@ -84,7 +85,7 @@ snippet common
 
 	case "\$#" in
 	1) arg1="\$1" ;;
-	*) usage "erong number of positional arguments" ;;
+	*) usage "wrong number of positional arguments" ;;
 	esac
 
 
