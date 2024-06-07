@@ -608,9 +608,9 @@ nnoremap ,/ :Fzfgoto<CR>
 nnoremap ,g :Fzfgoto<CR>
 nnoremap ,G :Fzfrgoto<CR>
 " locate directory
-nnoremap ,ld :Fzfindf<CR>
+nnoremap ,ld :Fzfindd<CR>
 " locate file
-nnoremap ,lf :Fzfindd<CR>
+nnoremap ,lf :Fzfindf<CR>
 
 " navigate to (one-stop-shop convenience binding)
 nnoremap ,, :Fzfnav<CR>
