@@ -18,6 +18,7 @@
 		"LSP-clangd",
 		"LSP-json",
 		"LSP-rust-analyzer",
+		"LSP-typescript",
 		"LSP-yaml",
 		"MarkdownEditing",
 		"NeoVintageous",
