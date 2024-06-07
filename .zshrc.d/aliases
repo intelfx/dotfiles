@@ -16,8 +16,16 @@ function -trace() {
 	return $rc
 }
 
+function -has() {
+	command -v "$@" &>/dev/null
+}
+
+function -command() {
+	command -v "$@"
+}
+
 #
-# Personnal Aliases
+# personal aliases
 #
 
 alias mkdir='mkdir -pv'
