@@ -99,6 +99,9 @@ if !has('win')
     set slowfs=curlftpfs,sshfs
 endif
 
+" Set custom cpoptions (!f for intuitive :filter)
+set cpoptions=st
+
 " Set custom status line look
 set statusline="  Hint: %z%= %A %10u:%-7g %15s   [FREE %a] %20d  "
 
