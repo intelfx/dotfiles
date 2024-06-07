@@ -117,7 +117,7 @@ alias tigl='TIGRC_USER=~/.tigrc.large tig'
 compdef tg=tig
 function tg() {
 	if (( $# ))
-	then command tig "$@"
+	then command tig --boundary "$@"
 	else command tig --all
 	fi
 }
