@@ -32,8 +32,8 @@ ln -rsf $PWD/Src/fzftab.mdd -t $zsh_src/Src/Modules/
 
 # build zsh
 cd -q $zsh_src
-[[ -f ./configure ]] || ./Util/preconfig
-[[ -f ./Makefile ]] || ./configure --disable-gdbm --disable-pcre --without-tcsetpgrp ${bundle:+DL_EXT=bundle}
+./Util/preconfig
+./configure --disable-gdbm --disable-pcre --without-tcsetpgrp ${bundle:+DL_EXT=bundle}
 make -j$nproc
 
 # we only need aloxaf/fzftab.so
