@@ -65,11 +65,6 @@ if command -v bat &>/dev/null; then
 		fi
 	}
 	compdef cat=bat
-	# XXX: it is very unfortunate we have to hardcode the flavor.
-	#      note that because the theme itself is written using absolute
-	#      colors from the 256-color palette instead of ANSI colors,
-	#      it will actually look bad if the flavor does not match.
-	export BAT_THEME='Solarized (dark)'
 fi
 if command -v colordiff &>/dev/null; then
 	alias diff='colordiff'

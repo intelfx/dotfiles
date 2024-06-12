@@ -90,3 +90,9 @@ FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS//+([[:space:]])/ }"
 FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS## }"
 FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS%% }"
 unsetopt KSH_GLOB
+
+# XXX: it is very unfortunate we have to hardcode the flavor.
+#      note that because the theme itself is written using absolute
+#      colors from the 256-color palette instead of ANSI colors,
+#      it will actually look bad if the flavor does not match.
+export BAT_THEME='Solarized (dark)'
