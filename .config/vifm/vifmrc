@@ -460,6 +460,9 @@ nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
+" Exit all traces of view mode (whether after `:view<S-Tab>` or `e`)
+qnoremap q q:set noquickview<cr>
+
 if $DISPLAY && executable('gvim')
     " Open file in existing instance of gvim
     nnoremap o :!gvim --remote-tab-silent %f<cr>
