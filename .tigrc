@@ -20,11 +20,13 @@ bind generic <Ctrl-R> :refresh
 # Main-view binding for "delete branch"
 bind main ! ?>git branch -D %(branch)
 
-# Bindings for "interactive rebase onto this commit"
+# "Interactive rebase onto this commit"
 bind main ;rb ?!>git rebase-i --autostash %(commit)
-# "Interactive rebase onto merge-base from this commit"
+# "Interactive rebase of current branch against this upstream,
+#  keeping the branch point (merge-base)"
 bind main ;rk ?!>git rebase-i --autostash --keep-base %(commit)
-# "Interactive rebase of everything starting with this commit"
+# "Edit this commit by interactive rebase"
+# TODO: make sure that %(commit) is an ancestor of HEAD
 bind main ;rr ?!>git rebase-i --autostash %(commit)^
 
 # Bindings for forms of `git reset`
