@@ -147,6 +147,25 @@ if command -v perl &>/dev/null \
 	export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
 fi
 
+
+#
+# less(1) options and other interactive configuration
+#
+
+# sane defaults: enable ANSI escape sequences passthrough and mouse support
+export LESS="-RM --mouse"
+# default is FRSXMK
+export SYSTEMD_LESS="-FRSXMK --mouse"
+# This uses our custom variant of the Solarized color scheme defined
+# using the 16-color ANSI palette with precise colors, and is thus
+# invariant with respect to dark/light mode switch.
+export BAT_THEME='Solarized-ANSI'
+
+
+#
+# site-specific configuration
+#
+
 if test -r "$HOME/.profile.private"; then
 	. "$HOME/.profile.private"
 fi
