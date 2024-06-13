@@ -609,13 +609,13 @@ nnoremap - gh
 command! Vimp vim -p %f
 command! Vimo vim -o %f
 command! VimO vim -O %f
-command! Vimdiff vimdiff %f
+command! Vimdiff vimdiff %b
 
 nnoremap ,V :edit<CR>
 nnoremap ,vp :Vimp %f<CR>
 nnoremap ,vo :Vimo %f<CR>
 nnoremap ,vO :VimO %f<CR>
-nnoremap ,vd :Vimdiff %f<CR>
+nnoremap ,vd :Vimdiff %b<CR>
 
 " ------------------------------------------------------------------------------
 " Navigation mappings (fzf-powered, see below)
@@ -652,6 +652,7 @@ nnoremap  /<C-Y>
 
 " tig integration
 nnoremap ,tig :!tig %l<CR>
+nnoremap ,sm :!sm %l &<CR>
 
 " ------------------------------------------------------------------------------
 " Various customization examples
