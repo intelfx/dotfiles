@@ -30,6 +30,9 @@ endif
 set syscalls
 set iooptions=fastfilecloning,datasync
 
+" Enable mouse support
+set mouse=a
+
 " Trash Directory
 " The default is to move files that are deleted with dd or :d to
 " the trash directory.  If you change this you will not be able to move
