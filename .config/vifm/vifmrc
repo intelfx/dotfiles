@@ -411,6 +411,18 @@ filextype */
 "
 " Or leave it for automatic detection
 " fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
+"
+" Use bat for all other previews
+" TODO: somehow recognize parent MIME types such that all of the application/*
+"       mime-types which are just flavors of text/plain get recognized as such
+fileviewer <text/*>
+        \,<application/x-shellscript>
+        \,<application/x-desktop>
+        \ bat --style=grid,,numbers,,changes --color=always --paging=never --wrap=auto --terminal-width=%pw %c
+" If this is not a regular text file, use verbose output
+" TODO: use a better file size limit in place of `--line-range :1000`
+fileviewer {{*[^/]}}
+        \ bat --show-all --line-range :1000 --style=full --color=always --paging=never --wrap=auto --terminal-width=%pw %c
 
 " Displaying pictures in terminal
 " fileviewer *.jpg,*.png shellpic %c
