@@ -251,8 +251,10 @@ filetype {*.xhtml,*.html,*.htm},<text/html> links, lynx
 filetype {*.o},<application/x-object> nm %f | less
 
 " Man page
-filetype {*.[1-8]},<text/troff> man ./%c
-fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
+filetype /\\.([0-9n]|[0-9][a-z]{1,9})(\\.(gz|[zZ]|bz2|xz|lzma|lz|zst|zstd))?$/,<text/troff>
+        \ batman ./%c
+fileviewer /\\.([0-9n]|[0-9][a-z]{1,9})(\\.(gz|[zZ]|bz2|xz|lzma|lz|zst|zstd))?$/,<text/troff>
+        \ -batman-preview --terminal-width=%pw ./%c
 
 " Images
 filextype {*.svg,*.svgz},<image/svg+xml>
