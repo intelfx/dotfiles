@@ -160,6 +160,11 @@
 		| tee /dev/stderr \
 		| git update-ref --stdin; \
 	}; f"
+	pull-pr = "!f() { \
+		remote=\"$(git zz-guess-upstream \"${@:2}\")\" || return; \
+		set -x; \
+		git pull \"$remote\" \"refs/pull/$1/head\" \"${@:2}\"; \
+	}; f"
 
 	recurse = "!f() { \
 		eval \"$*\" || return; \
