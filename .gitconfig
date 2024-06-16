@@ -166,6 +166,35 @@
 		git pull \"$remote\" \"refs/pull/$1/head\" \"${@:2}\"; \
 	}; f"
 
+	# `pkgctl repo web` but for github
+	zz-web-pr = "!f() { \
+		local remote=\"$1\" pull=\"$2\" url; \
+		url=\"$(git remote get-url \"$remote\")\"; \
+		case \"$url\" in \
+		git@github.com:*) url=\"https://github.com/${url#\"git@github.com:\"}\" ;; \
+		*://github.com:*) url=\"https://github.com/${url#\"*://github.com/\"}\" ;; \
+		*) echo >&2 "web-pr: unsupported ${remote@Q} URL ${url@Q}"; exit 1 ;; \
+		esac; \
+		set -x; \
+		exec xdg-open \"${url%.git}/pull/${pull}\"; \
+	}; f"
+	web-pr = "!f() { \
+		git for-each-ref --points-at \"$1\" --format '%(refname:lstrip=-4)' '**/pull/*/head' \
+		| while IFS=/ read remote _ pull _; do \
+			exec git zz-web-pr \"$remote\" \"$pull\"; \
+		done; \
+		echo >&2 "web-pr: could not find a PR head at ${1@Q}"; exit 1; \
+	}; f"
+	web-pr--find = "!f() { \
+		git for-each-ref --contains \"$1\" --format \"%(ahead-behind:$1) %(refname:lstrip=-4)\" '**/pull/*/head' \
+		| awk '$2 == 0 { print $1 \"/\" $3; }' \
+		| sort -n -t/ -k1 \
+		| while IFS=/ read n remote _ pull _; do \
+			exec git zz-web-pr \"$remote\" \"$pull\"; \
+		done; \
+		echo >&2 "web-pr--find: could not find a PR containing ${1@Q}"; exit 1; \
+	}; f"
+
 	recurse = "!f() { \
 		eval \"$*\" || return; \
 		git submodule --quiet foreach --recursive \"$*\" || return; \
