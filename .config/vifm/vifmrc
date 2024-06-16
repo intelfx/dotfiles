@@ -420,6 +420,9 @@ filextype */
 fileviewer <text/*>
         \,<application/x-shellscript>
         \,<application/x-desktop>
+        \,<application/xml>
+        \,<application/json>
+        \,<application/yaml>
         \ bat --style=grid,,numbers,,changes --color=always --paging=never --wrap=auto --terminal-width=%pw %c
 " If this is not a regular text file, use verbose output
 " TODO: use a better file size limit in place of `--line-range :1000`
