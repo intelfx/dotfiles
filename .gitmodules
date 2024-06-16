@@ -127,3 +127,6 @@
 [submodule ".config/mpv/uosc"]
 	path = .config/mpv/uosc
 	url = https://github.com/tomasklaen/uosc
+[submodule ".vim/bundle/vim-oscyank"]
+	path = .vim/bundle/vim-oscyank
+	url = https://github.com/ojroques/vim-oscyank
