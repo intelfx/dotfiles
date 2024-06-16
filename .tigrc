@@ -7,11 +7,6 @@ bind generic <esc>[1;5B next
 bind generic    <Up>    move-up
 bind generic    <Down>  move-down
 
-# tmux/shell integration
-# (alas, there is a bunch of things not easily doable in tig)
-bind generic ;vs +tmux split-window -h -c %(directory)
-bind generic ;sp +tmux split-window -v -c %(directory)
-
 # Binding for "reload configuration"
 bind generic ;so :source ~/.tigrc
 # Binding for "refresh"
