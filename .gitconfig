@@ -85,6 +85,15 @@
 		| sort -u; \
 	}; f"
 
+	# git-rev-parse, but accepting at most 1 commit
+	# (without limitations of `git rev-parse --verify`)
+	rev-parse1 = "!f() { \
+		shopt -s lastpipe; \
+		local -a revs; \
+		git rev-parse \"$@\" | readarray -t revs || return; \
+		git rev-parse --verify --end-of-options \"${revs[@]}\"; \
+	}; f"
+
 	# `git checkout`, but using the first valid ref out of multiple
 	# arguments prefixed with "+"
 	zz-tig-checkout = "!f() { \
@@ -181,7 +190,7 @@
 	web-pr--exact = "!f() { \
 		shopt -s lastpipe; \
 		local commit; \
-		commit=\"$(git rev-parse --verify --end-of-options \"${1-HEAD}\")\" || return; \
+		commit=\"$(git rev-parse1 --default HEAD \"$@\")\" || exit; \
 		git for-each-ref \
 			--points-at \"$commit\" \
 			--format '%(refname:lstrip=-4)' \
@@ -189,12 +198,12 @@
 		| while IFS=/ read remote _ pull _; do \
 			git zz-open-pr \"$remote\" \"$pull\" && exit; \
 		done; \
-		echo >&2 'web-pr: could not find a PR head at '\"${1-HEAD}\"; exit 1; \
+		echo >&2 'web-pr: could not find a PR head at '\"$commit\"; exit 1; \
 	}; f"
 	web-pr = "!f() { \
 		shopt -s lastpipe; \
 		local commit; \
-		commit=\"$(git rev-parse --verify --end-of-options \"${1-HEAD}\")\" || return; \
+		commit=\"$(git rev-parse1 --default HEAD \"$@\")\" || exit; \
 		git for-each-ref \
 			--contains \"$commit\" \
 			--format '%(ahead-behind:'\"$commit\"') %(refname:lstrip=-4)' \
@@ -204,7 +213,7 @@
 		| while IFS=/ read n remote _ pull _; do \
 			git zz-web-pr \"$remote\" \"$pull\" && exit; \
 		done; \
-		echo >&2 'web-pr--find: could not find a PR containing '\"${1-HEAD}\"; exit 1; \
+		echo >&2 'web-pr--find: could not find a PR containing '\"$commit\"; exit 1; \
 	}; f"
 
 	recurse = "!f() { \
