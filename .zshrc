@@ -62,6 +62,7 @@ load_zshrc_d $HOME/.zshrc.early.d
 && -z "$SUDO_USER" 
 && "$UID" == "$(stat -c "%u" "${(%):-%x}")"
 && "$TERMINAL_EMULATOR" != *JetBrains*
+&& -z "$TERMINUS_SUBLIME"
 ]] \
 	&& command -v tmx &>/dev/null \
 	&& exec tmx
