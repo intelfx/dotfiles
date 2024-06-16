@@ -244,6 +244,11 @@ function printflags() {
 function --loadflags() {
 	local mangle='
 shopt -s extglob
+shopt -s lastpipe
+strip_repeat() {
+	local flag="$1";
+	perl <<<"${var}" -pe "s/ ${flag}(?=.* ${flag})//g" | IFS= read -r var;
+}
 __do_mangle() {
 	declare -n var="$1"; shift
 	for fn; do if [[ "$(type -t "$fn")" == function ]]; then "$fn"; break; fi; done
@@ -252,6 +257,13 @@ __do_mangle CFLAGS    mangle
 __do_mangle CXXFLAGS  mangle
 __do_mangle LDFLAGS   mangle_ld mangle
 __do_mangle RUSTFLAGS mangle_rust mangle
+
+# clean up repeated -O*
+mangle() {
+	strip_repeat "-O[^ ]*";
+}
+__do_mangle CFLAGS mangle
+__do_mangle CXXFLAGS mangle
 
 declare -p CC CXX CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS "${!CARGO_PROFILE_@}" 2>/dev/null \
 | sed -nr "s|^declare (-[^ ]+ )+|export |p"
