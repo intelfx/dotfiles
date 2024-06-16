@@ -183,8 +183,8 @@ function vimw() {
 	local arg 
 	while (( $# )); do
 		case "$1" in
-		-*) args+=("$1") ;;
 		--) args+=("$1"); shift; break ;;
+		-*) args+=("$1") ;;
 		*/*) args+=("$1") ;;
 		*) args+=("$(command -v "$1" || echo "$1")") ;;
 		esac
