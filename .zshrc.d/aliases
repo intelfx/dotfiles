@@ -150,7 +150,7 @@ function mkcd() {
 
 function tmpcd() {
 	local name
-	name="$(date -Iseconds)" || return
+	name="$(date +'%FT%H-%M-%S%z')" || return
 	mkdir -pv "$HOME/tmp/tmp-$name" || return
 	cd "$HOME/tmp/tmp-$name"
 }
