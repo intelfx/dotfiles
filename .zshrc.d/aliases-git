@@ -7,6 +7,13 @@ function --git-rev-parse-first() {
 	done
 }
 
+function --git-rev-parse-silent() {
+	local arg
+	for arg; do
+		git rev-parse --quiet --verify --symbolic "$arg" ||:
+	done
+}
+
 alias gfe='git fetch --all --tags --prune'
 alias grm='git rebase -i $(--git-rev-parse-first master main)'
 alias grmb='git rebase --keep-base -i $(--git-rev-parse-first master@{u} main@{u})'
@@ -121,7 +128,11 @@ compdef tgaa=tig
 function tg() {
 	if (( $# ))
 	then command tig --boundary "$@"
-	else command tig HEAD --branches --tags
+	else
+		# always include HEAD@{u}, if it is defined
+		local -a head
+		head=( HEAD "${(@f)$(--git-rev-parse-silent 'HEAD@{u}')}" )
+		command tig $head --branches --tags
 	fi
 }
 # "tig, with almost all refs" (includes all remotes tracked by local branches)
