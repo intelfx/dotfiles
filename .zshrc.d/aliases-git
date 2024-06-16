@@ -115,12 +115,25 @@ alias tig1='tig show'
 alias tigl='TIGRC_USER=~/.tigrc.large tig'
 
 compdef tg=tig
+compdef tga=tig
 compdef tgaa=tig
 # "tig, with default set of refs"
 function tg() {
 	if (( $# ))
 	then command tig --boundary "$@"
 	else command tig HEAD --branches --tags
+	fi
+}
+# "tig, with almost all refs" (includes all remotes tracked by local branches)
+function tga() {
+	if (( $# ))
+	then command tig --boundary "$@"
+	else
+		# FIXME: better heuristic?
+		local -a remotes
+		remotes=( "${(@f)$(git config --get-regexp 'branch\..+\.remote')}" )
+		remotes=( "${(@)remotes##[^ ]## }" )
+		command tig HEAD --branches --tags --remotes=${(u)^remotes}
 	fi
 }
 # "tig, with _really_ all refs"
