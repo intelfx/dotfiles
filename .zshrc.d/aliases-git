@@ -115,11 +115,19 @@ alias tig1='tig show'
 alias tigl='TIGRC_USER=~/.tigrc.large tig'
 
 compdef tg=tig
+compdef tgaa=tig
 # "tig, with default set of refs"
 function tg() {
 	if (( $# ))
 	then command tig --boundary "$@"
 	else command tig HEAD --branches --tags
+	fi
+}
+# "tig, with _really_ all refs"
+function tgaa() {
+	if (( $# ))
+	then command tig --boundary "$@"
+	else command tig --all
 	fi
 }
 alias tg1='tig show'
