@@ -4,7 +4,7 @@
 	"hardware_acceleration": "opengl",
 	"hide_menu": true,
 	"theme": "auto",
-	"trim_trailing_white_space_on_save": false,
+	"trim_trailing_white_space_on_save": "all",
 	"side_bar_layout": "tabs",
 	"update_check": false,
 }
