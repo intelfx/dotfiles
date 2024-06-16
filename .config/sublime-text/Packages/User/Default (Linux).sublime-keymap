@@ -24,6 +24,22 @@
 			"cwd": "${file_path:${folder}}"
 		}
 	},
+	{
+		"keys": ["ctrl+w", "t", "v"], "command": "terminus_open", "args": {
+			"cwd": "${file_path:${folder}}",
+			"post_window_hooks": [
+				["carry_file_to_pane", { "direction": "right" }],
+			]
+		}
+	},
+	{
+		"keys": ["ctrl+w", "t", "s"], "command": "terminus_open", "args": {
+			"cwd": "${file_path:${folder}}",
+			"post_window_hooks": [
+				["carry_file_to_pane", { "direction": "down" }],
+			]
+		}
+	},
 
 	// Document Symbols (a replacement for ST's "Goto Symbol")
 	{
