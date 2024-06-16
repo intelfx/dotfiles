@@ -129,17 +129,6 @@ alias tzst11="/usr/bin/tar -I 'zstd -v -T0 -11'"
 alias tzst19="/usr/bin/tar -I 'zstd -v -T0 -19'"
 alias tzst22="/usr/bin/tar -I 'zstd -v -T0 -19'"
 
-# tmux things
-alias tvs='tmux split-window -h -c $PWD'
-alias tvsplit='tmux split-window -h -c $PWD'
-alias tVs='tmux split-window -h -f -c $PWD'
-alias tVsplit='tmux split-window -h -f -c $PWD'
-alias tsp='tmux split-window -v -c $PWD'
-alias tsplit='tmux split-window -v -c $PWD'
-alias tSp='tmux split-window -v -f -c $PWD'
-alias tSplit='tmux split-window -v -f -c $PWD'
-alias trespawn='tmux respawn-pane -k -c $PWD'
-
 # this export only makes sense in the interactive sessions
 # replaces {,c}cmake() functions/aliases to set default generator
 export CMAKE_GENERATOR=Ninja
