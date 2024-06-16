@@ -414,3 +414,14 @@ for s in {,clang_}{dbg,opt{,3},lto,lto{,3}}; do
 	eval "function loadgoflags_$s() { loadflags_$s; -setgoflags; }"
 done
 unset s
+
+
+#
+# Misc functions for development
+#
+
+function setnocache() {
+	path=( ${path:#*/ccache/*} )
+	path=( ${path:#*/sccache/*} )
+	unset RUSTC_WRAPPER
+}
