@@ -284,7 +284,7 @@ function loadflags_lto3() {
 	--loadflags '
 mangle() { var="${var// -O+([0-9])}"; var+=" -O3"; var+=" $LTOFLAGS"; }
 mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var+=" -C opt-level=3"; var+=" $LTO_RUSTFLAGS"; }
-for var in ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=on"}; do export "$var"; done
+export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=on"}
 '
 }
 
@@ -293,7 +293,7 @@ function loadflags_dbg() {
 CFLAGS+=" $DEBUG_CFLAGS"
 CXXFLAGS+=" $DEBUG_CXXFLAGS"
 RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
-export ${DEBUG_CARGOFLAGS:="CARGO_PROFILE_RELEASE_DEBUG=full"}
+export ${DEBUG_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_DEBUG=full"}
 '
 }
 
@@ -315,7 +315,7 @@ CXXFLAGS+=" $DEBUG_CXXFLAGS"
 RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
 mangle() { var="${var// -fuse-ld=+([^ ])}"; }
 mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld"; }
-export ${DEBUG_CARGOFLAGS:="CARGO_PROFILE_RELEASE_DEBUG=full"}
+export ${DEBUG_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_DEBUG=full"}
 '
 }
 
