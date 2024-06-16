@@ -39,7 +39,7 @@ bind main ;mm ?>git merge --ff %(commit)
 bind main ;mr ?>git merge --rebase %(commit)
 
 # Binding to find and open a PR for this commit
-bind main ;pr +>git web-pr--find %(commit)
+bind main ;pr +>git web-pr %(commit)
 
 # Universal binding for `git checkout` of the branch or commit under cursor
 # (see .gitconfig for `git zz-tig-checkout`)

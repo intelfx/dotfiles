@@ -178,7 +178,7 @@
 		set -x; \
 		exec ${BROWSER:-"xdg-open"} \"${url%.git}/pull/${pull}\"; \
 	}; f"
-	web-pr = "!f() { \
+	web-pr--exact = "!f() { \
 		shopt -s lastpipe; \
 		local commit; \
 		commit=\"$(git rev-parse --verify --end-of-options \"${1-HEAD}\")\" || return; \
@@ -191,7 +191,7 @@
 		done; \
 		echo >&2 'web-pr: could not find a PR head at '\"${1-HEAD}\"; exit 1; \
 	}; f"
-	web-pr--find = "!f() { \
+	web-pr = "!f() { \
 		shopt -s lastpipe; \
 		local commit; \
 		commit=\"$(git rev-parse --verify --end-of-options \"${1-HEAD}\")\" || return; \
