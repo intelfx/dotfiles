@@ -734,20 +734,20 @@ if $VIFM_FZF != '' && $VIFM_FD != ''
                   \|     execute $VIFM_FZF_ACTION fnameescape($VIFM_FZF_PICK)
                   \| endif
 
-    command! Fzfcd : 
+    command! Fzfcd :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1 -td' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'cd'
                   \| execute 'Fzf'
-    command! Fzfrcd : 
+    command! Fzfrcd :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -td' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'cd'
                   \| execute 'Fzf'
 
-    command! Fzfgoto : 
+    command! Fzfgoto :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -d1' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'goto'
                   \| execute 'Fzf'
-    command! Fzfrgoto : 
+    command! Fzfrgoto :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'goto'
                   \| execute 'Fzf'
@@ -761,7 +761,7 @@ if $VIFM_FZF != '' && $VIFM_FD != ''
                   \| let $VIFM_FZF_ACTION = 'auto'
                   \| execute 'Fzf'
 
-    command! Fzfindd : 
+    command! Fzfindd :
                   \| let $VIFM_FZF_CMD = $VIFM_FD . $VIFM_FD_OPTS . ' -td $HOME' . ' | ' . $VIFM_FZF . $VIFM_FZF_OPTS
                   \| let $VIFM_FZF_ACTION = 'cd'
                   \| execute 'Fzf'
