@@ -1,4 +1,6 @@
 #!/hint/zsh
+# shellcheck disable=SC2016,SC2215,SC2296,SC2142,SC2164
+# (not zsh)
 
 function -trace() {
 	local rc

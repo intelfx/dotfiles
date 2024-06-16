@@ -176,23 +176,35 @@
 		*) echo >&2 "web-pr: unsupported ${remote@Q} URL ${url@Q}"; exit 1 ;; \
 		esac; \
 		set -x; \
-		exec xdg-open \"${url%.git}/pull/${pull}\"; \
+		exec ${BROWSER:-"xdg-open"} \"${url%.git}/pull/${pull}\"; \
 	}; f"
 	web-pr = "!f() { \
-		git for-each-ref --points-at \"$1\" --format '%(refname:lstrip=-4)' '**/pull/*/head' \
+		shopt -s lastpipe; \
+		local commit; \
+		commit=\"$(git rev-parse --verify --end-of-options \"${1-HEAD}\")\" || return; \
+		git for-each-ref \
+			--points-at \"$commit\" \
+			--format '%(refname:lstrip=-4)' \
+			'**/pull/*/head' \
 		| while IFS=/ read remote _ pull _; do \
-			exec git zz-web-pr \"$remote\" \"$pull\"; \
+			git zz-open-pr \"$remote\" \"$pull\" && exit; \
 		done; \
-		echo >&2 "web-pr: could not find a PR head at ${1@Q}"; exit 1; \
+		echo >&2 'web-pr: could not find a PR head at '\"${1-HEAD}\"; exit 1; \
 	}; f"
 	web-pr--find = "!f() { \
-		git for-each-ref --contains \"$1\" --format \"%(ahead-behind:$1) %(refname:lstrip=-4)\" '**/pull/*/head' \
+		shopt -s lastpipe; \
+		local commit; \
+		commit=\"$(git rev-parse --verify --end-of-options \"${1-HEAD}\")\" || return; \
+		git for-each-ref \
+			--contains \"$commit\" \
+			--format '%(ahead-behind:'\"$commit\"') %(refname:lstrip=-4)' \
+			'**/pull/*/head' \
 		| awk '$2 == 0 { print $1 \"/\" $3; }' \
 		| sort -n -t/ -k1 \
 		| while IFS=/ read n remote _ pull _; do \
-			exec git zz-web-pr \"$remote\" \"$pull\"; \
+			git zz-web-pr \"$remote\" \"$pull\" && exit; \
 		done; \
-		echo >&2 "web-pr--find: could not find a PR containing ${1@Q}"; exit 1; \
+		echo >&2 'web-pr--find: could not find a PR containing '\"${1-HEAD}\"; exit 1; \
 	}; f"
 
 	recurse = "!f() { \
