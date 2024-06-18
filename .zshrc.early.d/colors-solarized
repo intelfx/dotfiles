@@ -57,7 +57,6 @@ cat <<-"EOF" | tr -d ' \t\n'
 	[2;12]
 	[J
 EOF
-$HOME/bin/misc/style-devel/colors
 #
 #	]R
 #		resets terminal
