@@ -250,6 +250,25 @@ setlocal cinoptions=(0,u0,U0
 
 
 "
+" Personal functions
+"
+function! Pow(a, b)
+  return float2nr(pow(a:a, a:b))
+endfunction
+
+function! Bytes(arg)
+  let r = system('bscalc -b ' .. shellescape(a:arg))
+  let r = substitute(r, "[^0-9]", "", "g")
+  return str2nr(r)
+endfunction
+
+function! Kib(arg)
+  let r = system('bscalc --KiB ' .. shellescape(a:arg))
+  let r = substitute(r, "[^0-9]", "", "g")
+  return str2nr(r)
+endfunction
+
+"
 " Colorscheme
 "
 
