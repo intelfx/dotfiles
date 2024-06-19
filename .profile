@@ -110,6 +110,9 @@ export MINIKUBE_IN_STYLE=0
 # Et tu, Brute?..
 export SYSTEMD_EMOJI=0
 
+# Really?
+export SYSTEMD_TINT_BACKGROUND=0
+
 # Prevent myself and anyone else from turning the system into a landfill,
 # unless PEP 668 is in effect.
 if ! { command -v python3 &>/dev/null \
