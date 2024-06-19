@@ -67,6 +67,11 @@ if command -v bat &>/dev/null; then
 		fi
 	}
 	compdef cat=bat
+
+	# "global aliases" for cutesy `anycommand --bathelp`
+	# XXX: abusing --style=changes to have an empty vertical grid w/o line numbers
+	#      for readability
+	alias -g -- --bathelp='--help 2>&1 | bat --language=help --style=changes,grid'
 fi
 if command -v colordiff &>/dev/null; then
 	alias diff='colordiff'
