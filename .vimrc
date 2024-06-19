@@ -193,7 +193,7 @@ augroup END
 " see http://www.debian-administration.org/articles/571
 " modified 23.12.2008 Benedikt Stegmaier
 "
-function ChmodX()
+function s:ChmodX()
   let l:first = getline(1)
   if l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)bash\>'
     silent !chmod +x %:p
@@ -208,12 +208,13 @@ function ChmodX()
 endfunction
 
 augroup chmod
-  autocmd BufWritePost * call ChmodX()
+  autocmd!
+  autocmd BufWritePost * call s:ChmodX()
 augroup END
 
 " simple implementation of a block-comment feature
 "
-function CommentSetup()
+function s:CommentSetup()
   if !exists('b:comment_leader')
     let b:comment_leader = '# '
   endif
@@ -231,7 +232,7 @@ augroup comment
   autocmd FileType ini,desktop                       let b:comment_leader = '# '
   autocmd FileType yaml                              let b:comment_leader = '# '
   autocmd FileType vim                               let b:comment_leader = '" '
-  autocmd FileType *                                 call CommentSetup()
+  autocmd FileType *                                 call s:CommentSetup()
 augroup END
 
 "
