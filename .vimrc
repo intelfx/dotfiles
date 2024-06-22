@@ -15,8 +15,26 @@ let g:rooter_cd_cmd = 'lcd'
 " (thus do not treat kernel subdirs as roots; we will still anchor on .git)
 let g:rooter_patterns = ['.git', '_darcs', '.hg', '.bzr', '.svn', '!Kconfig', 'Makefile', 'package.json']
 
+" configure vifm.vim #1
+" approximate whether we will be able to embed vifm in vim
+" (condition extracted from vifm.vim)
+if has('nvim') || exists('*term_start')
+  let g:vifm_embed_term = 1
+  let g:vifm_embed_split = 1
+  let g:vifm_embed_cwd = 1
+  " ask to replace netrw
+  let g:vifm_replace_netrw = 1
+endif
+
 " load plugins from $HOME/.vim/bundle
 packloadall
+
+" configure vifm.vim #2
+" if we asked to replace netrw _and_ vifm.vim actually loaded, disable netrw
+if exists('loaded_vifm') && g:vifm_replace_netrw
+  let g:loaded_netrw = 1
+  let g:loaded_netrwPlugin = 1
+endif
 
 " The matchit plugin makes the % command work better, but it is not backwards
 " compatible.
