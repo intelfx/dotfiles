@@ -23,7 +23,7 @@ if has('nvim') || exists('*term_start')
   let g:vifm_embed_split = 1
   let g:vifm_embed_cwd = 1
   " ask to replace netrw
-  let g:vifm_replace_netrw = 1
+  let g:vifm_replace_netrw = 0
 endif
 
 " load plugins from $HOME/.vim/bundle
