@@ -42,6 +42,7 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+
 "
 " Keybindings
 "
@@ -49,7 +50,7 @@ endif
 " use a better leader
 let mapleader = ","
 
-" <leader>d -- d into black hole
+" <leader>d -- delete into black hole
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 " <leader><leader> -- anything into black hole (badum-tss)
@@ -112,6 +113,7 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+
 "
 " Splits
 "
@@ -121,6 +123,7 @@ set splitbelow
 " Split current buffer: C-W S (normal), C-W V (vertical)
 " Split new buffer:     C-W N (normal), C-W M (vertical) <-- this is the new map
 nnoremap <C-w>m :vnew<CR>
+
 
 "
 " Miscellanea
@@ -233,8 +236,11 @@ augroup chmod
   autocmd BufWritePost * call s:ChmodX()
 augroup END
 
+
+"
 " simple implementation of a block-comment feature
 "
+
 function s:CommentSetup()
   if !exists('b:comment_leader')
     let b:comment_leader = '# '
@@ -255,6 +261,7 @@ augroup comment
   autocmd FileType vim                               let b:comment_leader = '" '
   autocmd FileType *                                 call s:CommentSetup()
 augroup END
+
 
 "
 " Indentation (smart tab plugin installed)
@@ -288,6 +295,7 @@ function! Kib(arg)
   let r = substitute(r, "[^0-9]", "", "g")
   return str2nr(r)
 endfunction
+
 
 "
 " Colorscheme
