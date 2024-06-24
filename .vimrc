@@ -47,8 +47,34 @@ endif
 " Keybindings
 "
 
-" use a better leader
-let mapleader = ","
+" Remap ':' <-> ',' for better ergonomics instead of touching the leader
+" https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
+"
+nnoremap : ,
+xnoremap : ,
+onoremap : ,
+
+nnoremap , :
+xnoremap , :
+onoremap , :
+
+nnoremap g: g,
+nnoremap g, <NOP>
+
+nnoremap @, @:
+nnoremap @: <NOP>
+
+" NOTE: Causes lag when 'q' is hit, for example when
+" - stopping to record a macro or
+" - exiting a buffer by a custom mapping to 'q'.
+nnoremap q, q:
+xnoremap q, q:
+
+nnoremap q: <NOP>
+xnoremap q: <NOP>
+
+" convert %% to dirname(%)
+cabbrev %% %:h
 
 " <leader>d -- delete into black hole
 nnoremap <leader>d "_d
@@ -56,14 +82,6 @@ vnoremap <leader>d "_d
 " <leader><leader> -- anything into black hole (badum-tss)
 nnoremap <leader><leader> "_
 vnoremap <leader><leader> "_
-
-" This never really took off, and `;` is already used to repeat f/t/F/T.
-" " don't require Shift to go to Ex mode
-" nnoremap ; :
-" vnoremap ; :
-
-" convert %% to dirname(%)
-cabbrev %% %:h
 
 nnoremap <F2> :set invpaste<CR>
 inoremap <F2> <C-\><C-O>:set invpaste<CR>
