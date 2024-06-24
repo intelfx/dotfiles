@@ -130,3 +130,6 @@
 [submodule ".vim/bundle/vim-oscyank"]
 	path = .vim/bundle/vim-oscyank
 	url = https://github.com/ojroques/vim-oscyank
+[submodule ".vim/bundle/tcomment"]
+	path = .vim/bundle/tcomment
+	url = https://github.com/tomtom/tcomment_vim
