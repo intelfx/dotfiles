@@ -26,6 +26,12 @@ function -command() {
 	command -v "$@"
 }
 
+function -join() {
+	local sep="$1"
+	shift
+	printf "%s" "${(pj:$sep:)${@}}"
+}
+
 #
 # personal aliases
 #
