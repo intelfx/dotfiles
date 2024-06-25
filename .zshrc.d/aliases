@@ -92,9 +92,11 @@ fi
 if command -v rg &>/dev/null; then
 	# do not highlight matches, because matches are all that we're emitting
 	alias rgc="rg --colors 'match:none' -or '\$1'"
+	alias rgo="rg --colors 'match:none' -o"
 	# grep does not have this, sadly
 	# emulate with `rg -uuu`
 	alias grepc="rg -uuu --colors 'match:none' -or '\$1'"
+	alias grepo="rg -uuu --colors 'match:none' -o"
 fi
 
 if command -v perl rlwrap &>/dev/null; then
