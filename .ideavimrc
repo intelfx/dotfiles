@@ -1,0 +1,109 @@
+"
+" Plugin emulation
+"
+"
+
+set NERDTree
+set surround
+set commentary
+set multiple-cursors
+
+
+"
+" Keybindings
+"
+
+" <leader>d -- delete into black hole
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+" <leader><leader> -- anything into black hole (badum-tss)
+nnoremap <leader><leader> "_
+vnoremap <leader><leader> "_
+
+" Remap ':' <-> ',' for better ergonomics instead of touching the leader
+" https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
+"
+nnoremap : ,
+xnoremap : ,
+onoremap : ,
+
+nnoremap , :
+xnoremap , :
+onoremap , :
+
+nnoremap g: g,
+nnoremap g, <NOP>
+
+nnoremap @, @:
+nnoremap @: <NOP>
+
+" NOTE: Causes lag when 'q' is hit, for example when
+" - stopping to record a macro or
+" - exiting a buffer by a custom mapping to 'q'.
+nnoremap q, q:
+xnoremap q, q:
+
+nnoremap q: <NOP>
+xnoremap q: <NOP>
+
+" convert %% to dirname(%)
+cabbrev %% %:h
+
+" search selection
+" (z is for register z)
+vnoremap // "zy/\V<C-R>z<CR>
+
+" Split line (antonym of J)
+nnoremap <C-J> i<CR><Esc>k$
+
+" Move lines around
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Map junk to functional keys
+nnoremap <F2> :set invpaste<CR>
+inoremap <F2> <C-\><C-O>:set invpaste<CR>
+
+nnoremap <F3> :set invrnu<CR>
+inoremap <F3> <C-\><C-O>:set invrnu<CR>
+
+nnoremap <F4> :nohl<CR>
+inoremap <F4> <C-\><C-O>:nohl<CR>
+
+" Ctrl-C is useless in Vim, use it in IDE (Copy)
+sethandler <C-C> a:ide
+" Ctrl-V is _useful_ in Vim, but not in Insert mode, so use it in IDE there
+sethandler <C-V> n-v:vim i:ide
+
+
+"
+" Clipboard integration feat. IdeaVim
+"
+" Make select operations work with the system clipboard
+" (note: we do not do `set clipboard+=unnamed` as that makes garbage command
+" like `x` clobber the clipboard)
+"
+
+nnoremap dd "+dd
+nnoremap d "+d
+vnoremap d "+d
+
+nnoremap yy "+yy
+nnoremap y "+y
+vnoremap y "+y
+
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
+
+
+"
+" Miscellanea
+"
+
+set hlsearch
