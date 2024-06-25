@@ -1,10 +1,6 @@
-" A double quote character starts a comment.
 "
 " Keybindings
 "
-
-" use a better leader
-let mapleader=,
 
 " <leader>d -- d into black hole
 nnoremap <leader>d "_d
@@ -12,6 +8,32 @@ vnoremap <leader>d "_d
 " <leader><leader> -- anything into black hole (badum-tss)
 nnoremap <leader><leader> "_
 vnoremap <leader><leader> "_
+
+" Remap ':' <-> ',' for better ergonomics instead of touching the leader
+" https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
+"
+nnoremap : ,
+xnoremap : ,
+onoremap : ,
+
+nnoremap , :
+xnoremap , :
+onoremap , :
+
+nnoremap g: g,
+nnoremap g, <NOP>
+
+nnoremap @, @:
+nnoremap @: <NOP>
+
+" NOTE: Causes lag when 'q' is hit, for example when
+" - stopping to record a macro or
+" - exiting a buffer by a custom mapping to 'q'.
+nnoremap q, q:
+xnoremap q, q:
+
+nnoremap q: <NOP>
+xnoremap q: <NOP>
 
 " search selection
 " (z is for register z)
