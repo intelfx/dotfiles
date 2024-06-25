@@ -231,6 +231,17 @@ set grepformat=%f:%l:%c:%m
 
 
 "
+" Open multiple arguments in tabs by default
+" (https://vi.stackexchange.com/a/2197/7826)
+"
+
+augroup args-to-tabs
+    au!
+    au VimEnter * ++nested if !&diff | tab all | tabfirst | endif
+augroup end
+
+
+"
 " Clipboard integration
 " TODO: OSC52 -> Vim
 "
