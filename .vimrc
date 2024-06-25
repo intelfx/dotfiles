@@ -194,6 +194,7 @@ set grepformat=%f:%l:%c:%m
 
 "
 " Clipboard integration
+" TODO: OSC52 -> Vim
 "
 
 if has('unnamedplus') && has('clipboard_working')
