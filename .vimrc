@@ -52,6 +52,10 @@ delcommand SplitVifm
 delcommand DiffVifm
 delcommand TabVifm
 
+" tlib: remove commands conflicting with netrw shorthands
+delcommand Texecloc
+delcommand Texecqfl
+
 
 "
 " Keybindings
