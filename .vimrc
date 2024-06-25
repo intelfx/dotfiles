@@ -26,6 +26,19 @@ if has('nvim') || exists('*term_start')
   let g:vifm_replace_netrw = 0
 endif
 
+" configure ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'a'
+let g:ctrlp_switch_buffer = 'et'
+" set a reasonable directory listing command
+" (piggyback on the same fd wrapper I wrote for zsh and later ported for vifm)
+if executable('-fd-compgen')
+  let g:ctrlp_user_command = '-fd-compgen -Xforce-vcs --hidden -tf %s'
+elseif executable('fd')
+  let g:ctrlp_user_command = 'fd --hidden -tf . %s'
+endif
+
 " load plugins from $HOME/.vim/bundle
 packloadall
 
