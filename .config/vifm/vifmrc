@@ -493,12 +493,24 @@ endif
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
 
+" HACK: Vifm has no way to run a program connected to the tty without blanking
+" (with the implied promise that the program won't mess up the UI). To work
+" around this, query Vifm's true tty once on startup and redirect manually.
+if $VIFM_TTY == ''
+    let $VIFM_TTY = term("tty")
+endif
+
 " Interaction with system clipboard
 if has('win')
     " Yank current directory path to Windows clipboard with forward slashes
     nnoremap yp :!echo %"d:gs!\!/! %i | clip<cr>
     " Yank path to current file to Windows clipboard with forward slashes
     nnoremap yf :!echo %"c:gs!\!/! %i | clip<cr>
+elseif executable('clip')
+        " Yank current directory path
+        nnoremap yd :!echo -n %d | clip --both -i >$VIFM_TTY &<cr>
+        " Yank current file path
+        nnoremap yf :!echo -n %c:p | clip --both -i >$VIFM_TTY &<cr>
 elseif $WAYLAND_DISPLAY && executable('wl-copy')
     " Yank current directory path into primary and selection clipboards
     nnoremap yd :!echo -n %d | wl-copy %i &&
