@@ -4,6 +4,9 @@
 # Do not ignore .gitignore (this shall remain special)
 !/.gitignore
 
+# Same for .gitmodules
+!/.gitmodules
+
 # Do not ignore .dotfiles
 !/.dotfiles
 
@@ -20,9 +23,14 @@
 !/.config/mpv
 !/.config/fontconfig
 !/.config/git
+!/.config/htop
+!/.config/bat
+!/.config/yay
+!/.config/containers
+!/.config/split2flac
+!/.config/pass-git-helper
 !/.config/vifm
 /.config/vifm/vifminfo.json
-!/.config/htop
 !/.config/lazygit
 /.config/lazygit/*
 !/.config/lazygit/config.yml
@@ -35,7 +43,6 @@
 /.config/sublime-text/Packages/CommandsBrowser33/
 /.config/sublime-text/Packages/User/Terminus/*.hidden-color-scheme
 /.config/sublime-text/Packages/User/SBSCompare*.hidden-*
-!/.config/bat
 
 # Do not ignore .config/gmailctl, except credentials
 /.config/gmailctl/*.json
@@ -62,6 +69,7 @@
 /.zshrc.d/*-private
 
 # GDB configuration and scripts
+!/.gdbinit
 !/.gdbinit.d
 !/.gdb.d
 
@@ -92,3 +100,23 @@
 /.gitconfig.private
 /.gitconfig.private-*
 /.gitconfig.machine
+
+# gitignore snippets (pointed to by various other configuration)
+!/.gitignore.*
+
+# assorted rc-files
+# we are tracking them anyway, but still list them here for fd(1)
+!/.mpd.conf
+!/.nethackrc
+!/.inputrc
+!/.neovintageousrc
+!/.vimrc
+!/.tmux.conf
+!/.profile
+!/.zprofile
+!/.zshrc
+!/.Xdefaults
+!/.Xmodmap
+!/.Xresources
+!/.Xresources-*
+!/.xsession
