@@ -38,6 +38,17 @@ if executable('-fd-compgen')
 elseif executable('fd')
   let g:ctrlp_user_command = 'fd --hidden -tf . %s'
 endif
+" set even more reasonable directory listing command(s) for specific types
+" of roots, and reuse what we set earlier as a fallback
+" (sadly, it is a pain to approximate git-ls-files behavior with fd(1)
+"  in presence of nested git repositories and complicated gitignore rules
+"  like we have for $HOME)
+let g:ctrlp_user_command = {
+  \'types': {
+    \1: ['.git', 'git -C %s ls-files -co --exclude-standard'],
+  \},
+  \'fallback': get(g:, 'ctrlp_user_command', ''),
+\}
 
 " load plugins from $HOME/.vim/bundle
 packloadall
