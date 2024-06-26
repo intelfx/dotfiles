@@ -50,6 +50,14 @@ let g:ctrlp_user_command = {
   \'fallback': get(g:, 'ctrlp_user_command', ''),
 \}
 
+" configure vim-vinegar / netrw
+" I like it, eh
+let g:netrw_banner = 1
+" Hide dotfiles by default (netrw: `gh` to toggle)
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+" TODO: make `y.` (yank absolute path under cursor) do something reasonable
+"       wrt. all the clipboard dances, similar to vifm' `yf`/`yd`
+
 " load plugins from $HOME/.vim/bundle
 packloadall
 
