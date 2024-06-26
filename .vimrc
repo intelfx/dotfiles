@@ -111,7 +111,10 @@ xnoremap q, q:
 nnoremap q: <NOP>
 xnoremap q: <NOP>
 
-" convert %% to dirname(%)
+" convert %% to dirname(%) to make invoking netrw easier
+" (`:vs %%`, `:sp %%`, `:e %%`, ...)
+" this _should_ be obsoleted by `:e.`, but it uses cwd rather than dirname(%).
+" this also should be obsoleted by `:E`, but I still need to learn it.
 cabbrev %% %:h
 
 " <leader>d -- delete into black hole
