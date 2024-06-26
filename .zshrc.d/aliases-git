@@ -38,7 +38,7 @@ function --git-diff-submodule-log() {
 	done
 
 	if (( ${#names[@]} )); then
-		git diff --submodule=log "$@" -- "${names[@]}"
+		-trace git diff --submodule=log "$@" -- "${names[@]}"
 	fi
 }
 # `compdef foo=bar` does not allow to alias to a command with args, sunrise by hand
