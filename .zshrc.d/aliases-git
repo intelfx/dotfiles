@@ -10,7 +10,7 @@ function --git-rev-parse-first() {
 function --git-rev-parse-silent() {
 	local arg
 	for arg; do
-		git rev-parse --quiet --verify --symbolic "$arg" ||:
+		git rev-parse --quiet --verify --symbolic-full-name "$arg" ||:
 	done
 }
 
