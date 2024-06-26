@@ -77,12 +77,14 @@ endif
 " configure vifm.vim #3
 " vifm.vim: remove commands conflicting with netrw shorthands
 " TODO: rebind them under non-conflicting names (export s:StartVifm somehow)
-delcommand EditVifm
-delcommand PeditVifm
-delcommand VsplitVifm
-delcommand SplitVifm
-delcommand DiffVifm
-delcommand TabVifm
+if exists('loaded_vifm')
+  delcommand EditVifm
+  delcommand PeditVifm
+  delcommand VsplitVifm
+  delcommand SplitVifm
+  delcommand DiffVifm
+  delcommand TabVifm
+endif
 
 " tlib: remove commands conflicting with netrw shorthands
 delcommand Texecloc
