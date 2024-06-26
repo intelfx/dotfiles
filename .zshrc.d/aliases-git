@@ -152,9 +152,21 @@ done
 alias tig1='tig show'
 alias tigl='TIGRC_USER=~/.tigrc.large tig'
 
+compdef tgb=tig
 compdef tg=tig
 compdef tga=tig
 compdef tgaa=tig
+# "tig, with just branches"
+function tgb() {
+	if (( $# ))
+	then command tig --boundary "$@"
+	else
+		# always include HEAD@{u}, if it is defined
+		local -a head
+		head=( HEAD "${(@f)$(--git-rev-parse-silent 'HEAD@{u}')}" )
+		command tig $head --branches
+	fi
+}
 # "tig, with default set of refs"
 function tg() {
 	if (( $# ))
