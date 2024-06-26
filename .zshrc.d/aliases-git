@@ -14,6 +14,37 @@ function --git-rev-parse-silent() {
 	done
 }
 
+function --git-diff-submodule-log() {
+	local -a names
+	local line src_name dst_name src_mode dst_mode op
+	local mode name
+
+	git diff --raw $@ | while IFS=':' read -r _ line; do
+		<<<"$line" IFS=$'\t' read -r line src_name dst_name
+		<<<"$line" IFS=' '   read -r src_mode dst_mode _ _ op
+
+		case "$op" in
+		[MU]) mode="$src_mode"; name="$src_name" ;;
+		[CR]*) mode="$dst_mode"; name="$dst_name" ;;
+		[AD]) continue ;;
+		esac
+
+		case "$mode" in
+		160000) ;;
+		*) continue ;;
+		esac
+
+		names+=( "$name" )
+	done
+
+	if (( ${#names[@]} )); then
+		git diff --submodule=log "$@" -- "${names[@]}"
+	fi
+}
+# `compdef foo=bar` does not allow to alias to a command with args, sunrise by hand
+_git_diff_submodule_log() { service=git; words[1]=(git diff); (( CURRENT++ )); _git; }
+compdef _git_diff_submodule_log --git-diff-submodule-log
+
 alias gfe='git fetch --all --tags --prune'
 alias grm='git rebase -i $(--git-rev-parse-first master main)'
 alias grmb='git rebase --keep-base -i $(--git-rev-parse-first master@{u} main@{u})'
@@ -45,9 +76,9 @@ alias gds='git diff --stat'
 alias gdc='git diff --cached'
 alias gdcs='git diff --cached --stat'
 alias gdsc='git diff --cached --stat'
-alias gdS='git diff --submodule=log'
-alias gdSc='git diff --cached --submodule=log'
-alias gdcS='git diff --cached --submodule=log'
+alias gdS='--git-diff-submodule-log'
+alias gdSc='--git-diff-submodule-log --cached'
+alias gdcS='--git-diff-submodule-log --cached'
 alias gl='git log'
 alias gl1='git log -1'
 alias glp='git log -p'
