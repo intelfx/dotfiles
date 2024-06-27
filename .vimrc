@@ -202,7 +202,7 @@ nnoremap <C-w>m :vnew<CR>
 "
 
 set mouse+=a
-if &term =~ "^tmux"
+if &term =~ '^tmux'
   " xterm2      Works like "xterm", but with the xterm reporting the
   "             mouse position while the mouse is dragged.
   " <...>
@@ -350,13 +350,13 @@ endfunction
 
 function! Bytes(arg)
   let r = system('bscalc -b ' .. shellescape(a:arg))
-  let r = substitute(r, "[^0-9]", "", "g")
+  let r = substitute(r, '[^0-9]', '', 'g')
   return str2nr(r)
 endfunction
 
 function! Kib(arg)
   let r = system('bscalc --KiB ' .. shellescape(a:arg))
-  let r = substitute(r, "[^0-9]", "", "g")
+  let r = substitute(r, '[^0-9]', '', 'g')
   return str2nr(r)
 endfunction
 
