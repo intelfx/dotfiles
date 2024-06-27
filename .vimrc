@@ -90,6 +90,9 @@ endif
 delcommand Texecloc
 delcommand Texecqfl
 
+" man: open in new tab
+let g:ft_man_open_mode = 'tab'
+
 
 "
 " Keybindings
