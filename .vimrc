@@ -307,7 +307,7 @@ augroup END
 
 augroup ftsettings
   au!
-  au FileType man                                          setl nolist nonumber keywordprg=:Man
+  au FileType man                                          setl nolist nonumber keywordprg=:Man iskeyword+=(,)
 
   " use "++nested" for my ruler implementation to register the override
   au FileType man                                 ++nested setl colorcolumn=
