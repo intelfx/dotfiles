@@ -140,6 +140,10 @@ vnoremap <leader>d "_d
 nnoremap <leader><leader> "_
 vnoremap <leader><leader> "_
 
+" so far, most of my Vim usage consists of editing ~/.vimrc
+nnoremap <leader>e :edit ~/.vimrc<CR>
+nnoremap <leader>r :source ~/.vimrc<CR>
+
 nnoremap <F2> :set invpaste<CR>
 inoremap <F2> <C-\><C-O>:set invpaste<CR>
 
