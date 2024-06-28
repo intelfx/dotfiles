@@ -93,6 +93,9 @@ delcommand Texecqfl
 " man: open in new tab
 let g:ft_man_open_mode = 'tab'
 
+" default text width for solid-color 'ruler' (see below)
+let g:rulerwidth = 80
+
 
 "
 " Keybindings
@@ -240,8 +243,6 @@ if !empty($VIM_LARGE_FILE)
   set noundofile
 endif
 
-let &colorcolumn=join(range(81,999), ",")
-
 set grepprg=rg\ --vimgrep\ --word-regexp\ $*
 set grepformat=%f:%l:%c:%m
 
@@ -342,6 +343,73 @@ setlocal cinoptions=(0,u0,U0
 
 
 "
+" 'Smart' solid color ruler
+" Features:
+" - set multiple colorcolumns to de-emphasize the entire prohibited area
+" - disable colorcolumns when the window width is less than starting column
+"   (to avoid garbled appearance due to wrapping)
+" - if wrapping is required and condition (2) does not apply, fill the
+"   highest possible multiple of window width (again, to avoid garbled
+"   appearance when the colored area ends)
+"
+
+function! s:RulerTrapColorcolumn()
+  if v:option_type == 'local'
+    let w:colorcolumn_set = v:option_new
+  endif
+endfunction
+
+function! s:RulerUpdate()
+  " bail if explicitly disabled
+  if exists('w:ruler_disable') || exists('b:ruler_disable')
+    return
+  endif
+  " bail if we caught a `setl colorcolumn=...` and it was not us
+  " also bail even if we didn't, but it was clearly set and it was not us
+  " NOTE: v:null is a sentinel which compares inequal to any string
+  if (exists('w:colorcolumn_set') || &l:colorcolumn != '')
+   \ && &l:colorcolumn != get(w:, 'colorcolumn_last', v:null)
+    return
+  endif
+
+  if &textwidth > 0
+    let ruler = &textwidth
+  elseif &wrapmargin > 0
+    let ruler = &wrapmargin
+  else
+    let ruler = g:rulerwidth
+  endif
+
+  let info = getwininfo(win_getid())
+  let width = info[0].width - info[0].textoff
+  if ruler < width
+    let new = range(ruler + 1, s:floorm(ruler + 1 + 255, width))
+    let colorcolumn = join(new, ',')
+  else
+    let colorcolumn = ''
+  endif
+  let &l:colorcolumn = colorcolumn
+  let w:colorcolumn_set = colorcolumn
+  let w:colorcolumn_last = colorcolumn
+endfunction
+
+function! s:Ruler(windows)
+  if empty(a:windows)
+    call s:RulerUpdate()
+  else
+    call foreach(a:windows, {k, v -> win_execute(v, 'call s:RulerUpdate()')})
+  endif
+endfunction
+
+augroup colorcolumn
+  au!
+  au VimEnter             *            call s:Ruler([])
+  au WinResized           *            call s:Ruler(v:event.windows)
+  au OptionSet            colorcolumn  call s:RulerTrapColorcolumn()
+augroup END
+
+
+"
 " Personal functions
 "
 function! Pow(a, b)
@@ -358,6 +426,11 @@ function! Kib(arg)
   let r = system('bscalc --KiB ' .. shellescape(a:arg))
   let r = substitute(r, '[^0-9]', '', 'g')
   return str2nr(r)
+endfunction
+
+" floorm(arg, mul) -- round down a:arg to a multiple of a:mul
+function! s:floorm(arg, mul)
+  return a:arg - (a:arg % a:mul)
 endfunction
 
 
