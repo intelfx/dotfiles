@@ -289,19 +289,20 @@ endif
 " Filetypes
 "
 
-augroup filetypedetect
+augroup ftdetect
+  au!
+  au BufNewFile,BufRead .neovintageousrc                   setl ft=vim
 
-au BufRead,BufNewFile .neovintageousrc setlocal filetype=vim
+  " TODO: use a json syntax that's closer to what is actually supported
+  "       (i.e. json+comments+trailing commas) rather than json5
+  au BufNewFile,BufRead
+    \ *.sublime-{color-scheme,commands,completions,keymap,menu,package,settings,snippet,syntax,workspace}
+    \                                                      setl ft=json5
 
-" TODO: use a json syntax that's closer to what is actually supported
-"       (i.e. json+comments+trailing commas) rather than json5
-au BufRead,BufNewFile *.sublime-{color-scheme,commands,completions,keymap,menu,package,settings,snippet,syntax,workspace} setlocal filetype=json5
-
-au BufRead,BufNewFile *.tpl setlocal filetype=gotexttmpl
-au BufRead,BufNewFile *.gotmpl setlocal filetype=gotexttmpl
-au BufRead,BufNewFile /share/polkit-1/rules.d/*.rules setlocal filetype=javascript
-au BufRead,BufNewFile /etc/polkit-1/rules.d/*.rules setlocal filetype=javascript
-
+  au BufNewFile,BufRead *.tpl                              setl ft=gotexttmpl
+  au BufNewFile,BufRead *.gotmpl                           setl ft=gotexttmpl
+  au BufNewFile,BufRead /share/polkit-1/rules.d/*.rules    setl ft=javascript
+  au BufNewFile,BufRead /etc/polkit-1/rules.d/*.rules      setl ft=javascript
 augroup END
 
 " automatically give executable permissions if file begins with #! and contains '/bin/' in the path
