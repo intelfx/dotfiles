@@ -305,6 +305,13 @@ augroup ftdetect
   au BufNewFile,BufRead /etc/polkit-1/rules.d/*.rules      setl ft=javascript
 augroup END
 
+augroup ftsettings
+  au!
+  au FileType man                                          setl nolist nonumber keywordprg=:Man
+augroup END
+
+
+"
 " automatically give executable permissions if file begins with #! and contains '/bin/' in the path
 " see http://www.debian-administration.org/articles/571
 " modified 23.12.2008 Benedikt Stegmaier
