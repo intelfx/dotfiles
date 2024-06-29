@@ -381,10 +381,14 @@ function! s:RulerUpdate()
     return
   endif
   " bail if we caught a `setl colorcolumn=...` and it was not us
-  " also bail even if we didn't, but it was clearly set and it was not us
+  " also bail if it is intentionally disabled (HACK)
+  " FIXME: also bail even if we didn't, but it was clearly set and it was not us:
+  "        \ || (&l:colorcolumn != '' && &l:colorcolumn != get(w:, 'colorcolumn_last', v:null))
+  "        however, this needs refinement in face of switching buffers and windows
   " NOTE: v:null is a sentinel which compares inequal to any string
-  if (exists('w:colorcolumn_set') || &l:colorcolumn != '')
-   \ && &l:colorcolumn != get(w:, 'colorcolumn_last', v:null)
+  " HACK: '0' is a sentinel that I `setl` to disable colorcolumn (see above)
+  if (exists('w:colorcolumn_set') && w:colorcolumn_set != get(w:, 'colorcolumn_last', v:null))
+   \ || (&l:colorcolumn == '0')
     return
   endif
 
