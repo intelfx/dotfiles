@@ -7,15 +7,8 @@ function -trace() {
 	# quoting dance is needed to subtract current depth from command depth
 	local PS4='${(l.${(%):-%e}+1-'${(%):-%e}'..+.)} '
 	local rc
-	# `set -x` is duplicated to preserve clean stderr output
-	if [[ $1 == command ]]; then
-		shift
-		set -x
-		command "$@"
-	else
-		set -x
-		"$@"
-	fi
+	set -x
+	"$@"
 	# $? is captured under the redirection to preserve clean stderr output
 	{ rc=$?; set +x; } &>/dev/null
 	return $rc
