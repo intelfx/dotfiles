@@ -3,7 +3,7 @@
 	url = https://github.com/plotnikovanton/net_widgets.git
 [submodule ".vim/bundle/vim-grep-operator"]
 	path = .vim/bundle/vim-grep-operator
-	url = https://github.com/inside/vim-grep-operator
+	url = https://github.com/intelfx/vim-grep-operator
 [submodule ".vim/bundle-misc/Smart-Tabs"]
 	path = .vim/bundle-misc/Smart-Tabs
 	url = https://github.com/intelfx/Smart-Tabs
