@@ -49,8 +49,9 @@ alias dff='findmnt -D -t notmpfs,nodevtmpfs,nofuse.portal'
 alias blks='lsblk -o "NAME,FSTYPE,LABEL,FSSIZE,FSUSED,FSAVAIL,FSUSE%,MOUNTPOINTS"'
 
 # Pretty-print of some PATH variables:
-alias path='echo -e ${PATH//:/\\n}'
-alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+alias path='print ${(F)${(s.:.)PATH}}'
+alias libpath='print ${(F)${(s.:.)LD_LIBRARY_PATH}}'
+alias pythonpath='print ${(F)${(s.:.)PYTHONPATH}}'
 
 alias catconfig='grep -vE "^$|^ *(#|;)"'
 alias fields='cut -d " " -f '
