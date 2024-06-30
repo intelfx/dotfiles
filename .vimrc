@@ -9,7 +9,7 @@ runtime! defaults.vim
 let g:snipMate = { 'snippet_version' : 1 }
 
 " configure rooter
-let g:rooter_change_directory_for_non_project_files = ''
+let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_cd_cmd = 'lcd'
 let g:rooter_ignore = 1
 " HACK for kernel sources: do not anchor on Makefile if this dir has Kconfig
