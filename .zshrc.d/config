@@ -13,7 +13,7 @@ REPORTTIME=5
 TIMEFMT="%J  %U user %S system %P cpu %*E total"  # %M is broken
 
 # use a bash-like $PS4
-PS4='${(l.${(%):-%e}-1..+.)} '
+PS4='${(l.${(%):-%e}..+.)} '
 
 # History
 setopt extendedhistory incappendhistory sharehistory histignoredups histverify histnostore histfcntllock
