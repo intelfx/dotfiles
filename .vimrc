@@ -375,6 +375,18 @@ function! s:RulerTrapColorcolumn()
   endif
 endfunction
 
+function! s:RulerCompute(pos, width)
+  if a:pos <= a:width
+    let a = a:pos
+    let b = s:floorm(a:pos + 255, a:width)
+    if a <= b
+      let cols = range(a, b)
+      return join(cols, ',')
+    endif
+  endif
+  return ''
+endfunction
+
 function! s:RulerUpdate()
   " bail if explicitly disabled
   if exists('w:ruler_disable') || exists('b:ruler_disable')
@@ -402,12 +414,8 @@ function! s:RulerUpdate()
 
   let info = getwininfo(win_getid())
   let width = info[0].width - info[0].textoff
-  if ruler < width
-    let new = range(ruler + 1, s:floorm(ruler + 1 + 255, width))
-    let colorcolumn = join(new, ',')
-  else
-    let colorcolumn = ''
-  endif
+  let colorcolumn = s:RulerCompute(ruler + 1, width)
+
   let &l:colorcolumn = colorcolumn
   let w:colorcolumn_set = colorcolumn
   let w:colorcolumn_last = colorcolumn
