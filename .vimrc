@@ -165,7 +165,7 @@ let g:grep_operator_set_search_register = 1
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 
-command! -nargs=+ Grep execute 'silent grep! <args>' | below copen | redraw
+command! -nargs=+ Grep execute 'silent grep! <args>' | execute '<mods> below copen' | redraw!
 
 " snippets
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
