@@ -404,6 +404,30 @@ function setflags_lto3() {
 	printflags
 }
 
+function setflags_clang_lto3() {
+	export CC=clang
+	export CXX=clang++
+	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=full -fuse-linker-plugin"
+	export CXXFLAGS="$CFLAGS"
+	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -fuse-ld=lld -flto=full -fuse-linker-plugin"
+	export RUSTFLAGS="-C target_cpu=native -C opt-level=3 -C link-arg=-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -C link-arg=-fuse-ld=lld -C linker=clang -C linker-plugin-lto"
+	export CARGO_PROFILE_RELEASE_LTO=on
+	export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
+	printflags
+}
+
+function setflags_clang_thinlto3() {
+	set -x
+	export CC=clang
+	export CXX=clang++
+	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=thin -fuse-linker-plugin"
+	export CXXFLAGS="$CFLAGS"
+	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -fuse-ld=lld -flto=thin -fuse-linker-plugin"
+	export RUSTFLAGS="-C target_cpu=native -C opt-level=3 -C link-arg=-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -C link-arg=-fuse-ld=lld -C linker=clang -C linker-plugin-lto"
+	export CARGO_PROFILE_RELEASE_LTO=thin
+	printflags
+}
+
 function setflags_dbg() {
 	export CFLAGS="-march=native -Og -ggdb3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection"
 	export CXXFLAGS="$CFLAGS -Wp,-D_GLIBCXX_ASSERTIONS"
