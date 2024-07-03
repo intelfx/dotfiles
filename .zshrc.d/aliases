@@ -293,7 +293,7 @@ function loadflags_lto() {
 	--loadflags '
 mangle() { var+=" $LTOFLAGS"; }
 mangle_rust() { var+=" $LTO_RUSTFLAGS"; }
-export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=true"}
+export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=thin"}
 '
 }
 
@@ -301,7 +301,7 @@ function loadflags_lto3() {
 	--loadflags '
 mangle() { var="${var// -O+([0-9])}"; var+=" -O3"; var+=" $LTOFLAGS"; }
 mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var+=" -C opt-level=3"; var+=" $LTO_RUSTFLAGS"; }
-export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=on"}
+export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=thin"}
 '
 }
 
