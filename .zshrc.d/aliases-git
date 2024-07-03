@@ -161,42 +161,42 @@ compdef tgaa=tig
 # "tig, with just branches"
 function tgb() {
 	if (( $# ))
-	then command tig --boundary "$@"
+	then -trace command tig --boundary "$@"
 	else
 		# always include HEAD@{u}, if it is defined
 		local -a head
 		head=( HEAD "${(@f)$(--git-rev-parse-silent 'HEAD@{u}')}" )
-		command tig $head --branches
+		-trace command tig $head --branches
 	fi
 }
 # "tig, with default set of refs"
 function tg() {
 	if (( $# ))
-	then command tig --boundary "$@"
+	then -trace command tig --boundary "$@"
 	else
 		# always include HEAD@{u}, if it is defined
 		local -a head
 		head=( HEAD "${(@f)$(--git-rev-parse-silent 'HEAD@{u}')}" )
-		command tig $head --branches --tags
+		-trace command tig $head --branches --tags
 	fi
 }
 # "tig, with almost all refs" (includes all remotes tracked by local branches)
 function tga() {
 	if (( $# ))
-	then command tig --boundary "$@"
+	then -trace command tig --boundary "$@"
 	else
 		# FIXME: better heuristic?
 		local -a remotes
 		remotes=( "${(@f)$(git config --get-regexp 'branch\..+\.remote')}" )
 		remotes=( "${(@)remotes##[^ ]## }" )
-		command tig HEAD --branches --tags --remotes=${(u)^remotes}
+		-trace command tig HEAD --branches --tags --remotes=${(u)^remotes}
 	fi
 }
 # "tig, with _really_ all refs"
 function tgaa() {
 	if (( $# ))
-	then command tig --boundary "$@"
-	else command tig --all
+	then -trace command tig --boundary "$@"
+	else -trace command tig --all
 	fi
 }
 alias tg1='tig show'
