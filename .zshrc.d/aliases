@@ -344,6 +344,7 @@ mangle() { var="${var// -fuse-ld=+([^ ])}"; var+=" -flto=full"; }
 mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=full"; }
 mangle_rust() { var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
 CARGO_PROFILE_RELEASE_LTO=fat
+CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 '
 }
 
@@ -355,6 +356,7 @@ mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -O
 mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=full"; }
 mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C opt-level=3 -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
 CARGO_PROFILE_RELEASE_LTO=fat
+CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 '
 }
 
