@@ -20,6 +20,7 @@ debug = false
 strip = true
 opt-level = 3
 lto = "fat"
+codegen-units = 1
 # extends {build,target.*}.rustflags
 rustflags = [
 	"-C", "link-arg=-flto=full",
