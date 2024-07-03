@@ -387,7 +387,7 @@ CARGO_PROFILE_RELEASE_LTO=thin
 # setflags_*() -- hardcoded sets of -fomg-optimize flags
 #
 
-function setflags_opt() {
+function setflags_opt3() {
 	export CFLAGS="-march=native -O3 -pipe -fno-plt"
 	export CXXFLAGS="$CFLAGS"
 	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -fuse-ld=mold"
@@ -395,7 +395,7 @@ function setflags_opt() {
 	printflags
 }
 
-function setflags_lto() {
+function setflags_lto3() {
 	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=auto -fuse-linker-plugin"
 	export CXXFLAGS="$CFLAGS"
 	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -fuse-ld=mold -flto=auto -fuse-linker-plugin"
