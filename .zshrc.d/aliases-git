@@ -169,6 +169,19 @@ function tgb() {
 		-trace command tig $head --branches
 	fi
 }
+# "tig, with current merge overview"
+function tgm() {
+	# always include HEAD@{u}, if it is defined
+	local -a head
+	head=( HEAD "${(@f)$(--git-rev-parse-silent 'HEAD@{u}')}" )
+
+	# TODO: octopus?
+	head+=( MERGE_HEAD )
+	local base
+	base="$(git merge-base -- $head)" || return
+
+	-trace command tig --boundary "^$base" $head $@
+}
 # "tig, with default set of refs"
 function tg() {
 	if (( $# ))
