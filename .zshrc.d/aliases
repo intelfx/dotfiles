@@ -391,6 +391,7 @@ function setflags_opt() {
 	export CFLAGS="-march=native -O3 -pipe -fno-plt"
 	export CXXFLAGS="$CFLAGS"
 	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -fuse-ld=mold"
+	export RUSTFLAGS="-C target_cpu=native -C opt-level=3 -C link-arg=-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -C link-arg=-fuse-ld=lld"
 	printflags
 }
 
@@ -398,6 +399,8 @@ function setflags_lto() {
 	export CFLAGS="-march=native -O3 -pipe -fno-plt -flto=auto -fuse-linker-plugin"
 	export CXXFLAGS="$CFLAGS"
 	export LDFLAGS="$CFLAGS -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -fuse-ld=mold -flto=auto -fuse-linker-plugin"
+	export RUSTFLAGS="-C target_cpu=native -C opt-level=3 -C link-arg=-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,-z,pack-relative-relocs -C link-arg=-fuse-ld=lld -C linker=clang -C linker-plugin-lto"
+	export CARGO_PROFILE_RELEASE_LTO=thin
 	printflags
 }
 
