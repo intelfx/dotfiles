@@ -72,9 +72,13 @@ if command -v bat &>/dev/null; then
 	compdef cat=bat
 
 	# "global aliases" for cutesy `anycommand --bathelp`
+	# (+ `anycommand | bathelp` fallback for commands with non-standard help syntax)
 	# XXX: abusing --style=changes to have an empty vertical grid w/o line numbers
 	#      for readability
-	alias -g -- --bathelp='--help 2>&1 | bat --language=help --style=changes,grid'
+	alias bathelp='bat --language=help --style=changes,grid'
+	alias -g -- --bathelp='--help 2>&1 | bathelp'
+	alias -g -- --bathelp-all='--help-all 2>&1 | bathelp'
+
 fi
 if command -v colordiff &>/dev/null; then
 	alias diff='colordiff'
