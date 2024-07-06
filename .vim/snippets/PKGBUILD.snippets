@@ -112,3 +112,8 @@ snippet gitmodules-prepare
 		"\${_git[@]}" config "submodule.\$_subname.url" "\$_suburl"
 		"\${_git[@]}" -c protocol.file.allow=always submodule update "\$_subpath"
 	done
+
+snippet printflags
+	declare -p -x \\
+		| grep -E ' ((CC|CXX)=|CARGO_|(C|CXX|LD|RUST)FLAGS)' \\
+		| while read line; do msg2 "\$line"; done
