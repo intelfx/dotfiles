@@ -15,6 +15,9 @@ Xcursor.theme:               Adwaita
 !
 ! http://ethanschoonover.com/solarized
 
+#if !defined(DARK) && !defined(LIGHT)
+# define DARK
+#endif
 
 ! Common
 
@@ -30,6 +33,7 @@ Xcursor.theme:               Adwaita
 
 ! Dark
 
+#if defined(DARK)
 #define S_base03        #002b36
 #define S_base02        #073642
 #define S_base01        #586e75
@@ -38,18 +42,21 @@ Xcursor.theme:               Adwaita
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
+#endif
 
 
 ! Light
 
-! #define S_base03        #fdf6e3
-! #define S_base02        #eee8d5
-! #define S_base01        #93a1a1
-! #define S_base00        #839496
-! #define S_base0         #657b83
-! #define S_base1         #586e75
-! #define S_base2         #073642
-! #define S_base3         #002b36
+#if defined(LIGHT)
+#define S_base03        #fdf6e3
+#define S_base02        #eee8d5
+#define S_base01        #93a1a1
+#define S_base00        #839496
+#define S_base0         #657b83
+#define S_base1         #586e75
+#define S_base2         #073642
+#define S_base3         #002b36
+#endif
 
 
 ! To only apply colors to your terminal, for example, prefix
@@ -81,6 +88,9 @@ URxvt*color14:                 S_base1
 URxvt*color15:                 S_base3
 
 ! ---- solarized xresources end ----
+
+XTerm.faceName:              monospace
+XTerm.faceSize:              9
 
 URxvt.font:                  xft:monospace:size=9
 URxvt.imFont:                xft:monospace:size=9
