@@ -148,3 +148,6 @@
 [submodule ".vim/bundle/vim-git"]
 	path = .vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git
+[submodule ".config/mpv/mpv-autosave"]
+	path = .config/mpv/mpv-autosave
+	url = https://gist.github.com/CyberShadow/2f71a97fb85ed42146f6d9f522bc34ef
