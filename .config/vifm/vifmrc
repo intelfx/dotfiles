@@ -336,7 +336,9 @@ filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
        \ unzip -l %f | less,
        \ {Extract here}
        \ unzip %c,
-fileviewer *.zip,*.jar,*.war,*.ear,*.oxt unzip -l %f
+fileviewer {*.zip,*.jar,*.war,*.ear,*.oxt},
+          \<application/zip,application/java-archive>
+         \ unzip -l %f
 
 " ArchiveMount
 filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.tar.zst,
