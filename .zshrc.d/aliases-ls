@@ -15,11 +15,13 @@ alias lU='ls -ltur'        #  Sort by/show access time,most recent last
 alias lV='ls -lV'          #  Sort by version, most recent last
 
 # The ubiquitous 'll': directories first, with alphanumeric sorting
-alias ll='ls -lv --group-directories-first'
+# XXX: was `ls -lv`, but it sorts case-sensitively
+alias ll='ls -l --group-directories-first'
 
 alias lr='ll -R'           #  Recursive ls
 alias la='ll -A'           #  Show hidden files
 alias laa='ll -a'           #  Show hidden files, and also . and ..
+alias lv='ll -v'           #  Version-sort (see above)
 alias l.='ll -d .*'        #  Show hidden files _only_
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls'
 
