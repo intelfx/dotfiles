@@ -8,6 +8,148 @@
 	},
 	"rules":
 	[
+
+		// LSP: occurrence highlighting
+		{
+			"scope": "markup.highlight.text.lsp",
+			//"background": "#0D372E",
+			"background": "color(var(base3) blend(var(cyan) 90%))",
+		},
+		{
+			"scope": "markup.highlight.read.lsp",
+			// "background": "#003E62",
+			"background": "color(var(base3) blend(var(blue) 75%))",
+		},
+		{
+			"scope": "markup.highlight.write.lsp",
+			// "background": "#4D2B44",
+			"background": "color(var(base3) blend(var(red) 75%))",
+		},
+
+		// LSP: semantic highlighting
+		{
+			"scope": "meta.semantic-token",
+			// XXX: this should be almost like the background color
+			"background": "#00000001",
+		},
+		{
+			"scope": "meta.semantic-token.keyword",
+			"foreground": "var(green)",
+		},
+		{
+			"scope": "meta.semantic-token.type",
+			"foreground": "var(yellow)",
+		},
+		{
+			"scope": "meta.semantic-token.class",
+			"foreground": "var(blue)",
+		},
+		{
+			"scope": "meta.semantic-token.macro",
+			// FIXME: paint only non-function macros
+			"foreground": "var(orange)",
+		},
+		{
+			"scope": "meta.semantic-token.function.declaration",
+			"foreground": "var(magenta)",
+		},
+		{
+			"scope": "meta.semantic-token.function.definition",
+			"foreground": "var(magenta)",
+		},
+		{
+			"scope": "meta.semantic-token.parameter",
+			// FIXME: true semantic highlighting? font styles?
+			"foreground": "color(var(base00) blend(var(violet) 50%))",
+		},
+		{
+			"scope": "meta.semantic-token.variable",
+			// FIXME: true semantic highlighting? font styles?
+			"foreground": "color(var(base00) blend(var(blue) 75%))",
+		},
+		{
+			"scope": "meta.semantic-token.property",
+			// FIXME: true semantic highlighting? font styles?
+			"foreground": "color(var(base00) blend(var(cyan) 75%))",
+		},
+		{
+			"scope": "meta.semantic-token.function",
+			// FIXME: true semantic highlighting? font styles?
+			"foreground": "color(var(base00) blend(var(magenta) 75%))",
+		},
+
+		// C/C++ - existing rules overrides
+		{
+			"name": "Variable Function",
+			"scope": "(source.c | source.c++) & variable.function",
+			"foreground": "var(base00)",
+		},
+		{
+			"name": "Function name",
+			"scope": "(source.c | source.c++) & entity.name.function",
+			"foreground": "var(magenta)",
+		},
+		{
+			"name": "Storage",
+			"scope": "(source.c | source.c++) & storage.modifier",
+			"foreground": "var(green)"
+		},
+		{
+			"name": "Storage Type",
+			"scope": "(source.c | source.c++) & storage.type",
+			"foreground": "var(yellow)"
+		},
+		{
+			"name": "Class",
+			"scope": "(source.c | source.c++) & (keyword.control.class, entity.name, entity.name.class, entity.name.type.class)",
+			"foreground": "var(blue)"
+		},
+
+		// C/C++ - custom rules
+		{
+			"name": "#define",
+			"scope": "entity.name.constant.preprocessor",
+			"foreground": "var(orange)"
+		},
+		{
+			"name": "#define - function",
+			"scope": "entity.name.function.preprocessor",
+			"foreground": "var(orange)"
+		},
+		{
+			"name": "#define body",
+			"scope": "meta.preprocessor.macro",
+			"foreground": "var(orange)"
+		},
+		{
+			"name": "Declarations",
+			"scope": "(source.c | source.c++) &  keyword.declaration",
+			"foreground": "var(green)"
+		},
+		{
+			"name": "Variable Parameter",
+			"scope": "(source.c | source.c++) & variable.parameter",
+			"foreground": "var(violet)"
+		},
+
+		// LSP: hover highlighting
+		// FIXME: does not work with semantic highlighting
+		{
+			"scope": "markup.highlight.hover.lsp",
+			"background": "var(base2)",
+		},
+
+		// LSP: #if 0
+		{
+			"scope": "markup.unnecessary.lsp",
+			"foreground": "var(base1)",
+		},
+		{
+			"scope": "markup.deprecated.lsp",
+			"foreground": "var(base1)",
+		},
+
+		// YAML + template engines
 		{
 			"name": "YAML tags",
 			"scope": "entity.name.tag.yaml",
