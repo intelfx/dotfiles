@@ -1,5 +1,6 @@
 {
 	"theme": "solarized-dark",
+	"unix_term": "xterm-16color",
 	"view_settings": {
 		"block_caret": true,
 	},
