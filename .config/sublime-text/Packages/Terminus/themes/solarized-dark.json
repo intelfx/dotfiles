@@ -3,6 +3,10 @@
     "theme_colors": {
         "foreground": "#839496",
         "background": "#002b36",
+        "selection": "#839496",
+        "selection_foreground": "#002b36",
+        "caret": "#93a1a1",
+        "block_caret": "#93a1a1",
         "black": "#073642",
         "red": "#dc322f",
         "green": "#859900",
@@ -14,9 +18,9 @@
         "light_black": "#002b36",
         "light_red": "#cb4b16",
         "light_green": "#586e75",
-        "light_brown": "#586e75",
-        "light_blue": "#657b83",
-        "light_magenta": "#839496",
+        "light_brown": "#657b83",
+        "light_blue": "#839496",
+        "light_magenta": "#6c71c4",
         "light_cyan": "#93a1a1",
         "light_white": "#fdf6e3",
     }
