@@ -18,8 +18,8 @@ alias lV='ls -lV'          #  Sort by version, most recent last
 alias ll='ls -lv --group-directories-first'
 
 alias lr='ll -R'           #  Recursive ls
-alias lA='ll -A'           #  Show hidden files
-alias la='ll -a'           #  Show hidden files, and also . and ..
+alias la='ll -A'           #  Show hidden files
+alias laa='ll -a'           #  Show hidden files, and also . and ..
 alias l.='ll -d .*'        #  Show hidden files _only_
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls'
 
