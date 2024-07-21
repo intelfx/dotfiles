@@ -24,10 +24,10 @@
 	url = https://github.com/intelfx/pure
 [submodule ".solarized/dircolors"]
 	path = .dotfiles/solarized/dircolors
-	url = https://github.com/seebi/dircolors-solarized
+	url = https://github.com/intelfx/dircolors-solarized
 [submodule ".solarized/main"]
 	path = .dotfiles/solarized/main
-	url = https://github.com/altercation/solarized
+	url = https://github.com/intelfx/solarized
 [submodule ".solarized/mc"]
 	path = .dotfiles/solarized/mc
 	url = https://github.com/intelfx/mc-solarized-skin
