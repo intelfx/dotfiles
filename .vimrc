@@ -477,15 +477,15 @@ command! SynStack
 " included in your .vimrc as they are currently set to their defaults.
 
 let g:solarized_termtrans=1
-" let g:solarized_degrade=0
-" let g:solarized_bold=1
-" let g:solarized_underline=1
-" let g:solarized_italic=1
-" let g:solarized_termcolors=16
-" let g:solarized_contrast="normal"
-" let g:solarized_visibility="normal"
-" let g:solarized_diffmode="normal"
-" let g:solarized_hitrail=0
+let g:solarized_degrade=0
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+let g:solarized_termcolors=16
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+let g:solarized_diffmode="normal"
+" let g:solarized_hitrail=1  " see above for alternative implementation
 " let g:solarized_menu=1
 
 syntax enable
