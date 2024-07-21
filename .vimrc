@@ -440,6 +440,30 @@ augroup END
 
 
 "
+" Highlight trailing whitespace, except on current line in insert mode
+" (cf. g:solarized_hitrail, which does not exclude current line)
+" Link: https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+" Link: https://github.com/ntpeters/vim-better-whitespace/blob/master/plugin/better-whitespace.vim
+"
+
+augroup myTrailingSpace
+  au!
+  au CursorMovedI,InsertEnter *  call s:TrailingSpace('i')
+  au InsertLeave,BufWinEnter  *  call s:TrailingSpace('n')
+augroup END
+
+function! s:TrailingSpace(mode)
+  let pattern = (a:mode == 'i') ? '\s\+\%#\@<!$' : '\s\+$'
+  if exists('w:trailingspace_match')
+    call matchdelete(w:trailingspace_match)
+    call matchadd('solarizedTrailingSpace', pattern, 10, w:trailingspace_match)
+  else
+    let w:trailingspace_match = matchadd('solarizedTrailingSpace', pattern)
+  endif
+endfunction
+
+
+"
 " Personal functions
 "
 function! Pow(a, b)
