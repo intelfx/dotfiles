@@ -1,6 +1,15 @@
 #!/hint/zsh
 
 #
+# Make sure zsh (& everything else) know about at least 16 colors
+#
+
+if  (( ${termcap[Co]-0} > 0 && ${termcap[Co]-0} < 16 )) \
+&& ( TERM="${TERM}-16color"; (( ${termcap[Co]-0} >= 16 )) ); then
+	export TERM="${TERM}-16color"
+fi
+
+#
 # Set the exact Solarized palette on VT
 #
 
