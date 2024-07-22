@@ -463,6 +463,9 @@ function! s:floorm(arg, mul)
   return a:arg - (a:arg % a:mul)
 endfunction
 
+command! SynStack
+  \ echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+
 
 "
 " Colorscheme
