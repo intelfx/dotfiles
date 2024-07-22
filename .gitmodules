@@ -150,4 +150,4 @@
 	url = https://github.com/tpope/vim-git
 [submodule ".config/mpv/mpv-autosave"]
 	path = .config/mpv/mpv-autosave
-	url = https://gist.github.com/CyberShadow/2f71a97fb85ed42146f6d9f522bc34ef
+	url = https://gist.github.com/972269b9fbd2bbbabf1d364b5cec97f9
