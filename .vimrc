@@ -257,9 +257,19 @@ set grepformat=%f:%l:%c:%m
 " (https://vi.stackexchange.com/a/2197/7826)
 "
 
+" only play buffer games if we start in a 'normal' disposition, without any
+" splits or tabs (i.e. exactly 1 buffer shown, other buffers hidden) -- this
+" is to avoid overriding `vimdiff` or `vim -[oO]` or custom startup commands
+function! s:want_args_to_tabs()
+  let buffers = getbufinfo()
+  let shown = filter(copy(l:buffers), {_, v -> !empty(v.windows)})
+  let hidden = filter(copy(l:buffers), {_, v -> empty(v.windows)})
+  return len(l:shown) == 1 && len(l:hidden) > 0
+endfunction
+
 augroup args-to-tabs
     au!
-    au VimEnter * ++nested if !&diff | tab all | tabfirst | endif
+    au VimEnter * ++nested if s:want_args_to_tabs() | tab all | tabfirst | endif
 augroup end
 
 
