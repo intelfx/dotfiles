@@ -21,7 +21,7 @@ if [[ "$WSLENV" ]]; then
 fi
 
 # If not on VT, assume Solarized has been configured
-if [[ "$TERM" != linux && "$TERM" != vt* ]]; then
+if [[ "$TERM" != linux* && "$TERM" != vt* ]]; then
 	export IS_SOLARIZED=1
 	return
 fi
