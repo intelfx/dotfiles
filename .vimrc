@@ -474,6 +474,56 @@ endfunction
 
 
 "
+" Set terminal title reasonably
+" FIXME: this is fugly. All of it.
+"
+
+function! s:Abbreviate(arg, sep, prefix, abbr, abbr_no_suffix)
+  if a:arg == a:prefix
+    return a:abbr_no_suffix ? a:abbr : a:arg
+  elseif a:arg[0:len(a:prefix)-1] == a:prefix
+    return a:abbr . a:sep . a:arg[len(a:prefix):]
+  else
+    return a:arg
+  endif
+endfunction
+
+function! s:Collapse(path)
+  let l:path = fnamemodify(a:path, ':p')
+  let l:home = fnamemodify('~', ':p')
+  return s:Abbreviate(l:path, '', l:home, '~/', v:true)
+endfunction
+
+function! GetNetrw()
+  let l:path = s:Collapse(expand('%'))
+  let l:cwd = s:Collapse(getcwd())
+  return s:Abbreviate(l:path, ' / ', l:cwd, l:cwd[:-2], v:false)
+endfunction
+
+function! Getcwd()
+  let l:cwd = s:Collapse(getcwd())
+  return l:cwd[:-2]
+endfunction
+
+function! s:Titlestring()
+  if &filetype == 'netrw'
+    return "%{GetNetrw()}"
+  elseif &buftype == ''
+    return "%{Getcwd()} / %f"
+  elseif &buftype == 'help'
+    return "%{Getcwd()} %h"
+  elseif &buftype == 'directory'
+    return "%{Getcwd()}"
+  else
+    return "%{Getcwd()} [%{&buftype}]"
+  endif
+endfunction
+
+set title
+let &titlestring = '%{%'.expand('<SID>').'Titlestring()%}'
+
+
+"
 " Personal functions
 "
 function! Pow(a, b)
