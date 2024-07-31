@@ -37,6 +37,14 @@
 	autoupdate = true
 [clean]
 	requireForce = false
+	exclude = /.idea
+	exclude = /.zed
+	exclude = /*.sublime-*
+	exclude = /compile_commands.json
+	exclude = /.clangd
+	exclude = /.cache/clangd
+	exclude = /config.mak
+	exclude = /config.toml
 [gc]
 	autoDetach = false
 	reflogExpire = never
