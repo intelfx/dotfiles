@@ -39,34 +39,29 @@ path_remove() {
 	PATH=${PATH//"::"/":"}
 	PATH=${PATH#:}; PATH=${PATH%:}
 }
-
-if command -v sccache &>/dev/null; then
-	export RUSTC_WRAPPER="$(command -v sccache)"
-fi
-
-if [[ -d /usr/lib/ccache/bin ]]; then
-	prepend PATH /usr/lib/ccache/bin
-fi
-
-if [[ -d "$HOME/.local/bin" ]]; then
-	prepend PATH "$HOME/.local/bin"
-fi
-
-if [[ -d "$HOME/.local/share/flatpak/exports/bin" ]]; then
-	prepend PATH "$HOME/.local/share/flatpak/exports/bin"
-fi
-
-if [[ -d "$HOME/ct-ng/bin" ]]; then
-	export CT_PREFIX="$HOME/ct-ng/bin"
-	for d in "$CT_PREFIX"/*/bin; do
-		# word splitting and pathname expansion are not performed on the words between [[ and ]]
-		gcc=( "$d"/*-gcc )
-		if [[ -d "$d" && -x "$gcc" ]]; then
-			prepend PATH "$d"
+export2() {
+	local var="$1" arg="$2"
+	export "$var=$arg"
+}
+maybe() {
+	local op="$1" var="$2" arg
+	shift 2
+	for arg; do
+		if [[ -e $arg ]]; then
+			"$op" "$var" "$arg"
 		fi
 	done
-fi
-unset d gcc
+}
+
+maybe export2 RUSTC_WRAPPER \
+	"$(command -v sccache 2>/dev/null)"
+
+maybe prepend PATH \
+	/usr/lib/ccache/bin \
+	"$HOME"/ct-ng/bin/*/bin \
+	"$HOME/.local/share/flatpak/exports/bin" \
+	"$HOME/.local/bin" \
+	# EOL
 
 . $HOME/bin/lib.env
 . $HOME/bin/bin.env
