@@ -35,7 +35,7 @@ let g:ctrlp_switch_buffer = 'et'
 " set a reasonable directory listing command
 " (piggyback on the same fd wrapper I wrote for zsh and later ported for vifm)
 if executable('-fd-compgen')
-  let g:ctrlp_user_command = '-fd-compgen -Xforce-vcs --hidden -tf %s'
+  let g:ctrlp_user_command = '-fd-compgen -Xno-skip-vcs --hidden -tf %s'
 elseif executable('fd')
   let g:ctrlp_user_command = 'fd --hidden -tf . %s'
 endif
