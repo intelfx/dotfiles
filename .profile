@@ -61,10 +61,15 @@ maybe prepend PATH \
 	"$HOME"/ct-ng/bin/*/bin \
 	"$HOME/.local/share/flatpak/exports/bin" \
 	"$HOME/.local/bin" \
+	"$HOME/.cargo/bin" \
 	# EOL
 
 . $HOME/bin/lib.env
 . $HOME/bin/bin.env
+
+maybe prepend PATH \
+	"$HOME/bin/local" \
+	# EOL
 
 if ! [[ "$SSH_AUTH_SOCK" ]]; then
 	if [[ "$WSLENV" ]]; then
@@ -84,6 +89,9 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
 #export QT_QPA_PLATFORMTHEME=qgnomeplatform
 #export QT_QPA_PLATFORM=wayland-egl
 #export TDESKTOP_I_KNOW_ABOUT_GTK_INCOMPATIBILITY=1
+
+# Seems like a sane default
+export CCACHE_BASEDIR="$HOME"
 
 # "It sets the number of cached data chunks; additional memory usage can be up to ~8 MiB times this number. The default is the number of CPU cores."
 # Allow `borg mount` to use up to 1 GiB of RAM for aggressive caching
