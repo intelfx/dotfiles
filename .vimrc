@@ -560,7 +560,9 @@ command! SynStack
 " The following items are available options, but do not need to be
 " included in your .vimrc as they are currently set to their defaults.
 
-let g:solarized_termtrans=1
+" FIXME: g:solarized_termtrans=1 causes massive flickering on down scrolling
+"        (you'd think it would be exactly the opposite?)
+let g:solarized_termtrans=0
 let g:solarized_degrade=0
 let g:solarized_bold=1
 let g:solarized_underline=1
