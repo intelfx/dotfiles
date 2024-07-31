@@ -79,17 +79,17 @@ endif
 " vifm.vim: remove commands conflicting with netrw shorthands
 " TODO: rebind them under non-conflicting names (export s:StartVifm somehow)
 if exists('loaded_vifm')
-  delcommand EditVifm
-  delcommand PeditVifm
-  delcommand VsplitVifm
-  delcommand SplitVifm
-  delcommand DiffVifm
-  delcommand TabVifm
+  silent! delcommand EditVifm
+  silent! delcommand PeditVifm
+  silent! delcommand VsplitVifm
+  silent! delcommand SplitVifm
+  silent! delcommand DiffVifm
+  silent! delcommand TabVifm
 endif
 
 " tlib: remove commands conflicting with netrw shorthands
-delcommand Texecloc
-delcommand Texecqfl
+silent! delcommand Texecloc
+silent! delcommand Texecqfl
 
 " man: open in new tab
 let g:ft_man_open_mode = 'tab'
