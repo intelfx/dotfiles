@@ -112,6 +112,7 @@ export SYSTEMD_EMOJI=0
 
 # Really?
 export SYSTEMD_TINT_BACKGROUND=0
+export SYSTEMD_ADJUST_TERMINAL_TITLE=0
 
 # Prevent myself and anyone else from turning the system into a landfill,
 # unless PEP 668 is in effect.
