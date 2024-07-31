@@ -162,11 +162,12 @@ function tmpcd() {
 alias tmp='tmpcd'
 
 function make() {
-	local has_jobs= has_makefile=
+	local has_jobs= has_makefile= has_directory=
 	for arg; do
 		case "$arg" in
 		-j*|--jobs*) has_jobs=1 ;;
 		-f*|--file*|--makefile*) has_makefile=1 ;;
+		-C*|--directory*) has_directory=1 ;;
 		esac
 	done
 	if [[ -e GNUmakefile || -e Makefile || -e makefile ]]; then
@@ -177,7 +178,9 @@ function make() {
 	if ! [[ $has_jobs ]]; then
 		extra_args+=( -j$(nproc) )
 	fi
-	if ! [[ $has_makefile ]]; then
+	# as an approximation, never override makefile if -C was passed
+	# (even if the -C directory does not actually have a makefile)
+	if ! [[ $has_makefile || $has_directory ]]; then
 		extra_args+=( -f ~/bin/devel/Makefile )
 	fi
 	-trace command make "${extra_args[@]}" "$@"
