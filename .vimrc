@@ -494,7 +494,7 @@ function! s:Collapse(path)
   return s:Abbreviate(l:path, '', l:home, '~/', v:true)
 endfunction
 
-function! GetNetrw()
+function! GetFileTitle()
   let l:path = s:Collapse(expand('%'))
   let l:cwd = s:Collapse(getcwd())
   return s:Abbreviate(l:path, ' / ', l:cwd, l:cwd[:-2], v:false)
@@ -507,9 +507,9 @@ endfunction
 
 function! s:Titlestring()
   if &filetype == 'netrw'
-    return "%{GetNetrw()}"
+    return "%{GetFileTitle()}"
   elseif &buftype == ''
-    return "%{Getcwd()} / %f"
+    return "%{GetFileTitle()}"
   elseif &buftype == 'directory'
     return "%{Getcwd()}"
   elseif &buftype == 'help'
