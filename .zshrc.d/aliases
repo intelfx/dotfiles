@@ -185,7 +185,7 @@ function make() {
 
 function vimw() {
 	local -a args
-	local arg 
+	local arg
 	while (( $# )); do
 		case "$1" in
 		--) args+=("$1"); shift; break ;;
