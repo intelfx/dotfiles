@@ -510,12 +510,12 @@ function! s:Titlestring()
     return "%{GetNetrw()}"
   elseif &buftype == ''
     return "%{Getcwd()} / %f"
-  elseif &buftype == 'help'
-    return "%{Getcwd()} %h"
   elseif &buftype == 'directory'
     return "%{Getcwd()}"
+  elseif &buftype == 'help'
+    return "%{Getcwd()} / %f %h"
   else
-    return "%{Getcwd()} [%{&buftype}]"
+    return "%{Getcwd()} / %f [%{&buftype}]"
   endif
 endfunction
 
