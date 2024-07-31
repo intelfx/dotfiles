@@ -74,7 +74,7 @@ endif
 if has('syntax') && has('eval')
   packadd matchit
 endif
- 
+
 " configure vifm.vim #3
 " vifm.vim: remove commands conflicting with netrw shorthands
 " TODO: rebind them under non-conflicting names (export s:StartVifm somehow)
@@ -324,7 +324,7 @@ augroup ftsettings
   au!
   au FileType man                                          setl nolist nonumber keywordprg=:Man iskeyword+=(,)
 
-  " disable colorcolumn (set to non-empty so that our ruler impl catches it) 
+  " disable colorcolumn (set to non-empty so that our ruler impl catches it)
   au FileType man                                          setl colorcolumn=0
   au FileType netrw                                        setl colorcolumn=0
 augroup END
