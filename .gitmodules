@@ -19,28 +19,28 @@
 [submodule ".zsh/plugins/zsh-autosuggestions"]
 	path = .zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule ".zsh/plugins-noauto/pure"]
+[submodule ".zsh/misc/pure"]
 	path = .zsh/misc/pure
 	url = https://github.com/intelfx/pure
-[submodule ".solarized/dircolors"]
+[submodule ".dotfiles/solarized/dircolors"]
 	path = .dotfiles/solarized/dircolors
 	url = https://github.com/intelfx/dircolors-solarized
-[submodule ".solarized/main"]
+[submodule ".dotfiles/solarized/main"]
 	path = .dotfiles/solarized/main
 	url = https://github.com/intelfx/solarized
-[submodule ".solarized/mc"]
+[submodule ".dotfiles/solarized/mc"]
 	path = .dotfiles/solarized/mc
 	url = https://github.com/intelfx/mc-solarized-skin
-[submodule ".zsh/plugins-late/zsh-syntax-highlighting"]
+[submodule ".zsh/plugins/zsh-syntax-highlighting"]
 	path = .zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule ".zsh/plugins-noauto/zsh-async"]
+[submodule ".zsh/misc/zsh-async"]
 	path = .zsh/misc/zsh-async
 	url = https://github.com/mafredri/zsh-async
 [submodule ".vim/bundle/vim-mikrotik"]
 	path = .vim/bundle/vim-mikrotik
 	url = https://github.com/zainin/vim-mikrotik
-[submodule ".solarized/intellij"]
+[submodule ".dotfiles/solarized/intellij"]
 	path = .dotfiles/solarized/intellij
 	url = https://github.com/intelfx/intellij-colors-solarized
 [submodule ".vim/bundle/asl-vim"]
@@ -84,16 +84,16 @@
 [submodule ".vim/bundle/vim-elixir"]
 	path = .vim/bundle/vim-elixir
 	url = https://github.com/elixir-editors/vim-elixir
-[submodule ".config/mpv/plugins/mpv-youtube-quality"]
+[submodule ".config/mpv/mpv-quality-menu"]
 	path = .config/mpv/mpv-quality-menu
 	url = https://github.com/christoph-heinrich/mpv-quality-menu
 [submodule ".vim/bundle/vim-bracketed-paste"]
 	path = .vim/bundle/vim-bracketed-paste
-	url = https://github.com/ConradIrwin/vim-bracketed-paste
+	url = https://github.com/intelfx/vim-bracketed-paste
 [submodule ".vim/bundle/vis"]
 	path = .vim/bundle/vis
-	url = https://github.com/vim-scripts/vis
-[submodule ".zsh/plugins.early/fzf-tab"]
+	url = https://github.com/intelfx/vis
+[submodule ".zsh/plugins/fzf-tab"]
 	path = .zsh/plugins/fzf-tab
 	url = https://github.com/intelfx/fzf-tab
 [submodule ".config/vifm/colors"]
@@ -120,10 +120,9 @@
 [submodule ".config/sublime-text/Packages/Jinja2"]
 	path = .config/sublime-text/Packages/Jinja2
 	url = https://github.com/intelfx/BetterJinja
-	branch = work/variants
 [submodule ".vim/bundle/vim-rooter"]
 	path = .vim/bundle/vim-rooter
-	url = https://github.com/intelfx/vim-rooter
+	url = https://github.com/airblade/vim-rooter
 [submodule ".config/mpv/uosc"]
 	path = .config/mpv/uosc
 	url = https://github.com/tomasklaen/uosc
