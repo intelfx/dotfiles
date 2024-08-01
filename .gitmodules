@@ -60,9 +60,9 @@
 	path = bin
 	url = https://github.com/intelfx/bin
 	ignore = untracked
-[submodule ".vim/bundle/vim-syntax"]
-	path = .vim/bundle/vim-syntax
-	url = https://github.com/intelfx/vim-syntax
+[submodule ".vim/bundle/vim-systemd"]
+	path = .vim/bundle/vim-systemd
+	url = https://github.com/intelfx/vim-systemd
 [submodule ".vim/bundle/vim-capnp"]
 	path = .vim/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp
