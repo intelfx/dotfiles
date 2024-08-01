@@ -154,8 +154,6 @@ inoremap <F3> <C-\><C-O>:set invrnu<CR>
 nnoremap <F4> :nohl<CR>
 inoremap <F4> <C-\><C-O>:nohl<CR>
 
-nnoremap <F10> :b <C-Z>
-
 set wildmenu wildmode=full wildoptions=fuzzy,pum
 set wildchar=<Tab>
 set wildcharm=<C-Z> " something well unused
