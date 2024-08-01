@@ -177,6 +177,12 @@ cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit!
 " (z is for register z)
 vnoremap // "zy/\V<C-R>z<CR>
 
+" change `n` and `N` to search in 'absolute direction' (i.e. `n` always
+" searches forward, `N` always searches backward)
+" Ref: https://github.com/inkarkat/vim-SearchRepeat
+nnoremap <expr> n 'Nn'[v:searchforward]
+nnoremap <expr> N 'nN'[v:searchforward]
+
 " Split line (antonym of J)
 nnoremap <C-J> i<CR><Esc>k$
 
