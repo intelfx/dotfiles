@@ -150,3 +150,6 @@
 [submodule ".config/mpv/mpv-autosave"]
 	path = .config/mpv/mpv-autosave
 	url = https://gist.github.com/972269b9fbd2bbbabf1d364b5cec97f9
+[submodule ".vim/bundle/info.vim"]
+	path = .vim/bundle/info.vim
+	url = https://gitlab.com/HiPhish/info.vim
