@@ -156,3 +156,6 @@
 [submodule ".vim/bundle/lightline.vim"]
 	path = .vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
+[submodule ".vim/bundle/vimcomplete"]
+	path = .vim/bundle/vimcomplete
+	url = https://github.com/girishji/vimcomplete
