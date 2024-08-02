@@ -519,9 +519,9 @@ def! g:TitleCwdfile(sep: string): string
   elseif &buftype == ''
     return '%{g:Getcwdfile(" ' .. sep .. ' ")}'
   elseif &buftype == 'directory'
-    return '%{g:Getcwd()}'
+    return '%{g:Getcwdfile(" ' .. sep .. ' ")}'
   elseif &buftype == 'help'
-    return '%{g:Getcwd() ' .. sep .. ' %f %h'
+    return '%f %h'
   else
     return '%{g:Getcwd()} ' .. sep .. ' %f [%{&buftype}]'
   endif
