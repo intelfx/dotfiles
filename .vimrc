@@ -482,49 +482,53 @@ endfunction
 " FIXME: this is fugly. All of it.
 "
 
-function! s:Abbreviate(arg, sep, prefix, abbr, abbr_no_suffix)
-  if a:arg == a:prefix
-    return a:abbr_no_suffix ? a:abbr : a:arg
-  elseif a:arg[0:len(a:prefix)-1] == a:prefix
-    return a:abbr . a:sep . a:arg[len(a:prefix):]
+def! s:Abbreviate(arg: string,
+                  sep: string,
+                  prefix: string,
+                  abbr: string,
+                  fullmatch_is_prefix: bool): string
+  if arg == prefix
+    return fullmatch_is_prefix ? abbr : arg
+  elseif arg[0 : len(prefix) - 1] == prefix
+    return abbr .. sep .. arg[len(prefix) :]
   else
-    return a:arg
+    return arg
   endif
-endfunction
+enddef
 
-function! s:Collapse(path)
-  let l:path = fnamemodify(a:path, ':p')
-  let l:home = fnamemodify('~', ':p')
-  return s:Abbreviate(l:path, '', l:home, '~/', v:true)
-endfunction
+def! s:Collapse(path: string): string
+  var fullpath = fnamemodify(path, ':p')
+  var fullhome = fnamemodify('~', ':p')
+  return s:Abbreviate(fullpath, '', fullhome, '~/', true)
+enddef
 
-function! GetFileTitle()
-  let l:path = s:Collapse(expand('%'))
-  let l:cwd = s:Collapse(getcwd())
-  return s:Abbreviate(l:path, ' / ', l:cwd, l:cwd[:-2], v:false)
-endfunction
+def! g:Getcwdfile(sep: string): string
+  var path = s:Collapse(expand('%'))
+  var cwd = s:Collapse(getcwd())
+  return Abbreviate(path, sep, cwd, cwd[: -2], false)
+enddef
 
-function! Getcwd()
-  let l:cwd = s:Collapse(getcwd())
-  return l:cwd[:-2]
-endfunction
+def! g:Getcwd(): string
+  var cwd = s:Collapse(getcwd())
+  return cwd[: -2]
+enddef
 
-function! s:Titlestring()
+def! g:TitleCwdfile(sep: string): string
   if &filetype == 'netrw'
-    return "%{GetFileTitle()}"
+    return '%{g:Getcwdfile(" ' .. sep .. ' ")}'
   elseif &buftype == ''
-    return "%{GetFileTitle()}"
+    return '%{g:Getcwdfile(" ' .. sep .. ' ")}'
   elseif &buftype == 'directory'
-    return "%{Getcwd()}"
+    return '%{g:Getcwd()}'
   elseif &buftype == 'help'
-    return "%{Getcwd()} / %f %h"
+    return '%{g:Getcwd() ' .. sep .. ' %f %h'
   else
-    return "%{Getcwd()} / %f [%{&buftype}]"
+    return '%{g:Getcwd()} ' .. sep .. ' %f [%{&buftype}]'
   endif
-endfunction
+enddef
 
 set title
-let &titlestring = '%{%'.expand('<SID>').'Titlestring()%}'
+let &titlestring = '%{%g:TitleCwdfile("/")%}'
 
 
 "
