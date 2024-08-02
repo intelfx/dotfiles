@@ -532,6 +532,72 @@ let &titlestring = '%{%g:TitleCwdfile("/")%}'
 
 
 "
+" Set status line reasonably
+" (this uses lightline and shares much code with the terminal title)
+"
+
+def g:StatusReadonlyModified(): string
+  if &buftype == 'help'
+    return ''
+  elseif &readonly
+    return 'RO'
+  elseif !&modifiable
+    return '-'
+  elseif &modified
+    return '+'
+  else
+    return ''
+  endif
+enddef
+
+def s:Lightline()
+  set noshowmode
+  g:lightline = {
+    'colorscheme': 'solarized',
+    'subseparator': {
+      # 'left': '│', 'right': '│'
+      'left': '|', 'right': '|'
+    },
+    'active': {
+      'left': [
+        [ 'mode', 'paste' ],
+        [ 'cwdfile', 'romodified' ],
+        [ 'gitbranch' ],
+      ],
+      'right': [
+        [ 'lineinfo' ],
+        [ 'fileformat', 'fileencoding', 'filetype' ],
+      ],
+    },
+    'inactive': {
+      'left': [
+        [ 'cwdfile' ],
+      ],
+      'right': [
+        [ 'lineinfo' ],
+      ],
+    },
+    'component': {
+      # TODO: perhaps split between separate components?
+      'cwdfile': '%{% g:TitleCwdfile("/") %}',
+    },
+    'component_visible_condition': {
+    },
+    'component_function': {
+      'gitbranch': 'FugitiveHead',
+      # 'romodified' is defined via a function returning text rather than
+      # a function returning %R or %M because in the latter case we would
+      # also have to define the visibility condition, basically duplicating
+      # the work. thankfully %R and %M are not localized, if we ever want to
+      # use %r and %m
+      'romodified': 'g:StatusReadonlyModified'
+    },
+  }
+enddef
+call s:Lightline()
+
+
+"
 " Personal functions
 "
 function! Pow(a, b)
