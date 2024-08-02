@@ -676,13 +676,40 @@ let g:solarized_termtrans=0
 let g:solarized_degrade=0
 let g:solarized_bold=1
 let g:solarized_underline=1
-let g:solarized_italic=1
+let g:solarized_italic=0  " see below
 let g:solarized_termcolors=16
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 let g:solarized_diffmode="normal"
 " let g:solarized_hitrail=1  " see above for alternative implementation
 " let g:solarized_menu=1
+
+let s:terms_italic=[
+  \"rxvt",
+  \"gnome-terminal",
+  \"xterm",
+  \"alacritty",
+  \"tmux",
+\]
+for term in s:terms_italic
+  if $TERM =~ term || $ORIG_TERM =~ term
+    let g:solarized_italic=1
+  endif
+endfor
+
+let s:terms_noitalic = [
+  \"linux",
+  \"linux-.+",
+\]
+for term in s:terms_noitalic
+  if $TERM =~ term || $ORIG_TERM =~ term
+    let g:solarized_italic=0
+  endif
+endfor
+
+if has("gui_running")
+  let g:solarized_italic=1
+endif
 
 syntax enable
 set background=dark
