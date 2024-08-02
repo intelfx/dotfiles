@@ -59,6 +59,29 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 " TODO: make `y.` (yank absolute path under cursor) do something reasonable
 "       wrt. all the clipboard dances, similar to vifm' `yf`/`yd`
 
+" configure vimcomplete
+def! s:Vimcomplete()
+  g:vimcomplete_tab_enable = 1
+  g:vimcomplete_options = {
+    completor: { shuffleEqualPriority: true, postfixHighlight: true },
+    buffer: { enable: true, priority: 10, urlComplete: true, envComplete: true },
+    abbrev: { enable: true, priority: 10 },
+    # lsp: { enable: true, priority: 10, maxCount: 5 },
+    # omnifunc: { enable: false, priority: 8, filetypes: ['python', 'javascript'] },
+    # vsnip: { enable: true, priority: 11 },
+    vimscript: { enable: true, priority: 11 },
+    # ngram: {
+    #   enable: true,
+    #   priority: 10,
+    #   bigram: false,
+    #   filetypes: ['text', 'help', 'markdown'],
+    #   filetypesComments: ['c', 'cpp', 'python', 'java'],
+    # },
+  }
+  autocmd VimEnter * g:VimCompleteOptionsSet(g:vimcomplete_options)
+enddef
+call s:Vimcomplete()
+
 " load plugins from $HOME/.vim/bundle
 packloadall
 
