@@ -573,6 +573,19 @@ def g:StatusReadonlyModified(): string
   endif
 enddef
 
+def g:StatusGit(): string
+  var s = g:FugitiveStatusline()
+  # strip [Git ... ]
+  if len(s) > 4 && s[: 3] == '[Git' && s[-1 :] == ']'
+    s = s[4 : -2]
+  endif
+  # strip ( ... )
+  if len(s) > 2 && s[: 0] == '(' && s[-1 :] == ')'
+    s = s[1 : -2]
+  endif
+  return s
+enddef
+
 def s:Lightline()
   set noshowmode
   g:lightline = {
@@ -607,7 +620,7 @@ def s:Lightline()
     'component_visible_condition': {
     },
     'component_function': {
-      'gitbranch': 'FugitiveHead',
+      'gitbranch': 'g:StatusGit',
       # 'romodified' is defined via a function returning text rather than
       # a function returning %R or %M because in the latter case we would
       # also have to define the visibility condition, basically duplicating
