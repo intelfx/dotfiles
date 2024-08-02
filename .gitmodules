@@ -153,3 +153,6 @@
 [submodule ".vim/bundle/info.vim"]
 	path = .vim/bundle/info.vim
 	url = https://gitlab.com/HiPhish/info.vim
+[submodule ".vim/bundle/lightline.vim"]
+	path = .vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
