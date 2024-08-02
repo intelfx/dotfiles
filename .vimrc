@@ -560,7 +560,7 @@ let &titlestring = '%{%g:TitleCwdfile("/")%}'
 "
 
 def g:StatusReadonlyModified(): string
-  if &buftype == 'help'
+  if &buftype != ''
     return ''
   elseif &readonly
     return 'RO'
