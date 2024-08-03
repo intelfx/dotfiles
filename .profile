@@ -93,6 +93,13 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
 # Seems like a sane default
 export CCACHE_BASEDIR="$HOME"
 
+# use a better htoprc if the current machine has more than 8 CPUs
+if command -v nproc &>/dev/null \
+&& ncpu="$(nproc --all 2>/dev/null)" \
+&& (( ncpu > 8 )); then
+	export HTOPRC="$(systemd-path user-configuration)/htop/htoprc.big"
+fi
+
 # "It sets the number of cached data chunks; additional memory usage can be up to ~8 MiB times this number. The default is the number of CPU cores."
 # Allow `borg mount` to use up to 1 GiB of RAM for aggressive caching
 export BORG_MOUNT_DATA_CACHE_ENTRIES=$(( 1024*1024*1024 / (8*1024*1024) ))
