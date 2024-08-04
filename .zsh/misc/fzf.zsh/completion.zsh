@@ -326,7 +326,7 @@ fzf-completion() {
 
   # Explicitly allow for empty trigger.
   trigger=${FZF_COMPLETION_TRIGGER-'**'}
-  [[ ! $trigger && ${LBUFFER[-1]} == ' ' ]] && tokens+=("")
+  [[ ! $trigger && ${LBUFFER[-1]} == [[:blank:]] ]] && tokens+=("")
 
   # When the trigger starts with ';', it becomes a separate token
   if [[ ${LBUFFER} == *"${tokens[-2]-}${tokens[-1]}" ]]; then
