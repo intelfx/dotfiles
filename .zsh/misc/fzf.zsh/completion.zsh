@@ -93,6 +93,16 @@ if [[ -o interactive ]]; then
 #       -name .git -prune -o -name .hg -prune -o -name .svn -prune -o -type d \
 #       -a -not -path "$1" -print 2> /dev/null | sed 's@^\./@@'
 #   }
+#
+# Additionally, if/when $fzf_force_completion is set to a non-zero value,
+# fzf-completion will attempt to complete the first word, in which case a
+# dedicated function will be invoked to generate the list of matches:
+#
+#   _fzf_compgen_exec() {
+#     command find -L "$1" \
+#       -name .git -prune -o -name .hg -prune -o -name .svn -prune -o \( -type d -o -type f -o -type l \) \
+#       -a -not -path "$1" -a -executable -print 2> /dev/null | sed 's@^\./@@'
+#   }
 
 ###########################################################
 
@@ -187,6 +197,11 @@ __fzf_generic_path_completion() {
     dir=$(dirname "$dir")
     dir=${dir%/}/
   done
+}
+
+_fzf_exec_completion() {
+  __fzf_generic_path_completion "$1" "$2" _fzf_compgen_exec \
+    "" "" " "
 }
 
 _fzf_path_completion() {
@@ -317,17 +332,25 @@ fzf-completion() {
   # http://zsh.sourceforge.net/FAQ/zshfaq03.html
   # http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags
   tokens=(${(z)LBUFFER})
-  if (( ${#tokens} < 1 )); then
+
+  # Special case for the empty command line -- defer to built-in completion
+  # (unless fzf-completion is forced)
+  if (( ${#tokens} < 1 && ! fzf_force_completion )); then
     zle ${fzf_default_completion:-expand-or-complete}
     return
   fi
 
   # Explicitly allow for empty trigger.
   trigger=${FZF_COMPLETION_TRIGGER-'**'}
-  [[ ! $trigger && ${LBUFFER[-1]} == [[:blank:]] ]] && tokens+=("")
+
+  # If we are asked to complete a new word, insert an empty token
+  if [[ ! $trigger && ( ! $LBUFFER || ${LBUFFER[-1]} == [[:blank:]] ) ]]; then
+    tokens+=("")
 
   # When the trigger starts with ';', it becomes a separate token
-  if [[ ${LBUFFER} == *"${tokens[-2]-}${tokens[-1]}" ]]; then
+  # Join two last tokens if there seems to be no whitespace between them
+  # (unless we did just insert an empty token)
+  elif [[ ${LBUFFER} == *"${tokens[-2]-}${tokens[-1]}" ]]; then
     tokens[-2]="${tokens[-2]-}${tokens[-1]}"
     tokens=(${tokens[0,-2]})
   fi
@@ -336,7 +359,7 @@ fzf-completion() {
   tail=${LBUFFER: -${#trigger}:${#trigger}}
 
   # Trigger sequence given
-  if (( ${#tokens} > 1 )) && [[ $tail == "$trigger" ]]; then
+  if (( ${#tokens} > 1 || fzf_force_completion )) && [[ $tail == "$trigger" ]]; then
     d_cmds=(${=FZF_COMPLETION_DIR_COMMANDS-cd pushd rmdir})
 
     [[ $trigger ]] && prefix=${tokens[-1]:0:-${#trigger}} || prefix=${tokens[-1]}
@@ -349,7 +372,9 @@ fzf-completion() {
 
     cmd=$(__fzf_extract_command "$lbuf")
 
-    if command -v "_fzf_complete_${cmd}" &>/dev/null; then
+    if [[ ! $cmd ]]; then
+      _fzf_exec_completion "$prefix" "$lbuf"
+    elif command -v "_fzf_complete_${cmd}" &>/dev/null; then
       prefix="$prefix" "_fzf_complete_${cmd}" ${(q)lbuf}
       zle reset-prompt
     elif (( ${d_cmds[(i)$cmd]} <= ${#d_cmds} )); then
