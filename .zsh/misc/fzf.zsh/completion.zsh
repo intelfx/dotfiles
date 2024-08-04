@@ -335,7 +335,7 @@ fzf-completion() {
   fi
 
   lbuf=$LBUFFER
-  tail=${LBUFFER:$(( ${#LBUFFER} - ${#trigger} ))}
+  tail=${LBUFFER: -${#trigger}:${#trigger}}
 
   # Trigger sequence given
   if (( ${#tokens} > 1 )) && [[ $tail == "$trigger" ]]; then
