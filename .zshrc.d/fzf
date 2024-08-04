@@ -39,7 +39,7 @@ zstyle ':completion:*:git-*:*' sort false
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
 
-zstyle ':fzf-tab:*' switch-group 'alt-1' 'alt-2'
+zstyle ':fzf-tab:*' switch-group 'alt-b' 'alt-n'
 zstyle ':fzf-tab:*' query-string input
 if [[ $TMUX ]]; then
 	zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
