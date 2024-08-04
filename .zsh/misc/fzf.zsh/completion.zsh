@@ -107,9 +107,9 @@ __fzf_defaults() {
 __fzf_comprun() {
   if [[ "$(type _fzf_comprun 2>&1)" =~ function ]]; then
     _fzf_comprun "$@"
-  elif [ -n "${TMUX_PANE-}" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "${FZF_TMUX_OPTS-}" ]; }; then
+  elif [[ ${TMUX_PANE-} ]] && { [[ ${FZF_TMUX:-0} != 0 ]] || [[ ${FZF_TMUX_OPTS-} ]]; }; then
     shift
-    if [ -n "${FZF_TMUX_OPTS-}" ]; then
+    if [[ ${FZF_TMUX_OPTS-} ]]; then
       fzf-tmux ${(Q)${(Z+n+)FZF_TMUX_OPTS}} -- "$@"
     else
       fzf-tmux -d ${FZF_TMUX_HEIGHT:-40%} -- "$@"
@@ -126,7 +126,7 @@ __fzf_extract_command() {
   tokens=(${(z)1})
   for token in $tokens; do
     token=${(Q)token}
-    if [[ "$token" =~ [[:alnum:]] && ! "$token" =~ "=" ]]; then
+    if [[ $token =~ [[:alnum:]] && ! $token =~ "=" ]]; then
       echo "$token"
       return
     fi
@@ -145,17 +145,17 @@ __fzf_generic_path_completion() {
   tail=$6
 
   setopt localoptions nonomatch
-  if [[ $base = *'$('* ]] || [[ $base = *'<('* ]] || [[ $base = *'>('* ]] || [[ $base = *':='* ]] || [[ $base = *'`'* ]]; then
+  if [[ $base == *'$('* ]] || [[ $base == *'<('* ]] || [[ $base == *'>('* ]] || [[ $base == *':='* ]] || [[ $base == *'`'* ]]; then
     return
   fi
   eval "base=$base" 2> /dev/null || return
-  [[ $base = *"/"* ]] && dir="$base"
-  while [ 1 ]; do
-    if [[ -z "$dir" || -d ${dir} ]]; then
+  [[ $base == *"/"* ]] && dir="$base"
+  while :; do
+    if [[ ! $dir || -d $dir ]]; then
       leftover=${base/#"$dir"}
       leftover=${leftover/#\/}
-      [ -z "$dir" ] && dir='.'
-      [ "$dir" != "/" ] && dir="${dir/%\//}"
+      [[ ! $dir ]] && dir='.'
+      [[ $dir != "/" ]] && dir="${dir/%\//}"
       matches=$(
         export FZF_DEFAULT_OPTS
         FZF_DEFAULT_OPTS=$(__fzf_defaults "--reverse --scheme=path" "${FZF_COMPLETION_OPTS-}")
@@ -177,7 +177,7 @@ __fzf_generic_path_completion() {
         done
       )
       matches=${matches% }
-      if [ -n "$matches" ]; then
+      if [[ $matches ]]; then
         LBUFFER="$lbuf$matches$tail"
       fi
       zle reset-prompt
@@ -211,12 +211,12 @@ _fzf_complete() {
   args=("$@")
   sep=
   for i in {0..${#args[@]}}; do
-    if [[ "${args[$i]-}" = -- ]]; then
+    if [[ ${args[$i]-} = -- ]]; then
       sep=$i
       break
     fi
   done
-  if [[ -n "$sep" ]]; then
+  if [[ $sep ]]; then
     str_arg=
     rest=("${args[@]:$((sep + 1)):${#args[@]}}")
     args=("${args[@]:0:$sep}")
@@ -239,7 +239,7 @@ _fzf_complete() {
     FZF_DEFAULT_OPTS=$(__fzf_defaults "--reverse" "${FZF_COMPLETION_OPTS-} $str_arg") \
     FZF_DEFAULT_OPTS_FILE='' \
       __fzf_comprun "$cmd" "${args[@]}" -q "${(Q)prefix}" < "$fifo" | $post | tr '\n' ' ')
-  if [ -n "$matches" ]; then
+  if [[ $matches ]]; then
     LBUFFER="$lbuf$matches"
   fi
   command rm -f "$fifo"
@@ -315,7 +315,7 @@ fzf-completion() {
   # http://zsh.sourceforge.net/FAQ/zshfaq03.html
   # http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags
   tokens=(${(z)LBUFFER})
-  if [ ${#tokens} -lt 1 ]; then
+  if (( ${#tokens} < 1 )); then
     zle ${fzf_default_completion:-expand-or-complete}
     return
   fi
@@ -324,10 +324,10 @@ fzf-completion() {
 
   # Explicitly allow for empty trigger.
   trigger=${FZF_COMPLETION_TRIGGER-'**'}
-  [ -z "$trigger" -a ${LBUFFER[-1]} = ' ' ] && tokens+=("")
+  [[ ! $trigger && ${LBUFFER[-1]} == ' ' ]] && tokens+=("")
 
   # When the trigger starts with ';', it becomes a separate token
-  if [[ ${LBUFFER} = *"${tokens[-2]-}${tokens[-1]}" ]]; then
+  if [[ ${LBUFFER} == *"${tokens[-2]-}${tokens[-1]}" ]]; then
     tokens[-2]="${tokens[-2]-}${tokens[-1]}"
     tokens=(${tokens[0,-2]})
   fi
@@ -336,19 +336,19 @@ fzf-completion() {
   tail=${LBUFFER:$(( ${#LBUFFER} - ${#trigger} ))}
 
   # Trigger sequence given
-  if [ ${#tokens} -gt 1 -a "$tail" = "$trigger" ]; then
+  if (( ${#tokens} > 1 )) && [[ $tail == "$trigger" ]]; then
     d_cmds=(${=FZF_COMPLETION_DIR_COMMANDS-cd pushd rmdir})
 
-    [ -z "$trigger"      ] && prefix=${tokens[-1]} || prefix=${tokens[-1]:0:-${#trigger}}
-    if [[ $prefix = *'$('* ]] || [[ $prefix = *'<('* ]] || [[ $prefix = *'>('* ]] || [[ $prefix = *':='* ]] || [[ $prefix = *'`'* ]]; then
+    [[ $trigger ]] && prefix=${tokens[-1]:0:-${#trigger}} || prefix=${tokens[-1]}
+    if [[ $prefix == *'$('* ]] || [[ $prefix == *'<('* ]] || [[ $prefix == *'>('* ]] || [[ $prefix == *':='* ]] || [[ $prefix == *'`'* ]]; then
       return
     fi
-    [ -n "${tokens[-1]}" ] && lbuf=${lbuf:0:-${#tokens[-1]}}
+    [[ ${tokens[-1]} ]] && lbuf=${lbuf:0:-${#tokens[-1]}}
 
     if eval "type _fzf_complete_${cmd} > /dev/null"; then
       prefix="$prefix" eval _fzf_complete_${cmd} ${(q)lbuf}
       zle reset-prompt
-    elif [ ${d_cmds[(i)$cmd]} -le ${#d_cmds} ]; then
+    elif (( ${d_cmds[(i)$cmd]} <= ${#d_cmds} )); then
       _fzf_dir_completion "$prefix" "$lbuf"
     else
       _fzf_path_completion "$prefix" "$lbuf"
@@ -359,7 +359,7 @@ fzf-completion() {
   fi
 }
 
-[ -z "$fzf_default_completion" ] && {
+[[ "$fzf_default_completion" ]] || {
   binding=$(bindkey '^I')
   [[ $binding =~ 'undefined-key' ]] || fzf_default_completion=$binding[(s: :w)2]
   unset binding
