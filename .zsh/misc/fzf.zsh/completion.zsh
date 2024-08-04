@@ -144,6 +144,7 @@ __fzf_generic_path_completion() {
   suffix=$5
   tail=$6
 
+  local REPORTTIME=-1
   setopt localoptions nonomatch
   if [[ $base == *'$('* ]] || [[ $base == *'<('* ]] || [[ $base == *'>('* ]] || [[ $base == *':='* ]] || [[ $base == *'`'* ]]; then
     return
@@ -205,6 +206,7 @@ _fzf_feed_fifo() {
 }
 
 _fzf_complete() {
+  local REPORTTIME=-1
   setopt localoptions ksh_arrays
   # Split arguments around --
   local args rest str_arg i sep
