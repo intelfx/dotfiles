@@ -27,8 +27,8 @@ if ! [[ -d /usr/share/fzf ]]; then
 	return
 fi
 
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source $HOME/.zsh/misc/fzf.zsh/completion.zsh
+source $HOME/.zsh/misc/fzf.zsh/key-bindings.zsh
 
 #
 # Configure fzf-tab
