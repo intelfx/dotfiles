@@ -341,6 +341,8 @@ fzf-completion() {
 
     [[ $trigger ]] && prefix=${tokens[-1]:0:-${#trigger}} || prefix=${tokens[-1]}
     if [[ $prefix == *'$('* ]] || [[ $prefix == *'<('* ]] || [[ $prefix == *'>('* ]] || [[ $prefix == *':='* ]] || [[ $prefix == *'`'* ]]; then
+      # in cases of command/process substitution, the last token will contain the entirety of the nested command line
+      # TODO: recursively invoke ourselves on the last token (to the right of the above-matched substring)
       return
     fi
     [[ ${tokens[-1]} ]] && lbuf=${lbuf:0:-${#tokens[-1]}}
