@@ -322,8 +322,6 @@ fzf-completion() {
     return
   fi
 
-  cmd=$(__fzf_extract_command "$LBUFFER")
-
   # Explicitly allow for empty trigger.
   trigger=${FZF_COMPLETION_TRIGGER-'**'}
   [[ ! $trigger && ${LBUFFER[-1]} == [[:blank:]] ]] && tokens+=("")
@@ -348,6 +346,8 @@ fzf-completion() {
       return
     fi
     [[ ${tokens[-1]} ]] && lbuf=${lbuf:0:-${#tokens[-1]}}
+
+    cmd=$(__fzf_extract_command "$lbuf")
 
     if command -v "_fzf_complete_${cmd}" &>/dev/null; then
       prefix="$prefix" "_fzf_complete_${cmd}" ${(q)lbuf}
