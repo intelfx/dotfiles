@@ -349,8 +349,8 @@ fzf-completion() {
     fi
     [[ ${tokens[-1]} ]] && lbuf=${lbuf:0:-${#tokens[-1]}}
 
-    if eval "type _fzf_complete_${cmd} > /dev/null"; then
-      prefix="$prefix" eval _fzf_complete_${cmd} ${(q)lbuf}
+    if command -v "_fzf_complete_${cmd}" &>/dev/null; then
+      prefix="$prefix" "_fzf_complete_${cmd}" ${(q)lbuf}
       zle reset-prompt
     elif (( ${d_cmds[(i)$cmd]} <= ${#d_cmds} )); then
       _fzf_dir_completion "$prefix" "$lbuf"
