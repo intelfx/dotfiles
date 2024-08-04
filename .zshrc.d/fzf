@@ -110,6 +110,11 @@ if command -v fd &>/dev/null; then
 		__fzf_compgen_fd "$1"
 	}
 
+	_fzf_compgen_exec() {
+		local fd_opts=(--type x)
+		__fzf_compgen_fd "$1"
+	}
+
 	_fzf_compgen_dir() {
 		local fd_opts=(--type d)
 		__fzf_compgen_fd "$1"
@@ -167,6 +172,7 @@ fzf-completion-notrigger() {
 	# it calls expand-or-complete instead of recursing into fzf-completion.
 	local _ftb_orig_widget='expand-or-complete'
 	local fzf_default_completion='fzf-tab-complete'
+	local fzf_force_completion=1
 	fzf-completion "$@"
 }
 zle -N fzf-completion-notrigger
