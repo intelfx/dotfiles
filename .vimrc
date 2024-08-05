@@ -372,6 +372,9 @@ command! -nargs=* -complete=help Help
 " CUSTOM FEATURES & PLUGIN INTEGRATIONS
 " ----------------------------------------------------------------------------
 
+let s:SID = expand('<SID>')
+
+
 "
 " Completion
 "
@@ -406,7 +409,7 @@ def! s:Vimcomplete()
 enddef
 augroup my-vimcomplete
   au!
-  au VimEnter * call <SID>Vimcomplete()
+  au VimEnter * call s:Vimcomplete()
 augroup END
 
 
@@ -725,24 +728,24 @@ def! s:Collapse(path: string): string
   return s:Abbreviate(fullpath, '', fullhome, '~/', true)
 enddef
 
-def! g:Getcwdfile(sep: string): string
+def! s:Getcwdfile(sep: string): string
   var path = s:Collapse(expand('%'))
   var cwd = s:Collapse(getcwd())
   return Abbreviate(path, sep, cwd, cwd[: -2], false)
 enddef
 
-def! g:Getcwd(): string
+def! Getcwd(): string
   var cwd = s:Collapse(getcwd())
   return cwd[: -2]
 enddef
 
-def! g:TitleCwdfile(sep: string): string
+def! s:TitleCwdfile(sep: string): string
   if &filetype == 'netrw'
-    return '%{g:Getcwdfile(" ' .. sep .. ' ")}'
+    return '%{' .. s:SID .. 'Getcwdfile(" ' .. sep .. ' ")}'
   elseif &buftype == ''
-    return '%{g:Getcwdfile(" ' .. sep .. ' ")}'
+    return '%{' .. s:SID .. 'Getcwdfile(" ' .. sep .. ' ")}'
   elseif &buftype == 'directory'
-    return '%{g:Getcwdfile(" ' .. sep .. ' ")}'
+    return '%{' .. s:SID .. 'Getcwdfile(" ' .. sep .. ' ")}'
   elseif &buftype == 'help'
     return '%t %h'
   else
@@ -751,7 +754,7 @@ def! g:TitleCwdfile(sep: string): string
 enddef
 
 setg title
-let &titlestring = '%{%g:TitleCwdfile("/")%}'
+let &titlestring = '%{% '.s:SID.'TitleCwdfile("/") %}'
 
 
 "
@@ -759,7 +762,7 @@ let &titlestring = '%{%g:TitleCwdfile("/")%}'
 " (this uses lightline and shares much code with the terminal title)
 "
 
-def g:StatusReadonly(): string
+def s:StatusReadonly(): string
   if &buftype != '' || &filetype == 'netrw' || !&modifiable
     return ''
   elseif &readonly
@@ -769,7 +772,7 @@ def g:StatusReadonly(): string
   endif
 enddef
 
-def g:StatusModified(): string
+def s:StatusModified(): string
   if &buftype != '' || &filetype == 'netrw'
     return ''
   elseif !&modifiable
@@ -781,7 +784,7 @@ def g:StatusModified(): string
   endif
 enddef
 
-def g:StatusGit(): string
+def s:StatusGit(): string
   var s = g:FugitiveStatusline()
   # strip [Git ... ]
   if len(s) > 4 && s[: 3] == '[Git' && s[-1 :] == ']'
@@ -823,20 +826,20 @@ def s:Lightline()
     },
     'component': {
       # TODO: perhaps split between separate components?
-      'cwdfile': '%{% g:TitleCwdfile("/") %}',
+      'cwdfile': '%{% ' .. s:SID .. 'TitleCwdfile("/") %}',
     },
     # 'component_visible_condition': {
     # },
     'component_function': {
-      'gitbranch': 'g:StatusGit',
+      'gitbranch': s:SID .. 'StatusGit',
       # 'readonly' and 'modified' are defined via functions returning text
       # rather than functions returning %R or %M because in the latter case
       # we would also have to define the visibility condition, basically
       # duplicating the work.
       # thankfully %R / %M are not localized; if we ever want to use %r / %m
       # we would have to define both actual functions and visibility helpers
-      'readonly': 'g:StatusReadonly',
-      'modified': 'g:StatusModified',
+      'readonly': s:SID .. 'StatusReadonly',
+      'modified': s:SID .. 'StatusModified',
     },
   }
 enddef
