@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/vim-grep-operator"]
 	path = .vim/bundle/vim-grep-operator
 	url = https://github.com/intelfx/vim-grep-operator
-[submodule ".vim/bundle/vim-smarttabs"]
-	path = .vim/bundle/vim-smarttabs
-	url = https://github.com/intelfx/vim-smarttabs
 [submodule ".vim/bundle/vim-snipmate"]
 	path = .vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate
