@@ -872,32 +872,43 @@ let g:solarized_diffmode="normal"
 let g:solarized_hitrail=0  " see above for alternative implementation
 " let g:solarized_menu=1
 
-let s:terms_italic=[
-  \"rxvt",
-  \"gnome-terminal",
-  \"xterm",
-  \"alacritty",
-  \"tmux",
-\]
-for term in s:terms_italic
-  if $TERM =~ term || $ORIG_TERM =~ term
-    let g:solarized_italic=1
+" try to determine if our output device supports italics
+def! s:SolarizedSetItalic()
+  if has("gui_running")
+    g:solarized_italic = 1
+    return
   endif
-endfor
 
-let s:terms_noitalic = [
-  \"linux",
-  \"linux-.+",
-\]
-for term in s:terms_noitalic
-  if $TERM =~ term || $ORIG_TERM =~ term
-    let g:solarized_italic=0
+  if $SOLARIZED_ITALIC != ''
+    g:solarized_italic = !!$SOLARIZED_ITALIC
+    return
   endif
-endfor
 
-if has("gui_running")
-  let g:solarized_italic=1
-endif
+  var italic_term_blacklist = [
+    "linux",
+  ]
+  for term in italic_term_blacklist
+    if $TERM =~ term || $ORIG_TERM =~ term
+      g:solarized_italic = 0
+      return
+    endif
+  endfor
+
+  var italic_term_whitelist = [
+    "rxvt",
+    "gnome-terminal",
+    "xterm",
+    "alacritty",
+    "tmux",
+  ]
+  for term in italic_term_whitelist
+    if $TERM =~ term || $ORIG_TERM =~ term
+      g:solarized_italic = 1
+      return
+    endif
+  endfor
+enddef
+call s:SolarizedSetItalic()
 
 syntax enable
 setg background=dark
