@@ -165,9 +165,9 @@ inoremap <F3> <C-\><C-O>:set invrnu<CR>
 nnoremap <F4> :nohl<CR>
 inoremap <F4> <C-\><C-O>:nohl<CR>
 
-set wildmenu wildmode=full wildoptions=fuzzy,pum
-set wildchar=<Tab>
-set wildcharm=<C-Z> " something well unused
+setg wildmenu wildmode=full wildoptions=fuzzy,pum
+setg wildchar=<Tab>
+setg wildcharm=<C-Z> " something well unused
 
 " grep operator
 let g:grep_operator_set_search_register = 1
@@ -212,8 +212,8 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "
 " Splits
 "
-set splitright
-set splitbelow
+setg splitright
+setg splitbelow
 
 " Split current buffer: C-W S (normal), C-W V (vertical)
 " Split new buffer:     C-W N (normal), C-W M (vertical) <-- this is the new map
@@ -224,7 +224,7 @@ nnoremap <C-w>m :vnew<CR>
 " Miscellanea
 "
 
-set mouse+=a
+setg mouse+=a
 if &term =~ '^tmux'
   " xterm2      Works like "xterm", but with the xterm reporting the
   "             mouse position while the mouse is dragged.
@@ -237,23 +237,23 @@ if &term =~ '^tmux'
   "
   " Thus, use "sgr" for drag support and no column count limitation under tmux
   " and other modern terminals.
-  set ttymouse=sgr
+  setg ttymouse=sgr
 endif
 
-set hlsearch
-set number
-"set nofsync
-set swapsync=
-set hidden
-set undolevels=1000000
+setg hlsearch
+set number  " window-local for some reason
+" setg nofsync
+setg swapsync=
+setg hidden
+setg undolevels=1000000
 
 silent !mkdir -p ~/.cache/vim/{swap,backup,undo}
-set dir=~/.cache/vim/swap//,.
-set backupdir=~/.cache/vim/backup//,.
-set backup
-set undodir=~/.cache/vim/undo//,.
-set undofile
-set viminfofile=~/.cache/vim/info
+setg dir=~/.cache/vim/swap//,.
+setg backupdir=~/.cache/vim/backup//,.
+setg backup
+setg undodir=~/.cache/vim/undo//,.
+set undofile  " buffer-local for some reason
+setg viminfofile=~/.cache/vim/info
 
 if !empty($VIM_LARGE_FILE)
   set nofsync
@@ -263,8 +263,8 @@ if !empty($VIM_LARGE_FILE)
   set noundofile
 endif
 
-set grepprg=rg\ --vimgrep\ --word-regexp\ $*
-set grepformat=%f:%l:%c:%m
+setg grepprg=rg\ --vimgrep\ --word-regexp\ $*
+setg grepformat=%f:%l:%c:%m
 
 "
 " Completion
@@ -528,8 +528,8 @@ let g:python_recommended_style = 0 " fuck you, I know better
 filetype plugin indent on
 
 " TODO: autodetermine per-project (rooter + .editorconfig)
-setlocal noet sts=0 sw=0 ts=8
-setlocal cinoptions=(0,u0,U0
+setg noet sts=0 sw=0 ts=8
+setg cinoptions=(0,u0,U0
 
 
 "
@@ -686,7 +686,7 @@ def! g:TitleCwdfile(sep: string): string
   endif
 enddef
 
-set title
+setg title
 let &titlestring = '%{%g:TitleCwdfile("/")%}'
 
 
@@ -861,5 +861,5 @@ if has("gui_running")
 endif
 
 syntax enable
-set background=dark
+setg background=dark
 colorscheme solarized
