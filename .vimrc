@@ -154,12 +154,15 @@ xnoremap q: <NOP>
 " this also should be obsoleted by `:E`, but I still need to learn it.
 cabbrev %% %:h
 
-" <leader>d -- delete into black hole
+" <leader>{d,c,s,x} -- delete into black hole
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
-" <leader><leader> -- anything into black hole (badum-tss)
-nnoremap <leader><leader> "_
-vnoremap <leader><leader> "_
+nnoremap <leader>c "_c
+vnoremap <leader>c "_c
+nnoremap <leader>s "_s
+vnoremap <leader>s "_s
+nnoremap <leader>x "_x
+vnoremap <leader>x "_x
 
 " so far, most of my Vim usage consists of editing ~/.vimrc
 nnoremap <leader>e :edit ~/.vimrc<CR>
