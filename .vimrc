@@ -806,6 +806,9 @@ endfunction
 command! SynStack
   \ echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 
+command! -nargs=* -complete=help Help
+  \ tab help <args>
+
 
 "
 " Colorscheme
