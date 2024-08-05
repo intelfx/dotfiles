@@ -695,11 +695,19 @@ let &titlestring = '%{%g:TitleCwdfile("/")%}'
 " (this uses lightline and shares much code with the terminal title)
 "
 
-def g:StatusReadonlyModified(): string
-  if &buftype != '' || &filetype == 'netrw'
+def g:StatusReadonly(): string
+  if &buftype != '' || &filetype == 'netrw' || !&modifiable
     return ''
   elseif &readonly
     return 'RO'
+  else
+    return ''
+  endif
+enddef
+
+def g:StatusModified(): string
+  if &buftype != '' || &filetype == 'netrw'
+    return ''
   elseif !&modifiable
     return '-'
   elseif &modified
@@ -733,7 +741,7 @@ def s:Lightline()
     'active': {
       'left': [
         [ 'mode', 'paste' ],
-        [ 'cwdfile', 'romodified' ],
+        [ 'cwdfile', 'readonly', 'modified' ],
         [ 'gitbranch' ],
       ],
       'right': [
@@ -753,16 +761,18 @@ def s:Lightline()
       # TODO: perhaps split between separate components?
       'cwdfile': '%{% g:TitleCwdfile("/") %}',
     },
-    'component_visible_condition': {
-    },
+    # 'component_visible_condition': {
+    # },
     'component_function': {
       'gitbranch': 'g:StatusGit',
-      # 'romodified' is defined via a function returning text rather than
-      # a function returning %R or %M because in the latter case we would
-      # also have to define the visibility condition, basically duplicating
-      # the work. thankfully %R and %M are not localized, if we ever want to
-      # use %r and %m
-      'romodified': 'g:StatusReadonlyModified'
+      # 'readonly' and 'modified' are defined via functions returning text
+      # rather than functions returning %R or %M because in the latter case
+      # we would also have to define the visibility condition, basically
+      # duplicating the work.
+      # thankfully %R / %M are not localized; if we ever want to use %r / %m
+      # we would have to define both actual functions and visibility helpers
+      'readonly': 'g:StatusReadonly',
+      'modified': 'g:StatusModified',
     },
   }
 enddef
