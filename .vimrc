@@ -59,28 +59,16 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 " TODO: make `y.` (yank absolute path under cursor) do something reasonable
 "       wrt. all the clipboard dances, similar to vifm' `yf`/`yd`
 
+" configure vim-stabs
+" do not set <TAB> and <CR> maps that conflict with vimcomplete; see below for
+" unified mappings
+let g:stabs_maps = 'boO='
+
 " configure vimcomplete
-def! s:Vimcomplete()
-  g:vimcomplete_tab_enable = 1
-  g:vimcomplete_options = {
-    completor: { shuffleEqualPriority: true, postfixHighlight: true },
-    buffer: { enable: true, priority: 10, urlComplete: true, envComplete: true },
-    abbrev: { enable: true, priority: 10 },
-    # lsp: { enable: true, priority: 10, maxCount: 5 },
-    # omnifunc: { enable: false, priority: 8, filetypes: ['python', 'javascript'] },
-    # vsnip: { enable: true, priority: 11 },
-    vimscript: { enable: true, priority: 11 },
-    # ngram: {
-    #   enable: true,
-    #   priority: 10,
-    #   bigram: false,
-    #   filetypes: ['text', 'help', 'markdown'],
-    #   filetypesComments: ['c', 'cpp', 'python', 'java'],
-    # },
-  }
-  autocmd VimEnter * g:VimCompleteOptionsSet(g:vimcomplete_options)
-enddef
-call s:Vimcomplete()
+" do not set <TAB> or <CR> maps that conflict with stabs; see below for
+" unified mappings
+let g:vimcomplete_tab_enable = 0
+let g:vimcomplete_cr_enable = 0
 
 " load plugins from $HOME/.vim/bundle
 packloadall
@@ -277,6 +265,154 @@ endif
 
 set grepprg=rg\ --vimgrep\ --word-regexp\ $*
 set grepformat=%f:%l:%c:%m
+
+"
+" Completion
+"
+def! s:Vimcomplete()
+  if !exists('g:VimCompleteOptionsSet')
+    return
+  endif
+  g:vimcomplete_options = {
+    completor: {
+      alwaysOn: true,
+      # noNewlineInCompletion: true,
+      # noNewlineInCompletionEver: true,
+      shuffleEqualPriority: true,
+      postfixHighlight: true,
+    },
+    buffer: { enable: true, priority: 10, urlComplete: true, envComplete: true },
+    abbrev: { enable: true, priority: 10 },
+    # lsp: { enable: true, priority: 10, maxCount: 5 },
+    # omnifunc: { enable: false, priority: 8, filetypes: ['python', 'javascript'] },
+    # vsnip: { enable: true, priority: 11 },
+    vimscript: { enable: true, priority: 11 },
+    # ngram: {
+    #   enable: true,
+    #   priority: 10,
+    #   bigram: false,
+    #   filetypes: ['text', 'help', 'markdown'],
+    #   filetypesComments: ['c', 'cpp', 'python', 'java'],
+    # },
+  }
+  g:VimCompleteOptionsSet(g:vimcomplete_options)
+enddef
+augroup my-vimcomplete
+  au!
+  au VimEnter * call <SID>Vimcomplete()
+augroup END
+
+"
+" Add combined mappings for <TAB> and <CR> to unify vimcomplete and vim-stabs
+"
+
+def! s:NonblankAtCursor(): bool
+  # Inverse of vimcomplete#util#WhitespaceOnly()
+  return strpart(getline('.'), col('.') - 2, 1) =~ '\S'
+enddef
+
+if exists("StabsTab")
+  def! s:EmitTab(): string
+    return StabsTab()
+  enddef
+else
+  def! s:EmitTab(): string
+    return "\<TAB>"
+  enddef
+endif
+
+def! s:HandleTab(): string
+  if pumvisible()
+    return "\<C-n>"
+  elseif exists('*vsnip#jumpable') && vsnip#jumpable(1)
+    return "\<Plug>(vsnip-jump-next)"
+  elseif s:NonblankAtCursor()
+    return "\<C-n>"
+  else
+    return s:EmitTab()
+  endif
+enddef
+
+def! s:HandleSTab(): string
+  if pumvisible()
+    return "\<C-p>"
+  elseif exists('*vsnip#jumpable') && vsnip#jumpable(1)
+    return "\<Plug>(vsnip-jump-prev)"
+  elseif s:NonblankAtCursor()
+    return "\<C-p>"
+  else
+    return "\<S-TAB>"
+  endif
+enddef
+
+if exists("StabsCR")
+  def! s:EmitCR(): string
+    return StabsCR()
+  enddef
+else
+  def! s:EmitCR(): string
+    return "\<CR>"
+  enddef
+endif
+
+def! s:HandleCR(): string
+  # var skip = vimcomplete#completor#options.alwaysOn ? "\<Plug>(vimcomplete-skip)" : ""
+
+  # OK, now we need to reverse-engineer how vimcomplete works AND how
+  # normal Vim ins-completion work...
+  #
+  # (The below describes "default Vim behavior", which is maintained with
+  #  `noNewlineInCompletion = true` and `noNewlineInCompletionEver = false`.)
+  #
+  # There are 4 possibilities:
+  # 1. popup visible, entry was selected AND full entry text was inserted
+  #    using <CTRL-N> / <CTRL-P> (likely via rebinds to <Tab> / <S-Tab>)
+  # 2. popup visible, entry was selected but NOT inserted using cursor keys
+  # 3. popup visible, no entry was selected
+  # 4. popup not visible
+  #
+  # In case (1), <CR> would confirm selection, close popup and insert <CR>.
+  # In case (2), <CR> would confirm selection and close popup.
+  # In case (3), <CR> would dismiss popup.
+  # In case (4), <CR> would insert <CR>.
+  # In short, literal <CR> is inserted in cases (1) and (4).
+  #
+  # However, we are using auto-popup, and we don't want it to interfere with
+  # <CR> (rule: never let automagic get in the way of user intentions). On the
+  # other hand, we do not want to insert literal <CR> when the user has just
+  # chosen a match to insert (same rule). Thus:
+  #
+  # - in case (1), <CR> must confirm selection and close popup (because the
+  #   user meant to confirm the selection, not to insert <CR>);
+  # - in case (3), <CR> must dismiss popup and insert <CR> (because the user
+  #   never meant to engage with the completion system).
+  #
+  if complete_info().selected > -1
+    # this handles cases (1) and (2)
+    return "\<Plug>(vimcomplete-skip)\<C-y>"
+  elseif pumvisible()
+    # this handles case (3)
+    # might also get away with <cr><cr>, but I might have missed something
+    # above and we do not want to ever have a chance of inserting double <CR>
+    return "\<Plug>(vimcomplete-skip)\<C-e>" .. s:EmitCR()
+  else
+    # this handles case (4)
+    return s:EmitCR()
+  endif
+enddef
+
+def! s:HandleESC(): string
+  if pumvisible()
+    return "\<Plug>(vimcomplete-skip)\<C-e>\<ESC>"
+  else
+    return "\<ESC>"
+  endif
+enddef
+
+inoremap <silent> <expr> <TAB> <SID>HandleTab()
+inoremap <silent> <expr> <S-TAB> <SID>HandleSTab()
+inoremap <silent> <expr> <CR> <SID>HandleCR()
+inoremap <silent> <expr> <ESC> <SID>HandleESC()
 
 
 "
