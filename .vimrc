@@ -583,15 +583,19 @@ endif
 "
 def! s:ChmodX()
   var first = getline(1)
+  var scripttype = ''
+
   if first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)bash\>'
-    silent !chmod +x %:p
-    silent set ft=bash
+    scripttype = 'bash'
   elseif first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)zsh\>'
-    silent !chmod +x %:p
-    silent set ft=zsh
+    scripttype = 'zsh'
   elseif first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)sh\>'
-    silent !chmod +x %:p
-    silent set ft=sh
+    scripttype = 'sh'
+  endif
+
+  if scripttype != ''
+    silent system('chmod +x ' .. shellescape(expand('%:p')))
+    &l:filetype = scripttype
   endif
 enddef
 
