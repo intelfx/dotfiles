@@ -850,6 +850,13 @@ def s:Lightline()
 enddef
 call s:Lightline()
 
+" For some reason, lightline sometimes fails on netrw buffers after repeated
+" navigation
+augroup my-lightline
+  au!
+  au FileType netrw call lightline#update()
+augroup END
+
 
 " ----------------------------------------------------------------------------
 " COLOR SCHEME
