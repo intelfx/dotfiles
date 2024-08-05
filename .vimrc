@@ -1,9 +1,10 @@
-"
-" Defaults
-"
-
 " Get the defaults that most users want.
 runtime! defaults.vim
+
+
+" ----------------------------------------------------------------------------
+" PLUGINS :: EARLY CONFIGURATION
+" ----------------------------------------------------------------------------
 
 " configure snipMate
 let g:snipMate = { 'snippet_version' : 1 }
@@ -70,20 +71,30 @@ let g:stabs_maps = 'boO='
 let g:vimcomplete_tab_enable = 0
 let g:vimcomplete_cr_enable = 0
 
+
+" ----------------------------------------------------------------------------
+" PLUGINS
+" ----------------------------------------------------------------------------
+
 " load plugins from $HOME/.vim/bundle
 packloadall
+
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+
+
+" ----------------------------------------------------------------------------
+" PLUGINS :: LATE CONFIGURATION
+" ----------------------------------------------------------------------------
 
 " configure vifm.vim #2
 " if we asked to replace netrw _and_ vifm.vim actually loaded, disable netrw
 if exists('loaded_vifm') && g:vifm_replace_netrw
   let g:loaded_netrw = 1
   let g:loaded_netrwPlugin = 1
-endif
-
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-if has('syntax') && has('eval')
-  packadd matchit
 endif
 
 " configure vifm.vim #3
@@ -102,12 +113,10 @@ endif
 silent! delcommand Texecloc
 silent! delcommand Texecqfl
 
-" man: open in new tab
-let g:ft_man_open_mode = 'tab'
 
-" default text width for solid-color 'ruler' (see below)
-let g:rulerwidth = 80
-
+" ----------------------------------------------------------------------------
+" USER CONFIGURATION
+" ----------------------------------------------------------------------------
 
 "
 " Keybindings
@@ -165,9 +174,7 @@ inoremap <F3> <C-\><C-O>:set invrnu<CR>
 nnoremap <F4> :nohl<CR>
 inoremap <F4> <C-\><C-O>:nohl<CR>
 
-setg wildmenu wildmode=full wildoptions=fuzzy,pum
 setg wildchar=<Tab>
-setg wildcharm=<C-Z> " something well unused
 
 " grep operator
 let g:grep_operator_set_search_register = 1
@@ -208,20 +215,83 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-
-"
-" Splits
-"
-setg splitright
-setg splitbelow
-
 " Split current buffer: C-W S (normal), C-W V (vertical)
 " Split new buffer:     C-W N (normal), C-W M (vertical) <-- this is the new map
 nnoremap <C-w>m :vnew<CR>
 
 
 "
-" Miscellanea
+" Options
+"
+
+setg hlsearch
+set number  " window-local for some reason
+setg hidden
+
+setg completeopt=menu,popup,fuzzy
+setg wildmenu wildmode=full wildoptions=fuzzy,pum
+setg wildcharm=<C-Z> " something well unused
+
+setg splitright
+setg splitbelow
+
+if executable('rg')
+  setg grepprg=rg\ --vimgrep\ --word-regexp\ $*
+  setg grepformat=%f:%l:%c:%m
+endif
+
+" man: open in new tab
+let g:ft_man_open_mode = 'tab'
+
+" default text width for solid-color 'ruler' (see below)
+let g:rulerwidth = 80
+
+
+"
+" Indentation
+"
+
+" let g:ctab_filetype_maps = 1
+let g:python_recommended_style = 0 " fuck you, I know better
+
+filetype plugin indent on
+
+setg noet sts=0 sw=0 ts=8
+setg cinoptions=(0,u0,U0
+
+
+"
+" Filetype options
+"
+
+augroup ftdetect
+  au!
+  au BufNewFile,BufRead .neovintageousrc                   setl ft=vim
+
+  " TODO: use a json syntax that's closer to what is actually supported
+  "       (i.e. json+comments+trailing commas) rather than json5
+  au BufNewFile,BufRead
+    \ *.sublime-{color-scheme,commands,completions,keymap,menu,package,settings,snippet,syntax,workspace}
+    \                                                      setl ft=json5
+
+  au BufNewFile,BufRead *.tpl                              setl ft=gotexttmpl
+  au BufNewFile,BufRead *.gotmpl                           setl ft=gotexttmpl
+  au BufNewFile,BufRead /share/polkit-1/rules.d/*.rules    setl ft=javascript
+  au BufNewFile,BufRead /etc/polkit-1/rules.d/*.rules      setl ft=javascript
+augroup END
+
+augroup ftsettings
+  au!
+  au FileType man                                          setl nolist nonumber keywordprg=:Man iskeyword+=(,)
+
+  " disable colorcolumn (set to non-empty so that our ruler impl catches it)
+  au FileType man                                          setl colorcolumn=0
+  au FileType netrw                                        setl colorcolumn=0
+augroup END
+
+
+"
+" System settings
 "
 
 setg mouse+=a
@@ -240,15 +310,13 @@ if &term =~ '^tmux'
   setg ttymouse=sgr
 endif
 
-setg hlsearch
-set number  " window-local for some reason
 " setg nofsync
 setg swapsync=
-setg hidden
 setg undolevels=1000000
 
 silent !mkdir -p ~/.cache/vim/{swap,backup,undo}
 setg dir=~/.cache/vim/swap//,.
+set swapfile  " buffer-local for some reason
 setg backupdir=~/.cache/vim/backup//,.
 setg backup
 setg undodir=~/.cache/vim/undo//,.
@@ -256,19 +324,55 @@ set undofile  " buffer-local for some reason
 setg viminfofile=~/.cache/vim/info
 
 if !empty($VIM_LARGE_FILE)
-  set nofsync
-  set undolevels=10
+  setg nofsync
+	setg swapsync=
+  setg undolevels=10
   set noswapfile
-  set nobackup
+  setg nobackup
   set noundofile
 endif
 
-setg grepprg=rg\ --vimgrep\ --word-regexp\ $*
-setg grepformat=%f:%l:%c:%m
+
+" ----------------------------------------------------------------------------
+" PERSONAL FUNCTIONS
+" ----------------------------------------------------------------------------
+
+function! Pow(a, b)
+  return float2nr(pow(a:a, a:b))
+endfunction
+
+function! Bytes(arg)
+  let r = system('bscalc -b ' .. shellescape(a:arg))
+  let r = substitute(r, '[^0-9]', '', 'g')
+  return str2nr(r)
+endfunction
+
+function! Kib(arg)
+  let r = system('bscalc --KiB ' .. shellescape(a:arg))
+  let r = substitute(r, '[^0-9]', '', 'g')
+  return str2nr(r)
+endfunction
+
+" floorm(arg, mul) -- round down a:arg to a multiple of a:mul
+function! s:floorm(arg, mul)
+  return a:arg - (a:arg % a:mul)
+endfunction
+
+command! SynStack
+  \ echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+
+command! -nargs=* -complete=help Help
+  \ tab help <args>
+
+
+" ----------------------------------------------------------------------------
+" CUSTOM FEATURES & PLUGIN INTEGRATIONS
+" ----------------------------------------------------------------------------
 
 "
 " Completion
 "
+
 def! s:Vimcomplete()
   if !exists('g:VimCompleteOptionsSet')
     return
@@ -301,6 +405,7 @@ augroup my-vimcomplete
   au!
   au VimEnter * call <SID>Vimcomplete()
 augroup END
+
 
 "
 " Add combined mappings for <TAB> and <CR> to unify vimcomplete and vim-stabs
@@ -464,36 +569,6 @@ endif
 
 
 "
-" Filetypes
-"
-
-augroup ftdetect
-  au!
-  au BufNewFile,BufRead .neovintageousrc                   setl ft=vim
-
-  " TODO: use a json syntax that's closer to what is actually supported
-  "       (i.e. json+comments+trailing commas) rather than json5
-  au BufNewFile,BufRead
-    \ *.sublime-{color-scheme,commands,completions,keymap,menu,package,settings,snippet,syntax,workspace}
-    \                                                      setl ft=json5
-
-  au BufNewFile,BufRead *.tpl                              setl ft=gotexttmpl
-  au BufNewFile,BufRead *.gotmpl                           setl ft=gotexttmpl
-  au BufNewFile,BufRead /share/polkit-1/rules.d/*.rules    setl ft=javascript
-  au BufNewFile,BufRead /etc/polkit-1/rules.d/*.rules      setl ft=javascript
-augroup END
-
-augroup ftsettings
-  au!
-  au FileType man                                          setl nolist nonumber keywordprg=:Man iskeyword+=(,)
-
-  " disable colorcolumn (set to non-empty so that our ruler impl catches it)
-  au FileType man                                          setl colorcolumn=0
-  au FileType netrw                                        setl colorcolumn=0
-augroup END
-
-
-"
 " automatically give executable permissions if file begins with #! and contains '/bin/' in the path
 " see http://www.debian-administration.org/articles/571
 " modified 23.12.2008 Benedikt Stegmaier
@@ -516,20 +591,6 @@ augroup my-chmod-x
   autocmd!
   autocmd BufWritePost * call s:ChmodX()
 augroup END
-
-
-"
-" Indentation (smart tab plugin installed)
-"
-
-let g:ctab_filetype_maps = 1
-let g:python_recommended_style = 0 " fuck you, I know better
-
-filetype plugin indent on
-
-" TODO: autodetermine per-project (rooter + .editorconfig)
-setg noet sts=0 sw=0 ts=8
-setg cinoptions=(0,u0,U0
 
 
 "
@@ -779,42 +840,9 @@ enddef
 call s:Lightline()
 
 
-"
-" Personal functions
-"
-function! Pow(a, b)
-  return float2nr(pow(a:a, a:b))
-endfunction
-
-function! Bytes(arg)
-  let r = system('bscalc -b ' .. shellescape(a:arg))
-  let r = substitute(r, '[^0-9]', '', 'g')
-  return str2nr(r)
-endfunction
-
-function! Kib(arg)
-  let r = system('bscalc --KiB ' .. shellescape(a:arg))
-  let r = substitute(r, '[^0-9]', '', 'g')
-  return str2nr(r)
-endfunction
-
-" floorm(arg, mul) -- round down a:arg to a multiple of a:mul
-function! s:floorm(arg, mul)
-  return a:arg - (a:arg % a:mul)
-endfunction
-
-command! SynStack
-  \ echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-
-command! -nargs=* -complete=help Help
-  \ tab help <args>
-
-
-"
-" Colorscheme
-"
-
-" ------------------------------------------------------------------
+" ----------------------------------------------------------------------------
+" COLOR SCHEME
+" ----------------------------------------------------------------------------
 
 " The following items are available options, but do not need to be
 " included in your .vimrc as they are currently set to their defaults.
@@ -830,7 +858,7 @@ let g:solarized_termcolors=16
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 let g:solarized_diffmode="normal"
-" let g:solarized_hitrail=1  " see above for alternative implementation
+let g:solarized_hitrail=0  " see above for alternative implementation
 " let g:solarized_menu=1
 
 let s:terms_italic=[
