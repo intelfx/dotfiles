@@ -298,7 +298,7 @@ augroup END
 "
 
 setg mouse+=a
-if &term =~ '^tmux'
+if &term =~ '^tmux' || &ttymouse =~ '^xterm'
   " xterm2      Works like "xterm", but with the xterm reporting the
   "             mouse position while the mouse is dragged.
   " <...>
