@@ -340,26 +340,26 @@ endif
 " PERSONAL FUNCTIONS
 " ----------------------------------------------------------------------------
 
-function! Pow(a, b)
-  return float2nr(pow(a:a, a:b))
-endfunction
+def! Pow(a: number, b: number): number
+  return float2nr(pow(a, b))
+enddef
 
-function! Bytes(arg)
-  let r = system('bscalc -b ' .. shellescape(a:arg))
-  let r = substitute(r, '[^0-9]', '', 'g')
+def! Bytes(arg: string): number
+  var r = system('bscalc -b ' .. shellescape(arg))
+  r = substitute(r, '[^0-9]', '', 'g')
   return str2nr(r)
-endfunction
+enddef
 
-function! Kib(arg)
-  let r = system('bscalc --KiB ' .. shellescape(a:arg))
-  let r = substitute(r, '[^0-9]', '', 'g')
+def! Kib(arg: string): number
+  var r = system('bscalc --KiB ' .. shellescape(arg))
+  r = substitute(r, '[^0-9]', '', 'g')
   return str2nr(r)
-endfunction
+enddef
 
-" floorm(arg, mul) -- round down a:arg to a multiple of a:mul
-function! s:floorm(arg, mul)
-  return a:arg - (a:arg % a:mul)
-endfunction
+" floorm(arg, mul) -- round down `arg` to a multiple of `mul`
+def! s:floorm(arg: number, mul: number): number
+  return arg - (arg % mul)
+enddef
 
 command! SynStack
   \ echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
@@ -556,21 +556,23 @@ if has('unnamedplus') && has('clipboard_working')
   " For the day Arch vim build has clipboard integration...
   set clipboard^=unnamedplus,autoselect
 elseif !has('nvim')
-    " In the event that the clipboard isn't working, it's quite likely that
-    " the + and * registers will not be distinct from the unnamed register. In
-    " this case, a:event.regname will always be '' (empty string). However, it
-    " can be the case that `has('clipboard_working')` is false, yet `+` is
-    " still distinct, so we want to check them all.
-    let s:VimOSCYankPostRegisters = ['', '+', '*']
-    function! s:VimOSCYankPostCallback(event)
-        if a:event.operator == 'y' && index(s:VimOSCYankPostRegisters, a:event.regname) != -1
-            call OSCYankRegister(a:event.regname)
-        endif
-    endfunction
-    augroup VimOSCYankPost
-        autocmd!
-        autocmd TextYankPost * call s:VimOSCYankPostCallback(v:event)
-    augroup END
+  " In the event that the clipboard isn't working, it's quite likely that
+  " the + and * registers will not be distinct from the unnamed register. In
+  " this case, a:event.regname will always be '' (empty string). However, it
+  " can be the case that `has('clipboard_working')` is false, yet `+` is
+  " still distinct, so we want to check them all.
+  let s:VimOSCYankPostRegisters = ['', '+', '*']
+
+  def! s:VimOSCYankPostCallback(event: any)
+    if event.operator == 'y' && index(s:VimOSCYankPostRegisters, event.regname) != -1
+      g:OSCYankRegister(event.regname)
+    endif
+  enddef
+
+  augroup VimOSCYankPost
+    autocmd!
+    autocmd TextYankPost * call s:VimOSCYankPostCallback(v:event)
+  augroup END
 endif
 
 
@@ -579,19 +581,19 @@ endif
 " see http://www.debian-administration.org/articles/571
 " modified 23.12.2008 Benedikt Stegmaier
 "
-function s:ChmodX()
-  let l:first = getline(1)
-  if l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)bash\>'
+def! s:ChmodX()
+  var first = getline(1)
+  if first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)bash\>'
     silent !chmod +x %:p
     silent set ft=bash
-  elseif l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)zsh\>'
+  elseif first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)zsh\>'
     silent !chmod +x %:p
     silent set ft=zsh
-  elseif l:first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)sh\>'
+  elseif first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)sh\>'
     silent !chmod +x %:p
     silent set ft=sh
   endif
-endfunction
+enddef
 
 augroup my-chmod-x
   autocmd!
@@ -610,65 +612,64 @@ augroup END
 "   appearance when the colored area ends)
 "
 
-function! s:RulerTrapColorcolumn()
+def! s:RulerTrapColorcolumn()
   if v:option_type == 'local'
-    let w:colorcolumn_set = v:option_new
+    w:colorcolumn_set = v:option_new
   endif
-endfunction
+enddef
 
-function! s:RulerCompute(pos, width)
-  if a:pos <= a:width
-    let a = a:pos
-    let b = s:floorm(a:pos + 255, a:width)
+def! s:RulerCompute(pos: number, width: number): string
+  if pos <= width
+    var a = pos
+    var b = s:floorm(pos + 255, width)
     if a <= b
-      let cols = range(a, b)
+      var cols = range(a, b)
       return join(cols, ',')
     endif
   endif
   return ''
-endfunction
+enddef
 
-function! s:RulerUpdate()
-  " bail if explicitly disabled
+def! s:RulerUpdate()
+  # bail if explicitly disabled
   if exists('w:ruler_disable') || exists('b:ruler_disable')
     return
   endif
-  " bail if we caught a `setl colorcolumn=...` and it was not us
-  " also bail if it is intentionally disabled (HACK)
-  " FIXME: also bail even if we didn't, but it was clearly set and it was not us:
-  "        \ || (&l:colorcolumn != '' && &l:colorcolumn != get(w:, 'colorcolumn_last', v:null))
-  "        however, this needs refinement in face of switching buffers and windows
-  " NOTE: v:null is a sentinel which compares inequal to any string
-  " HACK: '0' is a sentinel that I `setl` to disable colorcolumn (see above)
+  # bail if we caught a `setl colorcolumn=...` and it was not us
+  # also bail if it is intentionally disabled (HACK)
+  # FIXME: also bail even if we didn't, but it was clearly set and it was not us:
+  #        \ || (&l:colorcolumn != '' && &l:colorcolumn != get(w:, 'colorcolumn_last', v:null))
+  #        however, this needs refinement in face of switching buffers and windows
+  # NOTE: v:null is a sentinel which compares inequal to any string
+  # HACK: '0' is a sentinel that I `setl` to disable colorcolumn (see above)
   if (exists('w:colorcolumn_set') && w:colorcolumn_set != get(w:, 'colorcolumn_last', v:null))
-   \ || (&l:colorcolumn == '0')
+        \ || (&l:colorcolumn == '0')
     return
   endif
 
+  var ruler = g:rulerwidth
   if &textwidth > 0
-    let ruler = &textwidth
+    ruler = &textwidth
   elseif &wrapmargin > 0
-    let ruler = &wrapmargin
-  else
-    let ruler = g:rulerwidth
+    ruler = &wrapmargin
   endif
 
-  let info = getwininfo(win_getid())
-  let width = info[0].width - info[0].textoff
-  let colorcolumn = s:RulerCompute(ruler + 1, width)
+  var info = getwininfo(win_getid())
+  var width = info[0].width - info[0].textoff
+  var colorcolumn = s:RulerCompute(ruler + 1, width)
 
-  let &l:colorcolumn = colorcolumn
-  let w:colorcolumn_set = colorcolumn
-  let w:colorcolumn_last = colorcolumn
-endfunction
+  &l:colorcolumn = colorcolumn
+  w:colorcolumn_set = colorcolumn
+  w:colorcolumn_last = colorcolumn
+enddef
 
-function! s:Ruler(windows)
-  if empty(a:windows)
+def! s:Ruler(windows: list<number>)
+  if empty(windows)
     call s:RulerUpdate()
   else
-    call foreach(a:windows, {k, v -> win_execute(v, 'call s:RulerUpdate()')})
+    call foreach(windows, (k, v) => win_execute(v, 'call s:RulerUpdate()'))
   endif
-endfunction
+enddef
 
 augroup my-colorcolumn
   au!
@@ -692,15 +693,15 @@ augroup my-trailingspace
   au InsertLeave,BufWinEnter  *  call s:TrailingSpace('n')
 augroup END
 
-function! s:TrailingSpace(mode)
-  let pattern = (a:mode == 'i') ? '\s\+\%#\@<!$' : '\s\+$'
+def! s:TrailingSpace(mode: string)
+  var pattern = (mode == 'i') ? '\s\+\%#\@<!$' : '\s\+$'
   if exists('w:trailingspace_match')
-    call matchdelete(w:trailingspace_match)
-    call matchadd('solarizedTrailingSpace', pattern, 10, w:trailingspace_match)
+    matchdelete(w:trailingspace_match)
+    matchadd('solarizedTrailingSpace', pattern, 10, w:trailingspace_match)
   else
-    let w:trailingspace_match = matchadd('solarizedTrailingSpace', pattern)
+    w:trailingspace_match = matchadd('solarizedTrailingSpace', pattern)
   endif
-endfunction
+enddef
 
 
 "
