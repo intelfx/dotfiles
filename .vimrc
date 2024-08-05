@@ -430,7 +430,7 @@ function! s:want_args_to_tabs()
   return len(l:shown) == 1 && len(l:hidden) > 0
 endfunction
 
-augroup args-to-tabs
+augroup my-args-to-tabs
     au!
     au VimEnter * ++nested if s:want_args_to_tabs() | tab all | tabfirst | endif
 augroup end
@@ -512,7 +512,7 @@ function s:ChmodX()
   endif
 endfunction
 
-augroup chmod
+augroup my-chmod-x
   autocmd!
   autocmd BufWritePost * call s:ChmodX()
 augroup END
@@ -603,7 +603,7 @@ function! s:Ruler(windows)
   endif
 endfunction
 
-augroup colorcolumn
+augroup my-colorcolumn
   au!
   au VimEnter             *            call s:Ruler([])
   au BufWinEnter          *            call s:Ruler([])
@@ -619,7 +619,7 @@ augroup END
 " Link: https://github.com/ntpeters/vim-better-whitespace/blob/master/plugin/better-whitespace.vim
 "
 
-augroup myTrailingSpace
+augroup my-trailingspace
   au!
   au CursorMovedI,InsertEnter *  call s:TrailingSpace('i')
   au InsertLeave,BufWinEnter  *  call s:TrailingSpace('n')
