@@ -159,3 +159,6 @@
 [submodule ".vim/bundle/fzf.vim"]
 	path = .vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule ".vim/bundle/vim-stabs"]
+	path = .vim/bundle/vim-stabs
+	url = https://github.com/Thyrum/vim-stabs
