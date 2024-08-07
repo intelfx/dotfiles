@@ -2,6 +2,9 @@
 
 {
 	"command": [
-		"/usr/bin/rust-analyzer"
+		"/usr/bin/env",
+		"chrt", "--batch", "0",
+		"nice", "-n19",
+		"rust-analyzer"
 	],
 }
