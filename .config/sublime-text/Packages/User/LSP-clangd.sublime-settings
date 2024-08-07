@@ -1,45 +1,47 @@
 // Settings in here override those in "LSP-clangd/LSP-clangd.sublime-settings"
 
 {
-        // If set to true, code completion will include index symbols that are not defined in the scopes (e.g. namespaces) visible from the code completion point.
-        // Such completions can insert scope qualifiers
-        "clangd.all-scopes-completion": true,
-        // Enable clang-tidy diagnostics
-        "clangd.clang-tidy": true,
-        // Granularity of code completion suggestions
-        // detailed: One completion item for each semantically distinct completion, with full type information
-        // bundled: Similar completion items (e.g. function overloads) are combined. Type information shown where possible
-        "clangd.completion-style": "detailed",
-        // When disabled, completions contain only parentheses for function calls.
-        // When enabled, completions also contain placeholders for method parameters
-        "clangd.function-arg-placeholders": true,
-        // Add #include directives when accepting code completions
-        // iwyu: Include what you use. Insert the owning header for top-level symbols, unless the header is already directly included or the symbol is forward-declared
-        // never: Never insert #include directives as part of code completion
-        "clangd.header-insertion": "iwyu",
-        // Prepend a circular dot or space before the completion label, depending on whether an include line will be inserted or not
-        "clangd.header-insertion-decorators": true,
-        // Limit the number of references returned by clangd. 0 means no limit (default=1000)
-        "clangd.limit-references": 0,
-        // Limit the number of results returned by clangd. 0 means no limit (default=100)
-        "clangd.limit-results": 0,
+	"initializationOptions": {
+		// If set to true, code completion will include index symbols that are not defined in the scopes (e.g. namespaces) visible from the code completion point.
+		// Such completions can insert scope qualifiers
+		"clangd.all-scopes-completion": true,
+		// Enable clang-tidy diagnostics
+		"clangd.clang-tidy": true,
+		// Granularity of code completion suggestions
+		// detailed: One completion item for each semantically distinct completion, with full type information
+		// bundled: Similar completion items (e.g. function overloads) are combined. Type information shown where possible
+		"clangd.completion-style": "detailed",
+		// When disabled, completions contain only parentheses for function calls.
+		// When enabled, completions also contain placeholders for method parameters
+		"clangd.function-arg-placeholders": true,
+		// Add #include directives when accepting code completions
+		// iwyu: Include what you use. Insert the owning header for top-level symbols, unless the header is already directly included or the symbol is forward-declared
+		// never: Never insert #include directives as part of code completion
+		"clangd.header-insertion": "iwyu",
+		// Prepend a circular dot or space before the completion label, depending on whether an include line will be inserted or not
+		"clangd.header-insertion-decorators": true,
+		// Limit the number of references returned by clangd. 0 means no limit (default=1000)
+		"clangd.limit-references": 0,
+		// Limit the number of results returned by clangd. 0 means no limit (default=100)
+		"clangd.limit-results": 0,
 
-        // Index project code in the background and persist index on disk
-        "clangd.background-index": true,
-        // Thread priority for building the background index. The effect of this flag is OS-specific.
-        // One of "background", "low", "normal"
-        "clangd.background-index-priority": "background",
+		// Index project code in the background and persist index on disk
+		"clangd.background-index": true,
+		// Thread priority for building the background index. The effect of this flag is OS-specific.
+		// One of "background", "low", "normal"
+		"clangd.background-index-priority": "background",
 
-        // Number of workers used for indexing and language server
-        "clangd.number-workers": 8,
-        // Set to "true" to release memory periodically via malloc_trim(3)
-        "clangd.malloc-trim": true,
-        // One of "disk", "memory". Storing PCHs in memory increases memory usages, but may improve performance
-        "clangd.pch-storage": "disk",
-        // Read user and project configuration from YAML files.
-        "clangd.enable-config": true, 
-        // Comma separated list of globs for white-listing gcc-compatible drivers that are safe to execute.
-        // Drivers matching any of these globs will be used to extract system includes. e.g. /usr/bin/**/clang-*,/path/to/repo/**/g++-*
-        "clangd.query-driver": 
-        	"/usr/bin/clang,/usr/bin/clang++,/usr/bin/gcc,/usr/bin/g++,/usr/lib/ccache/bin/*",
+		// Number of workers used for indexing and language server
+		"clangd.number-workers": "8",
+		// Set to "true" to release memory periodically via malloc_trim(3)
+		"clangd.malloc-trim": true,
+		// One of "disk", "memory". Storing PCHs in memory increases memory usages, but may improve performance
+		"clangd.pch-storage": "disk",
+		// Read user and project configuration from YAML files.
+		"clangd.enable-config": true, 
+		// Comma separated list of globs for white-listing gcc-compatible drivers that are safe to execute.
+		// Drivers matching any of these globs will be used to extract system includes. e.g. /usr/bin/**/clang-*,/path/to/repo/**/g++-*
+		"clangd.query-driver": 
+			"/usr/bin/clang,/usr/bin/clang++,/usr/bin/gcc,/usr/bin/g++,/usr/lib/ccache/bin/*",
+	}
 }
