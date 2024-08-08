@@ -7,6 +7,7 @@
 vim9script
 
 import autoload 'intelfx/util.vim'
+import autoload 'intelfx/hacks.vim'
 
 def HelpRearrange()
   var hsplit = false
@@ -15,8 +16,8 @@ def HelpRearrange()
   if &columns / (util.CountVsplits() + 1) < 70
     hsplit = true
 
-  # a font will never be wider than 2:1
-  elseif &columns < &lines / 2
+  # check if the editor window is visually landscape or portrait
+  elseif &columns < &lines * hacks.FontHcoef()
     hsplit = true
 
   # try vertical split, see what happens
