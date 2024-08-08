@@ -22,7 +22,12 @@ def HelpRearrange()
   # try vertical split, see what happens
   else
     :exe "wincmd " .. (&splitright ? "L" : "H")
-    hsplit = util.WinWidth() < 78
+    var width = util.WinWidth()
+    if width < 70
+      hsplit = true
+    elseif width < 78
+      :exe "vertical resize 78"
+    endif
   endif
 
   # if we tried a vsplit and failed (or if we didn't try at all), do a hsplit
