@@ -22,6 +22,7 @@ zstyle ':completion:*' prompt '%e corrections made:'
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %l (%p)%s'
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
+zstyle ':completion:*' special-dirs false
 zstyle :compinstall filename '/home/intelfx/.zshrc'
 
 zstyle ':completion:*' use-cache true
