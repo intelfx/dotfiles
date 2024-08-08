@@ -11,8 +11,8 @@ import autoload 'intelfx/util.vim'
 def HelpRearrange()
   var hsplit = false
 
-  # a vertical split will never have more columns than total / 2
-  if &columns / 2 < 78
+  # estimate the width of a vertical split
+  if &columns / (util.CountVsplits() + 1) < 70
     hsplit = true
 
   # a font will never be wider than 2:1
