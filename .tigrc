@@ -11,6 +11,7 @@ bind generic    <Down>  move-down
 bind generic ;so :source ~/.tigrc
 # Binding for "refresh"
 bind generic <Ctrl-R> :refresh
+bind generic <Ctrl-L> :refresh
 
 # Main-view binding for "goto commit"
 bind main <Ctrl-G> :goto "%(prompt Enter commit: )"
