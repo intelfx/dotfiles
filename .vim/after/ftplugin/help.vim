@@ -6,6 +6,8 @@
 
 vim9script
 
+import autoload 'intelfx/util.vim'
+
 def HelpRearrange()
   var hsplit = false
 
@@ -20,7 +22,7 @@ def HelpRearrange()
   # try vertical split, see what happens
   else
     :exe "wincmd " .. (&splitright ? "L" : "H")
-    hsplit = g:WinWidth() < 78
+    hsplit = util.WinWidth() < 78
   endif
 
   # if we tried a vsplit and failed (or if we didn't try at all), do a hsplit
