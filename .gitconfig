@@ -73,6 +73,8 @@
 	rebase-i = rebase --rebase-merges=no-rebase-cousins --update-refs --interactive
 	rebase-ic = rebase --rebase-merges=rebase-cousins --update-refs --interactive
 
+	ls-remotev = "!f() { git ls-remote --refs \"$@\" | sort -k2 -V; }; f"
+
 	rev = rev-parse --short HEAD
 	br = symbolic-ref --short HEAD
 
