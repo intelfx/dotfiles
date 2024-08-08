@@ -85,6 +85,7 @@
 
 	copy-refer = "!f() { git refer \"$@\" | clip --copy; }; f"
 	copy-fixes = "!f() { git fixes \"$@\" | clip --copy; }; f"
+	copy-ref = "!f() { git rev-parse --verify \"$@\" | clip --copy; }; f"
 
 	clone--nolfs = -c filter.lfs.smudge= -c filter.lfs.clean= -c filter.lfs.process='git-lfs filter-process --skip' clone
 

@@ -44,3 +44,6 @@ bind main ;pr +>git web-pr %(commit)
 # Universal binding for `git checkout` of the branch or commit under cursor
 # (see .gitconfig for `git zz-tig-checkout`)
 bind main ;co !>git zz-tig-checkout +%(branch) +%(commit)
+
+# Binding to copy the sha1 under cursor
+bind main yy !>git copy-ref %(commit)
