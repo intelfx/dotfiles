@@ -155,7 +155,7 @@
 	url = https://github.com/itchyny/lightline.vim
 [submodule ".vim/bundle/vimcomplete"]
 	path = .vim/bundle/vimcomplete
-	url = https://github.com/intelfx/vimcomplete
+	url = https://github.com/girishji/vimcomplete
 [submodule ".vim/bundle/fzf.vim"]
 	path = .vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
