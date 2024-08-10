@@ -93,9 +93,35 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
 # Seems like a sane default
 export CCACHE_BASEDIR="$HOME"
 
+function get_nproc() {
+	local ncpu
+
+	# XXX: we'd rather use `nproc --all`, but it reads /sys/devices/system/cpu/possible
+	#      which can be inaccurate: Steam Deck has 8 CPUs, but possible=0-15
+	# determine the number of CPUs by reading the last present CPU index
+	# (works only if the sysfs file is sorted)
+	if [[ -r /sys/devices/system/cpu/present ]] \
+	&& ncpu="$(< /sys/devices/system/cpu/present )" \
+	&& ncpu="${ncpu##*[-,]}" \
+	&& [[ $ncpu =~ ^[0-9]+$ ]] \
+	; then \
+		printf "%s\n" "$(( ncpu + 1 ))"
+		return 0
+
+	# fall back to `nproc --all`
+	elif command -v nproc &>/dev/null \
+	&& ncpu="$(nproc --all 2>/dev/null)" \
+	&& (( ncpu > 0 )) \
+	; then
+		printf "%s\n" "$ncpu"
+		return 0
+	fi
+
+	return 1
+}
+
 # use a better htoprc if the current machine has more than 8 CPUs
-if command -v nproc &>/dev/null \
-&& ncpu="$(nproc --all 2>/dev/null)" \
+if ncpu="$(get_nproc)" \
 && (( ncpu > 8 )); then
 	export HTOPRC="$(systemd-path user-configuration)/htop/htoprc.big"
 fi
