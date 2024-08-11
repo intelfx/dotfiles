@@ -290,6 +290,8 @@ augroup ftsettings
   " disable colorcolumn (set to non-empty so that our ruler impl catches it)
   au FileType man                                          setl colorcolumn=0
   au FileType netrw                                        setl colorcolumn=0
+
+  au FileType json                                         setl foldmethod=syntax
 augroup END
 
 
