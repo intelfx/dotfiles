@@ -317,6 +317,10 @@ endif
 setg swapsync=
 setg undolevels=1000000
 
+" 2 GiB
+setg maxmempattern=2097152
+setg maxmemtot=2097152
+
 silent !mkdir -p ~/.cache/vim/{swap,backup,undo}
 setg dir=~/.cache/vim/swap//,.
 set swapfile  " buffer-local for some reason
