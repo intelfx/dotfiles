@@ -1,4 +1,4 @@
-#!/hint/sh
+#!/hint/bash
 
 # guard against double-loading of ~/.profile in login shells spawned by tmux
 if [[ "$_HAVE_DOT_PROFILE" ]]; then
