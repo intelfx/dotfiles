@@ -453,7 +453,7 @@ function printgoflags() {
 	return 0
 }
 
-function -setgoflags() {
+function --makegoflags() {
 	export CGO_CPPFLAGS="${CPPFLAGS}"
 	export CGO_CFLAGS="${CFLAGS}"
 	export CGO_CXXFLAGS="${CXXFLAGS}"
@@ -463,7 +463,7 @@ function -setgoflags() {
 }
 
 for s in {,clang_}{dbg,opt{,3},lto,lto{,3}}; do
-	eval "function loadgoflags_$s() { loadflags_$s; -setgoflags; }"
+	eval "function loadgoflags_$s() { loadflags_$s; --makegoflags; }"
 done
 unset s
 
