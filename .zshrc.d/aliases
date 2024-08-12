@@ -78,6 +78,9 @@ if command -v bat &>/dev/null; then
 	alias bathelp='bat --language=help --style=changes,grid'
 	alias -g -- --bathelp='--help 2>&1 | bathelp'
 	alias -g -- --bathelp-all='--help-all 2>&1 | bathelp'
+	# same as above but for when I first type --help and then realize that I want markup
+	alias -g -- --helpb='--help 2>&1 | bathelp'
+	alias -g -- --help-allb='--help-all 2>&1 | bathelp'
 
 fi
 if command -v colordiff &>/dev/null; then
