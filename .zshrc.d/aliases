@@ -477,3 +477,64 @@ function setnocache() {
 	path=( ${path:#*/sccache/*} )
 	unset RUSTC_WRAPPER
 }
+
+
+#
+# Remove specific flags
+#
+
+function --delflags() {
+	local key val pat
+	local -a vars pats
+	while (( $# )); do
+		case $1 in
+		--) shift; break ;;
+		*) vars+=( $1 ); shift ;;
+		esac
+	done
+	while (( $# )); do
+		# transform each pattern to add implicit word boundaries
+		pat=$1
+		pat=${pat//' '/'( )#'}
+		pat=${pat//'?*'/'[^ ]##'}
+		pat=${pat//'*'/'[^ ]#'}
+		pats+=( $pat )
+		shift
+	done
+
+	for key in $vars; do
+		[[ ${(P)key+set} ]] || continue
+		# zsh has no namerefs; sunrise by hand
+		val=${(P)key}
+		for pat in $pats; do
+			eval "val=\"\${val// ##($pat)}\""
+			eval "val=\"\${val//($pat) ##}\""
+		done
+		: ${(P)key::=$val}
+	done
+}
+
+function delcflags() {
+	local -a vars=()
+	--delflags \
+		CPPFLAGS CFLAGS CXXFLAGS \
+		-- $@
+}
+
+function delldflags() {
+	--delflags \
+		LDFLAGS \
+		-- $@
+}
+
+function delrustflags() {
+	--delflags \
+		RUSTFLAGS ${(kM)parameters:#CARGO_PROFILE_*_RUSTFLAGS} \
+		-- $@
+}
+
+function delflags() {
+	--delflags \
+		CPPFLAGS CFLAGS CXXFLAGS LDFLAGS RUSTFLAGS ${(kM)parameters:#CARGO_PROFILE_*_RUSTFLAGS} \
+		-- $@
+}
