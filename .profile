@@ -93,19 +93,36 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
 # Seems like a sane default
 export CCACHE_BASEDIR="$HOME"
 
+function get_sysfs_count() {
+	local file="$1"
+	local -a ranges
+	local r m n count
+
+	# zsh, why can't you just be normal?
+	[[ ${ZSH_VERSION+set} ]] && local flags=('-rA') || local flags=('-ra')
+	IFS=, read "${flags[@]}" ranges <"$file"
+
+	for r in "${ranges[@]}"; do
+		IFS=- read -r a b <<<"$r"
+		if [[ $a && $b ]]
+		then (( count += (b - a + 1) ))
+		else (( count += 1 ))
+		fi
+	done
+
+	[[ $count ]] || return 1
+	printf "%s\n" "$count"
+}
 function get_nproc() {
 	local ncpu
 
 	# XXX: we'd rather use `nproc --all`, but it reads /sys/devices/system/cpu/possible
 	#      which can be inaccurate: Steam Deck has 8 CPUs, but possible=0-15
-	# determine the number of CPUs by reading the last present CPU index
-	# (works only if the sysfs file is sorted)
 	if [[ -r /sys/devices/system/cpu/present ]] \
-	&& ncpu="$(< /sys/devices/system/cpu/present )" \
-	&& ncpu="${ncpu##*[-,]}" \
-	&& [[ $ncpu =~ ^[0-9]+$ ]] \
-	; then \
-		printf "%s\n" "$(( ncpu + 1 ))"
+	&& ncpu="$(get_sysfs_count /sys/devices/system/cpu/present)" \
+	&& (( ncpu > 0 )) \
+	; then
+		printf "%s\n" "$ncpu"
 		return 0
 
 	# fall back to `nproc --all`
