@@ -46,5 +46,8 @@ bind main ;pr +>git web-pr %(commit)
 # (see .gitconfig for `git zz-tig-checkout`)
 bind main ;co !>git zz-tig-checkout +%(branch) +%(commit)
 
+# Cherry-pick
+bind main ;cp ?!>git cherry-pick %(commit)
+
 # Binding to copy the sha1 under cursor
 bind main yy !>git copy-ref %(commit)
