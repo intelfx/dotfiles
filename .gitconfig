@@ -104,6 +104,34 @@
 		git rev-parse --verify --end-of-options \"${revs[@]}\"; \
 	}; f"
 
+	pick-mr = "!f() { \
+		mr=\"$1\"; shift; \
+		mrshort=\"$(git rev-parse --verify --short \"$mr\")\" || return; \
+		ours=\"$(git rev-parse --verify --short \"$mr^1\")\" || return; \
+		theirs=\"$(git rev-parse --verify --short \"$mr^2\")\" || return; \
+		symhead=\"$(git symbolic-ref --short HEAD)\" || symhead=''; \
+		echo \"Old HEAD:       $(git refer HEAD)\"; \
+		echo \"Merge commit:   $(git refer \"$mrshort\")\"; \
+		echo \" - ours (^1):   $(git refer \"$ours\")\"; \
+		echo \" - theirs (^2): $(git refer \"$theirs\")\"; \
+		set -x; \
+		git rebase --onto HEAD \"${mr}^1\" \"${mr}^2\" \"$@\" || { \
+			{ set +x; } &>/dev/null; \
+			rc=$?; \
+			if [[ $symhead ]]; then \
+				echo >&2 \"Don't forget to update HEAD: \\`git checkout -B $symhead\\`\"; \
+			fi; \
+			return $rc; \
+		}; \
+		{ set +x; } &>/dev/null; \
+		echo \"New HEAD:       $(git refer HEAD)\"; \
+		if [[ $symhead ]]; then \
+			set -x; \
+			git checkout -B \"$symhead\"; \
+			{ set +x; } &>/dev/null; \
+		fi; \
+	}; f"
+
 	# `git checkout`, but using the first valid ref out of multiple
 	# arguments prefixed with "+"
 	zz-tig-checkout = "!f() { \
