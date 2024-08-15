@@ -59,17 +59,18 @@ fzf_default_opts=(
 	${(z)FZF_DEFAULT_OPTS}
 	"--color=${(j:,:)FZF_COLORS}"
 )
-export FZF_DEFAULT_OPTS="${(j: :)${(@qq)fzf_default_opts}}"
-unset fzf_default_opts
 
 fzf_completion_opts=(
 	${(z)FZF_COMPLETION_OPTS}
+	$fzf_default_opts
 	--ansi
 	--border
 	--info=inline
 	--bind=ctrl-space:toggle
 )
-export FZF_COMPLETION_OPTS="${(j: :)${(@qq)fzf_completion_opts}}"
+export FZF_DEFAULT_OPTS="${(j: :)${(@qqq)fzf_default_opts}}"
+export FZF_COMPLETION_OPTS="${(j: :)${(@qqq)fzf_completion_opts}}"
+unset fzf_default_opts
 unset fzf_completion_opts
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
