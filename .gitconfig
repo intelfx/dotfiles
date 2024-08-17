@@ -132,6 +132,34 @@
 		fi; \
 	}; f"
 
+	pick-range = "!f() { \
+		start=\"$1\"; end=\"$2\"; shift 2; \
+		startrev=\"$(git rev-parse --verify --short \"$start\")\" || return; \
+		fromrev=\"$(git rev-parse --verify --short \"${start}~1\")\" || return; \
+		endrev=\"$(git rev-parse --verify --short \"$end\")\" || return; \
+		symhead=\"$(git symbolic-ref --short HEAD)\" || symhead=''; \
+		echo \"Old HEAD:       $(git refer HEAD)\"; \
+		echo \"From (start~1): $(git refer \"$fromrev\")\"; \
+		echo \"Start:          $(git refer \"$startrev\")\"; \
+		echo \"End:            $(git refer \"$endrev\")\"; \
+		set -x; \
+		git rebase --onto HEAD \"$fromrev\" \"$endrev\" \"$@\" || { \
+			{ set +x; } &>/dev/null; \
+			rc=$?; \
+			if [[ $symhead ]]; then \
+				echo >&2 \"Don't forget to update HEAD: \\`git checkout -B $symhead\\`\"; \
+			fi; \
+			return $rc; \
+		}; \
+		{ set +x; } &>/dev/null; \
+		echo \"New HEAD:       $(git refer HEAD)\"; \
+		if [[ $symhead ]]; then \
+			set -x; \
+			git checkout -B \"$symhead\"; \
+			{ set +x; } &>/dev/null; \
+		fi; \
+	}; f"
+
 	# `git checkout`, but using the first valid ref out of multiple
 	# arguments prefixed with "+"
 	zz-tig-checkout = "!f() { \
