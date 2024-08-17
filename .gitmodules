@@ -162,3 +162,6 @@
 [submodule ".vim/bundle/vim-stabs"]
 	path = .vim/bundle/vim-stabs
 	url = https://github.com/intelfx/vim-stabs
+[submodule ".vim/bundle/vim-unimpaired"]
+	path = .vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
