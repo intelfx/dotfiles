@@ -276,6 +276,9 @@ augroup ftdetect
   au BufNewFile,BufRead
     \ *.sublime-{color-scheme,commands,completions,keymap,menu,package,settings,snippet,syntax,workspace}
     \                                                      setl ft=json5
+  au BufNewFile,BufRead
+    \ *.sublime_session
+    \                                                      setl ft=json
 
   au BufNewFile,BufRead *.tpl                              setl ft=gotexttmpl
   au BufNewFile,BufRead *.gotmpl                           setl ft=gotexttmpl
