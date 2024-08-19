@@ -7,6 +7,7 @@ set NERDTree
 set surround
 set commentary
 set multiple-cursors
+set ideajoin
 
 
 "
