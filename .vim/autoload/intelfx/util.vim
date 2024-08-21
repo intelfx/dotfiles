@@ -7,8 +7,11 @@ export def WinWidth(winnr: number = 0): number
   return width
 enddef
 
-export def CountVsplits(): number
-  var wins = getwininfo()->filter((_, w) => w.tabnr == tabpagenr())
+export def CountVsplits(Filter: func(dict<any>): bool = null_function): number
+  var wins = getwininfo()->filter(
+    (_, w) => w.tabnr == tabpagenr() &&
+              (Filter == null || Filter(w))
+  )
   var wincols = wins->mapnew((_, w) => w.wincol)->sort()->uniq()
   return len(wincols)
 enddef
