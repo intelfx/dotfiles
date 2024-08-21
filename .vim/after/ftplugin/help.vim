@@ -12,8 +12,15 @@ import autoload 'intelfx/hacks.vim'
 def HelpRearrange()
   var hsplit = false
 
-  # estimate the width of a vertical split
-  if &columns / (util.CountVsplits() + 1) < 70
+  # bail if we are not in a help window (and remember window-ID while at it)
+  var winid = win_getid()
+  if winid->getwinvar('&buftype', '') != 'help'
+    return
+  endif
+
+  # estimate the width of a new vertical split by counting existing splits,
+  # ignoring the current window (as it is the one that will be the new split)
+  if &columns / (util.CountVsplits((w) => w.winid != winid) + 1) < 70
     hsplit = true
 
   # check if the editor window is visually landscape or portrait
