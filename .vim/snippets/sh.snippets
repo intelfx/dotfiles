@@ -26,7 +26,7 @@ snippet lib
 	# main
 	#
 
-snippet common 
+snippet common
 	#!/bin/bash
 
 	set -eo pipefail
@@ -46,7 +46,7 @@ snippet common
 	}
 
 	usage() {
-		if (( \$# )): then
+		if (( \$# )); then
 			echo "\${0##*/}: \$*" >&2
 			echo >&2
 		fi
