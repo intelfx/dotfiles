@@ -59,6 +59,7 @@ let g:netrw_banner = 1
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 " TODO: make `y.` (yank absolute path under cursor) do something reasonable
 "       wrt. all the clipboard dances, similar to vifm' `yf`/`yd`
+let g:netrw_keepdir = 0
 
 " configure vim-stabs
 " do not set <TAB> and <CR> maps that conflict with vimcomplete; see below for
