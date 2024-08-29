@@ -288,7 +288,11 @@ augroup END
 
 augroup ftsettings
   au!
+  " set &keywordprg/&iskeyword for completeness, but see below for override
   au FileType man                                          setl nolist nonumber keywordprg=:Man iskeyword+=(,)
+  " override entire built-in keyword feature (`K`) with a man-specific call,
+  " because &isk is not flexible enough (see vim/vim#15117 for why exactly)
+  au FileType man                                          nnoremap <silent> <buffer> K :call dist#man#PreGetPage(0)<CR>
 
   " disable colorcolumn (set to non-empty so that our ruler impl catches it)
   au FileType man                                          setl colorcolumn=0
