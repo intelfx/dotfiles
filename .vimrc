@@ -381,6 +381,22 @@ command! SynStack
 command! -nargs=* -complete=help Help
   \ tab help <args>
 
+command! -nargs=* -complete=shellcmd Lterm
+  \ call s:LocalTerm(<q-mods>, <q-args>)
+
+def! s:LocalTerm(mods: string, args: string)
+  var cmd = '[&shell]'
+  var opts = {
+    'cwd': expand('%:p:h'),
+    'term_finish': 'close',
+  }
+  if !!args
+    cmd = string(args)
+    remove(opts, 'term_finish')
+  endif
+  execute printf('%s call term_start(%s, %s)', mods, cmd, string(opts))
+enddef
+
 
 " ----------------------------------------------------------------------------
 " CUSTOM FEATURES & PLUGIN INTEGRATIONS
