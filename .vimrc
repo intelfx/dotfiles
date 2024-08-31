@@ -713,11 +713,16 @@ augroup END
 
 def! s:TrailingSpace(mode: string)
   var pattern = (mode == 'i') ? '\s\+\%#\@<!$' : '\s\+$'
-  if exists('w:trailingspace_match')
+  # FIXME: for some reason, w: variables sometimes get copied to newly created
+  #        windows that do not actually have these match IDs. To work around
+  #        that, also save the window ID and ignore the w: variables if they
+  #        come from a different window.
+  if exists('w:trailingspace_match') && w:trailingspace_win == win_getid()
     matchdelete(w:trailingspace_match)
     matchadd('solarizedTrailingSpace', pattern, 10, w:trailingspace_match)
   else
     w:trailingspace_match = matchadd('solarizedTrailingSpace', pattern)
+    w:trailingspace_win = win_getid()
   endif
 enddef
 
