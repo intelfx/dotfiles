@@ -122,7 +122,7 @@
 	url = https://github.com/airblade/vim-rooter
 [submodule ".config/mpv/uosc"]
 	path = .config/mpv/uosc
-	url = https://github.com/tomasklaen/uosc
+	url = https://github.com/intelfx/uosc
 [submodule ".vim/bundle/vim-oscyank"]
 	path = .vim/bundle/vim-oscyank
 	url = https://github.com/ojroques/vim-oscyank
