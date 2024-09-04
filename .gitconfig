@@ -49,6 +49,9 @@
 	autoDetach = false
 	reflogExpire = never
 	reflogExpireUnreachable = never
+[pack]
+	compression = 9
+	allowPackReuse = "multi"
 [sequence]
 	editor = interactive-rebase-tool
 [credential]
