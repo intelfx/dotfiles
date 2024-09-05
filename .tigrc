@@ -19,6 +19,9 @@ bind main <Ctrl-G> :goto "%(prompt Enter commit: )"
 # Main-view binding for "delete branch"
 bind main ! ?>git branch -D %(branch)
 
+# "Create branch"
+bind main ;br !>git branch -f "%(prompt Enter branch name: )" %(commit)
+
 # "Interactive rebase onto this commit"
 bind main ;rb ?!>git rebase-i --autostash %(commit)
 # "Interactive rebase of current branch against this upstream,
