@@ -74,48 +74,6 @@ let g:vimcomplete_cr_enable = 0
 
 
 " ----------------------------------------------------------------------------
-" PLUGINS
-" ----------------------------------------------------------------------------
-
-" load plugins from $HOME/.vim/bundle
-packloadall
-
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-if has('syntax') && has('eval')
-  packadd matchit
-endif
-
-
-" ----------------------------------------------------------------------------
-" PLUGINS :: LATE CONFIGURATION
-" ----------------------------------------------------------------------------
-
-" configure vifm.vim #2
-" if we asked to replace netrw _and_ vifm.vim actually loaded, disable netrw
-if exists('loaded_vifm') && g:vifm_replace_netrw
-  let g:loaded_netrw = 1
-  let g:loaded_netrwPlugin = 1
-endif
-
-" configure vifm.vim #3
-" vifm.vim: remove commands conflicting with netrw shorthands
-" TODO: rebind them under non-conflicting names (export s:StartVifm somehow)
-if exists('loaded_vifm')
-  silent! delcommand EditVifm
-  silent! delcommand PeditVifm
-  silent! delcommand VsplitVifm
-  silent! delcommand SplitVifm
-  silent! delcommand DiffVifm
-  silent! delcommand TabVifm
-endif
-
-" tlib: remove commands conflicting with netrw shorthands
-silent! delcommand Texecloc
-silent! delcommand Texecqfl
-
-
-" ----------------------------------------------------------------------------
 " USER CONFIGURATION
 " ----------------------------------------------------------------------------
 
@@ -955,3 +913,45 @@ call s:SolarizedSetItalic()
 syntax enable
 setg background=dark
 colorscheme solarized
+
+
+" ----------------------------------------------------------------------------
+" PLUGINS
+" ----------------------------------------------------------------------------
+
+" load plugins from $HOME/.vim/bundle
+packloadall
+
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+
+
+" ----------------------------------------------------------------------------
+" PLUGINS :: LATE CONFIGURATION
+" ----------------------------------------------------------------------------
+
+" configure vifm.vim #2
+" if we asked to replace netrw _and_ vifm.vim actually loaded, disable netrw
+if exists('loaded_vifm') && g:vifm_replace_netrw
+  let g:loaded_netrw = 1
+  let g:loaded_netrwPlugin = 1
+endif
+
+" configure vifm.vim #3
+" vifm.vim: remove commands conflicting with netrw shorthands
+" TODO: rebind them under non-conflicting names (export s:StartVifm somehow)
+if exists('loaded_vifm')
+  silent! delcommand EditVifm
+  silent! delcommand PeditVifm
+  silent! delcommand VsplitVifm
+  silent! delcommand SplitVifm
+  silent! delcommand DiffVifm
+  silent! delcommand TabVifm
+endif
+
+" tlib: remove commands conflicting with netrw shorthands
+silent! delcommand Texecloc
+silent! delcommand Texecqfl
