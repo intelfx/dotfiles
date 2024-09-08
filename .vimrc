@@ -72,6 +72,11 @@ let g:stabs_maps = 'boO='
 let g:vimcomplete_tab_enable = 0
 let g:vimcomplete_cr_enable = 0
 
+" configure gitgutter
+let g:gitgutter_set_sign_backgrounds = 1
+setg updatetime=100
+setg signcolumn=yes
+
 
 " ----------------------------------------------------------------------------
 " USER CONFIGURATION
