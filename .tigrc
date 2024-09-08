@@ -53,4 +53,4 @@ bind main ;co !>git zz-tig-checkout +%(branch) +%(commit)
 bind main ;cp ?!>git cherry-pick %(commit)
 
 # Binding to copy the sha1 under cursor
-bind main yy !>git copy-ref %(commit)
+bind main ;yy !>git copy-ref %(commit)
