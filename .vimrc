@@ -787,7 +787,15 @@ def s:StatusModified(): string
   endif
 enddef
 
+def s:StatusGitTracked(): bool
+  return exists('b:gitgutter.path') && type(b:gitgutter.path) == v:t_string
+enddef
+
 def s:StatusGit(): string
+  if !s:StatusGitTracked()
+    return ''
+  endif
+
   var s = g:FugitiveStatusline()
   # strip [Git ... ]
   if len(s) > 4 && s[: 3] == '[Git' && s[-1 :] == ']'
@@ -797,6 +805,17 @@ def s:StatusGit(): string
   if len(s) > 2 && s[: 0] == '(' && s[-1 :] == ')'
     s = s[1 : -2]
   endif
+
+  return s
+enddef
+
+def s:StatusGitHunks(): string
+  if !s:StatusGitTracked()
+    return ''
+  endif
+
+  var [a, m, r] = g:GitGutterGetHunkSummary()
+  var s = printf("+%d ~%d -%d", a, m, r)
   return s
 enddef
 
@@ -812,7 +831,7 @@ def s:Lightline()
       'left': [
         [ 'mode', 'paste' ],
         [ 'cwdfile', 'readonly', 'modified' ],
-        [ 'gitbranch' ],
+        [ 'gitbranch', 'githunks' ],
       ],
       'right': [
         [ 'lineinfo' ],
@@ -833,8 +852,13 @@ def s:Lightline()
     },
     # 'component_visible_condition': {
     # },
+    'component_function_visible_condition': {
+      'gitbranch': s:SID .. 'StatusGitTracked()',
+      'githunks': s:SID .. 'StatusGitTracked()',
+    },
     'component_function': {
       'gitbranch': s:SID .. 'StatusGit',
+      'githunks': s:SID .. 'StatusGitHunks',
       # 'readonly' and 'modified' are defined via functions returning text
       # rather than functions returning %R or %M because in the latter case
       # we would also have to define the visibility condition, basically
