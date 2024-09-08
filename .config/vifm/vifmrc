@@ -473,7 +473,7 @@ set fillchars=vborder:│,hborder:─
 nnoremap ,ls :set lsview!<cr>
 
 " Start shell in current directory
-nnoremap ,s :shell<cr>
+nnoremap ,S :shell<cr>
 
 " Display sorting dialog
 nnoremap S :sort<cr>
