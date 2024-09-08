@@ -4,7 +4,7 @@ if ! (( IS_SOLARIZED )); then
 	return
 fi
 
-eval $(dircolors -b "$HOME/.dotfiles/solarized/dircolors/dircolors.ansi-universal")
+eval $(dircolors -b "$HOME/.dotfiles/solarized/dircolors/dircolors.ansi-dark")
 export MC_SKIN="$HOME/.dotfiles/solarized/mc/solarized.ini"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
