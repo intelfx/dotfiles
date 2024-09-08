@@ -329,6 +329,15 @@ mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld"; }
 '
 }
 
+function loadflags_clang_opt3() {
+	--loadflags '
+CC=clang
+CXX=clang++
+mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -O3"; }
+mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld"; }
+'
+}
+
 function loadflags_clang_dbg() {
 	--loadflags '
 CC=clang
