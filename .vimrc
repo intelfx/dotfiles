@@ -198,6 +198,9 @@ setg hlsearch
 set number  " window-local for some reason
 setg hidden
 
+setg ignorecase
+setg smartcase
+
 setg completeopt=menu,popup,fuzzy
 setg wildmenu wildmode=full wildoptions=fuzzy,pum
 setg wildcharm=<C-Z> " something well unused
