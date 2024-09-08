@@ -943,6 +943,9 @@ syntax enable
 setg background=dark
 colorscheme solarized
 
+" Colorscheme tweaks
+highlight! link SignColumn LineNr
+
 
 " ----------------------------------------------------------------------------
 " PLUGINS
