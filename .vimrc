@@ -118,6 +118,9 @@ xnoremap q: <NOP>
 " this also should be obsoleted by `:E`, but I still need to learn it.
 cabbrev %% %:h
 
+xnoremap <Leader>$ $
+xnoremap $         g_
+
 " <leader>{d,c,s,x} -- delete into black hole
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
