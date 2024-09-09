@@ -63,6 +63,7 @@ load_zshrc_d $HOME/.zshrc.early.d
 && "$UID" == "$(stat -c "%u" "${(%):-%x}")"
 && "$TERMINAL_EMULATOR" != *JetBrains*
 && -z "$TERMINUS_SUBLIME"
+&& -z "$VIM"
 ]] \
 	&& command -v tmx &>/dev/null \
 	&& exec tmx
