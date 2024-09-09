@@ -3,11 +3,11 @@
 .*.sw?
 *.kdev4
 .kdev4
-*.sublime-workspace
-/.idea
+**/*.sublime-workspace
+**/.idea/
 __pycache__/
 *.pyc
 *.pyo
 /.pdm-python
-/.cache/clangd/
+**/.cache/clangd/
 # vim: ft=gitignore:
