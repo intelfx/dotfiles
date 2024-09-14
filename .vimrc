@@ -993,3 +993,6 @@ endif
 " tlib: remove commands conflicting with netrw shorthands
 silent! delcommand Texecloc
 silent! delcommand Texecqfl
+
+" vim-textobj-line: remove commands conflicting with netrw shortcuts
+silent! delcommand TextobjLineDefaultKeyMappings
