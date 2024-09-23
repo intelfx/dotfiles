@@ -73,6 +73,10 @@ load_zshrc_d $HOME/.zshrc.early.d
 #
 load_zshrc_d ~/.zshrc.d
 
+if [[ -e ~/.zshrc.private ]]; then
+	source ~/.zshrc.private
+fi
+
 #
 # plugins
 #
