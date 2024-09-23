@@ -677,6 +677,7 @@ enddef
 augroup my-colorcolumn
   au!
   au VimEnter             *            call s:Ruler([])
+  au VimResized           *            call s:Ruler([])
   au BufWinEnter          *            call s:Ruler([])
   au WinResized           *            call s:Ruler(v:event.windows)
   au OptionSet            colorcolumn  call s:RulerTrapColorcolumn()
