@@ -14,12 +14,15 @@ function --git-rev-parse-silent() {
 	done
 }
 
-function --git-diff-submodule-log() {
+function --git-diff-submodule-log() (
 	local -a names
 	local line src_name dst_name src_mode dst_mode op
 	local mode name
 
-	git diff --raw $@ | while IFS=':' read -r _ line; do
+	local topdir="$(git rev-parse --show-toplevel)" || return
+	cd "$topdir"
+
+	git diff --ignore-submodules=dirty --raw $@ | while IFS=':' read -r _ line; do
 		<<<"$line" IFS=$'\t' read -r line src_name dst_name
 		<<<"$line" IFS=' '   read -r src_mode dst_mode _ _ op
 
@@ -37,10 +40,14 @@ function --git-diff-submodule-log() {
 		names+=( "$name" )
 	done
 
-	if (( ${#names[@]} )); then
-		-trace git diff --submodule=log "$@" -- "${names[@]}"
+	if (( ${#names[@]} )); then {
+		printf "%s: bump\n\n" ${(j:, :)names}
+		-trace git diff --ignore-submodules=dirty --submodule=log $@ -- $names
+	} | sponge
+	else
+		return 1
 	fi
-}
+)
 # `compdef foo=bar` does not allow to alias to a command with args, sunrise by hand
 _git_diff_submodule_log() { service=git; words[1]=(git diff); (( CURRENT++ )); _git; }
 compdef _git_diff_submodule_log --git-diff-submodule-log
