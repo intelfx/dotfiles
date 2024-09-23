@@ -75,7 +75,7 @@ let g:vimcomplete_cr_enable = 0
 " configure gitgutter
 let g:gitgutter_set_sign_backgrounds = 1
 setg updatetime=100
-setg signcolumn=yes
+setg signcolumn=auto
 
 
 " ----------------------------------------------------------------------------
