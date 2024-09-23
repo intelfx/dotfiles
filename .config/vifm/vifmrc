@@ -454,7 +454,7 @@ fileviewer {{*[^/]}}
 "set lsview  " see binding below
 set lsoptions+=transposed
 set lsoptions+=columncount:2
-set viewcolumns=-60%{name},20%{size},{mtime}
+set viewcolumns=-60%{name},-20%{size},{mtime}
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
 " set viewcolumns=-{name}..,6{}.
