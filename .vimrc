@@ -668,9 +668,9 @@ enddef
 
 def! s:Ruler(windows: list<number>)
   if empty(windows)
-    call s:RulerUpdate()
+    s:RulerUpdate()
   else
-    call foreach(windows, (k, v) => win_execute(v, 'call s:RulerUpdate()'))
+    foreach(windows, (k, v) => win_execute(v, 'call s:RulerUpdate()'))
   endif
 enddef
 
