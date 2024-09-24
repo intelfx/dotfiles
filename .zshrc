@@ -19,14 +19,14 @@ function load_zshrc_d() {
 }
 
 function do_load_plugin() {
-	local dir=$1 dirname=${1:t} f
+	local dir=$1 name=${2-${1:t}} f
 
-	for f in $dir/$dirname.{plugin.zsh,zsh}(-.N); do
+	for f in $dir/$name.{plugin.zsh,zsh}(-.N); do
 		source $f
 		return 0
 	done
 
-	print "Cannot load plugin from '$dir'" >&2
+	print >&2 "Cannot load plugin ${(qqq)name} from ${(qqq)dir}"
 	return 1
 }
 
@@ -39,12 +39,13 @@ function load_plugin_d() {
 
 function load_plugin() {
 	local name=$1 p
+	shift
 	for p in {~/.zsh/plugins,/usr/share/zsh/plugins}/$name(-/N); do
-		do_load_plugin $p
+		do_load_plugin $p $@
 		return
 	done
 
-	print "Cannot find plugin '$name'" >&2
+	print >&2 "Cannot find plugin dir ${(qqq)name}"
 	return 1
 }
 
