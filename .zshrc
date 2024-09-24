@@ -83,6 +83,7 @@ fi
 #
 load_plugin fzf-tab  # ordering: first thing to load after zshrc.d
 load_plugin zsh-autosuggestions
+load_plugin jq-zsh-plugin jq
 
 #
 # late snippets (prompt)
