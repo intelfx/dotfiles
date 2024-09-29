@@ -30,7 +30,7 @@
 		// Limit the number of references returned by clangd. 0 means no limit (default=1000)
 		"clangd.limit-references": 0,
 		// Limit the number of results returned by clangd. 0 means no limit (default=100)
-		"clangd.limit-results": 0,
+		"clangd.limit-results": 50,
 
 		// Index project code in the background and persist index on disk
 		"clangd.background-index": true,
