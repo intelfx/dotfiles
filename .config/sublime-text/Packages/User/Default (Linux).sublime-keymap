@@ -139,6 +139,24 @@
 			{"key": "auto_complete_visible", "operand": false}
 		]
 	},
+	// Rename symbol
+	{
+		"keys": ["ctrl+shift+r"],
+		"command": "lsp_symbol_rename",
+		"context": [{"key": "lsp.session_with_capability", "operand": "renameProvider"}]
+	},
+	// Format Selection
+	{
+		"keys": ["ctrl+shift+l"],
+		"command": "lsp_format_document_range",
+		"context": [{"key": "lsp.session_with_capability", "operand": "documentRangeFormattingProvider"}]
+	},
+	// Format File
+	{
+		"keys": ["ctrl+shift+alt+l"],
+		"command": "lsp_format_document",
+		"context": [{"key": "lsp.session_with_capability", "operand": "documentFormattingProvider | documentRangeFormattingProvider"}]
+	},
 
 	// clangd's Switch Header/Source
 	{
