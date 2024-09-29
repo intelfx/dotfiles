@@ -55,7 +55,7 @@
 [sequence]
 	editor = interactive-rebase-tool
 [credential]
-	helper = pass-git-helper -l
+	helper = /usr/bin/pass-git-helper -l
 [sendemail]
 	annotate = true
 
