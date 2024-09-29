@@ -42,6 +42,7 @@
 !/.config/sublime-text/Packages
 /.config/sublime-text/Packages/CommandsBrowser33/
 /.config/sublime-text/Packages/User/Terminus/*.hidden-color-scheme
+/.config/sublime-text/Packages/User/Terminus.hidden-color-scheme
 /.config/sublime-text/Packages/User/SBSCompare*.hidden-*
 
 # Do not ignore .config/gmailctl, except credentials
