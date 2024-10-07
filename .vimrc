@@ -153,8 +153,6 @@ let g:grep_operator = 'RgRaw'
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 
-command! -nargs=+ Grep execute 'silent grep! <args>' | execute '<mods> below copen' | redraw!
-
 " snippets
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
 smap <leader><Tab> <Plug>snipMateNextOrTrigger
