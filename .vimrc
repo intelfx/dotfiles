@@ -149,6 +149,7 @@ setg wildchar=<Tab>
 
 " grep operator
 let g:grep_operator_set_search_register = 1
+let g:grep_operator = 'RgRaw'
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 
