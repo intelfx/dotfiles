@@ -180,3 +180,6 @@
 [submodule ".zsh/plugins/jq-zsh-plugin"]
 	path = .zsh/plugins/jq-zsh-plugin
 	url = https://github.com/reegnz/jq-zsh-plugin
+[submodule ".vim/bundle/vim-agriculture"]
+	path = .vim/bundle/vim-agriculture
+	url = https://github.com/jesseleite/vim-agriculture
