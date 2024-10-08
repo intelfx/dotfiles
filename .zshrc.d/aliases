@@ -59,7 +59,7 @@ alias sha1='openssl sha1'
 
 alias W='command -v'
 
-if command -v bat &>/dev/null; then
+if -has bat; then
 	# fallback to actual cat(1) for file copying, as it can make use
 	# of copy_file_range() and stuff (and is thus much faster)
 	function cat() {
@@ -83,17 +83,17 @@ if command -v bat &>/dev/null; then
 	alias -g -- --help-allb='--help-all 2>&1 | bathelp'
 
 fi
-if command -v colordiff &>/dev/null; then
+if -has colordiff; then
 	alias diff='colordiff'
 fi
 
-if command -v jq jqf &>/dev/null; then
+if -has jq jqf; then
 	command -v yq &>/dev/null && alias yqf='jqf --jq=yq'
 	command -v xq &>/dev/null && alias xqf='jqf --jq=xq'
 	command -v tomlq &>/dev/null && alias tomlqf='jqf --jq=tomlq'
 fi
 
-if command -v rg &>/dev/null; then
+if -has rg; then
 	# do not highlight matches, because matches are all that we're emitting
 	alias rgc="rg --colors 'match:none' -or '\$1'"
 	alias rgo="rg --colors 'match:none' -o"
@@ -103,14 +103,14 @@ if command -v rg &>/dev/null; then
 	alias grepo="rg -uuu --colors 'match:none' -o"
 fi
 
-if command -v perl rlwrap &>/dev/null; then
+if -has perl rlwrap; then
 	# Poor man's REPL for perl
 	# https://stackoverflow.com/a/22840242/857932
 	# https://stackoverflow.com/questions/73667/how-can-i-start-an-interactive-console-for-perl#comment100588494_22840242
 	alias iperl="rlwrap -A -pgreen -S'perl> ' perl -MData::Dumper -wnE'say Dumper[eval()]//\$@'"
 fi
 
-if command -v rsync &>/dev/null; then
+if -has rsync; then
 	alias r-cp-n='rsync -r --partial --no-i-r'
 	alias r-cp='r-cp-n -aHAX'
 	alias r-mv='r-cp --remove-source-files'
