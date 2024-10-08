@@ -1,0 +1,30 @@
+#!/hint/zsh
+
+compdef duh=du
+compdef batman=man
+compdef vimman=man
+
+compdef kmake=make
+compdef komake=make
+
+compdef rgc=rg
+compdef rgless=rg
+compdef rgo=rg
+
+compdef put=rsync
+compdef put-mv=rsync
+compdef put-sync=rsync
+compdef r-cput=rsync
+compdef r-put=rsync
+compdef r-sync-put=rsync
+
+compdef setfacl-d=setfacl
+
+compdef systemd-inhibit-auto=systemd-inhibit
+compdef systemd-inhibit-all=systemd-inhibit
+compdef systemd-nspawn-arch=systemd-nspawn
+
+compdef systemd-run-here=systemd-run
+compdef systemd-build-here=systemd-run
+
+compdef yt-dlpp=yt-dlp
