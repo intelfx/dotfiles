@@ -513,6 +513,8 @@ elseif executable('clip')
     nnoremap yd :!echo -n %d | clip --both -i >$VIFM_TTY &<cr>
     " Yank current file path
     nnoremap yf :!echo -n %c:p | clip --both -i >$VIFM_TTY &<cr>
+    " Yank file paths under cursor or selection (vinegar.vim)
+    nnoremap y. :!printf "%%s\n" %f:p | clip --both -i >$VIFM_TTY &<cr>
 elseif $WAYLAND_DISPLAY && executable('wl-copy')
     " Yank current directory path into primary and selection clipboards
     nnoremap yd :!echo -n %d | wl-copy %i &&
@@ -520,11 +522,16 @@ elseif $WAYLAND_DISPLAY && executable('wl-copy')
     " Yank current file path into into primary and selection clipboards
     nnoremap yf :!echo -n %c:p | wl-copy %i &&
                 \ echo -n %c:p | wl-copy -p %i<cr>
+    " Yank file paths under cursor or selection (vinegar.vim)
+    nnoremap y. :!printf "%%s\n" %f:p | wl-copy %i &&
+                \ printf "%%s\n" %f:p | wl-copy -p %i<cr>
 elseif $DISPLAY && executable('xclip')
     " Yank current directory path into the clipboard
     nnoremap yd :!echo %d | xclip %i<cr>
     " Yank current file path into the clipboard
     nnoremap yf :!echo %c:p | xclip %i<cr>
+    " Yank file paths under cursor or selection (vinegar.vim)
+    nnoremap y. :!printf "%%s\n" %f:p | xclip %i<cr>
 elseif $DISPLAY && executable('xsel')
     " Yank current directory path into primary and selection clipboards
     nnoremap yd :!echo -n %d | xsel --input --primary %i &&
@@ -532,6 +539,9 @@ elseif $DISPLAY && executable('xsel')
     " Yank current file path into into primary and selection clipboards
     nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
                 \ echo -n %c:p | xsel --input --clipboard %i<cr>
+    " Yank file paths under cursor or selection (vinegar.vim)
+    nnoremap y. :!printf "%%s\n" %f:p | xsel --input --primary %i &&
+                \ printf "%%s\n" %f:p | xsel --input --clipboard %i<cr>
 endif
 
 " Mappings for faster renaming
