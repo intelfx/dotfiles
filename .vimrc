@@ -583,18 +583,23 @@ endif
 def! s:ChmodX()
   var first = getline(1)
   var scripttype = ''
+  var hint = v:false
 
-  if first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)bash\>'
+  if first =~ '\v^\#\! *(/hint/|/bin/|/usr/bin/|/usr/bin/env *)bash>'
     scripttype = 'bash'
-  elseif first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)zsh\>'
+  elseif first =~ '^\v\#\! *(/hint/|/bin/|/usr/bin/|/usr/bin/env *)zsh>'
     scripttype = 'zsh'
-  elseif first =~ '^#! *\(/bin/\|/usr/bin/\|/usr/bin/env *\)sh\>'
+  elseif first =~ '\v^#! *(/hint/|/bin/|/usr/bin/|/usr/bin/env *)sh>'
     scripttype = 'sh'
+  endif
+
+  if first =~ '\v^#! */hint/'
+    hint = v:true
   endif
 
   if scripttype != ''
     var path = expand('%:p')
-    if !executable(path)
+    if !hint && !executable(path)
       silent system('chmod +x ' .. shellescape(path))
     endif
     if !&l:filetype
