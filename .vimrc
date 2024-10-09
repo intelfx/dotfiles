@@ -593,8 +593,13 @@ def! s:ChmodX()
   endif
 
   if scripttype != ''
-    silent system('chmod +x ' .. shellescape(expand('%:p')))
-    &l:filetype = scripttype
+    var path = expand('%:p')
+    if !executable(path)
+      silent system('chmod +x ' .. shellescape(path))
+    endif
+    if !&l:filetype
+      &l:filetype = scripttype
+    endif
   endif
 enddef
 
