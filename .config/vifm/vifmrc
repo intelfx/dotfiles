@@ -492,6 +492,19 @@ if $DISPLAY && executable('gvim')
     nnoremap O :!gvim %f<cr>
 endif
 
+" Insert file name(s) under cursor or selection onto command line (vinegar.vim)
+nnoremap .     :<C-U><Space><C-R>=expand("%f:p:.")<CR><Home>
+
+" Same, but mc style (Alt-Enter)
+nnoremap <CR> :<C-U><Space><C-R>=expand("%f:p:.")<CR><Home>
+cnoremap <CR> <C-R>=expand("%f:p:.")<CR><Space>
+
+" Build a command to open current file(s) as an argument
+nmap     g!    .!
+
+" Build a command to run current file as an executable
+nnoremap g<CR> :<C-U>!./<C-R>=expand("%c:p:.")<CR>
+
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
 
