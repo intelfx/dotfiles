@@ -3,6 +3,7 @@
 compdef duh=du
 compdef batman=man
 compdef vimman=man
+compdef qman=man
 
 compdef kmake=make
 compdef komake=make
