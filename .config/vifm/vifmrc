@@ -509,10 +509,10 @@ if has('win')
     " Yank path to current file to Windows clipboard with forward slashes
     nnoremap yf :!echo %"c:gs!\!/! %i | clip<cr>
 elseif executable('clip')
-        " Yank current directory path
-        nnoremap yd :!echo -n %d | clip --both -i >$VIFM_TTY &<cr>
-        " Yank current file path
-        nnoremap yf :!echo -n %c:p | clip --both -i >$VIFM_TTY &<cr>
+    " Yank current directory path
+    nnoremap yd :!echo -n %d | clip --both -i >$VIFM_TTY &<cr>
+    " Yank current file path
+    nnoremap yf :!echo -n %c:p | clip --both -i >$VIFM_TTY &<cr>
 elseif $WAYLAND_DISPLAY && executable('wl-copy')
     " Yank current directory path into primary and selection clipboards
     nnoremap yd :!echo -n %d | wl-copy %i &&
@@ -528,10 +528,10 @@ elseif $DISPLAY && executable('xclip')
 elseif $DISPLAY && executable('xsel')
     " Yank current directory path into primary and selection clipboards
     nnoremap yd :!echo -n %d | xsel --input --primary %i &&
-                \ echo -n %d | xsel --clipboard --input %i<cr>
+                \ echo -n %d | xsel --input --clipboard %i<cr>
     " Yank current file path into into primary and selection clipboards
     nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
-                \ echo -n %c:p | xsel --clipboard --input %i<cr>
+                \ echo -n %c:p | xsel --input --clipboard %i<cr>
 endif
 
 " Mappings for faster renaming
