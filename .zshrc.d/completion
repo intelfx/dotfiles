@@ -13,6 +13,11 @@ local -a _compinit
 
 local _zbasedir="$(systemd-path user-state-cache)/zsh"
 
+local _zcompdump=$_zbasedir/zcompdump
+if mkdir -p ${_zcompdump%/*}; then
+	_compinit+=( -d $_zcompdump )
+fi
+
 local _zcompcache=$_zbasedir/zcompcache
 if mkdir -p $_zcompcache; then
 	zstyle ':completion:*' use-cache true
