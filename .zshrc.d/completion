@@ -3,6 +3,27 @@
 #
 # completion settings
 #
+
+local -a _compinit
+
+
+#
+# cache setup
+#
+
+local _zbasedir="$(systemd-path user-state-cache)/zsh"
+
+local _zcompcache=$_zbasedir/zcompcache
+if mkdir -p $_zcompcache; then
+	zstyle ':completion:*' use-cache true
+	zstyle ':completion:*' cache-path $_zcompcache
+fi
+
+
+#
+# common zstyles
+#
+
 zstyle ':completion:*' auto-description 'argument: %d'
 zstyle ':completion:*' completer _complete _approximate
 zstyle ':completion:*' expand prefix suffix
@@ -25,16 +46,16 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*' special-dirs false
 zstyle :compinstall filename '/home/intelfx/.zshrc'
 
-zstyle ':completion:*' use-cache true
-zstyle ':completion:*' cache-path "$(systemd-path user-state-cache)/zsh/zcompcache"
-mkdir -p "$(systemd-path user-state-cache)/zsh/zcompcache"
 
+#
+# {,bash}compinit
+#
+
+_compinit+=(
+	-u # do not whine about ~/.zshrc/fpath in `sudo -s`
+)
 autoload -Uz compinit
-compinit -u # do not whine about ~/.zshrc/fpath in `sudo -s`
+compinit $_compinit
 
 autoload -U +X bashcompinit
 bashcompinit
-
-if command -v mcli &>/dev/null; then
-	complete -o nospace -C "$(command -v mcli)" mcli
-fi

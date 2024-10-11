@@ -61,3 +61,7 @@ compalias2 podman-arch	podman run
 
 compalias2 ccat		rg .
 compalias  ccatp	rg
+
+if command -v mcli &>/dev/null; then
+	complete -o nospace -C "$(command -v mcli)" mcli
+fi
