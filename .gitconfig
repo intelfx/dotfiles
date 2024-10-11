@@ -18,12 +18,12 @@
 	tool = vimdiff
 	guitool = smerge
 	algorithm = histogram
-# [core]
-# 	pager = delta
-# [interactive]
-# 	diffFilter = delta --features=interactive --color-only
-# [diff]
-# 	colorMoved = default  # reinterpreted by delta
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --features=interactive --color-only
+[diff]
+	colorMoved = default  # reinterpreted by delta
 [delta]
 	navigate = true
 	hyperlinks = true
