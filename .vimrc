@@ -526,6 +526,23 @@ inoremap <silent> <expr> <ESC> <SID>HandleESC()
 
 
 "
+" Disable rooter on manual chdir
+" HACK: there is no variable to control vim-rooter on a per-buffer basis,
+"       so instead just set the "cached directory" to the one we lcd'ed to
+"
+
+def! s:handle_lcd(buf: number, cwd: string)
+  setbufvar(buf, 'rootDir', cwd)
+enddef
+
+augroup my-handle-lcd
+    au!
+    " explicitly no ++nested, we don't want to trigger on vim-rooter's lcds
+    au DirChanged window call s:handle_lcd(+expand('<abuf>'), expand('<afile>'))
+augroup end
+
+
+"
 " Open multiple arguments in tabs by default
 " (https://vi.stackexchange.com/a/2197/7826)
 "
