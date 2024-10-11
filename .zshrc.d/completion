@@ -53,6 +53,14 @@ zstyle :compinstall filename '/home/intelfx/.zshrc'
 
 
 #
+# specific zstyles
+#
+
+zstyle ':completion:*:sysctl:*' delimiter '.'
+zstyle ':completion:*:sysctl:*' expand  # reset to empty because _multi_part is broken
+
+
+#
 # {,bash}compinit
 #
 
