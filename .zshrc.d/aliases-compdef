@@ -1,5 +1,12 @@
 #!/hint/zsh
 
+function compalias() {
+	local lhs=$1 rhs=$2
+	if (( ${+_comps[$cmd]} )); then
+		compdef $lhs=$rhs
+	fi
+}
+
 compdef duh=du
 compdef batman=man
 compdef vimman=man
