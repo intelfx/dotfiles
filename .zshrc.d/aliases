@@ -22,6 +22,11 @@ function -command() {
 	command -v "$@"
 }
 
+function -dump() {
+	if ! (( $# )); then return; fi
+	printf "%s\n" "${(j:, :)${(@)${(f)$(declare -p $@)}##typeset (-[^ ]# )#}}"
+}
+
 function -join() {
 	local sep="$1"
 	shift
