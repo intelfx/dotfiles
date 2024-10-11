@@ -1,6 +1,13 @@
 #compdef sysctl
 
 local -a args sysctlvars
+local delimiter
+
+zstyle -s ":completion:${curcontext}:" delimiter delimiter
+case $delimiter in
+  [/.]) ;;
+  *) delimiter=/ ;;
+esac
 
 case $OSTYPE in
   linux*)
@@ -23,10 +30,19 @@ case $OSTYPE in
     else
       args=( ${args:#((#s)|*\))(\*|)--*} )	# remove long options
     fi
+    sysctlvars=( /proc/sys/**/*(.e*'REPLY=${REPLY#/proc/sys/}'*) )
+    if (( ${words[CURRENT][(Ie)/]} )); then
+      delimiter=/
+    elif (( ${words[CURRENT][(Ie).]} )); then
+      delimiter=.
+    fi
+    if [[ $delimiter != / ]]; then
+        sysctlvars=(${sysctlvars//\//$delimiter})
+    fi
     _arguments -S -A "-*" : $args \
       '(- :)'{-h,--help}'[display help text and exit]' \
       '(- :)'{-V,--version}'[display version info and exit]' \
-      '*:sysctl variable:_files -W /proc/sys'
+      "*:sysctl variable:_multi_parts -i -S = -q $delimiter sysctlvars"
   ;;
   freebsd<14->.*)
     args+=(
