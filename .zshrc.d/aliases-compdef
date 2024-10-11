@@ -7,32 +7,32 @@ function compalias() {
 	fi
 }
 
-compdef duh=du
-compdef batman=man
-compdef vimman=man
-compdef qman=man
+compalias  duh		du
+compalias  batman	man
+compalias  vimman	man
+compalias  qman		man
 
-compdef kmake=make
-compdef komake=make
+compalias  kmake	make
+compalias  komake	make
 
-compdef rgc=rg
-compdef rgless=rg
-compdef rgo=rg
+compalias  rgc		rg
+compalias  rgless	rg
+compalias  rgo		rg
 
-compdef put=rsync
-compdef put-mv=rsync
-compdef put-sync=rsync
-compdef r-cput=rsync
-compdef r-put=rsync
-compdef r-sync-put=rsync
+compalias  put		rsync
+compalias  put-mv	rsync
+compalias  put-sync	rsync
+compalias  r-cput	rsync
+compalias  r-put	rsync
+compalias  r-sync-put	rsync
 
-compdef setfacl-d=setfacl
+compalias  setfacl-d	setfacl
 
-compdef systemd-inhibit-auto=systemd-inhibit
-compdef systemd-inhibit-all=systemd-inhibit
-compdef systemd-nspawn-arch=systemd-nspawn
+compalias  systemd-inhibit-auto	systemd-inhibit
+compalias  systemd-inhibit-all	systemd-inhibit
+compalias  systemd-nspawn-arch	systemd-nspawn
 
-compdef systemd-run-here=systemd-run
-compdef systemd-build-here=systemd-run
+compalias  systemd-run-here	systemd-run
+compalias  systemd-build-here	systemd-run
 
-compdef yt-dlpp=yt-dlp
+compalias  yt-dlpp	yt-dlp
