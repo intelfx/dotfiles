@@ -56,3 +56,5 @@ compalias  systemd-run-here	systemd-run
 compalias  systemd-build-here	systemd-run
 
 compalias  yt-dlpp	yt-dlp
+
+compalias2 podman-arch	podman run
