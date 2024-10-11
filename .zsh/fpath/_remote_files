@@ -11,7 +11,8 @@
 # - -g: specify a pattern to match against files
 #       p, = and * glob qualifiers supported
 # - -h: specify the remote host, default is ${IPREFIX%:}
-# - -Q: specify a pattern of characters to escape in the returned filenames
+# - -Q: specify a pattern of characters to escape in the returned filenames,
+#       instead of shell metacharacters that ${(q)name} does
 # - -W: specify the parent directory to list files from,
 #       default is the home directory
 #
