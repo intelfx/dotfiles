@@ -7,6 +7,26 @@ function compalias() {
 	fi
 }
 
+function compalias2() {
+	local lhs=$1 rhs=( ${@:2} ) cmd=$2
+	if (( ${+_comps[$cmd]} )); then
+		local service=${_comps[$cmd]}
+		local wrapped="_${lhs}"
+		if [[ "${wrapped}" != "${(q)wrapped}" ]]; then
+			print >&2 "compalias_ex($(-dump lhs rhs)): bad lhs"
+			return 1
+		fi
+		eval "function ${wrapped}() {
+			service=${(qq)cmd}
+			words[1]=(${(@qq)rhs})
+			(( CURRENT += $(($#rhs - 1)) ))
+			${service}
+		}"
+
+		compdef $wrapped $lhs
+	fi
+}
+
 compalias  duh		du
 compalias  batman	man
 compalias  vimman	man
