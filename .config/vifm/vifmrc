@@ -484,6 +484,11 @@ vnoremap w :view<cr>gv
 
 " Exit all traces of view mode (whether after `:view<S-Tab>` or `e`)
 qnoremap q q:set noquickview<cr>
+qnoremap Q q:set noquickview<cr>
+" (normal `q` is a leader for some built-in mappings, so bind `qq` instead
+"  to catch rage-presses, as well as `Q` in both modes for uniformity)
+nnoremap qq :set noquickview<cr>
+nnoremap Q :set noquickview<cr>
 
 if $DISPLAY && executable('gvim')
     " Open file in existing instance of gvim
