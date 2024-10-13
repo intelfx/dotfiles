@@ -183,3 +183,6 @@
 [submodule ".vim/bundle/vim-agriculture"]
 	path = .vim/bundle/vim-agriculture
 	url = https://github.com/jesseleite/vim-agriculture
+[submodule ".vim/bundle/vim-eunuch"]
+	path = .vim/bundle/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
