@@ -1,7 +1,7 @@
 #!/hint/zsh
 
 function compalias() {
-	local lhs=$1 rhs=$2
+	local lhs=$1 rhs=$2 cmd=$2
 	if (( ${+_comps[$cmd]} )); then
 		compdef $lhs=$rhs
 	fi
