@@ -625,10 +625,10 @@ def! s:ChmodX()
   endif
 enddef
 
-augroup my-chmod-x
-  autocmd!
-  autocmd BufWritePost * call s:ChmodX()
-augroup END
+" augroup my-chmod-x
+"   autocmd!
+"   autocmd BufWritePost * call s:ChmodX()
+" augroup END
 
 
 "
