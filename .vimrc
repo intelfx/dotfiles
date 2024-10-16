@@ -535,10 +535,10 @@ def! s:HandleESC(): string
   endif
 enddef
 
-inoremap <silent> <expr> <TAB> <SID>HandleTab()
-inoremap <silent> <expr> <S-TAB> <SID>HandleSTab()
-inoremap <silent> <expr> <CR> <SID>HandleCR()
-inoremap <silent> <expr> <ESC> <SID>HandleESC()
+imap <silent> <expr> <TAB> <SID>HandleTab()
+imap <silent> <expr> <S-TAB> <SID>HandleSTab()
+imap <silent> <expr> <CR> <SID>HandleCR()
+imap <silent> <expr> <ESC> <SID>HandleESC()
 
 
 "
