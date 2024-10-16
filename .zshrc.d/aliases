@@ -357,7 +357,7 @@ function loadflags_clang_opt3() {
 	--loadflags '
 CC=clang
 CXX=clang++
-mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -O3"; }
+mangle() { var="${var// -O+([0-9])}"; var+=" -O3"; var="${var// -fuse-ld=+([^ ])}"; }
 mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld"; }
 '
 }
@@ -391,7 +391,7 @@ function loadflags_clang_lto3() {
 	--loadflags '
 CC=clang
 CXX=clang++
-mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -O3 -flto=full"; }
+mangle() { var="${var// -O+([0-9])}"; var+=" -O3"; var="${var// -fuse-ld=+([^ ])}"; var+=" -flto=full"; }
 mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=full"; }
 mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C opt-level=3 -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
 CARGO_PROFILE_RELEASE_LTO=fat
@@ -414,7 +414,7 @@ function loadflags_clang_thinlto3() {
 	--loadflags '
 CC=clang
 CXX=clang++
-mangle() { var="${var// -O+([0-9])}"; var="${var// -fuse-ld=+([^ ])}"; var+=" -O3 -flto=thin"; }
+mangle() { var="${var// -O+([0-9])}"; var+=" -O3"; var="${var// -fuse-ld=+([^ ])}"; var+=" -flto=thin"; }
 mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld -flto=thin"; }
 mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var="${var// -C*( )link-arg=-fuse-ld=+([^ ])}"; var+=" -C opt-level=3 -C linker=clang -C link-arg=-fuse-ld=lld -C linker-plugin-lto"; }
 CARGO_PROFILE_RELEASE_LTO=thin
