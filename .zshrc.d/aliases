@@ -166,7 +166,7 @@ for level in "" 1 11 19 22; do
 	esac
 
 	# skip tar wrapper in ~/bin to supporess tar's own output
-	alias "zstd${level}"="${zstd}"
+	alias "zstd${level}"="command ${zstd}"
 	alias "tzst${level}"="/usr/bin/tar -I '${zstd}'"
 	alias "tzst${level}long"="/usr/bin/tar -I '${zstd} --long'"
 done
