@@ -153,10 +153,6 @@ let g:grep_operator = 'RgRaw'
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 
-" snippets
-imap <leader><Tab> <Plug>snipMateNextOrTrigger
-smap <leader><Tab> <Plug>snipMateNextOrTrigger
-
 " autosudo
 "cmap w!! w !sudo sponge %
 cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit!
@@ -188,6 +184,10 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " Split current buffer: C-W S (normal), C-W V (vertical)
 " Split new buffer:     C-W N (normal), C-W M (vertical) <-- this is the new map
 nnoremap <C-w>m :vnew<CR>
+
+" snipmate (TODO migrate to another plugin, integrate with vimcomplete)
+imap <leader><Tab> <Plug>snipMateNextOrTrigger
+smap <leader><Tab> <Plug>snipMateNextOrTrigger
 
 
 "
