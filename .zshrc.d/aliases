@@ -335,6 +335,21 @@ export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=thin"}
 '
 }
 
+function loadflags_fatlto() {
+	--loadflags '
+mangle() { var+=" ${LTOFLAGS// -flto=+([^ ])/ -flto} -flto-partition=none"; }
+mangle_rust() { var+=" $LTO_RUSTFLAGS"; }
+export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=fat"}
+'
+}
+
+function loadflags_fatlto3() {
+	--loadflags '
+mangle() { var="${var// -O+([0-9])}"; var+=" -O3"; var+=" ${LTOFLAGS// -flto=+([^ ])/ -flto} -flto-partition=none"; }
+mangle_rust() { var="${var// -C*( )opt-level=+([0-9])}"; var+=" -C opt-level=3"; var+=" $LTO_RUSTFLAGS"; }
+export ${LTO_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_LTO=fat"}
+'
+}
 function loadflags_dbg() {
 	--loadflags '
 CFLAGS+=" $DEBUG_CFLAGS"
