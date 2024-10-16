@@ -383,7 +383,7 @@ filetype *.ftp
 filetype {*.7z},<application/x-7z-compressed>
        \ {Mount with fuse-7z}
        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
-fileviewer {*.7z},<application/x-7z-compressed> 7z l %c
+fileviewer {*.7z},<application/x-7z-compressed> 7zz l %c
 
 " Office files
 filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
