@@ -185,6 +185,16 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " Split new buffer:     C-W N (normal), C-W M (vertical) <-- this is the new map
 nnoremap <C-w>m :vnew<CR>
 
+" fzf.vim (TODO make some actually useful mappings, and drop the stubs)
+" Stub: mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+" Stub: insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
 " snipmate (TODO migrate to another plugin, integrate with vimcomplete)
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
 smap <leader><Tab> <Plug>snipMateNextOrTrigger
