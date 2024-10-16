@@ -194,6 +194,12 @@ omap <leader><tab> <plug>(fzf-maps-o)
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+" Custom mappings
+noremap <silent> <expr> <C-W><C-E> fzf#vim#buffers("", fzf#vim#with_preview({}), 0)
+" TODO: add support for q-mods and bind these keys
+" noremap <silent> <expr> <C-W>ev vert fzf#vim#buffers("", fzf#vim#with_preview({}), 0)
+" noremap <silent> <expr> <C-W>es hor fzf#vim#buffers("", fzf#vim#with_preview({}), 0)
+" noremap <silent> <expr> <C-W>et tab fzf#vim#buffers("", fzf#vim#with_preview({}), 0)
 
 " snipmate (TODO migrate to another plugin, integrate with vimcomplete)
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
