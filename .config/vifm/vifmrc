@@ -364,6 +364,10 @@ filetype {*.iso},
          \application/vnd.efi.iso>
        \ {Mount with fuseiso}
        \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
+fileviewer {*.iso},
+          \<application/x-iso9660-image,
+           \application/vnd.efi.iso>
+         \ isoinfo -d -i %c
 
 " SshMount
 filetype *.ssh
