@@ -13,9 +13,9 @@ let g:snipMate = { 'snippet_version' : 1 }
 let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_cd_cmd = 'lcd'
 let g:rooter_ignore = 1
-" HACK for kernel sources: do not anchor on Makefile if this dir has Kconfig
-" (thus do not treat kernel subdirs as roots; we will still anchor on .git)
-let g:rooter_patterns = ['.git', '_darcs', '.hg', '.bzr', '.svn', '!Kconfig', 'Makefile', 'package.json']
+" Disable patterns that can appear below toplevel, pending airblade/vim-rooter#124
+" let g:rooter_patterns = ['.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile', 'package.json']
+let g:rooter_patterns = ['.git', '_darcs', '.hg', '.bzr', '.svn']
 let g:rooter_targets = ['/', $HOME .. '/*']
 
 " configure vifm.vim #1
