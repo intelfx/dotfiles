@@ -284,7 +284,9 @@ augroup ftsettings
   au FileType man                                          setl colorcolumn=0
   au FileType netrw                                        setl colorcolumn=0
 
-  au FileType json                                         setl foldmethod=syntax
+  " unnamed buffers yield empty filenames and ultimately getfsize() -> -1,
+  " which fits the logic
+  au FileType json                                         if getfsize(expand("%:p")) < 1024*1024 | setl foldmethod=syntax | endif
 augroup END
 
 
