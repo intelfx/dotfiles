@@ -24,7 +24,7 @@
 		// Add #include directives when accepting code completions
 		// iwyu: Include what you use. Insert the owning header for top-level symbols, unless the header is already directly included or the symbol is forward-declared
 		// never: Never insert #include directives as part of code completion
-		"clangd.header-insertion": "iwyu",
+		"clangd.header-insertion": "never",
 		// Prepend a circular dot or space before the completion label, depending on whether an include line will be inserted or not
 		"clangd.header-insertion-decorators": true,
 		// Limit the number of references returned by clangd. 0 means no limit (default=1000)
