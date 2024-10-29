@@ -10,6 +10,11 @@
   "font_size": 9,
   "ignored_packages": [
     "Vintage",
+
+    // BAD:
+    // "EditorConfig",
+    // "ApplySyntax",
+    // "SingleTrailingNewLine",
   ],
   "neovintageous_build_version": 13200,
   "tab_size": 8,
