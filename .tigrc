@@ -54,3 +54,5 @@ bind main ;cp ?!>git cherry-pick %(commit)
 
 # Binding to copy the sha1 under cursor
 bind main ;yy !>git copy-ref %(commit)
+bind main ;yr !>git copy-refer %(commit)
+bind main ;yF !>git copy-fixes %(commit)
