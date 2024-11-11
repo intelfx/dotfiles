@@ -131,15 +131,16 @@ if -has perl rlwrap; then
 fi
 
 if -has rsync; then
-	alias r-cp-n='rsync -r --partial --no-i-r'
-	alias r-cp='r-cp-n -aHAX'
+	alias -- --r-cp='rsync -r --partial --no-i-r'
+	alias -- --r-mv='--rsync --remove-source-files'
+	alias -- --r-sync='--rsync --delete-after'
+	alias r-cp='--r-cp -aHAX'
 	alias r-mv='r-cp --remove-source-files'
-	alias r-mv-n='r-cp-n --remove-source-files'
 	alias r-sync='r-cp --delete'
-	alias r-install='r-cp-n -lEDH' # no perms (executability instead), times, group, owner, ACLs, xattrs
-	alias r-put='r-mv-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
-	alias r-cput='r-cp-n -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
-	alias r-sync-put='r-cp-n -ltDH --chmod=ugo=rwX --delete' # no perms, group, owner, ACLs, xattrs
+	alias r-install='--r-cp -lEDH' # no perms (executability instead), times, group, owner, ACLs, xattrs
+	alias r-put='--r-mv -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
+	alias r-cput='--r-cp -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
+	alias r-sput='--r-sync -ltDH --chmod=ugo=rwX' # no perms, group, owner, ACLs, xattrs
 fi
 
 # FIXME: default ACLs vs umask
