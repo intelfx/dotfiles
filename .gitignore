@@ -21,6 +21,7 @@
 !/.config/awesome
 !/.config/Bespin
 !/.config/mpv
+/.config/mpv/mpv-private.conf
 !/.config/fontconfig
 !/.config/git
 !/.config/htop
