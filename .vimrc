@@ -345,6 +345,18 @@ def! Pow(a: number, b: number): number
   return float2nr(pow(a, b))
 enddef
 
+def! Bs(arg: string): string
+  var r = systemlist('bscalc ' .. shellescape(arg))
+  if len(r) > 1
+    echoerr printf(":Bs: `bscalc %s`: more than one output line", shellescape(arg))
+    return ''
+  elseif empty(r)
+    return ''
+  else
+    return substitute(r[0], '[^0-9]', '', 'g')
+  endif
+enddef
+
 def! Bytes(arg: string): number
   var r = system('bscalc -b ' .. shellescape(arg))
   r = substitute(r, '[^0-9]', '', 'g')
