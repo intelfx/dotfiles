@@ -132,8 +132,8 @@ fi
 
 if -has rsync; then
 	alias -- --r-cp='rsync -r --partial --no-i-r'
-	alias -- --r-mv='--rsync --remove-source-files'
-	alias -- --r-sync='--rsync --delete-after'
+	alias -- --r-mv='--r-cp --remove-source-files'
+	alias -- --r-sync='--r-cp --delete-after'
 	alias r-cp='--r-cp -aHAX'
 	alias r-mv='r-cp --remove-source-files'
 	alias r-sync='r-cp --delete'
