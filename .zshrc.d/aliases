@@ -77,6 +77,12 @@ if -has vim; then
 	alias vim.='vim .'
 fi
 
+if -has fd; then
+	# not related to . and .., the dot means a match-all pattern
+	alias fd.='fd .'
+	alias fd..='fd -u .'
+fi
+
 if -has bat; then
 	# fallback to actual cat(1) for file copying, as it can make use
 	# of copy_file_range() and stuff (and is thus much faster)
