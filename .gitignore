@@ -22,6 +22,8 @@
 !/.config/Bespin
 !/.config/mpv
 /.config/mpv/mpv-private.conf
+/.config/mpv/scripts/debug.lua
+/.config/mpv/scripts/*.so
 !/.config/fontconfig
 !/.config/git
 !/.config/htop
