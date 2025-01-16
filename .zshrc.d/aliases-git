@@ -48,9 +48,7 @@ function --git-diff-submodule-log() (
 		return 1
 	fi
 )
-# `compdef foo=bar` does not allow to alias to a command with args, sunrise by hand
-_git_diff_submodule_log() { service=git; words[1]=(git diff); (( CURRENT++ )); _git; }
-compdef _git_diff_submodule_log --git-diff-submodule-log
+compalias2 --git-diff-submodule-log git diff
 
 alias gfe='git fetch --all --tags --prune'
 alias grm='git rebase -i $(--git-rev-parse-first master main)'
@@ -161,11 +159,8 @@ done
 alias tig1='tig show'
 alias tigl='TIGRC_USER=~/.tigrc.large tig'
 
-compdef tgb=tig
-compdef tg=tig
-compdef tga=tig
-compdef tgaa=tig
 # "tig, with just branches"
+compalias tgb tig
 function tgb() {
 	if (( $# ))
 	then -trace command tig --boundary "$@"
@@ -177,6 +172,7 @@ function tgb() {
 	fi
 }
 # "tig, with current merge overview"
+compalias tgm tig
 function tgm() {
 	# always include HEAD@{u}, if it is defined
 	local -a head
@@ -190,6 +186,7 @@ function tgm() {
 	-trace command tig --boundary "^$base" $head $@
 }
 # "tig, with default set of refs"
+compalias tg tig
 function tg() {
 	if (( $# ))
 	then -trace command tig --boundary "$@"
@@ -201,6 +198,7 @@ function tg() {
 	fi
 }
 # "tig, with almost all refs" (includes all remotes tracked by local branches)
+compalias tga tig
 function tga() {
 	if (( $# ))
 	then -trace command tig --boundary "$@"
@@ -213,6 +211,7 @@ function tga() {
 	fi
 }
 # "tig, with _really_ all refs"
+compalias tgaa tig
 function tgaa() {
 	if (( $# ))
 	then -trace command tig --boundary "$@"
