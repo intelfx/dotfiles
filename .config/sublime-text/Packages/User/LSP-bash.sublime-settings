@@ -1,6 +1,11 @@
 // Settings in here override those in "LSP-bash/LSP-bash.sublime-settings"
 
 {
+	"command": [
+		"/usr/bin/node",
+		"/usr/lib/node_modules/bash-language-server/out/cli.js",
+		"start",
+	],
 	"settings": {
 		// Configure explainshell server endpoint in order to get hover documentation on flags and options.
 		// And empty string will disable the feature.

@@ -1,8 +1,13 @@
 // Settings in here override those in "LSP-typescript/LSP-typescript.sublime-settings"
 
 {
+	"command": [
+		"/usr/bin/node",
+		"/usr/bin/typescript-language-server",
+		"--stdio"
+	],
 	"initializationOptions": {
 		"npmLocation": "/usr/bin/npm",
 		"tsserver.path": "/usr/bin/tsserver",
-	}
+	},
 }
