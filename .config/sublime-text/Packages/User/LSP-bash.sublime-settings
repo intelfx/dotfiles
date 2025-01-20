@@ -10,5 +10,6 @@
 		// Configure explainshell server endpoint in order to get hover documentation on flags and options.
 		// And empty string will disable the feature.
 		"bashIde.explainshellEndpoint": "https://explainshell.com",
+		"bashIde.shellcheckPath": "/usr/bin/shellcheck",
 	}
 }
