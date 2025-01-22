@@ -71,6 +71,10 @@
 	helper = /usr/bin/pass-git-helper -l
 [sendemail]
 	annotate = true
+[man]
+	viewer = qman
+[man "qman"]
+	cmd = qman
 
 [pretty]
 	# Use a better format for `git refer` (below)
