@@ -270,6 +270,8 @@ augroup ftdetect
   au BufNewFile,BufRead *.gotmpl                           setl ft=gotexttmpl
   au BufNewFile,BufRead /share/polkit-1/rules.d/*.rules    setl ft=javascript
   au BufNewFile,BufRead /etc/polkit-1/rules.d/*.rules      setl ft=javascript
+
+  au BufNewFile,BufRead *.fio                              setl ft=confini
 augroup END
 
 augroup ftsettings
