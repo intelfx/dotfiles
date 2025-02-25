@@ -76,5 +76,11 @@
 	insteadOf = gnu:
 	insteadOf = git://git.sv.gnu.org/
 	insteadOf = git://git.savannah.gnu.org/
+[url "https://kernel.googlesource.com/pub/scm/linux/kernel/git/"]
+# [url "https://git.kernel.org/pub/scm/linux/kernel/git/"]
+	insteadOf = korg:
+	insteadOf = git://git.kernel.org/pub/scm/linux/kernel/git/
+	insteadOf = https://git.kernel.org/pub/scm/linux/kernel/git/
+	# insteadOf = https://kernel.googlesource.com/pub/scm/linux/kernel/git/
 
 # vim: set ft=gitconfig :
