@@ -56,12 +56,13 @@ fi
 #
 
 fzf_default_opts=(
-	${(z)FZF_DEFAULT_OPTS}
+	# this wreaks havoc with nested zsh sessions
+	# ${(Q)${(z)FZF_DEFAULT_OPTS}}
 	"--color=${(j:,:)FZF_COLORS}"
 )
-
 fzf_completion_opts=(
-	${(z)FZF_COMPLETION_OPTS}
+	# ditto
+	# ${(Q)${(z)FZF_COMPLETION_OPTS}}
 	$fzf_default_opts
 	--ansi
 	--border
