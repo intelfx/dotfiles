@@ -70,7 +70,7 @@ snippet go-flags-build
 		-buildmode=pie \\
 		-mod=readonly \\
 		-modcacherw \\
-		-ldflags "-linkmode=external -extldflags\\"\${LDFLAGS}\\"" \\
+		-ldflags "-linkmode=external \\"-extldflags=\${LDFLAGS}\\"" \\
 		.
 
 snippet python-version
