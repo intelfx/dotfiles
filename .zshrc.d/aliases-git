@@ -52,11 +52,14 @@ compalias2 --git-diff-submodule-log git diff
 
 alias gfe='git fetch --all --tags --prune'
 alias grm='git rebase -i $(--git-rev-parse-first master main)'
-alias grmb='git rebase --keep-base -i $(--git-rev-parse-first master@{u} main@{u})'
+# identical to `grumb` because we --keep-base anyway
+alias grmb='git rebase -i --keep-base $(--git-rev-parse-first master@{u} main@{u})'
 alias grd='git rebase -i develop'
 alias grdb='git rebase -i --keep-base develop@{u}'
 alias gru='git rebase -i @{u}'
+alias grum='git rebase -i $(--git-rev-parse-first master@{u} main@{u})'
 alias grub='git rebase -i --keep-base @{u}'
+alias grumb='git rebase -i --keep-base $(--git-rev-parse-first master@{u} main@{u})'
 alias gri='git rebase -i'
 alias grib='git rebase -i --keep-base @{u}'
 function grh { local _commits="${1:-0}"; shift; git rebase -i HEAD~$_commits "$@"; }
