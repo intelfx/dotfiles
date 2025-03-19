@@ -189,3 +189,6 @@
 [submodule ".vim/bundle/vim-obsession"]
 	path = .vim/bundle/vim-obsession
 	url = https://github.com/tpope/vim-obsession
+[submodule ".vim/bundle/vimsuggest"]
+	path = .vim/bundle/vimsuggest
+	url = https://github.com/girishji/vimsuggest
