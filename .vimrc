@@ -407,7 +407,36 @@ let s:SID = expand('<SID>')
 
 
 "
-" Completion
+" Command-line completion
+"
+
+def! s:Vimsuggest()
+  if !exists('g:VimSuggestSetOptions')
+    return
+  endif
+  g:vimsuggest_options = {
+    cmd: {
+      enable: true,
+      pum: true,
+      alwayson: false,
+    },
+    search: {
+      enable: true,
+      pum: true,
+      fuzzy: true,
+      alwayson: true,
+    },
+  }
+  g:VimSuggestSetOptions(g:vimsuggest_options)
+enddef
+augroup my-vimsuggest
+  au!
+  au VimEnter * call s:Vimsuggest()
+augroup END
+
+
+"
+" Insert completion
 "
 
 def! s:Vimcomplete()
