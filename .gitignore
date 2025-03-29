@@ -60,7 +60,7 @@
 !/.config/QtProject/qtcreator/styles
 
 # qman(1) config
-!/.config/qman.conf
+!/.config/qman
 
 # Do not ignore .vim
 !/.vim
