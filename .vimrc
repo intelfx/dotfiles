@@ -272,6 +272,10 @@ augroup ftdetect
   au BufNewFile,BufRead /etc/polkit-1/rules.d/*.rules      setl ft=javascript
 
   au BufNewFile,BufRead *.fio                              setl ft=confini
+
+  au BufNewFile,BufRead mkosi.conf                         setl ft=confini
+  au BufNewFile,BufRead mkosi.*.conf                       setl ft=confini
+  au BufNewFile,BufRead mkosi-*.conf                       setl ft=confini
 augroup END
 
 augroup ftsettings
