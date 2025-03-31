@@ -39,4 +39,18 @@ function lib.dump_vars(...)
 	end
 end
 
+function os.system(cmd)
+	local f = assert(io.popen(cmd, 'r'))
+	local s = assert(f:read('*a'))
+	f:close()
+	return s
+end
+function os.capture(cmd)
+	local s = os.system(cmd)
+	s = string.gsub(s, '^%s+', '')
+	s = string.gsub(s, '%s+$', '')
+	s = string.gsub(s, '[\n\r]+', ' ')
+	return s
+end
+
 return lib
