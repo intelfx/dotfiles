@@ -70,7 +70,6 @@
 !/.zshrc.early.d
 !/.zshrc.late.d
 !/.zsh
-/.zshrc.d/*-private
 
 # GDB configuration and scripts
 !/.gdbinit
