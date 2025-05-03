@@ -97,6 +97,11 @@
 !/.tigrc
 !/.tigrc.*
 
+# ssh configuration
+!/.ssh
+/.ssh/*
+!/.ssh/config
+
 # gitconfig and snippets (excluding .private and .machine)
 !/.gitconfig
 !/.gitconfig.*
