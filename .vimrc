@@ -181,6 +181,10 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+" Diff operations
+vnoremap <Leader>dp :diffput<CR>
+vnoremap <Leader>do :diffget<CR>
+
 " Split current buffer: C-W S (normal), C-W V (vertical)
 " Split new buffer:     C-W N (normal), C-W M (vertical) <-- this is the new map
 nnoremap <C-w>m :vnew<CR>
