@@ -204,6 +204,7 @@
 	# while simultaneously assuming a mostly-reasonable default using
 	# heuristics (which are included for `git-hub` and `gh` GitHub CLIs)
 	zz-guess-upstream = "!f() { \
+		shopt -s lastpipe; \
 		for u; do \
 			[[ $u != -* ]] && git config \"remote.$u.url\" &>/dev/null && echo \"$u\" && return; \
 		done; \
