@@ -245,9 +245,11 @@ filetype {*.xhtml,*.html,*.htm},<text/html> links, lynx
 filetype {*.o},<application/x-object> nm %f | less
 
 " Man page
-filetype /\\.([0-9n]|[0-9][a-z]{1,9})(\\.(gz|[zZ]|bz2|xz|lzma|lz|zst|zstd))?$/,<text/troff>
+" HACK: deliberately exclude "[0-9]z" because this matches `*.7z`...
+"       (there seemingly aren't any section postfixes that start with "z", so)
+filetype /\\.([0-9n]|[0-9][a-y][a-z]{0,8})(\\.(gz|[zZ]|bz2|xz|lzma|lz|zst|zstd))?$/,<text/troff>
         \ batman ./%c
-fileviewer /\\.([0-9n]|[0-9][a-z]{1,9})(\\.(gz|[zZ]|bz2|xz|lzma|lz|zst|zstd))?$/,<text/troff>
+fileviewer /\\.([0-9n]|[0-9][a-y][a-z]{0,8})(\\.(gz|[zZ]|bz2|xz|lzma|lz|zst|zstd))?$/,<text/troff>
         \ -batman-preview --terminal-width=%pw ./%c
 
 " Images
