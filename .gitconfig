@@ -59,10 +59,15 @@
 	exclude = /config.toml
 	exclude = /.config
 [gc]
+	aggressiveDepth = 50
+	aggressiveWindow = 1000
+	writeCommitGraph = true
 	autoDetach = false
 	reflogExpire = never
 	reflogExpireUnreachable = never
 [pack]
+	depth = 50
+	window = 1000
 	compression = 9
 	allowPackReuse = "multi"
 [sequence]
