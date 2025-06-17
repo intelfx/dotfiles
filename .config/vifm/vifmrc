@@ -235,11 +235,12 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filextype {*.xhtml,*.html,*.htm},<text/html>
-        \ {Open with qutebrowser}
-        \ qutebrowser %f %i,
-        \ {Open with firefox}
-        \ firefox %f &,
-filetype {*.xhtml,*.html,*.htm},<text/html> links, lynx
+        \ {Open with default browser}
+        \ xdg-open %f &,
+filetype {*.xhtml,*.html,*.htm},<text/html>
+        \ elinks,
+        \ links,
+        \ lynx
 
 " Object
 filetype {*.o},<application/x-object> nm %f | less
