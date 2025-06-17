@@ -274,12 +274,10 @@ filextype {.blend}
         \ {Open in Blender}
         \ blender %c,
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-        \ {View in sxiv}
-        \ sxiv %f,
-        \ {View in gpicview}
-        \ gpicview %c,
+        \ {View in eog}
+        \ eog %f,
         \ {View in shotwell}
-        \ shotwell,
+        \ shotwell %f,
 fileviewer {*.jxl},<image/jxl>
          \ jxl-oxide -I --with-offset %f
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
