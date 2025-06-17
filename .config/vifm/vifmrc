@@ -243,7 +243,8 @@ filetype {*.xhtml,*.html,*.htm},<text/html>
         \ lynx
 
 " Object
-filetype {*.o},<application/x-object> nm %f | less
+filetype {*.o},<application/x-object>
+        \ nm %f | bat --style=grid,,numbers,,changes --color=always --paging=never --wrap=auto --terminal-width=%pw
 
 " Man page
 " HACK: deliberately exclude "[0-9]z" because this matches `*.7z`...
