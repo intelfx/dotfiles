@@ -351,6 +351,26 @@ endif
 " PERSONAL FUNCTIONS
 " ----------------------------------------------------------------------------
 
+def! S(arg: string): string
+  var r = systemlist(arg)
+  if len(r) > 1
+    echoerr printf(":S: `%s`: more than one output line", arg)
+    return ''
+  elseif empty(r)
+    return ''
+  else
+    return r[0]
+  endif
+enddef
+
+def! S1(arg: string): string
+  var r = systemlist(arg)
+  if empty(r)
+    return ''
+  else
+    return r[0]
+enddef
+
 def! Pow(a: number, b: number): number
   return float2nr(pow(a, b))
 enddef
