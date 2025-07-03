@@ -48,6 +48,6 @@ rustflags = [
 [env]
 CC = "clang"
 CXX = "clang++"
-CFLAGS = "-flto=full -fuse-ld=lld"
-CXXFLAGS = "-flto=full -fuse-ld=lld"
-LDFLAGS = "-flto=full -fuse-ld=lld"
+CFLAGS = "-march=native -flto=full -fuse-ld=lld"
+CXXFLAGS = "-march=native -flto=full -fuse-ld=lld"
+LDFLAGS = "-march=native -flto=full -fuse-ld=lld"
