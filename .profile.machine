@@ -1,0 +1,12 @@
+#!/hint/zsh
+
+export SHELL=/usr/bin/zsh
+
+# use a better htoprc if the current machine is a fucking meteor lake
+if grep -q -Fx $'model name\t: Intel(R) Core(TM) Ultra 9 185H' /proc/cpuinfo; then
+	export HTOPRC="$(systemd-path user-configuration)/htop/htoprc.mtl"
+fi
+
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORMTHEME=qgnomeplatform
+export QT_QPA_PLATFORM=wayland-egl
