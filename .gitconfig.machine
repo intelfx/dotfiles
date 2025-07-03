@@ -1,0 +1,12 @@
+# vim: ft=gitconfig:
+[user]
+	name = Ivan Shapovalov
+	email = intelfx@intelfx.name
+[delta]
+	dark = true
+	syntax-theme = Solarized-ANSI
+	true-colors = always
+[rebase]
+	updateRefs = no
+[man]
+	viewer = man
