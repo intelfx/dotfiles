@@ -122,6 +122,12 @@ cabbrev %% %:h
 xnoremap <Leader>$ $
 xnoremap $         g_
 
+" WIP: <op>il, <op>al -- "current line" text objects
+xnoremap il g_o^
+onoremap il :normal vil<CR>
+xnoremap al $o^
+onoremap al :normal val<CR>
+
 " <leader>{d,c,s,x} -- delete into black hole
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
