@@ -74,6 +74,10 @@ maybe prepend PATH \
 if ! [[ "$SSH_AUTH_SOCK" ]]; then
 	if [[ "$WSLENV" ]]; then
 		export SSH_AUTH_SOCK=/mnt/c/util/wsl-ssh-pageant/ssh-agent.sock
+	elif [[ -e "$(systemd-path user-runtime)/keyring/ssh" ]]; then
+		export SSH_AUTH_SOCK="$(systemd-path user-runtime)/keyring/ssh"
+	elif [[ -e "$(systemd-path user-runtime)/gcr/ssh" ]]; then
+		export SSH_AUTH_SOCK="$(systemd-path user-runtime)/gcr/ssh"
 	else
 		export SSH_AUTH_SOCK="$(systemd-path user-runtime)/gnupg/S.gpg-agent.ssh"
 	fi
