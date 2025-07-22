@@ -1,4 +1,7 @@
 {
+	"font_face": "Iosevka",
+	"font_size": 11,
+	"time_format": "24h",
 	"always_show_command_status": true,
 	"diff_style": "inline",
 	"hardware_acceleration": "opengl",
