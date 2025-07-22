@@ -46,7 +46,7 @@
     "<C-W>": false,
   },
   "rulers": [
-    72,
+    [72, "dotted"],
     80,
   ],
   "hardware_acceleration": "opengl",
