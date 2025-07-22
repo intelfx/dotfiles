@@ -156,6 +156,10 @@ if [[ $WAYLAND_DISPLAY || $DISPLAY ]]; then
 	alias xman='xdg-man'
 fi
 
+if -has qman; then
+	alias man='qman'
+fi
+
 # ssh/scp/sftp to "temporary" hosts
 alias ssht="ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 alias scpt="scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
