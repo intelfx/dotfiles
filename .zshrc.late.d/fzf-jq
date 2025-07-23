@@ -1,0 +1,11 @@
+#!/hint/zsh
+
+export JQ_REPL_COPY="clip --copy --both"
+export JQ_REPL_JQ="jq"
+
+if -has yq; then
+	_jq-add-complete '\ey' yq
+fi
+if -has tomlq; then
+	_jq-add-complete '\et' tomlq
+fi
