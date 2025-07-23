@@ -143,6 +143,11 @@ if ncpu="$(get_nproc)" \
 	export HTOPRC="$(systemd-path user-configuration)/htop/htoprc.big"
 fi
 
+# use a better htoprc if the current machine is a fucking meteor lake
+if grep -q -Fx $'model name\t: Intel(R) Core(TM) Ultra 9 185H' /proc/cpuinfo; then
+	export HTOPRC="$(systemd-path user-configuration)/htop/htoprc.mtl"
+fi
+
 # "It sets the number of cached data chunks; additional memory usage can be up to ~8 MiB times this number. The default is the number of CPU cores."
 # Allow `borg mount` to use up to 1 GiB of RAM for aggressive caching
 export BORG_MOUNT_DATA_CACHE_ENTRIES=$(( 1024*1024*1024 / (8*1024*1024) ))
