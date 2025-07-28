@@ -57,7 +57,8 @@ load_zshrc_d $HOME/.zshrc.early.d
 #
 # tmux shortcut
 #
-[[ -z "$WSLENV" 
+[[ -t 0 && -t 1 && -t 2
+&& -z "$WSLENV" 
 && -z "$NOTMUX" 
 && -z "$TMUX" 
 && -z "$SUDO_USER" 
