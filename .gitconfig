@@ -323,6 +323,13 @@
 		git submodule update --init --recursive --progress; \
 	}; f"
 
+	kfetch = "!f() { \
+		set -exo pipefail; \
+		git fetch -j1 --multiple stable torvalds next \"$@\"; \
+		git fetch -j$(nproc) --all \"$@\"; \
+		git gc-fetch; \
+	}; f"
+
 [color "status"]
 	header = 10 # "bold green", solarized secondary
 	added = yellow
