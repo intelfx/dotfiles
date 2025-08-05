@@ -327,47 +327,84 @@ fileviewer {*.torrent},<application/x-bittorrent>
          \ dumptorrent -v %c,
          \ transmission-show %c
 
-" FuseZipMount
-filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
-        \<application/zip,application/java-archive>
-       \ {Mount with fuse-zip}
-       \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
-       \ {View contents}
-       \ unzip -l %f | less,
-       \ {Extract here}
-       \ unzip %c,
-fileviewer {*.zip,*.jar,*.war,*.ear,*.oxt},
-          \<application/zip,application/java-archive>
-         \ unzip -l %f
 
-" ArchiveMount
-filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.tar.zst,
-         \*.tzst},
-        \<application/x-tar>
-       \ {Mount with archivemount}
-       \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
-fileviewer *.tgz,*.tar.gz tar -tzf %c
-fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
-fileviewer *.tar.xz,*.txz tar -tJf %c
-fileviewer *.tar.zst,*.tzst tar -t --zstd -f %c
-fileviewer {*.tar},<application/x-tar> tar -tf %c
+"
+" ARCHIVE MOUNTING
+"
 
-" Rar2FsMount and rar archives
-filetype {*.rar},<application/x-rar>
-       \ {Mount with rar2fs}
-       \ FUSE_MOUNT|rar2fs %SOURCE_FILE %DESTINATION_DIR,
-fileviewer {*.rar},<application/x-rar> unrar v %c
-
-" IsoMount
+" *.iso => `fuseiso`
 filetype {*.iso},
         \<application/x-iso9660-image,
          \application/vnd.efi.iso>
        \ {Mount with fuseiso}
        \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
+       \ {Extract with 7-zip}
+       \ 7z x %c,
+
+" generic archive mount tools
+filetype {*.tar.bz2,*.tbz2,*.tar.gz,*.tgz,*.tar.xz,*.txz,*.tar.zst,*.tzst,*.tar,
+         \*.rar,*.squashfs},
+        \<application/x-tar>
+       \ {Mount with ratarmount}
+       \ FUSE_MOUNT|ratarmount -P 0 %SOURCE_FILE %DESTINATION_DIR,
+       \ {Extract with tar}
+       \ tar -xaf %c,
+filetype {*.tar,
+         \*.tar.bz2,*.tbz2,*.tbz,*.tz2,*.tar.gz,*.tgz,*.taz,*.tar.lz,*.tlzip,*.tar.lzma,*.tlzma,*.tlz,
+         \*.tar.lzop,*.tlzo,*.tlzop,*.tar.xz,*.txz,*.tar.zst,*.tzst,*.tar.Z,*.taZ,
+         \*.bz2,*.gz,*.lz,*.lzma,*.lzop,*.xz,*.zst,*.Z,
+         \*.jar,*.war,*.ear,*.oxt,*.apkg,*.lha,*.ar,*.cpio,*.rpm,*.deb,*.udeb,*.mtree,*.xar},
+        \<application/zip,
+         \application/java-archive>
+       \ {Mount with fuse-archive}
+       \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
+       \ {Extract with 7-zip}
+       \ 7z x %c,
+filetype {*.7z,
+         \*.dsl.dz,*.tar,*.a,*.so,lib*.so.*,*.zip,*.ova,*.sfs,
+         \*.apk,*.apm,*.ar,*.arj,*.cab,*.chm,*.cpio,*.cramfs,*.deb,*.dll,*.dmg,*.doc,*.esd,*.exe,
+         \*.flv,*.hxs,*.img,*.iso,*.iso,*.jar,*.lib,*.macho,*.msi,*.msp,*.nsis,*.pkg,*.pmd,*.ppt,
+         \*.qcow,*.qcow2,*.qcow2c,*.r00,*.rar,*.raw,*.rpm,*.squashfs,*.swf,*.swm,*.sys,*.vdi,*.vhd,*.vmdk,*.wim,*.xar,*.xls,
+         \*.tar.bz2,*.tbz2,*.tbz,*.tz2,*.tar.gz,*.tgz,*.taz,*.tar.lz,*.tlzip,*.tar.lzma,*.tlzma,*.tlz,
+         \*.tar.lzop,*.tlzo,*.tlzop,*.tar.xz,*.txz,*.tar.zst,*.tzst,*.tar.Z,*.taZ,
+         \*.bz2,*.gz,*.lz,*.lzma,*.lzop,*.xz,*.zst,*.Z},
+        \<application/x-7z-compressed>
+       \ {Mount with fuse3-p7zip}
+       \ FUSE_MOUNT|fuse3-p7zip %SOURCE_FILE %DESTINATION_DIR,
+       \ {Extract with 7-zip}
+       \ 7z x %c,
+
+"
+" ARCHIVE VIEWING
+"
+
+" *.zip => `unzip`
+fileviewer {*.zip,*.jar,*.war,*.ear,*.oxt},
+          \<application/zip,application/java-archive>
+         \ unzip -l %f
+
+" *.tar* => `tar`
+fileviewer {*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.tar.zst,*.tzst,
+           \*.tar},
+          \<application/x-tar>
+         \ tar -taf %c
+
+" *.rar => `unrar`
+fileviewer {*.rar},\
+          \<application/x-rar>
+         \ unrar v %c
+
+" *.iso => `isoinfo`
 fileviewer {*.iso},
           \<application/x-iso9660-image,
            \application/vnd.efi.iso>
          \ isoinfo -d -i %c
+
+" *.7z => `7z`
+fileviewer {*.7z},
+          \<application/x-7z-compressed>
+         \ 7z l %c
+
 
 " SshMount
 filetype *.ssh
@@ -378,12 +415,6 @@ filetype *.ssh
 filetype *.ftp
        \ {Mount with curlftpfs}
        \ FUSE_MOUNT2|curlftpfs -o ftp_port=-,,disable_eprt %PARAM %DESTINATION_DIR %FOREGROUND,
-
-" Fuse7z and 7z archives
-filetype {*.7z},<application/x-7z-compressed>
-       \ {Mount with fuse-7z}
-       \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
-fileviewer {*.7z},<application/x-7z-compressed> 7zz l %c
 
 " Office files
 filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
