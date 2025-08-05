@@ -243,6 +243,8 @@ filetype {*.xhtml,*.html,*.htm},<text/html>
         \ lynx
 
 " Object
+fileviewer {*.so,*.so.*},<application/x-sharedlib>
+        \ nm -C -D %f | bat --style=grid,,numbers,,changes --color=always --paging=never --wrap=auto --terminal-width=%pw
 fileviewer {*.o},<application/x-object>
         \ nm -C %f | bat --style=grid,,numbers,,changes --color=always --paging=never --wrap=auto --terminal-width=%pw
 
