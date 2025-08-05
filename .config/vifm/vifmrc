@@ -542,6 +542,9 @@ nnoremap .     :<C-U><Space><C-R>=expand("%f:p:.")<CR><Home>
 nnoremap <CR> :<C-U><Space><C-R>=expand("%f:p:.")<CR><Home>
 cnoremap <CR> <C-R>=expand("%f:p:.")<CR><Space>
 
+nnoremap \ :<C-U><Space><C-R>=expand("%F:p:.")<CR><Home>
+cnoremap \ <C-R>=expand("%F:p:.")<CR><Space>
+
 " Build a command to open current file(s) as an argument
 nmap     g!    .!
 
