@@ -75,4 +75,9 @@
 		"yml",
 		"yml.dist"
 	],
+	"Zsh":
+	[
+		".zshrc",
+		"zsh",
+	],
 }

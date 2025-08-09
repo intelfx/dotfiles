@@ -20,6 +20,23 @@
     // Put your custom syntax rules here:
     "syntaxes": [
         {
+            "syntax": [
+                "ShellScript/Zsh",
+            ],
+            "extensions": ["zsh", ".zshrc"],
+            "rules": [
+                {
+                    "globmatch": [
+                        "**/.z@(shrc|shenv|profile|login|logout)*",
+                        "**/.zshrc.d/*",
+                        "**/.zshrc.*.d/*",
+                        "**/.zsh/**",
+                    ]
+                },
+                {"interpreter": "zsh"},
+            ]
+        },
+        {
             "syntax": "VimL/VimL",
             "rules": [
                 {"globmatch": "**/vifmrc"},
