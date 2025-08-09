@@ -117,3 +117,15 @@ snippet printflags
 	declare -p -x \\
 		| grep -E ' ((CC|CXX)=|CARGO_|(C|CXX|LD|RUST)FLAGS)' \\
 		| while read line; do msg2 "\$line"; done
+
+snippet clang-flags
+	export CC=clang
+	export CXX=clang++
+	for _varname in CFLAGS CXXFLAGS LDFLAGS; do
+		declare -n _var="\$_varname"
+		_var+=" -Wno-error=unused-command-line-argument"
+		_var="\${_var// -flto-partition+([^ ])}"
+		_var="\${_var// -fuse-linker-plugin}"
+		_var="\${_var// -fuse-ld+([^ ])}"
+	done
+	LDFLAGS+=" -fuse-ld=lld"
