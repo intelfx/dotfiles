@@ -1,6 +1,8 @@
 snippet lib
 	#!/bin/bash
 
+	set -eo pipefail
+	shopt -s lastpipe
 	. lib.sh || exit
 
 	_usage() {
