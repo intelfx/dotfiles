@@ -108,6 +108,7 @@
 /.gitconfig.private
 /.gitconfig.private-*
 /.gitconfig.machine
+/.gitconfig.pkgbuild
 
 # gitignore snippets (pointed to by various other configuration)
 !/.gitignore.*
