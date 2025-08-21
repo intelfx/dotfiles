@@ -225,3 +225,23 @@ alias tg1='tig show'
 alias tgl='TIGRC_USER=~/.tigrc.large tg'
 alias tgp='tig-pick'
 alias tgpl='TIGRC_USER=~/.tigrc.large tig-pick'
+
+function grdm() {
+	# always include HEAD@{u}, if it is defined
+	local -a head
+	head=( HEAD "${(@f)$(--git-rev-parse-silent 'HEAD@{u}')}" )
+
+	# TODO: octopus?
+	head+=( MERGE_HEAD )
+	local base
+	base="$(git merge-base -- $head)" || return
+
+	local -a ranges
+	local h
+	for h in "${head[@]}"; do
+		if [[ $h ]]; then
+			ranges+=("$base..$h")
+		fi
+	done
+	-trace command git range-diff "${ranges[@]}" $@
+}
