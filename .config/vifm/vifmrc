@@ -702,7 +702,9 @@ command! Vimp vim -p %f
 command! Vimo vim -o %f
 command! VimO vim -O %f
 command! Vimdiff vimdiff %f
-command! Vimdiffp vimdiff %b
+command! Vimdiffp vimdiff %c %C
+" vimdiff "matching" files
+command! Vimdiffm vimdiff %c %D/%c
 
 nnoremap <silent> ,V :edit %f<CR>
 nnoremap <silent> ,vp :Vimp<CR>
@@ -710,6 +712,7 @@ nnoremap <silent> ,vo :Vimo<CR>
 nnoremap <silent> ,vO :VimO<CR>
 nnoremap <silent> ,vd :Vimdiff<CR>
 nnoremap <silent> ,vD :Vimdiffp<CR>
+nnoremap <silent> ,vm :Vimdiffm<CR>
 
 " ------------------------------------------------------------------------------
 " Navigation mappings (fzf-powered, see below)
