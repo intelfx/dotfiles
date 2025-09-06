@@ -16,7 +16,7 @@ TIMEFMT="%J  %U user %S system %P cpu %*E total"  # %M is broken
 PS4='${(l.${(%):-%e}..+.)} '
 
 # History
-setopt extendedhistory incappendhistory sharehistory histignoredups histverify histnostore histfcntllock
+setopt extendedhistory sharehistory histignoredups histverify histnostore histfcntllock
 # Input/Output
 setopt correct interactivecomments
 # Changing Directories
