@@ -265,6 +265,13 @@ alias openstack-image-create-uefi="openstack image create \
 	--property hypervisor_type='qemu' \
 "
 
+# convenience alias to force Podman / Docker to talk to the system instance
+function podman-use-root() {
+	export CONTAINER_HOST="unix:///run/podman/podman.sock"
+	export DOCKER_HOST="unix:///run/podman/podman.sock"
+}
+alias docker-use-root=podman-use-root
+
 
 # ------------------------------------------------------------------------------
 # Compile flags
