@@ -267,6 +267,25 @@
 		git pull \"$remote\" \"refs/pull/$1/head\" \"${@:2}\"; \
 	}; f"
 
+	mr = "!f() { \
+		remote=\"$(git zz-guess-upstream \"${@:2:1}\")\" || return; \
+		prefix=\"mr${2:+\"/$2\"}\"; \
+		set -x; \
+		git fetch -fu \"$remote\" \"refs/merge-requests/$1/head:$prefix/$1\" || return; \
+		git checkout \"$prefix/$1\"; \
+	}; f"
+	mr-clean = "!f() { \
+		[[ ${1+set} ]] && glob=\"$1/*\" || glob=\"**\"; \
+		git for-each-ref --format 'delete %(refname)' \"refs/heads/mr/$glob\" \
+		| tee /dev/stderr \
+		| git update-ref --stdin; \
+	}; f"
+	pull-mr = "!f() { \
+		remote=\"$(git zz-guess-upstream \"${@:2}\")\" || return; \
+		set -x; \
+		git pull \"$remote\" \"refs/merge-requests/$1/head\" \"${@:2}\"; \
+	}; f"
+
 	# `pkgctl repo web` but for github
 	zz-web-pr = "!f() { \
 		local remote=\"$1\" pull=\"$2\" url; \
