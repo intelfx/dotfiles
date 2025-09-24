@@ -388,6 +388,7 @@ function loadflags_dbg() {
 CFLAGS+=" $DEBUG_CFLAGS"
 CXXFLAGS+=" $DEBUG_CXXFLAGS"
 RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
+mangle() { var="${var//-Og/-O0}"; var="${var// ?(-Wp,)-D_FORTIFY_SOURCE+([^ ])}"; }
 export ${DEBUG_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_DEBUG=full"}
 '
 }
@@ -417,7 +418,7 @@ CXX=clang++
 CFLAGS+=" $DEBUG_CFLAGS"
 CXXFLAGS+=" $DEBUG_CXXFLAGS"
 RUSTFLAGS+=" $DEBUG_RUSTFLAGS"
-mangle() { var="${var// -fuse-ld=+([^ ])}"; }
+mangle() { var="${var//-Og/-O0}"; var="${var// ?(-Wp,)-D_FORTIFY_SOURCE+([^ ])}"; var="${var// -fuse-ld=+([^ ])}"; }
 mangle_ld() { var="${var// -fuse-ld=+([^ ])}"; var+=" -fuse-ld=lld"; }
 export ${DEBUG_CARGOFLAGS:-"CARGO_PROFILE_RELEASE_DEBUG=full"}
 '
