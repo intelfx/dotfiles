@@ -30,6 +30,8 @@
 !/.config/bat
 !/.config/yay
 !/.config/containers
+/.config/containers/*
+!/.config/containers/*.conf
 !/.config/split2flac
 !/.config/pass-git-helper
 !/.config/vifm
