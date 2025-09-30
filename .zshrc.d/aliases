@@ -33,6 +33,21 @@ function -join() {
 	printf "%s" "${(pj:$sep:)${@}}"
 }
 
+function rwhence() {
+	local def
+	local -a alias
+	def=$(builtin whence -v -- $1)
+	print -- $def
+	if [[ $def == *'is an alias for'* ]]; then
+		# simplification: assume global aliases do not exist
+		alias=( ${(z)def##*is an alias for } )
+		# loop detection only at the immediate level
+		if [[ $alias[1] != $1 ]]; then
+			rwhence $alias[1]
+		fi
+	fi
+}
+
 #
 # personal aliases
 #
