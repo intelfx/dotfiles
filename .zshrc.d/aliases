@@ -48,6 +48,12 @@ function rwhence() {
 	fi
 }
 
+function ralias() {
+	functions[_alias_]=$1
+	print -r -- ${(z)functions[_alias_]}
+	unfunction _alias_
+}
+
 #
 # personal aliases
 #
