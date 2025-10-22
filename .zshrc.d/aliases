@@ -293,6 +293,44 @@ function podman-use-root() {
 }
 alias docker-use-root=podman-use-root
 
+# abomination to construct chains of `rsync --include=...` filters that match a
+# given path and all its predecessors, correctly accounting for recursive globs
+#
+# e.g.:
+#   rsync $(--rsync-include 'foo/bar/**') --exclude='*'
+# results in:
+#   rsync --include='/foo' --include='/foo/bar' --include='/foo/bar/**' --exclude='*'
+#
+--rsync-include() {
+	setopt ksh_glob
+
+	local input="$1"
+	local base tail
+	# strip trailing /** or any combination thereof
+	base="${input%%?(/)*(\*)}"
+	tail="${input#"$base"}"
+	# split base into components by / (this also has a useful effect of
+	# stripping leading/trailing separators and collapsing others)
+	local -a parts=(${(s:/:)base})
+
+	local current=''
+	local -a includes=()
+	if (( $#parts )); then
+		for part in $parts; do
+			current+="${current:+/}$part"
+			includes+=("--include=/$current/")
+		done
+		if [[ $tail != /+(\*) ]]; then
+			unset 'includes[-1]'
+		fi
+	fi
+	if [[ $current || $tail ]]; then
+		includes+=("--include=/$current$tail")
+	fi
+
+	print -r -- $includes
+}
+
 
 # ------------------------------------------------------------------------------
 # Compile flags
