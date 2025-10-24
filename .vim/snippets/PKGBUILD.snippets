@@ -95,10 +95,11 @@ snippet gitmodules-declare
 		[SUBNAME]="git+SUBURL"
 		[SUBPATH:SUBNAME]="git+SUBURL"
 	)
-	for _url in "\${_gitmodules[@]}"; do
-		_urlfile="\${_url##*/}"; _urlfile="\${_urlfile%.git}"
-		source+=( "\$_url" ); sha512sums+=( SKIP ); noextract+=( "\$_urlfile" )
+	for _suburl in "\${_gitmodules[@]}"; do
+		_subloc="\$(get_filename "\$_suburl")"
+		source+=( "\$_suburl" ); CHECKSUMVAR+=( SKIP ); noextract+=( "\$_subloc" )
 	done
+
 
 snippet gitmodules-prepare
 	printf "%s\\n" "\${!_gitmodules[@]}" | sort | while read _sub; do
@@ -107,9 +108,9 @@ snippet gitmodules-prepare
 		else _git=( git );                 _subname="\$_sub"
 		fi
 		_subpath="\$("\${_git[@]}" config -f .gitmodules "submodule.\$_subname.path")"
-		_suburl="\${_gitmodules[\$_sub]##*/}"; _suburl="\${_suburl%.git}"; _suburl="\$SRCDEST/\$_suburl"
+		_suburl="\${_gitmodules[\$_sub]}"; _subloc="\\$(get_filepath "\$_suburl")"
 		"\${_git[@]}" submodule init "\$_subpath"
-		"\${_git[@]}" config "submodule.\$_subname.url" "\$_suburl"
+		"\${_git[@]}" config "submodule.\$_subname.url" "\$_subloc"
 		"\${_git[@]}" -c protocol.file.allow=always submodule update "\$_subpath"
 	done
 
