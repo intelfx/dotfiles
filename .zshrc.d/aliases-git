@@ -50,7 +50,8 @@ function --git-diff-submodule-log() (
 )
 compalias2 --git-diff-submodule-log git diff
 
-alias gfe='git fetch --all --tags --prune'
+alias gfe='git fetch --all --prune'
+alias gfet='git fetch --all --prune --tags'
 alias grm='git rebase -i $(--git-rev-parse-first master main)'
 # identical to `grumb` because we --keep-base anyway
 alias grmb='git rebase -i --keep-base $(--git-rev-parse-first master@{u} main@{u})'
