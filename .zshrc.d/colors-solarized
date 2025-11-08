@@ -90,3 +90,5 @@ _gen_fzf_colors
 # using the 16-color ANSI palette with precise colors, and is thus
 # invariant with respect to dark/light mode switch.
 export BAT_THEME='Solarized-ANSI'
+
+export K9S_SKIN='solarized-dark'
