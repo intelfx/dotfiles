@@ -49,6 +49,9 @@
 /.config/sublime-text/Packages/User/Terminus/*.hidden-color-scheme
 /.config/sublime-text/Packages/User/Terminus.hidden-color-scheme
 /.config/sublime-text/Packages/User/SBSCompare*.hidden-*
+!/.config/k9s
+/.config/k9s/*
+!/.config/k9s/skins
 
 # Do not ignore .config/gmailctl, except credentials
 /.config/gmailctl/*.json
