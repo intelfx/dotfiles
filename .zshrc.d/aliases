@@ -331,6 +331,51 @@ alias docker-use-root=podman-use-root
 	print -r -- $includes
 }
 
+aliasip() {
+	local json
+	if [[ $1 == --json ]]; then
+		json=1
+		shift
+	fi
+
+	local src="$1" dest="$2"
+	if [[ $json ]] && -has jq; then
+		dest="$dest | jq"
+	fi
+	dest="${dest/curl/curl -fsS}"
+
+	local opt s d
+	for opt in "" 4 6; do
+		s="$src"; d="$dest"
+		if [[ $opt ]]; then
+			d="${d/curl/curl -$opt}"
+			s="${s/ip/ipv$opt}"
+		fi
+		alias "$s=$d"
+	done
+}
+
+# ifconfig.me (ip, ua, lang, misc-headers, all/json: ip, port, ua, lang, misc-headers)
+# ifconfig.co (ip, port, location, asn, json: ip, location, asn, hostname, ua)
+# myip.wtf (ip, ptr, location)
+# ip.wtf (ip, asn, json: ip, location, asn)
+aliasip --json myip-full 'curl http://ifconfig.co/json'
+aliasip --json myip-hdrs 'curl http://ifconfig.me/all.json'
+aliasip --json wtfip 'curl http://myip.wtf/json'
+aliasip hazip 'curl http://icanhazip.com'
+
+# coolest option
+# https://unix.stackexchange.com/a/81699/37512
+if -has dig; then
+	alias myip='dig @resolver4.opendns.com myip.opendns.com +short'
+	alias myipv4='dig @resolver4.opendns.com myip.opendns.com +short -4'
+	alias myipv6='dig @resolver1.ipv6-sandbox.opendns.com AAAA myip.opendns.com +short -6'
+else
+	# seems fastest of the bunch
+	aliasip myip 'curl http://ifconfig.me'
+fi
+
+unfunction aliasip
 
 # ------------------------------------------------------------------------------
 # Compile flags
