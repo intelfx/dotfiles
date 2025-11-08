@@ -332,15 +332,6 @@ fileviewer {*.torrent},<application/x-bittorrent>
 " ARCHIVE MOUNTING
 "
 
-" *.iso => `fuseiso`
-filetype {*.iso},
-        \<application/x-iso9660-image,
-         \application/vnd.efi.iso>
-       \ {Mount with fuseiso}
-       \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
-       \ {Extract with 7-zip}
-       \ 7z x %c,
-
 " generic archive mount tools
 filetype {*.tar.bz2,*.tbz2,*.tar.gz,*.tgz,*.tar.xz,*.txz,*.tar.zst,*.tzst,*.tar,
          \*.rar,*.squashfs},
@@ -371,6 +362,15 @@ filetype {*.7z,
         \<application/x-7z-compressed>
        \ {Mount with fuse3-p7zip}
        \ FUSE_MOUNT|fuse3-p7zip %SOURCE_FILE %DESTINATION_DIR,
+       \ {Extract with 7-zip}
+       \ 7z x %c,
+
+" *.iso => `fuseiso`
+filetype {*.iso},
+        \<application/x-iso9660-image,
+         \application/vnd.efi.iso>
+       \ {Mount with fuseiso}
+       \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
        \ {Extract with 7-zip}
        \ 7z x %c,
 
