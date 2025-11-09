@@ -64,6 +64,8 @@ compalias  ccatp	rg
 
 compalias  aria2cc      aria2c
 
+compalias2 tig          git log
+
 if command -v mcli &>/dev/null; then
 	complete -o nospace -C "$(command -v mcli)" mcli
 fi

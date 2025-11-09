@@ -164,7 +164,7 @@ alias tig1='tig show'
 alias tigl='TIGRC_USER=~/.tigrc.large tig'
 
 # "tig, with just branches"
-compalias tgb tig
+compalias2 tgb git log
 function tgb() {
 	if (( $# ))
 	then -trace command tig --boundary "$@"
@@ -176,7 +176,7 @@ function tgb() {
 	fi
 }
 # "tig, with current merge overview"
-compalias tgm tig
+compalias2 tgm git log
 function tgm() {
 	# always include HEAD@{u}, if it is defined
 	local -a head
@@ -190,7 +190,7 @@ function tgm() {
 	-trace command tig --boundary "^$base" $head $@
 }
 # "tig, with default set of refs"
-compalias tg tig
+compalias2 tg git log
 function tg() {
 	if (( $# ))
 	then -trace command tig --boundary "$@"
@@ -202,7 +202,7 @@ function tg() {
 	fi
 }
 # "tig, with almost all refs" (includes all remotes tracked by local branches)
-compalias tga tig
+compalias2 tga git log
 function tga() {
 	if (( $# ))
 	then -trace command tig --boundary "$@"
@@ -215,7 +215,7 @@ function tga() {
 	fi
 }
 # "tig, with _really_ all refs"
-compalias tgaa tig
+compalias2 tgaa git log
 function tgaa() {
 	if (( $# ))
 	then -trace command tig --boundary "$@"
