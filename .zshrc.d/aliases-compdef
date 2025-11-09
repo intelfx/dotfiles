@@ -66,6 +66,8 @@ compalias  aria2cc      aria2c
 
 compalias2 tig          git log
 
+compalias2 zfs-listv    zfs list
+
 if command -v mcli &>/dev/null; then
 	complete -o nospace -C "$(command -v mcli)" mcli
 fi
