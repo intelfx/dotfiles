@@ -87,6 +87,11 @@ export PAGER="$(command -v less)"
 export BROWSER="$(command -v xdg-open)"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/bin/pass"
+# direct pass(1) to use a separate GnuPG config, which is a less-invasive
+# alternative to using a separate $GNUPGHOME (which would entail running
+# a separate gpg-agent and writing units for it)
+export PASSWORD_STORE_GPG_OPTS="--options $HOME/.gnupg/gpg.pass.conf"
+
 # XXX: Wayland
 #      (copy to ~/.profile.machine if this host uses Wayland)
 #export MOZ_ENABLE_WAYLAND=1
