@@ -78,7 +78,7 @@ k9s:
     bgColor: *background
     buttonFgColor: *foreground
     buttonBgColor: *magenta
-    buttonFocusFgColor: white
+    buttonFocusFgColor: *white
     buttonFocusBgColor: *cyan
     labelFgColor: *orange
     fieldFgColor: *foreground
@@ -88,20 +88,20 @@ k9s:
       focusColor: *current_line
     menu:
       fgColor: *foreground
-      keyColor: *magenta
-      numKeyColor: *magenta
+      keyColor: *blue
+      numKeyColor: *violet
     crumbs:
       fgColor: *foreground
       bgColor: *current_line
       activeColor: *current_line
     status:
       newColor: *cyan
-      modifyColor: *blue
+      modifyColor: *oldblue
       addColor: *green
       errorColor: *red
       highlightColor: *orange
-      killColor: *comment
-      completedColor: *comment
+      killColor: *violet
+      completedColor: *violet
     title:
       fgColor: *foreground
       bgColor: *current_line
@@ -122,6 +122,7 @@ k9s:
       bgColor: *background
       cursorFgColor: *selection
       cursorBgColor: *current_line
+      markColor: *magenta
       header:
         fgColor: *foreground
         bgColor: *background
@@ -133,7 +134,7 @@ k9s:
       graphicColor: *oldblue
       showIcons: false
     yaml:
-      keyColor: *magenta
+      keyColor: *green
       colonColor: *oldblue
       valueColor: *foreground
     logs:
