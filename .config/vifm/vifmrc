@@ -702,7 +702,8 @@ command! Vimp vim -p %f
 command! Vimo vim -o %f
 command! VimO vim -O %f
 command! Vimdiff vimdiff %f
-command! Vimdiffp vimdiff %c %C
+" vimdiff file in other "tab"
+command! Vimdifft vimdiff %c %C
 " vimdiff "matching" files
 command! Vimdiffm vimdiff %c %D/%c
 
@@ -711,7 +712,7 @@ nnoremap <silent> ,vp :Vimp<CR>
 nnoremap <silent> ,vo :Vimo<CR>
 nnoremap <silent> ,vO :VimO<CR>
 nnoremap <silent> ,vd :Vimdiff<CR>
-nnoremap <silent> ,vD :Vimdiffp<CR>
+nnoremap <silent> ,vt :Vimdifft<CR>
 nnoremap <silent> ,vm :Vimdiffm<CR>
 
 " ------------------------------------------------------------------------------
