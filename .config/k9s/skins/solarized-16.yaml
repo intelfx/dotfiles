@@ -21,14 +21,15 @@
 #	"aqua":                 ColorAqua,         brightcyan       base1
 #	"white":                ColorWhite,        brightwhite      base3
 
-base03:       &base03   gray          # base03    brightblack
-base02:       &base02   black         # base02    black
-base01:       &base01   lime          # base01    brightgreen
-base00:       &base00   yellow        # base00    brightyellow
-base0:        &base0    blue          # base0     brightblue
-base1:        &base1    aqua          # base1     brightcyan
-base2:        &base2    silver        # base2     white
-base3:        &base3    white         # base3     brightwhite
+#             SHORTCUT  K9S-NAME        SOL-NAME  ANSI-NAME     RGB
+base03:       &base03   gray          # base03    brightblack   #002b36 # background
+base02:       &base02   black         # base02    black         #073642 # emph. background
+base01:       &base01   lime          # base01    brightgreen   #586e75 # secondary content
+base00:       &base00   yellow        # base00    brightyellow  #657b83
+base0:        &base0    blue          # base0     brightblue    #839496 # primary content
+base1:        &base1    aqua          # base1     brightcyan    #93a1a1 # emph. content
+base2:        &base2    silver        # base2     white         #eee8d5
+base3:        &base3    white         # base3     brightwhite   #fdf6e3
 yellow:       &yellow   olive         # accent    yellow        #b58900
 orange:       &orange   red           # accent    orange        #cb4b16
 red:          &red      maroon        # accent    red           #dc322f
