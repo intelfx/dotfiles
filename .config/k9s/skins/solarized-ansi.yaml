@@ -3,26 +3,69 @@
 # Based on: K9s Solarized Dark Skin
 # Author:   [@danmikita](danmikita@gmail.com)
 # -----------------------------------------------------------------------------
+#
+#	"black":                ColorBlack,        black            base02
+#	"maroon":               ColorMaroon,       red              red
+#	"green":                ColorGreen,        green            green
+#	"olive":                ColorOlive,        yellow           yellow
+#	"navy":                 ColorNavy,         blue             blue
+#	"purple":               ColorPurple,       magenta          magenta
+#	"teal":                 ColorTeal,         cyan             cyan
+#	"silver":               ColorSilver,       white            base2
+#	"gray":                 ColorGray,         brightblack      base03
+#	"red":                  ColorRed,          brightred        orange
+#	"lime":                 ColorLime,         brightgreen      base01
+#	"yellow":               ColorYellow,       brightyellow     base00
+#	"blue":                 ColorBlue,         brightblue       base0
+#	"fuchsia":              ColorFuchsia,      brightmagenta    violet
+#	"aqua":                 ColorAqua,         brightcyan       base1
+#	"white":                ColorWhite,        brightwhite      base3
 
-# Styles...
-foreground: &foreground "#839495"
-background: &background "#002833"
-current_line: &current_line "#003440"
-selection: &selection "#003440"
-comment: &comment "#6272a4"
-cyan: &cyan "#2aa197"
-green: &green "#859901"
-orange: &orange "#cb4a16"
-magenta: &magenta "#d33582"
-blue: &blue "#2aa198"
-red: &red "#dc312e"
+#             SHORTCUT  K9S-NAME        SOL-NAME  ANSI-NAME     RGB
+base03:       &base03   gray          # base03    brightblack   #002b36 # background
+base02:       &base02   black         # base02    black         #073642 # emph. background
+base01:       &base01   lime          # base01    brightgreen   #586e75 # secondary content
+base00:       &base00   yellow        # base00    brightyellow  #657b83
+base0:        &base0    blue          # base0     brightblue    #839496 # primary content
+base1:        &base1    aqua          # base1     brightcyan    #93a1a1 # emph. content
+base2:        &base2    silver        # base2     white         #eee8d5
+base3:        &base3    white         # base3     brightwhite   #fdf6e3
+yellow:       &yellow   olive         # accent    yellow        #b58900
+orange:       &orange   red           # accent    orange        #cb4b16
+red:          &red      maroon        # accent    red           #dc322f
+magenta:      &magenta  purple        # accent    magenta       #d33682
+violet:       &violet   fuchsia       # accent    violet        #6c71c4
+blue:         &blue     navy          # accent    blue          #268bd2
+cyan:         &cyan     teal          # accent    cyan          #2aa198
+green:        &green    green         # accent    green         #859900
+#---additional---
+oldblue:      &oldblue    teal          # was "blue" originally, conflict
+#---abstract---
+black:        &black    gray
+subblack:     &subblack black
+white:        &white    white
+subwhite:     &subwhite silver
+text:         &text     blue
+subtext:      &subtext  lime
+supertext:    &supertext aqua
+#---roles---
+bg_main:      &bg_main  gray
+bg_emph:      &bg_emph  black
+fg_dim:       &fg_dim   lime
+fg_main:      &fg_main  blue
+fg_emph:      &fg_emph  aqua
 
-# Skin...
+background:   &background   default   # transparent
+foreground:   &foreground   blue      # base0
+current_line: &current_line black     # base02
+selection:    &selection    black     # base02
+comment:      &comment      fuchsia   # violet
+
 k9s:
   body:
     fgColor: *foreground
     bgColor: *background
-    logoColor: *blue
+    logoColor: *oldblue
   prompt:
     fgColor: *foreground
     bgColor: *background
@@ -63,16 +106,16 @@ k9s:
       fgColor: *foreground
       bgColor: *current_line
       highlightColor: *orange
-      counterColor: *blue
+      counterColor: *oldblue
       filterColor: *magenta
   views:
     charts:
       bgColor: default
       defaultDialColors:
-        - *blue
+        - *oldblue
         - *red
       defaultChartColors:
-        - *blue
+        - *oldblue
         - *red
     table:
       fgColor: *foreground
@@ -87,11 +130,11 @@ k9s:
       fgColor: *foreground
       bgColor: *background
       cursorColor: *current_line
-      graphicColor: *blue
+      graphicColor: *oldblue
       showIcons: false
     yaml:
       keyColor: *magenta
-      colonColor: *blue
+      colonColor: *oldblue
       valueColor: *foreground
     logs:
       fgColor: *foreground
@@ -100,4 +143,4 @@ k9s:
         fgColor: *foreground
         bgColor: *selection
         toggleOnColor: *magenta
-        toggleOffColor: *blue
+        toggleOffColor: *oldblue
