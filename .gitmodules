@@ -137,7 +137,7 @@
 	url = https://github.com/tpope/vim-vinegar
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
+	url = https://github.com/intelfx/vim-fugitive
 [submodule ".vim/bundle/vim-repeat"]
 	path = .vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
