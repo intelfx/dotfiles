@@ -1,5 +1,9 @@
 #!/hint/zsh
 
+if [[ "$(uname -n)" == *virtme* ]]; then
+	return
+fi
+
 if command -v fortune &>/dev/null; then
 	fortune -a
 	echo ''
