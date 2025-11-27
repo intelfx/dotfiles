@@ -71,18 +71,19 @@ EOF
 #		resets terminal
 #	]Pnaabbcc
 #		sets ANSI color <0xn> to r=<0xaa>, g=<0xbb>, b=<0xcc>
-#	[0;5;100;94m
-#		sets background and foreground to base03/base00:
-#			0: reset attributes
-#			94: fg=bright,4 (== 12)
-#			100: bg=bright,0 (== 8)
-#			     this is broken in Linux VT (100+n is the same as 40+n), still done this way for symmetry
-#			5: blink <=> bg=bright (sic!)
-#			   XXX: bright background colors only work with 256-glyph fonts
-#			        (notably, ter-vXXn are out!)
+#	[0;5;94;100m
+#		sets background and foreground to base03/base0:
+#			0:  reset attributes
+#			94:  fg=bright,4 (bright,4 == 12)
+#			100: bg=bright,0 (bright,0 == 8)
+#			     [this is broken in Linux VT (100+n is the same as 40+n), still done this way for symmetry]
+#			5:   blink <=> bg=bright (sic!)
+#			     [this is how you set bg=bright in Linux VT]
+#			XXX: bright background colors only work with 256-glyph fonts
+#			     (notably, ter-vXXn are out!)
 #	[1;12]
 #	[2;12]
-#		sets dim and underline foreground to base00 (same as normal)
+#		sets dim and underline foreground to base0 (same as normal)
 #	[8]
 #		sets current attributes as default
 #	[H[J
