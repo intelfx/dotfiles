@@ -14,6 +14,7 @@
 		"EditorConfig",
 		"FileDiffs",
 		"INI",
+		"Kconfig Syntax Highlight",
 		"LSP",
 		"LSP-bash",
 		"LSP-clangd",
