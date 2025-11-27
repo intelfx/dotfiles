@@ -1,5 +1,9 @@
 #!/hint/zsh
 
+if [[ "$(uname -n)" == *virtme* ]]; then
+	return
+fi
+
 if [[ "$ZED_TERM" ]]; then
 	return
 fi
