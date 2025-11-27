@@ -11,7 +11,7 @@ function load_zshrc_d() {
 	for f in \
 		$dir/colors*(-.N) \
 		$dir/completion*(-.N) \
-		$dir/(^completion*|colors*)(-.N) \
+		$dir/^(completion|colors)*(-.N) \
 		# EOL
 	do
 		source $f
