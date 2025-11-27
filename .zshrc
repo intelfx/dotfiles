@@ -68,6 +68,7 @@ load_zshrc_d $HOME/.zshrc.early.d
 && -z "$ZED_TERM"
 && -z "$JUPYTER_SERVER_URL"
 && -z "$VIM"
+&& -z "$WARP_IS_LOCAL_SHELL_SESSION"
 && "$(uname -n)" != *virtme*
 ]] \
 	&& command -v tmx &>/dev/null \
