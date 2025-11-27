@@ -51,6 +51,11 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*' special-dirs false
 zstyle :compinstall filename '/home/intelfx/.zshrc'
 
+zstyle ':completion:*:hosts' known-hosts-files \
+	/etc/ssh/ssh_known_hosts \
+	/home/intelfx/.ssh/known_hosts \
+	/home/intelfx/.ssh/known_hosts.*(N)
+
 
 #
 # specific zstyles
