@@ -21,11 +21,27 @@ define bugreport
 	set logging enable off
 end
 
+define bugreport-cur
+	set pagination off
+	set logging file gdblog-full.txt
+	set logging enable on
+	backtrace full
+	set logging enable off
+end
+
 define bugreport-terse
 	set pagination off
 	set logging file gdblog-terse.txt
 	set logging enable on
 	thread apply all backtrace
+	set logging enable off
+end
+
+define bugreport-terse-cur
+	set pagination off
+	set logging file gdblog-terse.txt
+	set logging enable on
+	backtrace
 	set logging enable off
 end
 
