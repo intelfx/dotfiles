@@ -94,3 +94,13 @@ snippet common
 	#
 	# main
 	#
+
+snippet jq-tosemver:
+	_tosemver='
+	  def tosemver:
+	      sub("\\\\+.*$"; "")
+	    | capture("^(?<v>[^-]+)(?:-(?<p>.*))?$") | [.v, .p // empty]
+	    | map(split(".") | map(tonumber? // .))
+	    | .[1] |= (. // {})
+	'
+	jq "$_tosemver; sort_by(.field | tosemver)"
