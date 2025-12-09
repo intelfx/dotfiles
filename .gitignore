@@ -52,6 +52,7 @@
 !/.config/k9s
 /.config/k9s/*
 !/.config/k9s/skins
+!/.config/yubikey-touch-detector
 
 # Do not ignore .config/gmailctl, except credentials
 /.config/gmailctl/*.json
