@@ -192,3 +192,6 @@
 [submodule ".vim/bundle/vimsuggest"]
 	path = .vim/bundle/vimsuggest
 	url = https://github.com/girishji/vimsuggest
+[submodule ".vim/bundle/bpftrace.vim"]
+	path = .vim/bundle/bpftrace.vim
+	url = https://github.com/mmarchini/bpftrace.vim
