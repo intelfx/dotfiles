@@ -131,7 +131,7 @@ snippet clang-flags
 	done
 	LDFLAGS+=" -fuse-ld=lld"
 
-snippets lto-c-to-rust
+snippet lto-c-to-rust
 	# _Disable_ cross-toolchain LTO because we are using different toolchains
 	# for C/C++ and Rust code (i.e., LLVM LTO is incompatible with GCC LTO).
 	# In this project, C/C++ code is linked into Rust code. Therefore, apply
@@ -139,7 +139,7 @@ snippets lto-c-to-rust
 	CFLAGS+=" -ffat-lto-objects"
 	CXXFLAGS+=" -ffat-lto-objects"
 
-snippets lto-rust-to-c
+snippet lto-rust-to-c
 	# _Disable_ cross-toolchain LTO because we are using different toolchains
 	# for C/C++ and Rust code (i.e., LLVM LTO is incompatible with GCC LTO).
 	# Typical workaround of `-ffat-lto-objects` (which forces generation of normal
