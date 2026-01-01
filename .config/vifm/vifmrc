@@ -97,7 +97,7 @@ set scrolloff=4
 
 " Don't do too many requests to slow file systems
 if !has('win')
-    set slowfs=curlftpfs,sshfs
+    set slowfs=fuse.curlftpfs,fuse.sshfs
 endif
 
 " Set custom cpoptions (!f for intuitive :filter)
