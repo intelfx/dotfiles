@@ -98,6 +98,9 @@ set scrolloff=4
 " Don't do too many requests to slow file systems
 if !has('win')
     set slowfs=fuse.curlftpfs,fuse.sshfs
+
+    " ...or places where slow filesystems are likely to be mounted
+    let &slowfs+=expand("$HOME/mnt")
 endif
 
 " Set custom cpoptions (!f for intuitive :filter)
