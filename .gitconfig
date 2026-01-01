@@ -47,6 +47,8 @@
 [rerere]
 	enabled = 1
 	autoupdate = true
+[absorb]
+	autoStageIfNothingStaged = true
 [clean]
 	requireForce = false
 	exclude = /.idea
