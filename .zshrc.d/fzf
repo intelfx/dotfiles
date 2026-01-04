@@ -104,11 +104,13 @@ if command -v fd &>/dev/null; then
 		fd_opts+=( --hidden --exclude ".git" )
 		if ! __fzf_compgen_nofollow_at "$1"; then
 			fd_opts+=( --follow )
+			# hack: do not follow Wine's `Z:` back to `/`
+			fd_opts+=( --exclude '**/dosdevices/z:/*')
 		fi
 		if __fzf_compgen_skip_vcs_at "$1"; then
 			fd_opts+=( --no-ignore-vcs --no-ignore-parent )
 		fi
-		# fzf uses --ansi 
+		# fzf uses --ansi
 		fd_opts+=( --color=always )
 		fd "${fd_opts[@]}" . "$1"
 	}
