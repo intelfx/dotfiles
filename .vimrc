@@ -410,9 +410,6 @@ def! s:floorm(arg: number, mul: number): number
   return arg - (arg % mul)
 enddef
 
-command! SynStack
-  \ echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-
 command! -nargs=* -complete=help Help
   \ tab help <args>
 
