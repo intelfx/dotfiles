@@ -198,3 +198,6 @@
 [submodule ".vim/bundle/vim-sshauthkeys"]
 	path = .vim/bundle/vim-sshauthkeys
 	url = https://github.com/intelfx/vim-sshauthkeys
+[submodule ".vim/bundle/synstack.vim"]
+	path = .vim/bundle/synstack.vim
+	url = https://github.com/dylnmc/synstack.vim
