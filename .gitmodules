@@ -195,3 +195,6 @@
 [submodule ".vim/bundle/bpftrace.vim"]
 	path = .vim/bundle/bpftrace.vim
 	url = https://github.com/mmarchini/bpftrace.vim
+[submodule ".vim/bundle/vim-sshauthkeys"]
+	path = .vim/bundle/vim-sshauthkeys
+	url = https://github.com/xevz/vim-sshauthkeys
