@@ -170,6 +170,9 @@ export REGISTRY_AUTH_FILE="$(systemd-path user-shared)/containers/auth.json"
 # It's 2024 and Go(vno) still thinks it owns the entire machine. Wrong.
 export GOMODCACHE="$(systemd-path user-state-cache)/go-mod"
 
+# Please learn about XDG.
+export RAD_HOME="$(systemd-path user-state-private)/radicle"
+
 # Fuck you!
 # https://github.com/kubernetes/minikube/issues/3724
 export MINIKUBE_IN_STYLE=0
