@@ -102,6 +102,9 @@ export PASSWORD_STORE_GPG_OPTS="--options $HOME/.gnupg/gpg.pass.conf"
 # Seems like a sane default
 export CCACHE_BASEDIR="$HOME"
 
+# Isolate different users' sccache instances
+export SCCACHE_SERVER_UDS="$(systemd-path user-state-cache)/sccache/sccache.sock"
+
 function get_sysfs_count() {
 	local file="$1"
 	local -a ranges
