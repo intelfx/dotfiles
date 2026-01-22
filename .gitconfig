@@ -4,6 +4,11 @@
 	quotedpath = false
 	excludesfile = ~/.gitignore.global
 	pager = ${GIT_PAGER-${PAGER-less}} -FR
+# [feature]
+# 	manyFiles = true
+# [core]
+# 	untrackedCache = true
+# 	splitIndex = true
 [init]
 	defaultBranch = master
 [checkout]
