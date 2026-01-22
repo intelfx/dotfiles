@@ -64,6 +64,15 @@ zstyle ':completion:*:hosts' known-hosts-files \
 zstyle ':completion:*:sysctl:*' delimiter '.'
 zstyle ':completion:*:sysctl:*' expand  # reset to empty because _multi_part is broken
 
+# XXX: for some reason, `hosts-host` tag must have an explicit name, otherwise the `hosts-ipaddr` tag breaks
+# (#zsh did not come up with a better answer)
+zstyle ':completion:*:(ssh|scp|rsync):*' tag-order 'hosts:-host:remote\ host\ name hosts:-domain:domain hosts:-ipaddr:ip\ address *'
+zstyle ':completion:*:(scp|rsync):*' group-order users files all-files hosts-domain hosts-host hosts-ipaddr
+zstyle ':completion:*:ssh:*'         group-order                       hosts-domain hosts-host hosts-ipaddr
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*.*' loopback localhost
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^*.*' '*@*'
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^<->.<->.<->.<->' '127.0.0.<->'
+
 
 #
 # {,bash}compinit
