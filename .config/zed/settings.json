@@ -77,6 +77,56 @@
         "path": "/usr/bin/bash-language-server",
         "arguments": ["start"]
       }
+    },
+    "clangd": {
+      "binary": {
+        "path": "/usr/bin/env",
+        "arguments": [
+          "chrt", "--batch", "0",
+          "nice", "-n19",
+          "clangd",
+          // If set to true, code completion will include index symbols that are not defined in the scopes (e.g. namespaces) visible from the code completion point.
+          // Such completions can insert scope qualifiers
+          "--all-scopes-completion",
+          // Enable clang-tidy diagnostics
+          "--clang-tidy",
+          // Granularity of code completion suggestions
+          // detailed: One completion item for each semantically distinct completion, with full type information
+          // bundled: Similar completion items (e.g. function overloads) are combined. Type information shown where possible
+          "--completion-style=detailed",
+          // When disabled, completions contain only parentheses for function calls.
+          // When enabled, completions also contain placeholders for method parameters
+          "--function-arg-placeholders",
+          // Add #include directives when accepting code completions
+          // iwyu: Include what you use. Insert the owning header for top-level symbols, unless the header is already directly included or the symbol is forward-declared
+          // never: Never insert #include directives as part of code completion
+          "--header-insertion=never",
+          // Prepend a circular dot or space before the completion label, depending on whether an include line will be inserted or not
+          "--header-insertion-decorators",
+          // Limit the number of references returned by clangd. 0 means no limit (default=1000)
+          "--limit-references=0",
+          // Limit the number of results returned by clangd. 0 means no limit (default=100)
+          "--limit-results=50",
+
+          // Index project code in the background and persist index on disk
+          "--background-index",
+          // Thread priority for building the background index. The effect of this flag is OS-specific.
+          // One of "background", "low", "normal"
+          "--background-index-priority=background",
+
+          // Number of workers used for indexing and language server
+          "-j=8",
+          // Set to "true" to release memory periodically via malloc_trim(3)
+          "--malloc-trim",
+          // One of "disk", "memory". Storing PCHs in memory increases memory usages, but may improve performance
+          "--pch-storage=disk",
+          // Read user and project configuration from YAML files.
+          "--enable-config",
+          // Comma separated list of globs for white-listing gcc-compatible drivers that are safe to execute.
+          // Drivers matching any of these globs will be used to extract system includes. e.g. /usr/bin/**/clang-*,/path/to/repo/**/g++-*
+          "--query-driver=/usr/bin/clang,/usr/bin/clang++,/usr/bin/gcc,/usr/bin/g++,/usr/lib/ccache/bin/*"
+        ]
+      },
     }
   },
   "colorize_brackets": false,
