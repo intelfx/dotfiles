@@ -12,10 +12,17 @@
       "shift shift": "file_finder::Toggle"
     },
   },
+
+  // Port obvious missing QoL things for Zed's Vim mode
   {
     "context": "vim_mode == visual",
     "bindings": {
+      // enable visual surround à la vim-surround (binding does not exist by default)
       "S": ["vim::PushAddSurrounds", {}],
+      // equivalent of `vnoremap $ g_` to make it play better with visual surround
+      "$": "vim::EndOfLineDownward",
+      // ditto
+      "end": "vim::EndOfLineDownward",
     },
   },
 
