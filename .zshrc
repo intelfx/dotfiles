@@ -99,3 +99,11 @@ load_zshrc_d ~/.zshrc.late.d
 # late plugins
 #
 load_plugin zsh-syntax-highlighting
+
+#
+# HACK for virtme shells
+#
+if [[ "$(uname -n)" == *virtme* ]] \
+&& [[ -x ~/bin/hw/virtme-script ]]; then
+	~/bin/hw/virtme-script
+fi
