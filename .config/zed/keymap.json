@@ -15,6 +15,12 @@
 
   // Port obvious missing QoL things for Zed's Vim mode
   {
+    "context": "(vim_mode == normal) || (vim_mode == visual) || (vim_mode == operator)",
+    "bindings": {
+      ",": ["workspace::SendKeystrokes", ":"]
+    }
+  },
+  {
     "context": "vim_mode == visual",
     "bindings": {
       // enable visual surround à la vim-surround (binding does not exist by default)
