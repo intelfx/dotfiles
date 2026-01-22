@@ -13,6 +13,16 @@
     },
   },
 
+  // Use Alt-R for buffer symbols, and Alt-Shift-R for project symbols
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-r": "outline::Toggle",
+      "ctrl-shift-r": null, // was project_symbols::Toggle
+      "alt-shift-r": "project_symbols::Toggle",
+    }
+  },
+
   // Use C-K K-B to invoke project panel if not in it, or to hide project panel if in it
   {
     "context": "(Workspace || Pane || Editor) && !ProjectPanel",
