@@ -105,8 +105,17 @@ load_plugin zsh-syntax-highlighting
 #
 # very late: atuin
 #
-if command -v atuin &>/dev/null; then
+if [[ "$(uname -n)" != *virtme* ]] \
+&& command -v atuin &>/dev/null; then
 	source ~/.zsh/misc/atuin
+fi
+
+#
+# HACK for virtme shells
+#
+if [[ "$(uname -n)" == *virtme* ]] \
+&& [[ -x ~/bin/hw/virtme-script ]]; then
+	source ~/bin/hw/virtme-script
 fi
 
 #
