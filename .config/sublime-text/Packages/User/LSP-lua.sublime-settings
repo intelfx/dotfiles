@@ -1,0 +1,11 @@
+// Settings in here override those in "LSP-lua/LSP-lua.sublime-settings"
+{
+    // The startup command for this language server
+    "command": [
+    	"/usr/bin/lua-language-server",
+        // "${storage_path}/LSP-lua/bin/lua-language-server",
+        // "-E",
+        // "${storage_path}/LSP-lua/main.lua",
+        "--locale=${locale}"
+    ],
+}
