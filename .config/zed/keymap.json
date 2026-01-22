@@ -7,6 +7,12 @@
 // from the command palette.
 [
   {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
     "context": "vim_mode == visual",
     "bindings": {
       "S": ["vim::PushAddSurrounds", {}],
