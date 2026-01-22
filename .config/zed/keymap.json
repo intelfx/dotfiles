@@ -19,6 +19,15 @@
     },
   },
 
+  {
+    "context": "Editor && edit_prediction && vim_mode == insert",
+    "bindings": {
+      "ctrl-x ctrl-x": "editor::Cancel",
+      "\\": "editor::Cancel",
+      // "tab": "editor::Tab",
+    }
+  },
+
   // Use Alt-R for buffer symbols, and Alt-Shift-R for project symbols
   {
     "context": "Editor",
