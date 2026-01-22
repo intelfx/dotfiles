@@ -12,4 +12,18 @@
       "S": ["vim::PushAddSurrounds", {}],
     },
   },
+
+  // Use C-K K-B to invoke project panel if not in it, or to hide project panel if in it
+  {
+    "context": "(Workspace || Pane || Editor) && !ProjectPanel",
+    "bindings": {
+      "ctrl-k ctrl-b": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-k ctrl-b": "workspace::ToggleLeftDock"
+    }
+  },
 ]
