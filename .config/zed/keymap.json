@@ -26,4 +26,18 @@
       "ctrl-k ctrl-b": "workspace::ToggleLeftDock"
     }
   },
+
+  // Use C-K K-G to invoke git panel if not in it, or to hide git panel if in it
+  {
+    "context": "(Workspace || Pane || Editor) && !GitPanel",
+    "bindings": {
+      "ctrl-k ctrl-g": "git_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "ctrl-k ctrl-g": "workspace::ToggleLeftDock"
+    }
+  },
 ]
