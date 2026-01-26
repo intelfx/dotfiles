@@ -34,16 +34,18 @@ function -join() {
 }
 
 function rwhence() {
-	local def
+	local def i=1
 	local -a alias
 	def=$(builtin whence -v -- $1)
 	print -- $def
 	if [[ $def == *'is an alias for'* ]]; then
 		# simplification: assume global aliases do not exist
 		alias=( ${(z)def##*is an alias for } )
+		# skip leading environment overrides, if any
+		while [[ $alias[i] == *=* ]]; do (( ++i )); done
 		# loop detection only at the immediate level
-		if [[ $alias[1] != $1 ]]; then
-			rwhence $alias[1]
+		if [[ $alias[i] != $1 ]]; then
+			rwhence $alias[i]
 		fi
 	fi
 }
