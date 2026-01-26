@@ -5,7 +5,9 @@
 #-------------------------------------------------------------
 
 # Use colors ($LS_COLORS) and human-readable sizes by default
-alias ls='ls -h --color=auto'
+# Also, use C locale for collation to avoid ignoring leading punctuation
+# (when I name something `_tmp`, I want to order it before everything, dammit)
+alias ls='LC_COLLATE=C.UTF-8 ls -h --color=auto'
 
 alias lX='ls -lXB'         #  Sort by extension
 alias lS='ls -lSr'         #  Sort by size, biggest last
