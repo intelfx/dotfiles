@@ -39,7 +39,7 @@
 		"clangd.background-index-priority": "background",
 
 		// Number of workers used for indexing and language server
-		"clangd.number-workers": "8",
+		"clangd.number-workers": "22",
 		// Set to "true" to release memory periodically via malloc_trim(3)
 		"clangd.malloc-trim": true,
 		// One of "disk", "memory". Storing PCHs in memory increases memory usages, but may improve performance
