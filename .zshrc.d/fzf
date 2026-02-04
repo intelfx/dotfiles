@@ -49,6 +49,11 @@ if [[ $TMUX ]]; then
 	zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 fi
 
+if -has eza; then
+	zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --classify=always --color=always --tree --level=1 $realpath'
+	zstyle ':fzf-tab:complete:cd:*' popup-min-size '50%' 0
+fi
+
 # override fzf-tab's hardcoded highlight color with our own
 # (requires that colors-solarized snippet is already loaded)
 if (( ${+FZF_COLORS} )); then
