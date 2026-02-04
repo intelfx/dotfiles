@@ -147,3 +147,6 @@ snippet lto-rust-to-c
 	# we are not linking C/C++ code into Rust code, but Rust code into C/C++ code.
 	# Thus, we have to force generation of normal object code on Rust side:
 	RUSTFLAGS+=" -Clinker-plugin-lto=false"
+
+snippet rust-prepare-fetch
+	cargo fetch --locked --target "\$(rustc --print host-tuple)"
