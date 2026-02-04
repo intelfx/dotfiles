@@ -34,6 +34,16 @@ source $HOME/.zsh/misc/fzf.zsh/key-bindings.zsh
 # Configure fzf-tab
 #
 
+# do not auto-insert unambiguous prefix
+# For some reason, with fzf-tab, this does exactly what I want (suppress
+# insertion of unambiguous partial prefix, but do not suppress insertion of
+# an entire match if there is only one), despite the documentation saying
+# exactly opposite. Probably has something to do with fzf-tab.
+zstyle ':completion:*' force-list always
+# This one is opposite: it says it does what I want in the docs, but does not
+# in fact have any effect on fzf-tab. Still preserved for posterity.
+zstyle ':completion:*' insert-unambiguous false
+
 # disable sort when completing `git checkout` and `git commit`
 zstyle ':completion:*:git-*:*' sort false
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
