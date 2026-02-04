@@ -40,6 +40,10 @@ zstyle ':completion:*:git-*:*' sort false
 zstyle ':completion:*' menu no
 
 zstyle ':fzf-tab:*' switch-group 'alt-b' 'alt-n'
+zstyle ':fzf-tab:*' fzf-bindings \
+	'alt-a:toggle-all' \
+	# EOL
+
 zstyle ':fzf-tab:*' query-string input
 if [[ $TMUX ]]; then
 	zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
