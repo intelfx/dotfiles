@@ -51,6 +51,8 @@ if (( ${+FZF_COLORS} )); then
 	zstyle ':fzf-tab:*' fzf-flags --color="${(j:,:)FZF_COLORS}"
 fi
 
+zstyle ':fzf-tab:*' active-group-style inverse
+
 #
 # Set up behavior for fzf.zsh
 #
