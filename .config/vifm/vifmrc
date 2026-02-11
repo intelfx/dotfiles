@@ -442,6 +442,10 @@ filextype */
         \ {View in thunar}
         \ Thunar %f &,
 
+" SQLite databases
+fileviewer <application/vnd.sqlite3>
+        \ $HOME/bin/misc/sqlite-preview.sh --width %pw %c
+
 " Syntax highlighting in preview
 "
 " Explicitly set highlight type for some extensions
