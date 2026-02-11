@@ -1,0 +1,32 @@
+[unstable]
+profile-rustflags = true
+
+[registries.crates-io]
+protocol = 'git'
+
+[build]
+rustflags = [
+	#"-Z", "threads=8",
+]
+
+[profile.dev]
+opt-level = 1
+lto = false
+incremental = true
+debug = 2
+
+[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+# overrides build.rustflags
+rustflags = [
+	#"-Z", "threads=8",
+	"-C", "target-cpu=native",
+	"-C", "link-arg=-fuse-ld=lld",
+]
+
+[env]
+CC = "clang"
+CXX = "clang++"
+CFLAGS = "-march=native -Og -ggdb3 -fno-omit-frame-pointer -fuse-ld=lld"
+CXXFLAGS = "-march=native -Og -ggdb3 -fno-omit-frame-pointer -fuse-ld=lld"
+LDFLAGS = "-fuse-ld=lld"
