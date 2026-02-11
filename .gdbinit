@@ -1,6 +1,7 @@
 set disassembly-flavor intel
 set debuginfod enabled on
 set auto-load safe-path $debugdir:$datadir/auto-load:~/.idapro:/opt:/usr
+dir /usr/lib/rustlib/etc
 
 define gdblog
 	set pagination off
