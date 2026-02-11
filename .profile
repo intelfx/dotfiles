@@ -104,6 +104,8 @@ export CCACHE_BASEDIR="$HOME"
 
 # Isolate different users' sccache instances
 export SCCACHE_SERVER_UDS="$(systemd-path user-state-cache)/sccache/sccache.sock"
+export SCCACHE_DIR="$(systemd-path user-state-cache)/sccache"
+export SCCACHE_CONF="$(systemd-path user-configuration)/sccache/sccache.toml"
 
 function get_sysfs_count() {
 	local file="$1"
