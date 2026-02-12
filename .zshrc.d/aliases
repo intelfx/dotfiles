@@ -214,11 +214,74 @@ function mkcd() {
 	mkdir -pv "$1" && cd "$1"
 }
 
+function -tmpcd-is-base-dir() {
+	[[ -d "$1" && -z "$(getfattr -n user.is-tmpcd --only-values "$1" 2>/dev/null)" ]]
+}
 function tmpcd() {
-	local name
-	name="$(date +'%FT%H-%M-%S%z')" || return
-	mkdir -pv "$HOME/tmp/tmp-$name" || return
-	cd "$HOME/tmp/tmp-$name"
+	local base tpl umask suffix dir
+	setopt localoptions
+
+	while (( $# )); do
+		if [[ $1 == /* ]]; then
+			if [[ ! $base ]] \
+			&& { [[ $1 == */ ]] \
+			  || -tmpcd-is-base-dir "$1"; }
+			then
+				base="$1"
+			elif [[ ! ($base || $tpl) ]] \
+			  && { [[ $1 != */ ]] \
+			    && -tmpcd-is-base-dir "$(dirname "$1")"; }
+			then
+				base="$(dirname "$1")"
+				tpl="$(basename "$1")"
+			else
+				echo >&2 "tmpcd: invalid or unexpected arg: ${(qq)1}"
+				return 1
+			fi
+		elif [[ $1 =~ ^[0-9]+$ ]]; then
+			if [[ ! $umask ]]; then
+				umask="$1"
+			else
+				echo >&2 "tmpcd: invalid or unexpected arg: ${(qq)1}"
+			fi
+		elif [[ $1 != */* ]]; then
+			if [[ ! $tpl ]]; then
+				tpl="$1"
+			else
+				echo >&2 "tmpcd: invalid or unexpected arg: ${(qq)1}"
+				return 1
+			fi
+		else
+			echo >&2 "tmpcd: invalid or unexpected arg: ${(qq)1}"
+		fi
+		shift
+	done
+
+	: "${base:="$HOME/tmp"}"
+	: "${tpl:="tmp-"}"
+	: "${suffix:="$(date +'%FT%H-%M-%S%z')"}"
+	: "${umask:=0022}"
+
+	if [[ $tpl == *- ]]; then
+		tpl+="$suffix.XXX"
+	elif [[ $tpl == *. ]]; then
+		tpl+="XXX"
+	fi
+	if [[ $tpl == *XXX* ]]; then
+		set -x
+		umask "$umask"
+		dir="$(mktemp -d -p "$base" "$tpl")" || return
+	elif [[ ! -d "$base/$tpl" ]]; then
+		set -x
+		umask "$umask"
+		dir="$base/$tpl"
+		command mkdir -p "$dir" || return
+	else
+		echo >&2 "tmpcd: final dir already exists: ${(qq):-$base/$tpl}"
+		return 1
+	fi
+	setfattr -n user.is-tmpcd -v 1 "$dir"
+	cd "$dir"
 }
 alias tmp='tmpcd'
 
