@@ -8,6 +8,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "provider": "zed"
+  },
   "project_panel": {
     "hide_gitignore": true
   },
@@ -33,9 +36,6 @@
     "minimum_contrast": 0.0,
     "font_weight": 300.0,
     "font_family": "Iosevka Term"
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
   },
   "ui_font_weight": 400.0,
   "buffer_font_weight": 300.0,
