@@ -155,9 +155,19 @@
     }
   },
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "zed.dev",
+        "model": "claude-opus-4-6-thinking"
+      },
+      {
+        "provider": "zed.dev",
+        "model": "claude-sonnet-4-5-thinking"
+      }
+    ],
     "inline_assistant_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
+      "model": "claude-sonnet-4-5-thinking"
     },
     "use_modifier_to_send": true,
     "default_model": {
@@ -165,7 +175,7 @@
       "model": "claude-sonnet-4-5-thinking"
     },
     "always_allow_tool_actions": true,
-    "default_profile": "write",
+    "default_profile": "ask",
     "model_parameters": []
   },
   "base_keymap": "SublimeText",
