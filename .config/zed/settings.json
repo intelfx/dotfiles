@@ -148,6 +148,11 @@
   "minimum_contrast_for_highlights": 46.0,
   "ui_font_family": ".ZedSans",
   "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "settings": {
+      }
+    }
   },
   "agent": {
     "inline_assistant_model": {
