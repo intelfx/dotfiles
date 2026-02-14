@@ -9,6 +9,8 @@
 # [core]
 # 	untrackedCache = true
 # 	splitIndex = true
+[extensions]
+	worktreeConfig = true
 [init]
 	defaultBranch = master
 [checkout]
