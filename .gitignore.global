@@ -10,5 +10,6 @@ __pycache__/
 *.pyo
 /.pdm-python
 **/.cache/clangd/
+**/.zed/
 compile_commands.json
 # vim: ft=gitignore:
