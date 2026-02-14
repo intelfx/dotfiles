@@ -161,17 +161,32 @@
     }
   },
   "agent": {
-    "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
+    "tool_permissions": {
+      "default": "allow"
     },
-    "use_modifier_to_send": true,
-    "default_model": {
+    "show_turn_stats": true,
+    "favorite_models": [
+      {
+        "provider": "zed.dev",
+        "model": "claude-sonnet-4-6-thinking"
+      },
+      {
+        "provider": "zed.dev",
+        "model": "claude-sonnet-4-6-thinking"
+      }
+    ],
+    "inline_assistant_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-5-thinking"
     },
-    "always_allow_tool_actions": true,
-    "default_profile": "write",
+    "use_modifier_to_send": true,
+    "default_model": {
+      "effort": "medium",
+      "enable_thinking": true,
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6"
+    },
+    "default_profile": "ask",
     "model_parameters": []
   },
   "base_keymap": "SublimeText",
