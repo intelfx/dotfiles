@@ -1,0 +1,229 @@
+%YAML 1.2
+---
+# Rough prototype: syntax highlighting for `zfs list` tabular output
+# http://www.sublimetext.com/docs/3/syntax.html
+name: zfs-list
+file_extensions:
+  - zfs-list
+scope: text.zfs-list
+
+variables:
+  # Boolean true
+  bool_true: |-
+    (?:yes|on)
+  # Boolean false
+  bool_false: |-
+    (?:no|off)
+  # Compression algorithms
+  compress_kw: |-
+    (?:lz4|lzjb|gzip(?:-[1-9])?|zle|zstd(?:-(?:fast(?:-\d+)?|\d{1,2}))?)
+  # Checksum algorithms
+  checksum_kw: |-
+    (?:sha256|sha512|skein|edonr|blake3|fletcher[24]|noparity|verify)(?:,verify)?
+  # Encryption algorithms
+  encryption_kw: |-
+    (?:aes-(?:128|192|256)-(?:ccm|gcm))
+  # Ordinal property values that can be ranked above "true-ish" (important/alert/unusual conditions)
+  prop_alertish_kw: |-
+    (?:always)
+  # Ordinal property values that can be ranked as "true-ish" (enabled, activated, etc)
+  prop_trueish_kw: |-
+    (?:enabled|standard|visible|sensitive|available)
+  # Ordinal property values that can be ranked as "false-ish" (disabled, deactivated, etc)
+  prop_falsish_kw: |-
+    (?:disabled|hidden|insensitive|unavailable)
+  # Ordinal property values that are between "true-ish" and "false-ish"
+  prop_partial_kw: |-
+    (?:legacy|mixed|noauto)
+  # Other nominal property values (lacking any inherent ranking)
+  # MAYBE-ORDINAL: volmode=full|geom|dev|none (full=geom=true, dev=partial?)
+  # MAYBE-ORDINAL: xattr=on|sa|dir|off (on=sa=true, dir=partial?)
+  # MAYBE-ORDINAL: redundant_metadata=all|most|some|none (all=most=true, some=partial?)
+  prop_nominal_kw: |-
+    (?:latency|throughput|all|metadata|most|some|filesystem|snapshot|volume|bookmark|formC|formD|formKC|formKD|groupmask|discard|noallow|restricted|passthrough|passthrough-x|noacl|nfsv4|posix|posixacl|dir|sa|auto|raw|hex|passphrase|prompt|current|default|full|geom|dev)
+
+contexts:
+  main:
+    # Comment lines (e.g. manually added annotations)
+    - match: '^\s*#.*$'
+      scope: comment.line.zfs-list
+
+    # Header line: starts with NAME
+    - match: '^NAME\b.*$'
+      scope: zfs.header
+
+    # Data lines: first non-space token is the dataset name
+    - match: '^(?=\S)'
+      push: dataset_name
+
+  dataset_name:
+    # Dataset with snapshot: pool/path@snapname
+    - match: '(\S+?)(@)(\S+)'
+      captures:
+        1: zfs.dataset
+        2: zfs.dataset.snapshot.separator
+        3: zfs.dataset.snapshot.name
+      set: line_values
+    # Plain dataset name
+    - match: '\S+'
+      scope: zfs.dataset
+      set: line_values
+
+  line_values:
+    - match: '$'
+      pop: true
+    - include: values
+
+  values:
+    # --- Absolute paths (mountpoints etc.; may contain single spaces) ---
+    - match: '(?<=\s)/(\S+(?:\s\S+)*)?'
+      scope: zfs.path
+
+    # --- Non-absolute dataset reference with snapshot (e.g. origin property) ---
+    - match: '(?<=\s)([a-zA-Z][^\s@]*/[^\s@]*)(@)(\S+)'
+      captures:
+        1: zfs.dataset
+        2: zfs.dataset.snapshot.separator
+        3: zfs.dataset.snapshot.name
+
+    # --- Non-absolute dataset reference without snapshot ---
+    - match: '(?<=\s)[a-zA-Z][^\s]*/[^\s]+'
+      scope: zfs.dataset
+
+    # --- "Neutral": zero / placeholder values (must come before sizes and numbers) ---
+    - match: '(?<=\s)(?:0|0B)(?=\s|$)'
+      scope: zfs.value.neutral.zero
+    - match: '(?<=\s)(?:-|none)(?=\s|$)'
+      scope: zfs.value.neutral.placeholder
+
+    # --- Boolean: "true" and "false" values ---
+    - match: '\b{{bool_true}}\b'
+      scope: zfs.value.boolean.true
+    - match: '\b{{bool_false}}\b'
+      scope: zfs.value.boolean.false
+
+    # --- Other ordinal keywords (important->true->partial->false) ---
+    - match: '\b{{prop_alertish_kw}}\b'
+      scope: zfs.value.keyword.ordinal.alert
+    - match: '\b{{prop_trueish_kw}}\b'
+      scope: zfs.value.keyword.ordinal.true
+    - match: '\b{{prop_falsish_kw}}\b'
+      scope: zfs.value.keyword.ordinal.false
+    - match: '\b{{prop_partial_kw}}\b'
+      scope: zfs.value.keyword.ordinal.partial
+
+    # --- Compression keywords ---
+    - match: '\b{{compress_kw}}\b'
+      scope: zfs.value.keyword.nominal.compression
+
+    # --- Checksum keywords ---
+    - match: '\b{{checksum_kw}}\b'
+      scope: zfs.value.keyword.nominal.checksum
+
+    # --- Encryption keywords ---
+    - match: '\b{{encrypt_kw}}\b'
+      scope: zfs.value.keyword.nominal.encryption
+
+    # --- Other known keywords ---
+    # --- Other nominal keywords (no inherent ranking or meaning) ---
+    - match: '\b{{prop_kw}}\b'
+      scope: zfs.value.keyword.nominal
+
+    # --- Ratio values: 1.23x ---
+
+    # Ratios: exactly 1.00x
+    - match: '\b(1)(\.00)(x)\b'
+      captures:
+        1: zfs.value.ratio.1exact
+        2: zfs.value.ratio.1exact.decimal
+        3: zfs.value.ratio.1exact
+
+    # Ratios: between 1.01x and 1.99x
+    - match: '\b(1)(\.\d{2})(x)\b'
+      captures:
+        1: zfs.value.ratio.1plus
+        2: zfs.value.ratio.1plus.decimal
+        3: zfs.value.ratio.1plus
+
+    # Ratios: between 2.00x and 9.99x
+    - match: '\b([2-9])(\.\d{2})(x)\b'
+      captures:
+        1: zfs.value.ratio.2plus
+        2: zfs.value.ratio.2plus.decimal
+        3: zfs.value.ratio.2plus
+
+    # Ratios: 10.00x and above
+    - match: '\b(\d{2,})(\.\d{2})(x)\b'
+      captures:
+        1: zfs.value.ratio.10plus
+        2: zfs.value.ratio.10plus.decimal
+        3: zfs.value.ratio.10plus
+
+    # Anything else
+    - match: '\b\d+\.\d{2}x\b'
+      scope: zfs.value.ratio
+
+    # --- Human-formatted size values with suffix ---
+
+    # [K]BBB "B" (no decimal separator possible)
+    - match: '\b(\d+)(\d{3})(B)\b'
+      captures:
+        1: zfs.value.size.kilo
+        2: zfs.value.size.bytes.nonsig
+        3: zfs.value.size.bytes.nonsig
+    # [BB]B "B" (no decimal separator possible)
+    - match: '\b(?:\d{1,3})B\b'
+      scope: zfs.value.size.bytes
+
+    # [M]KKK[.BBB] "K"
+    - match: '\b(\d+)(\d{3})(\.\d+)?(K)\b'
+      captures:
+        1: zfs.value.size.mega
+        2: zfs.value.size.kilo.nonsig
+        3: zfs.value.size.bytes.nonsig
+        4: zfs.value.size.kilo.nonsig
+    # [KK]K[.BBB] "K"
+    - match: '\b(\d{1,3})(\.\d+)?(K)\b'
+      captures:
+        1: zfs.value.size.kilo
+        2: zfs.value.size.bytes.nonsig
+        3: zfs.value.size.kilo
+
+    # [G]MMM[.KKK] "M"
+    - match: '\b(\d+)(\d{3})(\.\d+)?(M)\b'
+      captures:
+        1: zfs.value.size.giga
+        2: zfs.value.size.mega.nonsig
+        3: zfs.value.size.kilo.nonsig
+        4: zfs.value.size.mega.nonsig
+    # [MM]M[.KKK] "M"
+    - match: '\b(\d{1,3})(\.\d+)?(M)\b'
+      captures:
+        1: zfs.value.size.mega
+        2: zfs.value.size.kilo.nonsig
+        3: zfs.value.size.mega
+
+    # [T]GGG[.MMM] "G"
+    - match: '\b(\d+)(\d{3})(\.\d+)?(G)\b'
+      captures:
+        1: zfs.value.size.tera
+        2: zfs.value.size.giga.nonsig
+        3: zfs.value.size.mega.nonsig
+        4: zfs.value.size.giga
+    # [GG]G[.MMM] "G"
+    - match: '\b(\d{1,3})(\.\d+)?(G)\b'
+      captures:
+        1: zfs.value.size.giga
+        2: zfs.value.size.mega.nonsig
+        3: zfs.value.size.giga
+
+    # [T...]T[.GGG] "T"
+    - match: '\b(\d+)(\.\d+)?(T)\b'
+      captures:
+        1: zfs.value.size.tera
+        2: zfs.value.size.giga.nonsig
+        3: zfs.value.size.tera
+
+    # --- Plain numbers (integers) ---
+    - match: '\b\d+\b'
+      scope: zfs.value.number
