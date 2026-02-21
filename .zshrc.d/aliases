@@ -398,6 +398,63 @@ alias docker-use-root=podman-use-root
 
 
 #
+# Podman containery
+#
+
+# construct a podman volume `:idmap=...` option for a given `-v ...` spec
+# to cleanly map the directory owner to the in-container user
+function --podman-idmap {
+	local uid=0 gid=0 host cont opts vol new_opts idmap host_uid host_gid
+
+	while [[ $1 == -* ]]; do
+		case $1 in
+		-u)
+			shift
+			if [[ $1 = *:* ]]; then
+				uid=${1%:*}
+				gid=${1#*:}
+			else
+				uid=$1
+				gid=$1
+			fi
+			;;
+		-g)
+			shift
+			gid=$1
+			;;
+		*)
+			echo >&2 "--podman-idmap: unknown option: $1"
+			return 1
+			;;
+		esac
+		shift
+	done
+	if (( $# != 1 )); then
+		echo "Usage: --podman-idmap [-u UID[:GID]] [-g GID] <volume-spec>" >&2
+		return 1
+	fi
+
+	vol=$1
+	local -a parts
+	parts=( ${(s.:.)vol} )
+	if (( $#parts < 1 || $#parts > 3 )); then
+		echo >&2 "--podman-idmap: invalid volume spec: $vol"
+		return 1
+	fi
+
+	host=${parts[1]}
+	cont=${parts[2]:-$host}
+	opts=${parts[3]}
+	host_uid="$(stat -c %u "$host")"
+	host_gid="$(stat -c %g "$host")"
+	idmap="idmap=uids=${host_uid}-${uid}-1;gids=${host_gid}-${gid}-1"
+
+	new_opts=${opts:+$opts,}${idmap}
+	print -r -- "${host}:${cont}${new_opts:+:${new_opts}}"
+}
+
+
+#
 # A number of "get my IP" aliases
 #
 
