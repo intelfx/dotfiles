@@ -1073,6 +1073,325 @@
 				<string>#0c000000</string>
 			</dict>
 		</dict>
+
+		<!-- zfs-list -->
+		<dict>
+			<key>name</key>
+			<string>ZFS Header</string>
+			<key>scope</key>
+			<string>zfs.header</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0e000000</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Dataset Name</string>
+			<key>scope</key>
+			<string>zfs.dataset</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0e000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Snapshot Separator</string>
+			<key>scope</key>
+			<string>zfs.dataset.snapshot.separator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0a000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Snapshot Name</string>
+			<key>scope</key>
+			<string>zfs.dataset.snapshot.name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0a000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Absolute Path</string>
+			<key>scope</key>
+			<string>zfs.path</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#04000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Boolean True</string>
+			<key>scope</key>
+			<string>zfs.value.boolean.true</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Boolean False</string>
+			<key>scope</key>
+			<string>zfs.value.boolean.false</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Neutral Values</string>
+			<key>scope</key>
+			<string>zfs.value.neutral</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0a000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Known Keyword (alert-ish)</string>
+			<key>scope</key>
+			<string>zfs.value.keyword.ordinal.alert</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#05000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Known Keyword (true-ish)</string>
+			<key>scope</key>
+			<string>zfs.value.keyword.ordinal.true</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Known Keyword (false-ish)</string>
+			<key>scope</key>
+			<string>zfs.value.keyword.ordinal.false</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Known Keyword (partial)</string>
+			<key>scope</key>
+			<string>zfs.value.keyword.ordinal.partial</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#03000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Known Keyword</string>
+			<key>scope</key>
+			<string>zfs.value.keyword.nominal</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#06000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Size Value</string>
+			<key>scope</key>
+			<string>zfs.value.size</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<!-- catch-all, should not match anything -->
+				<string>#0d000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Size Value (Bytes)</string>
+			<key>scope</key>
+			<string>zfs.value.size.bytes</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00000001</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Size Value (KiB)</string>
+			<key>scope</key>
+			<string>zfs.value.size.kilo</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00000001</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Size Value (KiB, non-significant)</string>
+			<key>scope</key>
+			<string>zfs.value.size.kilo.nonsig</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0a000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Size Value (MiB)</string>
+			<key>scope</key>
+			<string>zfs.value.size.mega</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#06000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Size Value (GiB)</string>
+			<key>scope</key>
+			<string>zfs.value.size.giga</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Size Value (TiB)</string>
+			<key>scope</key>
+			<string>zfs.value.size.tera</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#01000000</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Plain Number</string>
+			<key>scope</key>
+			<string>zfs.value.number</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0d000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Ratio Value</string>
+			<key>scope</key>
+			<string>zfs.value.ratio</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<!-- catch-all, should not match anything -->
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Ratio Value (1.00x)</string>
+			<key>scope</key>
+			<string>zfs.value.ratio.1exact</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0a000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Ratio Value (1.01x-1.99x)</string>
+			<key>scope</key>
+			<string>zfs.value.ratio.1plus</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0e000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Ratio Value (2.00x and above)</string>
+			<key>scope</key>
+			<string>zfs.value.ratio.2plus</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Ratio Value (2.00x and above, decimal part)</string>
+			<key>scope</key>
+			<string>zfs.value.ratio.2plus.decimal</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0a000000</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>ZFS Ratio Value (10.00x and above)</string>
+			<key>scope</key>
+			<string>zfs.value.ratio.10plus</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#01000000</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ZFS Ratio Value (10.00x and above, decimal part)</string>
+			<key>scope</key>
+			<string>zfs.value.ratio.10plus.decimal</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0a000000</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>07ccc5ba-0040-47b2-92b0-102746a29942</string>
