@@ -27,6 +27,10 @@
 !/.config/fontconfig
 !/.config/git
 !/.config/htop
+/.config/bat/syntaxes/orig
+!/.config/bat/syntaxes/
+!/.config/bat/themes/
+/.config/bat/*
 !/.config/bat
 !/.config/yay
 !/.config/containers
