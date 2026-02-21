@@ -2,6 +2,25 @@
 !
 ! http://ethanschoonover.com/solarized
 
+# SOLARIZED  HEX      ANSI(HEX)  TERMCOL    REMARKS        USAGE
+# ---------  -------  ---------  ---------  -------------  --------------------
+# base03     #002b36  8  / 0x8   brblack    bg primary
+# base02     #073642  0  / 0x0   black      bg highlights
+# base01     #586e75  10 / 0xa   brgreen    fg secondary
+# base00     #657b83  11 / 0xb   bryellow   -
+# base0      #839496  12 / 0xc   brblue     fg primary
+# base1      #93a1a1  14 / 0xe   brcyan     fg highlights
+# base2      #eee8d5  7  / 0x7   white      -
+# base3      #fdf6e3  15 / 0xf   brwhite    -
+# yellow     #b58900  3  / 0x3   yellow     accent         ternary "in-between"
+# orange     #cb4b16  9  / 0x9   brred      accent         boolean/ternary "no"
+# red        #dc322f  1  / 0x1   red        accent (#3)
+# magenta    #d33682  5  / 0x5   magenta    accent         standout
+# violet     #6c71c4  13 / 0xd   brmagenta  accent
+# blue       #268bd2  4  / 0x4   blue       accent
+# cyan       #2aa198  6  / 0x6   cyan       accent (#1)
+# green      #859900  2  / 0x2   green      accent (#2)    boolean/ternary "yes"
+
 #if !defined(DARK) && !defined(LIGHT)
 # define DARK
 #endif
