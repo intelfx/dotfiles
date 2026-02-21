@@ -396,6 +396,11 @@ alias docker-use-root=podman-use-root
 	print -r -- $includes
 }
 
+
+#
+# A number of "get my IP" aliases
+#
+
 aliasip() {
 	local json
 	if [[ $1 == --json ]]; then
