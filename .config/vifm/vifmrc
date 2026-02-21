@@ -544,6 +544,8 @@ endif
 
 " Insert file name(s) under cursor or selection onto command line (vinegar.vim)
 nnoremap .     :<C-U><Space><C-R>=expand("%f:p:.")<CR><Home>
+" Same, but full file path
+nnoremap ,.    :<C-U><Space><C-R>=expand("%f:p")<CR><Home>
 
 " Same, but mc style (Alt-Enter)
 nnoremap <CR> :<C-U><Space><C-R>=expand("%f:p:.")<CR><Home>
