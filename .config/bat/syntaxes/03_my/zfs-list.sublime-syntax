@@ -79,6 +79,10 @@ contexts:
     - match: '(?<=\s)/(\S+(?:\s\S+)*)?'
       scope: zfs.path
 
+    # --- Absolute paths encapsulated in file:// URIs, or http(s):// URLs
+    - match: '(?<=\s)(?:file:///|https?://)(?:\S+)'
+      scope: zfs.path.keylocation
+
     # --- Non-absolute dataset reference with snapshot (e.g. origin property) ---
     - match: '(?<=\s)([a-zA-Z][^\s@]*/[^\s@]*)(@)(\S+)'
       captures:
