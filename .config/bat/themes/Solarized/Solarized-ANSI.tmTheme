@@ -1134,6 +1134,17 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>ZFS Location URI</string>
+			<key>scope</key>
+			<string>zfs.path.keylocation</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0d000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>ZFS Boolean True</string>
 			<key>scope</key>
 			<string>zfs.value.boolean.true</string>
