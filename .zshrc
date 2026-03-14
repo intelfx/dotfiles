@@ -99,3 +99,10 @@ load_zshrc_d ~/.zshrc.late.d
 # late plugins
 #
 load_plugin zsh-syntax-highlighting
+
+#
+# very late: terminal-specific integrations
+#
+if [[ -d "$GHOSTTY_RESOURCES_DIR" ]]; then
+	source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
+fi
