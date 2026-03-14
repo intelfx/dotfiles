@@ -70,7 +70,12 @@
       "language_servers": [
       	"bash-language-server"
       ],
-    }
+    },
+  },
+  "file_types": {
+    "Dockerfile": [
+      "Dockerfile.*",
+    ]
   },
   "lsp": {
     "rust-analyzer": {
