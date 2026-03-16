@@ -10,7 +10,7 @@ rustflags = [
 ]
 
 [profile.dev]
-opt-level = 1
+opt-level = 0
 lto = false
 incremental = true
 debug = 2
@@ -27,6 +27,6 @@ rustflags = [
 [env]
 CC = "clang"
 CXX = "clang++"
-CFLAGS = "-march=native -Og -ggdb3 -fno-omit-frame-pointer -fuse-ld=lld"
-CXXFLAGS = "-march=native -Og -ggdb3 -fno-omit-frame-pointer -fuse-ld=lld"
+CFLAGS = "-march=native -O0 -ggdb3 -fno-omit-frame-pointer -fuse-ld=lld"
+CXXFLAGS = "-march=native -O0 -ggdb3 -fno-omit-frame-pointer -fuse-ld=lld"
 LDFLAGS = "-march=native -fuse-ld=lld"
