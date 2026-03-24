@@ -108,7 +108,7 @@ snippet gitmodules-prepare
 		else _git=( git );                 _subname="\$_sub"
 		fi
 		_subpath="\$("\${_git[@]}" config -f .gitmodules "submodule.\$_subname.path")"
-		_suburl="\${_gitmodules[\$_sub]}"; _subloc="\\$(get_filepath "\$_suburl")"
+		_suburl="\${_gitmodules[\$_sub]}"; _subloc="\$(get_filepath "\$_suburl")"
 		"\${_git[@]}" submodule init "\$_subpath"
 		"\${_git[@]}" config "submodule.\$_subname.url" "\$_subloc"
 		"\${_git[@]}" -c protocol.file.allow=always submodule update "\$_subpath"
