@@ -75,7 +75,10 @@
   "file_types": {
     "Dockerfile": [
       "Dockerfile.*",
-    ]
+    ],
+    "Make": [
+      "Makefile.*",
+    ],
   },
   "lsp": {
     "rust-analyzer": {
