@@ -176,16 +176,16 @@
     "favorite_models": [
       {
         "provider": "zed.dev",
-        "model": "claude-sonnet-4-6-thinking"
+        "model": "claude-sonnet-4-6"
       },
       {
         "provider": "zed.dev",
-        "model": "claude-sonnet-4-6-thinking"
+        "model": "claude-opus-4-6"
       }
     ],
     "inline_assistant_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-5-thinking"
+      "model": "claude-sonnet-4-6"
     },
     "use_modifier_to_send": true,
     "default_model": {
