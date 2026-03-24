@@ -93,7 +93,7 @@ snippet python-drop-fortify
 snippet gitmodules-declare
 	declare -g -A _gitmodules=(
 		[SUBNAME]="git+SUBURL"
-		[SUBPATH:SUBNAME]="git+SUBURL"
+		[SUBPATH+SUBNAME]="git+SUBURL"
 	)
 	for _suburl in "\${_gitmodules[@]}"; do
 		_subloc="\$(get_filename "\$_suburl")"
@@ -103,8 +103,8 @@ snippet gitmodules-declare
 
 snippet gitmodules-prepare
 	printf "%s\\n" "\${!_gitmodules[@]}" | sort | while read _sub; do
-		if [[ \$_sub == *:* ]]
-		then _git=( git -C "\${_sub%:*}" ); _subname="\${_sub#*:}"
+		if [[ \$_sub == *+* ]]
+		then _git=( git -C "\${_sub%+*}" ); _subname="\${_sub#*+}"
 		else _git=( git );                 _subname="\$_sub"
 		fi
 		_subpath="\$("\${_git[@]}" config -f .gitmodules "submodule.\$_subname.path")"
