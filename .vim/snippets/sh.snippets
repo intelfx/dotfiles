@@ -104,3 +104,10 @@ snippet jq-tosemver:
 	    | .[1] |= (. // {})
 	'
 	jq "$_tosemver; sort_by(.field | tosemver)"
+
+snippet git-is-dirty-index
+	! git diff-index --quiet --cached HEAD --
+
+snippet git-is-dirty-worktree
+	! git diff-files --quiet
+
