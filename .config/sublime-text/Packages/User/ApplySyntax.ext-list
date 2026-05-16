@@ -13,10 +13,18 @@
 		".zshrc",
 		"zsh",
 	],
-	"Python":
+	"HAML":
 	[
-		"py3",
-		"pyw"
+		"haml"
+	],
+	"Shell-Unix-Generic":
+	[
+		".profile",
+		"ash",
+		"bash",
+		"bashrc",
+		"sh",
+		"zsh"
 	],
 	"PHP":
 	[
@@ -26,9 +34,10 @@
 		"php5",
 		"phtml"
 	],
-	"XML":
+	"INI":
 	[
-		"xml.dist"
+		".npmrc",
+		"ini.dist"
 	],
 	"JSON":
 	[
@@ -41,12 +50,9 @@
 		".stylelintrc",
 		"geojson"
 	],
-	"YAML":
+	"HTML (Rails)":
 	[
-		".gemrc",
-		"YAML-tmLanguage",
-		"yml",
-		"yml.dist"
+		"html.erb"
 	],
 	"Ruby":
 	[
@@ -58,26 +64,20 @@
 		"simplecov",
 		"thor"
 	],
-	"Shell-Unix-Generic":
+	"XML":
 	[
-		".profile",
-		"ash",
-		"bash",
-		"bashrc",
-		"sh",
-		"zsh"
+		"xml.dist"
 	],
-	"HAML":
+	"Python":
 	[
-		"haml"
+		"py3",
+		"pyw"
 	],
-	"HTML (Rails)":
+	"YAML":
 	[
-		"html.erb"
-	],
-	"INI":
-	[
-		".npmrc",
-		"ini.dist"
+		".gemrc",
+		"YAML-tmLanguage",
+		"yml",
+		"yml.dist"
 	],
 }

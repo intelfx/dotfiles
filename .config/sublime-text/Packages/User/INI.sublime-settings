@@ -2,7 +2,7 @@
 	"extensions":
 	[
 		"ini.dist",
-		".npmrc",
 		"ansible.cfg",
+		".npmrc",
 	],
 }

@@ -13,6 +13,7 @@
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"FileDiffs",
+		"GitHubTools",
 		"INI",
 		"Kconfig Syntax Highlight",
 		"LSP",

@@ -3,9 +3,9 @@
 	"translate_tabs_to_spaces": true,
 	"extensions":
 	[
-		"YAML-tmLanguage",
-		".gemrc",
 		"yml.dist",
 		"yml",
+		"YAML-tmLanguage",
+		".gemrc",
 	],
 }

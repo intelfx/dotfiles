@@ -15,6 +15,17 @@
     // "EditorConfig",
     // "ApplySyntax",
     // "SingleTrailingNewLine",
+/*"LSP-json",*/
+/*"Vintage",*/
+/*"LSP-json",*/
+/*"Vintage",*/
+/*"PowerShell",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"LSP-yaml",*/
+/*"Vintage",*/
+/*"LSP",*/
+/*"LSP",*/
   ],
   "neovintageous_build_version": 13200,
   "tab_size": 8,
