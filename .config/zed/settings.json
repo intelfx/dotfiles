@@ -21,6 +21,8 @@
     "active_encoding_button": "enabled"
   },
   "bottom_dock_layout": "full",
+  "cli_default_open_behavior": "new_window",
+  "use_smartcase_search": true,
   "outline_panel": {
     "dock": "left"
   },
@@ -28,6 +30,7 @@
     "dock": "left"
   },
   "edit_predictions": {
+    "mode": "eager",
     "provider": "zed"
   },
   "project_panel": {
