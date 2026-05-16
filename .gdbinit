@@ -4,6 +4,11 @@ set auto-load safe-path $debugdir:$datadir/auto-load:~/.idapro:/opt:/usr
 dir /usr/lib/rustlib/etc
 dir /usr/lib/go/src
 
+set history save on
+set history size 1048576
+set history remove-duplicates unlimited
+set history filename ~/.gdb_history
+
 define gdblog
 	set pagination off
 	set logging file gdblog.txt
