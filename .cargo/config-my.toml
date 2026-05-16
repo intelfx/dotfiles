@@ -7,6 +7,7 @@ protocol = 'git'
 [build]
 rustflags = [
 	#"-Z", "threads=8",
+	"-C", "link-arg=-fuse-ld=lld",
 ]
 
 [profile.dev]
@@ -19,9 +20,13 @@ debug = 2
 debug = false
 strip = true
 opt-level = 3
+#lto = ...
+#codegen-units = ...
 # extends {build,target.*}.rustflags
 rustflags = [
-	#"-C", "linker-plugin-lto=true",
+	"-C", "link-arg=-fuse-ld=lld",
+	#"-C", "link-arg=-flto=...",
+	"-C", "linker-plugin-lto=true",
 	# this must be set if linker=clang and -fuse-ld=mold and LTO is used _anywhere_
 	# (clang 17 does not use plugin for anything but gold)
 	#"-C", "link-arg=-Wl,-plugin,/usr/lib/LLVMgold.so",
