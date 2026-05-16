@@ -8,10 +8,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "bottom_dock_layout": "full",
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
   "edit_predictions": {
     "provider": "zed"
   },
   "project_panel": {
+    "dock": "left",
     "hide_gitignore": true
   },
   "sticky_scroll": {
@@ -27,6 +35,7 @@
     "enable_keep_preview_on_code_navigation": false,
   },
   "git_panel": {
+    "dock": "left",
     "tree_view": true
   },
   "icon_theme": "Zed (Default)",
@@ -169,6 +178,8 @@
     }
   },
   "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
     "tool_permissions": {
       "default": "allow"
     },
