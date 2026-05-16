@@ -7,6 +7,7 @@ protocol = 'git'
 [build]
 rustflags = [
 	#"-Z", "threads=8",
+	"-C", "link-arg=-fuse-ld=lld",
 ]
 
 [profile.dev]
@@ -20,8 +21,10 @@ debug = false
 strip = true
 opt-level = 3
 lto = "thin"
+#codegen-units = ...
 # extends {build,target.*}.rustflags
 rustflags = [
+	"-C", "link-arg=-fuse-ld=lld",
 	"-C", "link-arg=-flto=thin",
 	"-C", "linker-plugin-lto=true",
 	# this must be set if linker=clang and -fuse-ld=mold and LTO is used _anywhere_
