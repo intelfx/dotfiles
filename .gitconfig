@@ -98,10 +98,10 @@
 [alias]
 	for-each-ref-name = for-each-ref --format '%(refname:short)'
 	ls-refs = for-each-ref --format '%(refname:short)'
-	refs = for-each-ref --format '%(refname:short)'
-	for-each-ref-name-full = for-each-ref --format '%(refname)'
+	for-each-ref-full = for-each-ref --format '%(refname)'
 	ls-refs-full = for-each-ref --format '%(refname)'
-	refs-full = for-each-ref --format '%(refname)'
+	for-each-ref-for-update = for-each-ref --format '%(refname) %(objectname)'
+	ls-refs-for-update = for-each-ref --format '%(refname) %(objectname)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
 	cclean = clean -xd -e '/.idea' -e '/*.sublime-*' -e '/compile_commands.json' -e '/.clangd' -e '/.cache/clangd' -e '/config.mak' -e '/config.toml' -e '/.zed' -e '/.config'
 	rebase-i = rebase --rebase-merges=no-rebase-cousins --update-refs --interactive
