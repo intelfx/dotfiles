@@ -78,4 +78,18 @@
       "ctrl-k ctrl-g": "workspace::ToggleLeftDock"
     }
   },
+
+  // Configure Zed to use Mini{Quotes,Brackets}
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      // Traditional Vim behavior
+      // "q": "vim::AnyQuotes",
+      // "b": "vim::AnyBrackets",
+
+      // mini.ai plugin behavior
+      "Q": "vim::MiniQuotes",
+      "B": "vim::MiniBrackets"
+    }
+  },
 ]
