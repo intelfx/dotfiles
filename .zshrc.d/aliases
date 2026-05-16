@@ -214,23 +214,50 @@ function mkcd() {
 	mkdir -pv "$1" && cd "$1"
 }
 
+# tmpcd / tmp -- create a temporary directory and cd into it
+#
+# Usage: tmpcd [BASE] [TEMPLATE] [UMASK]
+#
+# Arguments (all optional, order-independent):
+#
+#   BASE      -- an absolute path that resolves to a base directory.
+#                Recognised as an absolute path (/*) whose target either:
+#                  - already exists as a directory without the user.is-tmpcd xattr
+#                    (i.e. it is a hand-made parent dir, not itself a tmpcd dir), OR
+#                  - ends with '/' (explicit marker).
+#                Can also be inferred from a full absolute path (see TEMPLATE).
+#                Default: $HOME/tmp
+#
+#   TEMPLATE  -- a bare name (no slashes) used as the directory name template,
+#                OR a relative path that is interpreted as a subdirectory of BASE,
+#                OR an absolute path whose dirname is a valid BASE (in that case BASE is set to dirname and TEMPLATE to basename).
+#                Template suffix behaviour:
+#                  - ends with '-'  => append '<ISO8601-timestamp>.XXX' (random suffix via mktemp)
+#                  - ends with '.'  => append 'XXX'                     (random suffix via mktemp)
+#                  - contains 'XXX' => passed verbatim to mktemp as-is  (random suffix via mktemp)
+#                  - anything else  => directory name is used literally  (mkdir, fails if exists)
+#                Default: 'tmp-'  (produces e.g. tmp-2024-01-30T12-00-00+0300.X4f)
+#
+#   UMASK     -- a numeric umask to apply before creating the directory.
+#                Default: 0022
+#
+# The created directory is tagged with the xattr user.is-tmpcd=1 so that
+# future invocations can distinguish user-managed base dirs from tmpcd-created dirs.
 function -tmpcd-is-base-dir() {
 	[[ -d "$1" && -z "$(getfattr -n user.is-tmpcd --only-values "$1" 2>/dev/null)" ]]
 }
 function tmpcd() {
-	local base tpl umask suffix dir
+	local base relbase tpl umask suffix dir
 	setopt localoptions
 
 	while (( $# )); do
 		if [[ $1 == /* ]]; then
 			if [[ ! $base ]] \
-			&& { [[ $1 == */ ]] \
-			  || -tmpcd-is-base-dir "$1"; }
+			&& { [[ $1 == */ ]] || -tmpcd-is-base-dir "$1"; }
 			then
 				base="$1"
 			elif [[ ! ($base || $tpl) ]] \
-			  && { [[ $1 != */ ]] \
-			    && -tmpcd-is-base-dir "$(dirname "$1")"; }
+			  && { [[ $1 != */ ]] && -tmpcd-is-base-dir "$(dirname "$1")"; }
 			then
 				base="$(dirname "$1")"
 				tpl="$(basename "$1")"
@@ -244,15 +271,21 @@ function tmpcd() {
 			else
 				echo >&2 "tmpcd: invalid or unexpected arg: ${(qq)1}"
 			fi
-		elif [[ $1 != */* ]]; then
+		elif [[ $1 == */* ]]; then
+			if [[ ! ($relbase || $tpl) ]]; then
+				relbase="$(dirname "$1")"
+				tpl="$(basename "$1")"
+			else
+				echo >&2 "tmpcd: invalid or unexpected arg: ${(qq)1}"
+				return 1
+			fi
+		else
 			if [[ ! $tpl ]]; then
 				tpl="$1"
 			else
 				echo >&2 "tmpcd: invalid or unexpected arg: ${(qq)1}"
 				return 1
 			fi
-		else
-			echo >&2 "tmpcd: invalid or unexpected arg: ${(qq)1}"
 		fi
 		shift
 	done
@@ -261,6 +294,10 @@ function tmpcd() {
 	: "${tpl:="tmp-"}"
 	: "${suffix:="$(date +'%FT%H-%M-%S%z')"}"
 	: "${umask:=0022}"
+
+	if [[ $relbase ]]; then
+		base+="/$relbase"
+	fi
 
 	if [[ $tpl == *- ]]; then
 		tpl+="$suffix.XXX"
