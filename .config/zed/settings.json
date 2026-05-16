@@ -8,6 +8,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "gutter": {
+    "bookmarks": true
+  },
+  "diff_view_style": "split",
+  "title_bar": {
+    "show_branch_name": true,
+    "show_project_items": true,
+    "show_branch_status_icon": false
+  },
+  "status_bar": {
+    "active_encoding_button": "enabled"
+  },
   "bottom_dock_layout": "full",
   "outline_panel": {
     "dock": "left"
@@ -35,6 +47,7 @@
     "enable_keep_preview_on_code_navigation": false,
   },
   "git_panel": {
+    "collapse_untracked_diff": true,
     "dock": "left",
     "tree_view": true
   },
