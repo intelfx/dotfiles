@@ -92,4 +92,14 @@
       "B": "vim::MiniBrackets"
     }
   },
+
+  {
+    "context": "Editor",
+    "bindings": {
+      // "ctrl-e": "file_finder::Toggle",
+      "ctrl-left": "vim::GoToPreviousTab",
+      "ctrl-right": "vim::GoToTab",
+      // "ctrl-d": "pane::CloseActiveItem",
+    },
+  },
 ]
