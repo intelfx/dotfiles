@@ -79,6 +79,10 @@
     "mute_on_join": true
   },
   "languages": {
+    "Markdown": {
+      "hard_tabs": false,
+      "tab_size": 2,
+    },
     "JSONC": {
       "hard_tabs": false,
       "tab_size": 2
