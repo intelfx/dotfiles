@@ -64,6 +64,7 @@
 	exclude = /compile_commands.json
 	exclude = /.clangd
 	exclude = /.cache/clangd
+	exclude = /config.mk
 	exclude = /config.mak
 	exclude = /config.toml
 	exclude = /.config
@@ -103,7 +104,7 @@
 	for-each-ref-for-update = for-each-ref --format '%(refname) %(objectname)'
 	ls-refs-for-update = for-each-ref --format '%(refname) %(objectname)'
 	ls-conflicts = diff --name-only --diff-filter=U --relative
-	cclean = clean -xd -e '/.idea' -e '/*.sublime-*' -e '/compile_commands.json' -e '/.clangd' -e '/.cache/clangd' -e '/config.mak' -e '/config.toml' -e '/.zed' -e '/.config'
+	cclean = clean -xd -e '/.idea' -e '/*.sublime-*' -e '/compile_commands.json' -e '/.clangd' -e '/.cache/clangd' -e '/config.mk' -e '/config.mak' -e '/config.toml' -e '/.zed' -e '/.config'
 	rebase-i = rebase --rebase-merges=no-rebase-cousins --update-refs --interactive
 	rebase-ic = rebase --rebase-merges=rebase-cousins --update-refs --interactive
 
