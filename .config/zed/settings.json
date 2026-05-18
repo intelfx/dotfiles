@@ -95,6 +95,10 @@
       "hard_tabs": false,
       "tab_size": 2
     },
+    "Make": {
+      "hard_tabs": false,
+      "tab_size": 8,
+    },
     "Shell Script": {
       "language_servers": [
       	"bash-language-server"
