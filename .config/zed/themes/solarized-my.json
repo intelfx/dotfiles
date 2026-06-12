@@ -58,8 +58,8 @@
         "editor.active_wrap_guide": "#586e75",
         "editor.background": "#002b36",
         "editor.document_highlight.bracket_background": "#268bd266",
-        "editor.document_highlight.read_background": "#003e62", // FIXME: from Sublime Text
-        "editor.document_highlight.write_background": "#4d2b44", // FIXME: from Sublime Text
+        "editor.document_highlight.read_background": "#003e62", // FIXME: from Sublime Text, provenance unknown
+        "editor.document_highlight.write_background": "#4d2b44", // FIXME: from Sublime Text, provenance unknown
         "editor.foreground": "#839496",
         "editor.gutter.background": "#073642",
         "editor.highlighted_line.background": "#002b36",
@@ -87,7 +87,7 @@
         "hidden.background": "#002b36",
         "hidden.border": "#002b36",
         "hint": "#586e75",
-        "hint.background": "#073642",
+        "hint.background": "#07364266",
         "hint.border": "#586e75",
         "icon": "#839496",
         "icon.accent": "#268bd2",
@@ -164,7 +164,7 @@
         "scrollbar.thumb.hover_background": "#a3b1b4", // FIXME: compound color from Sublime Text
         "scrollbar.track.background": "#193b43", // FIXME: compound color from Sublime Text
         "scrollbar.track.border": "#002b3600",
-        "search.match_background": "#b58900",
+        "search.match_background": "#b58900bb",
         "status_bar.background": "#001a20",
         "success": "#859900",
         "success.background": "#002b36",
@@ -292,7 +292,7 @@
           }
         },
         "tab.active_background": "#002b36",
-        "tab.inactive_background": "#001a20",
+        "tab.inactive_background": "#001a20", // FIXME: compound color from Sublime Text
         "tab_bar.background": "#001a20",
         "terminal.ansi.background": "#002b36",
         "terminal.ansi.black": "#073642",
