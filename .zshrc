@@ -8,10 +8,12 @@ function load_zshrc_d() {
 
 	# load "completion" first because other snippets define completions
 	# load "colors" before completion because completion zstyles use $LS_COLORS
+	# load "config" before completion because it adjusts fpath
 	for f in \
 		$dir/colors*(-.N) \
+		$dir/config*(-.N) \
 		$dir/completion*(-.N) \
-		$dir/^(completion|colors)*(-.N) \
+		$dir/^(completion|colors|config)*(-.N) \
 		# EOL
 	do
 		source $f
