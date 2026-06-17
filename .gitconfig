@@ -273,8 +273,17 @@
 	}; f"
 	pull-pr = "!f() { \
 		remote=\"$(git zz-guess-upstream \"${@:2}\")\" || return; \
+		url=\"$(git remote get-url \"$remote\")\"; \
+		case \"$url\" in \
+		git@github.com:*) repo=\"${url#\"git@github.com:\"}\" ;; \
+		*://github.com:*) repo=\"${url#\"*://github.com/\"}\" ;; \
+		*) echo >&2 \"pull-pr: unsupported ${remote@Q} URL ${url@Q}\"; exit 1 ;; \
+		esac; \
 		set -x; \
-		git pull \"$remote\" \"refs/pull/$1/head\" \"${@:2}\"; \
+		set -o pipefail; \
+		title=\"$(curl -s \"https://api.github.com/repos/$repo/pulls/$1\" | jq -r .title)\" || return; \
+		git fetch \"$remote\" \"refs/pull/$1/head\" || return; \
+		git merge --no-ff FETCH_HEAD --log -m \"Merge upstream PR #$1: $title\" \"${@:2}\"; \
 	}; f"
 
 	mr = "!f() { \
