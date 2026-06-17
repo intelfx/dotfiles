@@ -172,7 +172,7 @@
           // never: Never insert #include directives as part of code completion
           "--header-insertion=never",
           // Prepend a circular dot or space before the completion label, depending on whether an include line will be inserted or not
-          "--header-insertion-decorators",
+          //"--header-insertion-decorators",
           // Limit the number of references returned by clangd. 0 means no limit (default=1000)
           "--limit-references=0",
           // Limit the number of results returned by clangd. 0 means no limit (default=100)
