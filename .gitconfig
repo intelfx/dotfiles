@@ -417,3 +417,5 @@
 	path = ~/.gitconfig.machine
 [include]
 	path = ~/.gitconfig.aliases
+[safe]
+	directory = /etc/admin/scripts

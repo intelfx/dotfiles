@@ -52,6 +52,9 @@ bind main ;co !>git zz-tig-checkout +%(branch) +%(commit)
 # Cherry-pick
 bind main ;cp ?!>git cherry-pick %(commit)
 
+# Commit as fixup
+bind main ;cf ?!>git commit --fixup=%(commit)
+
 # Binding to copy the sha1 under cursor
 bind main ;yy !>git copy-ref %(commit)
 bind main ;yr !>git copy-refer %(commit)
