@@ -54,7 +54,7 @@
   },
   "edit_predictions": {
     "allow_data_collection": "yes",
-    "mode": "eager",
+    "mode": "subtle",
     "provider": "zed"
   },
   "project_panel": {
