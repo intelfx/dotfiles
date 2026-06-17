@@ -9,6 +9,23 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "minimum_split_diff_width": 160.0,
+  "ssh_connections": [
+    {
+      "host": "anystation.tailbefcf.ts.net",
+      "username": "operator",
+      "nickname": "operator@anystation"
+    },
+    {
+      "host": "stratofortress.tailbefcf.ts.net",
+      "username": "operator",
+      "nickname": "operator@stratofortress"
+    },
+    {
+      "host": "stratofortress.tailbefcf.ts.net",
+      "username": "intelfx",
+      "nickname": "intelfx@stratofortress"
+    },
+  ],
   "gutter": {
     "bookmarks": true
   },
