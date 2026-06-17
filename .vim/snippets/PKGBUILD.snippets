@@ -120,6 +120,7 @@ snippet printflags
 		| while read line; do msg2 "\$line"; done
 
 snippet clang-flags
+	# Force clang as $CC/$CXX and adjust flags accordingly.
 	export CC=clang
 	export CXX=clang++
 	for _varname in CFLAGS CXXFLAGS LDFLAGS; do
@@ -130,6 +131,20 @@ snippet clang-flags
 		_var="\${_var// -fuse-ld+([^ ])}"
 	done
 	LDFLAGS+=" -fuse-ld=lld"
+
+snippet gcc-flags
+	# Force gcc as $CC/$CXX to prevent crates from hardcoding/preferring
+	# clang without regard for /usr/bin/cc.
+	export CC=\${CC-gcc}
+	export CXX=\${CXX-g++}
+
+snippet ld-flags-remove
+	# Drop any linker override flags
+	shopt -s extglob
+	CFLAGS="\${CFLAGS// -fuse-ld=+([^ ])}"
+	CXXFLAGS="\${CXXFLAGS// -fuse-ld=+([^ ])}"
+	LDFLAGS="\${LDFLAGS// -fuse-ld=+([^ ])}"
+	RUSTFLAGS="\${RUSTFLAGS// -C?( )link-arg=-fuse-ld=+([^ ])}"
 
 snippet lto-c-to-rust
 	# _Disable_ cross-toolchain LTO because we are using different toolchains
@@ -147,6 +162,25 @@ snippet lto-rust-to-c
 	# we are not linking C/C++ code into Rust code, but Rust code into C/C++ code.
 	# Thus, we have to force generation of normal object code on Rust side:
 	RUSTFLAGS+=" -Clinker-plugin-lto=false"
+
+snippet lto-clang-thin
+	# Force thin LTO
+	for _varname in CFLAGS CXXFLAGS; do
+		declare -n _var="\$_varname"
+		_var="\${_var// -flto+([^ ])/ -flto=thin}"
+	done
+	CARGO_PROFILE_RELEASE_CODEGEN_UNITS="\${CARGO_PROFILE_RELEASE_CODEGEN_UNITS/?*/16}"
+	CARGO_PROFILE_RELEASE_LTO="\${CARGO_PROFILE_RELEASE_LTO/?*/thin}"
+
+snippet lto-gcc-thin
+	# Force thin LTO
+	for _varname in CFLAGS CXXFLAGS; do
+		declare -n _var="\$_varname"
+		_var="\${_var// -flto+([^ ])/ -flto=auto}"
+		_var="\${_var// -flto-partition+([^ ])}"
+	done
+	CARGO_PROFILE_RELEASE_CODEGEN_UNITS="\${CARGO_PROFILE_RELEASE_CODEGEN_UNITS/?*/16}"
+	CARGO_PROFILE_RELEASE_LTO="\${CARGO_PROFILE_RELEASE_LTO/?*/thin}"
 
 snippet rust-prepare-fetch
 	cargo fetch --locked --target "\$(rustc --print host-tuple)"
