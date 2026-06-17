@@ -303,10 +303,10 @@
 		case \"$url\" in \
 		git@github.com:*) url=\"https://github.com/${url#\"git@github.com:\"}\" ;; \
 		*://github.com:*) url=\"https://github.com/${url#\"*://github.com/\"}\" ;; \
-		*) echo >&2 "web-pr: unsupported ${remote@Q} URL ${url@Q}"; exit 1 ;; \
+		*) echo >&2 \"web-pr: unsupported ${remote@Q} URL ${url@Q}\"; exit 1 ;; \
 		esac; \
 		set -x; \
-		exec ${BROWSER:-"xdg-open"} \"${url%.git}/pull/${pull}\"; \
+		exec ${BROWSER:-\"xdg-open\"} \"${url%.git}/pull/${pull}\"; \
 	}; f"
 	web-pr--exact = "!f() { \
 		shopt -s lastpipe; \
