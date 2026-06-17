@@ -8,6 +8,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "minimum_split_diff_width": 160.0,
   "gutter": {
     "bookmarks": true
   },
