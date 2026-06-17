@@ -102,4 +102,23 @@
       // "ctrl-d": "pane::CloseActiveItem",
     },
   },
+
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-shift-i": "editor::Format"
+    }
+  },
+  {
+    "context": "Editor",
+      "bindings": {
+      "ctrl-shift-i": "editor::FormatSelections"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-shift-i": "editor::Format"
+    }
+  },
 ]
