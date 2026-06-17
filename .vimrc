@@ -215,6 +215,11 @@ noremap <silent> <expr> <C-W><C-E> fzf#vim#buffers("", fzf#vim#with_preview({}),
 imap <leader><Tab> <Plug>snipMateNextOrTrigger
 smap <leader><Tab> <Plug>snipMateNextOrTrigger
 
+" synstack.vim
+let g:synstack_popup = 0
+nmap            <leader>p <plug>(SynStack)
+nnoremap <expr> <leader>P ':call synstack#toggleAuto()<cr>'
+
 
 "
 " Options
