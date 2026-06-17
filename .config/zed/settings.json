@@ -53,6 +53,7 @@
     "dock": "left"
   },
   "edit_predictions": {
+    "allow_data_collection": "yes",
     "mode": "eager",
     "provider": "zed"
   },
