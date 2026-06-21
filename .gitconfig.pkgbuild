@@ -1,4 +1,7 @@
 [core]
 	excludesfile = ~/.gitignore.private-pkgbuild
 
+[clean]
+	exclude = /.bld.*
+
 # vim: set ft=gitconfig :
