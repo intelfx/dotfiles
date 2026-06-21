@@ -50,7 +50,7 @@ bind main ;pr +>git web-pr %(commit)
 bind main ;co !>git zz-tig-checkout +%(branch) +%(commit)
 
 # Cherry-pick
-bind main ;cp ?!>git cherry-pick %(commit)
+bind main ;cp ?>git cherry-pick %(commit)
 
 # Commit as fixup
 bind main ;cf ?!>git commit --fixup=%(commit)
@@ -59,3 +59,5 @@ bind main ;cf ?!>git commit --fixup=%(commit)
 bind main ;yy !>git copy-ref %(commit)
 bind main ;yr !>git copy-refer %(commit)
 bind main ;yF !>git copy-fixes %(commit)
+
+bind refs G :goto %(branch)
