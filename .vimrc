@@ -161,7 +161,7 @@ vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 
 " autosudo
 "cmap w!! w !sudo sponge %
-cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit!
+cnoremap w!! execute 'silent! write !sudo sponge %' <bar> edit! <bar> setl noreadonly
 
 " search selection
 " (z is for register z)
