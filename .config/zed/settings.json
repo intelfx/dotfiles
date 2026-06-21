@@ -25,6 +25,11 @@
       "username": "intelfx",
       "nickname": "intelfx@stratofortress"
     },
+    {
+      "host": "anystation.tailbefcf.ts.net",
+      "username": "root",
+      "nickname": "root@anystation"
+    }
   ],
   "gutter": {
     "bookmarks": true
