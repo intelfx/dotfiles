@@ -1,2 +1,4 @@
 /*.log
+/.SRCINFO.json
+
 # vim: ft=gitignore:
