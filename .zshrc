@@ -103,6 +103,13 @@ load_zshrc_d ~/.zshrc.late.d
 load_plugin zsh-syntax-highlighting
 
 #
+# very late: atuin
+#
+if command -v atuin &>/dev/null; then
+	source ~/.zsh/misc/atuin
+fi
+
+#
 # very late: terminal-specific integrations
 #
 if [[ -d "$GHOSTTY_RESOURCES_DIR" ]]; then
