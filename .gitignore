@@ -27,6 +27,7 @@
 !/.config/fontconfig
 !/.config/git
 !/.config/htop
+/.config/htop/htop_history
 !/.config/bat
 !/.config/yay
 !/.config/containers
