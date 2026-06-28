@@ -88,7 +88,7 @@
     "font_family": "Iosevka Term"
   },
   "ui_font_weight": 400.0,
-  "buffer_font_weight": 300.0,
+  "buffer_font_weight": 400.0,
   "indent_guides": {
     "coloring": "indent_aware",
     "background_coloring": "disabled",
@@ -258,9 +258,12 @@
   },
   "base_keymap": "SublimeText",
   "ui_font_size": 15,
-  "buffer_font_size": 15.0,
-  "buffer_font_family": "Iosevka",
-  "buffer_line_height": "standard",
+  "buffer_font_size": 13.0,
+  "buffer_font_family": "TX-02",
+  "buffer_font_fallbacks": ["Ioskeley Mono"],
+  "buffer_line_height": {
+    "custom": 1.4
+  },
   "theme": {
     "mode": "system",
     "light": "Solarized Light (my)",
