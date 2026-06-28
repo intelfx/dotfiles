@@ -122,6 +122,7 @@ mark b ~/bin/
 mark h ~/
 mark m /run/media/user/$UID/
 mark M ~/mnt/
+mark D ~/Downloads/
 
 " ------------------------------------------------------------------------------
 " Commands
