@@ -125,8 +125,18 @@ if command -v fd &>/dev/null; then
 		fd_opts+=( --hidden --exclude ".git" )
 		if ! __fzf_compgen_nofollow_at "$1"; then
 			fd_opts+=( --follow )
-			# hack: do not follow Wine's `Z:` back to `/`
-			fd_opts+=( --exclude '**/dosdevices/z:/*')
+			# hack: do not follow Wine's `Z:` back to `/`, nor
+			#       any other virtual DOS drive letter symlink
+			fd_opts+=( --exclude '**/dosdevices/?:/*')
+			fd_opts+=( --exclude '**/dosdevices/c:/*')
+			# hack: do not follow Wine's C:\Users\<me>\<common-dir>
+			#       back to ~/<common-dir>
+			fd_opts+=( --exclude '**/drive_c/users/*/Desktop/*')
+			fd_opts+=( --exclude '**/drive_c/users/*/Documents/*')
+			fd_opts+=( --exclude '**/drive_c/users/*/Downloads/*')
+			fd_opts+=( --exclude '**/drive_c/users/*/Music/*')
+			fd_opts+=( --exclude '**/drive_c/users/*/Pictures/*')
+			fd_opts+=( --exclude '**/drive_c/users/*/Videos/*')
 		fi
 		if __fzf_compgen_skip_vcs_at "$1"; then
 			fd_opts+=( --no-ignore-vcs --no-ignore-parent )
