@@ -292,5 +292,6 @@
   "tasks": {
     "prefer_lsp": true,
   },
-  "format_on_save": "off"
+  "format_on_save": "off",
+  "formatter": "language_server",
 }
