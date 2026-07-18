@@ -77,6 +77,8 @@
 	autoDetach = false
 	reflogExpire = never
 	reflogExpireUnreachable = never
+[maintenance]
+	auto = false
 [pack]
 	depth = 50
 	window = 1000
