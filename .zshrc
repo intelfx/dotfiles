@@ -105,7 +105,8 @@ load_plugin zsh-syntax-highlighting
 #
 # very late: atuin
 #
-if command -v atuin &>/dev/null \
+if [[ "$(uname -n)" != *virtme* ]] \
+&& command -v atuin &>/dev/null \
 && [[ -d "$(systemd-path user-shared)/atuin" ]]; then
 	source ~/.zsh/misc/atuin
 fi
