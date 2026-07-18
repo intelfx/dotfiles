@@ -380,6 +380,13 @@ filetype {*.iso},
        \ {Extract with 7-zip}
        \ 7z x %c,
 
+filetype {*.wim,*.esd}
+       \ {Mount with wimlib}
+       \ FUSE_MOUNT|wimmount %SOURCE_FILE %DESTINATION_DIR,
+
+fileviewer {*.wim,*.esd}
+         \ wiminfo-short -v %f
+
 "
 " ARCHIVE VIEWING
 "
