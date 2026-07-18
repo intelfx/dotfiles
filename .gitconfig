@@ -70,6 +70,8 @@
 	exclude = /config.mak
 	exclude = /config.toml
 	exclude = /.config
+	exclude = /go.work
+	exclude = /go.work.sum
 [gc]
 	aggressiveDepth = 50
 	aggressiveWindow = 1000
