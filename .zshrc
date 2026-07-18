@@ -111,6 +111,14 @@ if command -v atuin &>/dev/null \
 fi
 
 #
+# HACK for virtme shells
+#
+if [[ "$(uname -n)" == *virtme* ]] \
+&& [[ -x ~/bin/hw/virtme-script ]]; then
+	source ~/bin/hw/virtme-script
+fi
+
+#
 # very late: terminal-specific integrations
 #
 if [[ -d "$GHOSTTY_RESOURCES_DIR" ]]; then
