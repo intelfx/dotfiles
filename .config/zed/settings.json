@@ -269,6 +269,20 @@
     "font_family": "Iosevka Term",
     "line_height": "standard",
   },
+  "profiles": {
+    "BerkeleyMono": {
+      "base": "user",
+      "settings": {
+        "buffer_font_size": 13.0,
+        "buffer_font_weight": 400.0,
+        "buffer_font_family": "TX-02",
+        "buffer_font_fallbacks": ["Ioskeley Mono"],
+        "buffer_line_height": {
+          "custom": 1.4
+        },
+      }
+    }
+  },
   "preferred_line_length": 80,
   "wrap_guides": [80, 100],
   "minimum_split_diff_width": 160.0,
