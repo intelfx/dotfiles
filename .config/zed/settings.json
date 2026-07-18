@@ -8,7 +8,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "minimum_split_diff_width": 160.0,
   "ssh_connections": [
     {
       "host": "anystation.tailbefcf.ts.net",
@@ -77,17 +76,6 @@
     "dock": "left",
     "tree_view": true
   },
-  "icon_theme": "Zed (Default)",
-  "terminal": {
-    "toolbar": {
-      "breadcrumbs": true
-    },
-    "minimum_contrast": 0.0,
-    "font_weight": 300.0,
-    "font_family": "Iosevka Term"
-  },
-  "ui_font_weight": 400.0,
-  "buffer_font_weight": 300.0,
   "indent_guides": {
     "coloring": "indent_aware",
     "background_coloring": "disabled",
@@ -210,8 +198,6 @@
     "enabled": true
   },
   "semantic_tokens": "combined",
-  "minimum_contrast_for_highlights": 47.0,
-  "ui_font_family": ".ZedSans",
   "context_servers": {
     "terraform-context-server": {
       "enabled": true,
@@ -256,17 +242,33 @@
     "model_parameters": []
   },
   "base_keymap": "SublimeText",
-  "ui_font_size": 15,
-  "buffer_font_size": 15.0,
-  "buffer_font_family": "Iosevka",
-  "buffer_line_height": "standard",
+  "icon_theme": "Zed (Default)",
   "theme": {
     "mode": "system",
     "light": "Solarized Light (my)",
     "dark": "Solarized Dark (my)"
   },
+  "minimum_contrast_for_highlights": 47.0,
+  "ui_font_size": 15.0,
+  "ui_font_weight": 400.0,
+  "ui_font_family": ".ZedSans",
+  "buffer_font_size": 14.0,
+  "buffer_font_weight": 300.0,
+  "buffer_font_family": "Iosevka",
+  "buffer_line_height": "standard",
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": true
+    },
+    "minimum_contrast": 0.0,
+    "font_size": 13.0,
+    "font_weight": 300.0,
+    "font_family": "Iosevka Term",
+    "line_height": "standard",
+  },
   "preferred_line_length": 80,
   "wrap_guides": [80, 100],
+  "minimum_split_diff_width": 160.0,
   "hard_tabs": true,
   "tab_size": 8,
   "vim_mode": true,
