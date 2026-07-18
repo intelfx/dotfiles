@@ -84,6 +84,8 @@
   "toolbar": {
     "code_actions": true
   },
+  "completion_detail_alignment": "right",
+  "completion_menu_item_kind": "symbol",
   "auto_signature_help": true,
   "show_signature_help_after_edits": true,
   "calls": {
