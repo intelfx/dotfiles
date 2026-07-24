@@ -2,7 +2,7 @@
 
 {
 	"binary": "custom",
-	"initializationOptions": {
+	"initialization_options": {
 		"custom_command": [
 			"/usr/bin/env",
 			"chrt", "--batch", "0",
