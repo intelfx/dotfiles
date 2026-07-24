@@ -415,6 +415,8 @@
 	required = true
 	clean = git-lfs clean -- %f
 
+[includeIf "gitdir:~/"]
+	path = ~/.gitconfig.home
 [includeIf "gitdir:~/pkgbuild/"]
 	path = ~/.gitconfig.pkgbuild
 [include]

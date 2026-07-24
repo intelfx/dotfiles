@@ -1,0 +1,4 @@
+[maintenance]
+	auto = false
+
+# vim: set ft=gitconfig :
