@@ -89,6 +89,7 @@
   "completion_menu_item_kind": "symbol",
   "auto_signature_help": true,
   "show_signature_help_after_edits": true,
+  "go_to_definition_scroll_strategy": "preserve",
   "calls": {
     "mute_on_join": true
   },
