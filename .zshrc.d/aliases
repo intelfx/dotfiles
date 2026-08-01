@@ -358,6 +358,9 @@ function podman-use-root() {
 }
 alias docker-use-root=podman-use-root
 
+alias rpodman='podman --connection=system'
+alias podmanr='podman --connection=system'
+
 # abomination to construct chains of `rsync --include=...` filters that match a
 # given path and all its predecessors, correctly accounting for recursive globs
 #
