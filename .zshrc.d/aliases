@@ -33,6 +33,10 @@ function -join() {
 	printf "%s" "${(pj:$sep:)${@}}"
 }
 
+function -interactive() {
+	[[ $- == *i* ]]
+}
+
 function rwhence() {
 	local def i=1
 	local -a alias
@@ -132,7 +136,7 @@ if -has bat; then
 	alias -g -- -helpb='-help 2>&1 | bathelp'
 
 fi
-if -has colordiff; then
+if -has colordiff && -interactive; then
 	alias diff='colordiff'
 fi
 
@@ -179,7 +183,7 @@ if [[ $WAYLAND_DISPLAY || $DISPLAY ]]; then
 	alias xman='xdg-man'
 fi
 
-if -has qman; then
+if -has qman && -interactive; then
 	alias man='qman'
 fi
 
