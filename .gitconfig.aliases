@@ -78,9 +78,15 @@
 	insteadOf = git://git.savannah.gnu.org/
 [url "https://kernel.googlesource.com/pub/scm/linux/kernel/git/"]
 # [url "https://git.kernel.org/pub/scm/linux/kernel/git/"]
-	insteadOf = korg:
+	insteadOf = korgl:
 	insteadOf = git://git.kernel.org/pub/scm/linux/kernel/git/
 	insteadOf = https://git.kernel.org/pub/scm/linux/kernel/git/
 	# insteadOf = https://kernel.googlesource.com/pub/scm/linux/kernel/git/
+[url "https://kernel.googlesource.com/pub/scm/"]
+# [url "https://git.kernel.org/pub/scm/"]
+	insteadOf = korg:
+	insteadOf = git://git.kernel.org/pub/scm/
+	insteadOf = https://git.kernel.org/pub/scm/
+	# insteadOf = https://kernel.googlesource.com/pub/scm/
 
 # vim: set ft=gitconfig :
