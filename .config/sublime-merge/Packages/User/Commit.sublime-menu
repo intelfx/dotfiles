@@ -15,4 +15,14 @@
         "command": "git",
         "args": {"argv": ["commit", "--fixup", "$commit"]},
     },
+    {
+        "caption": "Copy commit SHA",
+        "command": "git",
+        "args": {"argv": ["copy-short-ref", "$commit"]},
+    },
+    {
+        "caption": "Copy full commit SHA",
+        "command": "git",
+        "args": {"argv": ["copy-ref", "$commit"]},
+    },
 ]
