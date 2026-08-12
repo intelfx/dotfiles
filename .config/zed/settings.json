@@ -95,6 +95,7 @@
   },
   "languages": {
     "Markdown": {
+      "show_edit_predictions": false,
       "hard_tabs": false,
       "tab_size": 2,
     },
