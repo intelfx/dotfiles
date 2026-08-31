@@ -160,4 +160,9 @@
       "ctrl-alt-shift-i": "editor::Format"
     }
   },
+  {
+    "bindings": {
+      "ctrl-w ctrl-t": "workspace::NewCenterTerminal"
+    }
+  }
 ]
