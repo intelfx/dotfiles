@@ -78,6 +78,11 @@ let g:gitgutter_set_sign_backgrounds = 1
 setg updatetime=100
 setg signcolumn=auto
 
+" Fuck off!
+let g:go_fmt_autosave = 0
+let g:go_mod_fmt_autosave = 0
+let g:go_imports_autosave = 0
+
 
 " ----------------------------------------------------------------------------
 " USER CONFIGURATION
