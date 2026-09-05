@@ -56,6 +56,10 @@ maybe() {
 maybe export2 RUSTC_WRAPPER \
 	"$(command -v sccache 2>/dev/null)"
 
+# ccache shim directory is installed onto $PATH by /etc/profile.d; get rid of it
+path_remove \
+	/usr/lib/ccache/bin
+# re-install custom toolchains bindirs and ccache shim dir in the correct order
 maybe prepend PATH \
 	/usr/lib/ccache/bin \
 	"$HOME"/ct-ng/bin/*/bin \
