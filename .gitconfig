@@ -10,6 +10,7 @@
 # [core]
 # 	untrackedCache = true
 # 	splitIndex = true
+# 	multiPackIndex = true
 [extensions]
 	worktreeConfig = true
 [init]
@@ -75,8 +76,10 @@
 [gc]
 	aggressiveDepth = 50
 	aggressiveWindow = 1000
-	writeCommitGraph = true
 	autoDetach = false
+	writeCommitGraph = true
+	cruftPacks = true
+	pruneExpire = never
 	reflogExpire = never
 	reflogExpireUnreachable = never
 [maintenance]
@@ -86,6 +89,9 @@
 	window = 1000
 	compression = 9
 	allowPackReuse = "multi"
+	#useBitmaps = true
+[repack]
+	#writeBitmaps = true
 [sequence]
 	editor = interactive-rebase-tool
 [credential]
