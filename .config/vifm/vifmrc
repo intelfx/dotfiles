@@ -123,6 +123,7 @@ mark h ~/
 mark m /run/media/$USER/
 mark M ~/mnt/
 mark D ~/Downloads/
+mark k /dev/disk
 
 " ------------------------------------------------------------------------------
 " Commands
