@@ -130,6 +130,15 @@
     ],
   },
   "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright": {
+          "analysis": {
+            "typeCheckingMode": "standard",
+          },
+        }
+      }
+    },
     "rust-analyzer": {
       "binary": {
         "path": "/usr/bin/env",
