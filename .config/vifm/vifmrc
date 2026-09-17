@@ -120,10 +120,13 @@ colorscheme solarized-dark
 
 mark b ~/bin/
 mark h ~/
-mark m /run/media/$USER/
-mark M ~/mnt/
-mark D ~/Downloads/
+mark m ~/mnt/
+mark M /run/media/$USER/
+mark d ~/Downloads/
 mark k /dev/disk
+mark t ~/tmp/
+mark T ~/tmp/big/
+mark D ~/tmp/big/dist/
 
 " ------------------------------------------------------------------------------
 " Commands
