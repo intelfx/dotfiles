@@ -201,7 +201,7 @@
           "--enable-config",
           // Comma separated list of globs for white-listing gcc-compatible drivers that are safe to execute.
           // Drivers matching any of these globs will be used to extract system includes. e.g. /usr/bin/**/clang-*,/path/to/repo/**/g++-*
-          "--query-driver=/usr/bin/clang,/usr/bin/clang++,/usr/bin/gcc,/usr/bin/g++,/usr/lib/ccache/bin/*"
+          "--query-driver=/usr/bin/clang,/usr/bin/clang++,/usr/bin/gcc,/usr/bin/g++,/usr/lib/ccache/bin/*,/opt/cegcc-arm/bin/*"
         ]
       },
     }
