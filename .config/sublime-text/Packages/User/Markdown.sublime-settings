@@ -1,5 +1,7 @@
 {
-	"color_scheme": "MarkdownEditor-ArcDark.sublime-color-scheme",
+	"color_scheme": "auto",
+	"light_color_scheme": "MarkdownEditor.sublime-color-scheme",
+	"dark_color_scheme": "MarkdownEditor-ArcDark.sublime-color-scheme",
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 }
