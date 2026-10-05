@@ -238,8 +238,7 @@ setg ignorecase
 setg smartcase
 
 setg completeopt=menu,popup,fuzzy
-setg wildmenu wildmode=full wildoptions=fuzzy,pum
-setg wildcharm=<C-Z> " something well unused
+setg wildmenu wildmode=noselect:lastused,full wildoptions=fuzzy,pum
 
 setg splitright
 setg splitbelow
@@ -449,32 +448,12 @@ let s:SID = expand('<SID>')
 
 "
 " Command-line completion
+" (VimSuggest replaced with examples from cmdline.txt copied holesale)
 "
 
-def! s:Vimsuggest()
-  if !exists('g:VimSuggestSetOptions')
-    return
-  endif
-  g:vimsuggest_options = {
-    cmd: {
-      enable: true,
-      pum: true,
-      alwayson: false,
-    },
-    search: {
-      enable: true,
-      pum: true,
-      fuzzy: true,
-      alwayson: true,
-    },
-  }
-  g:VimSuggestSetOptions(g:vimsuggest_options)
-enddef
-augroup my-vimsuggest
-  au!
-  au VimEnter * call s:Vimsuggest()
-augroup END
-
+autocmd CmdlineChanged [:\/\?] call wildtrigger()
+cnoremap <expr> <Up>   wildmenumode() ? "\<C-E>\<Up>"   : "\<Up>"
+cnoremap <expr> <Down> wildmenumode() ? "\<C-E>\<Down>" : "\<Down>"
 
 "
 " Insert completion
