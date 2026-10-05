@@ -192,6 +192,10 @@ command! reload :write | restart full
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.  There is also %FOREGROUND, which is useful for entering passwords.
 
+" PE binaries and CABs
+fileviewer {*.exe,*.dll,*.cab}
+        \ ~/bin/devel/pe-classify %f
+
 " Pdf
 filextype {*.pdf},<application/pdf> evince %c %i
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
