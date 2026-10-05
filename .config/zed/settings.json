@@ -130,6 +130,30 @@
     ],
   },
   "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "configurationPreference": "filesystemFirst",
+          "configuration": {
+            "indent-width": 8,
+            "line-length": 100,
+            "format": {
+              "indent-style": "tab",
+              "quote-style": "single",
+            },
+          },
+          "lint": {
+            "ignore": [
+              "I001", // import block is un-sorted or un-formatted
+              "UP007", // typing.Union
+              "UP045", // typing.Optional
+              "PLC3002", // lambda expression called directly
+              "PLW0602", // using global but no assignment is done
+            ],
+          }
+        }
+      }
+    },
     "basedpyright": {
       "settings": {
         "basedpyright": {
