@@ -134,6 +134,8 @@
       "settings": {
         "basedpyright": {
           "analysis": {
+            "useTypingExtensions": true,
+            // "diagnosticMode": "workspace",
             "typeCheckingMode": "standard",
           },
         }
