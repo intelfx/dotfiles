@@ -344,6 +344,9 @@ fileviewer {*.torrent},<application/x-bittorrent>
          \ dumptorrent -v %c,
          \ transmission-show %c
 
+fileviewer {*.resume,*.fastresume}
+         \ torf -u -i %c
+
 
 "
 " ARCHIVE MOUNTING
