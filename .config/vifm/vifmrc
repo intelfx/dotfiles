@@ -340,6 +340,7 @@ filetype {*.asc},<application/pgp-signature>
 " Torrent
 filetype {*.torrent},<application/x-bittorrent> ktorrent %f &
 fileviewer {*.torrent},<application/x-bittorrent>
+         \ torf -u -i %c,
          \ dumptorrent -v %c,
          \ transmission-show %c
 
